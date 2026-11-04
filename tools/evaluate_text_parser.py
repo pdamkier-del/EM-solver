@@ -15,6 +15,7 @@ from em1_solver.core.text_parser_v2 import critical_uncertainties
 
 ROOT=Path(__file__).resolve().parents[1]
 ROWS=json.loads((ROOT/"data/exam_problem_registry.json").read_text(encoding="utf-8"))
+BLIND=json.loads((ROOT/"data/blind_unseen_bank_v2.json").read_text(encoding="utf-8"))["tests"]
 
 RECENT_EVAL={"2025-11","2026-01"}
 
@@ -114,11 +115,50 @@ def metrics(rows):
         "sample_misses":samples,
     }
 
+def blind_metrics(rows):
+    domain_hit=domain_emitted=0
+    bins=Counter()
+    by_domain=defaultdict(lambda:Counter(total=0,correct=0,ready=0))
+    misses=[]
+    for row in rows:
+        p=parse(row["problem"])
+        truth=row["domain"]
+        by_domain[truth]["total"]+=1
+        got=p.data.get("_domain_hint")
+        if got:
+            domain_emitted+=1
+            if got==truth:
+                domain_hit+=1
+                by_domain[truth]["correct"]+=1
+        u=critical_uncertainties(p)
+        n=len(u)
+        if n==0:
+            bins["0"]+=1
+            by_domain[truth]["ready"]+=1
+        elif n==1:bins["1"]+=1
+        elif n<=3:bins["2-3"]+=1
+        else:bins["4+"]+=1
+        if len(misses)<20 and got!=truth:
+            misses.append({"id":row["id"],"truth":truth,"parsed":got,
+                           "geometry":p.geometry,"source":p.data.get("_source_hint"),
+                           "preset":p.data.get("_preset_hint"),"uncertain":sorted(u)})
+    return {
+        "n":len(rows),
+        "domain":{"coverage":domain_emitted/len(rows) if rows else 0,
+                  "accuracy_when_emitted":domain_hit/domain_emitted if domain_emitted else 0,
+                  "correct_overall":domain_hit/len(rows) if rows else 0},
+        "corrections":dict(bins),
+        "by_domain":{k:dict(v) for k,v in sorted(by_domain.items())},
+        "sample_domain_misses":misses,
+    }
+
+
 def main():
     all_result=metrics(ROWS)
     eval_rows=[r for r in ROWS if r["exam"] in RECENT_EVAL]
     eval_result=metrics(eval_rows)
     report={"all_historical":all_result,"recent_evaluation_split":eval_result,
+            "blind_55_text":blind_metrics(BLIND),
             "note":"Recent split is not pristine hold-out; historical material predated this benchmark."}
     out=ROOT/"reports/parser_text_benchmark.json"
     out.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
