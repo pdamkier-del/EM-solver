@@ -321,6 +321,18 @@ def enrich_v2(out, extract_wanted: bool = True):
     _domain(out, source, out.wanted, text)
     _preset_hint(out, source)
 
+    # Missing critical fields are explicit uncertainty, not an implicit pass.
+    if out.geometry == "Ukendt":
+        _mark(out, "geometry", RED, "ingen sikker geometri fundet")
+    if not source:
+        _mark(out, "source", RED, "ingen sikker kildetype fundet")
+    if not out.wanted:
+        _mark(out, "wanted", RED, "ingen søgt størrelse fundet")
+    if "_domain_hint" not in out.data:
+        _mark(out, "domain", YELLOW, "domænet kræver fysisk kontrol")
+    if "_preset_hint" not in out.data:
+        _mark(out, "preset", YELLOW, "ingen entydig standardmodel valgt")
+
     # Critical uncertainty policy: never silently bless a direct symmetry method.
     if out.geometry == "cylinder" and out.data.get("extent") not in ("infinite", "finite"):
         _mark(out, "extent", YELLOW, "cylinderens endelig/uendelig-status mangler")
