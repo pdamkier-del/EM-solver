@@ -1,6 +1,9 @@
 name: Parser recovery checks
 
 on:
+  push:
+    branches:
+      - parser-recovery-2026-11-04
   pull_request:
     branches:
       - exam-tech-ui-2026-11-04
