@@ -14,6 +14,7 @@ from .rendering.plain import text
 
 def guess_preset(parsed):
     d=parsed.data;g=parsed.geometry
+    if d.get('_preset_hint') in P:return d['_preset_hint']
     if 'J' in d:return 'ba_cylinder'
     if 'A' in d:return 'ba_vector_potential'
     if 'B' in d and 'time' in d:return 'dyn_fixed'
@@ -36,7 +37,13 @@ def seed(key,parsed=None):
     st.session_state['af_region_count']=len(rows)
     st.session_state['af_method']=preset.family
     options=WANTS[preset.family]
-    wanted=[w for w in parsed.wanted if w in options] if parsed else []
+    wanted=[]
+    if parsed:
+        aliases={'force':['F'],'current':['I'],'power':['P'],'energy':['U','W'],'inductance':['L']}
+        for item in parsed.wanted:
+            candidates=[item]+aliases.get(item,[])
+            match=next((candidate for candidate in candidates if candidate in options),None)
+            if match and match not in wanted:wanted.append(match)
     st.session_state['af_wanted']=wanted or [next((w for w in options if w in ('E','B','EMF','C','F','torque_magnitude','L','I','P')),options[0])]
     st.session_state['af_assumptions']=list(preset.assumptions)
     st.session_state['af_source_type']=preset.source
@@ -112,6 +119,23 @@ def assisted_mode(mode,manual=False):
     else:
         original=st.session_state.get('af_original','');known=st.session_state.get('af_known','')
         if 'af_preset' not in st.session_state:seed('ev_cylinder')
+    if not manual and st.session_state.get('af_parsed'):
+        parsed_view=st.session_state['af_parsed']
+        confidence=parsed_view.get('confidence',{}) or {}
+        data_view=parsed_view.get('data',{}) or {}
+        parts=[]
+        if parsed_view.get('geometry') and parsed_view.get('geometry')!='Ukendt':parts.append('geometri: **'+str(parsed_view['geometry'])+'**')
+        if data_view.get('_source_hint'):parts.append('kilde: **'+str(data_view['_source_hint'])+'**')
+        if parsed_view.get('wanted'):parts.append('søges: **'+', '.join(map(str,parsed_view['wanted']))+'**')
+        if data_view.get('_preset_hint'):parts.append('model: **'+str(data_view['_preset_hint'])+'**')
+        if parts:
+            st.markdown('Automatisk fortolkning · '+' · '.join(parts))
+        uncertain=[name for name,meta in confidence.items() if meta.get('level')!='GREEN']
+        if uncertain:
+            st.warning('Kontrollér kun de usikre punkter først: '+', '.join(uncertain))
+        elif confidence:
+            st.success('Tekstfortolkningen har ingen markerede kritiske tvivlspunkter. Kontrollér stadig resultatets fysik før brug.')
+
     source_changed=not manual and st.session_state.get('af_analyzed_text')!=(original,known)
     if source_changed:st.warning('Teksten er ændret. Analysér igen; den tidligere løsning er skjult.')
     st.subheader('Bekræft problem')
