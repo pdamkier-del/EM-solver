@@ -7,13 +7,16 @@ not a pristine hold-out.
 from __future__ import annotations
 
 import json
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
+ROOT=Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0,str(ROOT))
+
 from em1_solver.core.new_problem import parse
 from em1_solver.core.text_parser_v2 import critical_uncertainties
-
-ROOT=Path(__file__).resolve().parents[1]
 ROWS=json.loads((ROOT/"data/exam_problem_registry.json").read_text(encoding="utf-8"))
 BLIND=json.loads((ROOT/"data/blind_unseen_bank_v2.json").read_text(encoding="utf-8"))["tests"]
 
