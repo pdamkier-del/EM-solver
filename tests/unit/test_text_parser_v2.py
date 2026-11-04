@@ -105,3 +105,51 @@ def test_orientation_out_of_page_is_extracted():
 )
 def test_high_value_geometry_phrases(text,expected):
     assert parse(text).geometry==expected
+
+
+def test_finite_line_charge_builds_canonical_curve_fields():
+    p=parse("En endelig linjeladning ligger langs x fra -L til +L med konstant lambda. Find V og E i punktet (0,a,0).")
+    assert p.geometry=="linje"
+    assert p.data["extent"]=="finite"
+    assert p.data["_preset_hint"]=="ev_line"
+    assert p.data["source"]==["u",0,0]
+    assert p.data["bounds"]==["-L","+L"]
+    assert p.data["point"]==["0","a","0"]
+
+
+def test_finite_current_wire_uses_biot_savart_preset():
+    p=parse("En ret endelig leder langs z fra -L til +L fører I. Find B i punktet (a,0,0).")
+    assert p.geometry=="ledning"
+    assert p.data["extent"]=="finite"
+    assert p.data["_preset_hint"]=="ba_line"
+    assert p.data["source"]==[0,0,"u"]
+
+
+def test_circular_current_loop_maps_to_ring_geometry():
+    p=parse("En cirkulær strømloop med radius R fører I. Find B i centrum.")
+    assert p.geometry=="ring"
+    assert p.data["_preset_hint"]=="ba_ring"
+    assert p.data["bounds"]==[0,"2*pi"]
+
+
+def test_rl_and_rc_get_direct_circuit_presets_without_fake_geometry():
+    rl=parse("Et serie-RL-kredsløb med spænding V kobles til ved t=0 med I(0)=0. Find I(t), tidskonstant og slutenergi i spolen.")
+    rc=parse("En kondensator C med initial ladning Q0 aflades gennem R fra t=0. Find Q(t), I(t) og lagret energi.")
+    assert rl.data["_preset_hint"]=="dyn_rl"
+    assert rc.data["_preset_hint"]=="dyn_rc"
+    assert rl.confidence["geometry"]["level"]=="GREEN"
+    assert rc.confidence["source"]["level"]=="GREEN"
+
+
+def test_parallel_plate_time_dependent_E_selects_ampere_maxwell():
+    p=parse("En parallelpladekondensator har cirkulære plader radius R og uniform E(t)=E0*t^2 zhat mellem pladerne. Find B(s,t).")
+    assert p.data["_preset_hint"]=="dyn_capacitor"
+    assert p.data["E"]=="E0*t**2"
+    assert p.data["time"]=="t"
+
+
+def test_current_sheet_vector_is_reduced_to_scalar_sheet_input():
+    p=parse("Et uendeligt strømplan z=0 fører overfladestrøm K=K0 xhat. Find B over og under planet.")
+    assert p.data["_preset_hint"]=="ba_sheet"
+    assert p.data["I"]=="K0"
+    assert p.data["orientation"]["current_axis"]=="+x"
