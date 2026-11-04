@@ -414,7 +414,13 @@ def _orientation(out, text: str):
 
 def _domain(out, source: str | None, wanted: list[str], text: str):
     lower = text.lower()
-    if re.search(
+    if (
+        re.search(r"parallelpladekondensator",lower)
+        and re.search(r"\bE\s*\(\s*t\s*\)",text)
+        and ("B" in wanted or re.search(r"\b(?:find|bestem|beregn)\s+B\s*\(",text,re.I))
+    ):
+        d = "DYN"
+    elif re.search(
         r"faraday|induceret|forskydningsstr[oø]m|amp[eè]re-maxwell|"
         r"rl-kredsl|rc-kredsl|aflades\s+gennem|selvindukt|mutual\s+induct|"
         r"gensidig\s+indukt|magnetisk\s+energi|koaksialkabel|"
@@ -534,7 +540,7 @@ def _preset_hint(out, source: str | None):
         hint = "dyn_capacitor"
     if hint:
         out.data["_preset_hint"] = hint
-        no_geometry={"ev_potential","ev_field","ba_vector_potential","ba_lorentz","ba_dipole","dyn_rl","dyn_rc"}
+        no_geometry={"ev_potential","ev_field","ba_vector_potential","ba_lorentz","ba_dipole","dyn_rl","dyn_rc","dyn_capacitor"}
         no_source={"dyn_rl","dyn_rc","dyn_solenoid","ba_dipole","ev_capacitor"}
         if hint in no_geometry:
             _mark(out,"geometry",GREEN,"geometri er ikke nødvendig for den valgte model")
