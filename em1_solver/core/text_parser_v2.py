@@ -74,37 +74,44 @@ def _warn_once(out, message: str):
 def _geometry_candidate(text: str):
     lower = text.lower()
     patterns = [
-        ("bevægelig stang", GREEN, r"\b(bevaegelig|bevægelig|glidende|roterende)\s+(ledende\s+)?stang\b"),
-        ("toroid", GREEN, r"\btoroid"),
+        ("bevægelig stang", GREEN, r"\b(?:(?:bevaegelig|bevægelig|glidende|roterende)\s+(?:ledende\s+)?stang|(?:metalstang|ledende\s+stang|metal\s+stang).{0,55}(?:frit\s+)?(?:bevaegelig|bevægelig|glider|roterer))\b"),
+        ("toroid", GREEN, r"\b(toroid|toroide)"),
         ("spole", GREEN, r"\b(solenoide|solenoid|spole)\b"),
         ("kugleskal", GREEN, r"\b(kugleskal|sf[aæ]risk\s+skal|spherical\s+shell)\b"),
         ("cylinderskal", GREEN, r"\b(cylinderskal|hul\s+cylinder|hollow\s+cylinder|cylindrisk\s+skal)\b"),
         ("kugle", GREEN, r"\b(kugle|sphere|sf[aæ]re)\b"),
-        ("cylinder", GREEN, r"\b(cylinder|cylindrisk)\b"),
-        ("ring", GREEN, r"\b(ring|cirkul[aæ]r\s+loop|circular\s+loop)\b"),
-        ("bue", GREEN, r"\b(bue|arc)\b"),
+        ("cylinder", GREEN, r"\b(cylinder|cylinderformet|cylindrisk)\b"),
+        ("ring", GREEN, r"\b(ring|cirkul[aæ]r\s+(?:str[oø]m)?loop|circular\s+(?:current\s+)?loop)\b"),
+        ("bue", GREEN, r"\b(bue|cirkelbue|halvcirkel|arc|semicircle)\b"),
         ("disk", GREEN, r"\b(disk|skive)\b"),
-        ("plan", GREEN, r"\b(plan|plade|slab|sheet)\b"),
+        ("plan", GREEN, r"\b(plan|plade|slab|sheet|str[oø]mplan)\b"),
         ("punktladninger", GREEN, r"\bpunktladning(?:er)?\b|\bpoint\s+charge"),
+        ("linje", GREEN, r"\b(linjeladning|line\s+charge|ladet\s+linje)\b"),
+        ("strømloop", YELLOW, r"\b(str[oø]ml[oø]kke|l[oø]kke|sl[oø]jfe|loop)\b"),
         ("ledning", YELLOW, r"\b(ledning|wire|tr[aå]d)\b"),
         ("leder", YELLOW, r"\b(leder|conductor|kondensator|capacitor)\b"),
     ]
     hits = [(g, level, m.start()) for g, level, p in patterns for m in [re.search(p, lower)] if m]
     if not hits:
         return None, None
-    # Specific patterns appear before generic ones. If distinct geometries are
-    # explicitly present, do not silently choose.
     distinct = []
     for g, level, pos in sorted(hits, key=lambda x: x[2]):
         if g not in distinct:
             distinct.append(g)
-    # shell subsumes its base noun; moving rod subsumes generic conductor/wire.
-    filtered = [g for g in distinct if not (
-        (g == "cylinder" and "cylinderskal" in distinct)
-        or (g == "kugle" and "kugleskal" in distinct)
-        or (g in ("ledning", "leder") and "bevægelig stang" in distinct)
-        or (g == "strømloop" and "ring" in distinct)
-    )]
+
+    # More specific geometry wins over generic conductor/wire/loop nouns.
+    specific = [g for g in distinct if g not in ("ledning", "leder", "strømloop")]
+    filtered = []
+    for g in distinct:
+        if g == "cylinder" and "cylinderskal" in distinct:
+            continue
+        if g == "kugle" and "kugleskal" in distinct:
+            continue
+        if g in ("ledning", "leder") and (specific or "bevægelig stang" in distinct):
+            continue
+        if g == "strømloop" and any(x in distinct for x in ("ring", "bue", "bevægelig stang")):
+            continue
+        filtered.append(g)
     if len(filtered) != 1:
         return ("AMBIGUOUS:" + ",".join(filtered)), YELLOW
     g = filtered[0]
@@ -113,31 +120,30 @@ def _geometry_candidate(text: str):
 
 def _extract_wanted(text: str):
     lower = text.lower()
-    # Prefer the actual question clause, but fall back to the full text.
-    parts = re.split(r"\b(?:find|bestem|beregn|udled|vis|determine|calculate|derive)\b", lower, maxsplit=1)
+    verbs = r"(?:find|bestem|beregn|udled|vis|angiv|opskriv|eftervis|fastlæg|fastlaeg|argument[eé]r|determine|calculate|derive|state|show)"
+    parts = re.split(r"\b" + verbs + r"\b", lower, maxsplit=1)
     q = parts[1] if len(parts) > 1 else lower
     wanted = []
     patterns = [
         ("E", r"elektrisk(?:e)?\s+felt|\be\s*\("),
         ("V", r"potential(?:e|et)?|sp[aæ]ndingsforskel"),
         ("rho", r"ladningst[aæ]thed|\brho\b"),
-        ("D", r"forskydningsfelt|electric\s+displacement|\bd\b"),
-        ("P", r"polaris(?:ation|ering)|\bp\b"),
+        ("D", r"forskydningsfelt|electric\s+displacement"),
+        ("P", r"polaris(?:ation|ering)"),
         ("B", r"magnet(?:isk|iske)?\s+felt|magnetfelt|\bb\s*\("),
-        ("Phi", r"magnetisk\s+flux|\bflux\b|\bphi\b"),
+        ("Phi", r"magnetisk\s+flux|\bflux(?:en)?\b"),
         ("EMF", r"elektromotorisk|\bemf\b|induceret\s+sp[aæ]nding"),
-        ("I", r"\bstr[oø]m(?:men)?\b|\bcurrent\b"),
+        ("I", r"\bstr[oø]m(?:men|styrken)?\b|\bcurrent\b"),
         ("F", r"\bkraft(?:en)?\b|\bforce\b"),
-        ("U", r"\benergi(?:en)?\b|\benergy\b"),
+        ("U", r"\b(?:elektrostatisk\s+|magnetisk\s+|potentiel\s+)?energi(?:en)?\b|\benergy\b"),
         ("PWR", r"\beffekt(?:en)?\b|\bpower\b"),
-        ("L", r"\binduktans(?:en)?\b|\binductance\b"),
+        ("L", r"\b(?:selv|gensidig\s+)?induktans(?:en)?\b|\binductance\b"),
         ("C", r"\bkapacitans(?:en)?\b|\bcapacitance\b"),
-        ("torque", r"\bmoment(?:et)?\b|\btorque\b"),
+        ("torque", r"\b(?:drejnings)?moment(?:et)?\b|\btorque\b"),
     ]
     for key, pat in patterns:
         if re.search(pat, q):
             wanted.append(key)
-    # Internal names used by the solver.
     mapping = {"I": "current", "F": "force", "U": "energy", "PWR": "power", "L": "inductance"}
     return list(dict.fromkeys(mapping.get(w, w) for w in wanted))
 
@@ -233,13 +239,12 @@ def _symbolic_sources(out, text: str):
     lower=text.lower()
     if "lambda" not in out.data and re.search(r"\b(?:lambda|linjet[aæ]thed)\b", lower):
         out.data["lambda"]="lambda";out.units.setdefault("lambda","C/m")
-    if "I" not in out.data and re.search(r"\b(?:f[oø]rer|med)\s+(?:str[oø]m(?:men)?\s*)?I\b|\bstr[oø]m(?:men)?\s+I\b", text, re.I):
+    if "I" not in out.data and re.search(r"\b(?:f[oø]rer|med|b[aæ]rer)\s+(?:str[oø]m(?:men)?\s*)?I\b|\bstr[oø]m(?:men)?\s*(?:er|=)?\s*I\b", text, re.I):
         out.data["I"]="I";out.units.setdefault("I","A")
-    if "B" not in out.data and re.search(r"\b(?:uniformt|homogent)?\s*(?:magnetfelt\s*)?B\b", text, re.I):
+    if "B" not in out.data and re.search(r"\b(?:uniformt|homogent)?\s*(?:magnetfelt(?:et)?\s*)?B\b", text, re.I):
         out.data["B"]="B";out.units.setdefault("B","T")
-    if "E" not in out.data and re.search(r"\b(?:uniformt|homogent)?\s*(?:elektrisk\s+felt\s*)?E\b", text, re.I):
+    if "E" not in out.data and re.search(r"\b(?:uniformt|homogent)?\s*(?:elektrisk\s+felt(?:et)?\s*)?E\b", text, re.I):
         out.data["E"]="E";out.units.setdefault("E","V/m")
-
 
 def _special_field_forms(out, text: str):
     """Normalize a few common vector prose forms into the scalar preset inputs."""
