@@ -26,6 +26,8 @@ jobs:
         run: python -m pytest -q tests/unit/test_text_parser_v2.py tests/unit/test_assisted.py
       - name: Core unseen regression smoke
         run: python -m pytest -q tests/unseen/test_new_problems.py
+      - name: Historical parser benchmark
+        run: python tools/evaluate_text_parser.py
 
   streamlit-ui:
     runs-on: ubuntu-latest
