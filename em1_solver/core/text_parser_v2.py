@@ -107,6 +107,8 @@ def _geometry_candidate(text: str):
             continue
         if g == "kugle" and "kugleskal" in distinct:
             continue
+        if g == "leder" and "ledning" in distinct:
+            continue
         if g in ("ledning", "leder") and (specific or "bevægelig stang" in distinct):
             continue
         if g == "strømloop" and any(x in distinct for x in ("ring", "bue", "bevægelig stang")):
