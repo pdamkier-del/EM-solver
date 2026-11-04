@@ -158,9 +158,9 @@ def _extract_wanted(text: str):
     if re.search(r"\b(?:find|bestem|beregn)\s+L(?:\s+pr\.|\b)", text, re.I) and re.search(r"indukt|koaksialkabel|magnetisk\s+energi", lower):
         wanted.append("L")
     if re.search(r"\brho_b\b|bundet\s+volumenladning", lower):
-        wanted.append("rho")
+        wanted.append("rho_bound")
     if re.search(r"\bsigma_b\b|bundet\s+overfladeladning", lower):
-        wanted.append("P")
+        wanted.append("sigma_bound")
     mapping = {"I": "current", "F": "force", "U": "energy", "PWR": "power", "L": "inductance"}
     return list(dict.fromkeys(mapping.get(w, w) for w in wanted))
 
@@ -489,7 +489,7 @@ def _preset_hint(out, source: str | None):
         hint = "ev_potential"
     elif source == "E" and d.get("_domain_hint") == "EV" and _cartesian_field_ready(out,"E"):
         hint = "ev_field"
-    elif source == "P":
+    elif source == "P" and _cartesian_field_ready(out,"P"):
         hint = "ev_polarization"
     elif source == "A" and _cartesian_field_ready(out,"A"):
         hint = "ba_vector_potential"
