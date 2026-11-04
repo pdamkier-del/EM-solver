@@ -24,7 +24,7 @@ _GREEK = {
     "δ": "delta", "Δ": "Delta",
     "θ": "theta", "Θ": "Theta",
     "φ": "phi", "ϕ": "phi", "Φ": "Phi",
-    "ω": "omega", "Ω": "ohm",
+    "ω": "omega", "Ω": "ohm", "Ω": "ohm",
 }
 
 def normalize_text(text: str) -> str:
@@ -38,12 +38,17 @@ def normalize_text(text: str) -> str:
            .replace("⁶", "**6").replace("⁷", "**7").replace("⁸", "**8")
            .replace("⁹", "**9"))
     s = s.replace("−", "-").replace("–", "-").replace("—", "-")
+    s = re.sub(r"(\d+(?:[.,]\d+)?)\s*[×⋅·]\s*10\s*\^?\s*([+-]?\d+)", r"\1e\2", s)
     s = s.replace("·", "*").replace("×", "*").replace("⋅", "*")
     # Decimal comma only when it is between digits.
     s = re.sub(r"(?<=\d),(?=\d)", ".", s)
     # Micro-prefix in a numeric unit context. Keep standalone Greek mu as mu.
     s = re.sub(r"(?<=\d)\s*[µμ](?=[A-Za-z])", " u", s)
+    # A Greek coefficient directly followed by a coordinate means multiplication
+    # in the exam notation, e.g. alpha*s^2 or omega*t. Digits remain subscripts:
+    # rho0 and mu0 must not become products.
     for greek, ascii_name in _GREEK.items():
+        s = re.sub(re.escape(greek) + r"(?=[rsxyztu])", ascii_name + "*", s)
         s = s.replace(greek, ascii_name)
     # Common vector hats used in copied PDF text.
     s = re.sub(r"\b([xyzrs])\s*\^?\s*hat\b", r"\1hat", s, flags=re.I)
@@ -137,7 +142,10 @@ def _extract_wanted(text: str):
     return list(dict.fromkeys(mapping.get(w, w) for w in wanted))
 
 def _source_type(data: dict, text: str):
+    resistivity_rho = bool(re.search(r"resistivit(?:et|y).{0,40}\brho\b|\brho\b.{0,40}resistivit", text, re.I))
     for key in ("rho", "sigma", "lambda", "J", "A", "V", "E", "B", "P", "M", "I", "q"):
+        if key == "rho" and resistivity_rho:
+            continue
         if key in data:
             return key, GREEN
     lower = text.lower()
@@ -155,6 +163,42 @@ def _source_type(data: dict, text: str):
         if re.search(pat, lower):
             return source, YELLOW
     return None, None
+
+def _quantities(out, text: str):
+    """Extract explicit scalar numerical assignments from prose, never inferred values."""
+    from .units import si
+    # Units deliberately limited to common EM1 scalar inputs. Compound densities
+    # normally appear in explicit source functions and are handled elsewhere.
+    unit_pat = (
+        r"(?:mm|cm|km|m|ns|us|ms|s|Hz|kHz|MHz|GHz|"
+        r"uC|nC|pC|mC|C|uA|mA|kA|A|uV|mV|kV|V|"
+        r"uT|mT|T|uohm|mohm|kohm|Mohm|ohm|"
+        r"pF|nF|uF|mF|F|uH|mH|H|mW|kW|W|mJ|kJ|J)"
+    )
+    pattern = re.compile(
+        rf"(?<![A-Za-z0-9_])([A-Za-z_]\w*)\s*=\s*"
+        rf"([-+]?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?)\s*({unit_pat})(?![A-Za-z])"
+    )
+    for m in pattern.finditer(text):
+        name, number, unit = m.groups()
+        raw = f"{number} {unit}"
+        try:
+            quantity = si(raw)
+        except Exception:
+            continue
+        out.quantities[name] = raw
+        out.units[name] = str(quantity.units)
+        out.data.setdefault(name, name)
+        _mark(out, "quantities", GREEN, "eksplicitte tal med enheder udtrukket")
+
+    # Counts such as N=2180 vindinger are dimensionless.
+    for m in re.finditer(r"(?<![A-Za-z0-9_])([A-Za-z_]\w*)\s*=\s*(\d+)\s+(?:vindinger|turns)\b", text, re.I):
+        name, number = m.groups()
+        out.quantities[name] = number
+        out.units[name] = "1"
+        out.data.setdefault(name, name)
+        _mark(out, "quantities", GREEN, "eksplicit dimensionløst antal udtrukket")
+
 
 def _extent(out, text: str):
     lower = text.lower()
@@ -306,6 +350,7 @@ def enrich_v2(out, extract_wanted: bool = True):
             _warn_once(out, f"Geometri er tvetydig: parseren har både {out.geometry} og {candidate}.")
 
     _extent(out, text)
+    _quantities(out, text)
 
     if extract_wanted:
         wanted = _extract_wanted(text)
