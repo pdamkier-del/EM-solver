@@ -7,14 +7,14 @@ def test_new_problem_confirmation_and_local_exports():
     next(x for x in app.text_area if x.key=='exam_text').set_value(source)
     next(x for x in app.button if x.label=='Analysér opgave').click().run()
     assert not app.exception
-    assert next(x for x in app.button if x.label=='Løs opgave').disabled
+    assert next(x for x in app.button if x.label=='LØS OPGAVE').disabled
     next(x for x in app.checkbox if x.key=='af_confirm').check().run()
-    next(x for x in app.button if x.label=='Løs opgave').click().run()
+    next(x for x in app.button if x.label=='LØS OPGAVE').click().run()
     assert not app.exception and not app.error
     assert any(x.value=='Resultat' for x in app.subheader)
     next(x for x in app.text_area if x.key=='exam_text').set_value(source+' Ny oplysning.').run()
     assert not any(x.value=='Resultat' for x in app.subheader)
-    assert next(x for x in app.button if x.label=='Løs opgave').disabled
+    assert next(x for x in app.button if x.label=='LØS OPGAVE').disabled
 
 
 def test_manual_structuring_preserves_problem_and_region_builder():
@@ -36,13 +36,13 @@ def test_autosave_restore_in_fresh_app_session():
     next(x for x in app.text_area if x.key=='exam_text').set_value(source)
     next(x for x in app.button if x.label=='Analysér opgave').click().run()
     next(x for x in app.checkbox if x.key=='af_confirm').check().run()
-    next(x for x in app.button if x.label=='Løs opgave').click().run()
+    next(x for x in app.button if x.label=='LØS OPGAVE').click().run()
     assert not app.error and not app.exception
     fresh=AppTest.from_file('app.py',default_timeout=40).run()
     next(x for x in fresh.button if x.label=='Gendan opgave').click().run()
     assert not fresh.exception
     assert next(x for x in fresh.text_area if x.key=='exam_text').value==source
-    assert next(x for x in fresh.button if x.label=='Løs opgave').disabled
+    assert next(x for x in fresh.button if x.label=='LØS OPGAVE').disabled
     assert any('Senest gemte løsning' in x.label for x in fresh.text_area)
 
 
@@ -55,7 +55,7 @@ def test_ba_and_dyn_text_confirmation_paths():
         assert not app.exception
         assert next(x for x in app.selectbox if x.key=='af_preset').value==preset
         next(x for x in app.checkbox if x.key=='af_confirm').check().run()
-        next(x for x in app.button if x.label=='Løs opgave').click().run()
+        next(x for x in app.button if x.label=='LØS OPGAVE').click().run()
         assert not app.exception and not app.error
         assert any(x.value=='Resultat' for x in app.subheader)
 
