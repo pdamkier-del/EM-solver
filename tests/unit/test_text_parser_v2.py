@@ -164,3 +164,27 @@ def test_spherical_potential_does_not_use_cartesian_preset_silently():
 def test_cylindrical_vector_potential_does_not_use_cartesian_preset_silently():
     p=parse("I cylindriske koordinater er A(s)=A0*s**2 phihat. Bestem B.")
     assert p.data.get("_preset_hint")!="ba_vector_potential"
+
+
+@pytest.mark.parametrize("text,domain",[
+    ("En parallelpladekondensator med areal A og afstand d er fyldt side om side med eps1 og eps2 over hver A/2. Find C.","EV"),
+    ("En parallelpladekondensator har to dielektriske lag i feltretningen: tykkelser d1,d2 og permittiviteter eps1,eps2. Find C.","EV"),
+    ("En uendelig cylinder r<R har P=k*s shat og P=0 udenfor. Find rho_b, sigma_b og total bundet ladning pr. længde.","EV"),
+    ("En punktladning q er i afstand d fra et jordet uendeligt lederplan. Find kraften og den elektrostatiske energi.","EV"),
+    ("Et ideelt langt koaksialkabel har indre radius a og returleder ved b. Mellem lederne B=mu0*I/(2*pi*s). Find L pr. længde og magnetisk energi pr. længde.","DYN"),
+    ("En 1D leder med længde L og areal A har sigma(x)=sigma0(1+x/L). Stationær strøm I løber i +x. Find R,E(x),rho(x).","DYN"),
+    ("En kondensator C med initial ladning Q0 aflades gennem R fra t=0. Find Q(t), I(t) og lagret energi.","DYN"),
+    ("Et uniformt B(t) findes kun inde i en lang cylindrisk region s<R. Find det inducerede E_phi(s) for s<R og s>R.","DYN"),
+])
+def test_blind_domain_miss_patterns_are_classified_conservatively(text,domain):
+    p=parse(text)
+    assert p.data.get("_domain_hint")==domain
+
+
+def test_complex_dielectric_and_image_cases_do_not_get_false_simple_presets():
+    side=parse("En parallelpladekondensator er fyldt side om side med eps1 og eps2. Find C.")
+    image=parse("En punktladning q er i afstand d fra et jordet uendeligt lederplan. Find kraften og den elektrostatiske energi.")
+    radial_p=parse("En uendelig cylinder r<R har P=k*s shat og P=0 udenfor. Find rho_b og sigma_b.")
+    assert side.data.get("_preset_hint")!="ev_capacitor"
+    assert image.data.get("_preset_hint") is None
+    assert radial_p.data.get("_preset_hint")!="ev_polarization"
