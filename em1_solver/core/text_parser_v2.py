@@ -40,8 +40,12 @@ def normalize_text(text: str) -> str:
     s = s.replace("−", "-").replace("–", "-").replace("—", "-")
     s = re.sub(r"(\d+(?:[.,]\d+)?)\s*[×⋅·]\s*10\s*\^?\s*([+-]?\d+)", r"\1e\2", s)
     s = s.replace("·", "*").replace("×", "*").replace("⋅", "*")
+    # Plain caret is exponent notation in copied EM1 mathematics.
+    s = re.sub(r"(?<!\*)\^(?!\*)", "**", s)
     # Decimal comma only when it is between digits.
     s = re.sub(r"(?<=\d),(?=\d)", ".", s)
+    # Ohm must be normalized before the micro-prefix: µΩ -> uohm.
+    s = s.replace("Ω", "ohm").replace("Ω", "ohm")
     # Micro-prefix in a numeric unit context. Keep standalone Greek mu as mu.
     s = re.sub(r"(?<=\d)\s*[µμ](?=[A-Za-z])", " u", s)
     # A Greek coefficient directly followed by a coordinate means multiplication
@@ -88,7 +92,7 @@ def _geometry_candidate(text: str):
         ("punktladninger", GREEN, r"\bpunktladning(?:er)?\b|\bpoint\s+charge"),
         ("linje", GREEN, r"\b(linjeladning|line\s+charge|ladet\s+linje)\b"),
         ("strømloop", YELLOW, r"\b(str[oø]ml[oø]kke|l[oø]kke|sl[oø]jfe|loop)\b"),
-        ("ledning", YELLOW, r"\b(ledning|wire|tr[aå]d)\b"),
+        ("ledning", YELLOW, r"\b(ledning|wire|tr[aå]d|ret\s+(?:endelig\s+)?leder|lige\s+leder)\b"),
         ("leder", YELLOW, r"\b(leder|conductor|kondensator|capacitor)\b"),
     ]
     hits = [(g, level, m.start()) for g, level, p in patterns for m in [re.search(p, lower)] if m]
