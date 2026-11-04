@@ -153,3 +153,14 @@ def test_current_sheet_vector_is_reduced_to_scalar_sheet_input():
     assert p.data["_preset_hint"]=="ba_sheet"
     assert p.data["I"]=="K0"
     assert p.data["orientation"]["current_axis"]=="+x"
+
+
+def test_spherical_potential_does_not_use_cartesian_preset_silently():
+    p=parse("I et sfærisk område er potentialet V(r)=-a*log(r/R). Bestem E(r).")
+    assert p.data.get("_preset_hint")!="ev_potential"
+    assert p.confidence.get("coordinate_system",{}).get("level")=="YELLOW"
+
+
+def test_cylindrical_vector_potential_does_not_use_cartesian_preset_silently():
+    p=parse("I cylindriske koordinater er A(s)=A0*s**2 phihat. Bestem B.")
+    assert p.data.get("_preset_hint")!="ba_vector_potential"
