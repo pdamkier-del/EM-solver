@@ -21,8 +21,37 @@ def test_unicode_math_and_danish_cylinder_are_normalized_and_structured():
 
 def test_superscript_and_decimal_comma_normalization():
     text=normalize_text("ρ(s)=αs², q=2,5 µC")
-    assert "rho(s)=alphas**2" in text.replace(" ","")
+    assert "rho(s)=alpha*s**2" in text.replace(" ","")
     assert "2.5 uC" in text
+
+
+def test_explicit_numeric_quantities_from_exam_prose():
+    p=parse("En solenoide har N = 2180 vindinger, radius r = 3,00 m og strøm I = 18,2 kA. Bestem B.")
+    assert p.quantities["N"]=="2180"
+    assert p.quantities["r"]=="3.00 m"
+    assert p.quantities["I"]=="18.2 kA"
+    assert p.wanted==["B"]
+
+
+def test_micro_ohm_and_scientific_notation_normalization():
+    text=normalize_text("R = 75 µΩ og rho = 2,8 × 10−8 Ω*m")
+    assert "75 uohm" in text
+    assert "2.8e-8 ohm*m" in text.replace(" ","")
+
+
+def test_historical_wording_infinite_cylinderformet_is_understood():
+    p=parse("En uendelig lang cylinderformet leder med radius R bærer en konstant strømtæthed J(s)=J0. Bestem magnetfeltets størrelse og retning.")
+    assert p.geometry=="cylinder"
+    assert p.data["extent"]=="infinite"
+    assert p.data["_source_hint"]=="J"
+    assert p.data["_preset_hint"]=="ba_cylinder"
+    assert p.wanted==["B"]
+
+
+def test_historical_moving_rod_word_order_is_understood():
+    p=parse("En metalstang er frit bevægelig langs skinnerne i et homogent magnetfelt B. Bestem den inducerede strøm.")
+    assert p.geometry=="bevægelig stang"
+    assert p.confidence["geometry"]["level"]=="GREEN"
 
 
 def test_hollow_cylinder_interval_becomes_source_region():
