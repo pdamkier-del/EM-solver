@@ -241,6 +241,27 @@ def _symbolic_sources(out, text: str):
         out.data["E"]="E";out.units.setdefault("E","V/m")
 
 
+def _special_field_forms(out, text: str):
+    """Normalize a few common vector prose forms into the scalar preset inputs."""
+    # Parallel-plate displacement-current problems use an axial E(t).
+    m=re.search(r"\bE\s*\(\s*t\s*\)\s*=\s*(.+?)\s+([xyz])hat\b", text, re.I)
+    if m:
+        coefficient=m.group(1).strip().rstrip(".,;")
+        out.data["E"]=coefficient
+        out.data["time"]="t";out.units.setdefault("t","s")
+        out.data.setdefault("orientation",{})["field_axis"]="+"+m.group(2).lower()
+        _mark(out,"time_dependence",GREEN,"E(t) står eksplicit")
+
+    # Current-sheet notation K=K0 xhat maps to the sheet preset's scalar input.
+    m=re.search(r"\bK\s*=\s*([A-Za-z_]\w*)\s+([xyz])hat\b", text, re.I)
+    if m:
+        magnitude,axis=m.groups()
+        out.data["I"]=magnitude
+        out.units.setdefault(magnitude,"A/m")
+        out.data.setdefault("orientation",{})["current_axis"]="+"+axis.lower()
+        _mark(out,"source",GREEN,"overfladestrøm K står eksplicit")
+
+
 def _standard_curve(out, text: str, source: str | None):
     """Construct canonical line/ring/arc parameterizations only from explicit geometry."""
     g=out.geometry;d=out.data
@@ -390,6 +411,8 @@ def _preset_hint(out, source: str | None):
         hint="ba_dipole"
     elif re.search(r"str[oø]mplan|overfladestr[oø]m",lower):
         hint="ba_sheet"
+    elif re.search(r"parallelplade",lower) and not re.search(r"side\s+om\s+side|to\s+dielektriske|dielektriske\s+lag",lower):
+        hint="ev_capacitor"
     elif source == "rho":
         hint = {
             "kugle": "ev_sphere", "kugleskal": "ev_shell",
@@ -422,6 +445,12 @@ def _preset_hint(out, source: str | None):
         hint = "dyn_capacitor"
     if hint:
         out.data["_preset_hint"] = hint
+        no_geometry={"ev_potential","ev_field","ba_vector_potential","ba_lorentz","ba_dipole","dyn_rl","dyn_rc"}
+        no_source={"dyn_rl","dyn_rc","dyn_solenoid","ba_dipole","ev_capacitor"}
+        if hint in no_geometry:
+            _mark(out,"geometry",GREEN,"geometri er ikke nødvendig for den valgte model")
+        if hint in no_source and not source:
+            _mark(out,"source",GREEN,"ingen separat kildetype kræves for den valgte model")
         geo_level = getattr(out, "confidence", {}).get("geometry", {}).get("level", YELLOW)
         source_level = getattr(out, "confidence", {}).get("source", {}).get("level", YELLOW)
         _mark(out, "preset", GREEN if geo_level == GREEN and source_level == GREEN else YELLOW, hint)
@@ -445,6 +474,7 @@ def enrich_v2(out, extract_wanted: bool = True):
     _quantities(out, text)
     _named_symbols(out, text)
     _symbolic_sources(out, text)
+    _special_field_forms(out, text)
 
     if extract_wanted:
         wanted = _extract_wanted(text)
@@ -469,9 +499,9 @@ def enrich_v2(out, extract_wanted: bool = True):
     _preset_hint(out, source)
 
     # Missing critical fields are explicit uncertainty, not an implicit pass.
-    if out.geometry == "Ukendt":
+    if out.geometry == "Ukendt" and getattr(out,"confidence",{}).get("geometry",{}).get("level")!="GREEN":
         _mark(out, "geometry", RED, "ingen sikker geometri fundet")
-    if not source:
+    if not source and getattr(out,"confidence",{}).get("source",{}).get("level")!="GREEN":
         _mark(out, "source", RED, "ingen sikker kildetype fundet")
     if not out.wanted:
         _mark(out, "wanted", RED, "ingen søgt størrelse fundet")
