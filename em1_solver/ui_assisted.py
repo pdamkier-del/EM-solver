@@ -130,84 +130,91 @@ def assisted_mode(mode,manual=False):
         if data_view.get('_preset_hint'):parts.append('model: **'+str(data_view['_preset_hint'])+'**')
         if parts:
             st.markdown('Automatisk fortolkning · '+' · '.join(parts))
-        uncertain=[name for name,meta in confidence.items() if meta.get('level')!='GREEN']
+        critical_names={'domain','geometry','source','wanted','extent','regions','orientation','symmetry','preset','coordinate_system'}
+        uncertain=[name for name,meta in confidence.items() if name in critical_names and meta.get('level')!='GREEN']
+        st.session_state['af_uncertain_fields']=uncertain
         if uncertain:
-            st.warning('Kontrollér kun de usikre punkter først: '+', '.join(uncertain))
+            labels={'domain':'område','geometry':'geometri','source':'kilde','wanted':'hvad der søges',
+                    'extent':'endelig/uendelig','regions':'regioner','orientation':'retning/orientering',
+                    'symmetry':'symmetri','preset':'løsningsmodel','coordinate_system':'koordinatsystem'}
+            st.warning('Programmet er usikkert på: **'+', '.join(labels.get(x,x) for x in uncertain)+'**. Ret kun disse punkter nedenfor.')
         elif confidence:
-            st.success('Tekstfortolkningen har ingen markerede kritiske tvivlspunkter. Kontrollér stadig resultatets fysik før brug.')
+            st.success('Fortolkning klar — ingen kritiske parser-usikkerheder. Åbn kun de tekniske detaljer, hvis oversigten ser forkert ud.')
 
     source_changed=not manual and st.session_state.get('af_analyzed_text')!=(original,known)
     if source_changed:st.warning('Teksten er ændret. Analysér igen; den tidligere løsning er skjult.')
-    st.subheader('Bekræft problem')
-    st.caption('Preset er en synlig, redigerbar model. Bekræft at den matcher opgaven; formularen må ikke erstatte din fysiske vurdering.')
+    st.subheader('Kontrollér fortolkningen')
+    st.caption('Hvis oversigten ovenfor passer til opgaven, behøver du normalt ikke ændre de tekniske felter.')
     for note in st.session_state.get('af_parsed',{}).get('warnings',[]):st.caption('Kontrollér: '+note)
-    columns=st.columns([1,2,1])
-    domain=columns[0].selectbox('Område',['EV','BA','DYN'],key='af_domain',on_change=change_domain)
-    keys=[k for k,p in P.items() if p.domain==domain]
-    key=columns[1].selectbox('Geometri / preset',keys,format_func=lambda k:P[k].label,key='af_preset',on_change=change_preset)
-    preset=P[key]
-    source=columns[2].selectbox('Kilde',['q','lambda','sigma','rho','E','V','I','J','B','A','P','M'],key='af_source_type',on_change=dirty)
-    method=st.selectbox('Metode',[preset.family]+[f for f in WANTS if f!=preset.family],key='af_method',on_change=dirty)
-    fields={}
-    # Related scalar inputs share rows. Source function occupies the full width.
-    dipole_vector=key=='ba_dipole' and st.selectbox('Dipolform',['Størrelse + vinkel','Vektorer'],key='af_dipole_form')=='Vektorer'
-    for field in preset.fields:
+    needs_review=manual or bool(st.session_state.get('af_uncertain_fields',[]))
+    with st.expander('Ret fortolkning / tekniske detaljer',expanded=needs_review):
+        columns=st.columns([1,2,1])
+        domain=columns[0].selectbox('Område',['EV','BA','DYN'],key='af_domain',on_change=change_domain)
+        keys=[k for k,p in P.items() if p.domain==domain]
+        key=columns[1].selectbox('Geometri / preset',keys,format_func=lambda k:P[k].label,key='af_preset',on_change=change_preset)
+        preset=P[key]
+        source=columns[2].selectbox('Kilde',['q','lambda','sigma','rho','E','V','I','J','B','A','P','M'],key='af_source_type',on_change=dirty)
+        method=st.selectbox('Metode',[preset.family]+[f for f in WANTS if f!=preset.family],key='af_method',on_change=dirty)
+        fields={}
+        # Related scalar inputs share rows. Source function occupies the full width.
+        dipole_vector=key=='ba_dipole' and st.selectbox('Dipolform',['Størrelse + vinkel','Vektorer'],key='af_dipole_form')=='Vektorer'
+        for field in preset.fields:
+            if dipole_vector:
+                fields[field.key]=field.default
+                continue
+            label=field.label+(' ['+field.unit+']' if field.unit!='1' else '')
+            fields[field.key]=st.text_input(label,key='af_'+field.key,on_change=dirty)
         if dipole_vector:
-            fields[field.key]=field.default
-            continue
-        label=field.label+(' ['+field.unit+']' if field.unit!='1' else '')
-        fields[field.key]=st.text_input(label,key='af_'+field.key,on_change=dirty)
-    if dipole_vector:
-        fields['moment_vector']=st.text_input('Dipolmoment (mx,my,mz) [A*m²]',value='[m0,0,0]',key='af_m_vector',on_change=dirty)
-        fields['B_vector']=st.text_input('Magnetfelt (Bx,By,Bz) [T]',value='[0,0,B0]',key='af_B_vector',on_change=dirty)
-    charges=None
-    if key=='ev_points':
-        import pandas as pd
-        table=st.data_editor(pd.DataFrame(st.session_state.get('af_charge_records',[dict(q='q',x='0',y='0',z='0')])),num_rows='dynamic',key='af_charges',hide_index=True,on_change=dirty)
-        charges=[[str(row.q),[str(row.x),str(row.y),str(row.z)]] for row in table.itertuples()]
-    regions=[]
-    if preset.regions:
-        st.markdown('**Regioner** — kilde/materiale; tomrum udenfor udfyldes af solveren. `@source` bruger kildefunktionen ovenfor.')
-        c1,c2=st.columns(2)
-        if c1.button('Tilføj region'):
-            i=st.session_state['af_region_count'];previous_upper=st.session_state.get(f'af_region_{i-1}_upper','0')
-            for name,value in dict(lower=previous_upper,upper='R+h',density='@source',permittivity='epsilon_0').items():st.session_state[f'af_region_{i}_{name}']=value
-            st.session_state['af_region_count']=i+1;dirty();st.rerun()
-        if c2.button('Fjern sidste region',disabled=st.session_state['af_region_count']==0):st.session_state['af_region_count']-=1;dirty();st.rerun()
-        for i in range(st.session_state['af_region_count']):
-            cols=st.columns(4);row={}
-            for col,name,label in zip(cols,['lower','upper','density','permittivity'],['Fra','Til','Tæthed','Permittivitet']):row[name]=col.text_input(f'{label} – region {i+1}',key=f'af_region_{i}_{name}',on_change=dirty)
-            regions.append(row)
-    wanted=st.multiselect('Søges',WANTS[preset.family],key='af_wanted',on_change=dirty)
-    if key=='ev_capacitor' and set(wanted)&{'V','U'}:fields['charge']=st.text_input('Given ladning [C]',value='Q',key='af_charge',on_change=dirty)
-    if key=='ev_points' and 'F' in wanted:fields['test_charge']=st.text_input('Testladning [C]',value='q_test',key='af_test_charge',on_change=dirty)
-    if key in ('dyn_fixed','dyn_moving') and 'W' in wanted:
-        fields['time_start']=st.text_input('Starttid [s]',value='0',key='af_time_start',on_change=dirty)
-        fields['time_end']=st.text_input('Sluttid [s] (efter start)',value='T',key='af_time_end',on_change=dirty)
-    orientation=ORIENT.copy()
-    with st.expander('Orientering og fortegn',expanded=True):
-        if key in ('ev_line','ev_ring','ev_arc','ba_line','ba_ring','ba_arc','ev_infinite_line','dyn_fixed','dyn_moving','ba_sheet','ev_plane','ev_slab'):
-            orientation['plane']=st.selectbox('Plan',['xy','yz','zx'],key='af_plane',on_change=dirty)
-            orientation['normal']=st.selectbox('Normal',list(AXES),index=4,key='af_normal',on_change=dirty)
-        if key in ('ba_line','ba_ring','ba_arc'):
-            orientation['current']=st.selectbox('Positiv strøm langs kurven',['+parameter','-parameter'],key='af_curve_current',on_change=dirty)
-            st.caption('Kurvens voksende parameter bestemmer den positive strømretning.')
-        if key=='ba_sheet':orientation['current']=st.selectbox('Strømretning',list(AXES),key='af_current',on_change=dirty)
-        if key in ('dyn_fixed','dyn_moving','dyn_sliding','dyn_rotating','ba_lorentz'):orientation['B']=st.selectbox('B-retning',list(AXES),index=4,key='af_B_axis',on_change=dirty)
-        if key in ('dyn_sliding','ba_lorentz'):orientation['velocity']=st.selectbox('Hastighedsretning',list(AXES),key='af_v_axis',on_change=dirty)
-        if key=='ba_lorentz':orientation['E']=st.selectbox('E-retning',list(AXES),key='af_E_axis',on_change=dirty)
-        if key=='ba_dipole':st.caption('Theta måles fra B mod m; torque_theta er positiv mod voksende theta. Vektormoment vises med højrehåndsreglen.')
-        if key=='dyn_rotating':st.caption('Stang langs +x; rotation om +z. Lokal hastighed er +y gange omega·afstand.')
-        if preset.family in ('gauss_radial','ampere'):
-            st.caption('EV: positiv radial/normal afstand og modsat retning på modsatte side af et plan. BA: aksial strøm +z giver B i +phi. Negative kildefunktioner vender retningen.')
-        if key=='ba_material':st.caption('Aksial magnetisering +z; normal på cylinderfladen +s. Funktionen kan have negativt fortegn.')
-    assumptions=st.multiselect('Bekræft fysiske vilkår',list(dict.fromkeys([*preset.assumptions,'linear_isotropic_dielectric','off_source'])),key='af_assumptions',on_change=dirty)
-    with st.expander('Tal, enheder og avanceret kontrol',expanded=False):
-        numbers=st.text_area('Numeriske værdier med enheder',value='{}',key='af_numbers',on_change=dirty)
-        units=st.text_area('Ekstra/ændrede symbolenheder',value='{}',key='af_units',on_change=dirty)
-        st.caption('Alle viste enheder og antagelser er en del af den bekræftede model. Brug radius R og modstand Z i samme problem.')
-    evaluate=st.checkbox('Evaluér kurveintegraler analytisk (med tidsgrænse)',value=False)
-    confirmed=st.checkbox('Jeg har verificeret geometri, kilder, enheder, retning og antagelser',key='af_confirm',on_change=dirty)
+            fields['moment_vector']=st.text_input('Dipolmoment (mx,my,mz) [A*m²]',value='[m0,0,0]',key='af_m_vector',on_change=dirty)
+            fields['B_vector']=st.text_input('Magnetfelt (Bx,By,Bz) [T]',value='[0,0,B0]',key='af_B_vector',on_change=dirty)
+        charges=None
+        if key=='ev_points':
+            import pandas as pd
+            table=st.data_editor(pd.DataFrame(st.session_state.get('af_charge_records',[dict(q='q',x='0',y='0',z='0')])),num_rows='dynamic',key='af_charges',hide_index=True,on_change=dirty)
+            charges=[[str(row.q),[str(row.x),str(row.y),str(row.z)]] for row in table.itertuples()]
+        regions=[]
+        if preset.regions:
+            st.markdown('**Regioner** — kilde/materiale; tomrum udenfor udfyldes af solveren. `@source` bruger kildefunktionen ovenfor.')
+            c1,c2=st.columns(2)
+            if c1.button('Tilføj region'):
+                i=st.session_state['af_region_count'];previous_upper=st.session_state.get(f'af_region_{i-1}_upper','0')
+                for name,value in dict(lower=previous_upper,upper='R+h',density='@source',permittivity='epsilon_0').items():st.session_state[f'af_region_{i}_{name}']=value
+                st.session_state['af_region_count']=i+1;dirty();st.rerun()
+            if c2.button('Fjern sidste region',disabled=st.session_state['af_region_count']==0):st.session_state['af_region_count']-=1;dirty();st.rerun()
+            for i in range(st.session_state['af_region_count']):
+                cols=st.columns(4);row={}
+                for col,name,label in zip(cols,['lower','upper','density','permittivity'],['Fra','Til','Tæthed','Permittivitet']):row[name]=col.text_input(f'{label} – region {i+1}',key=f'af_region_{i}_{name}',on_change=dirty)
+                regions.append(row)
+        wanted=st.multiselect('Søges',WANTS[preset.family],key='af_wanted',on_change=dirty)
+        if key=='ev_capacitor' and set(wanted)&{'V','U'}:fields['charge']=st.text_input('Given ladning [C]',value='Q',key='af_charge',on_change=dirty)
+        if key=='ev_points' and 'F' in wanted:fields['test_charge']=st.text_input('Testladning [C]',value='q_test',key='af_test_charge',on_change=dirty)
+        if key in ('dyn_fixed','dyn_moving') and 'W' in wanted:
+            fields['time_start']=st.text_input('Starttid [s]',value='0',key='af_time_start',on_change=dirty)
+            fields['time_end']=st.text_input('Sluttid [s] (efter start)',value='T',key='af_time_end',on_change=dirty)
+        orientation=ORIENT.copy()
+        with st.expander('Orientering og fortegn',expanded=True):
+            if key in ('ev_line','ev_ring','ev_arc','ba_line','ba_ring','ba_arc','ev_infinite_line','dyn_fixed','dyn_moving','ba_sheet','ev_plane','ev_slab'):
+                orientation['plane']=st.selectbox('Plan',['xy','yz','zx'],key='af_plane',on_change=dirty)
+                orientation['normal']=st.selectbox('Normal',list(AXES),index=4,key='af_normal',on_change=dirty)
+            if key in ('ba_line','ba_ring','ba_arc'):
+                orientation['current']=st.selectbox('Positiv strøm langs kurven',['+parameter','-parameter'],key='af_curve_current',on_change=dirty)
+                st.caption('Kurvens voksende parameter bestemmer den positive strømretning.')
+            if key=='ba_sheet':orientation['current']=st.selectbox('Strømretning',list(AXES),key='af_current',on_change=dirty)
+            if key in ('dyn_fixed','dyn_moving','dyn_sliding','dyn_rotating','ba_lorentz'):orientation['B']=st.selectbox('B-retning',list(AXES),index=4,key='af_B_axis',on_change=dirty)
+            if key in ('dyn_sliding','ba_lorentz'):orientation['velocity']=st.selectbox('Hastighedsretning',list(AXES),key='af_v_axis',on_change=dirty)
+            if key=='ba_lorentz':orientation['E']=st.selectbox('E-retning',list(AXES),key='af_E_axis',on_change=dirty)
+            if key=='ba_dipole':st.caption('Theta måles fra B mod m; torque_theta er positiv mod voksende theta. Vektormoment vises med højrehåndsreglen.')
+            if key=='dyn_rotating':st.caption('Stang langs +x; rotation om +z. Lokal hastighed er +y gange omega·afstand.')
+            if preset.family in ('gauss_radial','ampere'):
+                st.caption('EV: positiv radial/normal afstand og modsat retning på modsatte side af et plan. BA: aksial strøm +z giver B i +phi. Negative kildefunktioner vender retningen.')
+            if key=='ba_material':st.caption('Aksial magnetisering +z; normal på cylinderfladen +s. Funktionen kan have negativt fortegn.')
+        assumptions=st.multiselect('Bekræft fysiske vilkår',list(dict.fromkeys([*preset.assumptions,'linear_isotropic_dielectric','off_source'])),key='af_assumptions',on_change=dirty)
+        with st.expander('Tal, enheder og avanceret kontrol',expanded=False):
+            numbers=st.text_area('Numeriske værdier med enheder',value='{}',key='af_numbers',on_change=dirty)
+            units=st.text_area('Ekstra/ændrede symbolenheder',value='{}',key='af_units',on_change=dirty)
+            st.caption('Alle viste enheder og antagelser er en del af den bekræftede model. Brug radius R og modstand Z i samme problem.')
+        evaluate=st.checkbox('Evaluér kurveintegraler analytisk (med tidsgrænse)',value=False)
+    confirmed=st.checkbox('Fortolkningen ovenfor matcher opgaven',key='af_confirm',on_change=dirty)
     payload=dict(original=original,known=known,preset=key,values=fields,regions=regions,wanted=wanted,orientation=orientation,assumptions=assumptions,numbers=numbers,units=units,method=method,charges=charges)
     draft_signature=json.dumps(payload,sort_keys=True,ensure_ascii=False)
     if st.session_state.get('af_dirty') and st.session_state.get('af_last_draft')!=draft_signature:
@@ -225,7 +232,7 @@ def assisted_mode(mode,manual=False):
     if parsed:
         signature=json.dumps(payload,sort_keys=True,ensure_ascii=False)
     else:signature=None
-    if st.button('Løs opgave',disabled=parsed is None or not confirmed or source_changed) and parsed is not None and confirmed and not source_changed:
+    if st.button('LØS OPGAVE',type='primary',disabled=parsed is None or not confirmed or source_changed) and parsed is not None and confirmed and not source_changed:
         st.session_state.pop('af_answer',None)
         try:
             with st.spinner('Beregner lokalt …'):answer=run_confirmed(parsed,evaluate)
