@@ -36,7 +36,7 @@ def test_explicit_numeric_quantities_from_exam_prose():
 def test_micro_ohm_and_scientific_notation_normalization():
     text=normalize_text("R = 75 µΩ og rho = 2,8 × 10−8 Ω*m")
     assert "75 uohm" in text
-    assert "2.8e-8 ohm*m" in text.replace(" ","")
+    assert "2.8e-8ohm*m" in text.replace(" ","")
 
 
 def test_historical_wording_infinite_cylinderformet_is_understood():
