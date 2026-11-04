@@ -486,6 +486,41 @@ def _cartesian_field_ready(out, source: str) -> bool:
     return bool(re.search(r"\b[xyz]\b",raw))
 
 
+PRESET_TARGETS={
+    "ev_sphere":{"E","D","V","P"},"ev_shell":{"E","D","V","P"},
+    "ev_cylinder":{"E","D","V","P"},"ev_hollow":{"E","D","V","P"},
+    "ev_slab":{"E","D","V","P"},"ev_plane":{"E","D","V","P"},
+    "ev_line":{"E","V","Q"},"ev_ring":{"E","V","Q"},"ev_arc":{"E","V","Q"},
+    "ev_infinite_line":{"E","V","Q"},"ev_points":{"E","V","F","U"},
+    "ev_conductor":{"E","V"},"ev_capacitor":{"C","V","U"},
+    "ev_potential":{"E","rho","curl_E"},"ev_field":{"E","rho","curl_E"},
+    "ba_wire":{"B","I_enc"},"ba_cylinder":{"B","I_enc"},
+    "ba_sheet":{"B","B_positive","B_negative","I_enc"},"ba_solenoid":{"B","I_enc"},
+    "ba_line":{"B"},"ba_ring":{"B"},"ba_arc":{"B"},
+    "ba_toroid":{"B","H","H_0","H_1"},"ba_material":{"B","H","J_bound","K_bound"},
+    "ba_vector_potential":{"B","div_B"},"ba_lorentz":{"F"},
+    "ba_dipole":{"torque","torque_magnitude","torque_theta","U","alignment"},
+    "dyn_fixed":{"Phi","EMF","I","P","W"},"dyn_moving":{"Phi","EMF","I","P","W"},
+    "dyn_sliding":{"EMF","I","P","F_magnetic","F_external"},
+    "dyn_rotating":{"EMF","I","P","F_magnetic","F_external"},
+    "dyn_capacitor":{"B","J_displacement"},"dyn_solenoid":{"L","U"},
+    "dyn_rl":{"I","Q","tau","I_charge","U_initial"},
+    "dyn_rc":{"I","Q","tau","I_charge","U_initial"},
+}
+TARGET_ALIASES={"force":{"F"},"current":{"I"},"power":{"P"},"energy":{"U","W","U_initial"},
+                "inductance":{"L"}}
+
+def _preset_targets_match(out,hint:str)->bool:
+    allowed=PRESET_TARGETS.get(hint)
+    if not allowed or not out.wanted:
+        return False
+    for item in out.wanted:
+        candidates={item}|TARGET_ALIASES.get(item,set())
+        if not (candidates & allowed):
+            return False
+    return True
+
+
 def _preset_hint(out, source: str | None):
     g = out.geometry
     d = out.data
@@ -549,6 +584,8 @@ def _preset_hint(out, source: str | None):
         geo_level = getattr(out, "confidence", {}).get("geometry", {}).get("level", YELLOW)
         source_level = getattr(out, "confidence", {}).get("source", {}).get("level", YELLOW)
         _mark(out, "preset", GREEN if geo_level == GREEN and source_level == GREEN else YELLOW, hint)
+        if out.wanted and not _preset_targets_match(out,hint):
+            _mark(out,"preset",YELLOW,"den valgte standardmodel dækker ikke alle søgte størrelser")
 
 def enrich_v2(out, extract_wanted: bool = True):
     """Add conservative high-value structure and confidence to an existing Parsed."""
