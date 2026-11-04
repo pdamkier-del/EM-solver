@@ -1,0 +1,45 @@
+name: Parser recovery checks
+
+on:
+  push:
+    branches:
+      - parser-recovery-2026-11-04
+  workflow_dispatch:
+
+jobs:
+  windows-parser-core:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+      - name: Install dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Windows startup check
+        run: python launch_em1.py --check
+      - name: Parser and assisted-model tests
+        run: python -m pytest -q tests/unit/test_text_parser_v2.py tests/unit/test_assisted.py
+      - name: Core unseen regression smoke
+        if: always()
+        run: python -m pytest -q tests/unseen/test_new_problems.py
+      - name: Historical and blind parser benchmark
+        if: always()
+        run: python tools/evaluate_text_parser.py
+      - name: Oracle-backed safe autonomy benchmark
+        if: always()
+        run: python tools/evaluate_parser_autonomy.py
+
+  streamlit-ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+      - name: Install dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Streamlit UI tests
+        run: python -m pytest -q tests/unit/test_new_app.py

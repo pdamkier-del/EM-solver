@@ -18,7 +18,7 @@ def check():
     except Exception as exc:errors.append('SymPy/solverimport: '+str(exc))
     root=Path(__file__).resolve().parents[2]
     try:
-        rows=json.loads((root/'data/exam_problem_registry.json').read_text())
+        rows=json.loads((root/'data/exam_problem_registry.json').read_text(encoding='utf-8'))
         if len(rows)!=154:raise ValueError('Forventede 154 historiske delopgaver.')
         if len(list((root/'data/historical_problems').glob('*.json')))!=154:raise ValueError('Historiske opskrifter mangler.')
     except Exception as exc:errors.append('Historiske data: '+str(exc))
