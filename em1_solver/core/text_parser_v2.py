@@ -150,6 +150,17 @@ def _extract_wanted(text: str):
     for key, pat in patterns:
         if re.search(pat, q):
             wanted.append(key)
+    # Symbol-only targets are common in EM1. Only add them in contexts where the
+    # symbol has a single clear physical meaning.
+    original_q = text if len(parts)==1 else text[text.lower().find(parts[1]):]
+    if re.search(r"\b(?:find|bestem|beregn)\s+C\b", text, re.I) and re.search(r"kondensator|kapacitans|capacitor", lower):
+        wanted.append("C")
+    if re.search(r"\b(?:find|bestem|beregn)\s+L(?:\s+pr\.|\b)", text, re.I) and re.search(r"indukt|koaksialkabel|magnetisk\s+energi", lower):
+        wanted.append("L")
+    if re.search(r"\brho_b\b|bundet\s+volumenladning", lower):
+        wanted.append("rho")
+    if re.search(r"\bsigma_b\b|bundet\s+overfladeladning", lower):
+        wanted.append("P")
     mapping = {"I": "current", "F": "force", "U": "energy", "PWR": "power", "L": "inductance"}
     return list(dict.fromkeys(mapping.get(w, w) for w in wanted))
 
@@ -245,6 +256,8 @@ def _symbolic_sources(out, text: str):
     lower=text.lower()
     if "lambda" not in out.data and re.search(r"\b(?:lambda|linjet[aæ]thed)\b", lower):
         out.data["lambda"]="lambda";out.units.setdefault("lambda","C/m")
+    if "P" not in out.data and re.search(r"(?<![A-Za-z0-9_])P\s*=", text):
+        out.data["P"]="P";out.units.setdefault("P","C/m^2")
     if "I" not in out.data and re.search(r"\b(?:f[oø]rer|med|b[aæ]rer)\s+(?:str[oø]m(?:men)?\s*)?I\b|\bstr[oø]m(?:men)?\s*(?:er|=)?\s*I\b", text, re.I):
         out.data["I"]="I";out.units.setdefault("I","A")
     if "B" not in out.data and re.search(r"(?:\bmagnetfelt(?:et)?\s*(?:er|=)?\s*B\b|\b(?:uniformt|homogent)\s+B\b|\bB\s*=)", text, re.I):
@@ -385,8 +398,22 @@ def _orientation(out, text: str):
 
 def _domain(out, source: str | None, wanted: list[str], text: str):
     lower = text.lower()
-    if re.search(r"faraday|induceret|forskydningsstr[oø]m|amp[eè]re-maxwell|rl-kredsl|rc-kredsl|selvindukt|mutual\s+induct|gensidig\s+indukt", lower) or any(w in wanted for w in ("EMF","Phi","inductance")):
+    if re.search(
+        r"faraday|induceret|forskydningsstr[oø]m|amp[eè]re-maxwell|"
+        r"rl-kredsl|rc-kredsl|aflades\s+gennem|selvindukt|mutual\s+induct|"
+        r"gensidig\s+indukt|magnetisk\s+energi|koaksialkabel|"
+        r"konduktivitet|conductivity|station[aæ]r\s+str[oø]m.*find\s+r|"
+        r"inducerede\s+e[_ ]?phi",
+        lower,
+    ) or any(w in wanted for w in ("EMF","Phi","inductance")):
         d = "DYN"
+    elif re.search(
+        r"parallelpladekondensator|kapacitans|dielektriske\s+lag|"
+        r"polarisering|polarisation|bundet\s+ladning|jordet\s+.*lederplan|"
+        r"spejlladning|method\s+of\s+images|elektrostatisk\s+energi",
+        lower,
+    ):
+        d = "EV"
     elif re.search(r"lorentz|magnetisk\s+dipol|magnetisk\s+moment",lower):
         d = "BA"
     elif source == "B" and ("time" in out.data or re.search(r"tidsafh[aæ]ng|roter|bev[aæ]g|glid", lower)):
