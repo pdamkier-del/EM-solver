@@ -13,7 +13,7 @@ YELLOW = "YELLOW"
 RED = "RED"
 
 _GREEK = {
-    "ρ": "rho", "Ρ": "rho",
+    "ρ": "rho", "Ρ": "rho", "ϱ": "rho", "⇢": "rho",
     "λ": "lambda", "Λ": "Lambda",
     "σ": "sigma", "Σ": "Sigma",
     "ε": "epsilon", "ϵ": "epsilon",
@@ -98,6 +98,7 @@ def _geometry_candidate(text: str):
         (g == "cylinder" and "cylinderskal" in distinct)
         or (g == "kugle" and "kugleskal" in distinct)
         or (g in ("ledning", "leder") and "bevægelig stang" in distinct)
+        or (g == "strømloop" and "ring" in distinct)
     )]
     if len(filtered) != 1:
         return ("AMBIGUOUS:" + ",".join(filtered)), YELLOW
@@ -197,7 +198,11 @@ def _regions(out, text: str, source: str | None):
         _mark(out, "regions", GREEN, f"eksplicit {coord}<{hi}")
         return
     radius = out.data.get("radius")
-    if radius and out.geometry in ("kugle", "cylinder") and out.data.get("extent") == "infinite" if out.geometry == "cylinder" else radius:
+    solid_radial = (
+        (out.geometry == "kugle" and radius)
+        or (out.geometry == "cylinder" and radius and out.data.get("extent") == "infinite")
+    )
+    if solid_radial:
         # Geometry + named radius strongly implies the material occupies the solid interior.
         out.data.setdefault("regions", [dict(lower="0", upper=str(radius), density=out.data[source], permittivity="epsilon_0")])
         _mark(out, "regions", YELLOW, "massiv geometri med navngivet radius; kontrollér at kilden fylder hele indersiden")
@@ -273,8 +278,10 @@ def _preset_hint(out, source: str | None):
             "ledning": "ba_wire", "ring": "ba_ring", "bue": "ba_arc",
             "spole": "ba_solenoid", "toroid": "ba_toroid",
         }.get(g)
+    elif source == "B" and g == "bevægelig stang":
+        hint = "dyn_rotating" if re.search(r"roter|vinkelhast|omega", getattr(out, "normalized_text", ""), re.I) else "dyn_sliding"
     elif source == "B" and "time" in d:
-        hint = "dyn_moving" if g == "bevægelig stang" or re.search(r"bevaeg|bevæeg|glid|area.*t", getattr(out, "normalized_text", ""), re.I) else "dyn_fixed"
+        hint = "dyn_moving" if re.search(r"bevaeg|bevæg|glid|areal.{0,20}t|area.{0,20}t", getattr(out, "normalized_text", ""), re.I) else "dyn_fixed"
     elif source == "E" and "time" in d and g in ("disk", "leder"):
         hint = "dyn_capacitor"
     if hint:
