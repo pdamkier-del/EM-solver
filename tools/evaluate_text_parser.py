@@ -58,8 +58,13 @@ def metrics(rows):
     uncertainty_bins=Counter()
     family=defaultdict(lambda:Counter(total=0,domain=0,ready=0))
     samples=[]
+    errors=[]
     for row in rows:
-        p=parse(combined(row))
+        try:
+            p=parse(combined(row))
+        except Exception as exc:
+            errors.append({"id":row["id"],"error":type(exc).__name__+": "+str(exc)})
+            continue
         family[row["family"]]["total"]+=1
         domain_total+=1
         domain=p.data.get("_domain_hint")
@@ -113,6 +118,7 @@ def metrics(rows):
         "corrections":dict(uncertainty_bins),
         "families":{k:dict(v) for k,v in sorted(family.items())},
         "sample_misses":samples,
+        "parse_errors":errors,
     }
 
 def blind_metrics(rows):
@@ -120,8 +126,13 @@ def blind_metrics(rows):
     bins=Counter()
     by_domain=defaultdict(lambda:Counter(total=0,correct=0,ready=0))
     misses=[]
+    errors=[]
     for row in rows:
-        p=parse(row["problem"])
+        try:
+            p=parse(row["problem"])
+        except Exception as exc:
+            errors.append({"id":row["id"],"error":type(exc).__name__+": "+str(exc)})
+            continue
         truth=row["domain"]
         by_domain[truth]["total"]+=1
         got=p.data.get("_domain_hint")
@@ -150,6 +161,7 @@ def blind_metrics(rows):
         "corrections":dict(bins),
         "by_domain":{k:dict(v) for k,v in sorted(by_domain.items())},
         "sample_domain_misses":misses,
+        "parse_errors":errors,
     }
 
 
