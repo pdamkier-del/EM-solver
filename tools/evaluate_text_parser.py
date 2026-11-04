@@ -149,7 +149,7 @@ def blind_metrics(rows):
                 domain_hit+=1
                 by_domain[truth]["correct"]+=1
         u=critical_uncertainties(p)
-        uncertainty_fields.update(u)
+        uncertainty_fields.update(u.keys())
         n=len(u)
         if n==0:
             bins["0"]+=1
