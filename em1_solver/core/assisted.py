@@ -240,6 +240,69 @@ def compile_problem(key,values,regions,wanted,orientation=None,assumptions=None,
     return p
 
 
+def auto_compile(parsed):
+    """Convert a zero-uncertainty text parse into the existing explicit model.
+
+    This is deliberately conservative: no missing orientation, geometry, region,
+    source or target is defaulted past a parser uncertainty. The returned Parsed
+    goes through the same compile_problem/validate path as the manual UI.
+    """
+    from .text_parser_v2 import critical_uncertainties
+    uncertainty=critical_uncertainties(parsed)
+    if uncertainty:
+        raise InputError('Automatisk struktur kræver kontrol af: '+', '.join(sorted(uncertainty)))
+    key=parsed.data.get('_preset_hint')
+    if key not in P:
+        raise InputError('Ingen sikker standardmodel til automatisk strukturering.')
+    preset=P[key]
+    values=defaults(key,parsed)
+
+    rows=[]
+    if preset.regions:
+        rows=copy.deepcopy(parsed.data.get('regions') or default_regions(key))
+        if not rows:
+            raise InputError('Automatisk struktur mangler regioner.')
+
+    options=WANTS[preset.family]
+    aliases={'force':['F'],'current':['I'],'power':['P'],'energy':['U','W'],
+             'inductance':['L'],'torque':['torque'],'rho_bound':['rho_bound'],
+             'sigma_bound':['sigma_bound']}
+    wanted=[]
+    for item in parsed.wanted:
+        for candidate in [item]+aliases.get(item,[]):
+            if candidate in options and candidate not in wanted:
+                wanted.append(candidate);break
+    if not wanted:
+        raise InputError('Den automatiske model kan ikke matche den søgte størrelse.')
+
+    orientation=ORIENT.copy()
+    given=parsed.data.get('orientation',{}) or {}
+    if given.get('plane') in ('xy','yz','zx'):
+        orientation['plane']=given['plane']
+    if given.get('normal') in AXES:
+        orientation['normal']=given['normal']
+    if given.get('current_axis') in AXES:
+        orientation['current']=given['current_axis']
+    if given.get('field_axis') in AXES:
+        orientation['B']=given['field_axis']
+    if given.get('B') in AXES:
+        orientation['B']=given['B']
+    if given.get('velocity') in AXES:
+        orientation['velocity']=given['velocity']
+
+    # Canonical line/ring/arc parameterization from the text parser fixes the
+    # curve itself; the UI plane convention must not rotate it again.
+    assumptions=list(preset.assumptions)
+    structured=compile_problem(
+        key,values,rows,wanted,orientation,assumptions,
+        original=parsed.text,numbers=parsed.quantities,units=parsed.units,
+    )
+    _,notes=validate(structured)
+    if notes:
+        raise InputError('Automatisk forhåndskontrol er uafklaret: '+'; '.join(notes))
+    return structured
+
+
 def validate(parsed):
     """Cheap preflight; no integration or differential equation solving in the UI."""
     problem=build(parsed)
