@@ -10,7 +10,7 @@ def fingerprint():
     files=sorted((ROOT/'em1_solver').rglob('*.py'))+sorted((ROOT/'tests').rglob('*.py'))+sorted((ROOT/'data/historical_problems').glob('*.json'))
     files += [ROOT/'data/certification_policy.json', ROOT/'data/exam_problem_registry.json', ROOT/'tools/certify_solvers.py']
     for path in files:
-        digest.update(str(path.relative_to(ROOT)).encode());digest.update(path.read_bytes())
+        digest.update(path.relative_to(ROOT).as_posix().encode());digest.update(path.read_bytes())
     return digest.hexdigest()
 
 def certified(family):

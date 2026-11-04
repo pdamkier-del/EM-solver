@@ -104,6 +104,7 @@ def compile_problem(key,values,regions,wanted,orientation=None,assumptions=None,
     for field in allfields:
         raw=str(values.get(field.key,field.default if field in optional else '')).strip()
         if not raw:raise InputError('Mangler '+field.label)
+        if field.key in ('coordinate','parameter','time') and (not re.fullmatch(r'[A-Za-z_]\w*',raw) or raw in FUNCTIONS or raw in ('pi','oo','epsilon_0','mu_0')):raise InputError(field.label+' skal være et variabelnavn, ikke et tal. Angiv evalueringstal i Numeriske værdier med enheder.')
         if field.key=='function' and '=' in raw:raw=raw.split('=',1)[1].strip()
         if field.key=='time_start' and raw=='0':v[field.key]='0';continue
         if re.fullmatch(r'[-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?(?:\s+.+)?',raw) and field.unit!='1':
@@ -123,6 +124,10 @@ def compile_problem(key,values,regions,wanted,orientation=None,assumptions=None,
     plane_normal={'xy':'+z','yz':'+x','zx':'+y'}[o['plane']]
     if key in ('ev_plane','ev_slab','ev_line','ev_ring','ev_arc','ba_line','ba_ring','ba_arc','ba_sheet','dyn_fixed','dyn_moving'):
         if abs(sum(x*y for x,y in zip(AXES[o['normal']],AXES[plane_normal])))!=1:raise InputError('Normalen passer ikke til det valgte plan.')
+    if preset.regions:
+        for spatial in ('r','s','z'):
+            if spatial!=v['coordinate'] and re.search(r'\b'+spatial+r'\b',v['function']):raise InputError('Tæthedens koordinat '+spatial+' matcher ikke den angivne integrationskoordinat '+v['coordinate']+'. Ret funktionen eller koordinatnavnet.')
+    if 'time' in v and v['time']!='t' and 'function' in v and re.search(r'\bt\b',v['function']):raise InputError('Tidsvariablen matcher ikke t i funktionen. Ret variabelnavnet eller funktionen før differentiation.')
     if family!=preset.family:
         if family=='coulomb_integral' and preset.domain=='EV' or family=='biot_savart' and preset.domain=='BA':
             if not all(k in v for k in ('source','parameter','lower','upper','point')):raise InputError('Integralmetoden kræver kildekurve, parameter, grænser og feltpunkt. Vælg linje/ring/bue eller avanceret struktur.')

@@ -1,6 +1,7 @@
 {
-  "fingerprint": "6f4fb6aa6497b4ec41e4030f5bbd0372a3d2630d34032065f30ecf1d6837786c",
-  "tests": 635,
+  "validated_at": "2026-11-04T20:10:16.820132+00:00",
+  "fingerprint": "7063e948e5e867d8324262b3177e29b7bc3fd9e5051c0061e3cf4a48a38b7eb4",
+  "tests": 640,
   "failures": 0,
   "historical_end_to_end": 153,
   "stable_historical": 151,
@@ -240,6 +241,12 @@
     ],
     "windows_batch_execution": "not available on Linux"
   },
-  "launcher": "spawn startup + real Streamlit server HTTP self-test passed on Linux",
-  "windows_native": "not executable in Linux; requires local Windows check before exam"
+  "launcher": "spawn startup + real local Streamlit HTTP health/root passed on Linux",
+  "windows_native": "not executable in Linux; verify double-click/browser flow on exam computer",
+  "installer_sha256": {
+    "START_EM1_SOLVER.bat": "7908b9c6ff4dfc431e45348f5c9ddb463721f5ab03af163e1d4149fc3e035909",
+    "install_windows.bat": "297d95277d789adc6bb745105217f7f1ee20ab39330197b21ae706073d408af2",
+    "prepare_windows_offline.bat": "c6cc41d68f97e781e8c154464d3963688a6ba547dff8e9712ad8ce117bc1d744",
+    "launch_em1.py": "3368af4b8f6b73eb034e760e24d12ff1a1b1ae5ffd5fc3bc1366b9eb3b21966f"
+  }
 }

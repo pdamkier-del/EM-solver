@@ -52,7 +52,7 @@ på benchmarkets assisted-score.
 
 ## Feature-freeze-checkpoint
 
-635 tests består, 0 fejl. Alle 153 historiske executable cases består;
+640 tests består, 0 fejl. Alle 153 historiske executable cases består;
 historisk stable er 151/154. Tier A assisted 20/20 og full-bank assisted
 55/55; autonomous 3/55, silent wrong 0, timeouts 0 i slutmålingen.
 BA14 er implementeret generelt. 22 fysiske familier er certificeret

@@ -1,5 +1,6 @@
 @echo off
 setlocal
+set PYTHONUTF8=1
 cd /d "%~dp0"
 echo Koer dette paa en Windows-computer med internet og Python 3.12 foer eksamen.
 py -3.12 -m pip download --only-binary=:all: -r requirements-lock.txt -d wheelhouse

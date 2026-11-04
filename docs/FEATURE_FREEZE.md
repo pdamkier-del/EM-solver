@@ -54,3 +54,8 @@ udfør EV/BA/DYN-smoke på eksamenscomputeren før fredag.
 - Et korrekt integral er ikke nødvendigvis et numerisk facit. Singulariteter
   og numerisk konvergens kræver særskilt vurdering.
 - Autosave er lokal. Brug separate lokale mapper ved samtidige sessioner.
+
+Portabilitetsrettelsen normaliserer certifikatstier på tværs af Windows/Unix.
+Batchfilerne aktiverer Python UTF-8-mode. Inputvalidering adskiller desuden
+uafhængige variabelnavne fra numeriske evalueringsværdier. Slutvalidering:
+640 beståede tests og uændret grøn historisk/ekstern regression.

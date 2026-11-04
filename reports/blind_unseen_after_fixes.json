@@ -205,7 +205,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.019
+        "elapsed_seconds": 1.174
       },
       "assisted": {
         "interpretation": {
@@ -310,7 +310,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.019
+        "elapsed_seconds": 1.174
       }
     },
     {
@@ -412,7 +412,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.012
+        "elapsed_seconds": 1.106
       },
       "assisted": {
         "interpretation": {
@@ -510,7 +510,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.012
+        "elapsed_seconds": 1.106
       }
     },
     {
@@ -557,7 +557,7 @@
         "comment": "Radialkoordinaten skal erklæres positiv i symbolantagelserne.",
         "failure_stage": "build",
         "secondary_failure_class": "INPUT_VALIDATION",
-        "elapsed_seconds": 0.002
+        "elapsed_seconds": 0.0
       },
       "assisted": {
         "interpretation": {
@@ -714,7 +714,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.25
+        "elapsed_seconds": 1.218
       }
     },
     {
@@ -921,7 +921,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.069
+        "elapsed_seconds": 0.914
       }
     },
     {
@@ -1088,7 +1088,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.883
+        "elapsed_seconds": 0.79
       }
     },
     {
@@ -1257,7 +1257,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.219
+        "elapsed_seconds": 0.919
       }
     },
     {
@@ -1478,7 +1478,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.288
+        "elapsed_seconds": 0.977
       }
     },
     {
@@ -1696,7 +1696,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.822
+        "elapsed_seconds": 1.417
       }
     },
     {
@@ -1877,7 +1877,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.032
+        "elapsed_seconds": 1.068
       }
     },
     {
@@ -2068,7 +2068,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.097
+        "elapsed_seconds": 1.053
       }
     },
     {
@@ -2219,7 +2219,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.907
+        "elapsed_seconds": 0.829
       }
     },
     {
@@ -2331,7 +2331,7 @@
         "comment": "Units not verified",
         "failure_stage": "oracle",
         "secondary_failure_class": "UNITS",
-        "elapsed_seconds": 0.874
+        "elapsed_seconds": 0.795
       },
       "assisted": {
         "interpretation": {
@@ -2493,7 +2493,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.969
+        "elapsed_seconds": 0.864
       }
     },
     {
@@ -2705,7 +2705,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.069
+        "elapsed_seconds": 0.838
       }
     },
     {
@@ -2889,7 +2889,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.932
+        "elapsed_seconds": 0.833
       }
     },
     {
@@ -3034,7 +3034,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.098
+        "elapsed_seconds": 0.885
       }
     },
     {
@@ -3081,7 +3081,7 @@
         "correct_refusal": false,
         "comment": "Denne beregningsvej bestemmer ikke B. Angiv en anden fysisk relation eller referencebetingelse.",
         "failure_stage": "solve",
-        "elapsed_seconds": 0.738
+        "elapsed_seconds": 0.677
       },
       "assisted": {
         "interpretation": {
@@ -3236,7 +3236,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.909
+        "elapsed_seconds": 0.86
       }
     },
     {
@@ -3477,7 +3477,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.635
+        "elapsed_seconds": 1.171
       }
     },
     {
@@ -3634,7 +3634,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.08
+        "elapsed_seconds": 0.901
       }
     },
     {
@@ -3846,7 +3846,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.911
+        "elapsed_seconds": 0.837
       }
     },
     {
@@ -3879,7 +3879,7 @@
         "correct_refusal": true,
         "comment": "Gauss-loven gælder, men en endelig cylinder har ikke tilstrækkelig symmetri til direkte bestemmelse af E ved et generelt punkt. Angiv fuld Coulomb-/potentialparameterisering.",
         "failure_stage": null,
-        "elapsed_seconds": 0.001
+        "elapsed_seconds": 0.0
       },
       "assisted": {
         "interpretation": {
@@ -3908,7 +3908,7 @@
         "correct_refusal": true,
         "comment": "Gauss-loven gælder, men en endelig cylinder har ikke tilstrækkelig symmetri til direkte bestemmelse af E ved et generelt punkt. Angiv fuld Coulomb-/potentialparameterisering.",
         "failure_stage": null,
-        "elapsed_seconds": 0.001
+        "elapsed_seconds": 0.0
       }
     }
   ],
@@ -3916,8 +3916,8 @@
     "app.py": "a699cf0a5ac265536b71ffef3dc5f8af9ddee0ed17738823d7d99a180aea7097",
     "em1_solver/__init__.py": "564aed14d75205ee8c7a8c0d832f3854f172964e1124641f664d59b197ad256d",
     "em1_solver/core/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "em1_solver/core/assisted.py": "ae248d3385aef7a611084fa75e6b57458077ac8464e065aa08245d52b83524f0",
-    "em1_solver/core/certification.py": "0fb911c503bc2265c9836911a3dabb744f41dc82643f076c1bbe5b3c011175e4",
+    "em1_solver/core/assisted.py": "991f2225ed353a4b39e26698f406c3086a6ebab0ed5ffa0b408a32ef673539fb",
+    "em1_solver/core/certification.py": "556fa7f471f7698d162fce5b7dc877aa55b3fc32fc9fc688edc235862c50276d",
     "em1_solver/core/curve.py": "bc726f323b8b7a7e622b00677f0c426aa93ac509a13f6465a447508775f61f50",
     "em1_solver/core/dimensions.py": "17f88eee3e9e90e5dc5c3de1144a25c93d3a03efa10a536bd0f55afa6e05a421",
     "em1_solver/core/engine.py": "dac29154e1cf2281be2a6289bad2d31bbe68f6fe5c4ed787375488f688b9c26f",

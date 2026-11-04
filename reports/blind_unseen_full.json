@@ -205,7 +205,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.106
+        "elapsed_seconds": 1.138
       },
       "assisted": {
         "interpretation": {
@@ -310,7 +310,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.106
+        "elapsed_seconds": 1.138
       }
     },
     {
@@ -808,7 +808,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.254
+        "elapsed_seconds": 1.211
       }
     },
     {
@@ -1031,7 +1031,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.127
+        "elapsed_seconds": 0.854
       }
     },
     {
@@ -1133,7 +1133,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.127
+        "elapsed_seconds": 0.959
       },
       "assisted": {
         "interpretation": {
@@ -1231,7 +1231,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.127
+        "elapsed_seconds": 0.959
       }
     },
     {
@@ -1435,7 +1435,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.334
+        "elapsed_seconds": 1.137
       }
     },
     {
@@ -1642,7 +1642,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.133
+        "elapsed_seconds": 1.023
       }
     },
     {
@@ -1684,7 +1684,7 @@
         "correct_refusal": false,
         "comment": "Angiv tre koordinatsymboler.",
         "failure_stage": "solve",
-        "elapsed_seconds": 0.775
+        "elapsed_seconds": 0.673
       },
       "assisted": {
         "interpretation": {
@@ -1872,7 +1872,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.877
+        "elapsed_seconds": 0.803
       }
     },
     {
@@ -1982,7 +1982,7 @@
         "comment": "Units not verified",
         "failure_stage": "oracle",
         "secondary_failure_class": "UNITS",
-        "elapsed_seconds": 0.937
+        "elapsed_seconds": 0.761
       },
       "assisted": {
         "interpretation": {
@@ -2170,7 +2170,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.026
+        "elapsed_seconds": 0.977
       }
     },
     {
@@ -2337,7 +2337,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.848
+        "elapsed_seconds": 0.817
       }
     },
     {
@@ -2523,7 +2523,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.135
+        "elapsed_seconds": 0.787
       }
     },
     {
@@ -2692,7 +2692,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.034
+        "elapsed_seconds": 0.987
       }
     },
     {
@@ -3268,7 +3268,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.886
+        "elapsed_seconds": 1.57
       }
     },
     {
@@ -3809,7 +3809,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.01
+        "elapsed_seconds": 0.777
       }
     },
     {
@@ -4350,7 +4350,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.061
+        "elapsed_seconds": 0.87
       }
     },
     {
@@ -4897,7 +4897,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.858
+        "elapsed_seconds": 0.862
       }
     },
     {
@@ -5118,7 +5118,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.175
+        "elapsed_seconds": 1.028
       }
     },
     {
@@ -5627,7 +5627,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.959
+        "elapsed_seconds": 0.872
       }
     },
     {
@@ -5912,7 +5912,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.14
+        "elapsed_seconds": 0.988
       }
     },
     {
@@ -6130,7 +6130,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.864
+        "elapsed_seconds": 1.342
       }
     },
     {
@@ -6311,7 +6311,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.995
+        "elapsed_seconds": 0.868
       }
     },
     {
@@ -6502,7 +6502,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.021
+        "elapsed_seconds": 0.976
       }
     },
     {
@@ -6699,7 +6699,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.745
+        "elapsed_seconds": 0.648
       }
     },
     {
@@ -7259,7 +7259,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.93
+        "elapsed_seconds": 0.773
       }
     },
     {
@@ -7410,7 +7410,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.858
+        "elapsed_seconds": 0.944
       }
     },
     {
@@ -7592,7 +7592,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.887
+        "elapsed_seconds": 0.95
       }
     },
     {
@@ -7777,7 +7777,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.963
+        "elapsed_seconds": 0.94
       }
     },
     {
@@ -7959,7 +7959,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.941
+        "elapsed_seconds": 0.858
       }
     },
     {
@@ -8500,7 +8500,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.003
+        "elapsed_seconds": 0.936
       }
     },
     {
@@ -8612,7 +8612,7 @@
         "comment": "Units not verified",
         "failure_stage": "oracle",
         "secondary_failure_class": "UNITS",
-        "elapsed_seconds": 0.831
+        "elapsed_seconds": 0.802
       },
       "assisted": {
         "interpretation": {
@@ -8774,7 +8774,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.886
+        "elapsed_seconds": 0.816
       }
     },
     {
@@ -8807,7 +8807,7 @@
         "comment": "Kan ikke afgøre problemet entydigt. Mangler: coordinates",
         "failure_stage": "build",
         "secondary_failure_class": "INPUT_VALIDATION",
-        "elapsed_seconds": 0.0
+        "elapsed_seconds": 0.001
       },
       "assisted": {
         "interpretation": {
@@ -9000,7 +9000,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.845
+        "elapsed_seconds": 0.838
       }
     },
     {
@@ -9542,7 +9542,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.881
+        "elapsed_seconds": 0.828
       }
     },
     {
@@ -9730,7 +9730,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.805
+        "elapsed_seconds": 0.811
       }
     },
     {
@@ -9920,7 +9920,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.937
+        "elapsed_seconds": 0.902
       }
     },
     {
@@ -10132,7 +10132,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.85
+        "elapsed_seconds": 0.819
       }
     },
     {
@@ -10708,7 +10708,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.841
+        "elapsed_seconds": 0.821
       }
     },
     {
@@ -10892,7 +10892,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.847
+        "elapsed_seconds": 0.888
       }
     },
     {
@@ -11037,7 +11037,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.885
+        "elapsed_seconds": 0.879
       }
     },
     {
@@ -11084,7 +11084,7 @@
         "correct_refusal": false,
         "comment": "Denne beregningsvej bestemmer ikke B. Angiv en anden fysisk relation eller referencebetingelse.",
         "failure_stage": "solve",
-        "elapsed_seconds": 0.655
+        "elapsed_seconds": 0.63
       },
       "assisted": {
         "interpretation": {
@@ -11239,7 +11239,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.762
+        "elapsed_seconds": 0.844
       }
     },
     {
@@ -11438,7 +11438,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.921
+        "elapsed_seconds": 0.973
       }
     },
     {
@@ -11688,7 +11688,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.869
+        "elapsed_seconds": 0.857
       }
     },
     {
@@ -11851,7 +11851,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.8
+        "elapsed_seconds": 0.732
       }
     },
     {
@@ -12092,7 +12092,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.164
+        "elapsed_seconds": 1.245
       }
     },
     {
@@ -12358,7 +12358,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.881
+        "elapsed_seconds": 0.949
       }
     },
     {
@@ -12845,7 +12845,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.83
+        "elapsed_seconds": 0.863
       }
     },
     {
@@ -13322,7 +13322,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.81
+        "elapsed_seconds": 0.787
       }
     },
     {
@@ -13827,7 +13827,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.102
+        "elapsed_seconds": 1.076
       }
     },
     {
@@ -14341,7 +14341,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.025
+        "elapsed_seconds": 0.839
       }
     },
     {
@@ -14498,7 +14498,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.998
+        "elapsed_seconds": 0.875
       }
     },
     {
@@ -14700,7 +14700,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.786
+        "elapsed_seconds": 0.809
       }
     },
     {
@@ -14901,7 +14901,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.81
+        "elapsed_seconds": 0.754
       }
     },
     {
@@ -15080,7 +15080,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 1.216
+        "elapsed_seconds": 0.98
       }
     },
     {
@@ -15292,7 +15292,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.833
+        "elapsed_seconds": 0.624
       }
     },
     {
@@ -15491,7 +15491,7 @@
           }
         ],
         "failure_stage": null,
-        "elapsed_seconds": 0.786
+        "elapsed_seconds": 0.679
       }
     },
     {
@@ -15699,8 +15699,8 @@
     "app.py": "a699cf0a5ac265536b71ffef3dc5f8af9ddee0ed17738823d7d99a180aea7097",
     "em1_solver/__init__.py": "564aed14d75205ee8c7a8c0d832f3854f172964e1124641f664d59b197ad256d",
     "em1_solver/core/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "em1_solver/core/assisted.py": "ae248d3385aef7a611084fa75e6b57458077ac8464e065aa08245d52b83524f0",
-    "em1_solver/core/certification.py": "0fb911c503bc2265c9836911a3dabb744f41dc82643f076c1bbe5b3c011175e4",
+    "em1_solver/core/assisted.py": "991f2225ed353a4b39e26698f406c3086a6ebab0ed5ffa0b408a32ef673539fb",
+    "em1_solver/core/certification.py": "556fa7f471f7698d162fce5b7dc877aa55b3fc32fc9fc688edc235862c50276d",
     "em1_solver/core/curve.py": "bc726f323b8b7a7e622b00677f0c426aa93ac509a13f6465a447508775f61f50",
     "em1_solver/core/dimensions.py": "17f88eee3e9e90e5dc5c3de1144a25c93d3a03efa10a536bd0f55afa6e05a421",
     "em1_solver/core/engine.py": "dac29154e1cf2281be2a6289bad2d31bbe68f6fe5c4ed787375488f688b9c26f",

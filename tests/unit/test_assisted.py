@@ -66,3 +66,15 @@ def test_negative_or_zero_numeric_resistance_cannot_enter_positive_model(value):
 def test_zero_with_units_is_a_valid_region_origin():
     p=compile_problem('ev_cylinder',defaults('ev_cylinder'),[dict(lower='0 cm',upper='3 cm',density='rho0',permittivity='epsilon_0')],['E'])
     validate(p)
+
+
+@pytest.mark.parametrize('preset,key',[('ev_cylinder','coordinate'),('ev_ring','parameter'),('dyn_fixed','time')])
+def test_independent_variable_cannot_be_replaced_by_a_numeric_value(preset,key):
+    values=defaults(preset)|{key:'3'}
+    with pytest.raises(InputError,match='variabelnavn'):
+        compile_problem(preset,values,default_regions(preset) if P[preset].regions else [],['E' if preset.startswith('ev') else 'EMF'])
+
+
+def test_density_coordinate_mismatch_cannot_be_integrated_as_a_constant_parameter():
+    with pytest.raises(InputError,match='koordinat'):
+        compile_problem('ev_cylinder',defaults('ev_cylinder')|{'function':'rho0*r**2','coordinate':'s'},default_regions('ev_cylinder'),['E'])

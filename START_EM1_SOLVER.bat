@@ -1,5 +1,6 @@
 @echo off
 setlocal
+set PYTHONUTF8=1
 cd /d "%~dp0"
 if not exist ".venv\Scripts\python.exe" (
   echo Det lokale miljoe mangler. Dobbeltklik foerst paa install_windows.bat.
