@@ -151,7 +151,7 @@ def _extract_wanted(text: str):
 
 def _source_type(data: dict, text: str):
     resistivity_rho = bool(re.search(r"resistivit(?:et|y).{0,40}\brho\b|\brho\b.{0,40}resistivit", text, re.I))
-    for key in ("rho", "sigma", "lambda", "J", "A", "V", "E", "B", "P", "M", "I", "q"):
+    for key in ("rho", "sigma", "lambda", "J", "A", "P", "M", "I", "V", "E", "B", "q"):
         if key == "rho" and resistivity_rho:
             continue
         if key in data:
@@ -237,15 +237,15 @@ def _named_symbols(out, text: str):
 
 
 def _symbolic_sources(out, text: str):
-    """Fill only source symbols that are explicitly named in prose."""
+    """Fill only source symbols that are explicitly given in prose."""
     lower=text.lower()
     if "lambda" not in out.data and re.search(r"\b(?:lambda|linjet[aæ]thed)\b", lower):
         out.data["lambda"]="lambda";out.units.setdefault("lambda","C/m")
     if "I" not in out.data and re.search(r"\b(?:f[oø]rer|med|b[aæ]rer)\s+(?:str[oø]m(?:men)?\s*)?I\b|\bstr[oø]m(?:men)?\s*(?:er|=)?\s*I\b", text, re.I):
         out.data["I"]="I";out.units.setdefault("I","A")
-    if "B" not in out.data and re.search(r"\b(?:uniformt|homogent)?\s*(?:magnetfelt(?:et)?\s*)?B\b", text, re.I):
+    if "B" not in out.data and re.search(r"(?:\bmagnetfelt(?:et)?\s*(?:er|=)?\s*B\b|\b(?:uniformt|homogent)\s+B\b|\bB\s*=)", text, re.I):
         out.data["B"]="B";out.units.setdefault("B","T")
-    if "E" not in out.data and re.search(r"\b(?:uniformt|homogent)?\s*(?:elektrisk\s+felt(?:et)?\s*)?E\b", text, re.I):
+    if "E" not in out.data and re.search(r"(?:\belektrisk\s+felt(?:et)?\s*(?:er|=)?\s*E\b|\b(?:uniformt|homogent)\s+E\b|\bE\s*=)", text, re.I):
         out.data["E"]="E";out.units.setdefault("E","V/m")
 
 def _special_field_forms(out, text: str):
@@ -386,6 +386,8 @@ def _domain(out, source: str | None, wanted: list[str], text: str):
     elif re.search(r"lorentz|magnetisk\s+dipol|magnetisk\s+moment",lower):
         d = "BA"
     elif source == "B" and ("time" in out.data or re.search(r"tidsafh[aæ]ng|roter|bev[aæ]g|glid", lower)):
+        d = "DYN"
+    elif source == "E" and "time" in out.data and "B" in wanted:
         d = "DYN"
     elif source in ("rho", "sigma", "lambda", "V", "E", "q", "P") or any(w in wanted for w in ("E", "V", "rho", "D", "P", "C")):
         d = "EV"
