@@ -150,9 +150,22 @@ def _extract_wanted(text: str):
     for key, pat in patterns:
         if re.search(pat, q):
             wanted.append(key)
-    # Symbol-only targets are common in EM1. Only add them in contexts where the
-    # symbol has a single clear physical meaning.
-    original_q = text if len(parts)==1 else text[text.lower().find(parts[1]):]
+    # Symbol-only targets are common in EM1. Restrict this to the question
+    # clause so given quantities earlier in the text are not mistaken for targets.
+    qmatch=re.search(r"\b"+verbs+r"\b",text,re.I)
+    original_q=text[qmatch.end():] if qmatch else text
+    for symbol in re.findall(r"(?<![A-Za-z0-9_])(E|V|B|C)(?:\s*\([^)]*\))?(?![A-Za-z0-9_])",original_q):
+        wanted.append(symbol)
+    if re.search(r"(?<![A-Za-z0-9_])H[_ ]?core\b",original_q,re.I):
+        wanted.append("H_0")
+    if re.search(r"(?<![A-Za-z0-9_])H[_ ]?gap\b",original_q,re.I):
+        wanted.append("H_1")
+    if re.search(r"(?<![A-Za-z0-9_])rho_b\b",original_q,re.I):
+        wanted.append("rho_bound")
+    if re.search(r"(?<![A-Za-z0-9_])sigma_b\b",original_q,re.I):
+        wanted.append("sigma_bound")
+    if re.search(r"kan\s+(?:det|feltet)\s+v[aæ]re\s+elektrostatisk|kan\s+.*v[aæ]re\s+elektrostatisk",lower):
+        wanted.append("curl_E")
     if re.search(r"\b(?:find|bestem|beregn)\s+C\b", text, re.I) and re.search(r"kondensator|kapacitans|capacitor", lower):
         wanted.append("C")
     if re.search(r"\b(?:find|bestem|beregn)\s+L(?:\s+pr\.|\b)", text, re.I) and re.search(r"indukt|koaksialkabel|magnetisk\s+energi", lower):
@@ -371,7 +384,10 @@ def _regions(out, text: str, source: str | None):
     if solid_radial:
         # Geometry + named radius strongly implies the material occupies the solid interior.
         out.data.setdefault("regions", [dict(lower="0", upper=str(radius), density=out.data[source], permittivity="epsilon_0")])
-        _mark(out, "regions", YELLOW, "massiv geometri med navngivet radius; kontrollér at kilden fylder hele indersiden")
+        if re.search(r"\b(massiv|solid)\b",text,re.I):
+            _mark(out, "regions", GREEN, "massiv geometri og radius står eksplicit")
+        else:
+            _mark(out, "regions", YELLOW, "massiv geometri med navngivet radius; kontrollér at kilden fylder hele indersiden")
 
 def _orientation(out, text: str):
     lower = text.lower()
@@ -429,7 +445,18 @@ def _domain(out, source: str | None, wanted: list[str], text: str):
     else:
         return
     out.data["_domain_hint"] = d
-    _mark(out, "domain", GREEN if source else YELLOW, f"domæne udledt fra kilde/søges: {d}")
+    strong = bool(
+        source
+        or re.search(
+            r"magnetisk\s+dipol|lorentz|faraday|induceret|forskydningsstr[oø]m|"
+            r"selvindukt|gensidig\s+indukt|mutual\s+induct|rl-kredsl|rc-kredsl|"
+            r"aflades\s+gennem|parallelpladekondensator|kapacitans|polarisering|"
+            r"bundet\s+ladning|jordet\s+.*lederplan|spejlladning|koaksialkabel|"
+            r"konduktivitet|conductivity",
+            lower,
+        )
+    )
+    _mark(out, "domain", GREEN if strong else YELLOW, f"domæne udledt fra kilde/søges: {d}")
 
 def _cartesian_field_ready(out, source: str) -> bool:
     """True only when the simple UI's Cartesian field-calculus preset is safe."""
