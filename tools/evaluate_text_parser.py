@@ -130,6 +130,10 @@ def blind_metrics(rows):
     by_domain=defaultdict(lambda:Counter(total=0,correct=0,ready=0))
     misses=[]
     errors=[]
+    uncertainty_fields=Counter()
+    ready_ids=[]
+    one_correction=[]
+    two_three=[]
     for row in rows:
         try:
             p=parse(row["problem"])
@@ -145,13 +149,20 @@ def blind_metrics(rows):
                 domain_hit+=1
                 by_domain[truth]["correct"]+=1
         u=critical_uncertainties(p)
+        uncertainty_fields.update(u)
         n=len(u)
         if n==0:
             bins["0"]+=1
             by_domain[truth]["ready"]+=1
-        elif n==1:bins["1"]+=1
-        elif n<=3:bins["2-3"]+=1
-        else:bins["4+"]+=1
+            ready_ids.append(row["id"])
+        elif n==1:
+            bins["1"]+=1
+            one_correction.append({"id":row["id"],"field":next(iter(u)),"detail":next(iter(u.values())).get("reason","")})
+        elif n<=3:
+            bins["2-3"]+=1
+            two_three.append({"id":row["id"],"fields":sorted(u)})
+        else:
+            bins["4+"]+=1
         if len(misses)<20 and got!=truth:
             misses.append({"id":row["id"],"truth":truth,"parsed":got,
                            "geometry":p.geometry,"source":p.data.get("_source_hint"),
@@ -163,6 +174,10 @@ def blind_metrics(rows):
                   "correct_overall":domain_hit/len(rows) if rows else 0},
         "corrections":dict(bins),
         "by_domain":{k:dict(v) for k,v in sorted(by_domain.items())},
+        "uncertainty_fields":dict(uncertainty_fields),
+        "ready_ids":ready_ids,
+        "one_correction":one_correction,
+        "two_three":two_three,
         "sample_domain_misses":misses,
         "parse_errors":errors,
     }
