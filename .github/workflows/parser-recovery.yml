@@ -27,6 +27,9 @@ jobs:
       - name: Historical and blind parser benchmark
         if: always()
         run: python tools/evaluate_text_parser.py
+      - name: Oracle-backed safe autonomy benchmark
+        if: always()
+        run: python tools/evaluate_parser_autonomy.py
 
   streamlit-ui:
     runs-on: ubuntu-latest
