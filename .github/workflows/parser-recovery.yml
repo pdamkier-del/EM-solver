@@ -25,8 +25,10 @@ jobs:
       - name: Parser and assisted-model tests
         run: python -m pytest -q tests/unit/test_text_parser_v2.py tests/unit/test_assisted.py
       - name: Core unseen regression smoke
+        if: always()
         run: python -m pytest -q tests/unseen/test_new_problems.py
-      - name: Historical parser benchmark
+      - name: Historical and blind parser benchmark
+        if: always()
         run: python tools/evaluate_text_parser.py
 
   streamlit-ui:
