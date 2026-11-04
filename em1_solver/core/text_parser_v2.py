@@ -200,6 +200,83 @@ def _quantities(out, text: str):
         _mark(out, "quantities", GREEN, "eksplicit dimensionløst antal udtrukket")
 
 
+def _named_symbols(out, text: str):
+    """Extract explicitly named symbolic geometric/circuit parameters."""
+    specs = [
+        ("radius", r"radius(?:en)?", "m"),
+        ("length", r"l[aæ]ngde(?:n)?|length", "m"),
+        ("area", r"areal(?:et)?|area", "m^2"),
+        ("distance", r"afstand(?:en)?|distance", "m"),
+        ("R", r"modstand(?:en)?|resistance", "ohm"),
+        ("epsilon", r"permittivitet(?:en)?|permittivity", "F/m"),
+    ]
+    for key, phrase, unit in specs:
+        m=re.search(rf"\b(?:{phrase})\s*(?:er|=|på|of)?\s*([A-Za-z_]\w*)\b", text, re.I)
+        if not m:
+            continue
+        symbol=m.group(1)
+        # Do not treat prose words as symbols.
+        if symbol.lower() in {"er","har","med","og","i","af","the","is"}:
+            continue
+        out.data.setdefault(key,symbol)
+        out.units.setdefault(symbol,unit)
+    m=re.search(r"\bvinkelhastighed(?:en)?\s*(?:er|=)?\s*([A-Za-z_]\w*)\b", text, re.I)
+    if m:
+        out.data.setdefault("speed",m.group(1));out.units.setdefault(m.group(1),"1/s")
+    m=re.search(r"\b(?:N|([A-Za-z_]\w*))\s+vindinger\b", text, re.I)
+    if m and m.group(1):
+        out.data.setdefault("N",m.group(1));out.units.setdefault(m.group(1),"1")
+
+
+def _symbolic_sources(out, text: str):
+    """Fill only source symbols that are explicitly named in prose."""
+    lower=text.lower()
+    if "lambda" not in out.data and re.search(r"\b(?:lambda|linjet[aæ]thed)\b", lower):
+        out.data["lambda"]="lambda";out.units.setdefault("lambda","C/m")
+    if "I" not in out.data and re.search(r"\b(?:f[oø]rer|med)\s+(?:str[oø]m(?:men)?\s*)?I\b|\bstr[oø]m(?:men)?\s+I\b", text, re.I):
+        out.data["I"]="I";out.units.setdefault("I","A")
+    if "B" not in out.data and re.search(r"\b(?:uniformt|homogent)?\s*(?:magnetfelt\s*)?B\b", text, re.I):
+        out.data["B"]="B";out.units.setdefault("B","T")
+    if "E" not in out.data and re.search(r"\b(?:uniformt|homogent)?\s*(?:elektrisk\s+felt\s*)?E\b", text, re.I):
+        out.data["E"]="E";out.units.setdefault("E","V/m")
+
+
+def _standard_curve(out, text: str, source: str | None):
+    """Construct canonical line/ring/arc parameterizations only from explicit geometry."""
+    g=out.geometry;d=out.data
+    if g in ("linje","ledning"):
+        m=re.search(r"\blangs\s+([xyz])\s+fra\s+([^\s,;]+)\s+til\s+([^\s,;.]+)", text, re.I)
+        if m:
+            axis,lo,hi=m.groups();u="u"
+            source_vec={"x":[u,0,0],"y":[0,u,0],"z":[0,0,u]}[axis.lower()]
+            d.update(source=source_vec,parameter=u,bounds=[lo,hi])
+            out.units.setdefault(u,"m")
+            _mark(out,"curve",GREEN,"ret linjekilde med eksplicit akse og grænser")
+        point=re.search(r"\bpunkt(?:et)?\s*\(\s*([^,]+),\s*([^,]+),\s*([^\)]+)\)", text, re.I)
+        if point:
+            d["point"]=[x.strip() for x in point.groups()]
+            _mark(out,"field_point",GREEN,"feltpunkt står eksplicit")
+    elif g in ("ring","bue"):
+        radius=d.get("radius","R")
+        parameter="phi"
+        d.setdefault("parameter",parameter)
+        d.setdefault("source",[f"{radius}*cos({parameter})",f"{radius}*sin({parameter})",0])
+        out.units.setdefault(parameter,"1");out.units.setdefault(str(radius),"m")
+        if g=="ring":
+            d.setdefault("bounds",[0,"2*pi"])
+        else:
+            upper="pi" if re.search(r"halvcirkel|semicircle",text,re.I) else "theta"
+            d.setdefault("bounds",[0,upper])
+            if upper=="theta":out.units.setdefault("theta","1")
+        if re.search(r"\bcentrum\b|\bcenter\b",text,re.I):
+            d.setdefault("point",[0,0,0])
+        elif re.search(r"\bz-aksen\b|\bz-axis\b",text,re.I):
+            d.setdefault("point",[0,0,"z"]);out.units.setdefault("z","m")
+        _mark(out,"curve",GREEN,"standard cirkulær kurve udledt fra eksplicit ring/bue")
+        if not d.get("orientation",{}).get("plane"):
+            _mark(out,"orientation",YELLOW,"ring/bue-plan eller positiv omløbsretning er ikke eksplicit")
+
+
 def _extent(out, text: str):
     lower = text.lower()
     if re.search(r"\b(uendelig|infinit(?:e|ely))\b", lower):
@@ -276,14 +353,16 @@ def _orientation(out, text: str):
 
 def _domain(out, source: str | None, wanted: list[str], text: str):
     lower = text.lower()
-    if source in ("rho", "sigma", "lambda", "V", "E", "q", "P") or any(w in wanted for w in ("E", "V", "rho", "D", "P", "C")):
-        d = "EV"
-    elif source in ("J", "A", "M") or re.search(r"biot|amp[eè]re|magnetostat", lower):
+    if re.search(r"faraday|induceret|forskydningsstr[oø]m|amp[eè]re-maxwell|rl-kredsl|rc-kredsl|selvindukt|mutual\s+induct|gensidig\s+indukt", lower) or any(w in wanted for w in ("EMF","Phi","inductance")):
+        d = "DYN"
+    elif re.search(r"lorentz|magnetisk\s+dipol|magnetisk\s+moment",lower):
         d = "BA"
-    elif source == "B" and ("time" in out.data or re.search(r"tidsafh[aæ]ng|induc|faraday", lower)):
+    elif source == "B" and ("time" in out.data or re.search(r"tidsafh[aæ]ng|roter|bev[aæ]g|glid", lower)):
         d = "DYN"
-    elif re.search(r"faraday|induceret|forskydningsstr[oø]m|amp[eè]re-maxwell|rl-kredsl|rc-kredsl", lower):
-        d = "DYN"
+    elif source in ("rho", "sigma", "lambda", "V", "E", "q", "P") or any(w in wanted for w in ("E", "V", "rho", "D", "P", "C")):
+        d = "EV"
+    elif source in ("J", "A", "M", "I") or re.search(r"biot|amp[eè]re|magnetostat", lower):
+        d = "BA"
     elif any(w in wanted for w in ("B", "force", "torque")):
         d = "BA"
     else:
@@ -294,8 +373,24 @@ def _domain(out, source: str | None, wanted: list[str], text: str):
 def _preset_hint(out, source: str | None):
     g = out.geometry
     d = out.data
+    lower=getattr(out,"normalized_text","").lower()
     hint = None
-    if source == "rho":
+    if re.search(r"serie[- ]?rl|rl[- ]kredsl",lower):
+        hint="dyn_rl"
+        d.setdefault("time","t");out.units.setdefault("t","s")
+    elif re.search(r"rc[- ]kredsl|aflades\s+gennem",lower):
+        hint="dyn_rc"
+        d.setdefault("time","t");out.units.setdefault("t","s")
+    elif re.search(r"parallelplade",lower) and ("time" in d or re.search(r"e\s*\(\s*t\s*\)",lower)) and "B" in out.wanted:
+        hint="dyn_capacitor"
+        d.setdefault("time","t");out.units.setdefault("t","s")
+    elif g=="spole" and "inductance" in out.wanted:
+        hint="dyn_solenoid"
+    elif re.search(r"magnetisk\s+dipol",lower):
+        hint="ba_dipole"
+    elif re.search(r"str[oø]mplan|overfladestr[oø]m",lower):
+        hint="ba_sheet"
+    elif source == "rho":
         hint = {
             "kugle": "ev_sphere", "kugleskal": "ev_shell",
             "cylinder": "ev_cylinder", "cylinderskal": "ev_hollow",
@@ -304,7 +399,7 @@ def _preset_hint(out, source: str | None):
     elif source == "sigma" and g == "plan":
         hint = "ev_plane"
     elif source == "lambda":
-        hint = {"linje": "ev_line", "ring": "ev_ring", "bue": "ev_arc"}.get(g)
+        hint = ("ev_infinite_line" if g=="linje" and d.get("extent")=="infinite" else {"linje":"ev_line","ring":"ev_ring","bue":"ev_arc"}.get(g))
     elif source == "V":
         hint = "ev_potential"
     elif source == "E" and d.get("_domain_hint") == "EV":
@@ -318,10 +413,7 @@ def _preset_hint(out, source: str | None):
     elif source == "M":
         hint = "ba_material"
     elif source == "I":
-        hint = {
-            "ledning": "ba_wire", "ring": "ba_ring", "bue": "ba_arc",
-            "spole": "ba_solenoid", "toroid": "ba_toroid",
-        }.get(g)
+        hint = (("ba_line" if d.get("extent")=="finite" else "ba_wire") if g=="ledning" else {"ring":"ba_ring","bue":"ba_arc","spole":"ba_solenoid","toroid":"ba_toroid"}.get(g))
     elif source == "B" and g == "bevægelig stang":
         hint = "dyn_rotating" if re.search(r"roter|vinkelhast|omega", getattr(out, "normalized_text", ""), re.I) else "dyn_sliding"
     elif source == "B" and "time" in d:
@@ -351,6 +443,8 @@ def enrich_v2(out, extract_wanted: bool = True):
 
     _extent(out, text)
     _quantities(out, text)
+    _named_symbols(out, text)
+    _symbolic_sources(out, text)
 
     if extract_wanted:
         wanted = _extract_wanted(text)
@@ -368,6 +462,7 @@ def enrich_v2(out, extract_wanted: bool = True):
         out.data["_source_hint"] = source
         _mark(out, "source", source_level, f"kildetype {source}")
 
+    _standard_curve(out, text, source)
     _regions(out, text, source)
     _orientation(out, text)
     _domain(out, source, out.wanted, text)
