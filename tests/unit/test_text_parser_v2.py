@@ -188,3 +188,27 @@ def test_complex_dielectric_and_image_cases_do_not_get_false_simple_presets():
     assert side.data.get("_preset_hint")!="ev_capacitor"
     assert image.data.get("_preset_hint") is None
     assert radial_p.data.get("_preset_hint")!="ev_polarization"
+
+
+@pytest.mark.parametrize("text,targets",[
+    ("En kugleskal a<r<b har rho(r)=k/r**2. Bestem E i alle regioner.",{"E"}),
+    ("En endelig linjeladning ligger langs x fra -L til +L med konstant lambda. Find V og E i punktet (0,a,0).",{"V","E"}),
+    ("Et uendeligt strømplan z=0 fører overfladestrøm K=K0 xhat. Find B over og under planet.",{"B"}),
+    ("A=(B0*x*y/L) zhat. Bestem B.",{"B"}),
+    ("En toroid med N vindinger og luftgab g. Find B,H_core,H_gap uden fringing.",{"B","H_0","H_1"}),
+    ("Et foreslået elektrostatisk felt er E=alpha*y xhat+beta*z yhat+gamma*x zhat. Kan det være elektrostatisk i et simpelt sammenhængende område?",{"curl_E"}),
+])
+def test_safe_symbolic_targets_are_extracted(text,targets):
+    p=parse(text)
+    assert targets.issubset(set(p.wanted))
+
+
+def test_explicit_solid_cylinder_region_is_green():
+    p=parse("En uendelig massiv cylinder med radius R har rho(s)=rho0*(1-s/R). Bestem E(s).")
+    assert p.confidence["regions"]["level"]=="GREEN"
+
+
+def test_strong_method_language_can_make_domain_green_without_separate_source():
+    p=parse("En lang solenoide har N vindinger, længde ell og areal A. Find selvinduktansen i vakuum.")
+    assert p.data["_domain_hint"]=="DYN"
+    assert p.confidence["domain"]["level"]=="GREEN"
