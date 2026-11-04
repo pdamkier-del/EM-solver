@@ -6,7 +6,7 @@ from .dimensions import dimension,unit_dimension
 
 
 def enrich(out,extract_wanted=True):
-    text=out.text;lower=text.lower();d=out.data
+    text=getattr(out,'normalized_text','') or out.text;lower=text.lower();d=out.data
     if re.search(r'\bslab\b',lower):out.geometry='plan'
     if re.search(r'cylindrisk|cylinder',lower):out.geometry='cylinderskal' if re.search(r'hul|skal',lower) else 'cylinder'
     if out.geometry=='Ukendt' and re.search(r'\bring\b',lower) and 'xy-plan' in lower:out.geometry='ring'
