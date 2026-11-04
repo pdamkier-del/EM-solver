@@ -7,10 +7,6 @@ if not exist ".venv\Scripts\python.exe" (
   pause
   exit /b 1
 )
-".venv\Scripts\python.exe" launch_em1.py
-if errorlevel 1 (
-  echo EM1 Solver kunne ikke starte. Laes fejlen ovenfor.
-  pause
-  exit /b 1
-)
+rem Start den lokale motor minimeret. Edge/Chrome aabnes som et separat app-vindue.
+start "EM1 Solver Engine" /min ".venv\Scripts\python.exe" launch_em1.py
 exit /b 0
