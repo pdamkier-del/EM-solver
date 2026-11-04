@@ -404,6 +404,28 @@ def _domain(out, source: str | None, wanted: list[str], text: str):
     out.data["_domain_hint"] = d
     _mark(out, "domain", GREEN if source else YELLOW, f"domæne udledt fra kilde/søges: {d}")
 
+def _cartesian_field_ready(out, source: str) -> bool:
+    """True only when the simple UI's Cartesian field-calculus preset is safe."""
+    d=out.data
+    if d.get("system") not in (None,"cartesian"):
+        return False
+    coords=d.get("coordinates")
+    if coords:
+        return all(str(x) in ("x","y","z") for x in coords)
+    arg=d.get("argument")
+    if arg:
+        args=[x.strip() for x in str(arg).split(",")]
+        return bool(args) and all(x in ("x","y","z") for x in args)
+    value=d.get(source)
+    if value is None:
+        return False
+    raw=str(value)
+    # Explicit radial/angular symbols mean the hard-coded Cartesian form is unsafe.
+    if re.search(r"\b(?:r|s|theta|phi)\b",raw):
+        return False
+    return bool(re.search(r"\b[xyz]\b",raw))
+
+
 def _preset_hint(out, source: str | None):
     g = out.geometry
     d = out.data
@@ -436,13 +458,13 @@ def _preset_hint(out, source: str | None):
         hint = "ev_plane"
     elif source == "lambda":
         hint = ("ev_infinite_line" if g=="linje" and d.get("extent")=="infinite" else {"linje":"ev_line","ring":"ev_ring","bue":"ev_arc"}.get(g))
-    elif source == "V":
+    elif source == "V" and _cartesian_field_ready(out,"V"):
         hint = "ev_potential"
-    elif source == "E" and d.get("_domain_hint") == "EV":
+    elif source == "E" and d.get("_domain_hint") == "EV" and _cartesian_field_ready(out,"E"):
         hint = "ev_field"
     elif source == "P":
         hint = "ev_polarization"
-    elif source == "A":
+    elif source == "A" and _cartesian_field_ready(out,"A"):
         hint = "ba_vector_potential"
     elif source == "J" and g in ("cylinder", "cylinderskal"):
         hint = "ba_cylinder"
@@ -510,6 +532,12 @@ def enrich_v2(out, extract_wanted: bool = True):
     _orientation(out, text)
     _domain(out, source, out.wanted, text)
     _preset_hint(out, source)
+
+    if source in ("V","E","A") and "_preset_hint" not in out.data and source in out.data:
+        arg=out.data.get("argument")
+        if arg or re.search(r"cylindrisk|sf[aæ]risk|pol[aæ]r",text,re.I):
+            _mark(out,"coordinate_system",YELLOW,"feltfunktionen er ikke sikkert kartesisk; vælg koordinatsystem/metode")
+            _warn_once(out,"Feltfunktionen ser ikke sikkert kartesisk ud. Den simple kartesiske V/E/A-formular vælges derfor ikke automatisk.")
 
     # Missing critical fields are explicit uncertainty, not an implicit pass.
     if out.geometry == "Ukendt" and getattr(out,"confidence",{}).get("geometry",{}).get("level")!="GREEN":
