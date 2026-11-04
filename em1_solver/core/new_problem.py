@@ -9,6 +9,7 @@ from .registry import solve
 from .engine import derive
 from .curve import line_integrals
 from .dimensions import check_solution
+from .text_parser_v2 import normalize_text,enrich_v2
 
 GEOMETRIES=['Ukendt','punktladninger','linje','ring','bue','plan','disk','kugle','kugleskal','cylinder','cylinderskal','leder','hulrum','ledning','strømloop','spole','toroid','parallelle ledere','bevægelig stang','generel parameteriseret linje']
 WANTED=['E','V','rho','B','force','EMF','current','power','energy','inductance','D','P','Phi','curl_E','div_B']
@@ -24,11 +25,14 @@ class Parsed:
     positive:list=field(default_factory=list)
     assumptions:list=field(default_factory=list)
     warnings:list=field(default_factory=list)
+    confidence:dict=field(default_factory=dict)
+    normalized_text:str=''
 
 
 def parse(text,known='',geometry='Ukendt',wanted=None):
     if len(text)+len(known)>16000:raise InputError('Teksten er for lang; højst 16000 tegn.')
-    out=Parsed(text,geometry,wanted=list(wanted or []));lower=text.lower()
+    normalized=normalize_text(text);normalized_known=normalize_text(known)
+    out=Parsed(text,geometry,wanted=list(wanted or []),normalized_text=normalized);lower=normalized.lower()
     patterns=[('bevægelig stang',r'ledende stang|bevægelig stang'),('parallelle ledere',r'parallelle ledere'),('generel parameteriseret linje',r'parameteriseret'),('cylinderskal',r'cylinderskal|hul cylinder'),('kugleskal',r'kugleskal'),('cylinder',r'cylinder'),('kugle',r'kugle'),('ring',r'\bring\b'),('bue',r'\bbue\b'),('plan',r'\bplan\b'),('disk',r'\bdisk\b'),('toroid',r'toroid'),('spole',r'spole'),('punktladninger',r'punktladning'),('ledning',r'ledning')]
     matches=[g for g,p in patterns if re.search(p,lower)]
     if geometry=='Ukendt' and matches:
@@ -62,7 +66,8 @@ def parse(text,known='',geometry='Ukendt',wanted=None):
     elif 'endelig' in lower:out.data['extent']='finite'
     if not out.wanted:out.warnings.append('Søgt størrelse kunne ikke genkendes; vælg den eksplicit.')
     from .text_rules import enrich
-    return enrich(out,extract_wanted=not wanted)
+    out=enrich(out,extract_wanted=not wanted)
+    return enrich_v2(out,extract_wanted=not wanted)
 
 
 def symbols_for(parsed):
