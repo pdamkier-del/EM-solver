@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "id": "2021-11:2d",
+  "status": "executable",
+  "geometry": "concentric_spheres",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 6,
+    "answer": "answers_extracted.txt: 2021-11, Opgave 2, d)"
+  },
+  "given_source": [
+    "Betragt to koncentriske kugleskaller af metal. Den indre kugleskal har indre radius a og\nydre radius b. Den ydre kugleskal har indre radius c og ydre radius d.\n\n\n\n\nI første del af opgaven er der vakuum overalt omkring kugleskallerne. Den indre kugleskal\ntilføres nu ladningen Q1 , den ydre tilføjes ladningen Q2 ."
+  ],
+  "wanted_source": [
+    "Bestem igen systemets kapacitans i tilfældet, hvor Q1 = Q2 .\n     Benyt det fundne udtryk til at beregne kapacitansen i det tilfælde, hvor a = 90 mm,\n     b = 100 mm, c = 500 mm, d = 510 mm og ✏r = 3.8."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "EV",
+        "family": "capacitance",
+        "geometry": "concentric_spheres",
+        "variables": {
+          "kind": "sphere",
+          "epsilon": {
+            "expr": "epsilon_0*epsilon_r"
+          },
+          "inner_radius": {
+            "expr": "b"
+          },
+          "outer_radius": {
+            "expr": "b+d"
+          }
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "C"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "C",
+      "value": {
+        "expr": "4*pi*epsilon_0*epsilon_r*b*(b+d)/d"
+      },
+      "unit": "F",
+      "numeric": {
+        "values": {
+          "b": 0.1,
+          "d": 0.4,
+          "epsilon_r": 3.8
+        },
+        "value": 5.3e-11,
+        "tolerance": 1e-12
+      }
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {
+    "b": 0.1,
+    "d": 0.4,
+    "epsilon_r": 3.8
+  },
+  "given_units": {
+    "b": "m",
+    "d": "m",
+    "epsilon_r": "1"
+  }
+}

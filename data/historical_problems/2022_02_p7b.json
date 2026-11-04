@@ -1,0 +1,377 @@
+{
+  "schema_version": 1,
+  "id": "2022-02:7b",
+  "status": "executable",
+  "geometry": "solid_cylinder",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 12,
+    "answer": "answers_extracted.txt: 2022-02, Opgave 7, b)"
+  },
+  "given_source": [
+    "En uendelig lang cylinderformet leder med radius R bærer en konstant strømtæthed, J,\ni længderetningen. Et cylindrisk koordinatsystem indlægges, hvor z-aksen er sammen-\nfaldende med lederens symmetriakse og peger i strømmens retning."
+  ],
+  "wanted_source": [
+    "Anvend vektorpotentialet givet i a) til at beregne det magnetiske felt såvel inden\n     i (s < R) som uden for (s > R) cylinderen. Bestem derved konstanten C."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    },
+    "C": {
+      "real": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "C": "T*m"
+  },
+  "path": [
+    {
+      "id": "inner",
+      "problem": {
+        "domain": "BA",
+        "family": "field_calculus",
+        "variables": {
+          "coordinates": [
+            {
+              "expr": "s"
+            },
+            {
+              "expr": "phi"
+            },
+            {
+              "expr": "z"
+            }
+          ],
+          "system": "cylindrical",
+          "A": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "-mu_0*I*s^2/(4*pi*R^2)"
+            }
+          ]
+        },
+        "assumptions": [
+          "magnetostatic"
+        ]
+      }
+    },
+    {
+      "id": "outer",
+      "problem": {
+        "domain": "BA",
+        "family": "field_calculus",
+        "variables": {
+          "coordinates": [
+            {
+              "expr": "s"
+            },
+            {
+              "expr": "phi"
+            },
+            {
+              "expr": "z"
+            }
+          ],
+          "system": "cylindrical",
+          "A": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "C*log(s/R)-mu_0*I/(4*pi)"
+            }
+          ]
+        },
+        "assumptions": [
+          "magnetostatic"
+        ]
+      }
+    },
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "BA",
+        "family": "field_calculus",
+        "variables": {
+          "coordinates": [
+            {
+              "expr": "s"
+            },
+            {
+              "expr": "phi"
+            },
+            {
+              "expr": "z"
+            }
+          ],
+          "system": "cylindrical",
+          "A": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "C*log(s/R)-mu_0*I/(4*pi)"
+            }
+          ],
+          "at": {
+            "map": [
+              [
+                {
+                  "expr": "s"
+                },
+                {
+                  "expr": "R"
+                }
+              ]
+            ]
+          },
+          "solve_for": {
+            "expr": "C"
+          },
+          "target_values": {
+            "B": {
+              "matrix": [
+                [
+                  {
+                    "expr": "0"
+                  }
+                ],
+                [
+                  {
+                    "expr": "mu_0*I/(2*pi*R)"
+                  }
+                ],
+                [
+                  {
+                    "expr": "0"
+                  }
+                ]
+              ]
+            }
+          }
+        },
+        "assumptions": [
+          "magnetostatic"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "inner",
+      "result": "B",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "mu_0*I*s/(2*pi*R^2)"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "T"
+    },
+    {
+      "step": "outer",
+      "result": "B",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "-C/s"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "T"
+    },
+    {
+      "step": "inner",
+      "result": "laplacian_A",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "-mu_0*I/(pi*R^2)"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "step": "solve",
+      "result": "solved_C",
+      "value": {
+        "expr": "-mu_0*I/(2*pi)"
+      },
+      "unit": "T*m"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

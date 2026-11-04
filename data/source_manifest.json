@@ -1,0 +1,18 @@
+[
+  {
+    "path": "data/sources/answers.pdf",
+    "sha256": "3b70941951a66acf7fdd7a1bfefa27dd21f135cce2e8399897c0e9cd4b9c9072"
+  },
+  {
+    "path": "data/sources/exams.pdf",
+    "sha256": "2529274342540a769daf699a74b214e97a99e3273df42a77393fa34db3e0358b"
+  },
+  {
+    "path": "data/sources/formulas.pdf",
+    "sha256": "2f3e939c521a8540b62e863b7730ffe74adafd060c64c03abbc4d613bc950e88"
+  },
+  {
+    "path": "data/sources/geometry.pdf",
+    "sha256": "db2a4915ea1dd4402ff539ddc27fec4eacbdfd685556ca3b85b8048987f4b5fd"
+  }
+]

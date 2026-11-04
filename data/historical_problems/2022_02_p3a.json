@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "id": "2022-02:3a",
+  "status": "executable",
+  "geometry": "wire_and_semicircle",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 10,
+    "answer": "answers_extracted.txt: 2022-02, Opgave 3, a)"
+  },
+  "given_source": [
+    "En stiv leder ligger i xy-planet af et koordinatsystem i et område, hvor et uniformt\nmagnetfelt peger i z-aksens retning, B = Bẑ. Lederen har form som vist på figuren, idet\nden består af to dele: a) det første stykke er ret og løber længden L langs x-aksen; b) det\nandet stykke har form af en halvcirkel med diameter L. I lederen løber en strøm I mod\nstigende x-værdier. Strømmen til den diskuterede leder leveres af til- og fraledninger,\nsom vi her ser bort fra.\n                                                         y\n                              B (ud)           I\n\n                                 I\n                                                                         x\n                                 a                     b\n                                 L                     L"
+  ],
+  "wanted_source": [
+    "Bestem størrelsen og retningen af kraften på hver af de to lederstykker. Udtryk\n     resultatet på vektorform; bestem altså Fa og Fb . Angiv størrelsen af den samlede\n     kraft på lederen, idet B = 0,45 T, L = 0,23 m og I = 7,6 A.\n\f                                                                        Side 3 af 4 sider"
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "BA",
+        "family": "wire_force",
+        "geometry": "wire_and_semicircle",
+        "variables": {
+          "paths": [
+            {
+              "source": [
+                {
+                  "expr": "s"
+                },
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "0"
+                }
+              ],
+              "parameter": {
+                "expr": "s"
+              },
+              "bounds": [
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "L"
+                }
+              ]
+            },
+            {
+              "source": [
+                {
+                  "expr": "3*L/2-L*cos(theta)/2"
+                },
+                {
+                  "expr": "L*sin(theta)/2"
+                },
+                {
+                  "expr": "0"
+                }
+              ],
+              "parameter": {
+                "expr": "theta"
+              },
+              "bounds": [
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "pi"
+                }
+              ]
+            }
+          ],
+          "I": {
+            "expr": "I"
+          },
+          "B": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "B"
+            }
+          ]
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "F",
+          "magnitude"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "F",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "-2*I*L*B"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "N"
+    },
+    {
+      "step": "solve",
+      "result": "magnitude",
+      "value": {
+        "expr": "2*I*L*B"
+      },
+      "unit": "N",
+      "numeric": {
+        "values": {
+          "B": 0.45,
+          "L": 0.23,
+          "I": 7.6
+        },
+        "value": 1.6,
+        "tolerance": 0.03
+      }
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {
+    "B": 0.45,
+    "L": 0.23,
+    "I": 7.6
+  },
+  "given_units": {
+    "B": "T",
+    "L": "m",
+    "I": "A"
+  }
+}

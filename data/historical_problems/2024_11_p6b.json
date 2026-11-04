@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "id": "2024-11:6b",
+  "status": "executable",
+  "geometry": "toroid_with_gap",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 32,
+    "answer": "answers_extracted.txt: 2024-11, Opgave 6, b)"
+  },
+  "given_source": [
+    "Der betragtes en spole af form som en toroide med den gennemsnitlige radius R. Spolen\nhar N tætsiddende vindinger, som bærer strømmen I i en retning, som vist på figuren.\nVindingerne er vundet omkring en kerne af blødt jern, et ferromagnetisk materiale, der,\nsom en tilnærmelse, her betragtes som et lineært medie med den konstante magnetisk\npermeabilitet µ.\n\n\n\n\n     Figuren er alene illustrativ: I virkeligheden ligger vindingerne langt tættere end\n     vist. Den grønne markering vedrører senere spørgsmål og har ingen relevans for\n     spørgsmål a).\n\nI det følgende ønskes undersøgt magnetfeltet ved spolens gennemsnitlige radius, R."
+  ],
+  "wanted_source": [
+    "Argumentér for, at B-feltet må have samme styrke i gabet som i jernet, Bg = Bj .\n      Benyt dette forhold til at finde forholdet mellem styrken af H-feltet i gabet og i\n      jernet, Hg /Hj .\n                                                    !\nResultatet fra b) sammenholdt med værdien af H · dl tillader at bestemme B-feltets\nstyrke i gabet til\n                                              B0\n                                   Bg =                  ,\n                                         (1 − !) µµ0 + !\nhvor B0 angiver feltstyrken, der ville have været i spolen uden jernkernen.\nSom et eksempel benyttes følgende værdier: R = 23 cm, N = 620, I = 8.5 A, µ = 3000 µ0 ,\nog d = 6,0 mm."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    },
+    "mu_r": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "mu_r": "1"
+  },
+  "path": [
+    {
+      "id": "whole",
+      "bindings": {},
+      "problem": {
+        "domain": "BA",
+        "family": "magnetic_material",
+        "variables": {
+          "kind": "magnetic_circuit",
+          "N": {
+            "expr": "N"
+          },
+          "I": {
+            "expr": "I"
+          },
+          "segments": [
+            [
+              {
+                "expr": "L+d"
+              },
+              {
+                "expr": "mu_0*mu_r"
+              }
+            ]
+          ]
+        },
+        "assumptions": [
+          "negligible_leakage",
+          "uniform_cross_section"
+        ],
+        "regions": []
+      }
+    },
+    {
+      "id": "gapped",
+      "bindings": {},
+      "problem": {
+        "domain": "BA",
+        "family": "magnetic_material",
+        "variables": {
+          "kind": "magnetic_circuit",
+          "N": {
+            "expr": "N"
+          },
+          "I": {
+            "expr": "I"
+          },
+          "segments": [
+            [
+              {
+                "expr": "L"
+              },
+              {
+                "expr": "mu_0*mu_r"
+              }
+            ],
+            [
+              {
+                "expr": "d"
+              },
+              {
+                "expr": "mu_0"
+              }
+            ]
+          ]
+        },
+        "assumptions": [
+          "negligible_leakage",
+          "uniform_cross_section"
+        ],
+        "regions": []
+      }
+    },
+    {
+      "id": "air",
+      "bindings": {},
+      "problem": {
+        "domain": "BA",
+        "family": "magnetic_material",
+        "variables": {
+          "kind": "magnetic_circuit",
+          "N": {
+            "expr": "N"
+          },
+          "I": {
+            "expr": "I"
+          },
+          "segments": [
+            [
+              {
+                "expr": "L+d"
+              },
+              {
+                "expr": "mu_0"
+              }
+            ]
+          ]
+        },
+        "assumptions": [
+          "negligible_leakage",
+          "uniform_cross_section"
+        ],
+        "regions": []
+      }
+    },
+    {
+      "id": "solve",
+      "bindings": {
+        "H_gap": {
+          "ref": "gapped.H_1"
+        },
+        "H_iron": {
+          "ref": "gapped.H_0"
+        },
+        "B_air": {
+          "ref": "air.B"
+        },
+        "B_gap": {
+          "ref": "gapped.B"
+        }
+      },
+      "problem": {
+        "domain": "BA",
+        "family": "algebra",
+        "variables": {
+          "outputs": {
+            "H_gap_over_H_iron": {
+              "expr": "H_gap/H_iron"
+            },
+            "B_without_iron": {
+              "expr": "B_air"
+            },
+            "enhancement": {
+              "expr": "B_gap/B_air"
+            }
+          },
+          "output_units": {
+            "H_gap_over_H_iron": "1",
+            "B_without_iron": "T",
+            "enhancement": "1"
+          }
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "whole",
+      "result": "H_0",
+      "value": {
+        "expr": "N*I/(L+d)"
+      },
+      "unit": "A/m"
+    },
+    {
+      "step": "whole",
+      "result": "B",
+      "value": {
+        "expr": "mu_0*mu_r*N*I/(L+d)"
+      },
+      "unit": "T"
+    },
+    {
+      "step": "solve",
+      "result": "H_gap_over_H_iron",
+      "value": {
+        "expr": "mu_r"
+      },
+      "unit": "1"
+    },
+    {
+      "step": "solve",
+      "result": "B_without_iron",
+      "value": {
+        "expr": "mu_0*N*I/(L+d)"
+      },
+      "unit": "T",
+      "numeric": {
+        "values": {
+          "L": 1.4391326206513049,
+          "d": 0.006,
+          "N": 620,
+          "I": 8.5
+        },
+        "value": 0.0046,
+        "tolerance": 0.0001
+      }
+    },
+    {
+      "step": "solve",
+      "result": "enhancement",
+      "value": {
+        "expr": "(L+d)/(L/mu_r+d)"
+      },
+      "unit": "1",
+      "numeric": {
+        "values": {
+          "L": 1.4391326206513049,
+          "d": 0.006,
+          "mu_r": 3000
+        },
+        "value": 223,
+        "tolerance": 1
+      }
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "L=2pi R-d er jernlængden efter åbning af gabet; d er gablængden. R=23 cm, d=6 mm.",
+  "given_values": {
+    "L": 1.4391326206513049,
+    "d": 0.006,
+    "N": 620,
+    "I": 8.5,
+    "mu_r": 3000
+  },
+  "given_units": {
+    "L": "m",
+    "d": "m",
+    "N": "1",
+    "I": "A",
+    "mu_r": "1"
+  }
+}

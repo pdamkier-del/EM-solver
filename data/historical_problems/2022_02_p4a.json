@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "id": "2022-02:4a",
+  "status": "executable",
+  "geometry": "cylinder_with_cavity",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 11,
+    "answer": "answers_extracted.txt: 2022-02, Opgave 4, a)"
+  },
+  "given_source": [
+    "En uendelig lang cylinderformet leder med radius R har en gennemgående cylinderformet\nboring (hulrum) med radius R/2. Boringens akse er parallel med cylinderaksen, og den\nindbyrdes afstand mellem de to akser er R/4; figuren viser et tværsnit. Gennem det\nledende materiale løber en strøm med den uniforme strømtæthed J = Jẑ, hvor ẑ er\nen enhedsvektor i cylinderaksens retning. Også indikeret på figuren er punktet A, som\nligger, hvor forbindelseslinjen mellem de to akser skærer kanten af boringen.\n\n\n\n\n                                                                   y\n                                   R         R/2\n                                                        A\n\n                                           R/4\n                                                                            x"
+  ],
+  "wanted_source": [
+    "Bestem den samlede strøm, I, i lederen."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "full",
+      "bindings": {},
+      "problem": {
+        "domain": "BA",
+        "family": "ampere",
+        "variables": {
+          "kind": "current_surface",
+          "surface": [
+            {
+              "expr": "s*cos(phi)"
+            },
+            {
+              "expr": "s*sin(phi)"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "parameters": [
+            {
+              "expr": "s"
+            },
+            {
+              "expr": "phi"
+            }
+          ],
+          "bounds": [
+            [
+              {
+                "expr": "0"
+              },
+              {
+                "expr": "R"
+              }
+            ],
+            [
+              {
+                "expr": "0"
+              },
+              {
+                "expr": "2*pi"
+              }
+            ]
+          ],
+          "J_on_surface": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "J"
+            }
+          ]
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    },
+    {
+      "id": "hole",
+      "bindings": {},
+      "problem": {
+        "domain": "BA",
+        "family": "ampere",
+        "variables": {
+          "kind": "current_surface",
+          "surface": [
+            {
+              "expr": "R/4+s*cos(phi)"
+            },
+            {
+              "expr": "s*sin(phi)"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "parameters": [
+            {
+              "expr": "s"
+            },
+            {
+              "expr": "phi"
+            }
+          ],
+          "bounds": [
+            [
+              {
+                "expr": "0"
+              },
+              {
+                "expr": "R/2"
+              }
+            ],
+            [
+              {
+                "expr": "0"
+              },
+              {
+                "expr": "2*pi"
+              }
+            ]
+          ],
+          "J_on_surface": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "-J"
+            }
+          ]
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    },
+    {
+      "id": "solve",
+      "bindings": {
+        "I_full": {
+          "ref": "full.I_enc"
+        },
+        "I_hole": {
+          "ref": "hole.I_enc"
+        }
+      },
+      "problem": {
+        "domain": "BA",
+        "family": "algebra",
+        "variables": {
+          "outputs": {
+            "I": {
+              "expr": "I_full+I_hole"
+            }
+          },
+          "output_units": {
+            "I": "A"
+          }
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "I",
+      "value": {
+        "expr": "3*pi*R^2*J/4"
+      },
+      "unit": "A"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

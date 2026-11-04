@@ -1,0 +1,327 @@
+{
+  "schema_version": 1,
+  "id": "2024-11:4b",
+  "status": "executable",
+  "geometry": "graded_resistor",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 31,
+    "answer": "answers_extracted.txt: 2024-11, Opgave 4, b)"
+  },
+  "given_source": [
+    "En elektrisk modstand er lavet af et cylinderformet materiale, indsat mellem to perfekt\nledende plader. Materialet i modstanden har tværsnitsareal A, længde d, dielektriske\npermitivitet !0 , og en stedafhængige konduktivitet σ(x) = 1/bx, hvor b er en positiv\nkonstant, og x beskriver afstanden fra materialets ene ende. Der påføres en spændings-\nforskel V0 over modstanden. Situationen er vist på figuren.\n                        V = V0                                   V =0\n                                              J\n                          I                       σ = σ(x)        I\n\n                               0                      d x"
+  ],
+  "wanted_source": [
+    "Angiv, E(x), styrken af det elektriske felt som funktion af x.\n     Benyt det fundne udtryk til at bestemme overfladeladningstæthederne σ1 og σ2 i\n     grænserne (ved hhv. x = 0 og x = d) mellem de to perfekte ledere og modstandens\n     materiale. Benyt ligeledes udtrykket, til at bestemme volumenladningstætheden\n     ρ(x) i materialet."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    },
+    "A": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "ohm",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "A": "m^2"
+  },
+  "path": [
+    {
+      "id": "resistor",
+      "bindings": {},
+      "problem": {
+        "domain": "DYN",
+        "family": "resistance",
+        "variables": {
+          "coordinate": {
+            "expr": "x"
+          },
+          "bounds": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "d"
+            }
+          ],
+          "area": {
+            "expr": "A"
+          },
+          "conductivity": {
+            "expr": "1/(b*x)"
+          },
+          "voltage": {
+            "expr": "V"
+          }
+        },
+        "assumptions": [
+          "one_dimensional_steady_current"
+        ],
+        "regions": []
+      }
+    },
+    {
+      "id": "left",
+      "bindings": {},
+      "problem": {
+        "domain": "EV",
+        "family": "conductors",
+        "variables": {
+          "kind": "boundary",
+          "normal": [
+            {
+              "expr": "1"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "E_inside": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "E_outside": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "epsilon_inside": {
+            "expr": "epsilon_0"
+          },
+          "epsilon_outside": {
+            "expr": "epsilon_0"
+          }
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    },
+    {
+      "id": "right",
+      "bindings": {},
+      "problem": {
+        "domain": "EV",
+        "family": "conductors",
+        "variables": {
+          "kind": "boundary",
+          "normal": [
+            {
+              "expr": "-1"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "E_inside": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "E_outside": [
+            {
+              "expr": "2*V/d"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "epsilon_inside": {
+            "expr": "epsilon_0"
+          },
+          "epsilon_outside": {
+            "expr": "epsilon_0"
+          }
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "resistor",
+      "result": "E",
+      "value": {
+        "expr": "2*V*x/d^2"
+      },
+      "unit": "V/m"
+    },
+    {
+      "step": "resistor",
+      "result": "rho",
+      "value": {
+        "expr": "2*epsilon_0*V/d^2"
+      },
+      "unit": "C/m^3"
+    },
+    {
+      "step": "left",
+      "result": "sigma_free",
+      "value": {
+        "expr": "0"
+      },
+      "unit": "C/m^2"
+    },
+    {
+      "step": "right",
+      "result": "sigma_free",
+      "value": {
+        "expr": "-2*epsilon_0*V/d"
+      },
+      "unit": "C/m^2"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

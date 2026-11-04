@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "id": "2026-01:2d",
+  "status": "executable",
+  "geometry": "parallel_plate_RC",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 42,
+    "answer": "answers_extracted.txt: 2026-01, Opgave 2, d)"
+  },
+  "given_source": [
+    "I almindelig handel kan man købe en kraftig kapacitor med en kapacitans på C = 91 mF.\nRent fysisk er der tale om en større komponent med dimensioner omtrent som en øldåse.\nDet vides ikke præcis hvordan kapacitoren er opbygget, men lad os her som illustration\nantage, at der er tale om en pladekapacitor (som så på en eller anden måde må være\nrullet sammen inde i dåsen). Lad os yderligere antage, at de to plader er adskildt af\net meget tyndt lag, med tykkelse δ = 0,100 µm, af aluminiumsoxid, der virker som et\ndielektrikum med dielektricitetskonstant $r = 9,6."
+  ],
+  "wanted_source": [
+    "Angiv med argumenter retningen af kraften hvormed de to stænger påvirker hin-\n     anden under afladningen af kapacitoren. Bestem dernæst et symbolsk udtryk for\n     denne krafts størrelse som funktion af tiden, F (t).\n\f                                                                         Side 3 af 3 sider"
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    },
+    "C": {
+      "positive": true
+    },
+    "Q0": {
+      "positive": true
+    },
+    "I_discharge": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "ohm",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "C": "F",
+    "Q0": "C",
+    "I_discharge": "A"
+  },
+  "path": [
+    {
+      "id": "discharge",
+      "problem": {
+        "domain": "DYN",
+        "family": "rc_transient",
+        "variables": {
+          "kind": "RC",
+          "time": {
+            "expr": "t"
+          },
+          "R": {
+            "expr": "R"
+          },
+          "C": {
+            "expr": "C"
+          },
+          "Q0": {
+            "expr": "Q0"
+          }
+        }
+      }
+    },
+    {
+      "id": "solve",
+      "bindings": {
+        "I_discharge": {
+          "ref": "discharge.I"
+        }
+      },
+      "problem": {
+        "domain": "BA",
+        "family": "wire_force",
+        "variables": {
+          "kind": "parallel",
+          "I1": {
+            "expr": "I_discharge"
+          },
+          "I2": {
+            "expr": "-I_discharge"
+          },
+          "distance": {
+            "expr": "d"
+          },
+          "length": {
+            "expr": "L"
+          }
+        },
+        "assumptions": [
+          "parallel_infinite_wires"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "F_signed_attraction",
+      "value": {
+        "expr": "-mu_0*L/(2*pi*d)*(Q0/(R*C))^2*exp(-2*t/(R*C))"
+      },
+      "unit": "N",
+      "sign": -1
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "De parallelle stænger fører modsat rettede strømme; negativ F_signed_attraction betyder frastødning.",
+  "given_values": {
+    "R": 0.25,
+    "C": 0.091,
+    "Q0": 5.7,
+    "L": 0.83,
+    "d": 0.052
+  },
+  "given_units": {
+    "R": "ohm",
+    "C": "F",
+    "Q0": "C",
+    "L": "m",
+    "d": "m"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "2021-06:1b",
+  "status": "qualitative/manual",
+  "geometry": "sphere_with_cavity",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 1,
+    "answer": "answers_extracted.txt: 2021-06, Opgave 1, b)"
+  },
+  "given_source": [
+    "Et elektrostatisk arrangement består af en perfekt ledende kugleskal med indre radius\nb, ydre radius c og samlet elektrisk ladning Q = 3q, q > 0. Inden for kugleskallen er en\npunktladning, q, placeret i afstanden a fra centrum."
+  ],
+  "wanted_source": [
+    "Er ladningen jævnt fordelt på den indre overflade af kugleskallen? Argumentér.\n     Hvis ikke, hvor er | | da størst ( er ladningstætheden)? Skitsér de elektriske\n     feltlinjer i området inden for kugleskallen. Vær specielt omhyggelig med at skitsere\n     feltlinjernes start og afslutning."
+  ],
+  "symbols": {},
+  "symbol_units": {},
+  "path": [],
+  "expected": [],
+  "given_values": {},
+  "given_units": {}
+}

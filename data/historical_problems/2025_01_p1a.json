@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "id": "2025-01:1a",
+  "status": "executable",
+  "geometry": "cartesian_linear",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 33,
+    "answer": "answers_extracted.txt: 2025-01, Opgave 1, a)"
+  },
+  "given_source": [
+    "I et kubisk område af rummet med sidelængde L = 20,0 m er det elektriske felt givet ved\nE = (a + bx) x̂, hvor a = 500 V/m, og b = 50,0 V/m2 . Permitiviteten i området er #0 .\n                                          y\n\n\n\n\n                                                       x\n                                     L\n                                                   L\n                                 z        L\n\nBesvar følgende spørgsmål såvel symbolsk som numerisk."
+  ],
+  "wanted_source": [
+    "Bestem forskellen i elektrisk potential mellem endefladen ved x = L og endefladen\n     ved x = 0. Hvilken af endefladerne har det højeste potential?"
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "V/m",
+    "b": "V/m^2",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "EV",
+        "family": "potential_from_field",
+        "geometry": "cartesian_linear",
+        "variables": {
+          "coordinate": {
+            "expr": "x"
+          },
+          "field": {
+            "expr": "a+b*x"
+          },
+          "start": {
+            "expr": "0"
+          },
+          "end": {
+            "expr": "L"
+          }
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "delta_V"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "delta_V",
+      "value": {
+        "expr": "-a*L-b*L^2/2"
+      },
+      "unit": "V",
+      "numeric": {
+        "values": {
+          "a": 500,
+          "b": 50,
+          "L": 20
+        },
+        "value": -20000,
+        "tolerance": 1e-08
+      }
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {
+    "a": 500,
+    "b": 50,
+    "L": 20
+  },
+  "given_units": {
+    "a": "V/m",
+    "b": "V/m^2",
+    "L": "m"
+  }
+}

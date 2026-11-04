@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "id": "2024-02:1d",
+  "status": "executable",
+  "geometry": "arc",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 25,
+    "answer": "answers_extracted.txt: 2024-02, Opgave 1, d)"
+  },
+  "given_source": [
+    "Der undersøges tre forskellige tilfælde af ladningsfordelinger anbragt i xy-planet i et\nkoordinatsystem. I alle tre tilfælde, som illustreret på figuren, befinder samtlige elementer\naf ladningsfordelingen sig i afstanden a fra koordinatsystemets begyndelsespunkt, O.\n\n a)             y                b)               y                c)                y\n                                                      Q/5\n                                      Q/5\n                                                      a                                  a\n                        x                   45◦           x                                  x\n      Q     a       O            Q/5                  O                                  O\n                                            45◦\n\n                                      Q/5\n                                                      Q/5               !\n                                                                            dq = Q"
+  ],
+  "wanted_source": [
+    "Bestem i de tre tilfælde, a), b), og c), det elektriske potential i O. Nulpunktet for\n     potentialet sættes i det uendelige.\n\f                                                                      Side 2 af 3 sider"
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "one",
+      "bindings": {},
+      "problem": {
+        "domain": "EV",
+        "family": "point_charges",
+        "variables": {
+          "charges": [
+            [
+              {
+                "expr": "Q"
+              },
+              [
+                {
+                  "expr": "-a"
+                },
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ]
+          ],
+          "point": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ]
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    },
+    {
+      "id": "five",
+      "bindings": {},
+      "problem": {
+        "domain": "EV",
+        "family": "point_charges",
+        "variables": {
+          "charges": [
+            [
+              {
+                "expr": "Q/5"
+              },
+              [
+                {
+                  "expr": "-a*cos(-pi/2)"
+                },
+                {
+                  "expr": "a*sin(-pi/2)"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ],
+            [
+              {
+                "expr": "Q/5"
+              },
+              [
+                {
+                  "expr": "-a*cos(-pi/4)"
+                },
+                {
+                  "expr": "a*sin(-pi/4)"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ],
+            [
+              {
+                "expr": "Q/5"
+              },
+              [
+                {
+                  "expr": "-a*cos(0)"
+                },
+                {
+                  "expr": "a*sin(0)"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ],
+            [
+              {
+                "expr": "Q/5"
+              },
+              [
+                {
+                  "expr": "-a*cos(pi/4)"
+                },
+                {
+                  "expr": "a*sin(pi/4)"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ],
+            [
+              {
+                "expr": "Q/5"
+              },
+              [
+                {
+                  "expr": "-a*cos(pi/2)"
+                },
+                {
+                  "expr": "a*sin(pi/2)"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ]
+          ],
+          "point": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ]
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    },
+    {
+      "id": "arc",
+      "bindings": {},
+      "problem": {
+        "domain": "EV",
+        "family": "coulomb_integral",
+        "variables": {
+          "kind": "line",
+          "source": [
+            {
+              "expr": "a*cos(theta)"
+            },
+            {
+              "expr": "a*sin(theta)"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "parameters": [
+            {
+              "expr": "theta"
+            }
+          ],
+          "bounds": [
+            [
+              {
+                "expr": "pi/2"
+              },
+              {
+                "expr": "3*pi/2"
+              }
+            ]
+          ],
+          "density": {
+            "expr": "Q/(pi*a)"
+          },
+          "point": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ]
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "one",
+      "result": "V",
+      "value": {
+        "expr": "Q/(4*pi*epsilon_0*a)"
+      },
+      "unit": "V"
+    },
+    {
+      "step": "five",
+      "result": "V",
+      "value": {
+        "expr": "Q/(4*pi*epsilon_0*a)"
+      },
+      "unit": "V"
+    },
+    {
+      "step": "arc",
+      "result": "V",
+      "value": {
+        "expr": "Q/(4*pi*epsilon_0*a)"
+      },
+      "unit": "V"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

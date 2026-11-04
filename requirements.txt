@@ -1,0 +1,4 @@
+sympy==1.14.0
+pint==0.25.2
+streamlit==1.51.0
+pytest==8.4.2

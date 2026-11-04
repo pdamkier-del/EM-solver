@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "id": "2025-01:4a",
+  "status": "executable",
+  "geometry": "cartesian_vectors",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 35,
+    "answer": "answers_extracted.txt: 2025-01, Opgave 4, a)"
+  },
+  "given_source": [
+    "En ladet partikel, Q = 6,00 µC, bevæger sig med hastigheden v = vx x̂ + vy ŷ + vz ẑ i\net magnetfelt B = Bx x̂ + By ŷ + Bz ẑ. Til et tidspunkt har hastighedskomponenterne\nværdier vx = 3,00, vy = 4,00, og vz = →3,00 (målt i m/µs), mens feltkomponenterne har\nværdier Bx = 4,00, By = 3,00, og Bz = 2,00 (målt i Tesla)."
+  ],
+  "wanted_source": [
+    "Opskriv det symbolske udtryk for kraften F på partiklen. Indsæt derefter talvær-\n     dier, og benyt dette til at bestemme den aktuelle kraft. Bestem endelig størrelsen\n     af kraften.\nOplysning: Symbolet µ angiver her, som generelt, den numeriske værdi 10−6 . Således er\nfor eksempel 1 µC = 1 × 10−6 C."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "BA",
+        "family": "lorentz_force",
+        "geometry": "cartesian_vectors",
+        "variables": {
+          "q": {
+            "expr": "q"
+          },
+          "v": [
+            {
+              "expr": "3*v"
+            },
+            {
+              "expr": "4*v"
+            },
+            {
+              "expr": "-3*v"
+            }
+          ],
+          "B": [
+            {
+              "expr": "4*B"
+            },
+            {
+              "expr": "3*B"
+            },
+            {
+              "expr": "2*B"
+            }
+          ],
+          "E": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ]
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "F",
+          "magnitude"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "F",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "17*q*v*B"
+            }
+          ],
+          [
+            {
+              "expr": "-18*q*v*B"
+            }
+          ],
+          [
+            {
+              "expr": "-7*q*v*B"
+            }
+          ]
+        ]
+      },
+      "unit": "N"
+    },
+    {
+      "step": "solve",
+      "result": "magnitude",
+      "value": {
+        "expr": "sqrt(662)*q*v*B"
+      },
+      "unit": "N",
+      "numeric": {
+        "values": {
+          "q": 6e-06,
+          "v": 1000000.0,
+          "B": 1
+        },
+        "value": 154.44,
+        "tolerance": 0.1
+      }
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {
+    "q": 6e-06,
+    "v": 1000000.0,
+    "B": 1
+  },
+  "given_units": {
+    "q": "C",
+    "v": "m/s",
+    "B": "T"
+  }
+}

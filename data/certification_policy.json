@@ -1,0 +1,142 @@
+{
+  "point_charges": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "coulomb_integral": {
+    "risk": "HIGH",
+    "minimum_variations": 6,
+    "reason": "Regioner, koordinater eller geometriske randbetingelser"
+  },
+  "gauss_radial": {
+    "risk": "HIGH",
+    "minimum_variations": 6,
+    "reason": "Regioner, koordinater eller geometriske randbetingelser"
+  },
+  "field_calculus": {
+    "risk": "HIGH",
+    "minimum_variations": 6,
+    "reason": "Regioner, koordinater eller geometriske randbetingelser"
+  },
+  "potential_from_field": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "conductors": {
+    "risk": "HIGH",
+    "minimum_variations": 6,
+    "reason": "Regioner, koordinater eller geometriske randbetingelser"
+  },
+  "capacitance": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "polarization": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "images": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "laplace_legendre": {
+    "risk": "HIGH",
+    "minimum_variations": 6,
+    "reason": "Regioner, koordinater eller geometriske randbetingelser"
+  },
+  "ampere": {
+    "risk": "HIGH",
+    "minimum_variations": 6,
+    "reason": "Regioner, koordinater eller geometriske randbetingelser"
+  },
+  "magnetic_superposition": {
+    "risk": "HIGH",
+    "minimum_variations": 6,
+    "reason": "Regioner, koordinater eller geometriske randbetingelser"
+  },
+  "biot_savart": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "lorentz_force": {
+    "risk": "LOW",
+    "minimum_variations": 2,
+    "reason": "Direkte algebraisk relation"
+  },
+  "wire_force": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "magnetic_material": {
+    "risk": "HIGH",
+    "minimum_variations": 6,
+    "reason": "Regioner, koordinater eller geometriske randbetingelser"
+  },
+  "multipole": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "faraday": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "motional_emf": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "circuit_power": {
+    "risk": "LOW",
+    "minimum_variations": 2,
+    "reason": "Direkte algebraisk relation"
+  },
+  "feedback": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "resistance": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "inductance_energy": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "ampere_maxwell": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "rc_transient": {
+    "risk": "MEDIUM",
+    "minimum_variations": 4,
+    "reason": "Fortegn, fysisk domæne og grænsetilfælde"
+  },
+  "units": {
+    "risk": "LOW",
+    "minimum_variations": 2,
+    "reason": "Direkte algebraisk relation"
+  },
+  "algebra": {
+    "risk": "LOW",
+    "minimum_variations": 2,
+    "reason": "Direkte algebraisk relation"
+  },
+  "magnetic_dipole_interaction": {
+    "risk": "LOW",
+    "minimum_variations": 2,
+    "reason": "Generelle kryds-/skalarprodukter; fortegn og energiekstrema testes. Ingen historisk native opskrift, så familien forbliver experimental under den eksisterende certifikatpolitik."
+  }
+}

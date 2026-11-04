@@ -1,0 +1,782 @@
+EM1 - Geometri og regneteknik                                                                           Kapitelopdelt master
+
+
+
+EM1 - Geometri og regneteknik
+Geometri- og regneteknisk hjælpeark efter Griffiths/EM1
+
+Formål. Dette ark svarer på: Hvordan ser geometrien ud, hvilke koordinater vælger jeg, og hvordan sætter jeg integralet
+op? Det supplerer formelsamlingen med små figurer, parameteriseringer, integrationsgrænser og symmetri - uden at
+være en ekstra formelsamling.
+
+                          figur/geometri → koordinater → symbolsk regning → fysisk kontrol
+
+
+Kapitel 2 - Geometri og regneteknik
+2.1 Geometri, symmetri og separationsvektor
+
+                          geometri → symmetri → aksevalg → R → komponenter → integral
+
+Vælg aksen efter symmetrien.                                     Roter koordinatsystemet hvis det hjælper.
+                            y                                                            y′     y
+                                                                                                            x′
+                  q1
+                           E1
+                                             x                                                                x
+                                      P
+                  q2       E2
+
+                y-komponenter går ud;                                             Læg fx x′ langs en diagonal,
+            x-komponenter lægges sammen.                                       symmetriakse eller forbindelseslinje.
+
+Standardgeometrier du skal kunne aflæse hurtigt
+         Kvadrat                   Ligesidet trekant              Vilkårlig trekant                 Punkter på cirkel
+          √                                                                                               y
+         a 2                                  √                                    a
+                                                  3                    b
+                                                 2 a
+                                                                           α                                 a
+                                                                               c                                   x
+              a                            a/2
+
+
+
+• Vælg først den akse, som gør geometrien mest symmetrisk.
+• Komponenter går kun ud, når geometrien viser et parvist modsat bidrag.
+• Brug x, y, z til polygoner/punktladninger; (s, ϕ, z) til cylinder/ring; (r, θ, ϕ) til kugler.
+
+
+
+
+                                                             1
+EM1 - Geometri og regneteknik                                                                        Kapitelopdelt master
+
+
+Separationsvektoren R: kilde → feltpunkt
+Fast regel:
+                                                   R = rP − rQ ,   R = |R| .
+
+Eksempel:       kildepunkt Q = (a, 0, 0), feltpunkt P =             Eksempel i xy-plan
+(0, 0, z)
+                                                                                 y
+                     z
+                                                                                                       felt
+                 P                                                                            R
+                                                                                                       ∆y
+                                     R
+                                            z
+                                                                                 kilde         ∆x
+                                                                                                              x
+
+                                                   x
+                                 a         Q                                         R = ∆x x̂ + ∆y ŷ ,
+
+                                                                                 R=          (∆x)2 + (∆y)2 .
+                                                                                         p
+                         rP = z ẑ,      rQ = ax̂,
+                                              p                     Tænk geometrisk: pilen går altid fra kilden Q til
+              R = −ax̂ + z ẑ ,           R = a2 + z 2 .
+                                                                    feltpunktet P .
+Regnemetode: Skriv rP og rQ . Træk kildepunktet fra feltpunktet. Find derefter længden. Tænk altid geometrisk
+fra ladningen til punktet, hvor feltet beregnes.
+
+
+
+
+                                                               2
+EM1 - Geometri og regneteknik                                                                            Kapitelopdelt master
+
+
+2.2 Ladningsfordelinger og integrationsgeometri
+
+                              find geometri → find tæthed → find differentialelement → dq
+
+          Linjeladning                                  Fladeladning                             Volumenladning
+                L                                          A
+                                                               da                                        V      dτ
+                   dl
+                                                        Q                                         Q
+          Q                                        σ=     ,       dq = σ da .               ρ=      ,           dq = ρ dτ .
+     λ=     ,       dq = λ dl .                         A                                         V
+          L
+
+Cirkel/bue: hvorfor dl = a dϕ?
+                          y
+
+                                    dl
+                              a
+                               ϕ
+                                         x
+
+                                                                  Halvcirkel med total ladning Q
+
+                        dl = a dϕ                                                                        Q
+                                                                                  L = πa,         λ=        .
+                                                                                                         πa
+         radius × lille vinkel = lille buelængde
+                                                                                                  Q
+                                                                                   dq = λ dl =       a dϕ
+                                                                                                  πa
+                                                                                                Q
+                                                                                        dq =      dϕ .
+                                                                                                π
+
+
+                                                                                            y
+
+                                                                                       0≤ϕ≤π
+                                                                                                         x
+
+
+                          Hel cirkel              Halvcirkel                   Kvartcirkel
+                           0 → 2π            et passende π-interval      et passende π/2-interval
+
+                        Integrationsgrænserne bestemmes af geometrien - ikke af en fast regel.
+
+
+
+
+                                                              3
+EM1 - Geometri og regneteknik                                                                Kapitelopdelt master
+
+
+Sfæriske koordinater: θ og ϕ
+                                 z
+
+          θ: ned fra +z
+          ϕ: rundt om z
+                                             r
+                                     θ
+
+                                                       x
+                                         ϕ
+                                                 xy-plan
+
+
+
+
+                                                                            0≤θ≤π ,          0 ≤ ϕ < 2π .
+                                                                                  x = r sin θ cos ϕ,
+                                                                                  y = r sin θ sin ϕ,
+                                                                                     z = r cos θ.
+
+
+
+                                                                              θ = vinklen ned fra + z
+
+                                                                            ϕ: vinklen rundt om z-aksen
+                                                                                     i xy-planet
+
+På en kugle med fast radius r:
+                                                  da = r2 sin θ dθ dϕ .
+Geometrisk: r dθ er den lille bevægelse ned over kuglen, mens r sin θ dϕ er den lille bevægelse rundt om z-aksen.
+Produktet giver arealet.
+
+
+
+
+                                                           4
+EM1 - Geometri og regneteknik                                                               Kapitelopdelt master
+
+
+Integrationsgrænser på kugler
+           Hel kugle                        Øvre halvkugle                      Nedre halvkugle
+               z                                  z                                    z
+
+
+
+
+                                                π                           π
+                                       0≤θ≤       ,    0 ≤ ϕ ≤ 2π.            ≤ θ ≤ π,     0 ≤ ϕ ≤ 2π.
+                                                2                           2
+    0 ≤ θ ≤ π,    0 ≤ ϕ ≤ 2π.
+Udsnit af kugle: spørg først hvor langt området går rundt om z-aksen, og dernæst hvor langt det går fra toppen
+ned over kuglen. Det giver de to intervaller.
+
+                                    ϕ : hvor langt går vi rundt om z-aksen?
+
+                                θ : hvor langt går vi fra toppen ned over kuglen?
+
+
+                                                                  vælg θ-slut fra kanten
+
+
+
+
+                         ϕ-intervallet bestemmer hvor stor en sektor der går rundt om z
+
+
+
+
+                                                       5
+EM1 - Geometri og regneteknik                                                                 Kapitelopdelt master
+
+
+Halvkugle: geometri før integral
+Generel geometri inspireret af Nov21.1; ikke en løst eksamensopgave.
+                                z
+
+            dq = σ da
+            rotation om z                  da
+                                      R
+                                  θ
+                            dFz       dF
+                                                    x
+                                                                       1. Arealelement
+
+                                                                                  dq = σR2 sin θ dθ dϕ .
+
+                                                                       2. Symmetri
+
+                                                                                      Fx = Fy = 0 .
+
+                                                                       Alle tværgående komponenter har en modpart
+                                                                       ved samme θ på den modsatte side.
+                                                                       3. Projektion
+
+                                                                                     dFz = dF cos θ .
+
+                                                                       4. Øvre halvkugle
+
+                                                                                      π
+                                                                              0≤θ≤      ,      0 ≤ ϕ ≤ 2π .
+                                                                                      2
+
+
+                                  Først geometri og symmetri - så integral.
+
+
+
+
+                                                         6
+EM1 - Geometri og regneteknik                                                                     Kapitelopdelt master
+
+
+Annulus og skive: koncentriske ringelementer
+                Annulus set oppefra                                        Feltpunkt på z-aksen
+                                                                                   z
+
+                                                                                   P
+                              b
+                      s       a
+                                                                                    z         R
+                                      ds
+
+                                                                                                        s
+                                                                                          s
+                                                                                     p
+                     da = 2πs ds                                                R=    s2 + z 2 .
+
+              omkreds × tykkelse: (2πs) ds                   Integrationsgrænser
+
+                    dq = σ 2πs ds .                                            skive: 0 ≤ s ≤ R,
+
+                                                                              annulus: a ≤ s ≤ b.
+
+
+                                   grænsetjek: a → 0, b → ∞ =⇒ uendeligt plan
+
+Et korrekt annulus-resultat skal i denne grænse gå mod det kendte standardfelt E = σ/(2ϵ0 ).
+
+
+
+
+                                                         7
+EM1 - Geometri og regneteknik                                                                Kapitelopdelt master
+
+
+Symmetri og komponenter: hvad kan overleve?
+
+
+                            symmetri bestemmer hvilke komponenter der kan overleve
+
+        To symmetriske punktladninger                                           Halvcirkel
+                    y                                                              y
+
+               q
+
+                                      x                                                         x
+                                P
+               q
+                                                                      Ex = 0,        Ey kan overleve.
+
+             Ey = 0,       Ex overlever.
+
+             Ring + punkt på aksen                                       Halvkugle omkring z
+                      z                                                           z
+
+                       P
+
+
+
+
+                                                                      Fx = Fy = 0,       Fz overlever.
+             E⊥ = 0,       Ez overlever.
+
+
+    Fortegn og den endelige retning bestemmes stadig fysisk. Symmetri fortæller kun, hvilke komponenter der
+                                            kan ophæve hinanden.
+
+
+
+
+                                                      8
+EM1 - Geometri og regneteknik                                                                Kapitelopdelt master
+
+
+Vinkler og komponenter: 2D vs. sfærisk notation
+            y
+                                                                   Fx = F cos θ ,     Fy = F sin θ .
+                             F
+                                                    Her er θ blot vinklen målt fra den valgte x-akse i en plan vek-
+                                                    toropgave.
+                            Fy                      Ikke forveksl med sfæriske koordinater:
+                  θ
+                                 x                     θ = polarvinkel ned fra + z,     ϕ = azimut rundt om z.
+                      Fx
+
+
+    Vinkelsymbolet får sin betydning fra geometrien. Tegn altid aksen og markér, hvorfra vinklen måles, før du
+                                              bruger sinus/cosinus.
+
+
+
+
+                                                        9
+EM1 - Geometri og regneteknik                                                                     Kapitelopdelt master
+
+
+2.3 Operatorer og koordinatsystemer
+For et skalarfelt V og et vektorfelt A = Ax x̂ + Ay ŷ + Az ẑ:
+Gradient
+                                                             ∂V      ∂V      ∂V
+                                                     ∇V =       x̂ +    ŷ +    ẑ
+                                                             ∂x      ∂y      ∂z
+Divergens
+                                                              ∂Ax   ∂Ay   ∂Az
+                                                    ∇·A=          +     +
+                                                               ∂x    ∂y    ∂z
+Curl
+                                                              x̂         ŷ     ẑ
+                                                      ∇ × A = ∂x         ∂y     ∂z
+                                                              Ax         Ay     Az
+Laplacian af et skalarfelt
+                                                             ∂2V    ∂2V    ∂2V
+                                                    ∇2 V =      2
+                                                                  +    2
+                                                                         +
+                                                             ∂x     ∂y     ∂z 2
+
+Typiske EM-simplifikationer
+                                                                  dV                     d2 V
+                                          V = V (z) ⇒ ∇V =           ẑ ,       ∇2 V =        .
+                                                                  dz                     dz 2
+Hvis A = Ax (x)x̂:
+                                                                        dAx
+                                                            ∇·A=            .
+                                                                         dx
+
+
+
+
+                                                                   10
+EM1 - Geometri og regneteknik                                                                                  Kapitelopdelt master
+
+
+Cylindriske koordinater (s, ϕ, z)
+
+                                                            y
+
+                                                                                  ŝ
+                                                                     s
+                                                                      ϕ
+                                                                                       x
+
+
+
+
+For A = As ŝ + Aϕ ϕ̂ + Az ẑ:
+Gradient
+                                                   ∂V      1 ∂V      ∂V
+                                           ∇V =       ŝ +      ϕ̂ +    ẑ
+                                                   ∂s      s ∂ϕ      ∂z
+Divergens
+                                                 1 ∂           1 ∂Aϕ   ∂Az
+                                        ∇·A=          (sAs ) +       +
+                                                 s ∂s          s ∂ϕ     ∂z
+Curl
+                                                                                  
+                                              1          ∂Az   ∂(sAϕ )
+                                         ∇×A=                −         ŝ
+                                              s           ∂ϕ     ∂z
+                                                        ∂As    ∂Az
+                                                        h                     i
+                                                    +       −       ϕ̂
+                                                         ∂z     ∂s
+                                                                       
+                                                      1 ∂(sAϕ )     ∂As
+                                                    +             −       ẑ
+                                                      s     ∂s       ∂ϕ
+
+Laplacian
+                                                1 ∂    ∂V                 1 ∂2V    ∂2V
+                                                               
+                                       ∇2 V =        s               +     2   2
+                                                                                 +
+                                                s ∂s   ∂s                 s ∂ϕ     ∂z 2
+
+Typiske EM-simplifikationer
+                                            ∂
+                                              =0     ved aksialsymmetri.
+                                           ∂ϕ
+                                                    dV                                     1 d    dV
+                                                                                                      
+                                 V = V (s) ⇒ ∇V =      ŝ ,               ∇2 V =                s          .
+                                                    ds                                     s ds   ds
+
+                                                                            1 d
+                                        A = As (s)ŝ ⇒ ∇ · A =                   (sAs ) .
+                                                                            s ds
+
+
+
+
+                                                                11
+EM1 - Geometri og regneteknik                                                                                             Kapitelopdelt master
+
+
+Sfæriske koordinater (r, θ, ϕ)
+Gradient
+                                                   ∂V      1 ∂V         1 ∂V
+                                          ∇V =        r̂ +      θ̂ +            ϕ̂
+                                                   ∂r      r ∂θ      r sin θ ∂ϕ
+Divergens
+                                        1 ∂ 2              1    ∂                   1 ∂Aϕ
+                                 ∇·A=         (r Ar ) +            (sin θ Aθ ) +
+                                        r2 ∂r           r sin θ ∂θ               r sin θ ∂ϕ
+Curl
+                                                                                                    
+                                                1                  ∂               ∂Aθ
+                                        ∇×A=                          (sin θAϕ ) −     r̂
+                                             r sin θ               ∂θ               ∂ϕ
+                                                                                                
+                                                     1           1 ∂Ar    ∂(rAϕ )
+                                                   +                    −         θ̂
+                                                     r         sin θ ∂ϕ     ∂r
+                                                                                       
+                                                     1         ∂(rAθ )   ∂Ar
+                                                   +                   −     ϕ̂
+                                                     r           ∂r       ∂θ
+
+Laplacian
+                                     1 ∂      ∂V               1        ∂               ∂V                  1       ∂2V
+                                                                                          
+                            ∇2 V =         r2          +                        sin θ            +
+                                     r2 ∂r    ∂r           r2 sin θ ∂θ                  ∂θ               r2 sin2 θ ∂ϕ2
+
+Typiske EM-simplifikationer
+
+                                                       dV                                   1 d      dV
+                                                                                                               
+                                 V = V (r) ⇒ ∇V =         r̂ ,              ∇2 V =                r2                .
+                                                       dr                                   r2 dr    dr
+
+                                                                             1 d 2
+                                        A = Ar (r)r̂ ⇒ ∇ · A =                     (r Ar ) .
+                                                                             r2 dr
+
+               Sfærisk symmetri betyder, at størrelserne kun afhænger af r: ingen θ- eller ϕ-afhængighed.
+
+
+
+
+                                                                   12
+EM1 - Geometri og regneteknik                                                                                     Kapitelopdelt master
+
+
+Geometriske differentialelementer
+Hovedregel: skeln mellem et skalarareal da og et orienteret arealelement da = n̂ da.
+Kartesisk                                     Cylindrisk (s, ϕ, z)                          Sfærisk (r, θ, ϕ)
+
+        dl = dx x̂ + dy ŷ + dz ẑ                    dl = ds ŝ + s dϕ ϕ̂ + dz ẑ               dl = dr r̂ + r dθ θ̂ + r sin θ dϕ ϕ̂
+
+             dτ = dx dy dz                                 dτ = s ds dϕ dz                             dτ = r2 sin θ dr dθ dϕ
+Eksempel, flade z = konstant:                 Sideflade s = konstant:                       Kugleflade r = R:
+             da = ẑ dx dy.                                da = ŝ s dϕ dz.
+                                                                                                       da = r̂ R2 sin θ dθ dϕ .
+                                              Endeflade z = konstant:
+
+                                                           da = ẑ s ds dϕ.
+
+                          Cirkel/ring                                                Ringelement i skive/annulus
+
+                                s dl = s dϕ
+                                                                                                        s    ds
+
+
+
+
+                           dl = s dϕ .                                               da = (2πs) ds ,        dq = σ 2πs ds .
+
+
+                     Geometrien bestemmer differentialelementet: længde → dl, flade → da, volumen → dτ .
+
+
+
+
+                                                                   13
+EM1 - Geometri og regneteknik                                                                            Kapitelopdelt master
+
+
+2.4 Kurver og integrationskontrol
+Parameterisering af en krum bane
+                                                      r(t) = x(t)x̂ + y(t)ŷ + z(t)ẑ
+                                                                           dr
+                                                               dl = dr =      dt .
+                                                                           dt
+
+
+
+                                                                                      B
+                                                                            dl
+
+                                                     A
+
+I et konservativt elektrostatisk felt behøver man ofte ikke parameterisere den viste krumme vej:
+                                                              Z B
+                                     ∇×E=0            ⇒             E · dl afhænger kun af A og B.
+                                                                A
+
+Vælg derfor den geometrisk letteste vej, når det er tilladt.
+En simpel integrationsregel, der ofte glemmes
+Hvis integranden ikke afhænger af z:
+                                                         Z L
+                                                               dz = L        (ikke 0).
+                                                          0
+
+Dermed kan en tredobbelt integralstruktur fx reduceres som
+                                  ZZZ                               ZZ
+                                            f (x, y) dx dy dz = L        f (x, y) dx dy   (0 < z < L).
+                                        V
+
+
+
+   Integrationscheck: Hvilken koordinat varierer? Hvilke grænser giver geometrien? Hvilke faktorer er konstante og kan
+   trækkes udenfor integralet?
+
+
+
+
+                                                                      14
+EM1 - Geometri og regneteknik                                                                                Kapitelopdelt master
+
+
+Kapitel 3 - Matematik til potentialmetoder
+Matematisk støtte til Laplace, separation, sfærisk løsning og spejlkoordinater. Fysikken og metodevalget står i formel-
+samlingen.
+
+
+3.1 Laplace og separation af variable
+Kartesisk Laplaceoperator
+                                                            ∂2V   ∂2V    ∂2V
+                                                   ∇2 V =       +      +
+                                                            ∂x2   ∂y 2   ∂z 2
+I et ladningsfrit område sættes dette lig nul. I 2D:
+                                                         ∂2V   ∂2V
+                                                             +      = 0.
+                                                         ∂x2   ∂y 2
+
+                                         Separationsansats:            V (x, y) = X(x)Y (y)
+
+                                                                           X ′′   Y ′′
+                                             X ′′ Y + XY ′′ = 0   ⇒             +      = 0.
+                                                                           X      Y
+Et standardvalg er
+                                                    X ′′               Y ′′
+                                                         = k2 ,             = −k 2 .
+                                                    X                  Y
+Eksponential/hyperbolsk ODE                                             Trigonometrisk ODE
+
+                      X ′′ − k 2 X = 0                                                        Y ′′ + k 2 Y = 0
+
+                    X = Aekx + Be−kx                                                   Y = C cos(ky) + D sin(ky) .
+eller                                                                   Omvendt fortegn bytter de to løsningstyper mellem ko-
+              X = A1 sinh(kx) + B1 cosh(kx) .
+                                                                        ordinaterne.
+
+        Randbetingelserne vælger formen: nulværdi ved en rand favoriserer ofte sin/sinh; krav om endelighed
+                              eller aftagning kan fjerne voksende eksponentialled.
+
+
+3.2 Sfærisk Laplace og gradient
+Fuld sfærisk Laplaceoperator
+
+                                  1 ∂                1                        1    ∂2V
+                                                                     
+                                          2 ∂V            ∂          ∂V
+                            ∇ V = 2
+                              2
+                                        r        + 2           sin θ      + 2 2        .
+                                 r ∂r       ∂r    r sin θ ∂θ         ∂θ    r sin θ ∂ϕ2
+
+Ingen ϕ-afhængighed, V = V (r, θ):
+
+                                           1 ∂                1
+                                                                              
+                                                   2 ∂V            ∂          ∂V
+                                     ∇ V = 2
+                                         2
+                                                 r        + 2           sin θ      .
+                                          r ∂r       ∂r    r sin θ ∂θ         ∂θ
+
+Sfærisk gradient
+                                                      ∂V      1 ∂V         1 ∂V
+                                               ∇V =      r̂ +      θ̂ +            ϕ̂ .
+                                                      ∂r      r ∂θ      r sin θ ∂ϕ
+For V = V (r, θ):
+                                                     ∂V      1 ∂V
+                                             ∇V =       r̂ +      θ̂ ,        E = −∇V .
+                                                     ∂r      r ∂θ
+Radial standardadfærd                                                  Legendre - hurtig matematik
+
+                     rℓ ,    r−(ℓ+1) .                                                 P0 (x) = 1,      P1 (x) = x,
+
+Ved r = 0: behold den endelige rℓ -gren.                                            1                      1
+                                                                            P2 (x) =  (3x2 − 1),   P3 (x) = (5x3 − 3x).
+Ved r → ∞ og V → 0: behold r−(ℓ+1) -grenen.                                         2                      2
+                                                                       Hvis randen er proportional med ét Pℓ (cos θ), matcher
+                                                                       samme ℓ direkte.
+
+                                                                  15
+EM1 - Geometri og regneteknik                                                                             Kapitelopdelt master
+
+
+3.3 Spejlkoordinater og afstande
+Kun koordinatregning; se formelsamlingen for fysikken.
+
+                           y = 0 : (x0 , y0 ) → (x0 , −y0 ) ,        x = 0 : (x0 , y0 ) → (−x0 , y0 ) .
+
+Ved to vinkelrette planer fås også det dobbelte spejl:
+
+                                                   (x0 , y0 ) → (−x0 , −y0 ) .
+
+Til kraft/potentiale bruges de almindelige afstande mellem den rigtige ladning og de relevante rigtige/spejlede posi-
+tioner:
+                                           q
+                                    Rij = (xi − xj )2 + (yi − yj )2 + (zi − zj )2 .
+
+
+Kapitel 4 - Matematik til elektriske felter i stof
+Skelet - udfyldes mere, når vi arbejder med kapitel 4-opgaver.
+
+
+4A. Polarisation og bundne ladninger
+                                               ρb = −∇ · P,          σb = P · n̂.
+Matematik: divergens, normalvektorer, prikprodukt.
+
+
+4B. D-felt og Gauss
+Matematik: samme Gauss-geometri som 2C, men med fri ladning.
+
+
+4C. Dielektrika og kapacitorer
+Matematik: stykvise felter, potentialeforskelle, simple algebraiske forhold.
+
+
+Kapitel 5 - Matematik til magnetostatik
+Skelet - vi gemmer de egentlige løkke-/Ampère-illustrationer til kapitel 5.
+
+
+5A. Lorentz-kraft og lederkraft
+Matematik: krydsprodukt, komponenter, vinkel mellem vektorer.
+
+
+5B. Biot–Savart
+Matematik: parameterisering af dl, separationsvektor R, krydsprodukt og integration.
+
+
+5C. Ampère og symmetri
+Matematik: linjeintegraler, cirkelgeometri, omsluttet strøm, inde/ude-regioner.
+
+
+5D. Magnetisk superposition
+Matematik: vektoraddition og forskudte koordinater.
+
+
+5E. Magnetisk vektorpotentiale
+                                                        B = ∇ × A.
+Matematik: curl og integration af simple differentialrelationer.
+
+
+                                                                16
+EM1 - Geometri og regneteknik                                                     Kapitelopdelt master
+
+
+Kapitel 6 - Matematik til magnetiske materialer
+Skelet.
+
+
+6A. Magnetisation og bundne strømme
+                                            Jb = ∇ × M,           Kb = M × n̂.
+Matematik: curl, krydsprodukt og normalvektorer.
+
+
+6B. H-felt
+Matematik: Ampère-lignende integraler og stykvise materialeregioner.
+
+
+6C. Lineære magnetiske materialer
+Matematik: proportionalitet, algebra og torus-geometri.
+
+
+Kapitel 7 - Matematik til elektrodynamik
+Skelet - tidsafhængig matematik fyldes først rigtigt ud, når vi når hertil.
+
+
+7A. Ohm, strøm og modstand
+Matematik: proportionalitet, integral over ikke-uniform geometri og enhedstjek.
+
+
+7B. Motional EMF
+Matematik: krydsprodukt og geometri for bevægende ledere.
+
+
+7C. Faraday og Lenz
+                                                   Z
+                                                                          dΦB
+                                            ΦB =       B · da,     E =−       .
+                                                                           dt
+Matematik: tidsafledning, kæde-/produktregel, tidsafhængigt areal og felt.
+
+
+7D. Mutual induction
+Matematik: fluxkobling og proportionalitet.
+
+
+7E. Selvinduktans og energi
+Matematik: algebra, energiudtryk og simple integraler.
+
+
+7F. Ampère–Maxwell
+Matematik: fluxafledning og de samme symmetrigeometrier som Gauss/Ampère.
+
+
+Fast regnearbejdsgang i EM1
+1. Tegn eller aflæs geometrien.
+2. Sæt koordinater på relevante punkter og skriv nødvendige vektorer.
+3. Vælg matematisk værktøj, der hører til kapitlets opgavetype.
+4. Regn symbolsk først.
+
+
+                                                             17
+EM1 - Geometri og regneteknik                                 Kapitelopdelt master
+
+
+5. Indsæt tal til sidst.
+6. Kontrollér fortegn, retning, grænsetilfælde og enheder.
+
+
+
+
+                                                         18
+

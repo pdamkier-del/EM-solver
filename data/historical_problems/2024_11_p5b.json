@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "id": "2024-11:5b",
+  "status": "executable",
+  "geometry": "coupled_loops",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 31,
+    "answer": "answers_extracted.txt: 2024-11, Opgave 5, b)"
+  },
+  "given_source": [
+    "Tre identiske, flade, cirkulære strømkredse, A, B, og C, med radius a ligger alle parallelt\nmed xy-planet i et koordinatsystem. Som vist på figuren ligger A (blå) med centrum\ni origo, B (grøn) med centrum i punktet (0, 0, b) og C (rød) med centrum i (0, b, 0).\nKredsenes dimensioner er langt mindre end afstanden mellem dem, altså a ! b. Kredsene\nhar elektrisk modstand R, og deres positive omløbsretning er angivet med pile på figuren.\n                                     z\n                               B\n                                          !\n\n\n\n\n                                     2a\n\n                           b\n\n                                     2a                          2a\n                                                                        y\n                                          !                  !\n\n\n\n\n                    x            A          b              C"
+  ],
+  "wanted_source": [
+    "Bestem, MAC , den gensidige induktans mellem kredsene A og C.\nEn tidsafhængig strøm løber i A. Til et tidspunkt er denne voksende, dI/dt > 0."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    },
+    "dI_dt": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "ohm",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "dI_dt": "A/s"
+  },
+  "path": [
+    {
+      "id": "axis",
+      "bindings": {},
+      "problem": {
+        "domain": "BA",
+        "family": "multipole",
+        "variables": {
+          "charges": [],
+          "magnetic_current": {
+            "expr": "I"
+          },
+          "area": {
+            "expr": "pi*a^2"
+          },
+          "normal": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "1"
+            }
+          ],
+          "magnetic_field_point": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "b"
+            }
+          ]
+        },
+        "assumptions": [
+          "far_field"
+        ],
+        "regions": []
+      }
+    },
+    {
+      "id": "equator",
+      "bindings": {},
+      "problem": {
+        "domain": "BA",
+        "family": "multipole",
+        "variables": {
+          "charges": [],
+          "magnetic_current": {
+            "expr": "I"
+          },
+          "area": {
+            "expr": "pi*a^2"
+          },
+          "normal": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "1"
+            }
+          ],
+          "magnetic_field_point": [
+            {
+              "expr": "b"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ]
+        },
+        "assumptions": [
+          "far_field"
+        ],
+        "regions": []
+      }
+    },
+    {
+      "id": "M_AB",
+      "bindings": {
+        "B_axis": {
+          "ref": "axis.B_magnetic_far",
+          "indices": [
+            2
+          ]
+        }
+      },
+      "problem": {
+        "domain": "DYN",
+        "family": "inductance_energy",
+        "variables": {
+          "flux": {
+            "expr": "B_axis*pi*a^2"
+          },
+          "I": {
+            "expr": "I"
+          },
+          "N": 1,
+          "mutual": true
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    },
+    {
+      "id": "M_AC",
+      "bindings": {
+        "B_equator": {
+          "ref": "equator.B_magnetic_far",
+          "indices": [
+            2
+          ]
+        }
+      },
+      "problem": {
+        "domain": "DYN",
+        "family": "inductance_energy",
+        "variables": {
+          "flux": {
+            "expr": "B_equator*pi*a^2"
+          },
+          "I": {
+            "expr": "I"
+          },
+          "N": 1,
+          "mutual": true
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    },
+    {
+      "id": "current_B",
+      "bindings": {
+        "M_B": {
+          "ref": "M_AB.M"
+        }
+      },
+      "problem": {
+        "domain": "DYN",
+        "family": "faraday",
+        "variables": {
+          "time": {
+            "expr": "t"
+          },
+          "flux": {
+            "expr": "M_B*dI_dt*t"
+          },
+          "R": {
+            "expr": "R"
+          }
+        },
+        "assumptions": [
+          "negligible_self_inductance"
+        ],
+        "regions": []
+      }
+    },
+    {
+      "id": "current_C",
+      "bindings": {
+        "M_C": {
+          "ref": "M_AC.M"
+        }
+      },
+      "problem": {
+        "domain": "DYN",
+        "family": "faraday",
+        "variables": {
+          "time": {
+            "expr": "t"
+          },
+          "flux": {
+            "expr": "M_C*dI_dt*t"
+          },
+          "R": {
+            "expr": "R"
+          }
+        },
+        "assumptions": [
+          "negligible_self_inductance"
+        ],
+        "regions": []
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "M_AB",
+      "result": "M",
+      "value": {
+        "expr": "mu_0*pi*a^4/(2*b^3)"
+      },
+      "unit": "H",
+      "sign": 1
+    },
+    {
+      "step": "M_AC",
+      "result": "M",
+      "value": {
+        "expr": "-mu_0*pi*a^4/(4*b^3)"
+      },
+      "unit": "H",
+      "sign": -1
+    },
+    {
+      "step": "current_B",
+      "result": "I",
+      "value": {
+        "expr": "-mu_0*pi*a^4*dI_dt/(2*b^3*R)"
+      },
+      "unit": "A",
+      "sign": -1
+    },
+    {
+      "step": "current_C",
+      "result": "I",
+      "value": {
+        "expr": "mu_0*pi*a^4*dI_dt/(4*b^3*R)"
+      },
+      "unit": "A",
+      "sign": 1
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "Fjernfeltsapproksimation a<<b fra opgaven. Positiv normal +z for begge modtagerspoler.",
+  "given_values": {},
+  "given_units": {}
+}

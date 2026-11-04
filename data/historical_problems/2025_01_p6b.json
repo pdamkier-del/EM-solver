@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "id": "2025-01:6b",
+  "status": "executable",
+  "geometry": "circular_coil",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 36,
+    "answer": "answers_extracted.txt: 2025-01, Opgave 6, b)"
+  },
+  "given_source": [
+    "En cirkulær spole med N = 12 vindinger og radius r = 0,20 m ligger i xy-planet af et\nkoordinatsystem som illustreret på figuren. Spolen har ringe udstrækning i z-retningen.\nDe to ender af ledningen, der danner spolen, er forbundne med hinanden, således at\nder dannes et kredsløb. Kredsens modstand er R = 1,2 Ω. Et tidsafhængigt, homogent\nmagnetfelt\n       ! er rettet efter\" z-aksen, altså ud af papirets plan. Magnetfeltet er givet ved\nB(t) = a(1 → e−t/τ ) + b ẑ, hvor a = 5,0 T og b = →2,0 T er konstanter, og hvor tids-\nkonstanten er τ = 60 s. Udelukkende ikke-negative tider, t ≥ 0, betragtes.\n\n                                            y\n\n\n\n                                       r        B(t)\n                                                         x"
+  ],
+  "wanted_source": [
+    "Bestem energien, der afsættes i spolen i tidsrummet fra T0 = 0 til T = 55 s. Angiv\n     svaret såvel symbolsk som numerisk.\nSpolens vindinger er lavet af aluminium, som har resistiviteten ρ = 2,8 × 10−8 Ω · m."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    },
+    "B_offset": {
+      "positive": true
+    },
+    "T": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "ohm",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "B_offset": "T",
+    "T": "s"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "DYN",
+        "family": "faraday",
+        "geometry": "circular_coil",
+        "variables": {
+          "time": {
+            "expr": "t"
+          },
+          "B_normal": {
+            "expr": "B*(1-exp(-t/tau))+B_offset"
+          },
+          "area": {
+            "expr": "pi*a^2"
+          },
+          "N": {
+            "expr": "N"
+          },
+          "R": {
+            "expr": "R"
+          },
+          "time_bounds": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "T"
+            }
+          ]
+        },
+        "regions": [],
+        "assumptions": [
+          "uniform_normal_B",
+          "negligible_self_inductance"
+        ],
+        "wanted": [
+          "EMF",
+          "W"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "EMF",
+      "value": {
+        "expr": "-N*pi*a^2*B*exp(-t/tau)/tau"
+      },
+      "unit": "V",
+      "sign": -1
+    },
+    {
+      "step": "solve",
+      "result": "W",
+      "value": {
+        "expr": "(N*pi*a^2*B)^2*(1-exp(-2*T/tau))/(2*tau*R)"
+      },
+      "unit": "J",
+      "numeric": {
+        "values": {
+          "N": 12,
+          "a": 0.2,
+          "B": 5,
+          "tau": 60,
+          "R": 1.2,
+          "T": 55
+        },
+        "value": 0.33,
+        "tolerance": 0.01
+      }
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {
+    "N": 12,
+    "a": 0.2,
+    "B": 5,
+    "tau": 60,
+    "R": 1.2,
+    "T": 55
+  },
+  "given_units": {
+    "N": "1",
+    "a": "m",
+    "B": "T",
+    "tau": "s",
+    "R": "ohm",
+    "T": "s"
+  }
+}

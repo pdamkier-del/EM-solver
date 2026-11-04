@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "id": "2024-11:3a",
+  "status": "executable",
+  "geometry": "current_ribbon",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 30,
+    "answer": "answers_extracted.txt: 2024-11, Opgave 3, a)"
+  },
+  "given_source": [
+    "Et meget langt metalbånd med bredde w og forsvindende tykkelse bærer strømmen I i sin\nlængderetning. Strømmen er jævnt fordelt over båndet. Et tværsnit er vist på figuren,\nhvor båndets længderetning og dermed strømmen løber langs z-aksen (ud af papirets\nplan), og båndets bredderetning (vist i blåt) ligger langs x-aksen fra x = 0 til x = w.\nOgså afsat på figuren er et punkt A, som ligger i båndets plan i afstanden b fra båndets\nnærmeste kant.\n                          y\n                                I       \"           b\n                                                           !\n\n\n                                                               x\n                              dx              w            A\n\n\nMagnetfeltet i punktet A ønskes undersøgt:"
+  ],
+  "wanted_source": [
+    "Bestem feltets retning og styrke.\n     Vink: Båndet kan betragtes som en sum af uendelig mange uendeligt tynde (dx)\n     bidrag."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "BA",
+        "family": "magnetic_superposition",
+        "geometry": "current_ribbon",
+        "variables": {
+          "point": [
+            {
+              "expr": "b+d"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "sources": [
+            {
+              "kind": "wire",
+              "center": [
+                {
+                  "expr": "s"
+                },
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "0"
+                }
+              ],
+              "I": {
+                "expr": "I/d"
+              }
+            }
+          ],
+          "distribution_bounds": [
+            [
+              {
+                "expr": "s"
+              },
+              {
+                "expr": "0"
+              },
+              {
+                "expr": "d"
+              }
+            ]
+          ],
+          "limits": {
+            "B": [
+              {
+                "expr": "d"
+              },
+              {
+                "expr": "0"
+              }
+            ]
+          }
+        },
+        "regions": [],
+        "assumptions": [
+          "parallel_infinite_sources",
+          "magnetostatic"
+        ],
+        "wanted": [
+          "B",
+          "limit_B"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "B",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "mu_0*I*log((b+d)/b)/(2*pi*d)"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "T"
+    },
+    {
+      "step": "solve",
+      "result": "limit_B",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "mu_0*I/(2*pi*b)"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "T"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "Kildens båndbredde w betegnes d; b er afstanden til nærmeste kant.",
+  "given_values": {},
+  "given_units": {}
+}

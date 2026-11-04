@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "id": "2022-11:1c",
+  "status": "executable",
+  "geometry": "two_point_charges",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 13,
+    "answer": "answers_extracted.txt: 2022-11, Opgave 1, c)"
+  },
+  "given_source": [
+    "To ladninger, q1 = −6,0 µC og q2 = +3,0 µC, befinder sig på x-aksen ved de respektive\nkoordinater x1 = 0 og x2 = 12,0 cm. Det elektriske potential sættes til nul i det uendeligt\nfjerne.\n\n                    q1 = −6,0 µC                         q2 = +3,0 µC\n\n\n                       x1 = 0                            x2 = 12,0 cm"
+  ],
+  "wanted_source": [
+    "Bestem arbejdet, det kræver at flytte ladningen q2 fra punktet x2 = 12,0 cm til\n     punktet x3 = 24,0 cm på x-aksen, idet q2 ligger i hvile både før og efter flytningen,\n     og ladningen q1 forbliver i origo."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "EV",
+        "family": "point_charges",
+        "geometry": "two_point_charges",
+        "variables": {
+          "charges": [
+            [
+              {
+                "expr": "-6*q"
+              },
+              [
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ],
+            [
+              {
+                "expr": "3*q"
+              },
+              [
+                {
+                  "expr": "2*d"
+                },
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ]
+          ],
+          "initial_charges": [
+            [
+              {
+                "expr": "-6*q"
+              },
+              [
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ],
+            [
+              {
+                "expr": "3*q"
+              },
+              [
+                {
+                  "expr": "d"
+                },
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ]
+          ],
+          "point": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "L"
+            }
+          ]
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "W_external"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "W_external",
+      "value": {
+        "expr": "9*q^2/(4*pi*epsilon_0*d)"
+      },
+      "unit": "J",
+      "numeric": {
+        "values": {
+          "d": 0.12,
+          "q": 1e-06
+        },
+        "value": 0.674,
+        "tolerance": 0.002
+      }
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {
+    "d": 0.12,
+    "q": 1e-06
+  },
+  "given_units": {
+    "d": "m",
+    "q": "C"
+  }
+}

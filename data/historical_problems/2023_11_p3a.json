@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "id": "2023-11:3a",
+  "status": "executable",
+  "geometry": "cartesian_polynomial",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 22,
+    "answer": "answers_extracted.txt: 2023-11, Opgave 3, a)"
+  },
+  "given_source": [
+    "I et kubisk område af rummet, 0 < x < a, 0 < y < a, og 0 < z < a, har det elektriske\nfelt formen\n                              E0 !\" 2     #    \"        #    \"         # $\n               E(x, y, z) =     2\n                                   x + z 2 x̂ + y 2 + x2 ŷ + z 2 + y 2 ẑ ,\n                              a\nhvor og a og E0 er konstanter."
+  ],
+  "wanted_source": [
+    "Bestem ladningstætheden, ρ(x, y, x), i området. Find dernæst den totale ladning,\n     Q, indeholdt i området."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V/m",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "EV",
+        "family": "field_calculus",
+        "geometry": "cartesian_polynomial",
+        "variables": {
+          "coordinates": [
+            {
+              "expr": "x"
+            },
+            {
+              "expr": "y"
+            },
+            {
+              "expr": "z"
+            }
+          ],
+          "system": "cartesian",
+          "E": [
+            {
+              "expr": "V*(x^2+z^2)/a^2"
+            },
+            {
+              "expr": "V*(y^2+x^2)/a^2"
+            },
+            {
+              "expr": "V*(z^2+y^2)/a^2"
+            }
+          ],
+          "volume_bounds": [
+            [
+              {
+                "expr": "x"
+              },
+              {
+                "expr": "0"
+              },
+              {
+                "expr": "a"
+              }
+            ],
+            [
+              {
+                "expr": "y"
+              },
+              {
+                "expr": "0"
+              },
+              {
+                "expr": "a"
+              }
+            ],
+            [
+              {
+                "expr": "z"
+              },
+              {
+                "expr": "0"
+              },
+              {
+                "expr": "a"
+              }
+            ]
+          ]
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "rho",
+          "Q",
+          "dB_dt"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "rho",
+      "value": {
+        "expr": "2*epsilon_0*V*(x+y+z)/a^2"
+      },
+      "unit": "C/m^3"
+    },
+    {
+      "step": "solve",
+      "result": "Q",
+      "value": {
+        "expr": "3*epsilon_0*V*a^2"
+      },
+      "unit": "C"
+    },
+    {
+      "step": "solve",
+      "result": "dB_dt",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "-2*V*y/a^2"
+            }
+          ],
+          [
+            {
+              "expr": "-2*V*z/a^2"
+            }
+          ],
+          [
+            {
+              "expr": "-2*V*x/a^2"
+            }
+          ]
+        ]
+      },
+      "unit": "T/s"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

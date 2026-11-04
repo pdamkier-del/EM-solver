@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "id": "2026-01:1a",
+  "status": "executable",
+  "geometry": "dipoles",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 41,
+    "answer": "answers_extracted.txt: 2026-01, Opgave 1, a)"
+  },
+  "given_source": [
+    "Der betragtes to elektrostatiske tilfælde, A og B, som vist på figuren.\n\n        A)              y                           B)                y\n             +q   !          !   −q\n                                                       +q                         −q\n                      a a                                                 a\n               60◦          60◦       x                                                x\n                        O                                             O\n\nFørst betragtes tilfældet A, hvor to punktladninger, +q og −q, begge er anbragt i xy-\nplanet i det indlagte koordinatsystem i afstanden a fra begyndelsespunktet O. Den ne-\ngative ladning, −q, ligger i første kvadrant i en retning, der danner vinkelen 60◦ med\nden positive x-akse; den positive ladning, +q, ligger i anden kvadrant i en retning, der\ndanner vinkelen 60◦ med den negative x-akse."
+  ],
+  "wanted_source": [
+    "Bestem det elektriske felt i O. Resultatet bedes angivet på vektorform, E = Ex x̂ +\n     Ey ŷ + Ez ẑ. Bestem også den elektrostatiske energi, W , af ladningssystemet.\nDernæst betragtes tilfældet B, hvor en ladningsfordeling i xy-planet danner en tynd\nhalvcirkel med centrum i O og radius a. Halvcirklen strækker sig over første og anden\nkvadrant, hvor ladningen af den del, der ligger i første kvadrant, er −q, og ladningen\naf den del, der ligger i anden kvadrant, er +q. Inden for hver kvadrant er ladningen\nuniformt fordelt langs cirkelbuen."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "EV",
+        "family": "point_charges",
+        "geometry": "dipoles",
+        "variables": {
+          "charges": [
+            [
+              {
+                "expr": "q"
+              },
+              [
+                {
+                  "expr": "-a/2"
+                },
+                {
+                  "expr": "sqrt(3)*a/2"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ],
+            [
+              {
+                "expr": "-q"
+              },
+              [
+                {
+                  "expr": "a/2"
+                },
+                {
+                  "expr": "sqrt(3)*a/2"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ]
+          ],
+          "point": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ]
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "E",
+          "U"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "E",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "q/(4*pi*epsilon_0*a^2)"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "V/m"
+    },
+    {
+      "step": "solve",
+      "result": "U",
+      "value": {
+        "expr": "-q^2/(4*pi*epsilon_0*a)"
+      },
+      "unit": "J"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

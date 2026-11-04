@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "id": "2025-11:4b",
+  "status": "executable",
+  "geometry": "lens_shaped_cavity",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 39,
+    "answer": "answers_extracted.txt: 2025-11, Opgave 4, b)"
+  },
+  "given_source": [
+    "Problemstillinger med en tilsyneladende kompliceret geometri kan i visse tilfælde be-\nskrives som en superposition af flere bestanddele, hvor hver bestanddel har en simpel\ngeometri, hvis løsning let lader sig bestemme. Det sammensatte tilfælde kan da løses via\nsuperpositionsprincippet.\nVi starter med at betragte en simpel geometri, som senere skal benyttes til at bygge\net sammensat tilfælde. Den simple geometri, illustreret i tværsnit på figuren til venstre,\nbestår af en lang, lige leder med radius R, som bærer den uniforme strømtæthed J\nparallel med aksen. På figuren peger strømmen ud af papirets plan.\n                                                                 y\n\n                   R                                   R                 R\n                       !                                   !\n                                                               d d   !\n                                                                                 x\n                           J                          J                  J\n                           \"                          \"                  ⊗\n\n\nMagnetfeltet efterspørges som funktion af afstanden, s, til lederens akse."
+  ],
+  "wanted_source": [
+    "Bestem magnetfeltet på linjen bestemt ved (x, y, z) = (0, 0, z)."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "BA",
+        "family": "magnetic_superposition",
+        "geometry": "lens_shaped_cavity",
+        "variables": {
+          "point": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "sources": [
+            {
+              "kind": "cylinder",
+              "center": [
+                {
+                  "expr": "-d"
+                },
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "0"
+                }
+              ],
+              "radius": {
+                "expr": "d+a"
+              },
+              "J": {
+                "expr": "J"
+              }
+            },
+            {
+              "kind": "cylinder",
+              "center": [
+                {
+                  "expr": "d"
+                },
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "0"
+                }
+              ],
+              "radius": {
+                "expr": "d+a"
+              },
+              "J": {
+                "expr": "-J"
+              }
+            }
+          ]
+        },
+        "regions": [],
+        "assumptions": [
+          "parallel_infinite_sources",
+          "magnetostatic"
+        ],
+        "wanted": [
+          "B"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "B",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "mu_0*J*d"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "T"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "R=d+a og b=a/2 sikrer overlap; separation d er fri. Generel punktuafhængighed verificeres ved to forskellige linjer og i variationstest.",
+  "given_values": {},
+  "given_units": {}
+}

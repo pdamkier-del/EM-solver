@@ -1,0 +1,457 @@
+{
+  "schema_version": 1,
+  "id": "2021-11:2c",
+  "status": "executable",
+  "geometry": "concentric_spheres",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 6,
+    "answer": "answers_extracted.txt: 2021-11, Opgave 2, c)"
+  },
+  "given_source": [
+    "Betragt to koncentriske kugleskaller af metal. Den indre kugleskal har indre radius a og\nydre radius b. Den ydre kugleskal har indre radius c og ydre radius d.\n\n\n\n\nI første del af opgaven er der vakuum overalt omkring kugleskallerne. Den indre kugleskal\ntilføres nu ladningen Q1 , den ydre tilføjes ladningen Q2 ."
+  ],
+  "wanted_source": [
+    "Angiv tætheden af såvel frie som bundne ladninger ved hver af de fire overflader."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "inner",
+      "bindings": {},
+      "problem": {
+        "domain": "EV",
+        "family": "conductors",
+        "variables": {
+          "kind": "boundary",
+          "normal": [
+            {
+              "expr": "1"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "E_inside": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "E_outside": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "epsilon_inside": {
+            "expr": "epsilon_0"
+          },
+          "epsilon_outside": {
+            "expr": "epsilon_0"
+          }
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    },
+    {
+      "id": "gap1",
+      "bindings": {},
+      "problem": {
+        "domain": "EV",
+        "family": "conductors",
+        "variables": {
+          "kind": "boundary",
+          "normal": [
+            {
+              "expr": "1"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "E_inside": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "E_outside": [
+            {
+              "expr": "Q/(4*pi*epsilon_0*epsilon_r*(a+d)^2)"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "epsilon_inside": {
+            "expr": "epsilon_0"
+          },
+          "epsilon_outside": {
+            "expr": "epsilon_0*epsilon_r"
+          }
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    },
+    {
+      "id": "gap2",
+      "bindings": {},
+      "problem": {
+        "domain": "EV",
+        "family": "conductors",
+        "variables": {
+          "kind": "boundary",
+          "normal": [
+            {
+              "expr": "-1"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "E_inside": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "E_outside": [
+            {
+              "expr": "Q/(4*pi*epsilon_0*epsilon_r*(a+d+h)^2)"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "epsilon_inside": {
+            "expr": "epsilon_0"
+          },
+          "epsilon_outside": {
+            "expr": "epsilon_0*epsilon_r"
+          }
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    },
+    {
+      "id": "outer",
+      "bindings": {},
+      "problem": {
+        "domain": "EV",
+        "family": "conductors",
+        "variables": {
+          "kind": "boundary",
+          "normal": [
+            {
+              "expr": "1"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "E_inside": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "E_outside": [
+            {
+              "expr": "(Q+q)/(4*pi*epsilon_0*(a+d+h+L)^2)"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "epsilon_inside": {
+            "expr": "epsilon_0"
+          },
+          "epsilon_outside": {
+            "expr": "epsilon_0"
+          }
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "inner",
+      "result": "sigma_free",
+      "value": {
+        "expr": "0"
+      },
+      "unit": "C/m^2"
+    },
+    {
+      "step": "inner",
+      "result": "sigma_total",
+      "value": {
+        "expr": "0"
+      },
+      "unit": "C/m^2"
+    },
+    {
+      "step": "inner",
+      "result": "sigma_bound",
+      "value": {
+        "expr": "0"
+      },
+      "unit": "C/m^2"
+    },
+    {
+      "step": "gap1",
+      "result": "sigma_free",
+      "value": {
+        "expr": "1*Q/(4*pi*(a+d)^2)"
+      },
+      "unit": "C/m^2"
+    },
+    {
+      "step": "gap1",
+      "result": "sigma_total",
+      "value": {
+        "expr": "1*Q/(4*pi*epsilon_r*(a+d)^2)"
+      },
+      "unit": "C/m^2"
+    },
+    {
+      "step": "gap1",
+      "result": "sigma_bound",
+      "value": {
+        "expr": "-1*(epsilon_r-1)*Q/(4*pi*epsilon_r*(a+d)^2)"
+      },
+      "unit": "C/m^2"
+    },
+    {
+      "step": "gap2",
+      "result": "sigma_free",
+      "value": {
+        "expr": "-1*Q/(4*pi*(a+d+h)^2)"
+      },
+      "unit": "C/m^2"
+    },
+    {
+      "step": "gap2",
+      "result": "sigma_total",
+      "value": {
+        "expr": "-1*Q/(4*pi*epsilon_r*(a+d+h)^2)"
+      },
+      "unit": "C/m^2"
+    },
+    {
+      "step": "gap2",
+      "result": "sigma_bound",
+      "value": {
+        "expr": "--1*(epsilon_r-1)*Q/(4*pi*epsilon_r*(a+d+h)^2)"
+      },
+      "unit": "C/m^2"
+    },
+    {
+      "step": "outer",
+      "result": "sigma_free",
+      "value": {
+        "expr": "(Q+q)/(4*pi*(a+d+h+L)^2)"
+      },
+      "unit": "C/m^2"
+    },
+    {
+      "step": "outer",
+      "result": "sigma_total",
+      "value": {
+        "expr": "(Q+q)/(4*pi*(a+d+h+L)^2)"
+      },
+      "unit": "C/m^2"
+    },
+    {
+      "step": "outer",
+      "result": "sigma_bound",
+      "value": {
+        "expr": "0"
+      },
+      "unit": "C/m^2"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "Fri og bunden ladning adskilt. Facit viser kun den samlede lokale tæthed i dielektriktilfældet; se afvigelsesrapport.",
+  "given_values": {},
+  "given_units": {}
+}

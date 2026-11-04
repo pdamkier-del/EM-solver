@@ -1,0 +1,1468 @@
+Elektromagnetisme 1                                                                                            Formelsamling
+
+
+
+                                        Elektromagnetisme 1
+                                         Formelsamling og opgavemetoder
+                  Prøveudgave: ombygget efter opgavetyper med AM-formelsamlingen som strukturreference.
+
+
+  Sådan bruges noterne. Start med det, opgaven faktisk spørger efter. Genkend geometri og kildetype, vælg
+  den simpleste lov, og følg derefter kæden til den efterspurgte størrelse. Hvert metodeafsnit er bygget som
+
+                       genkend opgaven → startformler → gør sådan → færdig når → kontrol.
+
+  Pensumdelen her dækker de statiske felter, felter i stof og den tidsafhængige elektromagnetisme, der bruges i
+  EM1. Elektromagnetiske bølger er ikke medtaget.
+
+
+Indhold
+
+1 Hurtigt matematisk værktøj                                                                                                  2
+
+2 DEL I – elektrisk felt og potentiale                                                                                        2
+    2.1   EV0 – grundligninger og centrale relationer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         2
+    2.2   EV1 – Maxwell-ligninger og felt-tests . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       3
+    2.3   EV2 – find E eller V ud fra geometri . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        3
+    2.4   EV3 – region-for-region-problemer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         6
+    2.5   EV4 – ledere, hulrum og koncentriske ledere . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         7
+    2.6   EV5 – randværdiproblemer: Poisson, Laplace og spejling . . . . . . . . . . . . . . . . . . . . . . . . .            8
+    2.7   EV6 – multipoler og fjernfelt . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       9
+    2.8   EV7 – elektriske materialer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       9
+
+3 DEL II – magnetfelt og vektorpotentiale                                                                                    11
+    3.1   BA0 – grundligninger og centrale relationer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        11
+    3.2   BA1 – Maxwell-ligninger og felt-tests . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      11
+    3.3   BA2 – find B eller A ud fra geometri . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       11
+    3.4   BA3 – region-for-region-problemer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        13
+    3.5   BA4 – kraft og bevægelse i kendt B . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         14
+    3.6   BA5 – magnetisk dipol . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      14
+    3.7   BA6 – vektorpotentialet A . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        15
+    3.8   BA7 – magnetiske materialer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        15
+
+4 DEL III – tidsafhængige elektromagnetiske felter                                                                           17
+    4.1   DYN0 – grundligninger og centrale relationer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         17
+    4.2   DYN1 – vælg induktionsmetode . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         17
+    4.3   DYN2 – strøm, ledningsevne og modstand . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .           18
+    4.4   DYN3 – bevægelig leder i homogent B . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          19
+    4.5   DYN4 – motional EMF med mekanisk feedback . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .              19
+    4.6   DYN5 – ændrende geometri eller areal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         20
+    4.7   DYN6 – fast geometri og B(t) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       20
+    4.8   DYN7 – induceret elektrisk felt . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      21
+    4.9   DYN8 – selvinduktion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       21
+    4.10 DYN9 – gensidig induktion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         21
+    4.11 DYN10 – magnetisk energi        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   22
+    4.12 DYN11 – forskydningsstrøm og Ampère–Maxwell . . . . . . . . . . . . . . . . . . . . . . . . . . . . .               22
+    4.13 DYN12 – Maxwell samlet . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          23
+
+Afsluttende kontrol ved opgaveløsning                                                                                        23
+
+
+Definitioner · metode · kontrol                                                                                               1
+Elektromagnetisme 1                                                                                                   Formelsamling
+
+
+
+1 Hurtigt matematisk værktøj
+Krydsprodukt                                                                                  dτ = s ds dϕ dz,
+           x̂ × ŷ = ẑ,     ŷ × ẑ = x̂,    ẑ × x̂ = ŷ.
+Omvendt rækkefølge giver minus. Samme vektor krydset                                       dτ = r2 sin θ dr dθ dϕ.
+med sig selv giver nul.
+Ladning og strøm                                                         Gradient, divergens og curl
+
+         dq = λ dl,         dq = σ da,            dq = ρ dτ,
+                              ZZ                                                        E = −∇V,          ρ = ε0 ∇ · E,
+                           I=    J · da.
+                                                                                                 B = ∇ × A.
+Volumenelementer
+                           dτ = dx dy dz,                                Fuld operatoroversigt: brug EM-matematikarket.
+
+
+2 DEL I – elektrisk felt og potentiale
+Målet: Gå fra kilder og geometri til V og E, og derfra til ladning, kraft, arbejde, energi eller kapacitans. E og V
+behandles sammen, fordi de normalt er to trin i samme opgave.
+  Start altid med at identificere det søgte
+
+  Opgaven spørger efter                                                  Første metode
+  Felt fra få punktladninger                                             Coulomb + superposition, EV2
+  Felt fra kugle/cylinder/uendeligt plan                                 Gauss, EV2
+  Felt/potentiale fra generel kontinuert fordeling                       Coulomb-R eller potentialintegral, EV2
+  Potentiale fra kendt felt                                              ∆V = − E · dl, EV0/EV2
+  Felt fra kendt potentiale                                              E = −∇V , EV0/EV2
+  Ladning fra givet felt                                                 ρ = ε0 ∇ · E, EV1
+  Flere fysiske lag/områder                                              region-for-region, EV3
+  Perfekt leder eller hulrum                                             lederregler + Gauss, EV4
+  Potentiale bestemt af randbetingelser                                  Poisson/Laplace, spejling eller separation, EV5
+  Fjernfelt                                                              multipoler, EV6
+  Dielektrikum                                                           Qf → D → E → V , EV7
+
+
+2.1 EV0 – grundligninger og centrale relationer
+
+
+                                        1 q                                                      1
+                                                                                                    Z
+                                                                                                       R
+                               E(r) =          R̂,                                      E(r) =             dq,
+                                       4πε0 R2                                                 4πε0    R3
+                           I
+                                       Qenc                                                    ρ
+                              E · da =      ,                                          ∇·E= ,
+                            S           ε0                                                     ε0
+                                        1      dq
+                                             Z                                                   Z B
+                               V (r) =             ,                           V (B) − V (A) = −     E · dl,
+                                       4πε0     R                                                   A
+                                                                                                   ρ
+                                   E = −∇V,                                             ∇2 V = −      .
+                                                                                                   ε0
+
+  I et ladningsfrit område: ∇2 V = 0.
+
+Arbejde og energi
+                                             U = qV,           Wfelt = −∆U,         Wekst = ∆U
+for en kvasistatisk flytning med samme start- og sluthastighed. For punktladninger
+                                          1 X qi qj              1
+                                                                   ZZZ
+                                    U=                ,     U=          ρV dτ.
+                                        4πε0 i<j rij             2
+
+I vakuum kan feltenergien skrives                                       ZZZ
+                                                                   ε0
+                                                              UE =            E 2 dτ.
+                                                                   2
+Kapacitans
+                                                   Q                  1           Q2  1
+                                             C=      ,         UC =     C(∆V )2 =    = Q∆V.
+                                                  ∆V                  2           2C  2
+
+Definitioner · metode · kontrol                                                                                                  2
+Elektromagnetisme 1                                                                                 Formelsamling
+
+
+                                                                               −1
+Pladekondensator: C = εA/d. Parallel: Ceq =        i Ci . Serie: Ceq =
+                                                                  −1
+                                                                            i Ci .
+                                                 P                        P
+
+
+2.2 EV1 – Maxwell-ligninger og felt-tests
+
+                                  ρ
+                                  ∇·E=
+                                     ,                                 ∇ · B = 0,
+                                  ε0
+                                    ∂B                                                       ∂E
+                              ∇×E=−     ,                             ∇ × B = µ0 J + µ0 ε0      .
+                                     ∂t                                                      ∂t
+
+  Metodevalg. Hvis et vektorfelt E(x, y, z) er givet direkte, så er divergens og curl ofte selve opgaven.
+  Gør sådan:
+   1. Skal ladningstætheden findes? Beregn ∇ · E og brug ρ = ε0 ∇ · E.
+   2. Skal feltet testes som elektrostatisk? Kontrollér ∇ × E = 0.
+   3. Skal total ladning findes? Integrér ρ eller brug Gauss på randen.
+  Færdig når: du har den efterspurgte kilde eller har vist, om feltet kan være elektrostatisk. Faldgrube:
+  ∇ × E = 0 er en elektrostatisk specialregel; Gauss’ lov gælder også ved tidsafhængige felter.
+  Tidligere EM1-opgaver: juni21.5, nov21.3, jan25.1, nov25.2..
+
+2.3 EV2 – find E eller V ud fra geometri
+  Metodevalg ud fra geometri
+
+  Få punktladninger                                              Coulomb + vektorsuperposition
+  Kontinuert fordeling uden høj symmetri                         skriv dq og integrér
+  Kugle, cylinder eller uendeligt plan med høj symmetri          Gauss
+  V er givet                                                     E = −∇VR
+  E er givet                                                     ∆V = − E · dl
+
+2.3.1 Punktladninger – Coulomb og superposition
+
+  Metodevalg. Hvis der er få diskrete ladninger og der spørges efter felt, kraft eller potentiale, er Coulomb
+  direkte.
+
+                                                                               E
+                                                                       P
+                                                   R = r − r′
+
+                                            q
+
+                                                 1 qi                      1 qi
+                                         Ei =            R̂i ,     Vi =           .
+                                                4πε0 Ri2                  4πε0 Ri
+  Gør sådan:
+   1. Tegn retningen af hvert feltbidrag før du regner.
+   2. Skriv Ri = r − r′i og Ri = |Ri |.
+   3. Beregn bidragenePog opløs i komponenter, hvis nødvendigt.
+   4. Summér Etot = i Ei som vektorer; summér Vtot = i Vi som skalarer.
+                                                         P
+   5. Kraft på en testladning Q: F = QEtot .
+  Færdig når: feltet/kraften er angivet som vektor med retning, eller potentialet som skalar. Faldgrube: Ri er
+  separationsafstanden mellem kilde og feltpunkt – ikke nødvendigvis koordinaten r. Kort eksempel: For et
+  symmetrisk ladningspar kan komponenter annullere parvist; brug symmetrien før du regner alle komponenter.
+  Tidligere EM1-opgaver: nov21.1, feb22.1, feb23.1, nov23.1, feb24.1, jan26.1..
+
+
+
+
+Definitioner · metode · kontrol                                                                                  3
+Elektromagnetisme 1                                                                                                     Formelsamling
+
+
+2.3.2 Kontinuerte fordelinger – skriv dq først
+
+  Metodevalg. Hvis kilden er en endelig linje, bue, ring, skive, overflade eller volumen uden tilstrækkelig
+  Gauss-symmetri, integrér kilden.
+
+                                         dq = λ dl′ ,        dq = σ da′ ,           dq = ρ dτ ′ .
+                                                 1                                     1      dq
+                                                        Z                                 Z
+                                                            R
+                                       E(r) =                  dq,           V (r) =              .
+                                                4πε0        R3                       4πε0     R
+  Gør sådan:
+   1. Parametrisér kilden og skriv kildepunktet r′ .
+   2. Skriv R = r − r′ .
+   3. Vælg dq og de korrekte integrationsgrænser.
+   4. Brug symmetri til at afgøre hvilke feltkomponenter der kan overleve.
+   5. Hvis kun potentialet søges, er det ofte lettere at integrere V først og derefter bruge E = −∇V .
+  Færdig når: integralet er evalueret i den ønskede geometri og retningen er angivet. Faldgrube: Integrér ikke
+  en komponent, som symmetrien allerede tvinger til nul.
+  Tidligere EM1-opgaver: nov21.1, jan25.3, feb24.1, jan26.1..
+
+2.3.3 Ring og skive på symmetriaksen
+                                                                     z
+                                                                         E
+                                                                         P
+
+
+
+
+                                                                 2R
+
+For en ring med total ladning Q:
+                                             1     Q                               1       Qz
+                                  V (z) =       √       ,                E(z) =                     ẑ.
+                                            4πε0 z + R2
+                                                  2                               4πε0 (z + R2 )3/2
+                                                                                         2
+
+
+En uniform skive bygges af ringe:
+                                                dq = σ(2πs′ ds′ ),            0 ≤ s′ ≤ R.
+For z > 0:                                                                                                     
+                                        σ p 2                                      σ                  z
+                             V (z) =        z + R2 − z ,                 Ez (z) =             1− √                  .
+                                       2ε0                                          2ε0              z 2 + R2
+Faldgrube: I grænsen R → ∞ skal skivefeltet gå mod feltet fra et uendeligt plan.
+
+
+
+
+Definitioner · metode · kontrol                                                                                                    4
+Elektromagnetisme 1                                                                               Formelsamling
+
+
+2.3.4 Kuglesymmetri – Gauss og potentiale
+
+  Metodevalg. Hvis ladningsfordelingen er sfærisk symmetrisk, så vælg en koncentrisk Gauss-kugle. Behandl
+  altid inde og ude separat.
+
+
+                                                           R
+                                                          r
+
+
+                                    fysisk radius R, variabel Gauss-radius r
+
+  Massiv uniform kugle:                           ρr
+                                                      r̂,         r < R,
+                                                   3ε0
+                                                 
+                                          E(r) =     1 Q
+                                                            r̂, r > R,
+                                                   4πε0 r2
+                                                 
+
+                                                1 Q             r2
+                                                                  
+                                                         3 − 2 , r < R,
+                                    V (r) = 4πε0 2R
+                                           
+                                                                R
+                                            1 Q,
+                                           
+                                                                        r > R.
+                                              4πε0 r
+  Tynd kugleskal: E = 0 for r < R, og udenfor er feltet som fra en punktladning Q i centrum; V = kQ/R er
+  konstant indenfor.
+  Ikke-uniform ρ(r):
+                                                                       Qenc (r)
+                                      Z r
+                           Qenc (r) =     ρ(r′ )4πr′2 dr′ , E(4πr2 ) =          .
+                                       0                                  ε0
+  Færdig når: du har stykvise E(r)- og eventuelt V (r)-udtryk med korrekt kontinuitet ved grænserne. Faldgrube:
+  Brug ikke Qenc = ρ 4πr3 /3 hvis ρ ikke er konstant.
+  Tidligere EM1-opgaver: nov22.2, jan25.2, nov25.2..
+
+
+
+
+Definitioner · metode · kontrol                                                                                   5
+Elektromagnetisme 1                                                                                     Formelsamling
+
+
+2.3.5 Cylinder, linje og plan – Gauss
+
+  Metodevalg. Uendelig/lang cylinder, uendelig linje eller uendeligt plan giver symmetrier, hvor Gauss-fladen
+  kan vælges så E er konstant på fluxdelen.
+
+
+
+
+                                       cylinder           linje        plan/pillbox
+
+  Uniform massiv cylinder, radius R:                 ρs
+                                                          ŝ,          s < R,
+                                                      2ε
+                                                    
+                                                    
+                                              E(s) = ρR02
+                                                           ŝ,        s > R.
+                                                      2ε0 s
+                                                    
+
+  Uendelig linjeladning:
+                                                                 λ
+                                                   E(s) =             ŝ.
+                                                               2πε0 s
+  Ét uendeligt plan:
+                                                                σ
+                                                       E=          .
+                                                               2ε0
+  To modsat ladede uendelige planer:
+                                                       σ
+                                           Emellem =      ,        Eudenfor = 0.
+                                                       ε0
+  Ved ikke-uniform cylinder:                             Z s
+                                            Qenc (s) =         ρ(s′ )2πs′ L ds′ .
+                                                          0
+
+  Faldgrube: For uendelige planer kan V (∞) = 0 ikke vælges; brug en potentialforskel over en endelig strækning.
+  Tidligere EM1-opgaver: nov24.2, nov25.2..
+
+2.4 EV3 – region-for-region-problemer
+
+  Metodevalg. Flere fysiske radier a, b, c, . . ., koncentriske lag eller stykvise materialer betyder, at hele rummet
+  skal deles op før du skriver ét feltudtryk.
+
+                                         opdel i regioner → Qenc → E → V.
+
+  Gør sådan:
+   1. Tegn alle fysiske grænser og skriv regionerne, fx r < a, a < r < b, b < r < c, r > c.
+   2. Spørg i hver region: er dette metal? Hvis ja, E = 0.
+   3. Ellers: find Qenc for en Gauss-flade med variabel radius r eller s.
+   4. Find E separat i hver region.
+   5. Hvis V søges, integrér stykvist fra et kendt referencepunkt. Gennem metal ændres V ikke.
+  Færdig når: alle regioner er dækket, og grænserne er fysisk konsistente. Faldgrube: Fysiske radier a, b, c er
+  faste; Gauss-radius r eller s er variabel.
+
+2.4.1 Hul cylinder: standard regionseksempel
+En uendelig cylindrisk ladningsfordeling findes kun i a < s < b med uniform ρ. Skriv tre regioner fra start:
+
+                                          s < a,       a < s < b,           s > b.
+
+Så er                                            
+                                                 0,
+                                                                 s < a,
+                                       Qenc (s) = ρπ(s − a )L, a < s < b,
+                                                       2    2
+
+                                                   ρπ(b2 − a2 )L, s > b.
+                                                 
+                                                 
+
+
+
+
+Definitioner · metode · kontrol                                                                                         6
+Elektromagnetisme 1                                                                                       Formelsamling
+
+
+og derfor                                       
+                                                
+                                                
+                                                0,              s < a,
+                                                 ρ(s − a )
+                                                     2     2
+                                                
+                                                
+                                         E(s) =              ŝ, a < s < b,
+                                                     2ε0 s
+                                                  ρ(b − a )
+                                                
+                                                    2     2
+                                                
+                                                             ŝ, s > b.
+                                                
+                                                
+                                                     2ε0 s
+                                                
+
+Kort eksempel: Denne type er mønsteret for alle “ladning kun mellem to radier”-opgaver: integrér kun den del af
+materialet, der faktisk ligger inden for Gauss-fladen.
+
+2.5 EV4 – ledere, hulrum og koncentriske ledere
+  Lederregler i elektrostatisk ligevægt
+
+                      E = 0 i metal ,    V = konstant i hele lederen ,          ρ = 0 i lederens bulk .
+  Lige udenfor en leder i vakuum:
+                                                       σ
+                                              Eude =      n̂,       E∥ = 0.
+                                                       ε0
+
+2.5.1 Ladning i hulrum
+
+
+
+                                                           q
+
+
+
+                                                 Gauss-flade i metal
+
+
+En Gauss-flade lagt inde i metallet har nul flux, så
+
+                                         q + Qinner = 0     ⇒      Qinner = −q .
+
+Hvis lederens nettoladning er Qleder :
+                                                 Qouter = Qleder + q .
+Faldgrube: Gauss bestemmer den totale ladning på hulrummets overflade. Uden ekstra symmetri er den lokale σ
+ikke uniform.
+
+2.5.2 Tomt lukket hulrum og Faraday-bur
+Hvis et lukket hulrum i en perfekt leder ikke indeholder ladning, er lederoverfladen omkring hulrummet equipotential.
+Entydighedsteoremet giver derfor
+                                           E = 0 i et tomt lukket hulrum
+i elektrostatik. Ydre statiske felter kan ændre ladningsfordelingen på lederens yderside, men de trænger ikke ind i det
+tomme hulrum.
+
+2.5.3 Lederpotentiale
+I selve metalregionen er E = 0, så V er konstant. Ved potentialberegning gennem flere regioner kan integralet derfor
+springe metalstykker over:                                            Z
+                                                            X
+                                    V (r) − V (r0 ) = −                  E · dl.
+                                                          ikke-metal-regioner
+
+For en sfærisk yderside med total ydre ladning Qouter og ingen eksterne felter er lederpotentialet
+                                                            1 Qouter
+                                                Vleder =               .
+                                                           4πε0 Router
+
+2.5.4 Koncentriske ledere
+Metodevalg. Gå fysisk overflade for fysisk overflade. Brug først Gauss inde i hvert metal til at kræve Qenc = 0, og
+brug derefter lederens givne nettoladning. Kort eksempel: En indre leder med ladning Q1 og en ydre skal med
+nettoladning Q2 giver på ydersiden af systemet den totale ladning Q1 + Q2 .
+Tidligere EM1-opgaver: juni21.1, nov21.2, jan25.2, feb22.2..
+
+Definitioner · metode · kontrol                                                                                      7
+Elektromagnetisme 1                                                                                       Formelsamling
+
+
+2.6 EV5 – randværdiproblemer: Poisson, Laplace og spejling
+  Vælg randværdimetode
+
+  Kendt ρ i området                                                      Poisson: ∇2 V = −ρ/ε0
+  Ladningsfrit område + potentiale på randen                             Laplace: ∇2 V = 0
+  Jordet leder + passende geometri                                       spejlingsmetoden
+  Rektangulær/sfærisk/cylindrisk separabel geometri                      separation af variable
+
+2.6.1 Laplace og separation
+
+  Metodevalg. Opgaven giver randpotentialer, men ikke en simpel ladningsfordeling. Løs først V ; feltet kommer
+  bagefter fra −∇V .
+  Kartesisk 2D:
+                                  ∂2V     ∂2V
+                                     2
+                                       +        = 0,     V = X(x)Y (y).
+                                  ∂x       ∂y 2
+  Et praktisk separationsvalg er
+                                                X ′′ − k 2 X = 0,         Y ′′ + k 2 Y = 0.
+  Sfærisk, aksialsymmetrisk:
+                                                           ∞            
+                                                           X          Bℓ
+                                              V (r, θ) =      Aℓ rℓ + ℓ+1 Pℓ (cos θ).
+                                                                     r
+                                                           ℓ=0
+
+                                                                  1                       1
+                                  P0 = 1,     P1 = x,      P2 =     (3x2 − 1),     P3 =     (5x3 − 3x).
+                                                                  2                       2
+  Gør sådan:
+   1. Vælg koordinatsystem efter grænsens geometri.
+   2. Skriv den separable generelle løsning.
+   3. Kassér led, der divergerer i det fysiske område: ved r = 0 skal løsningen være endelig; ved r → ∞ skal den
+      opfylde den givne fjernbetingelse.
+   4. Match randpotentialet mode for mode.
+   5. Find til sidst E = −∇V hvis feltet søges.
+  Færdig når: alle randbetingelser er opfyldt, og den efterspurgte V eller E er fundet. Faldgrube: Stop ikke ved
+  V hvis opgaven faktisk spørger efter E.
+  Tidligere EM1-opgaver: nov21.3, jan26.5..
+
+2.6.2 Spejlingsmetoden
+
+  Metodevalg. Punktladning nær et jordet plan eller en anden geometri med kendt spejlkonstruktion: erstat
+  lederen med hjælpe-ladninger, så randpotentialet opfyldes.
+
+                                                                    +q
+
+                                            fysisk område
+                                                                                          V =0
+
+
+                                                                    −q (spejl)
+
+  For et jordet plan z = 0 og en fysisk ladning q i z = a, placér spejlladningen −q i z = −a. Beregn V og E i det
+  fysiske halvrum som fra de to punktladninger.
+  Gør sådan:
+   1. Erstat lederen med den kendte spejlkonstruktion.
+   2. Kontrollér at den konstruerede V opfylder randbetingelsen.
+   3. Brug entydighedsteoremet: en korrekt løsning med de givne randdata er den fysiske løsning i området.
+   4. Beregn eventuelt induceret σ = −ε0 ∂V /∂n på den fysiske lederoverflade.
+  Faldgrube: Spejlladningen er matematisk og må ikke tælles som fysisk ladning eller fysisk energi på den forkerte
+  måde.
+  Tidligere EM1-opgaver: nov24.1, nov25.1..
+
+
+
+
+Definitioner · metode · kontrol                                                                                      8
+Elektromagnetisme 1                                                                                                    Formelsamling
+
+
+2.7 EV6 – multipoler og fjernfelt
+
+  Metodevalg. Når observationsafstanden er meget større end ladningsfordelingens størrelse, organiseres potenti-
+  alet efter de første ikke-nul multipolmomenter.
+                                        X            X          ZZZ
+                                   Q=      qi ,   p=   qi r′i =     r′ ρ(r′ ) dτ ′ .
+                                               i                    i
+
+                                                            1
+                                                                                      
+                                                                      Q p · r̂
+                                                   V (r) ≈              + 2 + ···          .
+                                                           4πε0       r   r
+  Ren dipol:
+                                               1 p · r̂                      1
+                                     Vdip =             ,         Edip =           [3(p · r̂)r̂ − p] .
+                                              4πε0 r2                      4πε0 r3
+  Hierarki:
+                                        Vmon ∼ r−1 ,         Vdip ∼ r−2 ,         Vquad ∼ r−3 .
+  Gør sådan: find Q; hvis Q = 0, find p; hvis også p = 0, gå videre til quadrupolleddet. Færdig når: første
+  relevante ikke-nul led er fundet i den ønskede approksimationsorden. Faldgrube: En multipoludvikling er et
+  fjernfeltsresultat; brug den ikke tæt på ladningsfordelingen.
+  Tidligere EM1-opgaver: feb26.1 og kapitel-3-opgaver med fjernfelt..
+
+2.7.1 Elektrisk dipol i et ydre felt
+For en permanent dipol p i et givet elektrisk felt:
+
+                                                    τ =p×E ,             U = −p · E .
+
+I et langsomt varierende, ikke-uniformt felt kan kraften skrives
+
+                                                            F = ∇(p · E)
+
+for en fast dipol. I et homogent felt er nettokraften nul, men torque kan være ikke-nul. Færdig når: Stabil orientering
+i et homogent felt svarer til p ∥ E.
+
+2.7.2 Quadrupol-genkendelse
+Hvis både total ladning og dipolmoment forsvinder,
+
+                                                          Q = 0,        p = 0,
+
+er det første mulige fjernfelt ofte quadrupolleddet. På afstand skalerer
+
+                                                    Vquad ∼ r−3 ,       Equad ∼ r−4 .
+
+Kort eksempel: I en symmetrisk kombination af positive og negative ladninger er det ofte hurtigere først at teste Q
+og p end at Taylor-udvikle det fulde potentiale med det samme.
+
+2.8 EV7 – elektriske materialer
+  Kerneflow i dielektrika
+
+                                      ρf , σf , λf → Qf,enc → D → E → P → ρb , σb → V.
+
+
+                                                                                               I
+                     D = ε0 E + P,                       ∇ · D = ρf ,                              D · da = Qf,enc ,
+
+                     ρb = −∇ · P,                            σb = P · n̂,
+                      P = ε0 χe E,                           D = εE,                                     ε = ε0 εr .
+
+
+
+
+Definitioner · metode · kontrol                                                                                                   9
+Elektromagnetisme 1                                                                                   Formelsamling
+
+
+
+     Metodevalg. Hvis fri ladning og en lineær dielektrisk geometri er givet, så find D med præcis samme
+     symmetriargument som Gauss i vakuum.
+     Gør sådan:
+      1. Find kun
+               H den frie omsluttede ladning.
+      2. Brug D · da = Qf,enc .
+      3. Brug E = D/ε i hvert lineært materiale.
+      4. Find P og derefter ρb , σb hvis de efterspørges.
+      5. Integrér E hvis potentiale eller kapacitans søges.
+     Færdig når: fri og bundet ladning er holdt adskilt, og alle efterspurgte felter/materialestørrelser er fundet.
+     Faldgrube: D “ser” fri ladning; E bestemmes af den samlede fysiske situation.
+
+2.8.1 Standardcase: givet polarisation P
+Hvis polarisationen er givet direkte, er opgaven normalt en ren kildeberegning:
+
+                                             ρb = −∇ · P ,         σb = P · n̂ .
+
+Gør sådan:
+ 1. Beregn divergensen i volumenet.
+ 2. Evaluer P · n̂ separat på hver fysisk overflade med den lokale udadrettede normal.
+ 3. Hvis total bundet ladning ønskes, integrér volumen- og overfladebidrag og kontrollér summen.
+Kort eksempel: For P = A(xx̂ + yŷ + zẑ) i en kube er ρb = −3A; på fladen x = L/2 er σb = AL/2.
+Tidligere EM1-opgaver: feb24.2..
+
+2.8.2 Koncentrisk dielektrikum: felt → potentiale → kapacitans
+For en sfærisk kondensator med fri ladning Q og homogent lineært dielektrikum mellem b < r < c:
+                                                  Q                    Q
+                                           D=         r̂,      E=              r̂.
+                                                 4πr2               4πε0 εr r2
+Potentialforskellen er
+                                                                             1 1
+                                               Z c                                  
+                                                           Q
+                                        ∆V =   E(r) dr =                       −         ,
+                                             b           4πε0 εr             b   c
+så
+                                                             bc
+                                             C = 4πε0 εr        = εr Cvakuum .
+                                                            c−b
+I det homogene dielektrikum er
+                                                     P = ε0 (εr − 1)E,
+og bundne overfladeladninger findes fra P · n̂ på de to materialegrænser.
+Randbetingelser mellem to medier
+
+                                      (D1 − D2 ) · n̂ = σf ,      (E1 − E2 ) × n̂ = 0
+
+i elektrostatik. Potentialet er kontinuerligt over en almindelig grænseflade.
+Tidligere EM1-opgaver: nov21.2, feb23.2, nov25.3..
+
+
+
+
+Definitioner · metode · kontrol                                                                                   10
+Elektromagnetisme 1                                                                                       Formelsamling
+
+
+
+3 DEL II – magnetfelt og vektorpotentiale
+Målet: Gå fra strøm og geometri til B eller A, og derfra til kraft, bevægelse, dipolmoment eller materiale-respons.
+  Start altid med at identificere det søgte
+
+  Opgaven spørger efter                                              Første metode
+  B fra høj symmetri                                                 Ampères lov, BA2
+  B fra endelig leder, bue eller løkke                               Biot–Savart, BA2
+  B fra flere strømkilder                                            superposition, BA2
+  Strøm/kilde fra givet B                                            J = (1/µ0 )∇ × B, BA1
+  Flere koaksiale områder                                            region-for-region, BA3
+  Partikel/leder i kendt B                                           Lorentzkraft eller IL × B, BA4
+  Lille strømløkke                                                   magnetisk dipol, BA5
+  A givet eller ønskes                                               B = ∇ × A, BA6
+  Magnetiseret materiale                                             M, H, BA7
+
+
+3.1 BA0 – grundligninger og centrale relationer
+
+
+                            F = q(E + v × B),                                 dF = I dℓ × B,
+                                µ0 I dℓ × R̂
+                                       ′                              I
+                          dB =               ,                            B · dℓ = µ0 Ienc ,
+                                4π    R2
+                        ∇ · B = 0,                                        ∇ × B = µ0 J (magnetostatik),
+                            B = ∇ × A,                                     ∇2 A = −µ0 J (∇ · A = 0).
+
+                                                                       J(r′ )
+                                                               ZZZ
+                                                          µ0
+                                                 A(r) =                         dτ ′ .
+                                                          4π          |r − r′ |
+  Magnetisk dipol:
+                                      m = IAn̂,       τ = m × B,               U = −m · B.
+
+3.2 BA1 – Maxwell-ligninger og felt-tests
+
+  Metodevalg. Hvis B(x, y, z) er givet direkte, så er divergence/curl ofte den korteste vej til at teste feltet eller
+  finde strømmen.
+                                                     1
+                               ∇ · B = 0,       J=      ∇ × B (magnetostatik).
+                                                     µ0
+  Gør sådan:
+   1. Test et foreslået magnetfelt med ∇ · B = 0.
+   2. Hvis strømmen søges i en statisk opgave, beregn ∇ × B.
+   3. Hvis felterne er tidsafhængige, brug den fulde Ampère–Maxwell-ligning i DYN11.
+  Færdig når: feltet opfylder den nødvendige Maxwell-betingelse, eller den efterspurgte J er fundet. Faldgrube:
+  Ampères magnetostatiske differentialform kan ikke bruges ukritisk ved tidsafhængige felter.
+  Tidligere EM1-opgaver: juni21.5, nov21.4, nov25.4, jan26.4..
+
+3.3 BA2 – find B eller A ud fra geometri
+  Metodevalg ud fra geometri
+
+  Uendelig/lang leder, cylinder, ideal solenoide, toroide            Ampère
+  Endelig leder, bue, cirkelløkke                                    Biot–Savart
+  Flere ledere                                                       beregn hvert Bi og superponér
+  A givet                                                            B=∇×A
+
+
+
+
+Definitioner · metode · kontrol                                                                                         11
+Elektromagnetisme 1                                                                                Formelsamling
+
+
+3.3.1 Lang lige leder og massiv strømførende cylinder
+
+  Metodevalg. Cirkulær symmetri omkring en lang strøm betyder, at B = B(s)ϕ̂ og er konstant på en cirkulær
+  Ampère-løkke.
+
+                                                              I
+
+                                                                        B
+
+                                                                   s
+
+
+  Lang lige leder:
+                                                                  µ0 I
+                                                    B(s) =             ϕ̂ .
+                                                                  2πs
+  Massiv cylinder med uniform J og radius R:
+                                                 
+                                                  µ0 Is ϕ̂,
+                                                                        s < R,
+                                           B(s) = 2πR
+                                                         2
+                                                   µ0 I
+                                                       ϕ̂,              s > R.
+                                                   2πs
+                                                 
+
+  Ved ikke-uniform J(s):                                Z s
+                                           Ienc (s) =         J(s′ )2πs′ ds′ .
+                                                         0
+
+  Gør sådan: højrehåndsregel → retning; find Ienc ; brug B(2πs) = µ0 Ienc . Færdig når: B(s) er angivet stykvist
+  og med ϕ̂-retning. Faldgrube: Det er Ienc , ikke nødvendigvis hele strømmen, der står i Ampères lov.
+  Tidligere EM1-opgaver: juni21.3, feb24.4, nov25.4..
+
+3.3.2 Solenoide og toroide
+
+                                               B
+
+
+                                         lang solenoide
+                                                                              toroide
+
+Lang ideal solenoide:
+                                   Binde ≃ µ0 nI,       Bude ≃ 0,                n = N/L.
+Ideal toroide med N vindinger:
+                                                         µ0 N I
+                                                    B(s) =
+                                                          2πs
+i viklingsområdet; idealiseret B ≃ 0 i centrum og langt udenfor. Faldgrube: En finite solenoide har randfelter;
+ovenstående er lang-solenoide-approksimationen.
+
+
+
+
+Definitioner · metode · kontrol                                                                                    12
+Elektromagnetisme 1                                                                               Formelsamling
+
+
+3.3.3 Biot–Savart: endelig leder, bue og løkke
+
+  Metodevalg. Når Ampère-symmetrien ikke er stærk nok til at trække B ud af et lukket integral, gå tilbage til
+  Biot–Savart.
+                                                       dℓ′ × R̂
+                                                    Z
+                                               µ0 I
+                                       B(r) =                   .
+                                                4π        R2
+  Cirkulær bue, felt i centrum, buevinkel φ i radianer:
+                                                                    µ0 Iφ
+                                                           Bbue =         .
+                                                                    4πR
+  Cirkulær løkke:
+                                                  µ0 I                      µ0 IR2
+                                         B(0) =        ,      B(z) =                     .
+                                                  2R                     2(R2 + z 2 )3/2
+  Gør sådan:
+   1. Vælg dℓ′ i strømretningen.
+   2. Skriv R fra strøm-element til feltpunkt.
+   3. Bestem krydsproduktets retning før integration.
+   4. Brug symmetri og integrér kun den overlevende komponent.
+  Færdig når: integralet er evalueret og den magnetiske retning er angivet. Faldgrube: I Biot–Savart er R fra
+  kilden til observationspunktet, præcis som i Coulomb-integralet.
+  Tidligere EM1-opgaver: nov24.3, jan25.5, feb24.3..
+
+3.4 BA3 – region-for-region-problemer
+
+  Metodevalg. Koaksiale strømme, flere radier eller strøm i flere lag kræver ét Ampère-regnestykke per region.
+
+                                      opdel i regioner → Ienc (s) → Ampère → B(s).
+
+  Gør sådan:
+   1. Skriv regionerne s < a, a < s < b, b < s < c, . . ..
+   2. Find den algebraiske omsluttede strøm i hver region; modsat strømretning får modsat fortegn.
+   3. Brug symmetrien til at skrive B = B(s)ϕ̂.
+   4. Anvend B(2πs) = µ0 Ienc (s) i hver region.
+  Færdig når: alle fysiske områder er dækket. Faldgrube: Man trækker ikke “feltet ved to grænser” fra hinanden;
+  man ændrer Ienc , når Ampère-løkken krydser en strøm.
+
+Hul i strømførende cylinder: superposition
+
+                                  fysisk hul = fuld cylinder (+J) + hjælpecylinder (−J).
+
+Beregn de to felter med forskudte akser og læg dem vektorielt sammen. Samme idé som hul i en ladningsfordeling.
+Tidligere EM1-opgaver: juni21.3, feb22.4, feb24.4, nov25.4..
+
+
+
+
+Definitioner · metode · kontrol                                                                                  13
+Elektromagnetisme 1                                                                               Formelsamling
+
+
+3.5 BA4 – kraft og bevægelse i kendt B
+3.5.1 Ladet partikel
+
+  Metodevalg. Når en partikel bevæger sig i et kendt magnetfelt, start med qv × B og split v i parallel og
+  vinkelret komponent.
+                                  FB = qv × B,       FB = |q|vB sin θ.
+                                            v⊥ = v sin θ,          v∥ = v cos θ.
+  Ren cirkelbevægelse:
+                                                    mv 2                    mv
+                                          |q|vB =              ⇒      R=        .
+                                                     R                     |q|B
+  Helix:
+                                                 mv⊥
+                                           R=         ,        v∥ = konstant.
+                                                 |q|B
+  Hvis partiklen først accelereres gennem spændingsfald V fra hvile:
+                                                                   s
+                                             1                  1    2mV
+                                       |q|V = mv 2 ⇒ R =                  .
+                                             2                  B     |q|
+
+  Gør sådan: energi fra spænding → v; derefter magnetisk centripetalkraft → R. Færdig når: banegeometri og
+  fortegnsafhængig omløbsretning er angivet. Faldgrube: Magnetkraften står vinkelret på v og udfører derfor
+  ikke arbejde på en punktladning.
+  Tidligere EM1-opgaver: juni21.4 og massespektrometer-opgaver..
+
+3.5.2 Strømførende leder
+                                                    dF = I dℓ × B.
+For en lige leder i homogent felt:
+                                                     F = IL × B .
+For en krum leder i konstant homogent B:
+
+                                              F = I(rslut − rstart ) × B.
+
+To lange parallelle strømme:
+                                                 F    µ0 I1 I2
+                                                    =          .
+                                                 L     2πd
+Samme retning tiltrækker; modsat retning frastøder.
+
+3.6 BA5 – magnetisk dipol
+
+  Metodevalg. En lille plan strømløkke i et felt kan behandles som en magnetisk dipol.
+
+                                     m = IAn̂,      τ = m × B,            U = −m · B.
+
+  Fjernfelt:
+                                                  µ0
+                                           Bdip =     [3(m · r̂)r̂ − m] .
+                                                 4πr3
+  Gør sådan: højrehåndsregel fra strømmen giver m; brug derefter krydsprodukt til torque eller prikprodukt til
+  energi. Færdig når: den stabile orientering svarer til lavest energi, dvs. m ∥ B. Faldgrube: Arealvektoren
+  følger højrehåndsreglen fra strømretningen.
+
+3.6.1 Roterende ladet ring
+En tynd ring med total ladning Q, radius R og vinkelhastighed ω svarer til strømmen
+                                                               Qω
+                                                          I=      .
+                                                               2π
+Dermed
+                                                                   1
+                                                 m = IπR2 =          QωR2 .
+                                                                   2
+Dette er en standardbro mellem bevægende ladning og magnetisk dipolmoment.
+
+Definitioner · metode · kontrol                                                                                  14
+Elektromagnetisme 1                                                                                               Formelsamling
+
+
+3.6.2 Kraft i inhomogent felt
+For en lille, fast magnetisk dipol i et langsomt varierende felt:
+
+                                                            F = ∇(m · B) .
+
+I et homogent felt er nettokraften nul, mens τ = m × B kan være ikke-nul.
+
+3.7 BA6 – vektorpotentialet A
+
+  Metodevalg. Hvis A er givet, er B = ∇ × A næsten altid første trin. Hvis strømgeometrien gør A lettere at
+  integrere end B, kan man gå J → A → B.
+
+                                               J(r′ )
+                                          ZZZ
+                                       µ0
+                                A(r) =                  dτ ′ , B = ∇ × A.
+                                       4π     |r − r′ |
+
+  For en tynd tråd:
+                                                                                dℓ′
+                                                                            Z
+                                                                     µ0 I
+                                                          A(r) =                    .
+                                                                     4π         R
+  Magnetisk dipol langt væk:
+                                                       µ0 m × r̂
+                                                          Adip = .
+                                                       4π r2
+  Færdig når: den fysiske størrelse B er fundet, medmindre opgaven eksplicit kun spørger efter A. Faldgrube:
+  A er ikke entydig; forskellige gauges kan give samme B.
+
+Andre kildeformer for A
+                                                          dℓ′                                K(r′ ) ′
+                                                      Z                                 ZZ
+                                              µ0 I                           µ0
+                                       A(r) =                 ,       A(r) =                       da .
+                                              4π          R                  4π               R
+I strømfrie områder og Coulomb-gauge opfylder hver fast kartesisk komponent Laplace-ligningen. For curvilineære
+komponenter må den skalare Laplace-operator ikke ukritisk anvendes komponentvis.
+
+3.8 BA7 – magnetiske materialer
+  Kerneflow i magnetiserede materialer
+
+                                                  If → H → B,               M → Jb , Kb .
+
+
+
+                                      Jb = ∇ × M,                                            Kb = M × n̂,
+                                           1
+                                      H=      B − M,                                    ∇ × H = Jf ,
+                                           µ0
+                             I
+                                  H · dℓ = If,enc ,                                          M = χm H,
+
+                                       B = µH,                                                µ = µ0 (1 + χm ).
+
+  Metodevalg. Hvis fri strøm er kendt og materialet er lineært, så brug H på samme måde som Ampère i
+  vakuum, fordi H kun omslutter fri strøm. Gør sådan:
+   1. Find IHf,enc .
+   2. Brug H · dℓ = If,enc med symmetrien.
+   3. Brug B = µH i hvert lineært materiale.
+   4. Hvis magnetiseringen er givet direkte, find Jb og Kb .
+  Færdig når: fri og bundet strøm er holdt adskilt, og det efterspurgte H, B eller de bundne strømme er fundet.
+  Faldgrube: H bruger fri strøm; B er det fysiske magnetfelt.
+
+3.8.1 Standardcase: magnetiseret cylinder
+For en lang cylinder med radius R og
+                                                                  M = ks2 ẑ
+fås
+                                       Jb = ∇ × M = −2ksϕ̂ ,                Kb = M × n̂ = kR2 ϕ̂ .
+De bundne strømme kan derefter behandles som almindelige strømkilder til B.
+
+Definitioner · metode · kontrol                                                                                             15
+Elektromagnetisme 1                                                                                 Formelsamling
+
+
+3.8.2 Jernkerne / flere magnetiske medier
+Når en Ampère-løkke går gennem flere lineære materialer, er det ofte H der er lettest:
+                                              I
+                                                H · dℓ = If,enc .
+
+Skriv integralet som en sum over materialestykker, fx
+
+                                                 H1 ℓ1 + H2 ℓ2 = N I,
+
+og brug Bi = µi Hi samt den relevante randbetingelse til at koble felterne. Dette er standardmetoden ved kerner med
+et luftgab.
+Randbetingelser
+                                  (B1 − B2 ) · n̂ = 0,   (H1 − H2 ) × n̂ = Kf × n̂
+med fortegnet bestemt af den valgte normalretning.
+Tidligere EM1-opgaver: magnetiseret cylinder og jernkerne-opgaver fra kap. 6..
+
+
+
+
+Definitioner · metode · kontrol                                                                                 16
+Elektromagnetisme 1                                                                                               Formelsamling
+
+
+
+4 DEL III – tidsafhængige elektromagnetiske felter
+Målet: Genkend hvad der ændrer sig med tiden. Det afgør næsten altid den første metode. Denne del kobler den
+statiske E/V - og B/A-logik sammen.
+  Start altid med at spørge: hvad ændrer sig?
+
+  Opgaven indeholder                                                    Første metode
+  Ledningsevne, resistivitet eller J                                    Ohm + strømbevarelse, DYN2
+  Bevægelig leder i homogent B                                          motional EMF, DYN3
+  Batteri + bevægelig stang + acceleration                              mod-EMF + Newton, DYN4
+  Løkkens areal/geometri ændres                                         flux + Faraday, DYN5
+  Fast spole, men B = B(t)                                              Faraday, DYN6
+  B(t) og spørgsmålet beder om E                                        induceret elektrisk felt, DYN7
+  Egen strøm ændres                                                     selvinduktion, DYN8
+  Strøm i kreds 1 påvirker kreds 2                                      gensidig induktion, DYN9
+  L og I er kendt                                                       magnetisk energi, DYN10
+  Opladende kondensator / E(t) og spørgsmålet beder                     Ampère–Maxwell, DYN11
+  om B
+
+
+4.1 DYN0 – grundligninger og centrale relationer
+
+  Strøm og ledningsevne
+                                           1
+                                                               ZZ
+                                                                                           L
+                       J = σc E,     ρres = ,             I=          J · da,       R=         (homogen leder).
+                                           σc                                             σc A
+  Kontinuitet:
+                                                   ∂ρ
+                                     ∇·J=−            ,      ∇ · J = 0 ved stationær strøm.
+                                                   ∂t
+  EMF som arbejde pr. ladning
+                                                                  I
+                                                             E=        fs · dℓ
+
+  hvor fsHer den ikke-elektrostatiske drivkraft pr. ladning fra fx batteri eller bevægelig leder. I et rent elektrostatisk
+  felt er E · dℓ = 0; en vedvarende kredsstrøm kræver derfor en kilde eller et induceret ikke-konservativt felt.
+  Flux og Faraday
+                                ZZ
+                         ΦB =        B · da,     E = −Φ̇B ,       E = −N Φ̇B for N vindinger.
+
+  Motional EMF                           I
+                                   E=        (v × B) · dℓ,      E = BLv for standardstangen.
+
+  Induktion
+                              N ΦB = LI,                 ˙
+                                                  EL = −LI,           N2 Φ21 = M I1 ,         E2 = −M I˙1 .
+  Energi og Ampère–Maxwell
+                                         1 2
+                                                                          I
+                                  UB =     LI ,      Id = ε0 Φ̇E ,              B · dℓ = µ0 (Ienc + Id ).
+                                         2
+
+4.2 DYN1 – vælg induktionsmetode
+  Recognition map
+
+                                    leder bevæger sig i B         ⇒      motional EMF,
+                                   areal/geometri ændres          ⇒      ΦB (t) + Faraday,
+                                     B = B(t), fast løkke         ⇒      Faraday,
+                                                  B(t) → E        ⇒      Faradays integralform,
+                                        I(t) i samme kreds        ⇒      L / selvinduktion,
+                                    I1 (t) påvirker kreds 2       ⇒      M / gensidig induktion,
+                                                  E(t) → B        ⇒      Ampère–Maxwell.
+
+
+
+Definitioner · metode · kontrol                                                                                              17
+Elektromagnetisme 1                                                                                  Formelsamling
+
+
+4.3 DYN2 – strøm, ledningsevne og modstand
+
+  Metodevalg. Hvis σc eller resistivitet er givet og opgaven spørger efter J, I, E eller R, så start med lokal
+  Ohms lov.
+                                                   J = σc E.
+  For konstant tværsnit og stationær strøm er I den samme gennem hvert tværsnit, så J = I/A er konstant, selv
+  hvis σc (x) varierer.
+  Ikke-uniform ledningsevne:
+                                                                        Z
+                                                    J
+                                  σc (x) → E(x) =        → ∆V = −           E(x) dx → J → I → R.
+                                                  σc (x)
+
+  Når E(x) varierer rumligt:
+                                                         ρ = ε0 ∇ · E.
+  Gør sådan:
+   1. Brug stationær strøm til at afgøre, hvilke komponenter af J der er konstante.
+   2. Skriv E = J/σc .
+   3. Integrér feltet for at matche den givne spændingsforskel.
+   4. Find I = JA og R = ∆V /I.
+   5. Hvis opgaven spørger efter ladning i materialet, tag divergensen af E.
+  Færdig når: alle lokale størrelser og den samlede modstand er bestemt. Faldgrube: R = L/(σA) gælder kun
+  direkte for homogen σ.
+  Tidligere EM1-opgaver: nov24.4; dele af jan26.2..
+
+4.3.1 RC-standardforløb
+Ved afladning af en kondensator gennem R:
+                                                                                 Q0 −t/(RC)
+                                        Q(t) = Q0 e−t/(RC) ,       I(t) = −         e       .
+                                                                                 RC
+Ved opladning fra et ideelt batteri V0 :
+                                                                                   V0 −t/(RC)
+                                      Q(t) = CV0 1 − e−t/(RC) ,             I(t) =     e        .
+                                                                                     R
+Tidskonstanten er τ = RC.
+
+4.3.2 Energi i RC-forløb
+Ved afladning gælder energibalancen                            Z ∞
+                                                      Q20
+                                                          =          I 2 R dt.
+                                                      2C       0
+Ved opladning fra et ideelt batteri V0 leverer batteriet
+                                                      Z ∞
+                                             Wbatt =      V0 I dt = CV02 .
+                                                           0
+
+Slutenergien i kondensatoren er 12 CV02 , og den anden halvdel er afsat som Joule-varme i modstanden i idealmodellen.
+
+
+
+
+Definitioner · metode · kontrol                                                                                   18
+Elektromagnetisme 1                                                                                      Formelsamling
+
+
+4.4 DYN3 – bevægelig leder i homogent B
+
+  Metodevalg. Stang på skinner, konstant fart, homogent B: brug E = BLv og regn derefter videre i en fast
+  kæde.
+
+                                                       ⊗      ⊗     ⊗            ⊗ ⊗
+                                                R                                  v
+
+
+                                                       B ind i papiret
+
+                                                         BLv
+                                    E = BLv → I =               → F = ILB → P → W.
+                                                          R
+                                                                              Z
+                                  Pmek = F v,          PR = I 2 R,   W = F d = P dt.
+
+  Gør sådan:
+   1. Brug v × B eller Lenz til strømretningen.
+   2. Find EMF og strøm.
+   3. Brug IL × B til magnetkraften.
+   4. Ved konstant v skal den eksterne kraft balancere magnetkraften.
+   5. Brug effekt/arbejde til energi.
+  Færdig når: den efterspurgte strøm, kraft, effekt eller energi er fundet og energiflowet er konsistent. Faldgrube:
+  Pmek = PR er en idealiseret konstant-hastighedskontrol, ikke en universel identitet.
+  Tidligere EM1-opgaver: juni21.6..
+
+4.5 DYN4 – motional EMF med mekanisk feedback
+
+  Metodevalg. Batteri + bevægelig stang + acceleration eller terminalhastighed: stangens egen motional EMF
+  vokser med v og modarbejder batteriet.
+                                                    V − Bdv
+                                            I(v) =            .
+                                                        R
+                                                I(v) → F = IBd → mv̇ = F.
+  Startacceleration ved v = 0:
+                                                                     BV d
+                                                              a0 =        .
+                                                                     Rm
+  Terminalhastighed:
+                                                                                      V
+                                            V − Bdv∞ = 0             ⇒        v∞ =       .
+                                                                                      Bd
+  Bevægelsesligningen:
+                                                              Bd
+                                                       v̇ =      (V − Bdv)
+                                                              Rm
+  har løsningen
+                                                                                    Rm
+                                       v(t) = v∞ 1 − e−t/τ ,                     τ=          .
+                                                                                      B 2 d2
+  Strømmen bliver
+                                                         V −t/τ
+                                                           I(t) =
+                                                           e    .
+                                                         R
+  Energi: batteriets afgivne energi deles mellem kinetisk energi og Joule-varme. I standardcasen er
+
+                                            mV 2                     1                       1
+                                  Ubatt =          ,       K∞ =        Ubatt ,       QR =      Ubatt .
+                                            B 2 d2                   2                       2
+  Færdig når: v(t) eller v∞ opfylder både startbetingelsen og den fysiske langtidsgrænse. Faldgrube: Terminal-
+  hastigheden skyldes elektromagnetisk feedback, ikke friktion.
+  Tidligere EM1-opgaver: nov25.5..
+
+
+
+
+Definitioner · metode · kontrol                                                                                    19
+Elektromagnetisme 1                                                                                   Formelsamling
+
+
+4.6 DYN5 – ændrende geometri eller areal
+
+  Metodevalg. Hvis løkken bliver større/mindre eller en side flyttes, så er den generelle vej fluxen – også selv om
+  B er konstant.
+                             geometri → A(t) → ΦB (t) → E(t) → I(t) → F, P, W.
+                                                     ZZ
+                                              ΦB =        B · da.
+
+  Kun for uniformt felt og konstant vinkel:
+                                                        ΦB = BA cos θ.
+
+
+                                                           ⊗ ⊗
+                                                                           v
+                                                         ⊗ ⊗ ⊗
+                                                     voksende trekant
+
+  Gør sådan:
+   1. Udled den relevante længde/areal som funktion af tiden.
+   2. Skriv fluxen med korrekt normalretning.
+   3. Differentier: E = −Φ̇B .
+   4. Brug Lenz til strømretningen og I = E/R til størrelsen.
+   5. Regn videre til kraft, effekt eller energi hvis opgaven spørger.
+  Færdig når: EMF og strømretning følger den faktiske fluxændring. Faldgrube: ΦB = BA er kun en specialcase;
+  generelt skal B · da integreres.
+  Tidligere EM1-opgaver: feb24.5..
+
+4.7 DYN6 – fast geometri og B(t)
+
+  Metodevalg. Spolen står stille, arealet er konstant, men magnetfeltet ændres: Faraday reduceres ofte direkte
+  til Ḃ. Hvis B er uniformt og vinkelret på en spole med N vindinger:
+
+                                                         E = −N AḂ.
+
+  Derefter
+                                           E(t)
+                                                                                 Z
+                                  I(t) =        ,       P (t) = I 2 R,     W =       P (t) dt.
+                                            R
+  Lenz-procedure:
+   1. Vælg positiv normal og fluxretning.
+   2. Afgør om den valgte flux vokser eller falder.
+   3. Det inducerede felt modvirker ændringen.
+   4. Brug højrehåndsreglen fra induceret B til strømretning.
+  Færdig når: fortegn/retning og størrelse er konsistente med den valgte normal. Faldgrube: Lenz siger ikke
+  “modsat det oprindelige B”; den siger modsat ændringen i flux.
+  Tidligere EM1-opgaver: feb22.6, nov22.6, nov23.5, jan25.6, jan26.3..
+
+4.7.1 Eksempeltype: eksponentielt B(t)
+Hvis                                                                 
+                                                    B(t) = a 1 − e−t/τ + b,
+
+så er
+                                                                  a −t/τ
+                                                        Ḃ(t) =     e
+                                                                  τ
+og for en fast spole med N vindinger og areal A:
+                                                                 a
+                                                      E(t) = −N A e−t/τ .
+                                                                 τ
+Konstantleddet b påvirker feltets øjeblikkelige retning, men ikke Ḃ og derfor ikke EMF’ens størrelse. Strømretningen
+bestemmes af fluxens ændring.
+
+
+
+
+Definitioner · metode · kontrol                                                                                       20
+Elektromagnetisme 1                                                                                  Formelsamling
+
+
+4.8 DYN7 – induceret elektrisk felt
+
+  Metodevalg. Et tidsvarierende magnetfelt kan skabe et elektrisk felt, selv uden en fysisk ledning.
+                                           I
+                                                                                   ∂B
+                                               E · dℓ = −Φ̇B ,      ∇×E=−             .
+                                                                                   ∂t
+
+  Ved cirkelsymmetri:
+                                                        E(2πs) = −Φ̇B .
+  Hvis B(t) kun findes i et cylindrisk område s < R:
+                                                  (
+                                                   πs2 B(t), s < R,
+                                            ΦB =
+                                                   πR2 B(t), s > R.
+
+  Gør sådan:
+   1. Brug symmetrien til at konkludere, at E = E(s)ϕ̂.
+   2. Vælg en cirkulær integrationsvej med radius s.
+   3. Find den magnetiske flux, der faktisk ligger inden for løkken; lav separat inside/outside.
+   4. Brug Faradays integralform og angiv retningen med Lenz.
+  Færdig når: E(s, t) er fundet i alle relevante regioner. Faldgrube: Dette E er ikke konservativt: E · dℓ ̸= 0
+                                                                                                   H
+
+  når Φ̇B ̸= 0.
+
+4.9 DYN8 – selvinduktion
+
+  Metodevalg. Samme kreds skaber magnetfeltet og oplever fluxen. Find først flux pr. strøm og dermed L.
+
+                                                                    N ΦB
+                                    I → B → ΦB → L ,           L=        ,         EL = −LI˙ .
+                                                                      I
+
+  For en lang solenoide med længde ℓ, tværsnitsareal A og N vindinger:
+
+                                                        N                 N 2A
+                                               B = µ0     I,     L = µ0        .
+                                                        ℓ                  ℓ
+
+  Gør sådan:
+   1. Beregn B fra den aktuelle strøm.
+   2. Beregn fluxen gennem én vinding og gang med N .
+   3. Divider fluxkoblingen med I.
+   4. Hvis strømmen ændres, brug −LI˙ til back-EMF.
+  Færdig når: L afhænger kun af geometri/materiale i den lineære case, ikke af den øjeblikkelige strøm. Faldgrube:
+  Selvinduktionen modvirker ændringen i I, ikke nødvendigvis selve strømretningen.
+  Tidligere EM1-opgaver: nov22.3, nov23.2, feb23.5, nov24.5..
+
+4.10 DYN9 – gensidig induktion
+
+  Metodevalg. To separate kredse: strøm i kreds 1 skaber felt og flux gennem kreds 2.
+
+                                                                    N2 Φ21
+                                  I1 → B1 → Φ21 → M ,          M=          ,         E2 = −M I˙1 .
+                                                                     I1
+
+  For passive lineære systemer gælder M12 = M21 . Gør sådan:
+   1. Beregn B1 fra kreds 1.
+   2. Find fluxen af B1 gennem kreds 2.
+   3. Divider fluxkoblingen med I1 for at finde M .
+   4. Brug −M I˙1 hvis den inducerede EMF/strøm i kreds 2 søges.
+  Færdig når: geometrien er indbygget i M , og Lenz bestemmer den inducerede retning.
+  Tidligere EM1-opgaver: nov24.5 og øvrige to-kreds-induktionsopgaver..
+
+
+
+
+Definitioner · metode · kontrol                                                                                   21
+Elektromagnetisme 1                                                                                 Formelsamling
+
+
+4.11 DYN10 – magnetisk energi
+
+  Metodevalg. Hvis induktansen og strømmen er kendt, er den lagrede energi direkte.
+
+                                                             1 2
+                                                    UB =       LI .
+                                                             2
+
+  Effekten ved opbygning af strøm kan skrives P = EI. I vakuum:
+
+                                                       1
+                                                            ZZZ
+                                               UB =               B 2 dτ .
+                                                      2µ0
+
+  Gør sådan: find først L hvis den ikke er givet; indsæt derefter den relevante strøm. Ved energibalance med
+  modstand skal Joule-varme behandles separat. Færdig når: energien har enhed joule og går mod nul med
+  I → 0.
+
+4.12 DYN11 – forskydningsstrøm og Ampère–Maxwell
+
+  Metodevalg. Opladende kondensator eller tidsvarierende elektrisk flux, hvor der ikke løber almindelig lednings-
+  strøm gennem den valgte flade.
+                                                      I
+                                    Id = ε0 Φ̇E ,           B · dℓ = µ0 (Ienc + Id ) .
+
+
+
+                                                      I
+
+                                                              E(t)
+                                                          Ampère-løkke
+
+
+
+
+  For en ideal opladende kondensator:
+                                                       Id = I .
+  Gør sådan:
+   1. Vælg en Ampère-løkke efter symmetrien.
+   2. Find den elektriske flux gennem en flade, der spænder over løkken.
+   3. Differentier fluxen og beregn Id .
+   4. Brug Ampère–Maxwell til B.
+  Færdig når: magnetfeltet er uafhængigt af, hvilken spændingsflade man forestiller sig gennem den samme
+  randkurve. Faldgrube: Den gamle Ampères lov alene giver en inkonsistens ved en opladende kondensator;
+  forskydningsstrømmen er præcis korrektionen.
+  Tidligere EM1-opgaver: nov21.6, feb23.6..
+
+4.12.1 Cirkulær pladekondensator: inside/outside
+For en ideal pladekondensator med pladeradius a, uniformt E(t) mellem pladerne og en cirkulær Ampère-løkke med
+radius s:                                          (
+                                                     E(t)πs2 , s < a,
+                                          ΦE (s) =
+                                                     E(t)πa2 , s > a.
+Dermed
+                                               B(2πs) = µ0 ε0 Φ̇E (s).
+Altså vokser B ∝ s inde i feltområdet og falder som 1/s udenfor i den idealiserede kvasistatiske model.
+
+
+
+
+Definitioner · metode · kontrol                                                                                 22
+Elektromagnetisme 1                                                                                                        Formelsamling
+
+
+4.13 DYN12 – Maxwell samlet
+
+                                  ρ
+                                  ∇·E=
+                                     ,                                      ∇ · B = 0,
+                                  ε0
+                                    ∂B                                                             ∂E
+                              ∇×E=−     ,                                 ∇ × B = µ0 J + µ0 ε0        .
+                                     ∂t                                                            ∂t
+  Integralform:
+                   I                                            I
+                               Qenc
+                       E · da =     ,                                   B · da = 0,
+                    S           ε0                               S
+                   I                ZZ                          I                                       ZZ
+                                 ∂                                                                 ∂
+                      E · dℓ = −         B · da,                        B · dℓ = µ0 Ienc + µ0 ε0                 E · da.
+                    C            ∂t    S                            C                              ∂t        S
+
+
+  Den røde tråd
+
+                                                   ∂B                              ∂E
+                        ρ → E,       J → B,           → cirkulerende E,               → cirkulerende B.
+                                                   ∂t                              ∂t
+  Typiske opgavekæder:
+
+                                  B→E →I→F →P →W ,                      I → B → ΦB → L → UB .
+
+
+Afsluttende kontrol ved opgaveløsning
+Dette er ikke et særskilt strategikapitel, men en sidste fysisk kontrol af de metoder, der allerede står i de relevante
+afsnit.
+
+Enheder                                                         Grænser
+• [E] = V/m = N/C                                               • v → 0 ⇒ Emot → 0
+• [B] = T                                                       • Φ̇B → 0 ⇒ E → 0
+• [ΦB ] = Wb                                                    • konstant I ⇒ EL = 0
+• [E] = V                                                       • leder i elektrostatisk ligevægt: E = 0 i metal
+• [L] = H                                                       • r → ∞: kontrollér forventet multipolskalering
+
+
+
+
+                              Prøveudgave. Den eksisterende EM-formelsamling er ikke overskrevet.
+
+
+
+Definitioner · metode · kontrol                                                                                                      23
+

@@ -1,0 +1,397 @@
+{
+  "schema_version": 1,
+  "id": "2024-02:3a",
+  "status": "executable",
+  "geometry": "wire_and_rectangular_loop",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 26,
+    "answer": "answers_extracted.txt: 2024-02, Opgave 3, a)"
+  },
+  "given_source": [
+    "En lang, lige ledning ligger i planet defineret af en rektangulær, stiv strømløkke. To af\nløkkens sider med længde b er parallelle med ledningen; de to andre sider med længde a\nstår da vinkelret på denne. Ledningen ligger i afstanden d fra løkken. I ledningen såvel\nsom i løkken løber konstante elektriske strømme, henholdsvis I1 og I2 . Situationen og\norienteringen af strømmene fremgår af figuren.\n                                               b\n\n\n                                 I2                   a\n\n\n                                                      d          I1\n\n\nDer opgives følgende værdier: b = 38 cm, a = 24 cm, d = 14 cm, I1 = 15 A og I2 = 1,8 A."
+  ],
+  "wanted_source": [
+    "Bestem størrelsen og retningen af den resulterende kraft på strømløkken. Størrelsen\n     bedes angivet såvel symbolsk som numerisk.\nIdet begge elektriske strømme holdes konstante, flyttes løkken nu fra sin oprindelige\nafstand d til afstanden 0,2 d."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    },
+    "I1": {
+      "positive": true
+    },
+    "I2": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "I1": "A",
+    "I2": "A"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "BA",
+        "family": "wire_force",
+        "geometry": "wire_and_rectangular_loop",
+        "variables": {
+          "paths": [
+            {
+              "source": [
+                {
+                  "expr": "b-s"
+                },
+                {
+                  "expr": "d"
+                },
+                {
+                  "expr": "0"
+                }
+              ],
+              "parameter": {
+                "expr": "s"
+              },
+              "bounds": [
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "b"
+                }
+              ]
+            },
+            {
+              "source": [
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "d+s"
+                },
+                {
+                  "expr": "0"
+                }
+              ],
+              "parameter": {
+                "expr": "s"
+              },
+              "bounds": [
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "a"
+                }
+              ]
+            },
+            {
+              "source": [
+                {
+                  "expr": "s"
+                },
+                {
+                  "expr": "d+a"
+                },
+                {
+                  "expr": "0"
+                }
+              ],
+              "parameter": {
+                "expr": "s"
+              },
+              "bounds": [
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "b"
+                }
+              ]
+            },
+            {
+              "source": [
+                {
+                  "expr": "b"
+                },
+                {
+                  "expr": "d+a-s"
+                },
+                {
+                  "expr": "0"
+                }
+              ],
+              "parameter": {
+                "expr": "s"
+              },
+              "bounds": [
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "a"
+                }
+              ]
+            }
+          ],
+          "I": {
+            "expr": "I2"
+          },
+          "B": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "mu_0*I1/(2*pi*y)"
+            }
+          ],
+          "field_coordinates": [
+            {
+              "expr": "x"
+            },
+            {
+              "expr": "y"
+            },
+            {
+              "expr": "z"
+            }
+          ],
+          "work_coordinate": {
+            "expr": "d"
+          },
+          "work_bounds": [
+            {
+              "expr": "d"
+            },
+            {
+              "expr": "d/5"
+            }
+          ],
+          "displacement_tangent": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "1"
+            },
+            {
+              "expr": "0"
+            }
+          ]
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "F",
+          "magnitude",
+          "W_external"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "F",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "mu_0*I1*I2*a*b/(2*pi*d*(d+a))"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "N"
+    },
+    {
+      "step": "solve",
+      "result": "magnitude",
+      "value": {
+        "expr": "mu_0*I1*I2*a*b/(2*pi*d*(d+a))"
+      },
+      "unit": "N",
+      "numeric": {
+        "values": {
+          "a": 0.24,
+          "b": 0.38,
+          "d": 0.14,
+          "I1": 15,
+          "I2": 1.8
+        },
+        "value": 9.3e-06,
+        "tolerance": 1e-07
+      }
+    },
+    {
+      "step": "solve",
+      "result": "W_external",
+      "value": {
+        "expr": "mu_0*b*I1*I2*log((d/5+a)/((d+a)/5))/(2*pi)"
+      },
+      "unit": "J",
+      "numeric": {
+        "values": {
+          "a": 0.24,
+          "b": 0.38,
+          "d": 0.14,
+          "I1": 15,
+          "I2": 1.8
+        },
+        "value": 2.6e-06,
+        "tolerance": 1e-07
+      }
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {
+    "a": 0.24,
+    "b": 0.38,
+    "d": 0.14,
+    "I1": 15,
+    "I2": 1.8
+  },
+  "given_units": {
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "I1": "A",
+    "I2": "A"
+  }
+}

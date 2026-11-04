@@ -1,0 +1,35 @@
+{
+  "network": "socket connections blocked",
+  "platform": "linux",
+  "cases": [
+    {
+      "case": "gauss",
+      "status": "result_rendered"
+    },
+    {
+      "case": "biot_savart",
+      "status": "result_rendered"
+    },
+    {
+      "case": "ampere",
+      "status": "result_rendered"
+    },
+    {
+      "case": "faraday",
+      "status": "result_rendered"
+    },
+    {
+      "case": "motional",
+      "status": "result_rendered"
+    },
+    {
+      "case": "material",
+      "status": "result_rendered"
+    },
+    {
+      "case": "rejection",
+      "status": "correct_refusal"
+    }
+  ],
+  "windows_batch_execution": "not available on Linux"
+}

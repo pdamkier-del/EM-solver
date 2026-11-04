@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "id": "2021-06:6c",
+  "status": "executable",
+  "geometry": "sliding_rod",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 4,
+    "answer": "answers_extracted.txt: 2021-06, Opgave 6, c)"
+  },
+  "given_source": [
+    "To lange parallelle metalskinner med indbyrdes afstand L = 20 cm er forbundet til en\nmodstand med resistans R = 0.30 ⌦, som vist på figuren. Et konstant og homogent mag-\nnetfelt med styrke B = 1.2 Tesla er rettet vinkelret på skinnerne ud af figurens plan. En\nmetalstang hviler på skinnerne, således at der til enhver tid er elektrisk kontakt mellem\nstang og skinner. Metalstangen er frit bevægelig langs skinnerne med forsvindende frik-\ntion. Stangen trækkes med konstant fart, v = 3.4 m/s, i retningen væk fra modstanden,\nsom angivet på figuren. Der kan ses bort fra resistans i skinnerne og i metalstangen.\nTil de følgende spørgsmål ønskes samtlige størrelser angivet både symbolsk og numerisk.\nDe symbolske udtryk skal udtrykkes ved de i opgaveteksten opgivne størrelser."
+  ],
+  "wanted_source": [
+    "Bestem e↵ekten (Watt) af den eksterne kraft."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "ohm",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "bindings": {},
+      "problem": {
+        "domain": "DYN",
+        "family": "motional_emf",
+        "variables": {
+          "source": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "s"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "parameter": {
+            "expr": "s"
+          },
+          "bounds": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "L"
+            }
+          ],
+          "v": [
+            {
+              "expr": "v"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "B": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "B"
+            }
+          ],
+          "time": {
+            "expr": "t"
+          },
+          "R": {
+            "expr": "R"
+          },
+          "time_bounds": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "d/v"
+            }
+          ]
+        },
+        "assumptions": [
+          "negligible_self_inductance",
+          "stationary_return_path"
+        ],
+        "regions": []
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "I",
+      "value": {
+        "expr": "-B*L*v/R"
+      },
+      "unit": "A",
+      "sign": -1
+    },
+    {
+      "step": "solve",
+      "result": "F_external",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "B^2*L^2*v/R"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "N"
+    },
+    {
+      "step": "solve",
+      "result": "P_mechanical",
+      "value": {
+        "expr": "B^2*L^2*v^2/R"
+      },
+      "unit": "W"
+    },
+    {
+      "step": "solve",
+      "result": "W",
+      "value": {
+        "expr": "B^2*L^2*v*d/R"
+      },
+      "unit": "J",
+      "numeric": {
+        "values": {
+          "B": 1.2,
+          "L": 0.2,
+          "v": 3.4,
+          "R": 0.3,
+          "d": 1.2
+        },
+        "value": 0.78,
+        "tolerance": 0.01
+      }
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "Positiv kurve langs +y i den bevægelige stang. I<0; den fysiske omløbsretning svarer til figurens Lenz-retning.",
+  "given_values": {
+    "B": 1.2,
+    "L": 0.2,
+    "v": 3.4,
+    "R": 0.3,
+    "d": 1.2
+  },
+  "given_units": {
+    "B": "T",
+    "L": "m",
+    "v": "m/s",
+    "R": "ohm",
+    "d": "m"
+  }
+}

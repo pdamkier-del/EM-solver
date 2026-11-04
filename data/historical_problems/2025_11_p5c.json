@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "id": "2025-11:5c",
+  "status": "executable",
+  "geometry": "driven_sliding_rod",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 40,
+    "answer": "answers_extracted.txt: 2025-11, Opgave 5, c)"
+  },
+  "given_source": [
+    "To lange, parallelle metalskinner med indbyrdes afstand d ligger i det vandrette plan.\nNår en kontakt, K, lukkes, forbindes skinnerne med hinanden via et batteri (konstant\nspændingsforskel V ) og en resistor (modstand R), som vist på figuren. Et konstant og\nhomogent magnetfelt, B, er rettet opad (og altså ud af figurens plan). En metalstang\nmed masse m hviler på skinnerne og står vinkelret på disse. Metalstangen er frit bevæ-\ngelig langs skinnerne med forsvindende friktion, og der er til enhver tid elektrisk kontakt\nmellem stang og skinner. Der kan ses bort fra elektrisk modstand i skinnerne og i me-\ntalstangen.\n\n\n\n                                                                             R\n                                                                       +\n                       d                                  B            −     V\n\n                                                                             K\n\n\n\nKontakten lukkes til tiden t = 0, hvorefter der vil løbe en strøm gennem kredsløbet.\nDette vil sætte stangen i bevægelse."
+  ],
+  "wanted_source": [
+    "Opskriv en differentialligning, som stangens hastighed skal opfylde. Bestem et ud-\n     tryk for stangens hastighed som funktion af tiden, v(t)."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "ohm",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "DYN",
+        "family": "feedback",
+        "geometry": "driven_sliding_rod",
+        "variables": {
+          "mass": {
+            "expr": "m"
+          },
+          "R": {
+            "expr": "R"
+          },
+          "coupling": {
+            "expr": "B*d"
+          },
+          "voltage": {
+            "expr": "V"
+          },
+          "drive_force": {
+            "expr": "0"
+          },
+          "time": {
+            "expr": "t"
+          },
+          "initial_velocity": {
+            "expr": "0"
+          },
+          "time_bounds": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "oo"
+            }
+          ]
+        },
+        "regions": [],
+        "assumptions": [
+          "constant_coefficients",
+          "negligible_self_inductance",
+          "no_friction"
+        ],
+        "wanted": [
+          "acceleration_initial",
+          "v_infinity",
+          "v",
+          "battery_energy",
+          "W"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "acceleration_initial",
+      "value": {
+        "expr": "B*d*V/(R*m)"
+      },
+      "unit": "m/s^2",
+      "sign": 1
+    },
+    {
+      "step": "solve",
+      "result": "v_infinity",
+      "value": {
+        "expr": "V/(B*d)"
+      },
+      "unit": "m/s",
+      "sign": 1
+    },
+    {
+      "step": "solve",
+      "result": "v",
+      "value": {
+        "expr": "V/(B*d)*(1-exp(-B^2*d^2*t/(m*R)))"
+      },
+      "unit": "m/s"
+    },
+    {
+      "step": "solve",
+      "result": "battery_energy",
+      "value": {
+        "expr": "m*V^2/(B^2*d^2)"
+      },
+      "unit": "J"
+    },
+    {
+      "step": "solve",
+      "result": "W",
+      "value": {
+        "expr": "m*V^2/(2*B^2*d^2)"
+      },
+      "unit": "J"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "Positiv bevægelsesakse mod venstre som på opgavens figur. V² kontrolleret mod originalfacit.",
+  "given_values": {},
+  "given_units": {}
+}

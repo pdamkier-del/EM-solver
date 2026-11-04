@@ -1,0 +1,929 @@
+{
+  "2021-06:1a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_boundaries.py::test_2021_offcenter_cavity_total_and_potential"
+    ]
+  },
+  "2021-06:1b": {
+    "status": "unrun",
+    "tests": []
+  },
+  "2021-06:1c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_boundaries.py::test_2021_offcenter_cavity_total_and_potential"
+    ]
+  },
+  "2021-06:2a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2021_tetrahedron_energy"
+    ]
+  },
+  "2021-06:3a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2021_coaxial_currents"
+    ]
+  },
+  "2021-06:3b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2021_parallel_force"
+    ]
+  },
+  "2021-06:4a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2021_mass_spectrometer"
+    ]
+  },
+  "2021-06:5a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2021_june_polynomial"
+    ]
+  },
+  "2021-06:5b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2021_coefficient_dimensions"
+    ]
+  },
+  "2021-06:5c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2021_june_polynomial"
+    ]
+  },
+  "2021-06:6a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2021_sliding_rod"
+    ]
+  },
+  "2021-06:6b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2021_sliding_rod"
+    ]
+  },
+  "2021-06:6c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2021_sliding_rod"
+    ]
+  },
+  "2021-06:6d": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2021_sliding_rod"
+    ]
+  },
+  "2021-11:1a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2021_hemisphere"
+    ]
+  },
+  "2021-11:1b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2021_hemisphere"
+    ]
+  },
+  "2021-11:2a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2021_two_hollow_shells"
+    ]
+  },
+  "2021-11:2b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2021_spherical_capacitance"
+    ]
+  },
+  "2021-11:2c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_boundaries.py::test_2021_dielectric_shell_charge_separation"
+    ]
+  },
+  "2021-11:2d": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2021_spherical_capacitance"
+    ]
+  },
+  "2021-11:3a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2021_nonstatic_field"
+    ]
+  },
+  "2021-11:3b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2021_harmonic_potential"
+    ]
+  },
+  "2021-11:4a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2021_circular_B_force"
+    ]
+  },
+  "2021-11:4b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2021_current_from_B"
+    ]
+  },
+  "2021-11:5a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2021_rotating_cylinder"
+    ]
+  },
+  "2021-11:6a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_last_computations.py::test_2021_capacitor_field_direction"
+    ]
+  },
+  "2021-11:6b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_displacement_current"
+    ]
+  },
+  "2021-11:6c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_induced_axial_E_correction",
+      "tests/historical/test_last_computations.py::test_2021_correction_and_frequency_limit"
+    ]
+  },
+  "2022-02:1a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2022_four_charges"
+    ]
+  },
+  "2022-02:1b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2022_four_charges"
+    ]
+  },
+  "2022-02:1c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2022_four_charges"
+    ]
+  },
+  "2022-02:2a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2022_cylinder_gap"
+    ]
+  },
+  "2022-02:2b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_boundaries.py::test_2022_coaxial_surface_charges"
+    ]
+  },
+  "2022-02:2c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_boundaries.py::test_2022_dielectric_cylindrical_potential"
+    ]
+  },
+  "2022-02:3a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2022_bent_wire_force"
+    ]
+  },
+  "2022-02:4a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_last_computations.py::test_2022_total_current_with_bore"
+    ]
+  },
+  "2022-02:4b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_magnetic_cavities"
+    ]
+  },
+  "2022-02:5a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2022_electrostatic_density"
+    ]
+  },
+  "2022-02:5b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_boundaries.py::test_2022_work_along_arc"
+    ]
+  },
+  "2022-02:6a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2022_ring_sinusoid"
+    ]
+  },
+  "2022-02:7a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_vector_potential_regions.py::test_2022_vector_potential_poisson_and_matching"
+    ]
+  },
+  "2022-02:7b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_vector_potential_regions.py::test_2022_vector_potential_poisson_and_matching"
+    ]
+  },
+  "2022-11:1a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2022_zeros_and_work"
+    ]
+  },
+  "2022-11:1b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2022_zeros_and_work"
+    ]
+  },
+  "2022-11:1c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2022_zeros_and_work"
+    ]
+  },
+  "2022-11:2a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2022_spherical_density_from_field"
+    ]
+  },
+  "2022-11:2b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2022_spherical_density_from_field"
+    ]
+  },
+  "2022-11:3a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2022_CMS_solenoid"
+    ]
+  },
+  "2022-11:3b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2022_CMS_solenoid"
+    ]
+  },
+  "2022-11:3c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2022_CMS_solenoid"
+    ]
+  },
+  "2022-11:3d": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2022_CMS_solenoid"
+    ]
+  },
+  "2022-11:4a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_last_computations.py::test_2022_rotating_ring_and_disk_moments"
+    ]
+  },
+  "2022-11:4b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_last_computations.py::test_2022_rotating_ring_and_disk_moments"
+    ]
+  },
+  "2022-11:5a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2022_magnetized_cylinder"
+    ]
+  },
+  "2022-11:5b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2022_magnetized_cylinder"
+    ]
+  },
+  "2022-11:6a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2022_nonuniform_square_flux"
+    ]
+  },
+  "2023-02:1a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2023_three_charges"
+    ]
+  },
+  "2023-02:1b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2023_three_charges"
+    ]
+  },
+  "2023-02:1c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2023_three_charges"
+    ]
+  },
+  "2023-02:2a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2023_dielectric_sphere"
+    ]
+  },
+  "2023-02:2b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2023_dielectric_sphere"
+    ]
+  },
+  "2023-02:2c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2023_dielectric_sphere"
+    ]
+  },
+  "2023-02:3a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2023_quadrupole_far_field"
+    ]
+  },
+  "2023-02:4a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2023_vector_potential"
+    ]
+  },
+  "2023-02:4b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_vector_potential_regions.py::test_2023_current_through_tilted_disk"
+    ]
+  },
+  "2023-02:5a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2023_wire_loop_mutual_and_inverse_amplitude"
+    ]
+  },
+  "2023-02:5b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2023_mutual_sinusoid"
+    ]
+  },
+  "2023-02:5c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2023_mutual_sinusoid"
+    ]
+  },
+  "2023-02:5d": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2023_wire_loop_mutual_and_inverse_amplitude"
+    ]
+  },
+  "2023-02:6a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_displacement_current"
+    ]
+  },
+  "2023-11:1a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2023_equilibrium_algebra",
+      "tests/historical/test_equilibria.py::test_2023_line_and_square_equilibria_and_energy"
+    ]
+  },
+  "2023-11:1b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2023_equilibrium_algebra",
+      "tests/historical/test_equilibria.py::test_2023_line_and_square_equilibria_and_energy"
+    ]
+  },
+  "2023-11:1c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2023_equilibrium_algebra",
+      "tests/historical/test_equilibria.py::test_2023_line_and_square_equilibria_and_energy"
+    ]
+  },
+  "2023-11:2a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2023_parallel_transmission_sheets"
+    ]
+  },
+  "2023-11:2b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2023_parallel_transmission_sheets"
+    ]
+  },
+  "2023-11:3a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2023_nonstatic_polynomial"
+    ]
+  },
+  "2023-11:3b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2023_nonstatic_polynomial"
+    ]
+  },
+  "2023-11:4a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_dielectric_potentials.py::test_2023_sphere_half_immersed_in_dielectric"
+    ]
+  },
+  "2023-11:4b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_dielectric_potentials.py::test_2023_sphere_half_immersed_in_dielectric"
+    ]
+  },
+  "2023-11:4c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_dielectric_potentials.py::test_2023_sphere_half_immersed_in_dielectric"
+    ]
+  },
+  "2023-11:5a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_last_computations.py::test_2023_falling_ring_both_gradient_signs"
+    ]
+  },
+  "2023-11:5b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_last_computations.py::test_2023_falling_ring_both_gradient_signs"
+    ]
+  },
+  "2023-11:5c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2023_falling_ring_terminal_velocity",
+      "tests/historical/test_last_computations.py::test_2023_falling_ring_both_gradient_signs"
+    ]
+  },
+  "2023-11:5d": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_last_computations.py::test_2023_falling_ring_both_gradient_signs"
+    ]
+  },
+  "2024-02:1a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2024_arc_point_superposition"
+    ]
+  },
+  "2024-02:1b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2024_arc_point_superposition"
+    ]
+  },
+  "2024-02:1c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2024_semicircle_charge"
+    ]
+  },
+  "2024-02:1d": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2024_semicircle_charge"
+    ]
+  },
+  "2024-02:2a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2024_polarized_cube"
+    ]
+  },
+  "2024-02:2b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2024_polarized_cube"
+    ]
+  },
+  "2024-02:3a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_wire_work.py::test_2024_rectangular_loop_force_and_work"
+    ]
+  },
+  "2024-02:3b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_wire_work.py::test_2024_rectangular_loop_force_and_work"
+    ]
+  },
+  "2024-02:4a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2024_nonuniform_current"
+    ]
+  },
+  "2024-02:4b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2024_nonuniform_current"
+    ]
+  },
+  "2024-02:5a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2024_expanding_triangle"
+    ]
+  },
+  "2024-02:5b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2024_expanding_triangle"
+    ]
+  },
+  "2024-02:5c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_wire_work.py::test_2024_triangular_rod_reaction_force"
+    ]
+  },
+  "2024-02:5d": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2024_expanding_triangle"
+    ]
+  },
+  "2024-11:1a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2024_corner_force"
+    ]
+  },
+  "2024-11:1b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2024_corner_images"
+    ]
+  },
+  "2024-11:2a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2024_gauss_cylinder"
+    ]
+  },
+  "2024-11:2b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2024_gauss_cylinder"
+    ]
+  },
+  "2024-11:3a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_geometries.py::test_2024_current_ribbon"
+    ]
+  },
+  "2024-11:3b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_geometries.py::test_2024_current_ribbon"
+    ]
+  },
+  "2024-11:4a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2024_graded_resistor"
+    ]
+  },
+  "2024-11:4b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2024_graded_resistor"
+    ]
+  },
+  "2024-11:5a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_geometries.py::test_2024_dipole_coupled_loops"
+    ]
+  },
+  "2024-11:5b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_geometries.py::test_2024_dipole_coupled_loops"
+    ]
+  },
+  "2024-11:5c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_geometries.py::test_2024_dipole_coupled_loops"
+    ]
+  },
+  "2024-11:6a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2024_toroid_gap"
+    ]
+  },
+  "2024-11:6b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2024_toroid_gap"
+    ]
+  },
+  "2024-11:6c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2024_toroid_gap"
+    ]
+  },
+  "2025-01:1a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2025_linear_field"
+    ]
+  },
+  "2025-01:1b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2025_linear_field"
+    ]
+  },
+  "2025-01:2a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2025_concentric_conductors"
+    ]
+  },
+  "2025-01:2b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2025_concentric_conductors"
+    ]
+  },
+  "2025-01:2c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2025_concentric_conductors"
+    ]
+  },
+  "2025-01:3a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_geometries.py::test_2025_annular_disk_potential_and_field"
+    ]
+  },
+  "2025-01:3b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_geometries.py::test_2025_annular_disk_potential_and_field"
+    ]
+  },
+  "2025-01:4a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2025_lorentz"
+    ]
+  },
+  "2025-01:5a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2025_parallel_wires"
+    ]
+  },
+  "2025-01:5b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2025_parallel_wires"
+    ]
+  },
+  "2025-01:5c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_geometries.py::test_2025_half_cylindrical_current_foil"
+    ]
+  },
+  "2025-01:6a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2025_coil_exponential"
+    ]
+  },
+  "2025-01:6b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2025_coil_exponential"
+    ]
+  },
+  "2025-01:6c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2025_coil_resistance"
+    ]
+  },
+  "2025-11:1a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2025_charges_and_images"
+    ]
+  },
+  "2025-11:1b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2025_charges_and_images"
+    ]
+  },
+  "2025-11:2a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2025_log_potential"
+    ]
+  },
+  "2025-11:2b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2025_log_potential"
+    ]
+  },
+  "2025-11:2c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2025_log_potential"
+    ]
+  },
+  "2025-11:3a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_dielectric_potentials.py::test_2025_zero_inner_sphere_potential"
+    ]
+  },
+  "2025-11:3b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_dielectric_potentials.py::test_2025_zero_inner_sphere_potential"
+    ]
+  },
+  "2025-11:4a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_2025_ampere_solid"
+    ]
+  },
+  "2025-11:4b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_magnetic_cavities"
+    ]
+  },
+  "2025-11:4c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_magnetic.py::test_magnetic_cavities"
+    ]
+  },
+  "2025-11:5a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2025_driven_rod"
+    ]
+  },
+  "2025-11:5b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2025_driven_rod"
+    ]
+  },
+  "2025-11:5c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2025_driven_rod"
+    ]
+  },
+  "2025-11:5d": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2025_driven_rod"
+    ]
+  },
+  "2026-01:1a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_charges.py::test_2026_point_dipole"
+    ]
+  },
+  "2026-01:1b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2026_charged_semicircle"
+    ]
+  },
+  "2026-01:1c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2026_charged_semicircle"
+    ]
+  },
+  "2026-01:2a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2026_large_capacitor"
+    ]
+  },
+  "2026-01:2b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_materials_integrals.py::test_2026_large_capacitor"
+    ]
+  },
+  "2026-01:2c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2026_RC_discharge"
+    ]
+  },
+  "2026-01:2d": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_remaining_chains.py::test_2026_RC_wire_force"
+    ]
+  },
+  "2026-01:3a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2026_nonuniform_circle"
+    ]
+  },
+  "2026-01:3b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2026_nonuniform_circle"
+    ]
+  },
+  "2026-01:3c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_induction.py::test_2026_nonuniform_circle"
+    ]
+  },
+  "2026-01:4a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2026_vector_potentials_both_cases"
+    ]
+  },
+  "2026-01:5a": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2026_legendre"
+    ]
+  },
+  "2026-01:5b": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2026_legendre"
+    ]
+  },
+  "2026-01:5c": {
+    "status": "passed",
+    "tests": [
+      "tests/historical/test_fields.py::test_2026_legendre"
+    ]
+  }
+}

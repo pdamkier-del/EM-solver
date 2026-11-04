@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "2021-11:3a",
+  "status": "executable",
+  "geometry": "cartesian_or_spherical",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 6,
+    "answer": "answers_extracted.txt: 2021-11, Opgave 3, a)"
+  },
+  "given_source": [
+    "Der betragtes et område ⌦ i rummet, hvor ladningstætheden er nul. Begrund, hvilke af\nfølgende udsagn er sande og hvilke falske:"
+  ],
+  "wanted_source": [
+    "E1 (x, y, z) = A1 (y x̂ x ŷ + d1 ẑ) er et muligt elektrisk felt i ⌦, idet A1 og d1 er\n     reelle konstanter med enhederne henholdsvis V m 2 og m."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "V/m^2",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "EV",
+        "family": "field_calculus",
+        "geometry": "cartesian_or_spherical",
+        "variables": {
+          "coordinates": [
+            {
+              "expr": "x"
+            },
+            {
+              "expr": "y"
+            },
+            {
+              "expr": "z"
+            }
+          ],
+          "system": "cartesian",
+          "E": [
+            {
+              "expr": "k*y"
+            },
+            {
+              "expr": "-k*x"
+            },
+            {
+              "expr": "k*d"
+            }
+          ]
+        },
+        "regions": [],
+        "assumptions": [
+          "electrostatic"
+        ],
+        "wanted": [
+          "curl_E"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "curl_E",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "-2*k"
+            }
+          ]
+        ]
+      },
+      "unit": "V/m^2"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

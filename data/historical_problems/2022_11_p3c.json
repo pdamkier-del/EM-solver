@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "id": "2022-11:3c",
+  "status": "executable",
+  "geometry": "solenoid",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 14,
+    "answer": "answers_extracted.txt: 2022-11, Opgave 3, c)"
+  },
+  "given_source": [
+    "Samtlige spørgsmål i denne opgave bedes besvaret med talværier inklusive enheder.\nCMS-eksperimentet på CERN er udstyret med verdens største solenoide-magnet. For\nat opretholde et kraftigt magnetfelt må der anvendes en meget stor strømstyrke. Dette\nmuliggøres ved, at solenioden er superledende, og altså nedkølet til −269 ◦ C.\nSolenoiden, vist på skitsen nedenfor, har N = 2180 vindinger, længden er l = 12,5 m, og\nradius er r = 3,00 m. En strøm på I = 18,2 kA løber gennem vindingerne.\n\n\n\n\nVi vil i det følgende undersøge solenoidens egenskaber. Som en approksimation anvendes\nudtrykkene for en uendelig lang solenoide. Der ses således bort fra enhver form for\nrandeffekter. Under denne forudsætning:"
+  ],
+  "wanted_source": [
+    "Bestem tiden, T , det tager for strømstyrken at nå sin nominelle værdi. Bestem\n     ligeledes værdien af ES .\n\f                                                                       Side 3 af 4 sider\n\n\nVi vil sluttelig illustrere, hvorfor en magnet af denne styrke nødvendigvis må være baseret\npå superledende teknologi, hvor strømmen i solenoidevindingerne løber fuldstændig uden\nmodstand.\nLedningen, der danner spolen, har et ydre tværsnit på 30,0 mm×26,6 mm. Lad os antage,\nat situationen ikke var superledende, og at ledningen var lavet af massivt aluminium,\nsom har resistiviteten ρ = 2,65 × 10−8 Ωm."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    },
+    "L_ind": {
+      "positive": true
+    },
+    "B_field": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "ohm",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "L_ind": "H",
+    "B_field": "T"
+  },
+  "path": [
+    {
+      "id": "field",
+      "problem": {
+        "domain": "BA",
+        "family": "ampere",
+        "variables": {
+          "kind": "solenoid",
+          "turn_density": {
+            "expr": "N/L"
+          },
+          "I": {
+            "expr": "I"
+          }
+        },
+        "assumptions": [
+          "ideal_long_solenoid",
+          "magnetostatic"
+        ]
+      }
+    },
+    {
+      "id": "inductance",
+      "bindings": {
+        "B_field": {
+          "ref": "field.B"
+        }
+      },
+      "problem": {
+        "domain": "DYN",
+        "family": "inductance_energy",
+        "variables": {
+          "flux": {
+            "expr": "B_field*pi*a^2"
+          },
+          "I": {
+            "expr": "I"
+          },
+          "N": {
+            "expr": "N"
+          }
+        }
+      }
+    },
+    {
+      "id": "solve",
+      "bindings": {
+        "L_ind": {
+          "ref": "inductance.L"
+        }
+      },
+      "problem": {
+        "domain": "DYN",
+        "family": "rc_transient",
+        "variables": {
+          "kind": "RL",
+          "time": {
+            "expr": "t"
+          },
+          "R": {
+            "expr": "R"
+          },
+          "L": {
+            "expr": "L_ind"
+          },
+          "voltage": {
+            "expr": "V"
+          },
+          "I0": {
+            "expr": "0"
+          },
+          "solve_for": {
+            "expr": "t"
+          },
+          "target_values": {
+            "I": {
+              "expr": "I"
+            }
+          }
+        },
+        "assumptions": [
+          "reachable_RL_target"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "solved_t",
+      "value": {
+        "expr": "-mu_0*N^2*pi*a^2/(L*R)*log(1-R*I/V)"
+      },
+      "unit": "s",
+      "numeric": {
+        "values": {
+          "N": 2180,
+          "a": 3,
+          "L": 12.5,
+          "R": 7.5e-05,
+          "I": 18200,
+          "V": 26
+        },
+        "value": 9720.0,
+        "tolerance": 40
+      }
+    },
+    {
+      "step": "solve",
+      "result": "maintain_voltage",
+      "value": {
+        "expr": "R*I"
+      },
+      "unit": "V",
+      "numeric": {
+        "values": {
+          "R": 7.5e-05,
+          "I": 18200
+        },
+        "value": 1.365,
+        "tolerance": 1e-08
+      }
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {
+    "N": 2180,
+    "a": 3,
+    "L": 12.5,
+    "R": 7.5e-05,
+    "I": 18200,
+    "V": 26
+  },
+  "given_units": {
+    "N": "1",
+    "a": "m",
+    "L": "m",
+    "R": "ohm",
+    "I": "A",
+    "V": "V"
+  }
+}

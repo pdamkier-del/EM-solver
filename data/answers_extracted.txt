@@ -1,0 +1,362 @@
+                                                                                 Niels Bohr Institutet
+                                                                                       August 6, 2026
+                                                                                        Mogens Dam
+
+EM1 - Facit til tidligere eksamenssæt
+
+                                            1
+Anvender i nogle opgaver definitionen ke = 4πϵ0
+                                                .
+
+
+Juni 2021
+                                                                  1 4q
+Opgave 1: a) Qb = −q, Qc = 4q; b) Størst tæthed ud for q; c) V = 4πϵ0 c
+                                                                        .
+                             2
+                  1 6Q
+Opgave 2: a) W = 4πϵ0 a
+                        .
+Opgave 3: a) B(r) = µ2πr0I
+                           for a < r < b, B(r) = 41 µ2πr
+                                                      0I
+                                                         for r > b, begge rettet mod uret
+                                                 2
+                                    dF    1 µ0 I
+    set oppefra; b) tiltrækkende, dl = 4 2πd .
+                    q
+Opgave 4: a) R = B1 2VqM , d = 2R = 7,98 cm.
+Opgave 5: a) ∇ × f (x, y, z) = 0, ∇ · f (x, y, z) = 2C(x + y); b) C har enheden V/m3 ,
+    ækvivalent med N/(C·m2 ); c) Q = 2ϵ0 CL4 .
+Opgave 6: a) I = BLv
+                  R = 2,7 A, mod uret; b) F = 0,65 N; c) P = 2,2 W; d) W = 0,78 J.
+
+
+
+November 2021
+Opgave 1: a) W = RσQ                                 Qσ
+                 2ϵ0 = 4,3 J; b) efter z-aksen, Fz = 4ϵ0 = 9,75 N.
+Opgave 2: a) σa = 0, σb = Q1 /4πb2 , σc = −Q1 /4πc2 , σb = (Q1 + Q2 )/4πd2 ; b) C =
+          cb
+    4πϵ0 c−b ; c) σa = 0, σb = Q1 /4πϵr b2 , σc = −Q1 /4πϵr c2 , σb = (Q1 + Q2 )/4πd2 ; d)
+                  cb
+    C = 4πϵ0 ϵr c−b  = 53 × 10−12 F.
+Opgave 3: a) Idet ∇ × E1 ̸= 0, kan E1 ikke være et elektrostatisk felt; b) idet ∇2 V2 =
+    0 (vises muligvis enklest i kartesiske koordinater) er V2 er muligt elektrostatisk
+    potential i det ladningsfrie område Ω.
+Opgave 4: a) F = qκx20 v cos α ẑ; b) J = µ3κ0 s ẑ.
+Opgave 5: Systemet kan opfattes som en sum af solenioder med radius fra 0 til a. Benyt
+    dernæst argumenter of beregninger fra Eksempel 5.9 i Griffiths.
+Opgave 6: a) E0 = E0 cos(ωt) ẑ, hvor E0 = V0 /d;
+    b) Jd = −ϵ0 E0 ω sin(ωt) ẑ, B1 = − E2c
+                                          0 ωs
+                                            2 sin(ωt)ϕ̂;
+                ω 2
+    c) E1 (s) = 4c2 a − s E0 ; maksimalværdien E1 /E0 = ω 2 a2 /4c2 < 0.01 for ν <
+                      2   2
+                            
+
+    ω/2π ≃ 0.95 × 109 Hz.
+
+
+Februar 2022
+                               1             2q                                    2q     1   a
+                                                                                                            
+Opgave 1: a) W = 0; b) E(z) = 4πϵ0
+                                                    3   (a ŷ + z ẑ); c) V (r) = 4πϵ 0   r − r2 sin θ sin ϕ .
+                                         (a2 +z 2 ) 2
+
+
+
+
+                                                  1
+                     2λ                     2λ             λ
+                                                              ; c) Vdielek = πϵλr ϵ0 ln    b
+                                                                                               
+Opgave 2: a) E(s) = 2πϵ0s
+                          ŝ; b) σindre = − 2πb , σydre = 2πb                              a       ,
+    1,1 kV.
+Opgave 3: a) F = −2ILB ŷ = (−1.6 N) ŷ.
+Opgave 4: a) I = 34 πR2 J; b) B = 81 µ0 JR ŷ.
+Opgave 5: a) ∇ × E = 0, ρ(x, y, z) = − 2ϵR
+                                         0 V0 y
+                                           3    ; b) W = 38 QV0 .
+                            2
+Opgave 6: a) I = − πa2R
+                      B0 ω
+                           .
+Opgave 7: b)
+                                        µ0 Is
+                                          
+                                              ϕ̂        for s < R,
+                                        2πR2
+                                          
+                                   B=
+                                       − C ϕ̂
+                                      
+                                                         for s > R.
+                                          s
+                       2
+      med C = − µ0 R2 J .
+
+
+November 2022
+Opgave 1: a) x = 8,0 cm og x = 24,0 cm; b) x = 41,0 cm; c) ∆W = 0,674 J.
+Opgave 2: a) Q = 4πR2 ϵ0 E0 ; b) ρ = ϵ0 E0 R8r2 − R3 .
+                                                    
+
+Opgave 3: a) B = 3,99 T; b) L = 13,5 H, W = 2,24 GJ; c) T = 2,70 timer, ES = 1,37 V;
+    d) P = 452 MW.
+Opgave 4: a) I = ρωbhR, m = πρωbhR3 , rettet opad; b) m = 14 πρωhR4 .
+Opgave 5: a) Kb = kR2 ϕ̂, Jb = −2ks ϕ̂; b) H = 0 overalt,
+                                 
+                                  µ0 ks2 ẑ for s < R,
+                             B=
+                                  0            for s > R.
+
+                        2
+Opgave 6: I = 32 Bτ0RL e−t/τ , positiv omløbsretning.
+
+
+Februar 2023
+Opgave 1: a) Fa = (1,35 N) x̂; b) Fb = (2, 70 N) x̂ + (2,34 N) ŷ; c) W = −0,45 J.
+                                                             2
+Opgave 2: a) Q = πkR4 ; a) inde i kugler er E(r) = 4ϵkrr ϵ0 r̂, uden for kuglen er E(r) =
+       kR4                       kr2
+      4ϵ0 r2
+             r̂, c) P(r) = ϵrϵ−1
+                              r   4 r̂.
+Opgave 3: K = 3, feltet er rettet væk fra quadrupolen langs den positive z-akse.
+                                                                                       2
+Opgave 4: a) B(x, y, z) = κ · (2y x̂ + 3y ŷ − 3z ẑ), J(x, y, z) = − µ2κ0 ẑ; b) I = 2κπR
+                                                                                       √
+                                                                                         3µ0
+                                                                                             .
+Opgave 5: a) C = µ2π 0b
+                        ln a+h
+                               
+                            a , fluxen peger ud af papiret; b)           E(t) = CI0 ω sin(ωt),
+                                          2  2 2
+                                                                    √
+                                        C I ω                          2RPavg
+    positiv omløbsretning, c) P (t) = R0 sin2 (ωt), d) I0 =              Cω      ≃ 64 A
+Opgave 6: Id (t) = πs2 ϵ0 E0 ω cos(ωt) ẑ, B(s, t) = E2c
+                                                       0 ωs
+                                                         2 cos(ωt) ϕ̂.
+
+
+
+
+                                               2
+November 2023
+                                                          √
+                                                                             ke q
+Opgave 1: a) Q = − 14 q; ustabil, b) Q = − 2 42+1 q, c) W =                   a (4Q + q);   W =
+    ke q
+          √          √  
+     a 4 2Q + 4 + 2 q ; W = 0 i begge tilfælde.
+                                                                                             2
+Opgave 2: a) B = −(µ0 I/b)ẑ; B = 39,8 mT; intet felt over/under, b) W = µ02b
+                                                                           I hl
+                                                                                ,
+               µ0 hl
+    9,07 J; L = b , 201 nH
+Opgave 3: a) ρ = 2ϵa02E0 (x + y + z), Q = 3ϵ0 E0 a2 ; b) ∂B           2E0
+                                                         ∂t = −∇×E = − a2 [y x̂ + z ŷ + x ẑ]
+                                                                       Q       ϵi
+Opgave 4: a) D1 (r)/D2 (r) = ϵ1 /ϵ2 ; b) σf,1 /σf,2 = ϵ1 /ϵ2 , σf,i = 2πR 2 ϵ +ϵ , i = 1, 2;
+                                                                             1    2
+    c) E(r) = 2π(ϵ1Q
+                   +ϵ2 )r2
+                           r̂
+Opgave 5: a) E = AB0 κv; b) P = (AB0 κv)2 /R; c) v∞ = mgR/(AB0 κ)2 ; d) strømmen
+    løber modsat vej, ellers uforandret.
+
+
+Februar 2024
+                     1 Q               1 Q
+                                                          √             1 2Q                1 Q
+Opgave 1: a) E = 4πϵ  0 a
+                         2 x̂; b) E = 4πϵ 5a2 1 +
+                                         0
+                                                           2 x̂; c) E = 4πϵ0 πa
+                                                                               2 x̂; d) V = 4πϵ a
+                                                                                               0
+    i alle tilfælde.
+Opgave 2: a) σb = AL/2 på alle sider; b) ρb = −3A
+                                                                          
+Opgave 3: a) F = µ02π
+                   I1 I2   ab
+                         d(d+a) , 9,3 µN;   b) W  = µ0 bI1 I2
+                                                       2π     ln    0,2d+a
+                                                                   0,2(d+a) , 2,6 µJ
+                             2                                                  
+                                     s3                                         s2
+Opgave 4: a) I(s) = 2πJ0 s2 − 3S          , 70 kA; b) B(s) = µ0 J0 2s − 3S           for s < S;
+                    2
+    B(s) = µ0 J6s0 S for s > S; 0, 62 mT, 31 mT;
+                      √                                                2 B 2 v2
+Opgave 5: b) R = 2 3 rvt, I = Bv   3r , positiv omløbsretning; c) F = 3 3 r t; d) E =
+                                                                       √
+       1 B 2 v3 2
+       √
+      3 3 r
+               T
+
+
+November 2024
+                      q2     1
+                                    √ 
+Opgave 1: a) F = − 4πϵ   0 16a
+                               2 4 −  2 (x̂ + ŷ).
+    b) På figuren til venstre har planerne x = 0 og y = 0 elektrisk potential lig nul.
+    Dette er det samme som på figuren til højre (for x ≥ 0 og y ≥ 0). I første
+    kvadrant har potentialet dermed identiske grænsebetingelser i de to situationer.
+    Ifølge entydighedsteoremet er potentialet og dermed feltet og kraften på q det
+    samme i de to situationer.
+Opgave 2: a) Q(s) = πLα 4
+                     2 s ;
+    b)                                         α
+                                                      3
+                                               4ϵ0 s         for s < a,
+                                              
+                                              
+                                   E(s) =
+                                                α a4
+                                              
+                                                             for s > a.
+                                                4ϵ0 s
+                 µ0 I        b+w
+                                       ; b) B = µ2πb
+                                                  0I
+                                   
+Opgave 3: a) B = 2πw  ln      b                      .
+                        2       2V0                                  2ϵ0 V0
+Opgave 4: a) R = bd
+                 2A ; b) E(x) = d2 x, σ1 = 0, σ2 = −2V0 ϵ0 /d, ρ(x) = d2 .
+
+
+
+
+                                                   3
+                                  4                   4            4
+Opgave 5: b) MAC = − µ04bπa            µ0 πa dI         µ0 πa dI
+                          3 ; c) IB = − 2b3 R dt , IC = 4b3 R dt i hhv. negativ og positiv
+    omløbsretning.
+Opgave 6: a) H = 2πRNI
+                        , B = µH = µN     I
+                                       2πR ; b) Følger af ∇ · B = 0, Hg /Hj = µ/µ0 ;
+    c) B0 = µ2πR
+              0N I
+                   = 4,6 mT, f = (1−ϵ)1µ0 +ϵ = 223.
+                                              µ
+
+
+
+
+Februar 2025
+Opgave 1: a) V = − aL + 21 bL2 = −20,0 kV; b) ρ = ϵ0 b = 4,43 × 10−10 C/m3 .
+                              
+
+Opgave 2: a) E(r) = 0 for r < a og b < r < c, ellers
+                                      1 Q1
+                                             r̂              for a < r < b,
+                                      4πϵ0 r2
+                                      
+                             E(r) =
+                                     1 Q1 + Q2 r̂
+                                    
+                                                              for r > c.
+                                      4πϵ0    r2
+             Q1            Q1          Q1 +Q2             1             1   1
+                                                                                    + (Q1 + Q2 )2 1c .
+                                                               2                                  
+    b) σa = 4πa2 , σb = − 4πb2 , σc =   4πc2
+                                              ; c) W = 8πϵ      Q1      a − b
+                                                            0
+                         h                    i
+                      σz √ 1
+Opgave 3: b) E(z) = 2ϵ 0    a2 +z 2
+                                    − √b21+z 2 ẑ, E(z) = 2ϵσ0 ẑ.
+Opgave 4: a) F = 102 x̂ − 108 ŷ − 42 ẑ, F = 154 N.
+                 µ0 I             µ0 I
+                                             √         µ0 2I
+Opgave 5: a) B = 2π a ŷ, b) B = 2π 5a 1 + 2 ŷ, c) B = 2π πa ŷ.
+                              2                                                        2   2
+Opgave 6: a) |E(t)| = N πr  a −t/τ
+                                   , negativ omløbsretning, b) E(T ) = (N 2τ
+                                                                          πr a)
+                                                                                               1 − e−2T /τ ,
+                                                                                                          
+                         τ    e                                              R
+    0,33 J; c) A = ρL
+                    R =
+                           2πrN ρ
+                             R , 0,35 mm .
+                                           2
+
+
+
+
+November 2025
+                         2                2
+Opgave 1: a) F = ke aq 2 x̂, W = ke qa ;
+    b) Spejlladninger −q i punkterne ( a2 , − a2 ) og (− a2 , − a2 ),
+
+                                   q2
+                                                             
+                                               1             1
+                             F = ke 2       1− √    x̂ − 1 + √   ŷ .
+                                   a          2 2           2 2
+
+Opgave 2: a) E = ar r̂; b) ρ = ϵr02a ; c) Q = 4πϵ0 aR, 74 5 nC; 94.8 V/m.
+                                 ϵr
+Opgave 3: a) q = −Q/2; b) q = − 1+ϵ r
+                                      Q.
+                                                          2
+Opgave 4: a) B(s) = µ02Js ϕ̂ for s ≤ R, µ02s
+                                          JR
+                                             ϕ̂ for s > R; b) B = µ0 Jd ŷ; c) B =
+    µ0 Jd ŷ.
+Opgave 5: a) acceleration mod venstre, a0 = BV d/Rm; b) v∞ = V /Bd; 
+    c) Differentialligning dv      Bd                          V       −t/τ , med tids-
+                              dt = Rm (V − Bdv), hvoraf v(t) = Bd 1 − e
+                                        2
+    konstant τ = BRm                mV
+                     2 d2 ; d) U = B 2 d2 .
+
+
+
+
+Februar 2026
+                                          2
+Opgave 1: a) E = kae2q x̂, W = − keaq ; b) E = π4 kae2q x̂; c) pA = −qa x̂, pB = − π4 qa x̂.
+
+
+
+                                                  4
+Opgave 2: a) A = ϵCδ
+                   r ϵ0
+                        = 107 m2 ; b) V0 = Q0 /C = 62,6 V; W0 = 12 Q20 /C = 179 J;
+              Q0 −t/τ
+    c) I(t) = RC e       med τ = RC, I0 = Q0 /RC = 250 A, T = ln(100) · τ = 105 ms;
+                                           2
+                                     µ0 l  Q0
+    d) frastødende, F (t) = BIl = 2πd      RC  e−2t/τ .
+                                           3                                    3 2   6
+Opgave 3: a) Φ0 = kπ  3            kπS                            π k S
+                   3 S ; b) I(t) = 3RT sin(t/T ), med uret; c) U = 9RT .
+Opgave 4: a) B = 2k ẑ; b) B = 2k ẑ.
+Opgave 5: a) Resultatet følger af det generelle udtryk (3.65) sammenholdt med de givne
+    grænsebetingelser; b) ditto; c)
+
+                                 3V0 R3        2
+                                                                               
+                     E(r, θ) =            (3 cos  θ − 1) r̂ + 2 cos θ sin θ θ̂   .
+                                   r4
+
+
+
+
+                                               5
+

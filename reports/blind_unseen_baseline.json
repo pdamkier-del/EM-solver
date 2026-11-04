@@ -1,0 +1,3026 @@
+{
+  "summary": {
+    "autonomous": {
+      "total": 20,
+      "passed": 0,
+      "percent": 0.0,
+      "correct_refusals": 0,
+      "silent_wrong": 0,
+      "timeouts": 0
+    },
+    "assisted": {
+      "total": 20,
+      "passed": 9,
+      "percent": 45.0,
+      "correct_refusals": 2,
+      "silent_wrong": 0,
+      "timeouts": 0
+    },
+    "domains": {
+      "EV": {
+        "autonomous": {
+          "total": 8,
+          "passed": 0,
+          "percent": 0.0,
+          "correct_refusals": 0,
+          "silent_wrong": 0,
+          "timeouts": 0
+        },
+        "assisted": {
+          "total": 8,
+          "passed": 3,
+          "percent": 37.5,
+          "correct_refusals": 0,
+          "silent_wrong": 0,
+          "timeouts": 0
+        }
+      },
+      "BA": {
+        "autonomous": {
+          "total": 5,
+          "passed": 0,
+          "percent": 0.0,
+          "correct_refusals": 0,
+          "silent_wrong": 0,
+          "timeouts": 0
+        },
+        "assisted": {
+          "total": 5,
+          "passed": 3,
+          "percent": 60.0,
+          "correct_refusals": 0,
+          "silent_wrong": 0,
+          "timeouts": 0
+        }
+      },
+      "DYN": {
+        "autonomous": {
+          "total": 5,
+          "passed": 0,
+          "percent": 0.0,
+          "correct_refusals": 0,
+          "silent_wrong": 0,
+          "timeouts": 0
+        },
+        "assisted": {
+          "total": 5,
+          "passed": 1,
+          "percent": 20.0,
+          "correct_refusals": 0,
+          "silent_wrong": 0,
+          "timeouts": 0
+        }
+      },
+      "GEN": {
+        "autonomous": {
+          "total": 2,
+          "passed": 0,
+          "percent": 0.0,
+          "correct_refusals": 0,
+          "silent_wrong": 0,
+          "timeouts": 0
+        },
+        "assisted": {
+          "total": 2,
+          "passed": 2,
+          "percent": 100.0,
+          "correct_refusals": 2,
+          "silent_wrong": 0,
+          "timeouts": 0
+        }
+      }
+    },
+    "failure_distribution": {
+      "autonomous": {
+        "PARSER": 19,
+        "INPUT_VALIDATION": 1
+      },
+      "assisted": {
+        "REGION_HANDLING": 1,
+        "UNITS": 3,
+        "INPUT_VALIDATION": 1,
+        "METHOD_SELECTION": 6
+      }
+    }
+  },
+  "records": [
+    {
+      "id": "EV01",
+      "domain": "EV",
+      "autonomous": {
+        "interpretation": {
+          "text": "En massiv kugle med radius R har rho(r)=rho0(1-r/R) for r<R. Bestem E(r) i alle regioner.",
+          "geometry": "kugle",
+          "data": {
+            "radius": "R"
+          },
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En massiv kugle med radius R har rho(r)=rho0(1-r/R) for r<R. Bestem E(r) i alle regioner.",
+          "geometry": "kugle",
+          "data": {
+            "rho": "rho0*(1-r/R)",
+            "coordinate": "r",
+            "radius": "R"
+          },
+          "wanted": [
+            "E"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [
+            "spherical_symmetry"
+          ],
+          "warnings": []
+        },
+        "method": "gauss_radial",
+        "outcome": "PASS",
+        "failure_class": null,
+        "warnings": [
+          "Q_enc er total ladning for kugle, ladning pr. længde for cylinder og halvrums-ladning pr. areal for spejlsymmetrisk plan. Ved grænseflader angives ensidige grænser separat; punktværdien er ikke fysisk entydig ved overfladeladning."
+        ],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "solution": {
+          "Q_enc": "Piecewise((pi*r**3*rho0*(4*R - 3*r)/(3*R), R >= r), (pi*R**3*rho0/3, True))",
+          "D": "Piecewise((r*rho0*(4*R - 3*r)/(12*R), R >= r), (R**3*rho0/(12*r**2), True))",
+          "E": "Piecewise((r*rho0*(4*R - 3*r)/(12*R*epsilon_0), R >= r), (R**3*rho0/(12*epsilon_0*r**2), True))"
+        },
+        "checks": [
+          {
+            "name": "Dimension: Q_enc",
+            "residual": "None",
+            "passed": true,
+            "detail": "C"
+          },
+          {
+            "name": "Dimension: D",
+            "residual": "None",
+            "passed": true,
+            "detail": "C/m^2"
+          },
+          {
+            "name": "Dimension: E",
+            "residual": "None",
+            "passed": true,
+            "detail": "V/m"
+          },
+          {
+            "name": "Inputdimension: coordinate",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_lower",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_upper",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_density",
+            "residual": "None",
+            "passed": true,
+            "detail": "C/m^3"
+          },
+          {
+            "name": "Inputdimension: region_0_epsilon",
+            "residual": "None",
+            "passed": true,
+            "detail": "F/m"
+          }
+        ],
+        "elapsed_seconds": 1.338
+      }
+    },
+    {
+      "id": "EV04",
+      "domain": "EV",
+      "autonomous": {
+        "interpretation": {
+          "text": "En uendelig massiv cylinder med radius R har rho(s)=rho0(1-s/R). Bestem E(s).",
+          "geometry": "cylinder",
+          "data": {
+            "radius": "R",
+            "extent": "infinite"
+          },
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En uendelig massiv cylinder med radius R har rho(s)=rho0(1-s/R). Bestem E(s).",
+          "geometry": "cylinder",
+          "data": {
+            "rho": "rho0*(1-s/R)",
+            "coordinate": "s",
+            "radius": "R",
+            "extent": "infinite"
+          },
+          "wanted": [
+            "E"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [
+            "infinite_cylindrical_symmetry"
+          ],
+          "warnings": []
+        },
+        "method": "gauss_radial",
+        "outcome": "PASS",
+        "failure_class": null,
+        "warnings": [
+          "Q_enc er total ladning for kugle, ladning pr. længde for cylinder og halvrums-ladning pr. areal for spejlsymmetrisk plan. Ved grænseflader angives ensidige grænser separat; punktværdien er ikke fysisk entydig ved overfladeladning."
+        ],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "solution": {
+          "Q_enc": "Piecewise((pi*rho0*s**2*(3*R - 2*s)/(3*R), R >= s), (pi*R**2*rho0/3, True))",
+          "D": "Piecewise((rho0*s*(3*R - 2*s)/(6*R), R >= s), (R**2*rho0/(6*s), True))",
+          "E": "Piecewise((rho0*s*(3*R - 2*s)/(6*R*epsilon_0), R >= s), (R**2*rho0/(6*epsilon_0*s), True))"
+        },
+        "checks": [
+          {
+            "name": "Dimension: Q_enc",
+            "residual": "None",
+            "passed": true,
+            "detail": "C/m"
+          },
+          {
+            "name": "Dimension: D",
+            "residual": "None",
+            "passed": true,
+            "detail": "C/m^2"
+          },
+          {
+            "name": "Dimension: E",
+            "residual": "None",
+            "passed": true,
+            "detail": "V/m"
+          },
+          {
+            "name": "Inputdimension: coordinate",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_lower",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_upper",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_density",
+            "residual": "None",
+            "passed": true,
+            "detail": "C/m^3"
+          },
+          {
+            "name": "Inputdimension: region_0_epsilon",
+            "residual": "None",
+            "passed": true,
+            "detail": "F/m"
+          }
+        ],
+        "elapsed_seconds": 0.934
+      }
+    },
+    {
+      "id": "EV05",
+      "domain": "EV",
+      "autonomous": {
+        "interpretation": {
+          "text": "En uendelig hul cylinder har ladning kun for a<s<b med rho(s)=k*s. Bestem E i alle regioner.",
+          "geometry": "cylinderskal",
+          "data": {
+            "extent": "infinite"
+          },
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En uendelig hul cylinder har ladning kun for a<s<b med rho(s)=k*s. Bestem E i alle regioner.",
+          "geometry": "cylinderskal",
+          "data": {
+            "rho": "k*s",
+            "coordinate": "s",
+            "extent": "infinite",
+            "regions": [
+              {
+                "lower": "a",
+                "upper": "a+h",
+                "density": "k*s"
+              }
+            ]
+          },
+          "wanted": [
+            "E"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg",
+            "k": "C/m^4"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [
+            "infinite_cylindrical_symmetry"
+          ],
+          "warnings": []
+        },
+        "method": "gauss_radial",
+        "outcome": "PASS",
+        "failure_class": null,
+        "warnings": [
+          "Q_enc er total ladning for kugle, ladning pr. længde for cylinder og halvrums-ladning pr. areal for spejlsymmetrisk plan. Ved grænseflader angives ensidige grænser separat; punktværdien er ikke fysisk entydig ved overfladeladning."
+        ],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "solution": {
+          "Q_enc": "Piecewise((0, a > s), (2*pi*k*(-a**3 + s**3)/3, a >= -h + s), (-2*pi*k*(a**3 - (a + h)**3)/3, True))",
+          "D": "Piecewise((0, a > s), (k*(-a**3 + s**3)/(3*s), a >= -h + s), (-k*(a**3 - (a + h)**3)/(3*s), True))",
+          "E": "Piecewise((0, a > s), (k*(-a**3 + s**3)/(3*epsilon_0*s), a >= -h + s), (-k*(a**3 - (a + h)**3)/(3*epsilon_0*s), True))"
+        },
+        "checks": [
+          {
+            "name": "Dimension: Q_enc",
+            "residual": "None",
+            "passed": true,
+            "detail": "C/m"
+          },
+          {
+            "name": "Dimension: D",
+            "residual": "None",
+            "passed": true,
+            "detail": "C/m^2"
+          },
+          {
+            "name": "Dimension: E",
+            "residual": "None",
+            "passed": true,
+            "detail": "V/m"
+          },
+          {
+            "name": "Inputdimension: coordinate",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_lower",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_upper",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_density",
+            "residual": "None",
+            "passed": true,
+            "detail": "C/m^3"
+          },
+          {
+            "name": "Inputdimension: region_0_epsilon",
+            "residual": "None",
+            "passed": true,
+            "detail": "F/m"
+          }
+        ],
+        "elapsed_seconds": 0.99
+      }
+    },
+    {
+      "id": "EV06",
+      "domain": "EV",
+      "autonomous": {
+        "interpretation": {
+          "text": "En uendelig slab |z|<a har rho(z)=rho0*z^2. Bestem E(z) overalt.",
+          "geometry": "Ukendt",
+          "data": {
+            "extent": "infinite"
+          },
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En uendelig slab |z|<a har rho(z)=rho0*z^2. Bestem E(z) overalt.",
+          "geometry": "plan",
+          "data": {
+            "rho": "rho0*z**2",
+            "coordinate": "z",
+            "radius": "a"
+          },
+          "wanted": [
+            "E"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^5",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu",
+            "z"
+          ],
+          "assumptions": [
+            "infinite_planar_symmetry"
+          ],
+          "warnings": []
+        },
+        "method": "gauss_radial",
+        "outcome": "FAIL",
+        "failure_class": "REGION_HANDLING",
+        "warnings": [
+          "Q_enc er total ladning for kugle, ladning pr. længde for cylinder og halvrums-ladning pr. areal for spejlsymmetrisk plan. Ved grænseflader angives ensidige grænser separat; punktværdien er ikke fysisk entydig ved overfladeladning."
+        ],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "solution": {
+          "Q_enc": "Piecewise((rho0*z**3/3, a >= z), (a**3*rho0/3, True))",
+          "D": "Piecewise((rho0*z**3/3, a >= z), (a**3*rho0/3, True))",
+          "E": "Piecewise((rho0*z**3/(3*epsilon_0), a >= z), (a**3*rho0/(3*epsilon_0), True))"
+        },
+        "checks": [
+          {
+            "name": "Dimension: Q_enc",
+            "residual": "None",
+            "passed": true,
+            "detail": "C/m^2"
+          },
+          {
+            "name": "Dimension: D",
+            "residual": "None",
+            "passed": true,
+            "detail": "C/m^2"
+          },
+          {
+            "name": "Dimension: E",
+            "residual": "None",
+            "passed": true,
+            "detail": "V/m"
+          },
+          {
+            "name": "Inputdimension: coordinate",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_lower",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_upper",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_density",
+            "residual": "None",
+            "passed": true,
+            "detail": "C/m^3"
+          },
+          {
+            "name": "Inputdimension: region_0_epsilon",
+            "residual": "None",
+            "passed": true,
+            "detail": "F/m"
+          }
+        ],
+        "comment": "('E', -8*a**3*rho0/(3*epsilon_0), -a**3*rho0/(3*epsilon_0))",
+        "elapsed_seconds": 0.914
+      }
+    },
+    {
+      "id": "EV09",
+      "domain": "EV",
+      "autonomous": {
+        "interpretation": {
+          "text": "En endelig linjeladning ligger langs x fra -L til +L med konstant lambda. Find V og E i punktet (0,a,0), med V(infinity)=0.",
+          "geometry": "Ukendt",
+          "data": {
+            "extent": "finite"
+          },
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Materialer, randbetingelser, vindingstal, kildeart og tidsafhængighed skal verificeres i de strukturerede felter.",
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En endelig linjeladning ligger langs x fra -L til +L med konstant lambda. Find V og E i punktet (0,a,0), med V(infinity)=0.",
+          "geometry": "linje",
+          "data": {
+            "source": [
+              "u",
+              0,
+              0
+            ],
+            "parameter": "u",
+            "bounds": [
+              "-L",
+              "L"
+            ],
+            "point": [
+              0,
+              "a",
+              0
+            ],
+            "density": "lam"
+          },
+          "wanted": [
+            "V",
+            "E"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "m",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [],
+          "warnings": []
+        },
+        "method": "coulomb_integral",
+        "outcome": "FAIL",
+        "failure_class": "UNITS",
+        "warnings": [
+          "WARNING: dimensional inconsistency: E",
+          "Integraler bevares. Lukket form er ikke fundet eller ikke forsøgt inden tidsbudgettet. Numerisk evaluering kræver alle værdier og et feltpunkt uden for kilden."
+        ],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "solution": {
+          "Q": "Integral(lam, (u, -L, L))",
+          "V": "Integral(lam/(4*pi*epsilon_0*sqrt(a**2 + u**2)), (u, -L, L))",
+          "E": "Matrix([[Integral(-lam*u/(4*pi*epsilon_0*(a**2 + u**2)**(3/2)), (u, -L, L))], [Integral(a*lam/(4*pi*epsilon_0*(a**2 + u**2)**(3/2)), (u, -L, L))], [Integral(0, (u, -L, L))]])"
+        },
+        "checks": [
+          {
+            "name": "Dimension: Q",
+            "residual": "None",
+            "passed": true,
+            "detail": "C"
+          },
+          {
+            "name": "Dimension: V",
+            "residual": "None",
+            "passed": true,
+            "detail": "V"
+          },
+          {
+            "name": "Dimension: E",
+            "residual": "None",
+            "passed": false,
+            "detail": "Vektorkomponenter har forskellige dimensioner"
+          }
+        ],
+        "comment": "Units not verified",
+        "elapsed_seconds": 0.702
+      }
+    },
+    {
+      "id": "EV11",
+      "domain": "EV",
+      "autonomous": {
+        "interpretation": {
+          "text": "En ring i xy-plan har lambda(phi)=lambda0(1+cos(phi)). Find V og E i centrum.",
+          "geometry": "Ukendt",
+          "data": {},
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Flere geometrier nævnes: ring, plan. Vælg den relevante geometri manuelt.",
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En ring i xy-plan har lambda(phi)=lambda0(1+cos(phi)). Find V og E i centrum.",
+          "geometry": "ring",
+          "data": {
+            "source": [
+              "R*cos(phi)",
+              "R*sin(phi)",
+              0
+            ],
+            "parameter": "phi",
+            "bounds": [
+              0,
+              "2*pi"
+            ],
+            "point": [
+              0,
+              0,
+              0
+            ],
+            "density": "lambda0*(1+cos(phi))"
+          },
+          "wanted": [
+            "V",
+            "E"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [],
+          "warnings": []
+        },
+        "method": "coulomb_integral",
+        "outcome": "FAIL",
+        "failure_class": "UNITS",
+        "warnings": [
+          "WARNING: dimensional inconsistency: E",
+          "Integraler bevares. Lukket form er ikke fundet eller ikke forsøgt inden tidsbudgettet. Numerisk evaluering kræver alle værdier og et feltpunkt uden for kilden."
+        ],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "solution": {
+          "Q": "Integral(R*lambda0*(cos(phi) + 1), (phi, 0, 2*pi))",
+          "V": "Integral(lambda0*(cos(phi) + 1)/(4*pi*epsilon_0), (phi, 0, 2*pi))",
+          "E": "Matrix([[Integral(-lambda0*(cos(phi) + 1)*cos(phi)/(4*pi*R*epsilon_0), (phi, 0, 2*pi))], [Integral(-lambda0*(cos(phi) + 1)*sin(phi)/(4*pi*R*epsilon_0), (phi, 0, 2*pi))], [Integral(0, (phi, 0, 2*pi))]])"
+        },
+        "checks": [
+          {
+            "name": "Dimension: Q",
+            "residual": "None",
+            "passed": true,
+            "detail": "C"
+          },
+          {
+            "name": "Dimension: V",
+            "residual": "None",
+            "passed": true,
+            "detail": "V"
+          },
+          {
+            "name": "Dimension: E",
+            "residual": "None",
+            "passed": false,
+            "detail": "Vektorkomponenter har forskellige dimensioner"
+          }
+        ],
+        "comment": "Units not verified",
+        "elapsed_seconds": 0.849
+      }
+    },
+    {
+      "id": "EV16",
+      "domain": "EV",
+      "autonomous": {
+        "interpretation": {
+          "text": "En uendelig lineær dielektrisk cylinder med radius R, permittivitet eps, har uniform fri rho_f. Find D,E,P indenfor og E udenfor.",
+          "geometry": "cylinder",
+          "data": {
+            "radius": "R",
+            "extent": "infinite"
+          },
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En uendelig lineær dielektrisk cylinder med radius R, permittivitet eps, har uniform fri rho_f. Find D,E,P indenfor og E udenfor.",
+          "geometry": "cylinder",
+          "data": {
+            "rho": "rho_f",
+            "coordinate": "s",
+            "extent": "infinite",
+            "regions": [
+              {
+                "lower": 0,
+                "upper": "R",
+                "density": "rho_f",
+                "permittivity": "eps"
+              }
+            ]
+          },
+          "wanted": [
+            "D",
+            "E",
+            "P"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [
+            "infinite_cylindrical_symmetry"
+          ],
+          "warnings": []
+        },
+        "method": "gauss_radial",
+        "outcome": "FAIL",
+        "failure_class": "INPUT_VALIDATION",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Denne beregningsvej bestemmer ikke P. Angiv en anden fysisk relation eller referencebetingelse.",
+        "elapsed_seconds": 0.664
+      }
+    },
+    {
+      "id": "EV19",
+      "domain": "EV",
+      "autonomous": {
+        "interpretation": {
+          "text": "På en kugle r=R er V(R,theta)=V1*cos(theta)+V2*P2(cos(theta)). Find V inde og ude, med V->0 ved infinity.",
+          "geometry": "kugle",
+          "data": {},
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "På en kugle r=R er V(R,theta)=V1*cos(theta)+V2*P2(cos(theta)). Find V inde og ude, med V->0 ved infinity.",
+          "geometry": "manuelt specificeret",
+          "data": {
+            "solver_spec": {
+              "domain": "EV",
+              "family": "laplace_legendre",
+              "variables": {
+                "r": "r",
+                "theta": "theta",
+                "radius": "R",
+                "coefficients": [
+                  [
+                    1,
+                    "V1"
+                  ],
+                  [
+                    2,
+                    "V2"
+                  ]
+                ]
+              },
+              "regions": [],
+              "wanted": [
+                "V_inside",
+                "V_outside"
+              ]
+            }
+          },
+          "wanted": [
+            "V_inside",
+            "V_outside"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [
+            "axial_symmetry",
+            "charge_free_inside_outside",
+            "V_infinity_zero",
+            "finite_at_origin"
+          ],
+          "warnings": []
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "METHOD_SELECTION",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Ingen sikker beregningsvej. Angiv ladninger, rho/J og regioner, V/E/A eller B/flux med geometri. Parameteriserede linjer kræver source, parameter, bounds og point.",
+        "elapsed_seconds": 0.0
+      }
+    },
+    {
+      "id": "BA01",
+      "domain": "BA",
+      "autonomous": {
+        "interpretation": {
+          "text": "En uendelig massiv leder med radius R har J(s)=J0(1-s/R) zhat. Bestem B(s).",
+          "geometry": "Ukendt",
+          "data": {
+            "radius": "R",
+            "extent": "infinite"
+          },
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En uendelig massiv leder med radius R har J(s)=J0(1-s/R) zhat. Bestem B(s).",
+          "geometry": "cylinder",
+          "data": {
+            "J": "J0*(1-s/R)",
+            "coordinate": "s",
+            "radius": "R",
+            "extent": "infinite"
+          },
+          "wanted": [
+            "B"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [
+            "infinite_cylindrical_symmetry",
+            "magnetostatic"
+          ],
+          "warnings": []
+        },
+        "method": "ampere",
+        "outcome": "PASS",
+        "failure_class": null,
+        "warnings": [
+          "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring."
+        ],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "solution": {
+          "I_enc": "Piecewise((pi*J0*s**2*(3*R - 2*s)/(3*R), R >= s), (pi*J0*R**2/3, True))",
+          "B": "Piecewise((J0*mu_0*s*(3*R - 2*s)/(6*R), R >= s), (J0*R**2*mu_0/(6*s), True))"
+        },
+        "checks": [
+          {
+            "name": "Dimension: I_enc",
+            "residual": "None",
+            "passed": true,
+            "detail": "A"
+          },
+          {
+            "name": "Dimension: B",
+            "residual": "None",
+            "passed": true,
+            "detail": "T"
+          },
+          {
+            "name": "Inputdimension: coordinate",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_lower",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_upper",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_density",
+            "residual": "None",
+            "passed": true,
+            "detail": "A/m^2"
+          }
+        ],
+        "elapsed_seconds": 0.864
+      }
+    },
+    {
+      "id": "BA02",
+      "domain": "BA",
+      "autonomous": {
+        "interpretation": {
+          "text": "En hul cylindrisk leder a<s<b har J(s)=k/s zhat. Find B overalt.",
+          "geometry": "Ukendt",
+          "data": {},
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En hul cylindrisk leder a<s<b har J(s)=k/s zhat. Find B overalt.",
+          "geometry": "cylinderskal",
+          "data": {
+            "J": "k/s",
+            "coordinate": "s",
+            "extent": "infinite",
+            "regions": [
+              {
+                "lower": "a",
+                "upper": "a+h",
+                "density": "k/s"
+              }
+            ]
+          },
+          "wanted": [
+            "B"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg",
+            "k": "A/m"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [
+            "infinite_cylindrical_symmetry",
+            "magnetostatic"
+          ],
+          "warnings": []
+        },
+        "method": "ampere",
+        "outcome": "PASS",
+        "failure_class": null,
+        "warnings": [
+          "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring."
+        ],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "solution": {
+          "I_enc": "Piecewise((0, a > s), (2*pi*k*(-a + s), a >= -h + s), (2*pi*h*k, True))",
+          "B": "Piecewise((0, a > s), (k*mu_0*(-a + s)/s, a >= -h + s), (h*k*mu_0/s, True))"
+        },
+        "checks": [
+          {
+            "name": "Dimension: I_enc",
+            "residual": "None",
+            "passed": true,
+            "detail": "A"
+          },
+          {
+            "name": "Dimension: B",
+            "residual": "None",
+            "passed": true,
+            "detail": "T"
+          },
+          {
+            "name": "Inputdimension: coordinate",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_lower",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_upper",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: region_0_density",
+            "residual": "None",
+            "passed": true,
+            "detail": "A/m^2"
+          }
+        ],
+        "elapsed_seconds": 0.828
+      }
+    },
+    {
+      "id": "BA05",
+      "domain": "BA",
+      "autonomous": {
+        "interpretation": {
+          "text": "En ret endelig leder langs z fra -L til +L fører I. Find B i (a,0,0).",
+          "geometry": "Ukendt",
+          "data": {
+            "extent": "finite"
+          },
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En ret endelig leder langs z fra -L til +L fører I. Find B i (a,0,0).",
+          "geometry": "ledning",
+          "data": {
+            "source": [
+              0,
+              0,
+              "u"
+            ],
+            "parameter": "u",
+            "bounds": [
+              "-L",
+              "L"
+            ],
+            "point": [
+              "a",
+              0,
+              0
+            ],
+            "I": "I"
+          },
+          "wanted": [
+            "B"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "m",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [
+            "magnetostatic"
+          ],
+          "warnings": []
+        },
+        "method": "biot_savart",
+        "outcome": "FAIL",
+        "failure_class": "UNITS",
+        "warnings": [
+          "WARNING: dimensional inconsistency: B",
+          "Integraler bevares. Lukket form er ikke fundet eller ikke forsøgt inden tidsbudgettet. Numerisk evaluering kræver alle værdier og et feltpunkt uden for kilden."
+        ],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "solution": {
+          "B": "Matrix([[Integral(0, (u, -L, L))], [Integral(I*a*mu_0/(4*pi*(a**2 + u**2)**(3/2)), (u, -L, L))], [Integral(0, (u, -L, L))]])"
+        },
+        "checks": [
+          {
+            "name": "Dimension: B",
+            "residual": "None",
+            "passed": false,
+            "detail": "Vektorkomponenter har forskellige dimensioner"
+          }
+        ],
+        "comment": "Units not verified",
+        "elapsed_seconds": 0.75
+      }
+    },
+    {
+      "id": "BA10",
+      "domain": "BA",
+      "autonomous": {
+        "interpretation": {
+          "text": "A=(B0*x*y/L) zhat. Bestem B.",
+          "geometry": "Ukendt",
+          "data": {
+            "A": "(B0*x*y/L) zhat. Bestem B"
+          },
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "A=(B0*x*y/L) zhat. Bestem B.",
+          "geometry": "Ukendt",
+          "data": {
+            "A": [
+              0,
+              0,
+              "B0*x*y/L"
+            ],
+            "coordinates": [
+              "x",
+              "y",
+              "z"
+            ],
+            "system": "cartesian"
+          },
+          "wanted": [
+            "B"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [],
+          "warnings": []
+        },
+        "method": "field_calculus",
+        "outcome": "PASS",
+        "failure_class": null,
+        "warnings": [
+          "Differentialkontroller gælder i glatte områder. Delta-kilder og grænseflader kræver særskilt integral-/springkontrol."
+        ],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "solution": {
+          "div_A": "0",
+          "laplacian_A": "Matrix([[0], [0], [0]])",
+          "B": "Matrix([[B0*x/L], [-B0*y/L], [0]])",
+          "div_B": "0"
+        },
+        "checks": [
+          {
+            "name": "Magnetisk divergens",
+            "residual": "0",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "Dimension: div_A",
+            "residual": "None",
+            "passed": true,
+            "detail": "T"
+          },
+          {
+            "name": "Dimension: laplacian_A",
+            "residual": "None",
+            "passed": true,
+            "detail": "T/m"
+          },
+          {
+            "name": "Dimension: B",
+            "residual": "None",
+            "passed": true,
+            "detail": "T"
+          },
+          {
+            "name": "Dimension: div_B",
+            "residual": "None",
+            "passed": true,
+            "detail": "T/m"
+          },
+          {
+            "name": "Inputdimension: A",
+            "residual": "None",
+            "passed": true,
+            "detail": "T*m"
+          },
+          {
+            "name": "Inputdimension: coordinate_0",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: coordinate_1",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: coordinate_2",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          }
+        ],
+        "elapsed_seconds": 0.732
+      }
+    },
+    {
+      "id": "BA15",
+      "domain": "BA",
+      "autonomous": {
+        "interpretation": {
+          "text": "En toroid med N vindinger, strøm I, magnetisk kernelængde l, permeabilitet mu og luftgab g har samme tværsnit overalt. Find B,H_core,H_gap uden fringing.",
+          "geometry": "toroid",
+          "data": {},
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Materialer, randbetingelser, vindingstal, kildeart og tidsafhængighed skal verificeres i de strukturerede felter.",
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En toroid med N vindinger, strøm I, magnetisk kernelængde l, permeabilitet mu og luftgab g har samme tværsnit overalt. Find B,H_core,H_gap uden fringing.",
+          "geometry": "manuelt specificeret",
+          "data": {
+            "solver_spec": {
+              "domain": "BA",
+              "family": "magnetic_material",
+              "variables": {
+                "kind": "magnetic_circuit",
+                "N": "N",
+                "I": "I",
+                "segments": [
+                  [
+                    "l",
+                    "mu"
+                  ],
+                  [
+                    "g",
+                    "mu0"
+                  ]
+                ]
+              },
+              "regions": [],
+              "wanted": [
+                "B",
+                "H_0",
+                "H_1"
+              ]
+            }
+          },
+          "wanted": [
+            "B",
+            "H_0",
+            "H_1"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [],
+          "warnings": []
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "METHOD_SELECTION",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Ingen sikker beregningsvej. Angiv ladninger, rho/J og regioner, V/E/A eller B/flux med geometri. Parameteriserede linjer kræver source, parameter, bounds og point.",
+        "elapsed_seconds": 0.001
+      }
+    },
+    {
+      "id": "DYN01",
+      "domain": "DYN",
+      "autonomous": {
+        "interpretation": {
+          "text": "En stationær cirkulær loop radius R ligger i xy-plan i B(s,t)=beta*t*s zhat. Find flux og emf.",
+          "geometry": "plan",
+          "data": {
+            "radius": "R"
+          },
+          "wanted": [
+            "EMF"
+          ],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": []
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "INPUT_VALIDATION",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Ingen sikker beregningsvej. Angiv ladninger, rho/J og regioner, V/E/A eller B/flux med geometri. Parameteriserede linjer kræver source, parameter, bounds og point.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En stationær cirkulær loop radius R ligger i xy-plan i B(s,t)=beta*t*s zhat. Find flux og emf.",
+          "geometry": "manuelt specificeret",
+          "data": {
+            "solver_spec": {
+              "domain": "DYN",
+              "family": "faraday",
+              "variables": {
+                "time": "t",
+                "N": 1,
+                "flux_integrand": "2*pi*beta*t*s**2",
+                "bounds": [
+                  [
+                    "s",
+                    0,
+                    "R"
+                  ]
+                ]
+              },
+              "regions": [],
+              "wanted": [
+                "Phi",
+                "EMF"
+              ]
+            }
+          },
+          "wanted": [
+            "Phi",
+            "EMF"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg",
+            "beta": "T/(m*s)"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [],
+          "warnings": []
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "METHOD_SELECTION",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Ingen sikker beregningsvej. Angiv ladninger, rho/J og regioner, V/E/A eller B/flux med geometri. Parameteriserede linjer kræver source, parameter, bounds og point.",
+        "elapsed_seconds": 0.0
+      }
+    },
+    {
+      "id": "DYN02",
+      "domain": "DYN",
+      "autonomous": {
+        "interpretation": {
+          "text": "En kvadratisk loop har a(t)=a0+v*t og B(t)=B0*exp(-t/tau) zhat vinkelret på loopet. Find flux og emf.",
+          "geometry": "Ukendt",
+          "data": {},
+          "wanted": [
+            "EMF"
+          ],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": []
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Ingen sikker beregningsvej. Angiv ladninger, rho/J og regioner, V/E/A eller B/flux med geometri. Parameteriserede linjer kræver source, parameter, bounds og point.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En kvadratisk loop har a(t)=a0+v*t og B(t)=B0*exp(-t/tau) zhat vinkelret på loopet. Find flux og emf.",
+          "geometry": "strømloop",
+          "data": {
+            "B": "B0*exp(-t/tau)",
+            "area": "(a0+v*t)**2",
+            "time": "t",
+            "N": 1
+          },
+          "wanted": [
+            "Phi",
+            "EMF"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [
+            "uniform_normal_B"
+          ],
+          "warnings": []
+        },
+        "method": "dependency",
+        "outcome": "PASS",
+        "failure_class": null,
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "solution": {
+          "Phi": "B0*(a0 + t*v)**2*exp(-t/tau)",
+          "EMF": "B0*(a0 + t*v)*(a0 + t*v - 2*tau*v)*exp(-t/tau)/tau"
+        },
+        "checks": [
+          {
+            "name": "Dimension: Phi",
+            "residual": "None",
+            "passed": true,
+            "detail": "Wb"
+          },
+          {
+            "name": "Dimension: EMF",
+            "residual": "None",
+            "passed": true,
+            "detail": "V"
+          }
+        ],
+        "elapsed_seconds": 0.855
+      }
+    },
+    {
+      "id": "DYN03",
+      "domain": "DYN",
+      "autonomous": {
+        "interpretation": {
+          "text": "En parallelpladekondensator har cirkulære plader radius R og uniform E(t)=E0*t^2 zhat mellem pladerne. Find B(s,t) for s<R og s>R.",
+          "geometry": "Ukendt",
+          "data": {
+            "radius": "R"
+          },
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En parallelpladekondensator har cirkulære plader radius R og uniform E(t)=E0*t^2 zhat mellem pladerne. Find B(s,t) for s<R og s>R.",
+          "geometry": "manuelt specificeret",
+          "data": {
+            "solver_spec": {
+              "domain": "DYN",
+              "family": "ampere_maxwell",
+              "variables": {
+                "E": "E0*t**2",
+                "time": "t",
+                "coordinate": "s",
+                "plate_radius": "R"
+              },
+              "regions": [],
+              "wanted": [
+                "B"
+              ]
+            }
+          },
+          "wanted": [
+            "B"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg",
+            "E0": "V/(m*s^2)"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [
+            "uniform_axial_E",
+            "circular_symmetry",
+            "negligible_edge_effects"
+          ],
+          "warnings": []
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "METHOD_SELECTION",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Ingen sikker beregningsvej. Angiv ladninger, rho/J og regioner, V/E/A eller B/flux med geometri. Parameteriserede linjer kræver source, parameter, bounds og point.",
+        "elapsed_seconds": 0.0
+      }
+    },
+    {
+      "id": "DYN07",
+      "domain": "DYN",
+      "autonomous": {
+        "interpretation": {
+          "text": "En ledende stang længde l glider på skinner i uniformt B med modstand R. En konstant ydre kraft F0 trækker stangen fra hvile. Find terminalhastighed, tidskonstant og v(t), negliger friktion.",
+          "geometry": "bevægelig stang",
+          "data": {
+            "resistance": "R"
+          },
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En ledende stang længde l glider på skinner i uniformt B med modstand R. En konstant ydre kraft F0 trækker stangen fra hvile. Find terminalhastighed, tidskonstant og v(t), negliger friktion.",
+          "geometry": "manuelt specificeret",
+          "data": {
+            "solver_spec": {
+              "domain": "DYN",
+              "family": "feedback",
+              "variables": {
+                "mass": "m",
+                "R": "Z",
+                "coupling": "B*l",
+                "voltage": 0,
+                "drive_force": "F0",
+                "time": "t",
+                "initial_velocity": 0
+              },
+              "regions": [],
+              "wanted": [
+                "v_infinity",
+                "tau",
+                "v"
+              ]
+            }
+          },
+          "wanted": [
+            "v_infinity",
+            "tau",
+            "v"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg",
+            "Z": "ohm",
+            "B": "T"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [
+            "constant_coefficients",
+            "negligible_self_inductance",
+            "no_friction"
+          ],
+          "warnings": []
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "METHOD_SELECTION",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Ingen sikker beregningsvej. Angiv ladninger, rho/J og regioner, V/E/A eller B/flux med geometri. Parameteriserede linjer kræver source, parameter, bounds og point.",
+        "elapsed_seconds": 0.002
+      }
+    },
+    {
+      "id": "DYN13",
+      "domain": "DYN",
+      "autonomous": {
+        "interpretation": {
+          "text": "Et uniformt B(t) findes kun inde i en lang cylindrisk region s<R. Find det inducerede E_phi(s) for s<R og s>R.",
+          "geometry": "Ukendt",
+          "data": {},
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "Et uniformt B(t) findes kun inde i en lang cylindrisk region s<R. Find det inducerede E_phi(s) for s<R og s>R.",
+          "geometry": "manuelt specificeret",
+          "data": {
+            "solver_spec": {
+              "domain": "DYN",
+              "family": "faraday",
+              "variables": {
+                "time": "t",
+                "coordinate": "s",
+                "field_radius": "R",
+                "dB_dt": "dBdt"
+              },
+              "regions": [],
+              "wanted": [
+                "E_phi"
+              ]
+            }
+          },
+          "wanted": [
+            "E_phi"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg",
+            "dBdt": "T/s"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [
+            "circular_symmetry",
+            "uniform_axial_B_inside"
+          ],
+          "warnings": []
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "METHOD_SELECTION",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Ingen sikker beregningsvej. Angiv ladninger, rho/J og regioner, V/E/A eller B/flux med geometri. Parameteriserede linjer kræver source, parameter, bounds og point.",
+        "elapsed_seconds": 0.0
+      }
+    },
+    {
+      "id": "GEN02",
+      "domain": "GEN",
+      "autonomous": {
+        "interpretation": {
+          "text": "Et foreslået elektrostatisk felt er E=alpha*y xhat+beta*z yhat+gamma*x zhat. Kan det være elektrostatisk i et simpelt sammenhængende område?",
+          "geometry": "Ukendt",
+          "data": {},
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "Et foreslået elektrostatisk felt er E=alpha*y xhat+beta*z yhat+gamma*x zhat. Kan det være elektrostatisk i et simpelt sammenhængende område?",
+          "geometry": "Ukendt",
+          "data": {
+            "E": [
+              "alpha*y",
+              "beta*z",
+              "gamma*x"
+            ],
+            "coordinates": [
+              "x",
+              "y",
+              "z"
+            ],
+            "system": "cartesian"
+          },
+          "wanted": [
+            "curl_E"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg",
+            "alpha": "V/m^2",
+            "beta": "V/m^2",
+            "gamma": "V/m^2"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [
+            "electrostatic"
+          ],
+          "warnings": []
+        },
+        "method": "field_calculus",
+        "outcome": "PASS",
+        "failure_class": null,
+        "warnings": [
+          "Feltet har rotation forskellig fra nul og kan ikke være elektrostatisk.",
+          "Differentialkontroller gælder i glatte områder. Delta-kilder og grænseflader kræver særskilt integral-/springkontrol."
+        ],
+        "silent_wrong": false,
+        "correct_refusal": true,
+        "solution": {
+          "E": "Matrix([[alpha*y], [beta*z], [gamma*x]])",
+          "rho": "0",
+          "curl_E": "Matrix([[-beta], [-gamma], [-alpha]])",
+          "dB_dt": "Matrix([[beta], [gamma], [alpha]])"
+        },
+        "checks": [
+          {
+            "name": "Elektrostatisk rotation",
+            "residual": "Matrix([[-beta], [-gamma], [-alpha]])",
+            "passed": false,
+            "detail": ""
+          },
+          {
+            "name": "Dimension: E",
+            "residual": "None",
+            "passed": true,
+            "detail": "V/m"
+          },
+          {
+            "name": "Dimension: rho",
+            "residual": "None",
+            "passed": true,
+            "detail": "C/m^3"
+          },
+          {
+            "name": "Dimension: curl_E",
+            "residual": "None",
+            "passed": true,
+            "detail": "V/m^2"
+          },
+          {
+            "name": "Dimension: dB_dt",
+            "residual": "None",
+            "passed": true,
+            "detail": "T/s"
+          },
+          {
+            "name": "Inputdimension: E",
+            "residual": "None",
+            "passed": true,
+            "detail": "V/m"
+          },
+          {
+            "name": "Inputdimension: coordinate_0",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: coordinate_1",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          },
+          {
+            "name": "Inputdimension: coordinate_2",
+            "residual": "None",
+            "passed": true,
+            "detail": "m"
+          }
+        ],
+        "elapsed_seconds": 0.73
+      }
+    },
+    {
+      "id": "GEN04",
+      "domain": "GEN",
+      "autonomous": {
+        "interpretation": {
+          "text": "En endelig cylinder med uniform volumenladning har radius R og længde L. Find E ved et generelt punkt udenfor. Må Gauss bruges direkte til at bestemme feltet?",
+          "geometry": "cylinder",
+          "data": {
+            "radius": "R",
+            "extent": "finite"
+          },
+          "wanted": [],
+          "quantities": {},
+          "units": {},
+          "positive": [],
+          "assumptions": [],
+          "warnings": [
+            "Søgt størrelse kunne ikke genkendes; vælg den eksplicit."
+          ]
+        },
+        "method": null,
+        "outcome": "FAIL",
+        "failure_class": "PARSER",
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": false,
+        "comment": "Angiv mindst én søgt størrelse.",
+        "elapsed_seconds": 0.0
+      },
+      "assisted": {
+        "interpretation": {
+          "text": "En endelig cylinder med uniform volumenladning har radius R og længde L. Find E ved et generelt punkt udenfor. Må Gauss bruges direkte til at bestemme feltet?",
+          "geometry": "cylinder",
+          "data": {
+            "rho": "rho0",
+            "coordinate": "s",
+            "radius": "R",
+            "extent": "finite"
+          },
+          "wanted": [
+            "E"
+          ],
+          "quantities": {},
+          "units": {
+            "r": "m",
+            "s": "m",
+            "z": "m",
+            "x": "m",
+            "y": "m",
+            "R": "m",
+            "a": "m",
+            "b": "m",
+            "h": "m",
+            "L": "m",
+            "l": "m",
+            "g": "m",
+            "rho0": "C/m^3",
+            "rho_f": "C/m^3",
+            "epsilon": "F/m",
+            "eps": "F/m",
+            "J0": "A/m^2",
+            "I": "A",
+            "lambda0": "C/m",
+            "lam": "C/m",
+            "u": "1",
+            "phi": "1",
+            "theta": "1",
+            "B0": "T",
+            "N": "1",
+            "mu": "H/m",
+            "mu0": "H/m",
+            "t": "s",
+            "tau": "s",
+            "a0": "m",
+            "v": "m/s",
+            "V1": "V",
+            "V2": "V",
+            "F0": "N",
+            "m": "kg"
+          },
+          "positive": [
+            "r",
+            "s",
+            "R",
+            "a",
+            "b",
+            "h",
+            "L",
+            "l",
+            "g",
+            "tau",
+            "a0",
+            "m",
+            "epsilon",
+            "eps",
+            "mu"
+          ],
+          "assumptions": [],
+          "warnings": []
+        },
+        "method": null,
+        "outcome": "PASS",
+        "failure_class": null,
+        "warnings": [],
+        "silent_wrong": false,
+        "correct_refusal": true,
+        "comment": "Uendelig cylinder er ikke bekræftet. Endelig kilde kræver fuld parameterisering til integral-fallback.",
+        "elapsed_seconds": 0.001
+      }
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "id": "2025-11:3a",
+  "status": "executable",
+  "geometry": "concentric_spheres",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 38,
+    "answer": "answers_extracted.txt: 2025-11, Opgave 3, a)"
+  },
+  "given_source": [
+    "En tynd ledende kugleskal med radius 2a er anbragt koncentrisk med en ledende kugle\nmed radius a. Der anbringes en ladning Q på kugleskallen og en ladning q på kuglen.\nDer er vakuum i området uden for kugleskallen. Nulpunktet for det elektriske potential\nsættes i det uendelige.\n\n                                                          Q\n                                       2a\n                                                  a\n                                              !\n\n\n\n\n                                                      q\n\n\n\nDet ønskes at potentialet af kuglen er nul."
+  ],
+  "wanted_source": [
+    "I første omgang er der vakuum i området mellem kugle og kugleskal. Bestem q,\n     udtryk ved de øvrige opgivne størrelser, således, at potentialet af kuglen bliver nul."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    },
+    "q_unknown": {
+      "real": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "q_unknown": "C"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "EV",
+        "family": "conductors",
+        "geometry": "concentric_spheres",
+        "variables": {
+          "coordinate": {
+            "expr": "a"
+          },
+          "shells": [
+            [
+              {
+                "expr": "0"
+              },
+              {
+                "expr": "a"
+              },
+              {
+                "expr": "q_unknown"
+              }
+            ],
+            [
+              {
+                "expr": "2*a"
+              },
+              {
+                "expr": "2*a"
+              },
+              {
+                "expr": "Q"
+              }
+            ]
+          ],
+          "gap_permittivities": [
+            {
+              "expr": "epsilon_0"
+            },
+            {
+              "expr": "epsilon_0"
+            }
+          ],
+          "solve_for": {
+            "expr": "q_unknown"
+          },
+          "target_values": {
+            "V": {
+              "expr": "0"
+            }
+          },
+          "substitute_results": [
+            "V"
+          ]
+        },
+        "regions": [],
+        "assumptions": [
+          "concentric_spheres",
+          "electrostatic"
+        ],
+        "wanted": [
+          "solved_q_unknown",
+          "at_solution_V"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "solved_q_unknown",
+      "value": {
+        "expr": "-Q/2"
+      },
+      "unit": "C"
+    },
+    {
+      "step": "solve",
+      "result": "at_solution_V",
+      "value": {
+        "expr": "0"
+      },
+      "unit": "V"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

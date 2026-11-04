@@ -1,0 +1,1733 @@
+                                                                      Side 1 af 4 sider
+
+
+KØBENHAVNS UNIVERSITET
+NATURVIDENSKABELIG BACHELORUDDANNELSE
+
+Skriftlig prøve i EM1 (Elektromagnetisme), fredag d. 25. juni 2021
+Opgavesættet består af 6 opgaver med tilsammen 14 spørgsmål.
+
+
+Praktiske forhold:
+   • Alle spørgsmål vægtes ens i bedømmelsen;
+   • Benyttelse af litteratur, noter, lommeregnere samt computer eller tablet er tilladt;
+   • Der må skrives med blyant, såfremt besvarelsen er tydeligt læsbar på den scannede
+     aflevering;
+   • Afleveringen skal være i pdf-format. Hvis besvarelsen skannes eller fotograferes i
+     et andet format (jpeg etc.), kan disse filer indsættes som billeder i f.eks. Word og
+     derfra gemmes som samlet pdf-fil.
+
+
+
+
+Opgave 1
+
+
+
+
+Et elektrostatisk arrangement består af en perfekt ledende kugleskal med indre radius
+b, ydre radius c og samlet elektrisk ladning Q = 3q, q > 0. Inden for kugleskallen er en
+punktladning, q, placeret i afstanden a fra centrum.
+  a) Angiv den totale ladning på henholdsvis den indre, Qb , og den ydre, Qc , overflade
+     af kugleskallen.
+  b) Er ladningen jævnt fordelt på den indre overflade af kugleskallen? Argumentér.
+     Hvis ikke, hvor er | | da størst ( er ladningstætheden)? Skitsér de elektriske
+     feltlinjer i området inden for kugleskallen. Vær specielt omhyggelig med at skitsere
+     feltlinjernes start og afslutning.
+  c) Beregn kugleskallens elektriske potential, idet potentialet sættes til nul i det uen-
+     deligt fjerne.
+                                                                      Side 2 af 4 sider
+
+
+Opgave 2
+
+
+
+
+Fire identiske punktladninger Q sidder i hvert sit hjørne af et regulært tetraeder, hvis
+seks kanter alle har længden a.
+  a) Bestem den elektrostatiske energi lagret i systemet.
+
+Opgave 3
+
+
+
+
+I en uendelig lang cylinderformet metalstang med radius a løber en strøm, I1 = I, i
+retningen angivet på figuren. Rundt om metalstangen og ko-aksialt med denne er der
+anbragt en ledende cylinderskal med forsvindende tykkelse og radius b. I cylinderskallen
+løber en strøm, I2 = 34 I, i modsat retning af I1 .
+  a) Bestem størrelse og retning af det magnetiske felt for a < r < b og for r > b, hvor
+     r angiver afstanden til systemets symmetriakse.
+En anden uendelig lang cylinderformet metalstang er anbragt parallelt med den første i
+afstanden d fra dennes centrum. I denne stang løber strømmen I3 = I i samme retning
+som I1 . Metalstangen vil herved udsættes for en magnetisk kraft.
+  b) Bestem retningen af denne kraft samt kraftens størrelse pr. længdeenhed af metal-
+     stangen, dF/dl.
+De tre strømme er alle homogent fordelt i de respektive materialer.
+                                                                              Side 3 af 4 sider
+
+
+Opgave 4
+
+
+
+
+I et massespektrometer accelereres positivt ladede ioner fra hvile gennem et spændings-
+fald på V = 4.0 ⇥ 104 Volt, hvorefter de fortsætter ind i et område med et homogent
+magnetfelt, rettet vinkelret på ionernes bevægelse (se figur). Magnetfeltets styrke er
+B = 2.5 Tesla. Ionerne afbøjes, og afstanden d mellem indgangs- og udgangspunkter i
+planet vinkelret på magnetfeltet måles.
+  a) Beregn den forventede afstand, d, for en positivt ladet kulstofion, C+ (ladning +e).
+     Massen af ionen er M = 12.0 u.
+Masseenheden u (Atomic Mass Unit) er givet ved: 1 u = 1.66054 ⇥ 10 27 kg.
+
+Opgave 5
+
+Vi betragter en kubisk område i rummet, V, defineret ved 0 < x < L, 0 < y < L og
+0 < z < L, hvor L angiver en længde.
+I V er et statisk vektorfelt givet ved
+                                       ⇥                                 ⇤
+                      f (x, y, z) = C · y 2 x̂ + (2xy + z 2 ) ŷ + 2yz ẑ ,
+
+hvor C er en konstant.
+  a) Vis, at f opfylder det grundlæggende krav til et statisk elektrisk felt, men ikke til
+     et magnetisk felt.
+  b) Angiv enheden for C, således at f beskriver et elektrisk felt, E(x, y, z) = f (x, y, z).
+  c) Bestem den rumlige ladningstæthed, ⇢(x, y, z), konsistent med feltet E(x, y, z).
+     Bestem dernæst den totale ladning i V.
+                                                                       Side 4 af 4 sider
+
+
+Opgave 6
+
+
+
+
+To lange parallelle metalskinner med indbyrdes afstand L = 20 cm er forbundet til en
+modstand med resistans R = 0.30 ⌦, som vist på figuren. Et konstant og homogent mag-
+netfelt med styrke B = 1.2 Tesla er rettet vinkelret på skinnerne ud af figurens plan. En
+metalstang hviler på skinnerne, således at der til enhver tid er elektrisk kontakt mellem
+stang og skinner. Metalstangen er frit bevægelig langs skinnerne med forsvindende frik-
+tion. Stangen trækkes med konstant fart, v = 3.4 m/s, i retningen væk fra modstanden,
+som angivet på figuren. Der kan ses bort fra resistans i skinnerne og i metalstangen.
+Til de følgende spørgsmål ønskes samtlige størrelser angivet både symbolsk og numerisk.
+De symbolske udtryk skal udtrykkes ved de i opgaveteksten opgivne størrelser.
+  a) Angiv retningen af den inducerede strøm gennem modstanden, og beregn størrelsen
+     af denne strøm.
+  b) Bestem størrelsen af den eksterne kraft, F , som kræves for at opretholde stangens
+     konstante fart.
+  c) Bestem e↵ekten (Watt) af den eksterne kraft.
+  d) Beregn den totale energimængde afsat i modstanden, fra bevægelsen starter, til
+     stangen har tilbagelagt afstanden d = 1.2 m.
+
+                                  Opgavesættet slut
+
+                                                                             Mogens Dam
+                                                                        Side 1 af 4 sider
+
+
+KØBENHAVNS UNIVERSITET
+NATURVIDENSKABELIG BACHELORUDDANNELSE
+
+Skriftlig prøve i EM1 (Elektromagnetisme), fredag d. 12. november 2021
+Opgavesættet består af 6 opgaver med tilsammen 14 spørgsmål.
+
+
+Praktiske forhold:
+   • Alle spørgsmål vægtes ens i bedømmelsen;
+   • Alle normale hjælpemidler må anvendes, inklusive computer (uden netadgang);
+   • Der må skrives med blyant, såfremt besvarelsen er tydeligt læsbar.
+
+
+
+
+Oplysning
+
+I eksamensættet benyttes koordinatsystemer som defineret i kursets lærebog (Griffiths):
+   • Kartesiske koordinater (x, y, z) med basisvektorer x̂, ŷ, ẑ;
+   • Cylindriske koordinater (s, , z) med basisvektorer ŝ, ˆ , ẑ;
+                                                         ˆ ˆ.
+   • Sfæriske koordinater (r, ✓, ) med basisvektorer r̂, ✓,
+
+
+
+
+Opgave 1
+
+En homogen overfladeladningsfordeling med tæthed har form som den ene halvdel af
+en kugleskal med radius R, altså, som vist på figuren, x2 + y 2 + z 2 = R2 , z < 0. En
+punktladning, Q, er placeret i origo, (0, 0, 0).
+
+
+
+
+Følgende spørgsmål bedes besvaret både symbolsk og numerisk, idet det opgives at        =
+46,0 nC/cm2 , Q = 0,75 mC og R = 22,0 cm.
+  a) Bestem Q’s elektrostatiske potentielle energi i feltet fra overfladeladningsfordelingen.
+     Den potentielle energi sættes til nul i det uendeligt fjerne.
+  b) Anfør retningen af den elektriske kraft på Q. Bestem dernæst kraftens størrelse.
+                                                                        Side 2 af 4 sider
+
+
+Opgave 2
+
+Betragt to koncentriske kugleskaller af metal. Den indre kugleskal har indre radius a og
+ydre radius b. Den ydre kugleskal har indre radius c og ydre radius d.
+
+
+
+
+I første del af opgaven er der vakuum overalt omkring kugleskallerne. Den indre kugleskal
+tilføres nu ladningen Q1 , den ydre tilføjes ladningen Q2 .
+  a) Angiv ladningstætheden på hver af de fire overflader.
+  b) Bestem systemets kapacitans i det tilfælde, hvor Q1 =       Q2 .
+Opstillingen ændres nu derved, at hulrummet mellem de to kugleskaller udfyldes fuld-
+stændigt med et isolerende materiale med dielektricitetskonstant ✏r . Igen tilføres lad-
+ninger Q1 og Q2 til de to ledende kugleskaller.
+  c) Angiv tætheden af såvel frie som bundne ladninger ved hver af de fire overflader.
+  d) Bestem igen systemets kapacitans i tilfældet, hvor Q1 = Q2 .
+     Benyt det fundne udtryk til at beregne kapacitansen i det tilfælde, hvor a = 90 mm,
+     b = 100 mm, c = 500 mm, d = 510 mm og ✏r = 3.8.
+
+Opgave 3
+
+Der betragtes et område ⌦ i rummet, hvor ladningstætheden er nul. Begrund, hvilke af
+følgende udsagn er sande og hvilke falske:
+  a) E1 (x, y, z) = A1 (y x̂ x ŷ + d1 ẑ) er et muligt elektrisk felt i ⌦, idet A1 og d1 er
+     reelle konstanter med enhederne henholdsvis V m 2 og m.
+  b) V2 (r, ✓, ) = A2 (2 cos2 ✓ sin2 ✓)r2 er et muligt elektrostatisk potential i ⌦, idet
+     A2 er en reel konstant med enheden V m 2 .
+                                                                       Side 3 af 4 sider
+
+
+Opgave 4
+
+Et magnetfelt danner cirkulære feltlinjer omkring z-aksen i et koordinatsystem. Feltet
+er i cylindriske koordinater givet ved B(r) =  s2 ˆ , hvor  er en positiv konstant.
+
+
+
+
+  a) Til et tidspunkt bevæger en partikel med ladning q > 0 sig gennem punktet
+     r = x0 x̂ med en hastighed v, som ligger i xy-planet og danner vinklen ↵ med den
+     positive x-akse. Angiv størrelse og retning af den magnetiske kraft F på partiklen.
+  b) Magnetfeltet skabes af en strømtæthed af formen J(r) =          sn ẑ, hvor   og n er
+     konstanter. Bestem konstanterne og n.
+
+Opgave 5
+
+En rumlig ladningsfordeling med homogen ladningstæthed ⇢0 har form som en uendelig
+lang cylinder med radius a. I et cylindrisk koordinatsystem med z-aksen sammenfaldende
+med fordelingens symmetriakse er fordelingen dermed givet ved ⇢(s) = ⇢0 for s < a, og
+⇢(s) = 0 for s > a. Fordelingen roterer som et stift legeme med konstant vinkelhastighed
+ ˙ omkring z-aksen.
+
+
+
+
+  a) Argumentér for, at det resulterende magnetfelt er nul overalt uden for ladnings-
+     fordelingen, altså for s > a. Vis dernæst, at magnetfeltet er B(s) = 12 µ0 ⇢0 ˙ a2 s2 ẑ
+     for s < a.
+Vink: Systemet har ligheder med en solenoide.
+                                                                     Side 4 af 4 sider
+
+
+Opgave 6
+
+En cirkulær pladekapacitor i vakuum med radius a og afstand d mellem pladerne på-
+trykkes en spændingsforskel V = VA VB = V0 cos(!t). Et koordinatsystems z-akse
+er orienteret langs systemets symmetriakse, som vist på figuren. Her betragtes kun
+felter mellem pladerne, og der ses bort fra rande↵ekter ved s ' a. Det antages, at
+vinkelfrekvensen ! er så lav, at elektro- og magnetostatiske sammenhænge kan benyttes
+(den kvasistatiske grænse).
+
+
+
+
+De på figuren indtegnede røde kurver tilsvarer integrationsløkker, som kan komme til
+anvendelse i opgaveløsningen.
+  a) Bestem det elektriske felt E0 mellem pladerne inklusive retning og tidsafhængighed.
+  b) Til det tidsafhængige felt E0 svarer en forskydningsstrøm Jd . Beregn denne samt
+     det tilhørende magnetfelt B1 begge inklusive retning og tidsafhængighed.
+  c) Det tidsafhængige magnetfelt B1 inducerer et elektrisk felt E1 . Dette felt kan
+     skrives på formen E1 = (s) E0 , hvor (s) er en funktion af s. Bestem (s).
+     Angiv dernæst i tilfældet a = 1 cm ved hvilken frekvens ⌫ = !/2⇡ den maksimale
+     amplitude af E1 netop er 1% af amplituden af E0 .
+
+                                 Opgavesættet slut
+
+                                                                          Mogens Dam
+                                                                         Side 1 af 4 sider
+
+
+KØBENHAVNS UNIVERSITET
+NATURVIDENSKABELIG BACHELORUDDANNELSE
+Skriftlig prøve i EM1 (Elektromagnetisme), fredag d. 4. februar 2022
+Opgavesættet består af 7 opgaver med tilsammen 14 spørgsmål.
+
+Praktiske forhold
+
+  • Alle spørgsmål vægtes ens i bedømmelsen;
+  • Benyttelse af litteratur, noter, lommeregnere samt computer eller tablet er tilladt;
+  • Der må skrives med blyant, såfremt besvarelsen er tydeligt læsbar på den scanne-
+    de aflevering. Afleveringen skal være i pdf-format. Hvis besvarelsen skannes eller
+    fotograferes i et andet format (jpeg etc.), kan disse filer indsættes som billeder i
+    fx. Word og derfra gemmes som en samlet pdf-fil.
+
+Oplysning
+
+I eksamensættet benyttes koordinatsystemer som defineret i kursets lærebog (Griffiths):
+  • Kartesiske koordinater (x, y, z) med basisvektorer x̂, ŷ, ẑ;
+  • Cylindriske koordinater (s, φ, z) med basisvektorer ŝ, φ̂, ẑ;
+  • Sfæriske koordinater (r, θ, φ) med basisvektorer r̂, θ̂, φ̂.
+
+Opgave 1
+
+Fire punktladninger er placeret i xy-planet i et kartesisk koordinatsystem, alle i afstanden
+a fra origo: Tre identiske punktladninger, +q, er placeret i punkterne (−a, 0, 0), (0, −a, 0)
+og (a, 0, 0); en fjerde punktladning med modsat ladning, −q, er placeret i punktet (0, a, 0).
+                                           y
+                                          −q 4
+                                             a
+                                    1    a           a    3 x
+                                   +q                    +q
+                                             a
+                                   z
+                                          +q     2
+
+  a) Bestem den elektrostatiske energi af ladningssystemet.
+  b) Bestem det elektriske felt først i origo og dernæst i et vilkårligt punkt (0, 0, z) på
+     z-aksen. Resultatet bedes i begge tilfælde angivet på vektorform, E(z) = Ex (z) x̂+
+     Ey (z) ŷ + Ez (z) ẑ.
+  c) Bestem ladningssystemets dipolmoment p. Opskriv dernæst et tilnærmet udtryk
+     for det elektriske potential, som er gyldigt i ethvert punkt r langt væk fra origo
+     (r = |r| ≫ a). Udtrykket skal indholde bidrag af orden op til, og inklusive, dipol-
+     leddet. Potentialet sættes til nul i det uendeligt fjerne. Angiv resultatet i sfæriske
+     koordinater.
+                                                                       Side 2 af 4 sider
+
+
+Opgave 2
+
+En uendelig lang cylinderformet stang med radius a bærer en jævnt fordelt, positiv
+ladning 2λ per længdeenhed. Koaksialt med stangen er denne omringet af en forsvindende
+tynd, ledende cylinderskal med radius b. Cylinderskallen bærer en jævnt fordelt ladning
+−λ per længdeenhed.
+
+
+
+
+I første del af opgaven er der vakuum mellem stang og cylinderskal.
+  a) Angiv retningen og styrken af det elektriske felt i området mellem stang og cylin-
+     derskal, a < s < b.
+  b) Bestem de to overfladeladningstætheder, σindre og σydre , på henholdsvis den indre
+     og den ydre overflade af cylinderskallen.
+Opstillingen ændres nu derved, at hulrummet mellem stang og cylinderskal udfyldes
+fuldstændigt med et isolerende materiale med dielektricitetskonstant ϵr .
+  c) Bestem under denne betingelse og med uændrede frie ladninger potentialforskellen
+     mellem stang og cylinderskal. Beregn potentialforskellen i det tilfælde, hvor a =
+     1,00 mm, b = 4,00 mm, λ = 90 nC/m og ϵr = 4,2.
+
+Opgave 3
+
+En stiv leder ligger i xy-planet af et koordinatsystem i et område, hvor et uniformt
+magnetfelt peger i z-aksens retning, B = Bẑ. Lederen har form som vist på figuren, idet
+den består af to dele: a) det første stykke er ret og løber længden L langs x-aksen; b) det
+andet stykke har form af en halvcirkel med diameter L. I lederen løber en strøm I mod
+stigende x-værdier. Strømmen til den diskuterede leder leveres af til- og fraledninger,
+som vi her ser bort fra.
+                                                         y
+                              B (ud)           I
+
+                                 I
+                                                                         x
+                                 a                     b
+                                 L                     L
+
+  a) Bestem størrelsen og retningen af kraften på hver af de to lederstykker. Udtryk
+     resultatet på vektorform; bestem altså Fa og Fb . Angiv størrelsen af den samlede
+     kraft på lederen, idet B = 0,45 T, L = 0,23 m og I = 7,6 A.
+                                                                        Side 3 af 4 sider
+
+
+Opgave 4
+
+En uendelig lang cylinderformet leder med radius R har en gennemgående cylinderformet
+boring (hulrum) med radius R/2. Boringens akse er parallel med cylinderaksen, og den
+indbyrdes afstand mellem de to akser er R/4; figuren viser et tværsnit. Gennem det
+ledende materiale løber en strøm med den uniforme strømtæthed J = Jẑ, hvor ẑ er
+en enhedsvektor i cylinderaksens retning. Også indikeret på figuren er punktet A, som
+ligger, hvor forbindelseslinjen mellem de to akser skærer kanten af boringen.
+
+
+
+
+                                                                   y
+                                   R         R/2
+                                                        A
+
+                                           R/4
+                                                                            x
+
+
+
+
+  a) Bestem den samlede strøm, I, i lederen.
+  b) Bestem magnetfeltets størrelse og retning i punktet A. Svaret gives ved det ind-
+     tegnede koordinatsystem, hvor z-aksen peger ud af papiret.
+Vink: Situationen kan opfattes som en superposition af en strømtæthed J i en komplet
+udfyldt leder og en tæthed −J i boringen.
+
+Opgave 5
+
+En ladning Q bevæges√langs en cirkelbue med radius R og centrum i origo fra punktet
+(R, 0, 0) til punktet ( 23 R, 12 R, 0). Ladningen er i hvile både før og efter flytningen. I
+området er der et statisk elektrisk felt med formen
+                                       V0 !               "
+                                E=−      3
+                                            2xy x̂ + x2 ŷ ,
+                                       R
+hvor V0 er en konstant.
+  a) Vis, at E beskriver et muligt elektrostatisk felt. Bestem ladningstætheden i områ-
+     det.
+  b) Bestem arbejdet udført mod feltet ved den beskrevne bevægelse af ladningen.
+
+Opgave 6
+
+En tynd, cirkulær ring med radius a er lavet at et ledende materiale. Ringens tota-
+le modstand er R. Rettet vinkelret på ringens plan er et tidsafhængigt magnetfelt,
+B(t) = B0 sin(ωt) ẑ, hvor B0 og ω er positive konstanter, og hvor ẑ definerer z-aksen.
+  a) Bestem størrelsen og retningen af strømmen i ringen til tiden T = 3ω  π
+                                                                             . Retningen
+     angives som enten positiv eller negativ omløbsretning i forhold til z-aksen.
+                                                                       Side 4 af 4 sider
+
+
+Opgave 7
+
+En uendelig lang cylinderformet leder med radius R bærer en konstant strømtæthed, J,
+i længderetningen. Et cylindrisk koordinatsystem indlægges, hvor z-aksen er sammen-
+faldende med lederens symmetriakse og peger i strømmens retning.
+  a) Vis, at det magnetiske vektorpotential defineret ved
+
+                                       A(r) = Az (s) ẑ,
+
+     hvor                         ⎧            I
+                                  ⎪
+                                  ⎨    −µ0        s2        for s ≤ R,
+                                             4πR2
+                           Az (s) =
+                                    ⎪
+                                    ⎩ C ln s − µ I
+                                                   0        for s > R,
+                                             R       4π
+     tilfredsstiller Poissons ligning, som den gælder for vektorpotentialer (hvis divergens
+     er nul). I udtrykket for Az (s) er C en konstant, og I er den totale strøm.
+  b) Anvend vektorpotentialet givet i a) til at beregne det magnetiske felt såvel inden
+     i (s < R) som uden for (s > R) cylinderen. Bestem derved konstanten C.
+
+                                  Opgavesættet slut
+
+                                                                             Mogens Dam
+                                                                        Side 1 af 4 sider
+
+
+KØBENHAVNS UNIVERSITET
+NATURVIDENSKABELIG BACHELORUDDANNELSE
+Skriftlig prøve i EM1 (Elektromagnetisme), fredag d. 11. november 2022
+Opgavesættet består af 6 opgaver med tilsammen 14 spørgsmål.
+
+Praktiske forhold
+
+  • Alle spørgsmål vægtes ens i bedømmelsen;
+  • Alle normale hjælpemidler må anvendes, inklusive computer (uden netadgang);
+  • Der må skrives med blyant, såfremt besvarelsen er tydeligt læsbar.
+
+Oplysning
+
+I eksamensættet benyttes koordinatsystemer som defineret i kursets lærebog (Griffiths):
+  • Kartesiske koordinater (x, y, z) med basisvektorer x̂, ŷ, ẑ;
+  • Cylindriske koordinater (s, φ, z) med basisvektorer ŝ, φ̂, ẑ;
+  • Sfæriske koordinater (r, θ, φ) med basisvektorer r̂, θ̂, φ̂.
+
+
+
+
+Opgave 1
+
+To ladninger, q1 = −6,0 µC og q2 = +3,0 µC, befinder sig på x-aksen ved de respektive
+koordinater x1 = 0 og x2 = 12,0 cm. Det elektriske potential sættes til nul i det uendeligt
+fjerne.
+
+                    q1 = −6,0 µC                         q2 = +3,0 µC
+
+
+                       x1 = 0                            x2 = 12,0 cm
+
+  a) Bestem de punkter på x-aksen, hvor det elektriske potential er nul.
+  b) Bestem de punkter på x-aksen, hvor der elektriske felt er nul.
+  c) Bestem arbejdet, det kræver at flytte ladningen q2 fra punktet x2 = 12,0 cm til
+     punktet x3 = 24,0 cm på x-aksen, idet q2 ligger i hvile både før og efter flytningen,
+     og ladningen q1 forbliver i origo.
+
+Opgave 2
+
+I et område! r ≤ R giver en"kuglesymmetrisk ladningsfordeling ophav til et elektrisk felt,
+E(r) = E0 2(r/R)2 − r/R r̂, hvor E0 er en konstant.
+  a) Bestem ladningsfordelingens totalladning, Q.
+  b) Bestem et udtryk for ladningstætheden, ρ(r), som funktion af r.
+                                                                    Side 2 af 4 sider
+
+
+Opgave 3
+
+Samtlige spørgsmål i denne opgave bedes besvaret med talværier inklusive enheder.
+CMS-eksperimentet på CERN er udstyret med verdens største solenoide-magnet. For
+at opretholde et kraftigt magnetfelt må der anvendes en meget stor strømstyrke. Dette
+muliggøres ved, at solenioden er superledende, og altså nedkølet til −269 ◦ C.
+Solenoiden, vist på skitsen nedenfor, har N = 2180 vindinger, længden er l = 12,5 m, og
+radius er r = 3,00 m. En strøm på I = 18,2 kA løber gennem vindingerne.
+
+
+
+
+Vi vil i det følgende undersøge solenoidens egenskaber. Som en approksimation anvendes
+udtrykkene for en uendelig lang solenoide. Der ses således bort fra enhver form for
+randeffekter. Under denne forudsætning:
+  a) Bestem magnetfeltets styrke, B, i solenoiden.
+  b) Bestem solenoidens selvinduktans, L. Bestem dernæst den magnetiske energi, W ,
+     der er opmagasineret i solenoiden.
+Vi betragter nu processen, hvor solenoiden “lades op”, og strømstyrken går fra nul til
+den nominelle værdi på 18,2 kA. Til dette brug betragter vi nedenstående diagram, hvor
+strømforsyningen leverer spændingen ER = 26 V, induktansen L bestemtes ovenfor, og
+kredsens totale modstand er R = 75 µΩ. Til det tidspunkt, hvor den nominelle strøm-
+styrke er opnået, sænkes strømforsyningens spænding til værdien ES , som præcis er stor
+nok til at opretholde den konstante nominelle strømstyrke i kredsen.
+
+                                          K
+
+
+                             L
+
+                                                       R
+
+                            ER
+
+
+
+
+  c) Bestem tiden, T , det tager for strømstyrken at nå sin nominelle værdi. Bestem
+     ligeledes værdien af ES .
+                                                                       Side 3 af 4 sider
+
+
+Vi vil sluttelig illustrere, hvorfor en magnet af denne styrke nødvendigvis må være baseret
+på superledende teknologi, hvor strømmen i solenoidevindingerne løber fuldstændig uden
+modstand.
+Ledningen, der danner spolen, har et ydre tværsnit på 30,0 mm×26,6 mm. Lad os antage,
+at situationen ikke var superledende, og at ledningen var lavet af massivt aluminium,
+som har resistiviteten ρ = 2,65 × 10−8 Ωm.
+  d) Bestem ved den nominelle strømstyrke effekten, P , der ville afsættes i ledningen i
+     form af Joule’sk varme.
+
+Opgave 4
+
+En cirkulær ring bærer en jævnt fordelt volumenladning med tæthed ρ. Båndet, som
+ringen er dannet af, har højden h og bredden b. Ringens radius, R, er langt større end
+materialbredden, R ≫ b. Ringen sættes til at rotere med vinkelhastigheden ω om sin
+symmetriakse.
+
+                                                          ω
+
+
+                       h
+
+
+                            b                       R
+
+  a) Bestem størrelsen af den elektriske strøm, som ringens rotation giver ophav til.
+     Bestem dernæst retningen og størrelsen af systemets magnetiske dipolmoment, m.
+Vi betragter nu en cirkulær skive med radius R og tykkelse h, igen med den jævne
+ladningstæthed ρ. Skiven roterer om sin symmetriakse med vinkelhastigheden ω.
+                                                          ω
+
+
+                       h
+
+
+                                                     R
+
+  b) Bestem størrelsen af den roterende skives magnetiske dipolmoment, m.
+                                                                     Side 4 af 4 sider
+
+
+Opgave 5
+
+En uendelig lang cylinder med radius R bærer en “indfrosset” magnetisering parallel
+med cylinderaksen, M = ks2 ẑ, hvor k er en konstant, og s er afstanden til aksen.
+  a) Bestem de bundne strømme såvel på cylinderens overflade, Kb , som inde i cylin-
+     deren, Jb . Som antydet, bedes resultaterne givet på vektorform.
+  b) Bestem H-feltet og dernæst B-feltet for såvel s < R som for s > R.
+
+Opgave 6
+
+En kvadratisk ledende løkke med sidelængde L ligger i xy-planet med det ene hjørne i
+origo og med sider parallelle med x- og y-akserne.
+                               y
+
+                              L
+                                    ⊙B
+
+
+
+
+                                                     L    x
+
+I området er der et tidsligt varierende magnetisk felt af formen
+
+                                            x2 + y 2 −t/τ
+                                   B = B0           e     ẑ,
+                                              L2
+hvor B0 og τ er positive konstanter. Løkken har modstanden R, og der ses bort fra
+løkkens selvimpedans.
+  a) Bestem den elektriske strøm (retning og størrelse), der induceres i løkken.
+
+                                    Opgavesættet slut
+
+                                                                          Mogens Dam
+                                                                            Side 1 af 4 sider
+
+
+KØBENHAVNS UNIVERSITET
+NATURVIDENSKABELIG BACHELORUDDANNELSE
+Skriftlig prøve i EM1 (Elektromagnetisme), fredag d. 3. februar 2023
+Opgavesættet består af 6 opgaver med tilsammen 14 spørgsmål.
+
+Praktiske forhold
+
+  • Alle spørgsmål vægtes ens i bedømmelsen;
+  • Alle normale hjælpemidler må anvendes, inklusive computer (uden netadgang).
+
+Oplysning
+
+I eksamensættet benyttes koordinatsystemer som defineret i kursets lærebog (Griffiths):
+  • Kartesiske koordinater (x, y, z) med basisvektorer x̂, ŷ, ẑ;
+  • Cylindriske koordinater (s, φ, z) med basisvektorer ŝ, φ̂, ẑ;
+  • Sfæriske koordinater (r, θ, φ) med basisvektorer r̂, θ̂, φ̂.
+
+
+
+
+Opgave 1
+
+Der optræder her tre punktladninger, q1 = −3,00 µC, q2 = 2,00 µC og q3 = 4,00 µC, hvor
+1 µC = 10−6 C.
+                                                                    q3
+                                   y
+                                                                        a       a
+
+       q1      a       q2                       x                  q1       a       q2
+
+De følgende spørgsmål bedes besvaret først ved analytiske udtryk og dernæst ved ind-
+sættelse af talværdier. De efterspurgte kræfter bedes givet på vektorform i forhold til
+det indtegnede xy-system.
+  a) Først anbringes q1 og q2 begge langs x-aksen med en indbyrdes afstand på a =
+     20,0 cm, som vist på figuren til venstre. Den tredje ladning optræder endnu ikke.
+     Bestem kraften på q1 .
+  b) Dernæst tilføjes q3 , som vist på figuren til højre. De tre ladninger danner en lige-
+     sidet trekant. Bestem igen kraften på q1 .
+  c) Bestem endelig den elektrostatiske energi, W , af konfigurationen af de tre ladninger
+     vist til højre.
+                                                                      Side 2 af 4 sider
+
+
+Opgave 2
+
+En kugle med radius R er lavet af et lineært dielektrikum med den relative permittivitet
+ϵr . Kuglen bærer en radiusafhængig volumentæthed af frie ladninger ρ(r) = kr, hvor k
+er en konstant.
+  a) Bestem kuglens totale frie ladning, Q.
+  b) Bestem det elektriske felt, E, (størrelse og retning) såvel uden for (r > R) som
+     inden i (r < R) kuglen.
+  c) Bestem dielektrikummets polarisation, P.
+
+Opgave 3
+
+Figuren nedenfor viser en elektrisk quadrupol. Quadupolen består af fire punktladninger,
+som alle ligger på samme rette linje. De to positive ladninger, +q, ligger med indbyrdes
+afstand 2d, mens de to negative ladninger, −q, ligger i samme punkt, midt mellem de
+to positive ladninger. Vi ønsker at bestemme det elektriske felt i et punkt P, som ligger
+på quadrupolens akse i afstanden z ≫ d fra dens center.
+
+
+
+
+  a) Vis, at det elektriske felt i punktet P har styrken
+
+                                                 Θ
+                                       E=K              ,
+                                               4πϵ0 z 4
+
+     hvor Θ = 2qd2 , og K er en enhedsløs konstant, hvis værdi ønskes bestemt. Angiv
+     retningen af feltet i P.
+Vink: Undervejs får man brug for Taylorudviklingen 1/(1+x)n = 1−n x+ (n+1)n
+                                                                       2    x2 +. . ..
+
+Opgave 4
+
+I et område af rummet er et magnetisk vektorpotential givet ved
+                                      !                        "
+                        A(x, y, z) = κ 3zy x̂ − 2zy ŷ + z 2 ẑ ,
+
+hvor κ er en konstant.
+  a) Bestem magnetfeltet, B(x, y, z), konsistent med vektorpotentialet. Eftervis der-
+     næst at strømtætheden, der er kilden til magnetfeltet, er J(x, y, z) = −(2κ/µ0 ) ẑ.
+  b) Bestem den elektriske strøm, I, gennem en plan, cirkulær flade med radius R,
+     som er centreret i origo, og hvis orientering er defineret ved normalvektoren n̂ =
+     √1 (x̂ + ŷ − ẑ).
+       3
+                                                                     Side 3 af 4 sider
+
+
+Opgave 5
+
+En rektangulært strømløkke ligger tæt ved en meget lang, strømførende ledning. Løkken
+og ledningen ligger i samme plan, og to af løkkens sider med længden b er parallelle med
+ledningen. De to andre sider har længden h, og løkkens nærmeste side ligger afstanden
+a fra ledningen. I ledningen går strømmen I1 .
+Situationen er vist på figuren.
+                                            b
+
+                                                   h
+
+                              I1                   a
+
+
+  a) Vis, at den magnetiske flux gennem løkken kan skrives på formen, Φ = CI1 , hvor C
+     er en konstant, som afhænger af de geometriske størrelser a, b og h samt nødvendige
+     konstanter. Angiv udtrykket for C. Angiv endvidere (med argumenter) retningen
+     af fluxen (ind eller ud af papiret) tilsvarende retningen at strømmen I1 vist på
+     figuren.
+Strømmen i ledningen er en vekselstrøm af formen I1 (t) = I0 cos(ωt), hvor I0 angiver
+amplituden, og hvor vinkelfrekvensen ω er så lav, at elektro- og magnetostatiske sam-
+menhænge kan benyttes (den kvasistatiske grænse).
+  b) Bestem den elektromotoriske kraft, E(t), i løkken udtrykt ved C, ω og I0 . Ar-
+     gumentér for fortegnet (positiv eller negativ omløbsretning på figuren) af E(t) i
+     tidsrummet 0 < t < π/ω.
+Løkken har modstanden R, og der kan ses bort fra dens selvinduktans.
+  c) Bestem effekten P (t), som afsættes i løkken til tiden t.
+I en konkret opstilling er b = 14,0 cm, h = 10,0 cm, a = 5,0 cm, R = 10,0 mΩ, og
+frekvensen af vekselstrømmen er f = 50 Hz. Det observeres da, at den gennemsnitligt
+(midlet over mange perioder af vekselstrømmen) afsatte effekt i strømløkken er Pavg =
+1,90 × 10−5 W.
+  d) Benyt den ovennævnte information til at fastlægge vekselstrømmens amplitude, I0 .
+                                                                      Side 4 af 4 sider
+
+
+Opgave 6
+
+Mellem to cirkulære koncentriske kondensatorplader er der et uniformt, tidsafhængigt
+elektrisk felt E(t) = E0 sin(ωt) ẑ, hvor E0 er amplituden, ω er vinkelfrekvensen, og hvor
+z-aksen er orienteret langs systemets symmetriakse. Afstanden a mellem kondensator-
+pladerne er langt mindre end deres radius R (a ≪ R), således at randeffekter kan
+ignoreres. Figuren viser systemet. Den røde linje mellem kondensatorpladerne afgrænser
+en plan, cirkulær flade, S, som er parallel med pladerne og centreret på symmetriaksen.
+Radius af S er s, hvor s ≤ R.
+
+                                           z
+
+
+                      a                        S            E = E0 sin(ωt)
+
+
+
+                                                     R
+  a) Bestem den totale forskydningsstrøm (displacement current), Id (t, s), gennem fla-
+     den S, som funktion t og s. Bestem derpå retning og størrelse af det inducerede
+     magnetfelt B = B(t, s) mellem kondensatorpladerne.
+
+                                  Opgavesættet slut
+
+                                                                             Mogens Dam
+                                                                        Side 1 af 4 sider
+
+
+KØBENHAVNS UNIVERSITET
+NATURVIDENSKABELIG BACHELORUDDANNELSE
+Skriftlig prøve i EM1 (Elektromagnetisme), fredag d. 10. november 2023
+Opgavesættet består af 5 opgaver med tilsammen 14 spørgsmål.
+
+
+Praktiske forhold
+
+  • Alle spørgsmål vægtes ens i bedømmelsen;
+  • Alle normale hjælpemidler må anvendes, inklusive computer (uden netadgang).
+
+Oplysning
+
+I eksamensættet benyttes koordinatsystemer som defineret i kursets lærebog (Griffiths):
+  • Kartesiske koordinater (x, y, z) med basisvektorer x̂, ŷ, ẑ;
+  • Cylindriske koordinater (s, φ, z) med basisvektorer ŝ, φ̂, ẑ;
+  • Sfæriske koordinater (r, θ, φ) med basisvektorer r̂, θ̂, φ̂.
+
+
+
+
+Opgave 1
+
+Vi betragter i første omgang situationen på figuren til venstre, hvor to identiske ladninger
+q ligger i afstanden a fra hinanden, og ladningen Q ligger midt på forbindelseslinjen
+mellem de to.
+
+                                                   q                     q
+
+               q         Q         q
+                                                   a
+                   a/2       a/2                               Q
+
+                                                   q                q
+                                                         a
+  a) Bestem Q udtrykt ved q, således at systemet er i ligevægt, og kraften på hver
+     af ladningerne er nul. Argumentér for, hvorvidt der er tale om en stabil eller en
+     ustabil ligevægtstilstand.
+Vi betragter derefter situationen på figuren til højre, hvor fire identiske ladninger q
+danner et kvadrat med sidelængden a, og ladningen Q ligger i kvadratets midtpunkt.
+  b) Bestem igen Q udtrykt ved q, således at systemet er i ligevægt, og kraften på hver
+     af ladningerne er nul.
+  c) Bestem i begge tilfælde, a) og b), den elektrostatiske energi af konfigurationen
+     udtrykt ved q og Q. Reducér dernæst de fundne udtryk ved indsættelse af de
+     under henholdsvis a) og b) fundne udtryk for Q.
+                                                                        Side 2 af 4 sider
+
+
+Opgave 2
+
+En elektrisk transmissionslinje (et system til overførsel af en stor elektrisk strøm) består
+af to ledende bånd med længde l og bredde b, som ligger parallelt med hinanden, separeret
+med afstanden h. Et koordinatsystem er indlagt som vist på figuren. En i lederne jævnt
+fordelt strøm I løber frem gennem den ene leder og tilbage gennem den anden, som
+illustreret på figuren. Det antages, at båndenes bredde er meget større end deres afstand,
+b ≫ h, og at der derfor kan ses bort fra randeffekter. For beregning af magnetfeltet
+omkring systemet anses altså båndene for at have uendelig udstrækning i både x and z.
+                                   y
+                                                    l
+                              b
+                                                                       h
+                                                                           x
+                      z
+
+
+Opgaven bedes løst både symbolsk og numerisk, idet følgende værdier er givet: l =
+400 cm, b = 30,0 cm, h = 1,20 cm, og I = 9,5 kA.
+  a) Bestem (med argumenter) retningen af B-feltet mellem de to ledere. Bestem der-
+     næst feltets styrke i dette område. Hvad er B-feltet over og under transmissions-
+     linjen?
+  b) Bestem den magnetiske energi oplagret i transmissionslinjen. Bestem dernæst trans-
+     missionslinjens selvinduktans.
+
+Opgave 3
+
+I et kubisk område af rummet, 0 < x < a, 0 < y < a, og 0 < z < a, har det elektriske
+felt formen
+                              E0 !" 2     #    "        #    "         # $
+               E(x, y, z) =     2
+                                   x + z 2 x̂ + y 2 + x2 ŷ + z 2 + y 2 ẑ ,
+                              a
+hvor og a og E0 er konstanter.
+  a) Bestem ladningstætheden, ρ(x, y, x), i området. Find dernæst den totale ladning,
+     Q, indeholdt i området.
+  b) Hvad kan man slutte om magnetfeltet, B, der eksisterer i området?
+                                                                      Side 3 af 4 sider
+
+
+Opgave 4
+
+En ledende kugle med radius R flyder i en dielektrisk væske med perminitivet ϵ1 . Kug-
+len er præcis halvvejs nedsænket. Over væsken er der en gas med permitivitet ϵ2 . De
+to dielektrika strækker sig i alle retninger langt videre end kuglen, hvorfor det som
+tilnærmelse kan antages, at de strækker sig til det uendelige. Ladningen på kuglen er Q.
+
+                          dielektrikum 2                         ϵ2
+
+
+
+                                         Q
+                                                 R
+
+
+
+
+                          dielektrikum 1                         ϵ1
+
+I det følgende angiver r afstanden til kuglens centrum.
+Vi ønsker at bestemme det elektriske felt overalt uden for kuglen, r > R. Hertil benyt-
+tes i det følgende som hypotese, at feltet i begge dielektrika er radielt og udelukkende
+afhænger af r. For hver af de to dielektrika, 1 og 2, antages feltet altså at tage formen
+
+                               Ei = Ei (r) r̂,       i = 1, 2.
+
+  a) Argumentér for, at den elektriske feltstyrke i de to dielektrika må være ens, altså
+     E1 (r) = E2 (r). Benyt denne kendsgerning til at bestemme forholdet D1 (r)/D2 (r)
+     mellem den elektriske forskydning i de to dielektrika.
+  b) Kuglens frie ladning Q fordeler sig med forskellige tætheder på den øvre og nedre
+     halvkugle for at skabe det ovenfor beskrevne felt. Angiv først forholdet mellem
+     tætheden af frie overfladeladninger på de to halvkugler, σf,1 /σf,2 . Bestem dernæst
+     de to ladningstætheder σf,1 og σf,2 .
+  c) Angiv endelig et udtryk for det elektriske felt overalt uden for kuglen, r > R.
+     Bemærk, at dette resultat blev bestemt baseret på en hypotese. Argumentér for,
+     hvorvidt vi kan være sikre på, at resultatet dermed er det faktiske. Kunne vores
+     hypotese have været forkert og ledt til et misvisende resultat?
+                                                                      Side 4 af 4 sider
+
+
+Opgave 5
+
+En ring lavet af et ledende materiale falder i tyngdefeltet med farten v i et område
+af rummet, hvor der er et magnetfelt. Magnetfeltets lodrette komponent har formen
+Bz = B0 (1 − κz), hvor B0 og κ er positive konstanter, og z-aksen er opadrettet. Ringen
+ser altså et magnetfelt, hvis lodrette komponent gennem ringen vokser under faldet, som
+antydet på figuren. Under bevægelsen er ringens plan hele tiden vandret. Ringen har
+masse m, udspænder et areal A, og dens elektriske modstand er R. Tyndeaccelerationen
+betegnes g, og der ses bort fra luftmodstand.
+
+
+
+
+  a) Bestem størrelsen af den elektromotoriske kraft, E, i ringen.
+  b) Bestem den afsatte effekt, P , i ringen.
+Efter et tidsrum vil den i ringen afsatte effekt præcis tilsvare ringens tab pr. tidsenhed
+af potentiel energi i tyngdefeltet. Herefter vil ringens fart være konstant.
+  c) Bestem størrelsen af den konstante hastighed v∞ .
+  d) Diskutér, hvad der ville forandre sig i eksperimentet, og hvad der ville være ufor-
+     andret, hvis magnetfeltet i stedet havde været aftagende under faldet, tilsvarende
+     κ < 0.
+
+                                  Opgavesættet slut
+                                                                            Side 1 af 3 sider
+
+
+KØBENHAVNS UNIVERSITET
+NATURVIDENSKABELIG BACHELORUDDANNELSE
+Skriftlig prøve i EM1 (Elektromagnetisme), fredag d. 2. februar 2024
+Opgavesættet består af 5 opgaver med tilsammen 14 spørgsmål.
+
+
+Praktiske forhold
+
+  • Alle spørgsmål vægtes ens i bedømmelsen;
+  • Alle normale hjælpemidler må anvendes, inklusive computer (uden netadgang).
+
+Oplysning
+
+I eksamenssættet benyttes koordinatsystemer som defineret i kursets lærebog (Griffiths):
+  • Kartesiske koordinater (x, y, z) med basisvektorer x̂, ŷ, ẑ;
+  • Cylindriske koordinater (s, φ, z) med basisvektorer ŝ, φ̂, ẑ;
+  • Sfæriske koordinater (r, θ, φ) med basisvektorer r̂, θ̂, φ̂.
+
+Opgave 1
+
+Der undersøges tre forskellige tilfælde af ladningsfordelinger anbragt i xy-planet i et
+koordinatsystem. I alle tre tilfælde, som illustreret på figuren, befinder samtlige elementer
+af ladningsfordelingen sig i afstanden a fra koordinatsystemets begyndelsespunkt, O.
+
+ a)             y                b)               y                c)                y
+                                                      Q/5
+                                      Q/5
+                                                      a                                  a
+                        x                   45◦           x                                  x
+      Q     a       O            Q/5                  O                                  O
+                                            45◦
+
+                                      Q/5
+                                                      Q/5               !
+                                                                            dq = Q
+
+  a) En punktladning Q er anbragt på den negative x-akse i afstanden a fra O. Bestem
+     det elektriske felt i O. Resultatet bedes givet på vektorform.
+  b) Fem identiske punktladninger, Q/5, er anbragt på en cirkelbue med radius a cen-
+     treret i O i punkter bestemt ved vinkler φ = −90◦ , −45◦ , 0◦ , 45◦ og 90◦ relativt
+     til den negative x-akse. Bestem det elektriske felt i O på vektorform.
+  c) Totalladningen Q er jævnt fordelt over en halvcirkel, som spænder anden og tredje
+     kvadrant af xy-systemet. Halvcirklen, der er centreret i O, har radius a. Bestem
+     det elektriske felt i O på vektorform.
+  d) Bestem i de tre tilfælde, a), b), og c), det elektriske potential i O. Nulpunktet for
+     potentialet sættes i det uendelige.
+                                                                      Side 2 af 3 sider
+
+
+Opgave 2
+
+Et kubisk legeme med sidelængde L består af et dieletrisk materiale. Legemet bærer
+polarisationen P = A(xx̂ + yŷ + zẑ), hvor A er en positiv konstant, og hvor koordi-
+natsystemet har begyndelsespunkt i legemets midtpunkt og akser parallelle med dets
+kanter.
+                                           z
+
+
+
+
+                                                          y
+                                L
+                                       x
+
+  a) Bestem overfladetætheden, σb , af de bundne ladninger.
+  b) Bestem volumentætheden, ρb , af de bundne ladninger. Angiv summen af samtlige
+     bundne ladninger.
+
+Opgave 3
+
+En lang, lige ledning ligger i planet defineret af en rektangulær, stiv strømløkke. To af
+løkkens sider med længde b er parallelle med ledningen; de to andre sider med længde a
+står da vinkelret på denne. Ledningen ligger i afstanden d fra løkken. I ledningen såvel
+som i løkken løber konstante elektriske strømme, henholdsvis I1 og I2 . Situationen og
+orienteringen af strømmene fremgår af figuren.
+                                               b
+
+
+                                 I2                   a
+
+
+                                                      d          I1
+
+
+Der opgives følgende værdier: b = 38 cm, a = 24 cm, d = 14 cm, I1 = 15 A og I2 = 1,8 A.
+  a) Bestem størrelsen og retningen af den resulterende kraft på strømløkken. Størrelsen
+     bedes angivet såvel symbolsk som numerisk.
+Idet begge elektriske strømme holdes konstante, flyttes løkken nu fra sin oprindelige
+afstand d til afstanden 0,2 d.
+  b) Bestem det mekaniske arbejde, der må udføres på løkken, for at udføre denne
+     flytning. Resultatet bedes angivet såvel symbolsk som numerisk.
+                                                                      Side 3 af 3 sider
+
+
+Opgave 4
+
+Den elektriske strøm i en lang, cylinderformet leder med radius S = 3,1 mm går i lederens
+længderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,
+har formen                                   !     s"
+                                    J(s) = J0 1 −     ,
+                                                   S
+hvor J0 = 96,0 A/mm2 .
+  a) Bestem et udtryk for strømmen, I(s), indeholdt i en cylinder med radius s ≤ S
+     rundt om lederens akse. Beregn dernæst den totale strøm i lederen ved anvendelse
+     af de opgivne talstørrelser.
+  b) Angiv retningen af magnetfeltet, som genereres af strømmen. Bestem dernæst mag-
+     netfeltets styrke som funktion af s for alle værdier af s. Angiv endelig feltstyrken,
+     både symbolsk og numerisk, for i) s = 0, ii) s = S og iii) s = 2S.
+
+Opgave 5
+
+Et langt, stift ledningsstykke, der er bukket, så det danner en vinkel på 60◦ , ligger i
+et plan vinkelret på et uniformt magnetfelt med styrke B. Et andet ledningsstykke af
+samme materiale og tværsnit er orienteret således, at det sammen med det første stykke
+danner en ligesidet trekant. Det andet ledningsstykke trækkes med jævn hastighed, v,
+vinkleret på sin længderetning, således at trekantens sidelængde vokser. Tiden t = 0
+defineres derved, at det andet ledningsstykke til dette tidspunkt er præcis sammen-
+faldende med hjørnet i det første. Der antages at være perfekt elektrisk kontakt mellem
+de to ledningsstykker, således at trekanten danner en strømløkke. Ledningsstykkernes
+elektriske modstand pr. længdeenhed er r. Situationen er vist på figuren nedenfor, hvor
+magnetfeltet peger ind i papiret, og hvor positiv omløbsretning er angivet.
+
+
+
+                                   l           ⊗B
+
+                                                               !
+                                        l      v
+
+                                   l                         positiv
+                                                          omløbsretning
+                                   vt
+  a) Demonstrér, at sidelængden i trekanten som funktion af tiden er l = √23 vt. Eftervis
+     dernæst, at størrelsen af den elektromotoriske kraft i strømløkken er E = √23 Bv 2 t.
+  b) Opskriv et udtryk for modstanden, R, i strømløkken. Bestem dernæst strømmen, I,
+     der løber i løkken, og eftervis derved, at denne er uafhængig at tiden. Argumentér
+     endelig for retningen af strømmen.
+  c) Bestem størrelsen af den tidsafhængige kraft, der kræves for at opretholde led-
+     ningsstykkets konstante hastighed.
+  d) Bestem energien, der afsættes i ledningsstykkerne i form af varme i tidsrummet fra
+     t = 0 til t = T .
+
+                                  Opgavesættet slut
+                                                                              Side 1 af 4 sider
+
+
+KØBENHAVNS UNIVERSITET
+NATURVIDENSKABELIG BACHELORUDDANNELSE
+Skriftlig prøve i EM1 (Elektromagnetisme), fredag d. 8. november 2024
+Opgavesættet består af 6 opgaver med tilsammen 14 spørgsmål.
+
+
+Praktiske forhold
+
+  • Alle spørgsmål vægtes ens i bedømmelsen;
+  • Alle normale hjælpemidler må anvendes, inklusive computer (uden netadgang).
+
+Oplysning
+
+I eksamensættet benyttes koordinatsystemer som defineret i kursets lærebog (Griﬀiths):
+  • Kartesiske koordinater (x, y, z) med basisvektorer x̂, ŷ, ẑ;
+  • Cylindriske koordinater (s, φ, z) med basisvektorer ŝ, φ̂, ẑ;
+  • Sfæriske koordinater (r, θ, φ) med basisvektorer r̂, θ̂, φ̂.
+
+
+
+
+Opgave 1
+
+Fire punktladninger er anbragt i xy-planet af et koordinatsystem som vist på figuren
+til venstre. To ladninger, q, er anbragt i punkterne (a, a, 0) hhv. (−a, −a, 0), mens to
+ladninger, −q, er anbragt i punkterne (a, −a, 0) hhv. (−a, a, 0).
+                           y
+                                                             y
+                      a        a
+             −q   !                !   q
+                                       a
+                                            x                    a
+                                                                      !   q
+                                       a
+                                                                          a
+                                                                                    x
+              q   !                !   −q
+
+
+  a) Bestem kraften, F, på ladningen q i punktet (a, a, 0). Resultatet bedes givet på
+     vektorform.
+Der betragtes derefter situationen illustreret på figuren til højre. En punktladning, q, er
+anbragt i punktet (a, a, 0) i det vinkelrette hjørne dannet af to ledende planer af uendelig
+udstrækning. De to planer ligger henholdsvis i planerne udstrakt af xz- og yz-akserne,
+og står altså vinkelret på figurens plan. Systemet af de to planer har potentialet nul.
+  b) Argumentér for, at resultatet fundet under a) også er gyldigt for denne situation.
+                                                                     Side 2 af 4 sider
+
+
+Opgave 2
+
+En uendelig lang, ladet cylinder med radius a ligger langs z-aksen. Et udsnit er vist på
+figuren. I området s < a er volumenladningstætheden givet ved
+
+                                            ρ(s) = αs2 ,
+
+hvor α er en positiv konstant, og s er afstanden til z-aksen. Der er vakuum i området
+s > a, og den dielektriske permitivitet er overalt #0 .
+
+                                    a                          z
+
+
+
+  a) Bestem den elektriske ladning, Q(s), som er indeholdt i et cylinderformet område
+     omkring z-aksen med længde L og radius s, hvor s ≤ a.
+  b) Bestem retningen og størrelsen af det elektriske felt, E(s), i områderne s < a og
+     s > a.
+
+Opgave 3
+
+Et meget langt metalbånd med bredde w og forsvindende tykkelse bærer strømmen I i sin
+længderetning. Strømmen er jævnt fordelt over båndet. Et tværsnit er vist på figuren,
+hvor båndets længderetning og dermed strømmen løber langs z-aksen (ud af papirets
+plan), og båndets bredderetning (vist i blåt) ligger langs x-aksen fra x = 0 til x = w.
+Også afsat på figuren er et punkt A, som ligger i båndets plan i afstanden b fra båndets
+nærmeste kant.
+                          y
+                                I       "           b
+                                                           !
+
+
+                                                               x
+                              dx              w            A
+
+
+Magnetfeltet i punktet A ønskes undersøgt:
+  a) Bestem feltets retning og styrke.
+     Vink: Båndet kan betragtes som en sum af uendelig mange uendeligt tynde (dx)
+     bidrag.
+  b) Undersøg grænsen, hvor w er forsvindende i forhold til b (w # b): i) anfør først
+     (med fysikargumenter) det forventede tilnærmede udtryk for feltstyrken i denne
+     grænse; ii) vis dernæst matematisk, at det under a) fundne eksakte udtryk til
+     laveste orden reducerer til det forventede i den anførte grænse.
+                                                                            Side 3 af 4 sider
+
+
+Opgave 4
+
+En elektrisk modstand er lavet af et cylinderformet materiale, indsat mellem to perfekt
+ledende plader. Materialet i modstanden har tværsnitsareal A, længde d, dielektriske
+permitivitet !0 , og en stedafhængige konduktivitet σ(x) = 1/bx, hvor b er en positiv
+konstant, og x beskriver afstanden fra materialets ene ende. Der påføres en spændings-
+forskel V0 over modstanden. Situationen er vist på figuren.
+                        V = V0                                   V =0
+                                              J
+                          I                       σ = σ(x)        I
+
+                               0                      d x
+  a) Vis, at strømtætheden i modstandens materiale er J = 2V0 /bd2 . Benyt dette re-
+     sultat til at finde systemets samlede modstand, R.
+  b) Angiv, E(x), styrken af det elektriske felt som funktion af x.
+     Benyt det fundne udtryk til at bestemme overfladeladningstæthederne σ1 og σ2 i
+     grænserne (ved hhv. x = 0 og x = d) mellem de to perfekte ledere og modstandens
+     materiale. Benyt ligeledes udtrykket, til at bestemme volumenladningstætheden
+     ρ(x) i materialet.
+
+Opgave 5
+
+Tre identiske, flade, cirkulære strømkredse, A, B, og C, med radius a ligger alle parallelt
+med xy-planet i et koordinatsystem. Som vist på figuren ligger A (blå) med centrum
+i origo, B (grøn) med centrum i punktet (0, 0, b) og C (rød) med centrum i (0, b, 0).
+Kredsenes dimensioner er langt mindre end afstanden mellem dem, altså a ! b. Kredsene
+har elektrisk modstand R, og deres positive omløbsretning er angivet med pile på figuren.
+                                     z
+                               B
+                                          !
+
+
+
+
+                                     2a
+
+                           b
+
+                                     2a                          2a
+                                                                        y
+                                          !                  !
+
+
+
+
+                    x            A          b              C
+  a) Vis under betingelsen a ! b, at den gensidige induktans mellem kredsene A og B
+     approksimativt er givet ved
+                                              µ0 πa4
+                                      MAB =          .
+                                               2b3
+  b) Bestem, MAC , den gensidige induktans mellem kredsene A og C.
+En tidsafhængig strøm løber i A. Til et tidspunkt er denne voksende, dI/dt > 0.
+  c) Bestem retning og størrelse af de derved inducerede strømme, IB og IC , i B og C.
+                                                                         Side 4 af 4 sider
+
+
+Opgave 6
+
+Der betragtes en spole af form som en toroide med den gennemsnitlige radius R. Spolen
+har N tætsiddende vindinger, som bærer strømmen I i en retning, som vist på figuren.
+Vindingerne er vundet omkring en kerne af blødt jern, et ferromagnetisk materiale, der,
+som en tilnærmelse, her betragtes som et lineært medie med den konstante magnetisk
+permeabilitet µ.
+
+
+
+
+     Figuren er alene illustrativ: I virkeligheden ligger vindingerne langt tættere end
+     vist. Den grønne markering vedrører senere spørgsmål og har ingen relevans for
+     spørgsmål a).
+
+I det følgende ønskes undersøgt magnetfeltet ved spolens gennemsnitlige radius, R.
+  a) Bestem retningen og styrken af H-feltet og dernæst af B-feltet i jernkernen.
+Der dannes nu et smalt gab i jernkernen, markeret med grønt på figuren. Dette sker
+uden at påvirke vindingerne. Gabets vidde, d, udgør brøkdelen ! af spolens omkreds,
+altså d = ! · 2πR, hvor ! ! 1. Det antages, at der kan ses bort fra randeffekter, der
+måtte opstå i forbindelse med gabet.
+   b) Argumentér for, at B-feltet må have samme styrke i gabet som i jernet, Bg = Bj .
+      Benyt dette forhold til at finde forholdet mellem styrken af H-feltet i gabet og i
+      jernet, Hg /Hj .
+                                                    !
+Resultatet fra b) sammenholdt med værdien af H · dl tillader at bestemme B-feltets
+styrke i gabet til
+                                              B0
+                                   Bg =                  ,
+                                         (1 − !) µµ0 + !
+hvor B0 angiver feltstyrken, der ville have været i spolen uden jernkernen.
+Som et eksempel benyttes følgende værdier: R = 23 cm, N = 620, I = 8.5 A, µ = 3000 µ0 ,
+og d = 6,0 mm.
+  c) Beregn B0 og faktoren, hvormed feltet i gabet forøges på grund af tilstedeværelsen
+     af jernkernen.
+
+                                   Opgavesættet slut
+                                                                      Side 1 af 4 sider
+
+
+KØBENHAVNS UNIVERSITET
+NATURVIDENSKABELIG BACHELORUDDANNELSE
+Skriftlig prøve i EM1 (Elektromagnetisme), fredag d. 31. januar 2025
+Opgavesættet består af 6 opgaver med tilsammen 14 spørgsmål.
+
+
+Praktiske forhold
+
+  • Alle spørgsmål vægtes ens i bedømmelsen;
+  • Alle normale hjælpemidler må anvendes, inklusive computer (uden netadgang).
+
+Oplysning
+
+I eksamensættet benyttes koordinatsystemer som defineret i kursets lærebog (Griﬀiths):
+  • Kartesiske koordinater (x, y, z) med basisvektorer x̂, ŷ, ẑ;
+  • Cylindriske koordinater (s, φ, z) med basisvektorer ŝ, φ̂, ẑ;
+  • Sfæriske koordinater (r, θ, φ) med basisvektorer r̂, θ̂, φ̂.
+
+
+
+
+Opgave 1
+
+I et kubisk område af rummet med sidelængde L = 20,0 m er det elektriske felt givet ved
+E = (a + bx) x̂, hvor a = 500 V/m, og b = 50,0 V/m2 . Permitiviteten i området er #0 .
+                                          y
+
+
+
+
+                                                       x
+                                     L
+                                                   L
+                                 z        L
+
+Besvar følgende spørgsmål såvel symbolsk som numerisk.
+  a) Bestem forskellen i elektrisk potential mellem endefladen ved x = L og endefladen
+     ved x = 0. Hvilken af endefladerne har det højeste potential?
+  b) Bestem ladningstætheden, ρ = ρ(x, y, z), i området.
+                                                                     Side 2 af 4 sider
+
+
+Opgave 2
+
+En massiv metalkugle med radius a bærer ladningen Q1 . Koncentrisk med kuglen er
+anbragt en elektrisk ledende kugleskal med indre radius b og ydre radius c, a < b < c.
+Kugleskallen bærer ladningen Q2 . Der er vacuum i områderne a < r < b og r > c.
+
+
+
+                                                              Q2
+                                             Q1
+                                                  a
+                                     c
+                                                      b
+
+
+
+  a) Bestem det elektriske felt i hvert af områderne, r < a, a < r < b, b < r < c, r > c.
+     Angiv resultaterne på vektorform.
+  b) Beskriv, hvordan ladningerne fordeler sig, og benyt dette til at bestemme ladings-
+     tæthederne, σa , σb , σc , på de tre overflader.
+  c) Bestem den elektrostatiske energi af systemet.
+
+Opgave 3
+
+En ladning er fordelt med konstant overfladetæthed σ på en flad ring med indre radius
+a og ydre radius b. Et punkt P ligger på ringens symmetriakse i højden z over ringen.
+Potentialet sættes til nul i det uendeligt fjerne. Permitiviteten er "0 .
+                                              !
+                                                  P
+                                                  z
+
+                                         a                b
+                                σ
+
+
+  a) Vis at det elektriske potential i punktet P er
+                                      σ !" 2         "        #
+                            V (z) =         b + z 2 → a2 + z 2 .
+                                     2"0
+
+  b) Bestem retningen og styrken, E(z), af det elektriske felt i punktet P. Undersøg
+     tilfældet a = 0 og b → ∞ (for fast z) og kommentér på resultatet: stemmer
+     resultatet overens med forventningen?
+     Vink til anden del af spørgsmålet: Skulle man eventuelt ikke være kommet frem
+     til et (korrekt) udtryk for E(z), kan man her blot argumentere for, hvad man
+     forventer feltstyrken er i det beskrevne tilfælde.
+                                                                          Side 3 af 4 sider
+
+
+Opgave 4
+
+En ladet partikel, Q = 6,00 µC, bevæger sig med hastigheden v = vx x̂ + vy ŷ + vz ẑ i
+et magnetfelt B = Bx x̂ + By ŷ + Bz ẑ. Til et tidspunkt har hastighedskomponenterne
+værdier vx = 3,00, vy = 4,00, og vz = →3,00 (målt i m/µs), mens feltkomponenterne har
+værdier Bx = 4,00, By = 3,00, og Bz = 2,00 (målt i Tesla).
+  a) Opskriv det symbolske udtryk for kraften F på partiklen. Indsæt derefter talvær-
+     dier, og benyt dette til at bestemme den aktuelle kraft. Bestem endelig størrelsen
+     af kraften.
+Oplysning: Symbolet µ angiver her, som generelt, den numeriske værdi 10−6 . Således er
+for eksempel 1 µC = 1 × 10−6 C.
+
+Opgave 5
+
+Der undersøges tre forskellige tilfælde af elektriske strømme, som alle løber i en retning
+parallel med et koordinatsystems z-akse, altså ud af planet på den nedenfor viste figur.
+Strømlederne, der antages uendeligt lange, er angivet med blåt på figuren. I alle tre
+tilfælde befinder samtlige strømledere sig i afstanden a fra koordinatsystemets z-akse.
+
+ a)             y               b)               y               c)                y
+                                                     !
+                                                         I/5
+                                     I/5   !
+
+
+                                                         a                             a
+                          x                45◦               x                             x
+       !                               !
+
+
+      I     a         O          I/5                     O                             O
+                                           45◦
+
+                                     I/5   !
+
+
+                                                     !
+                                                         I/5          !
+                                                                          dI = I
+
+
+I de tre tilfælde søges magnetfeltet på koordinatsystemets z-akse bestemt. Resultatet
+bedes givet på vektorform.
+De tre tilfælde er:
+  a) I en enkelt tynd leder løber strømmen I. Lederen er anbragt i afstanden a fra
+     z-aksen, således at den skærer xy-planet i et punkt på den negative x-akse.
+  b) I hver af fem tynde ledere løber strømmen I/5. De fem ledere, alle parallelle med
+     z-aksen, er anbragt således, at de skærer xy-planet i fem punkter beliggende på en
+     cirkelbue omkring z-aksen med radius a i positioner bestemt ved vinkler φ = →90◦ ,
+     →45◦ , 0◦ , 45◦ og 90◦ relativt til den negative x-akse.
+  c) Den totale strøm I er jævnt fordelt over en tyndt ledende folie, der er formet som
+     en halvcylinder med radius a. Halvcylinderen har centrum på z-aksen og spænder
+     anden og tredje kvadrant af xy-systemet.
+                                                                     Side 4 af 4 sider
+
+
+Opgave 6
+
+En cirkulær spole med N = 12 vindinger og radius r = 0,20 m ligger i xy-planet af et
+koordinatsystem som illustreret på figuren. Spolen har ringe udstrækning i z-retningen.
+De to ender af ledningen, der danner spolen, er forbundne med hinanden, således at
+der dannes et kredsløb. Kredsens modstand er R = 1,2 Ω. Et tidsafhængigt, homogent
+magnetfelt
+       ! er rettet efter" z-aksen, altså ud af papirets plan. Magnetfeltet er givet ved
+B(t) = a(1 → e−t/τ ) + b ẑ, hvor a = 5,0 T og b = →2,0 T er konstanter, og hvor tids-
+konstanten er τ = 60 s. Udelukkende ikke-negative tider, t ≥ 0, betragtes.
+
+                                            y
+
+
+
+                                       r        B(t)
+                                                         x
+
+
+
+
+  a) Bestem retningen og størrelsen af den elektromotoriske kraft, E(t), der induceres i
+     spolen til tiden t. Angiv svaret symbolsk.
+  b) Bestem energien, der afsættes i spolen i tidsrummet fra T0 = 0 til T = 55 s. Angiv
+     svaret såvel symbolsk som numerisk.
+Spolens vindinger er lavet af aluminium, som har resistiviteten ρ = 2,8 × 10−8 Ω · m.
+  c) Bestem tværsnitsarealet A af lederen, som spolen er vundet af. Angiv svaret såvel
+     symbolsk som numerisk.
+
+                                 Opgavesættet slut
+                                                                            Side 1 af 4 sider
+
+
+KØBENHAVNS UNIVERSITET
+NATURVIDENSKABELIG BACHELORUDDANNELSE
+Skriftlig prøve i EM1 (Elektromagnetisme), fredag d. 7. november 2025
+Opgavesættet består af 5 opgaver med tilsammen 14 spørgsmål.
+
+
+Praktiske forhold
+
+  • Alle spørgsmål vægtes ens i bedømmelsen;
+  • Alle normale hjælpemidler må anvendes, inklusive computer (uden netadgang).
+
+Oplysning
+
+I eksamensættet benyttes koordinatsystemer som defineret i kursets lærebog (Griﬀiths):
+  • Kartesiske koordinater (x, y, z) med basisvektorer x̂, ŷ, ẑ;
+  • Cylindriske koordinater (s, φ, z) med basisvektorer ŝ, φ̂, ẑ;
+  • Sfæriske koordinater (r, θ, φ) med basisvektorer r̂, θ̂, φ̂.
+
+
+
+
+Opgave 1
+
+Der betragtes to punktladninger, A og B, begge med ladning q. I det indlagte koordinat-
+system anbringes A i punktet ( a2 , a2 , 0), og B i punktet (− a2 , a2 , 0).
+
+          a)              y                             b)              y
+                      a       a                                     a       a
+            B !                           A               B !                           A
+                      2       2                                     2       2
+                                      !                                             !
+
+                  q               q       a
+                                                                q               q       a
+                                          2                                             2
+                                              x                                             x
+
+
+
+Der betragtes først situationen, illustreret på figuren til venstre, hvor de to punkladninger
+er alene i opstillingen.
+  a) Bestem kraften på ladningen A. Resultatet bedes givet på vektorform, F = Fx x̂ +
+     Fy ŷ + Fz ẑ. Bestem også den elektrostatiske energi af ladningssystemet.
+Opstillingen ændres dernæst ved, at der indføres en ledende metalplade i xz-planet, som
+antydet på figuren til højre. Pladens dimensioner kan anses for at være uendelige.
+  b) Bestem igen kraften på ladningen A. Benyt igen formen F = Fx x̂ + Fy ŷ + Fz ẑ.
+                                                                       Side 2 af 4 sider
+
+
+Opgave 2
+
+I et sfærisk område med radius R er det elektrisk potential givet ved V (r) = −a ln(r/R),
+hvor a er en konstant og r er afstanden til områdets midtpunkt.
+  a) Bestem det elektriske felt, E(r), i ethvert punkt, 0 < r < R, i området.
+  b) Bestem den elektriske ladningstæthed, ρ(r), i ethvert punkt, 0 < r < R, i området.
+Det opgives, at a = 134 V og R = 5,00 m.
+  c) i) Bestem den totale ladning, Q, indeholdt i området. Resultatet bedes angivet
+     såvel symbolsk som numerisk. ii) Bestem styrken af det elektriske felt numerisk i
+     punktet P = (xP , yP , zP ), hvor xP = yP = 1,00 m, og zP = 0,00 m.
+
+Opgave 3
+
+En tynd ledende kugleskal med radius 2a er anbragt koncentrisk med en ledende kugle
+med radius a. Der anbringes en ladning Q på kugleskallen og en ladning q på kuglen.
+Der er vakuum i området uden for kugleskallen. Nulpunktet for det elektriske potential
+sættes i det uendelige.
+
+                                                          Q
+                                       2a
+                                                  a
+                                              !
+
+
+
+
+                                                      q
+
+
+
+Det ønskes at potentialet af kuglen er nul.
+  a) I første omgang er der vakuum i området mellem kugle og kugleskal. Bestem q,
+     udtryk ved de øvrige opgivne størrelser, således, at potentialet af kuglen bliver nul.
+  b) Der indføres nu et dielektrikum med dielektricitetskonstant $r i området mellem
+     kugle og kugleskal. Bestem igen q således, at potentialet af kuglen bliver nul.
+                                                                             Side 3 af 4 sider
+
+
+Opgave 4
+
+Problemstillinger med en tilsyneladende kompliceret geometri kan i visse tilfælde be-
+skrives som en superposition af flere bestanddele, hvor hver bestanddel har en simpel
+geometri, hvis løsning let lader sig bestemme. Det sammensatte tilfælde kan da løses via
+superpositionsprincippet.
+Vi starter med at betragte en simpel geometri, som senere skal benyttes til at bygge
+et sammensat tilfælde. Den simple geometri, illustreret i tværsnit på figuren til venstre,
+består af en lang, lige leder med radius R, som bærer den uniforme strømtæthed J
+parallel med aksen. På figuren peger strømmen ud af papirets plan.
+                                                                 y
+
+                   R                                   R                 R
+                       !                                   !
+                                                               d d   !
+                                                                                 x
+                           J                          J                  J
+                           "                          "                  ⊗
+
+
+Magnetfeltet efterspørges som funktion af afstanden, s, til lederens akse.
+  a) Bestem magnetfeltets retning og styrke, B(s), såvel inden i, s < R, som uden for
+     lederen, s > R. For s < R skal det eftervises, at feltet har styrken B(s) = ks, hvor
+     k er en konstant, som ønskes fastlagt.
+Et tværsnit af en lang, lige, todelt leder er vist på figuren til højre. Lederen kan tænkes
+sammensat af to cylindriske halvdele, hver med radius R, som er forskudt med afstanden
+2d i forhold til hinanden (d < R), og hvor området, hvor de to cylindre overlapper, er
+fjernet, hvorved der opstår et hulrum med et linseformet tværsnit. Der er indlagt et
+koordinatsystem, således at de to cylindre har akser på linjer bestemt ved henholdsvis
+(x, y, z) = (−d, 0, z) og (x, y, z) = (d, 0, z). Overalt i lederen er strømtætheden J. I den
+venstre del (markeret med rødt) løber strømmen ud af papirets plan; i den højre del
+(markeret med blåt) løber strømmen ind i papirets plan.
+Magnetfeltet ønskes bestemt forskellige steder inde i hulrummet. Resultaterne bedes
+givet på vektorform i kartesiske koordineter, B = Bx x̂ + By ŷ + Bz ẑ.
+  b) Bestem magnetfeltet på linjen bestemt ved (x, y, z) = (0, 0, z).
+  c) Bestem magnetfeltet på linjen bestemt ved (x, y, z) = (0, b, z), hvor b er en konstant
+     koordinat valgt således, at linjen ligger inde i hulrummet.
+                                                                       Side 4 af 4 sider
+
+
+Opgave 5
+
+To lange, parallelle metalskinner med indbyrdes afstand d ligger i det vandrette plan.
+Når en kontakt, K, lukkes, forbindes skinnerne med hinanden via et batteri (konstant
+spændingsforskel V ) og en resistor (modstand R), som vist på figuren. Et konstant og
+homogent magnetfelt, B, er rettet opad (og altså ud af figurens plan). En metalstang
+med masse m hviler på skinnerne og står vinkelret på disse. Metalstangen er frit bevæ-
+gelig langs skinnerne med forsvindende friktion, og der er til enhver tid elektrisk kontakt
+mellem stang og skinner. Der kan ses bort fra elektrisk modstand i skinnerne og i me-
+talstangen.
+
+
+
+                                                                             R
+                                                                       +
+                       d                                  B            −     V
+
+                                                                             K
+
+
+
+Kontakten lukkes til tiden t = 0, hvorefter der vil løbe en strøm gennem kredsløbet.
+Dette vil sætte stangen i bevægelse.
+  a) Angiv med argumenter stangens bevægelsesretning. Angiv dernæst stangens acce-
+     leration, a0 , til tiden t = 0, umiddelbart efter strømmen er sluttet.
+  b) Hvis man forestiller sig, at bevægelsen kan fortsætte i lang tid, vil stangen opnå en
+     konstant, asymptotisk hastighed, v∞ . Forklar hvorfor dette er tilfældet, og hvorfor
+     altså stangens bevægelse ikke vil fortsætte med konstant acceleration. Angiv v∞ .
+  c) Opskriv en differentialligning, som stangens hastighed skal opfylde. Bestem et ud-
+     tryk for stangens hastighed som funktion af tiden, v(t).
+  d) Bestem den totale energimængde, batteriet vil have afgivet når stangen har opnået
+     den asymptotiske hastighed.
+
+                                   Opgavesættet slut
+
+                                                                             Mogens Dam
+                                                                              Side 1 af 3 sider
+
+
+KØBENHAVNS UNIVERSITET
+NATURVIDENSKABELIG BACHELORUDDANNELSE
+Skriftlig prøve i EM1 (Elektromagnetisme), fredag d. 30. januar 2026
+Opgavesættet består af 5 opgaver med tilsammen 14 spørgsmål.
+
+
+Praktiske forhold
+
+  • Alle spørgsmål vægtes ens i bedømmelsen;
+  • Alle normale hjælpemidler må anvendes, inklusive computer (uden netadgang).
+
+Oplysning
+
+I eksamensættet benyttes koordinatsystemer som defineret i kursets lærebog (Griﬀiths):
+  • Kartesiske koordinater (x, y, z) med basisvektorer x̂, ŷ, ẑ;
+  • Cylindriske koordinater (s, φ, z) med basisvektorer ŝ, φ̂, ẑ;
+  • Sfæriske koordinater (r, θ, φ) med basisvektorer r̂, θ̂, φ̂.
+
+Opgave 1
+
+Der betragtes to elektrostatiske tilfælde, A og B, som vist på figuren.
+
+        A)              y                           B)                y
+             +q   !          !   −q
+                                                       +q                         −q
+                      a a                                                 a
+               60◦          60◦       x                                                x
+                        O                                             O
+
+Først betragtes tilfældet A, hvor to punktladninger, +q og −q, begge er anbragt i xy-
+planet i det indlagte koordinatsystem i afstanden a fra begyndelsespunktet O. Den ne-
+gative ladning, −q, ligger i første kvadrant i en retning, der danner vinkelen 60◦ med
+den positive x-akse; den positive ladning, +q, ligger i anden kvadrant i en retning, der
+danner vinkelen 60◦ med den negative x-akse.
+  a) Bestem det elektriske felt i O. Resultatet bedes angivet på vektorform, E = Ex x̂ +
+     Ey ŷ + Ez ẑ. Bestem også den elektrostatiske energi, W , af ladningssystemet.
+Dernæst betragtes tilfældet B, hvor en ladningsfordeling i xy-planet danner en tynd
+halvcirkel med centrum i O og radius a. Halvcirklen strækker sig over første og anden
+kvadrant, hvor ladningen af den del, der ligger i første kvadrant, er −q, og ladningen
+af den del, der ligger i anden kvadrant, er +q. Inden for hver kvadrant er ladningen
+uniformt fordelt langs cirkelbuen.
+  b) Bestem det elektriske felt i O. Angiv igen resultatet på vektorform.
+Begge systemer A og B udgør elektriske dipoler.
+  c) Bestem det elektriske dipolmoment, pA og pB , i de to tilfælde.
+                                                                         Side 2 af 3 sider
+
+
+Opgave 2
+
+I almindelig handel kan man købe en kraftig kapacitor med en kapacitans på C = 91 mF.
+Rent fysisk er der tale om en større komponent med dimensioner omtrent som en øldåse.
+Det vides ikke præcis hvordan kapacitoren er opbygget, men lad os her som illustration
+antage, at der er tale om en pladekapacitor (som så på en eller anden måde må være
+rullet sammen inde i dåsen). Lad os yderligere antage, at de to plader er adskildt af
+et meget tyndt lag, med tykkelse δ = 0,100 µm, af aluminiumsoxid, der virker som et
+dielektrikum med dielektricitetskonstant $r = 9,6.
+  a) Bestem under disse antagelser arealet, A, af pladekapacitoren.
+Ved at forbinde kapacitoren med en spændingskilde oplades kapacitoren til den bærer
+ladningen Q0 = 5,7 C, hvorefter spændingskilden fjernes.
+  b) Beregn den tilsvarende spænding, V0 , over kapacitoren. Beregn også den opmaga-
+     sinerede energi, W0 .
+Den opladede kapacitor indsættes i et kredsløb med en modstand,
+R = 0,25 Ω, som vist skematisk på diagrammet til højre. Til tiden                       R
+t = 0 sluttes kontakten, K, hvorefter kapacitoren aflades. Der kan
+ses bort fra enhver form for selvinduktans i kredsen.                         K
+                                                                                  +Q0
+  c) Opskriv en differentialligning for ladningen, Q(t), på kapaci-
+                                                                          C
+     toren. Bestem et symbolsk udtryk for strømmen som funktion                   −Q0
+     af tiden, I(t). Bestem den numeriske værdi af strømmen, I0 ,
+     til tiden t = 0. Bestem ligeledes tiden T (symbolsk og nume-
+     risk), hvor strømmen er faldet til 1% af startværdien.
+I praksis består kredsen af kapacitor og kontakt, som beskrevet ovenfor, samt af to
+lange, tynde, parallelle stænger. Disse komponenter er forbundne via fleksible ledninger,
+som angivet med rødt på illustrationen nedenfor. Stængerne med længde l = 83 cm og
+indbyrdes afstand d = 5,2 cm ligger på et bord. Kredsens samlede modstand har samme
+værdi, R, som i situationen ovenfor.
+
+
+
+
+                   K
+                       +Q0         d
+               C
+                       −Q0
+                                                l
+
+
+I det følgende kan der ses bort fra magnetiske effekter produceret af de fleksible ledninger,
+ligesom der kan ses bort fra randeffekter ved enden af de parallelle stænger. Stængerne
+antages endvidere at bevare deres placering under afladningen af kapacitoren.
+  d) Angiv med argumenter retningen af kraften hvormed de to stænger påvirker hin-
+     anden under afladningen af kapacitoren. Bestem dernæst et symbolsk udtryk for
+     denne krafts størrelse som funktion af tiden, F (t).
+                                                                         Side 3 af 3 sider
+
+
+Opgave 3
+
+En cirkulær løkke med radius S ligger i xy-planet af et koordinatsystem med centrum i
+origo. I området er der et ikke-homogent, tidsafhængigt magnetfelt, som i cylinderkoordi-
+nater tager formen B(s, φ, t) = ks sin2 (φ) cos(t/T ) ẑ, hvor k og T er positive konstanter.
+Løkken har den elektriske modstand R. Der kan ses bort fra løkkens selvinduktans.
+  a) Bestem den magnetiske flux, Φ0 , gennem løkken til tiden t = 0.
+  b) Fastlæg et udtryk, I(t), for strømmen i løkken som funktion af tiden. Angiv (med
+     argumenter) strømmens retning til tiden t = 5T .
+  c) Bestem varmeenergien afsat i løkken i tidsrummet fra t = 0 til t = 2πT .
+
+Opgave 4
+
+Bestem i følgende tilfælde magnetfeltet B:
+  a) i) Det magnetiske vektorpotential er givet ved A = k(x ŷ − y x̂).
+     ii) Det magnetiske vektorpotential er givet ved A = −k s × ẑ = −ks ŝ × ẑ.
+I begge tilfælde er k en konstant.
+
+Opgave 5
+
+En elektrostatisk opstilling består af en tynd kugleskal med radius R. Det elektriske
+potential på kugleskallen er
+
+                                 V (θ) = 2V0 P2 (cos θ)
+                                       = V0 (3 cos2 θ − 1),
+
+hvor V0 er en konstant, og P2 (cos θ) = (3 cos2 θ−1)/2 er det andet Legendre-polynomium.
+Potentialet er nul i det uendeligt fjerne.
+  a) Argumentér for, at det elektriske potential overalt uden for kugleskallen (r > R)
+     er                                                 ! "3
+                                                2        R
+                            V (r, θ) = V0 (3 cos θ − 1)       .
+                                                         r
+
+  b) Bestem det elektriske potential overalt inden for kugleskallen (r < R).
+  c) Bestem det elektriske felt overalt uden for kugleskallen (r > R). Angiv resultatet
+     på vektorform i polære koordinater, E(r, θ) = Er r̂ + Eθ θ̂ + Eφ φ̂.
+
+                                     Opgavesættet slut
+
+                                                                               Mogens Dam
+

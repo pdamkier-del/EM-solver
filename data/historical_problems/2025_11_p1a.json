@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "id": "2025-11:1a",
+  "status": "executable",
+  "geometry": "plane_images",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 37,
+    "answer": "answers_extracted.txt: 2025-11, Opgave 1, a)"
+  },
+  "given_source": [
+    "Der betragtes to punktladninger, A og B, begge med ladning q. I det indlagte koordinat-\nsystem anbringes A i punktet ( a2 , a2 , 0), og B i punktet (− a2 , a2 , 0).\n\n          a)              y                             b)              y\n                      a       a                                     a       a\n            B !                           A               B !                           A\n                      2       2                                     2       2\n                                      !                                             !\n\n                  q               q       a\n                                                                q               q       a\n                                          2                                             2\n                                              x                                             x\n\n\n\nDer betragtes først situationen, illustreret på figuren til venstre, hvor de to punkladninger\ner alene i opstillingen."
+  ],
+  "wanted_source": [
+    "Bestem kraften på ladningen A. Resultatet bedes givet på vektorform, F = Fx x̂ +\n     Fy ŷ + Fz ẑ. Bestem også den elektrostatiske energi af ladningssystemet.\nOpstillingen ændres dernæst ved, at der indføres en ledende metalplade i xz-planet, som\nantydet på figuren til højre. Pladens dimensioner kan anses for at være uendelige."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "EV",
+        "family": "point_charges",
+        "geometry": "plane_images",
+        "variables": {
+          "charges": [
+            [
+              {
+                "expr": "q"
+              },
+              [
+                {
+                  "expr": "a/2"
+                },
+                {
+                  "expr": "a/2"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ],
+            [
+              {
+                "expr": "q"
+              },
+              [
+                {
+                  "expr": "-a/2"
+                },
+                {
+                  "expr": "a/2"
+                },
+                {
+                  "expr": "0"
+                }
+              ]
+            ]
+          ],
+          "force_on_index": 0
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "F",
+          "U"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "F",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "q^2/(4*pi*epsilon_0*a^2)"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "N"
+    },
+    {
+      "step": "solve",
+      "result": "U",
+      "value": {
+        "expr": "q^2/(4*pi*epsilon_0*a)"
+      },
+      "unit": "J"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

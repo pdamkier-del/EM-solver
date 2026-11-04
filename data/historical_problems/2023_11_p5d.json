@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "id": "2023-11:5d",
+  "status": "executable",
+  "geometry": "falling_ring",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 24,
+    "answer": "answers_extracted.txt: 2023-11, Opgave 5, d)"
+  },
+  "given_source": [
+    "En ring lavet af et ledende materiale falder i tyngdefeltet med farten v i et område\naf rummet, hvor der er et magnetfelt. Magnetfeltets lodrette komponent har formen\nBz = B0 (1 − κz), hvor B0 og κ er positive konstanter, og z-aksen er opadrettet. Ringen\nser altså et magnetfelt, hvis lodrette komponent gennem ringen vokser under faldet, som\nantydet på figuren. Under bevægelsen er ringens plan hele tiden vandret. Ringen har\nmasse m, udspænder et areal A, og dens elektriske modstand er R. Tyndeaccelerationen\nbetegnes g, og der ses bort fra luftmodstand."
+  ],
+  "wanted_source": [
+    "Diskutér, hvad der ville forandre sig i eksperimentet, og hvad der ville være ufor-\n     andret, hvis magnetfeltet i stedet havde været aftagende under faldet, tilsvarende\n     κ < 0."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    },
+    "A": {
+      "positive": true
+    },
+    "g": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "ohm",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1/m",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "A": "m^2",
+    "g": "m/s^2"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "DYN",
+        "family": "feedback",
+        "geometry": "falling_ring",
+        "variables": {
+          "mass": {
+            "expr": "m"
+          },
+          "R": {
+            "expr": "R"
+          },
+          "coupling": {
+            "expr": "-A*B*k"
+          },
+          "voltage": {
+            "expr": "0"
+          },
+          "drive_force": {
+            "expr": "m*g"
+          },
+          "time": {
+            "expr": "t"
+          },
+          "initial_velocity": {
+            "expr": "0"
+          }
+        },
+        "regions": [],
+        "assumptions": [
+          "constant_coefficients",
+          "negligible_self_inductance",
+          "no_friction"
+        ],
+        "wanted": [
+          "v_infinity",
+          "I"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "v_infinity",
+      "value": {
+        "expr": "m*g*R/(A*B*k)^2"
+      },
+      "unit": "m/s"
+    },
+    {
+      "step": "solve",
+      "result": "I",
+      "value": {
+        "expr": "m*g/(A*B*k)*(1-exp(-A^2*B^2*k^2*t/(m*R)))"
+      },
+      "unit": "A"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "Reverseret gradient; positiv hastighed stadig nedad. Strøm vender, dæmpningen er uændret.",
+  "given_values": {},
+  "given_units": {}
+}

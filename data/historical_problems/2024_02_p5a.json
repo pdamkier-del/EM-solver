@@ -1,0 +1,374 @@
+{
+  "schema_version": 1,
+  "id": "2024-02:5a",
+  "status": "executable",
+  "geometry": "expanding_triangle",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 27,
+    "answer": "answers_extracted.txt: 2024-02, Opgave 5, a)"
+  },
+  "given_source": [
+    "Et langt, stift ledningsstykke, der er bukket, så det danner en vinkel på 60◦ , ligger i\net plan vinkelret på et uniformt magnetfelt med styrke B. Et andet ledningsstykke af\nsamme materiale og tværsnit er orienteret således, at det sammen med det første stykke\ndanner en ligesidet trekant. Det andet ledningsstykke trækkes med jævn hastighed, v,\nvinkleret på sin længderetning, således at trekantens sidelængde vokser. Tiden t = 0\ndefineres derved, at det andet ledningsstykke til dette tidspunkt er præcis sammen-\nfaldende med hjørnet i det første. Der antages at være perfekt elektrisk kontakt mellem\nde to ledningsstykker, således at trekanten danner en strømløkke. Ledningsstykkernes\nelektriske modstand pr. længdeenhed er r. Situationen er vist på figuren nedenfor, hvor\nmagnetfeltet peger ind i papiret, og hvor positiv omløbsretning er angivet.\n\n\n\n                                   l           ⊗B\n\n                                                               !\n                                        l      v\n\n                                   l                         positiv\n                                                          omløbsretning\n                                   vt"
+  ],
+  "wanted_source": [
+    "Demonstrér, at sidelængden i trekanten som funktion af tiden er l = √23 vt. Eftervis\n     dernæst, at størrelsen af den elektromotoriske kraft i strømløkken er E = √23 Bv 2 t."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "positive": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    },
+    "r_line": {
+      "positive": true
+    },
+    "T": {
+      "positive": true
+    },
+    "ell": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "r_line": "ohm/m",
+    "T": "s",
+    "ell": "m"
+  },
+  "path": [
+    {
+      "id": "geometry",
+      "bindings": {},
+      "problem": {
+        "domain": "DYN",
+        "family": "algebra",
+        "variables": {
+          "outputs": {
+            "height_residual": {
+              "expr": "ell*sin(pi/3)-v*t"
+            },
+            "area": {
+              "expr": "sqrt(3)*ell^2/4"
+            },
+            "resistance": {
+              "expr": "3*r_line*ell"
+            }
+          },
+          "output_units": {
+            "height_residual": "m",
+            "area": "m^2",
+            "resistance": "ohm"
+          },
+          "solve_for": {
+            "expr": "ell"
+          },
+          "target_values": {
+            "height_residual": {
+              "expr": "0"
+            }
+          },
+          "substitute_results": [
+            "area",
+            "resistance"
+          ]
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    },
+    {
+      "id": "induction",
+      "bindings": {
+        "area_triangle": {
+          "ref": "geometry.at_solution_area"
+        },
+        "R_triangle": {
+          "ref": "geometry.at_solution_resistance"
+        }
+      },
+      "problem": {
+        "domain": "DYN",
+        "family": "faraday",
+        "variables": {
+          "time": {
+            "expr": "t"
+          },
+          "area": {
+            "expr": "area_triangle"
+          },
+          "B_normal": {
+            "expr": "-B"
+          },
+          "R": {
+            "expr": "R_triangle"
+          },
+          "time_bounds": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "T"
+            }
+          ]
+        },
+        "assumptions": [
+          "uniform_normal_B",
+          "negligible_self_inductance"
+        ],
+        "regions": []
+      }
+    },
+    {
+      "id": "reaction",
+      "bindings": {
+        "R_triangle": {
+          "ref": "geometry.at_solution_resistance"
+        }
+      },
+      "problem": {
+        "domain": "DYN",
+        "family": "motional_emf",
+        "variables": {
+          "source": [
+            {
+              "expr": "v*t"
+            },
+            {
+              "expr": "s"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "parameter": {
+            "expr": "s"
+          },
+          "bounds": [
+            {
+              "expr": "-v*t/sqrt(3)"
+            },
+            {
+              "expr": "v*t/sqrt(3)"
+            }
+          ],
+          "v": [
+            {
+              "expr": "v"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "B": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "-B"
+            }
+          ],
+          "time": {
+            "expr": "t"
+          },
+          "R": {
+            "expr": "R_triangle"
+          }
+        },
+        "assumptions": [
+          "negligible_self_inductance",
+          "stationary_return_path"
+        ],
+        "regions": []
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "geometry",
+      "result": "solved_ell",
+      "value": {
+        "expr": "2*v*t/sqrt(3)"
+      },
+      "unit": "m"
+    },
+    {
+      "step": "induction",
+      "result": "EMF",
+      "value": {
+        "expr": "2*B*v^2*t/sqrt(3)"
+      },
+      "unit": "V",
+      "sign": 1
+    },
+    {
+      "step": "induction",
+      "result": "I",
+      "value": {
+        "expr": "B*v/(3*r_line)"
+      },
+      "unit": "A",
+      "sign": 1
+    },
+    {
+      "step": "induction",
+      "result": "W",
+      "value": {
+        "expr": "B^2*v^3*T^2/(3*sqrt(3)*r_line)"
+      },
+      "unit": "J"
+    },
+    {
+      "step": "reaction",
+      "result": "F_external",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "2*B^2*v^2*t/(3*sqrt(3)*r_line)"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "N"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "Trekantens geometri: højde vt, side=2 vt/sqrt3, areal=sqrt3 side²/4. Relationer er eksplicitte geometriinput og kan kontrolleres før fysiktrinene.",
+  "given_values": {},
+  "given_units": {}
+}

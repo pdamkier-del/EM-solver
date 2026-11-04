@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "id": "2022-11:5a",
+  "status": "executable",
+  "geometry": "magnetized_cylinder",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 16,
+    "answer": "answers_extracted.txt: 2022-11, Opgave 5, a)"
+  },
+  "given_source": [
+    "En uendelig lang cylinder med radius R bærer en “indfrosset” magnetisering parallel\nmed cylinderaksen, M = ks2 ẑ, hvor k er en konstant, og s er afstanden til aksen."
+  ],
+  "wanted_source": [
+    "Bestem de bundne strømme såvel på cylinderens overflade, Kb , som inde i cylin-\n     deren, Jb . Som antydet, bedes resultaterne givet på vektorform."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "A/m^3",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "BA",
+        "family": "magnetic_material",
+        "geometry": "magnetized_cylinder",
+        "variables": {
+          "kind": "magnetization",
+          "coordinates": [
+            {
+              "expr": "s"
+            },
+            {
+              "expr": "phi"
+            },
+            {
+              "expr": "z"
+            }
+          ],
+          "system": "cylindrical",
+          "M": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "k*s^2"
+            }
+          ],
+          "H": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "normal": [
+            {
+              "expr": "1"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "surface_substitutions": {
+            "map": [
+              [
+                {
+                  "expr": "s"
+                },
+                {
+                  "expr": "R"
+                }
+              ]
+            ]
+          }
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "J_bound",
+          "K_bound"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "J_bound",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "-2*k*s"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "A/m^2"
+    },
+    {
+      "step": "solve",
+      "result": "K_bound",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "k*R^2"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "A/m"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

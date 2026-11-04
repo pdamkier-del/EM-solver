@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "id": "2026-01:2c",
+  "status": "executable",
+  "geometry": "parallel_plate_RC",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 42,
+    "answer": "answers_extracted.txt: 2026-01, Opgave 2, c)"
+  },
+  "given_source": [
+    "I almindelig handel kan man købe en kraftig kapacitor med en kapacitans på C = 91 mF.\nRent fysisk er der tale om en større komponent med dimensioner omtrent som en øldåse.\nDet vides ikke præcis hvordan kapacitoren er opbygget, men lad os her som illustration\nantage, at der er tale om en pladekapacitor (som så på en eller anden måde må være\nrullet sammen inde i dåsen). Lad os yderligere antage, at de to plader er adskildt af\net meget tyndt lag, med tykkelse δ = 0,100 µm, af aluminiumsoxid, der virker som et\ndielektrikum med dielektricitetskonstant $r = 9,6."
+  ],
+  "wanted_source": [
+    "Opskriv en differentialligning for ladningen, Q(t), på kapaci-\n                                                                          C\n     toren. Bestem et symbolsk udtryk for strømmen som funktion                   −Q0\n     af tiden, I(t). Bestem den numeriske værdi af strømmen, I0 ,\n     til tiden t = 0. Bestem ligeledes tiden T (symbolsk og nume-\n     risk), hvor strømmen er faldet til 1% af startværdien.\nI praksis består kredsen af kapacitor og kontakt, som beskrevet ovenfor, samt af to\nlange, tynde, parallelle stænger. Disse komponenter er forbundne via fleksible ledninger,\nsom angivet med rødt på illustrationen nedenfor. Stængerne med længde l = 83 cm og\nindbyrdes afstand d = 5,2 cm ligger på et bord. Kredsens samlede modstand har samme\nværdi, R, som i situationen ovenfor.\n\n\n\n\n                   K\n                       +Q0         d\n               C\n                       −Q0\n                                                l\n\n\nI det følgende kan der ses bort fra magnetiske effekter produceret af de fleksible ledninger,\nligesom der kan ses bort fra randeffekter ved enden af de parallelle stænger. Stængerne\nantages endvidere at bevare deres placering under afladningen af kapacitoren."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    },
+    "C": {
+      "positive": true
+    },
+    "Q0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "ohm",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "C": "F",
+    "Q0": "C"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "DYN",
+        "family": "rc_transient",
+        "geometry": "parallel_plate_RC",
+        "variables": {
+          "kind": "RC",
+          "time": {
+            "expr": "t"
+          },
+          "R": {
+            "expr": "R"
+          },
+          "C": {
+            "expr": "C"
+          },
+          "Q0": {
+            "expr": "Q0"
+          },
+          "fraction": {
+            "expr": "1/100"
+          }
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "I",
+          "decay_time",
+          "I_initial"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "I",
+      "value": {
+        "expr": "Q0/(R*C)*exp(-t/(R*C))"
+      },
+      "unit": "A"
+    },
+    {
+      "step": "solve",
+      "result": "decay_time",
+      "value": {
+        "expr": "R*C*log(100)"
+      },
+      "unit": "s",
+      "numeric": {
+        "values": {
+          "R": 0.25,
+          "C": 0.091
+        },
+        "value": 0.105,
+        "tolerance": 0.001
+      }
+    },
+    {
+      "step": "solve",
+      "result": "I_initial",
+      "value": {
+        "expr": "Q0/(R*C)"
+      },
+      "unit": "A",
+      "numeric": {
+        "values": {
+          "R": 0.25,
+          "C": 0.091,
+          "Q0": 5.7
+        },
+        "value": 250.55,
+        "tolerance": 0.1
+      }
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {
+    "R": 0.25,
+    "C": 0.091,
+    "Q0": 5.7
+  },
+  "given_units": {
+    "R": "ohm",
+    "C": "F",
+    "Q0": "C"
+  }
+}

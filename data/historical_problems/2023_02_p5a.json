@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "id": "2023-02:5a",
+  "status": "executable",
+  "geometry": "wire_and_rectangular_loop",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 19,
+    "answer": "answers_extracted.txt: 2023-02, Opgave 5, a)"
+  },
+  "given_source": [
+    "En rektangulært strømløkke ligger tæt ved en meget lang, strømførende ledning. Løkken\nog ledningen ligger i samme plan, og to af løkkens sider med længden b er parallelle med\nledningen. De to andre sider har længden h, og løkkens nærmeste side ligger afstanden\na fra ledningen. I ledningen går strømmen I1 .\nSituationen er vist på figuren.\n                                            b\n\n                                                   h\n\n                              I1                   a"
+  ],
+  "wanted_source": [
+    "Vis, at den magnetiske flux gennem løkken kan skrives på formen, Φ = CI1 , hvor C\n     er en konstant, som afhænger af de geometriske størrelser a, b og h samt nødvendige\n     konstanter. Angiv udtrykket for C. Angiv endvidere (med argumenter) retningen\n     af fluxen (ind eller ud af papiret) tilsvarende retningen at strømmen I1 vist på\n     figuren.\nStrømmen i ledningen er en vekselstrøm af formen I1 (t) = I0 cos(ωt), hvor I0 angiver\namplituden, og hvor vinkelfrekvensen ω er så lav, at elektro- og magnetostatiske sam-\nmenhænge kan benyttes (den kvasistatiske grænse)."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "flux",
+      "bindings": {},
+      "problem": {
+        "domain": "DYN",
+        "family": "faraday",
+        "variables": {
+          "time": {
+            "expr": "t"
+          },
+          "flux_integrand": {
+            "expr": "mu_0*I*b/(2*pi*x)"
+          },
+          "bounds": [
+            [
+              {
+                "expr": "x"
+              },
+              {
+                "expr": "a"
+              },
+              {
+                "expr": "a+h"
+              }
+            ]
+          ]
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    },
+    {
+      "id": "mutual",
+      "bindings": {
+        "phi_loop": {
+          "ref": "flux.Phi"
+        }
+      },
+      "problem": {
+        "domain": "DYN",
+        "family": "inductance_energy",
+        "variables": {
+          "flux": {
+            "expr": "phi_loop"
+          },
+          "I": {
+            "expr": "I"
+          },
+          "N": 1,
+          "mutual": true
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "mutual",
+      "result": "M",
+      "value": {
+        "expr": "mu_0*b*log((a+h)/a)/(2*pi)"
+      },
+      "unit": "H"
+    },
+    {
+      "step": "mutual",
+      "result": "M",
+      "value": {
+        "expr": "mu_0*b*log(2)/(2*pi)"
+      },
+      "unit": "H",
+      "subs": {
+        "h": {
+          "expr": "a"
+        }
+      },
+      "sign": 1
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

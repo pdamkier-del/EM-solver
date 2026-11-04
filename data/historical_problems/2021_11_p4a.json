@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "id": "2021-11:4a",
+  "status": "executable",
+  "geometry": "azimuthal_B",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 7,
+    "answer": "answers_extracted.txt: 2021-11, Opgave 4, a)"
+  },
+  "given_source": [
+    "Et magnetfelt danner cirkulære feltlinjer omkring z-aksen i et koordinatsystem. Feltet\ner i cylindriske koordinater givet ved B(r) =  s2 ˆ , hvor  er en positiv konstant."
+  ],
+  "wanted_source": [
+    "Til et tidspunkt bevæger en partikel med ladning q > 0 sig gennem punktet\n     r = x0 x̂ med en hastighed v, som ligger i xy-planet og danner vinklen ↵ med den\n     positive x-akse. Angiv størrelse og retning af den magnetiske kraft F på partiklen."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "T/m^2",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "BA",
+        "family": "lorentz_force",
+        "geometry": "azimuthal_B",
+        "variables": {
+          "q": {
+            "expr": "q"
+          },
+          "v": [
+            {
+              "expr": "v*cos(theta)"
+            },
+            {
+              "expr": "v*sin(theta)"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "B": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "k*a^2"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "E": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ]
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "F"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "F",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "q*k*a^2*v*cos(theta)"
+            }
+          ]
+        ]
+      },
+      "unit": "N"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

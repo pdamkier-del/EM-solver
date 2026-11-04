@@ -1,0 +1,168 @@
+{
+  "total_historical": 154,
+  "method_coverage": 153,
+  "executable_historical_coverage": 153,
+  "correct_executable_coverage": 153,
+  "stable_historical_coverage": 151,
+  "stable_families": [
+    "ampere",
+    "ampere_maxwell",
+    "capacitance",
+    "conductors",
+    "coulomb_integral",
+    "faraday",
+    "feedback",
+    "field_calculus",
+    "gauss_radial",
+    "images",
+    "inductance_energy",
+    "laplace_legendre",
+    "lorentz_force",
+    "magnetic_material",
+    "magnetic_superposition",
+    "motional_emf",
+    "multipole",
+    "point_charges",
+    "polarization",
+    "rc_transient",
+    "resistance",
+    "wire_force"
+  ],
+  "experimental_families": [
+    "biot_savart",
+    "circuit_power",
+    "units"
+  ],
+  "failing_recipes": [],
+  "qualitative_manual": [
+    "2021-06:1b"
+  ],
+  "not_migrated": [],
+  "partial": [],
+  "tests": {
+    "total": 635,
+    "physics_core_and_historical": 470,
+    "historical_end_to_end": 153,
+    "variations": 149,
+    "dimensions": 18,
+    "failures": 0
+  },
+  "implemented_physical_families": 26,
+  "stable_implemented_families": [
+    "ampere",
+    "ampere_maxwell",
+    "capacitance",
+    "conductors",
+    "coulomb_integral",
+    "faraday",
+    "feedback",
+    "field_calculus",
+    "gauss_radial",
+    "images",
+    "inductance_energy",
+    "laplace_legendre",
+    "lorentz_force",
+    "magnetic_material",
+    "magnetic_superposition",
+    "motional_emf",
+    "multipole",
+    "point_charges",
+    "polarization",
+    "rc_transient",
+    "resistance",
+    "wire_force"
+  ],
+  "experimental_implemented_families": [
+    "biot_savart",
+    "circuit_power",
+    "magnetic_dipole_interaction",
+    "units"
+  ],
+  "non_stable_reasons": {
+    "2021-11:3a": [
+      "Runtime: solve: Elektrostatisk rotation"
+    ],
+    "2021-06:5b": [
+      "units: Variationer: 0/2 (LOW)."
+    ]
+  },
+  "per_exam": {
+    "2021-06": {
+      "total": 14,
+      "executable": 13,
+      "correct": 13,
+      "stable": 12,
+      "manual": 1
+    },
+    "2021-11": {
+      "total": 14,
+      "executable": 14,
+      "correct": 14,
+      "stable": 13,
+      "manual": 0
+    },
+    "2022-02": {
+      "total": 14,
+      "executable": 14,
+      "correct": 14,
+      "stable": 14,
+      "manual": 0
+    },
+    "2022-11": {
+      "total": 14,
+      "executable": 14,
+      "correct": 14,
+      "stable": 14,
+      "manual": 0
+    },
+    "2023-02": {
+      "total": 14,
+      "executable": 14,
+      "correct": 14,
+      "stable": 14,
+      "manual": 0
+    },
+    "2023-11": {
+      "total": 14,
+      "executable": 14,
+      "correct": 14,
+      "stable": 14,
+      "manual": 0
+    },
+    "2024-02": {
+      "total": 14,
+      "executable": 14,
+      "correct": 14,
+      "stable": 14,
+      "manual": 0
+    },
+    "2024-11": {
+      "total": 14,
+      "executable": 14,
+      "correct": 14,
+      "stable": 14,
+      "manual": 0
+    },
+    "2025-01": {
+      "total": 14,
+      "executable": 14,
+      "correct": 14,
+      "stable": 14,
+      "manual": 0
+    },
+    "2025-11": {
+      "total": 14,
+      "executable": 14,
+      "correct": 14,
+      "stable": 14,
+      "manual": 0
+    },
+    "2026-01": {
+      "total": 14,
+      "executable": 14,
+      "correct": 14,
+      "stable": 14,
+      "manual": 0
+    }
+  }
+}

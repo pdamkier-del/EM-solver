@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "id": "2025-01:5a",
+  "status": "executable",
+  "geometry": "parallel_wires",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 35,
+    "answer": "answers_extracted.txt: 2025-01, Opgave 5, a)"
+  },
+  "given_source": [
+    "Der undersøges tre forskellige tilfælde af elektriske strømme, som alle løber i en retning\nparallel med et koordinatsystems z-akse, altså ud af planet på den nedenfor viste figur.\nStrømlederne, der antages uendeligt lange, er angivet med blåt på figuren. I alle tre\ntilfælde befinder samtlige strømledere sig i afstanden a fra koordinatsystemets z-akse.\n\n a)             y               b)               y               c)                y\n                                                     !\n                                                         I/5\n                                     I/5   !\n\n\n                                                         a                             a\n                          x                45◦               x                             x\n       !                               !\n\n\n      I     a         O          I/5                     O                             O\n                                           45◦\n\n                                     I/5   !\n\n\n                                                     !\n                                                         I/5          !\n                                                                          dI = I\n\n\nI de tre tilfælde søges magnetfeltet på koordinatsystemets z-akse bestemt. Resultatet\nbedes givet på vektorform.\nDe tre tilfælde er:"
+  ],
+  "wanted_source": [
+    "I en enkelt tynd leder løber strømmen I. Lederen er anbragt i afstanden a fra\n     z-aksen, således at den skærer xy-planet i et punkt på den negative x-akse."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "BA",
+        "family": "magnetic_superposition",
+        "geometry": "parallel_wires",
+        "variables": {
+          "point": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "sources": [
+            {
+              "kind": "wire",
+              "center": [
+                {
+                  "expr": "-a"
+                },
+                {
+                  "expr": "0"
+                },
+                {
+                  "expr": "0"
+                }
+              ],
+              "I": {
+                "expr": "I"
+              }
+            }
+          ]
+        },
+        "regions": [],
+        "assumptions": [
+          "parallel_infinite_sources",
+          "magnetostatic"
+        ],
+        "wanted": [
+          "B"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "B",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "mu_0*I/(2*pi*a)"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "T"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

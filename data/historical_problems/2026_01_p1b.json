@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "id": "2026-01:1b",
+  "status": "executable",
+  "geometry": "dipoles",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 41,
+    "answer": "answers_extracted.txt: 2026-01, Opgave 1, b)"
+  },
+  "given_source": [
+    "Der betragtes to elektrostatiske tilfælde, A og B, som vist på figuren.\n\n        A)              y                           B)                y\n             +q   !          !   −q\n                                                       +q                         −q\n                      a a                                                 a\n               60◦          60◦       x                                                x\n                        O                                             O\n\nFørst betragtes tilfældet A, hvor to punktladninger, +q og −q, begge er anbragt i xy-\nplanet i det indlagte koordinatsystem i afstanden a fra begyndelsespunktet O. Den ne-\ngative ladning, −q, ligger i første kvadrant i en retning, der danner vinkelen 60◦ med\nden positive x-akse; den positive ladning, +q, ligger i anden kvadrant i en retning, der\ndanner vinkelen 60◦ med den negative x-akse."
+  ],
+  "wanted_source": [
+    "Bestem det elektriske felt i O. Angiv igen resultatet på vektorform.\nBegge systemer A og B udgør elektriske dipoler."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "arc",
+      "bindings": {},
+      "problem": {
+        "domain": "EV",
+        "family": "coulomb_integral",
+        "variables": {
+          "kind": "line",
+          "source": [
+            {
+              "expr": "a*cos(theta)"
+            },
+            {
+              "expr": "a*sin(theta)"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "parameters": [
+            {
+              "expr": "theta"
+            }
+          ],
+          "bounds": [
+            [
+              {
+                "expr": "0"
+              },
+              {
+                "expr": "pi"
+              }
+            ]
+          ],
+          "density": {
+            "piecewise": [
+              [
+                {
+                  "expr": "-2*q/(pi*a)"
+                },
+                {
+                  "relation": "lt",
+                  "left": {
+                    "expr": "theta"
+                  },
+                  "right": {
+                    "expr": "pi/2"
+                  }
+                }
+              ],
+              [
+                {
+                  "expr": "2*q/(pi*a)"
+                },
+                true
+              ]
+            ]
+          },
+          "point": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ]
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "arc",
+      "result": "E",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "q/(pi^2*epsilon_0*a^2)"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "V/m"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

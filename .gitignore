@@ -1,0 +1,10 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+.streamlit/secrets.toml
+reports/test-results.xml
+reports/test-results.json
+.local-state/
+wheelhouse/
+reports/feature_freeze.json

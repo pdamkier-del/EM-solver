@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "id": "2021-11:1a",
+  "status": "executable",
+  "geometry": "hemispherical_shell",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 5,
+    "answer": "answers_extracted.txt: 2021-11, Opgave 1, a)"
+  },
+  "given_source": [
+    "En homogen overfladeladningsfordeling med tæthed har form som den ene halvdel af\nen kugleskal med radius R, altså, som vist på figuren, x2 + y 2 + z 2 = R2 , z < 0. En\npunktladning, Q, er placeret i origo, (0, 0, 0).\n\n\n\n\nFølgende spørgsmål bedes besvaret både symbolsk og numerisk, idet det opgives at        =\n46,0 nC/cm2 , Q = 0,75 mC og R = 22,0 cm."
+  ],
+  "wanted_source": [
+    "Bestem Q’s elektrostatiske potentielle energi i feltet fra overfladeladningsfordelingen.\n     Den potentielle energi sættes til nul i det uendeligt fjerne."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "EV",
+        "family": "coulomb_integral",
+        "geometry": "hemispherical_shell",
+        "variables": {
+          "kind": "surface",
+          "source": [
+            {
+              "expr": "R*sin(theta)*cos(phi)"
+            },
+            {
+              "expr": "R*sin(theta)*sin(phi)"
+            },
+            {
+              "expr": "R*cos(theta)"
+            }
+          ],
+          "parameters": [
+            {
+              "expr": "theta"
+            },
+            {
+              "expr": "phi"
+            }
+          ],
+          "bounds": [
+            [
+              {
+                "expr": "pi/2"
+              },
+              {
+                "expr": "pi"
+              }
+            ],
+            [
+              {
+                "expr": "0"
+              },
+              {
+                "expr": "2*pi"
+              }
+            ]
+          ],
+          "density": {
+            "expr": "sigma"
+          },
+          "point": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "test_charge": {
+            "expr": "Q"
+          }
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "U_external",
+          "F"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "U_external",
+      "value": {
+        "expr": "R*sigma*Q/(2*epsilon_0)"
+      },
+      "unit": "J",
+      "numeric": {
+        "values": {
+          "R": 0.22,
+          "sigma": 0.00046,
+          "Q": 7.5e-07
+        },
+        "value": 4.3,
+        "tolerance": 0.1
+      }
+    },
+    {
+      "step": "solve",
+      "result": "F",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "sigma*Q/(4*epsilon_0)"
+            }
+          ]
+        ]
+      },
+      "unit": "N"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "Original-PDF siger microC, ikke det fejlagtigt tekstudtrukne milliC.",
+  "given_values": {
+    "R": 0.22,
+    "sigma": 0.00046,
+    "Q": 7.5e-07
+  },
+  "given_units": {
+    "R": "m",
+    "sigma": "C/m^2",
+    "Q": "C"
+  }
+}

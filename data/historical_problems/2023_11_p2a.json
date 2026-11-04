@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "id": "2023-11:2a",
+  "status": "executable",
+  "geometry": "parallel_sheets",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 22,
+    "answer": "answers_extracted.txt: 2023-11, Opgave 2, a)"
+  },
+  "given_source": [
+    "En elektrisk transmissionslinje (et system til overførsel af en stor elektrisk strøm) består\naf to ledende bånd med længde l og bredde b, som ligger parallelt med hinanden, separeret\nmed afstanden h. Et koordinatsystem er indlagt som vist på figuren. En i lederne jævnt\nfordelt strøm I løber frem gennem den ene leder og tilbage gennem den anden, som\nillustreret på figuren. Det antages, at båndenes bredde er meget større end deres afstand,\nb ≫ h, og at der derfor kan ses bort fra randeffekter. For beregning af magnetfeltet\nomkring systemet anses altså båndene for at have uendelig udstrækning i både x and z.\n                                   y\n                                                    l\n                              b\n                                                                       h\n                                                                           x\n                      z\n\n\nOpgaven bedes løst både symbolsk og numerisk, idet følgende værdier er givet: l =\n400 cm, b = 30,0 cm, h = 1,20 cm, og I = 9,5 kA."
+  ],
+  "wanted_source": [
+    "Bestem (med argumenter) retningen af B-feltet mellem de to ledere. Bestem der-\n     næst feltets styrke i dette område. Hvad er B-feltet over og under transmissions-\n     linjen?"
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "bottom",
+      "bindings": {},
+      "problem": {
+        "domain": "BA",
+        "family": "ampere",
+        "variables": {
+          "kind": "sheet",
+          "K": [
+            {
+              "expr": "-I/b"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "normal": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "1"
+            },
+            {
+              "expr": "0"
+            }
+          ]
+        },
+        "assumptions": [
+          "infinite_current_sheet",
+          "magnetostatic"
+        ],
+        "regions": []
+      }
+    },
+    {
+      "id": "top",
+      "bindings": {},
+      "problem": {
+        "domain": "BA",
+        "family": "ampere",
+        "variables": {
+          "kind": "sheet",
+          "K": [
+            {
+              "expr": "I/b"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            }
+          ],
+          "normal": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "1"
+            },
+            {
+              "expr": "0"
+            }
+          ]
+        },
+        "assumptions": [
+          "infinite_current_sheet",
+          "magnetostatic"
+        ],
+        "regions": []
+      }
+    },
+    {
+      "id": "fields",
+      "bindings": {
+        "B_bottom_p": {
+          "ref": "bottom.B_positive"
+        },
+        "B_bottom_m": {
+          "ref": "bottom.B_negative"
+        },
+        "B_top_p": {
+          "ref": "top.B_positive"
+        },
+        "B_top_m": {
+          "ref": "top.B_negative"
+        }
+      },
+      "problem": {
+        "domain": "BA",
+        "family": "algebra",
+        "variables": {
+          "outputs": {
+            "B_between": {
+              "expr": "B_bottom_p+B_top_m"
+            },
+            "B_above": {
+              "expr": "B_bottom_p+B_top_p"
+            },
+            "B_below": {
+              "expr": "B_bottom_m+B_top_m"
+            }
+          },
+          "output_units": {
+            "B_between": "T",
+            "B_above": "T",
+            "B_below": "T"
+          }
+        },
+        "assumptions": [],
+        "regions": []
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "fields",
+      "result": "B_between",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "-mu_0*I/b"
+            }
+          ]
+        ]
+      },
+      "unit": "T"
+    },
+    {
+      "step": "fields",
+      "result": "B_above",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "T"
+    },
+    {
+      "step": "fields",
+      "result": "B_below",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ]
+        ]
+      },
+      "unit": "T"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

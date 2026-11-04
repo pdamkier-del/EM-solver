@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "id": "2022-11:4a",
+  "status": "executable",
+  "geometry": "rotating_ring_and_disk",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 15,
+    "answer": "answers_extracted.txt: 2022-11, Opgave 4, a)"
+  },
+  "given_source": [
+    "En cirkulær ring bærer en jævnt fordelt volumenladning med tæthed ρ. Båndet, som\nringen er dannet af, har højden h og bredden b. Ringens radius, R, er langt større end\nmaterialbredden, R ≫ b. Ringen sættes til at rotere med vinkelhastigheden ω om sin\nsymmetriakse.\n\n                                                          ω\n\n\n                       h\n\n\n                            b                       R"
+  ],
+  "wanted_source": [
+    "Bestem størrelsen af den elektriske strøm, som ringens rotation giver ophav til.\n     Bestem dernæst retningen og størrelsen af systemets magnetiske dipolmoment, m.\nVi betragter nu en cirkulær skive med radius R og tykkelse h, igen med den jævne\nladningstæthed ρ. Skiven roterer om sin symmetriakse med vinkelhastigheden ω.\n                                                          ω\n\n\n                       h\n\n\n                                                     R"
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "BA",
+        "family": "multipole",
+        "geometry": "rotating_ring_and_disk",
+        "variables": {
+          "charges": [],
+          "transported_charge": {
+            "expr": "2*pi*rho*R*b*h"
+          },
+          "period": {
+            "expr": "2*pi/omega"
+          },
+          "area": {
+            "expr": "pi*R^2"
+          },
+          "normal": [
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "0"
+            },
+            {
+              "expr": "1"
+            }
+          ]
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "circulation_current",
+          "magnetic_dipole"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "circulation_current",
+      "value": {
+        "expr": "rho*omega*R*b*h"
+      },
+      "unit": "A"
+    },
+    {
+      "step": "solve",
+      "result": "magnetic_dipole",
+      "value": {
+        "matrix": [
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "0"
+            }
+          ],
+          [
+            {
+              "expr": "pi*rho*omega*b*h*R^3"
+            }
+          ]
+        ]
+      },
+      "unit": "A*m^2"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

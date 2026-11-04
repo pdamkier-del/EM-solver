@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "id": "2021-06:5b",
+  "status": "executable",
+  "geometry": "cartesian_polynomial",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 3,
+    "answer": "answers_extracted.txt: 2021-06, Opgave 5, b)"
+  },
+  "given_source": [
+    "Vi betragter en kubisk område i rummet, V, defineret ved 0 < x < L, 0 < y < L og\n0 < z < L, hvor L angiver en længde.\nI V er et statisk vektorfelt givet ved\n                                       ⇥                                 ⇤\n                      f (x, y, z) = C · y 2 x̂ + (2xy + z 2 ) ŷ + 2yz ẑ ,\n\nhvor C er en konstant."
+  ],
+  "wanted_source": [
+    "Angiv enheden for C, således at f beskriver et elektrisk felt, E(x, y, z) = f (x, y, z)."
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "EV",
+        "family": "units",
+        "geometry": "cartesian_polynomial",
+        "variables": {
+          "field_unit": "V/m",
+          "coordinate_power": 2
+        },
+        "regions": [],
+        "assumptions": [],
+        "wanted": [
+          "coefficient_unit"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "coefficient_unit",
+      "value": "volt / meter ** 3"
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

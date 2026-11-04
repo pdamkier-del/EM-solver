@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "id": "2021-11:5a",
+  "status": "executable",
+  "geometry": "rotating_cylinder",
+  "source": {
+    "pdf": "data/sources/exams.pdf",
+    "page": 7,
+    "answer": "answers_extracted.txt: 2021-11, Opgave 5, a)"
+  },
+  "given_source": [
+    "En rumlig ladningsfordeling med homogen ladningstæthed ⇢0 har form som en uendelig\nlang cylinder med radius a. I et cylindrisk koordinatsystem med z-aksen sammenfaldende\nmed fordelingens symmetriakse er fordelingen dermed givet ved ⇢(s) = ⇢0 for s < a, og\n⇢(s) = 0 for s > a. Fordelingen roterer som et stift legeme med konstant vinkelhastighed\n ˙ omkring z-aksen."
+  ],
+  "wanted_source": [
+    "Argumentér for, at det resulterende magnetfelt er nul overalt uden for ladnings-\n     fordelingen, altså for s > a. Vis dernæst, at magnetfeltet er B(s) = 12 µ0 ⇢0 ˙ a2 s2 ẑ\n     for s < a.\nVink: Systemet har ligheder med en solenoide.\n\f                                                                     Side 4 af 4 sider"
+  ],
+  "symbols": {
+    "x": {
+      "real": true
+    },
+    "y": {
+      "real": true
+    },
+    "z": {
+      "real": true
+    },
+    "r": {
+      "positive": true
+    },
+    "s": {
+      "positive": true
+    },
+    "a": {
+      "positive": true
+    },
+    "b": {
+      "positive": true
+    },
+    "d": {
+      "positive": true
+    },
+    "R": {
+      "positive": true
+    },
+    "L": {
+      "positive": true
+    },
+    "h": {
+      "positive": true
+    },
+    "q": {
+      "positive": true
+    },
+    "Q": {
+      "positive": true
+    },
+    "I": {
+      "positive": true
+    },
+    "J": {
+      "positive": true
+    },
+    "V": {
+      "positive": true
+    },
+    "B": {
+      "positive": true
+    },
+    "rho": {
+      "positive": true
+    },
+    "sigma": {
+      "positive": true
+    },
+    "t": {
+      "real": true
+    },
+    "omega": {
+      "positive": true
+    },
+    "tau": {
+      "positive": true
+    },
+    "m": {
+      "positive": true
+    },
+    "v": {
+      "positive": true
+    },
+    "epsilon_r": {
+      "positive": true
+    },
+    "theta": {
+      "real": true
+    },
+    "phi": {
+      "real": true
+    },
+    "N": {
+      "positive": true
+    },
+    "k": {
+      "positive": true
+    },
+    "epsilon_0": {
+      "positive": true
+    },
+    "mu_0": {
+      "positive": true
+    }
+  },
+  "symbol_units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "path": [
+    {
+      "id": "solve",
+      "problem": {
+        "domain": "BA",
+        "family": "ampere",
+        "geometry": "rotating_cylinder",
+        "variables": {
+          "kind": "azimuthal_cylinder",
+          "coordinate": {
+            "expr": "s"
+          },
+          "radius": {
+            "expr": "a"
+          },
+          "J_phi": {
+            "expr": "rho*omega*s"
+          }
+        },
+        "regions": [],
+        "assumptions": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic",
+          "B_infinity_zero"
+        ],
+        "wanted": [
+          "B"
+        ]
+      }
+    }
+  ],
+  "expected": [
+    {
+      "step": "solve",
+      "result": "B",
+      "value": {
+        "expr": "3*mu_0*rho*omega*a^2/8"
+      },
+      "unit": "T",
+      "subs": {
+        "s": {
+          "expr": "a/2"
+        }
+      }
+    },
+    {
+      "step": "solve",
+      "result": "B",
+      "value": {
+        "expr": "0"
+      },
+      "unit": "T",
+      "subs": {
+        "s": {
+          "expr": "2*a"
+        }
+      }
+    }
+  ],
+  "orientation": "Fortegn gælder den eksplicit angivne basis og orientering; se direction i Solution.",
+  "notes": "",
+  "given_values": {},
+  "given_units": {}
+}

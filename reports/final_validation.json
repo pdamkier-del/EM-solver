@@ -1,0 +1,245 @@
+{
+  "fingerprint": "6f4fb6aa6497b4ec41e4030f5bbd0372a3d2630d34032065f30ecf1d6837786c",
+  "tests": 635,
+  "failures": 0,
+  "historical_end_to_end": 153,
+  "stable_historical": 151,
+  "stable_physical_families": 22,
+  "benchmarks": {
+    "blind_unseen_after_fixes": {
+      "autonomous": {
+        "total": 20,
+        "passed": 3,
+        "percent": 15.0,
+        "correct_refusals": 1,
+        "silent_wrong": 0,
+        "timeouts": 0
+      },
+      "assisted": {
+        "total": 20,
+        "passed": 20,
+        "percent": 100.0,
+        "correct_refusals": 2,
+        "silent_wrong": 0,
+        "timeouts": 0
+      },
+      "domains": {
+        "EV": {
+          "autonomous": {
+            "total": 8,
+            "passed": 2,
+            "percent": 25.0,
+            "correct_refusals": 0,
+            "silent_wrong": 0,
+            "timeouts": 0
+          },
+          "assisted": {
+            "total": 8,
+            "passed": 8,
+            "percent": 100.0,
+            "correct_refusals": 0,
+            "silent_wrong": 0,
+            "timeouts": 0
+          }
+        },
+        "BA": {
+          "autonomous": {
+            "total": 5,
+            "passed": 0,
+            "percent": 0.0,
+            "correct_refusals": 0,
+            "silent_wrong": 0,
+            "timeouts": 0
+          },
+          "assisted": {
+            "total": 5,
+            "passed": 5,
+            "percent": 100.0,
+            "correct_refusals": 0,
+            "silent_wrong": 0,
+            "timeouts": 0
+          }
+        },
+        "DYN": {
+          "autonomous": {
+            "total": 5,
+            "passed": 0,
+            "percent": 0.0,
+            "correct_refusals": 0,
+            "silent_wrong": 0,
+            "timeouts": 0
+          },
+          "assisted": {
+            "total": 5,
+            "passed": 5,
+            "percent": 100.0,
+            "correct_refusals": 0,
+            "silent_wrong": 0,
+            "timeouts": 0
+          }
+        },
+        "GEN": {
+          "autonomous": {
+            "total": 2,
+            "passed": 1,
+            "percent": 50.0,
+            "correct_refusals": 1,
+            "silent_wrong": 0,
+            "timeouts": 0
+          },
+          "assisted": {
+            "total": 2,
+            "passed": 2,
+            "percent": 100.0,
+            "correct_refusals": 2,
+            "silent_wrong": 0,
+            "timeouts": 0
+          }
+        }
+      },
+      "failure_distribution": {
+        "autonomous": {
+          "PARSER": 16,
+          "INPUT_VALIDATION": 1
+        },
+        "assisted": {}
+      }
+    },
+    "blind_unseen_full": {
+      "autonomous": {
+        "total": 55,
+        "passed": 3,
+        "percent": 5.5,
+        "correct_refusals": 1,
+        "silent_wrong": 0,
+        "timeouts": 0
+      },
+      "assisted": {
+        "total": 55,
+        "passed": 55,
+        "percent": 100.0,
+        "correct_refusals": 4,
+        "silent_wrong": 0,
+        "timeouts": 0
+      },
+      "domains": {
+        "EV": {
+          "autonomous": {
+            "total": 19,
+            "passed": 2,
+            "percent": 10.5,
+            "correct_refusals": 0,
+            "silent_wrong": 0,
+            "timeouts": 0
+          },
+          "assisted": {
+            "total": 19,
+            "passed": 19,
+            "percent": 100.0,
+            "correct_refusals": 0,
+            "silent_wrong": 0,
+            "timeouts": 0
+          }
+        },
+        "BA": {
+          "autonomous": {
+            "total": 16,
+            "passed": 0,
+            "percent": 0.0,
+            "correct_refusals": 0,
+            "silent_wrong": 0,
+            "timeouts": 0
+          },
+          "assisted": {
+            "total": 16,
+            "passed": 16,
+            "percent": 100.0,
+            "correct_refusals": 0,
+            "silent_wrong": 0,
+            "timeouts": 0
+          }
+        },
+        "DYN": {
+          "autonomous": {
+            "total": 15,
+            "passed": 0,
+            "percent": 0.0,
+            "correct_refusals": 0,
+            "silent_wrong": 0,
+            "timeouts": 0
+          },
+          "assisted": {
+            "total": 15,
+            "passed": 15,
+            "percent": 100.0,
+            "correct_refusals": 0,
+            "silent_wrong": 0,
+            "timeouts": 0
+          }
+        },
+        "GEN": {
+          "autonomous": {
+            "total": 5,
+            "passed": 1,
+            "percent": 20.0,
+            "correct_refusals": 1,
+            "silent_wrong": 0,
+            "timeouts": 0
+          },
+          "assisted": {
+            "total": 5,
+            "passed": 5,
+            "percent": 100.0,
+            "correct_refusals": 4,
+            "silent_wrong": 0,
+            "timeouts": 0
+          }
+        }
+      },
+      "failure_distribution": {
+        "autonomous": {
+          "PARSER": 50,
+          "INPUT_VALIDATION": 2
+        },
+        "assisted": {}
+      }
+    }
+  },
+  "ui_smoke": {
+    "network": "socket connections blocked",
+    "platform": "linux",
+    "cases": [
+      {
+        "case": "gauss",
+        "status": "result_rendered"
+      },
+      {
+        "case": "biot_savart",
+        "status": "result_rendered"
+      },
+      {
+        "case": "ampere",
+        "status": "result_rendered"
+      },
+      {
+        "case": "faraday",
+        "status": "result_rendered"
+      },
+      {
+        "case": "motional",
+        "status": "result_rendered"
+      },
+      {
+        "case": "material",
+        "status": "result_rendered"
+      },
+      {
+        "case": "rejection",
+        "status": "correct_refusal"
+      }
+    ],
+    "windows_batch_execution": "not available on Linux"
+  },
+  "launcher": "spawn startup + real Streamlit server HTTP self-test passed on Linux",
+  "windows_native": "not executable in Linux; requires local Windows check before exam"
+}
