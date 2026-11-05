@@ -218,7 +218,11 @@ def analyze(original,corrections=None):
     f['domain']=domain;put('domain',domain,evidence=['Kildetype og søgt fysisk relation'])
     f['model']=None
     # Method identification uses physical structure, never task-specific refusal templates.
-    if (source in ('V','E','A') or source=='B' and 'div_B' in wanted) and source in sources and geometry not in ('capacitor','RC','RL'):
+    if source=='q' and geometry=='point_charges':
+        from .point_scene import complete
+        complete(out,put,question)
+        if sources:question('source_conflict','Punktkilder og yderligere givne felter kræver en eksplicit sammenkobling; ingen kilde må ignoreres.',status='RED')
+    elif (source in ('V','E','A') or source=='B' and 'div_B' in wanted) and source in sources and geometry not in ('capacitor','RC','RL'):
         f['model']='field_calculus';put('method','Gradient / divergens / rotation',evidence=['Eksplicit felt eller potentiale'])
         arguments=sources[source]['args']
         basis=sources[source]['basis'] or ('cartesian' if arguments and set(arguments)<=set(['x','y','z']) else 'spherical' if geometry in ('sphere','spherical_shell') else 'cylindrical' if geometry in ('cylinder','hollow_cylinder') else 'cartesian')
@@ -358,6 +362,10 @@ def analyze(original,corrections=None):
         for value in values:expressions.append((value,SOURCE_UNITS[name]))
     for name,value in constants.items():
         if any(re.search(r'\b'+re.escape(name)+r'\b',str(sf['formula'])) for sf in sources.values()):question('constant_values','Tal uden enheder kræver eksplicit bekræftelse af enhed og værdi for '+name+'. Tilføj enhed i opgaveteksten.',status='RED')
+    for charge,position in f.get('charges',[]):
+        expressions.append((charge,'C'))
+        for coordinate in position:expressions.append((coordinate,'m'))
+    for coordinate in f.get('point',[]):expressions.append((coordinate,'m'))
     if f.get('area'):expressions.append((f['area'],'m^2'))
     if 'units' in corrections:
         for entry in corrections['units'].split(';'):
@@ -370,8 +378,15 @@ def analyze(original,corrections=None):
     if qualifiers['finite'] and qualifiers['infinite']:question('extent_conflict','Både endelig og uendelig nævnes. Knyt udstrækningen til den relevante kilde i manuel mode.',status='RED')
     if re.search(r'Legendre|Laplace|på (?:kugle)?skallen|på overfladen|randbeting|grænsebeting',text,re.I):question('boundary_model','Et randpotentiale er ikke et potentiale i hele rummet. Separation af variable eller andre randbetingelser skal vælges eksplicit i Avanceret / Manuel.',status='RED')
     charge_integral_only=source=='rho' and geometry in ('sphere','spherical_shell') and wanted==['Q'] and bool(re.search(r'(?:totale|samlede) frie ladning',query,re.I))
+    from .materials import dielectric
+    material=dielectric(f,text)
+    if material:
+        f['material_model']=material;f['positive'].append(material['parameter'])
+        f['boundary_conditions']['exterior_permittivity']='epsilon_0'
+        for region in f.get('active_regions',[]):region['permittivity']=material['permittivity']
+        put('material_relation',material,evidence=material['evidence'])
     if charge_integral_only:put('method','Volumenintegral af fri ladning',evidence=['Givet fri volumentæthed og søgt samlet fri ladning'])
-    if not charge_integral_only and re.search(r'dielektr|dieletr|permitiv|permittiv|perminitiv|permeabil|magnetisk material|jordet|hulrum|polariser|magnetiser|lederoverflade|ekstern|ydre felt|external field',lower):question('boundary_model','Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel.',status='RED')
+    if not charge_integral_only and material is None and re.search(r'dielektr|dieletr|permitiv|permittiv|perminitiv|permeabil|magnetisk material|jordet|hulrum|polariser|magnetiser|lederoverflade|ekstern|ydre felt|external field',lower):question('boundary_model','Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel.',status='RED')
     if source=='rho' and re.search(r'\bmetal\w*|\bledende\b|\bleder\b',lower):question('boundary_model','Volumenladningen og den ledende materialebeskrivelse kræver kontrol af overflade- og randbetingelser. Brug Avanceret / Manuel.',status='RED')
     if re.search(r'\b[a-d]\)\s',text):question('subproblem','Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.',status='RED')
     if re.search(r'angivet.{0,10}(?:på|i) figur|som vist|se figuren|retningen.{0,20}figuren',text,re.I):question('figure','Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel.',status='RED')

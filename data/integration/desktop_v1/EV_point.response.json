@@ -1,0 +1,649 @@
+{
+  "schema_version": "1.0",
+  "status": "verified_with_assumptions",
+  "interpretation": {
+    "model": {
+      "objects": [
+        {
+          "id": "charge_1",
+          "kind": "point_charge",
+          "value": "q1",
+          "position": [
+            "-a",
+            "0",
+            "0"
+          ],
+          "label": "q1",
+          "evidence": "punktladning q1 ved (-a,0,0)"
+        },
+        {
+          "id": "charge_2",
+          "kind": "point_charge",
+          "value": "q2",
+          "position": [
+            "a",
+            "0",
+            "0"
+          ],
+          "label": "q2",
+          "evidence": "punktladning q2 ved (a,0,0)"
+        },
+        {
+          "id": "observation",
+          "kind": "observation_point",
+          "value": "",
+          "position": [
+            "0",
+            "0",
+            "0"
+          ],
+          "label": "feltpunkt",
+          "evidence": " E i origo."
+        }
+      ],
+      "sources": [
+        {
+          "id": "charge_1",
+          "kind": "q",
+          "formula": "q1",
+          "position": [
+            "-a",
+            "0",
+            "0"
+          ],
+          "evidence": "punktladning q1 ved (-a,0,0)"
+        },
+        {
+          "id": "charge_2",
+          "kind": "q",
+          "formula": "q2",
+          "position": [
+            "a",
+            "0",
+            "0"
+          ],
+          "evidence": "punktladning q2 ved (a,0,0)"
+        }
+      ],
+      "relationships": [
+        {
+          "kind": "pair_interaction",
+          "objects": [
+            "charge_2",
+            "charge_1"
+          ]
+        },
+        {
+          "kind": "contributes_to_field_at",
+          "objects": [
+            "charge_1",
+            "observation"
+          ]
+        },
+        {
+          "kind": "contributes_to_field_at",
+          "objects": [
+            "charge_2",
+            "observation"
+          ]
+        }
+      ],
+      "coordinates": [
+        "x",
+        "y",
+        "z"
+      ],
+      "coordinate_system": "cartesian",
+      "orientation": {},
+      "boundary_conditions": {},
+      "initial_conditions": {},
+      "assumptions": [
+        "electrostatic",
+        "distinct_point_sources",
+        "observation_off_point_sources"
+      ],
+      "validity": [
+        "Der anvendes vakuum uden andre eksterne kilder.",
+        "Punktladningerne er stationære og rumligt adskilte; koordinaterne er reelle og endelige.",
+        "Feltpunktet ligger uden for kilderne; ved kraft på en kilde udelades selvfeltet."
+      ],
+      "wanted": [
+        "E"
+      ],
+      "units": {
+        "epsilon_0": "F/m",
+        "mu_0": "H/m",
+        "eps0": "F/m",
+        "mu0": "H/m",
+        "a": "kg**(0)*m**(1)*s**(0)*A**(0)",
+        "q1": "kg**(0)*m**(0)*s**(1)*A**(1)",
+        "q2": "kg**(0)*m**(0)*s**(1)*A**(1)"
+      },
+      "values": {},
+      "methods": [
+        {
+          "name": "point_charges",
+          "status": "GREEN"
+        }
+      ],
+      "dependencies": {}
+    },
+    "fields": {
+      "geometry": {
+        "value": "point_charges",
+        "status": "GREEN",
+        "evidence": [
+          "punktladning"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "wanted": {
+        "value": [
+          "E"
+        ],
+        "status": "GREEN",
+        "evidence": [
+          " E i origo."
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "source": {
+        "value": "q",
+        "status": "GREEN",
+        "evidence": [
+          "Punktladninger"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "source_formula": {
+        "value": [
+          [
+            "q1",
+            [
+              "-a",
+              "0",
+              "0"
+            ]
+          ],
+          [
+            "q2",
+            [
+              "a",
+              "0",
+              "0"
+            ]
+          ]
+        ],
+        "status": "GREEN",
+        "evidence": [
+          "punktladning q1 ved (-a,0,0)",
+          "punktladning q2 ved (a,0,0)",
+          " E i origo."
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "orientation": {
+        "value": "cartesian component basis",
+        "status": "GREEN",
+        "evidence": [
+          "Eksplicit koordinatsystem og kildepositioner"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "regions": {
+        "value": "model dependent",
+        "status": "GREEN",
+        "evidence": [
+          "Ikke en radial volumen-/strømtæthed"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      },
+      "domain": {
+        "value": "EV",
+        "status": "GREEN",
+        "evidence": [
+          "Kildetype og søgt fysisk relation"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "method": {
+        "value": "Coulomb og superposition",
+        "status": "GREEN",
+        "evidence": [
+          "Diskrete stationære ladninger med eksplicitte positioner"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "units": {
+        "value": {
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m",
+          "a": "kg**(0)*m**(1)*s**(0)*A**(0)",
+          "q1": "kg**(0)*m**(0)*s**(1)*A**(1)",
+          "q2": "kg**(0)*m**(0)*s**(1)*A**(1)"
+        },
+        "status": "GREEN",
+        "evidence": [
+          "Angivne enheder og dimensionelle ligninger"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "material": {
+        "value": "unspecified",
+        "status": "GREEN",
+        "evidence": [
+          "Materialeord i teksten"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      },
+      "symmetry": {
+        "value": "not established",
+        "status": "GREEN",
+        "evidence": [
+          "Geometri, udstrækning og funktionens afhængighed"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      }
+    },
+    "ready": true
+  },
+  "solution": {
+    "method": "Coulomb og superposition",
+    "reasoning": "I vakuum summeres bidragene fra hver punktladning vektorielt. Selvfelt medtages ikke i kraften på en kilde.",
+    "equations_latex": [
+      "\\mathbf E=\\sum_i\\frac{q_i(\\mathbf r-\\mathbf r_i)}{4\\pi\\epsilon_0|\\mathbf r-\\mathbf r_i|^3}",
+      "V=\\sum_i\\frac{q_i}{4\\pi\\epsilon_0|\\mathbf r-\\mathbf r_i|}",
+      "U=\\sum_{i<j}\\frac{q_iq_j}{4\\pi\\epsilon_0r_{ij}}"
+    ],
+    "steps": [
+      {
+        "id": "step-41a179e098e81628699d-0",
+        "text": "Forskydning fra ladning 1 og afstand",
+        "title": "Forskydning fra ladning 1 og afstand",
+        "latex": "\\left( a, \\  0, \\  0, \\  \\left|{a}\\right|\\right)",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Coulomb og superposition",
+        "method_context_id": "method-9a19ddc6ec041dffd877",
+        "intermediate_latex": [],
+        "assumptions": [
+          "electrostatic",
+          "distinct_point_sources",
+          "observation_off_point_sources"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-b029f266815cf18ae29a-0",
+        "text": "Coulomb-bidrag 1",
+        "title": "Coulomb-bidrag 1",
+        "latex": "\\left[\\begin{matrix}\\frac{q_{1}}{4 \\pi a \\epsilon_{0} \\left|{a}\\right|}\\\\0\\\\0\\end{matrix}\\right]",
+        "physical_reasoning": "Forskydningen er fra kildeladningen til feltpunktet; ladningens fortegn bestemmer feltets retning.",
+        "reasoning_scope": "step",
+        "law": "Coulombs lov",
+        "method_context_id": "method-9a19ddc6ec041dffd877",
+        "intermediate_latex": [],
+        "assumptions": [
+          "electrostatic",
+          "distinct_point_sources",
+          "observation_off_point_sources"
+        ],
+        "validity": [
+          "Feltpunktet er adskilt fra den medtagne kilde."
+        ],
+        "check_ids": [
+          "check-587082d8246fe9ef0ea5",
+          "check-c83bb1d029cafccb9bc2"
+        ]
+      },
+      {
+        "id": "step-545ef46ce79cd571c730-0",
+        "text": "Forskydning fra ladning 2 og afstand",
+        "title": "Forskydning fra ladning 2 og afstand",
+        "latex": "\\left( - a, \\  0, \\  0, \\  \\left|{a}\\right|\\right)",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Coulomb og superposition",
+        "method_context_id": "method-9a19ddc6ec041dffd877",
+        "intermediate_latex": [],
+        "assumptions": [
+          "electrostatic",
+          "distinct_point_sources",
+          "observation_off_point_sources"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-a181d72c6fd8ef22797a-0",
+        "text": "Coulomb-bidrag 2",
+        "title": "Coulomb-bidrag 2",
+        "latex": "\\left[\\begin{matrix}- \\frac{q_{2}}{4 \\pi a \\epsilon_{0} \\left|{a}\\right|}\\\\0\\\\0\\end{matrix}\\right]",
+        "physical_reasoning": "Forskydningen er fra kildeladningen til feltpunktet; ladningens fortegn bestemmer feltets retning.",
+        "reasoning_scope": "step",
+        "law": "Coulombs lov",
+        "method_context_id": "method-9a19ddc6ec041dffd877",
+        "intermediate_latex": [],
+        "assumptions": [
+          "electrostatic",
+          "distinct_point_sources",
+          "observation_off_point_sources"
+        ],
+        "validity": [
+          "Feltpunktet er adskilt fra den medtagne kilde."
+        ],
+        "check_ids": [
+          "check-a55558aed730c45943a7",
+          "check-17b03cf7f78219d68784"
+        ]
+      },
+      {
+        "id": "step-42f14bbf1a5987f33738-0",
+        "text": "Parenergi (hvert par tælles én gang)",
+        "title": "Parenergi (hvert par tælles én gang)",
+        "latex": "\\frac{q_{1} q_{2}}{8 \\pi \\epsilon_{0} \\left|{a}\\right|}",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Coulomb og superposition",
+        "method_context_id": "method-9a19ddc6ec041dffd877",
+        "intermediate_latex": [],
+        "assumptions": [
+          "electrostatic",
+          "distinct_point_sources",
+          "observation_off_point_sources"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-7011ff2c852415c05772-0",
+        "text": "Summér komponenterne og parenergierne",
+        "title": "Summér komponenterne og parenergierne",
+        "latex": "\\left( \\frac{q_{1} - q_{2}}{4 \\pi a \\epsilon_{0} \\left|{a}\\right|}, \\  0, \\  0, \\  \\frac{q_{1} q_{2}}{8 \\pi \\epsilon_{0} \\left|{a}\\right|}\\right)",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Coulomb og superposition",
+        "method_context_id": "method-9a19ddc6ec041dffd877",
+        "intermediate_latex": [],
+        "assumptions": [
+          "electrostatic",
+          "distinct_point_sources",
+          "observation_off_point_sources"
+        ],
+        "validity": [],
+        "check_ids": []
+      }
+    ],
+    "results": {
+      "E": {
+        "expression": "Matrix([[(q1 - q2)/(4*pi*a*epsilon_0*Abs(a))], [0], [0]])",
+        "latex": "\\left[\\begin{matrix}\\frac{q_{1} - q_{2}}{4 \\pi a \\epsilon_{0} \\left|{a}\\right|}\\\\0\\\\0\\end{matrix}\\right]",
+        "unit": "V/m"
+      },
+      "V": {
+        "expression": "(q1 + q2)/(4*pi*epsilon_0*Abs(a))",
+        "latex": "\\frac{q_{1} + q_{2}}{4 \\pi \\epsilon_{0} \\left|{a}\\right|}",
+        "unit": "V"
+      },
+      "U": {
+        "expression": "q1*q2/(8*pi*epsilon_0*Abs(a))",
+        "latex": "\\frac{q_{1} q_{2}}{8 \\pi \\epsilon_{0} \\left|{a}\\right|}",
+        "unit": "J"
+      },
+      "dipole": {
+        "expression": "Matrix([[a*(-q1 + q2)], [0], [0]])",
+        "latex": "\\left[\\begin{matrix}a \\left(- q_{1} + q_{2}\\right)\\\\0\\\\0\\end{matrix}\\right]",
+        "unit": "C*m"
+      },
+      "Q": {
+        "expression": "q1 + q2",
+        "latex": "q_{1} + q_{2}",
+        "unit": "C"
+      }
+    },
+    "numerical": {},
+    "checks": [
+      {
+        "id": "check-587082d8246fe9ef0ea5",
+        "name": "Lokalt: E = -grad(V) for punktkilden",
+        "passed": true,
+        "residual_latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+        "detail": "Gælder væk fra kildens position; kildens parametre holdes faste.",
+        "step_ids": [
+          "step-b029f266815cf18ae29a-0"
+        ]
+      },
+      {
+        "id": "check-c83bb1d029cafccb9bc2",
+        "name": "Lokalt: div(E) = 0 væk fra punktkilden",
+        "passed": true,
+        "residual_latex": "0",
+        "detail": "Delta-ladningen ved selve kilden er ikke en glat volumenladning.",
+        "step_ids": [
+          "step-b029f266815cf18ae29a-0"
+        ]
+      },
+      {
+        "id": "check-a55558aed730c45943a7",
+        "name": "Lokalt: E = -grad(V) for punktkilden",
+        "passed": true,
+        "residual_latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+        "detail": "Gælder væk fra kildens position; kildens parametre holdes faste.",
+        "step_ids": [
+          "step-a181d72c6fd8ef22797a-0"
+        ]
+      },
+      {
+        "id": "check-17b03cf7f78219d68784",
+        "name": "Lokalt: div(E) = 0 væk fra punktkilden",
+        "passed": true,
+        "residual_latex": "0",
+        "detail": "Delta-ladningen ved selve kilden er ikke en glat volumenladning.",
+        "step_ids": [
+          "step-a181d72c6fd8ef22797a-0"
+        ]
+      },
+      {
+        "id": "check-ebb4bd10cda45c867eef",
+        "name": "Dimension: E",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "V/m",
+        "step_ids": []
+      },
+      {
+        "id": "check-34613c51ea23e7c53aca",
+        "name": "Dimension: V",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "V",
+        "step_ids": []
+      },
+      {
+        "id": "check-73e8eff195e59e6dfd22",
+        "name": "Dimension: U",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "J",
+        "step_ids": []
+      },
+      {
+        "id": "check-1f95cbd041e45c35e09f",
+        "name": "Dimension: dipole",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C*m",
+        "step_ids": []
+      },
+      {
+        "id": "check-c9e28cbda03f5131946c",
+        "name": "Dimension: Q",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C",
+        "step_ids": []
+      },
+      {
+        "id": "check-2c56d99391e924ebaa6a",
+        "name": "Inputdimension: point",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      },
+      {
+        "id": "check-ab1b3c81552b391535f3",
+        "name": "Inputdimension: charges_0_q",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C",
+        "step_ids": []
+      },
+      {
+        "id": "check-42d84d047d2ccda5d0f4",
+        "name": "Inputdimension: charges_0_position",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      },
+      {
+        "id": "check-6a8ab86774a3d7dc49a0",
+        "name": "Inputdimension: charges_1_q",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C",
+        "step_ids": []
+      },
+      {
+        "id": "check-5c85c3e2ce154d840f79",
+        "name": "Inputdimension: charges_1_position",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      }
+    ],
+    "direction": "Angivet orientering: . Kartesiske komponenter; fortegn følger ladninger og forskydningsvektorer.",
+    "warnings": [
+      "Dipolmomentet refererer til det angivne koordinatsystems origo; for nettoladning afhænger det af origo."
+    ],
+    "presentation_version": "1.0",
+    "latex_profile": "EM1-Math-1",
+    "method_contexts": {
+      "method-9a19ddc6ec041dffd877": {
+        "method_id": "point_charges",
+        "method": "Coulomb og superposition",
+        "reasoning": "I vakuum summeres bidragene fra hver punktladning vektorielt. Selvfelt medtages ikke i kraften på en kilde.",
+        "equations": [
+          "\\mathbf E=\\sum_i\\frac{q_i(\\mathbf r-\\mathbf r_i)}{4\\pi\\epsilon_0|\\mathbf r-\\mathbf r_i|^3}",
+          "V=\\sum_i\\frac{q_i}{4\\pi\\epsilon_0|\\mathbf r-\\mathbf r_i|}",
+          "U=\\sum_{i<j}\\frac{q_iq_j}{4\\pi\\epsilon_0r_{ij}}"
+        ],
+        "assumptions": [
+          "electrostatic",
+          "distinct_point_sources",
+          "observation_off_point_sources"
+        ]
+      }
+    },
+    "views": {
+      "result": {
+        "wanted": [
+          "E"
+        ],
+        "results": {
+          "E": {
+            "expression": "Matrix([[(q1 - q2)/(4*pi*a*epsilon_0*Abs(a))], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}\\frac{q_{1} - q_{2}}{4 \\pi a \\epsilon_{0} \\left|{a}\\right|}\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "V/m"
+          }
+        },
+        "numerical": {},
+        "direction": "Angivet orientering: . Kartesiske komponenter; fortegn følger ladninger og forskydningsvektorer."
+      },
+      "derivation": {
+        "equations_latex": [
+          "\\mathbf E=\\sum_i\\frac{q_i(\\mathbf r-\\mathbf r_i)}{4\\pi\\epsilon_0|\\mathbf r-\\mathbf r_i|^3}",
+          "V=\\sum_i\\frac{q_i}{4\\pi\\epsilon_0|\\mathbf r-\\mathbf r_i|}",
+          "U=\\sum_{i<j}\\frac{q_iq_j}{4\\pi\\epsilon_0r_{ij}}"
+        ],
+        "step_ids": [
+          "step-41a179e098e81628699d-0",
+          "step-b029f266815cf18ae29a-0",
+          "step-545ef46ce79cd571c730-0",
+          "step-a181d72c6fd8ef22797a-0",
+          "step-42f14bbf1a5987f33738-0",
+          "step-7011ff2c852415c05772-0"
+        ]
+      },
+      "explanation": {
+        "step_ids": [
+          "step-41a179e098e81628699d-0",
+          "step-b029f266815cf18ae29a-0",
+          "step-545ef46ce79cd571c730-0",
+          "step-a181d72c6fd8ef22797a-0",
+          "step-42f14bbf1a5987f33738-0",
+          "step-7011ff2c852415c05772-0"
+        ],
+        "method_context_ids": [
+          "method-9a19ddc6ec041dffd877"
+        ],
+        "global_check_ids": [
+          "check-ebb4bd10cda45c867eef",
+          "check-34613c51ea23e7c53aca",
+          "check-73e8eff195e59e6dfd22",
+          "check-1f95cbd041e45c35e09f",
+          "check-c9e28cbda03f5131946c",
+          "check-2c56d99391e924ebaa6a",
+          "check-ab1b3c81552b391535f3",
+          "check-42d84d047d2ccda5d0f4",
+          "check-6a8ab86774a3d7dc49a0",
+          "check-5c85c3e2ce154d840f79"
+        ],
+        "warnings": [
+          "Dipolmomentet refererer til det angivne koordinatsystems origo; for nettoladning afhænger det af origo."
+        ]
+      }
+    },
+    "physical_model_rejected": false
+  },
+  "missing": [],
+  "errors": []
+}

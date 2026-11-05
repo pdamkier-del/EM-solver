@@ -7,7 +7,7 @@ UNIT_ATOM=r'(?:kg|cm|mm|um|m|nC|uC|mC|C|mA|kA|A|mT|uT|T|kV|V|ohm|uF|mF|F|mH|uH|H
 UNITS=UNIT_ATOM+r'(?:\*\*\(?[-+]?\d+\)?)?(?:\s*[*/]\s*'+UNIT_ATOM+r'(?:\*\*\(?[-+]?\d+\)?)?)*'
 
 SOURCE_ALIASES={'I':'I','rho':'rho','rho_f':'rho','sigma':'sigma','lambda':'lambda','J':'J','V':'V','E':'E','A':'A','B':'B','P':'P','M':'M'}
-STOP=r'\b(?:for|og|med|har|hvor|er|som|langs|along|rettet|idet|find|bestem|beregn|vis|udled|kan|på|under|over|mellem|begge|der|the|where|with|find|til|fra|zhat|xhat|yhat|shat|rhat|phihat|thetahat)\b'
+STOP=r'\b(?:for|og|med|har|hvor|er|som|ved|placeret|langs|along|rettet|idet|find|bestem|beregn|vis|udled|kan|på|under|over|mellem|begge|der|the|where|with|find|til|fra|zhat|xhat|yhat|shat|rhat|phihat|thetahat)\b'
 
 
 def rhs(text,start):
@@ -42,6 +42,7 @@ def numeric_values(rows):
     values={};units={};constants={};conflicts=[]
     for row in rows:
         raw=row['raw'];name=row['name']
+        raw=re.split(r'\s+i\s+(?:origo\b|punktet\b|\()',raw,1)[0]
         raw=re.sub(r'(?<=/)(m|cm|mm)([23])\b',r'\1**\2',raw)
         m=re.match(r'([-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)\s*('+UNITS+r')(?![A-Za-z0-9_*/])\s*$',raw)
         if m:

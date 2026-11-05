@@ -1,5 +1,11 @@
 # EM1 Solver – lokal eksamensapp
 
+Desktopintegration: [entrypoints og Windows-setup](docs/desktop/INTEGRATION.md),
+[låste backendkrav](requirements-backend-lock.txt),
+[seks komplette JSON-fixtures](data/integration/desktop_v1/index.json) og
+[afsluttende integrationsrapport](reports/desktop/status.md). Integrationskoden
+holdes fast; senere fysikudvikling foregår separat.
+
 Nyeste backend-udvikling: [fejlanalyse og målinger](reports/autonomy/status.md)
 og [frontend-kontrakt 1.0](docs/backend/API.md). Den nye backend-branch
 ændrer ikke appens layout. Ældre parsermålinger nedenfor er bevaret som baseline.

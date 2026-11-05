@@ -1,0 +1,429 @@
+{
+  "schema_version": "1.0",
+  "status": "verified_with_assumptions",
+  "interpretation": {
+    "model": {
+      "objects": [
+        {
+          "id": "body",
+          "geometry": "capacitor",
+          "extent": null,
+          "parameters": {
+            "radius": "R"
+          },
+          "position": null,
+          "material": "unspecified"
+        }
+      ],
+      "sources": [
+        {
+          "id": "source_E",
+          "kind": "E",
+          "formula": [
+            "0",
+            "0",
+            "0+(1)*(E0*t**2)"
+          ],
+          "arguments": [
+            "t"
+          ],
+          "basis": "cartesian",
+          "evidence": "E(t)=E0*t**2 zhat"
+        }
+      ],
+      "relationships": [
+        {
+          "subject": "source_E",
+          "relation": "has_support",
+          "object": "body",
+          "regions": "model dependent"
+        }
+      ],
+      "coordinates": [
+        "s"
+      ],
+      "orientation": {},
+      "boundary_conditions": {},
+      "initial_conditions": {},
+      "assumptions": [
+        "uniform_axial_E",
+        "circular_symmetry",
+        "negligible_edge_effects"
+      ],
+      "wanted": [
+        "I_displacement",
+        "B"
+      ],
+      "units": {
+        "epsilon_0": "F/m",
+        "mu_0": "H/m",
+        "eps0": "F/m",
+        "mu0": "H/m",
+        "R": "m",
+        "t": "s",
+        "s": "m",
+        "E0": "kg**(1)*m**(1)*s**(-5)*A**(-1)"
+      },
+      "values": {},
+      "methods": [
+        {
+          "name": "ampere_maxwell",
+          "status": "GREEN"
+        }
+      ],
+      "dependencies": {}
+    },
+    "fields": {
+      "geometry": {
+        "value": "capacitor",
+        "status": "GREEN",
+        "evidence": [
+          "kondensator"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "wanted": {
+        "value": [
+          "I_displacement",
+          "B"
+        ],
+        "status": "GREEN",
+        "evidence": [
+          " B(s,t) og forskydningsstrøm."
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "source": {
+        "value": "E",
+        "status": "GREEN",
+        "evidence": [
+          "E(t)=E0*t**2 zhat"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "source_formula": {
+        "value": [
+          "0",
+          "0",
+          "0+(1)*(E0*t**2)"
+        ],
+        "status": "GREEN",
+        "evidence": [
+          "E(t)=E0*t**2 zhat"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "orientation": {
+        "value": {},
+        "status": "GREEN",
+        "evidence": [],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "regions": {
+        "value": "model dependent",
+        "status": "GREEN",
+        "evidence": [
+          "Ikke en radial volumen-/strømtæthed"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      },
+      "domain": {
+        "value": "DYN",
+        "status": "GREEN",
+        "evidence": [],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "method": {
+        "value": "Ampère–Maxwell",
+        "status": "GREEN",
+        "evidence": [
+          "Cirkulær geometri og aksialt homogent E; de øvrige forudsætninger kontrolleres særskilt."
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "units": {
+        "value": {
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m",
+          "R": "m",
+          "t": "s",
+          "s": "m",
+          "E0": "kg**(1)*m**(1)*s**(-5)*A**(-1)"
+        },
+        "status": "GREEN",
+        "evidence": [
+          "Angivne enheder og dimensionelle ligninger"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "material": {
+        "value": "unspecified",
+        "status": "GREEN",
+        "evidence": [
+          "Materialeord i teksten"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      },
+      "symmetry": {
+        "value": "not established",
+        "status": "GREEN",
+        "evidence": [
+          "Geometri, udstrækning og funktionens afhængighed"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      }
+    },
+    "ready": true
+  },
+  "solution": {
+    "method": "Ampère–Maxwells lov",
+    "reasoning": "Det tidsafhængige elektriske felt giver en forskydningsstrøm. Den cirkulære symmetri gør det magnetiske felt konstant langs en cirkulær Ampère-kurve.",
+    "equations_latex": [
+      "J_d=\\epsilon_0\\partial_tE",
+      "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0\\epsilon_0\\frac{d\\Phi_E}{dt}"
+    ],
+    "steps": [
+      {
+        "id": "step-ae27d2868c7b4ec041df-0",
+        "text": "Differentier E med hensyn til tid",
+        "title": "Differentier E med hensyn til tid",
+        "latex": "2 E_{0} \\epsilon_{0} t",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Ampère–Maxwells lov",
+        "method_context_id": "method-d372be14ce4ac759deb3",
+        "intermediate_latex": [],
+        "assumptions": [
+          "uniform_axial_E",
+          "circular_symmetry",
+          "negligible_edge_effects"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-c2a8cb1cdd4bcadaec88-0",
+        "text": "Integrer J_d over den omsluttede cirkelflade",
+        "title": "Integrer J_d over den omsluttede cirkelflade",
+        "latex": "\\begin{cases} 2 \\pi E_{0} \\epsilon_{0} s^{2} t & \\text{for}\\: R \\geq s \\\\2 \\pi E_{0} R^{2} \\epsilon_{0} t & \\text{otherwise} \\end{cases}",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Ampère–Maxwells lov",
+        "method_context_id": "method-d372be14ce4ac759deb3",
+        "intermediate_latex": [],
+        "assumptions": [
+          "uniform_axial_E",
+          "circular_symmetry",
+          "negligible_edge_effects"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-4fc22d17105bcf769175-0",
+        "text": "Brug B 2πs = μ₀ I_d",
+        "title": "Brug B 2πs = μ₀ I_d",
+        "latex": "\\begin{cases} E_{0} \\epsilon_{0} \\mu_{0} s t & \\text{for}\\: R \\geq s \\\\\\frac{E_{0} R^{2} \\epsilon_{0} \\mu_{0} t}{s} & \\text{otherwise} \\end{cases}",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Ampère–Maxwells lov",
+        "method_context_id": "method-d372be14ce4ac759deb3",
+        "intermediate_latex": [],
+        "assumptions": [
+          "uniform_axial_E",
+          "circular_symmetry",
+          "negligible_edge_effects"
+        ],
+        "validity": [],
+        "check_ids": []
+      }
+    ],
+    "results": {
+      "J_displacement": {
+        "expression": "2*E0*epsilon_0*t",
+        "latex": "2 E_{0} \\epsilon_{0} t",
+        "unit": "A/m^2"
+      },
+      "I_displacement": {
+        "expression": "Piecewise((2*pi*E0*epsilon_0*s**2*t, R >= s), (2*pi*E0*R**2*epsilon_0*t, True))",
+        "latex": "\\begin{cases} 2 \\pi E_{0} \\epsilon_{0} s^{2} t & \\text{for}\\: R \\geq s \\\\2 \\pi E_{0} R^{2} \\epsilon_{0} t & \\text{otherwise} \\end{cases}",
+        "unit": "A"
+      },
+      "B": {
+        "expression": "Piecewise((E0*epsilon_0*mu_0*s*t, R >= s), (E0*R**2*epsilon_0*mu_0*t/s, True))",
+        "latex": "\\begin{cases} E_{0} \\epsilon_{0} \\mu_{0} s t & \\text{for}\\: R \\geq s \\\\\\frac{E_{0} R^{2} \\epsilon_{0} \\mu_{0} t}{s} & \\text{otherwise} \\end{cases}",
+        "unit": "T"
+      }
+    },
+    "numerical": {},
+    "checks": [
+      {
+        "id": "check-173d4e88dcfc72b69d7a",
+        "name": "Dimension: J_displacement",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "A/m^2",
+        "step_ids": []
+      },
+      {
+        "id": "check-3d3a6de3799a90fdaab0",
+        "name": "Dimension: I_displacement",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "A",
+        "step_ids": []
+      },
+      {
+        "id": "check-a8c196006b2c7622bc66",
+        "name": "Dimension: B",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "T",
+        "step_ids": []
+      },
+      {
+        "id": "check-99e722a6e15e66bd250b",
+        "name": "Inputdimension: E",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "V/m",
+        "step_ids": []
+      },
+      {
+        "id": "check-d2f326c4ea2692476a43",
+        "name": "Inputdimension: time",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "s",
+        "step_ids": []
+      },
+      {
+        "id": "check-771b53efc0de9f11d86c",
+        "name": "Inputdimension: coordinate",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      },
+      {
+        "id": "check-5f0ffd7f6fa038280257",
+        "name": "Inputdimension: plate_radius",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      }
+    ],
+    "direction": "Angivet orientering: . Positiv dE_z/dt giver positiv phi-retning for B. Korrektionen er langs z.",
+    "warnings": [],
+    "presentation_version": "1.0",
+    "latex_profile": "EM1-Math-1",
+    "method_contexts": {
+      "method-d372be14ce4ac759deb3": {
+        "method_id": "ampere_maxwell",
+        "method": "Ampère–Maxwells lov",
+        "reasoning": "Det tidsafhængige elektriske felt giver en forskydningsstrøm. Den cirkulære symmetri gør det magnetiske felt konstant langs en cirkulær Ampère-kurve.",
+        "equations": [
+          "J_d=\\epsilon_0\\partial_tE",
+          "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0\\epsilon_0\\frac{d\\Phi_E}{dt}"
+        ],
+        "assumptions": [
+          "uniform_axial_E",
+          "circular_symmetry",
+          "negligible_edge_effects"
+        ]
+      }
+    },
+    "views": {
+      "result": {
+        "wanted": [
+          "I_displacement",
+          "B"
+        ],
+        "results": {
+          "I_displacement": {
+            "expression": "Piecewise((2*pi*E0*epsilon_0*s**2*t, R >= s), (2*pi*E0*R**2*epsilon_0*t, True))",
+            "latex": "\\begin{cases} 2 \\pi E_{0} \\epsilon_{0} s^{2} t & \\text{for}\\: R \\geq s \\\\2 \\pi E_{0} R^{2} \\epsilon_{0} t & \\text{otherwise} \\end{cases}",
+            "unit": "A"
+          },
+          "B": {
+            "expression": "Piecewise((E0*epsilon_0*mu_0*s*t, R >= s), (E0*R**2*epsilon_0*mu_0*t/s, True))",
+            "latex": "\\begin{cases} E_{0} \\epsilon_{0} \\mu_{0} s t & \\text{for}\\: R \\geq s \\\\\\frac{E_{0} R^{2} \\epsilon_{0} \\mu_{0} t}{s} & \\text{otherwise} \\end{cases}",
+            "unit": "T"
+          }
+        },
+        "numerical": {},
+        "direction": "Angivet orientering: . Positiv dE_z/dt giver positiv phi-retning for B. Korrektionen er langs z."
+      },
+      "derivation": {
+        "equations_latex": [
+          "J_d=\\epsilon_0\\partial_tE",
+          "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0\\epsilon_0\\frac{d\\Phi_E}{dt}"
+        ],
+        "step_ids": [
+          "step-ae27d2868c7b4ec041df-0",
+          "step-c2a8cb1cdd4bcadaec88-0",
+          "step-4fc22d17105bcf769175-0"
+        ]
+      },
+      "explanation": {
+        "step_ids": [
+          "step-ae27d2868c7b4ec041df-0",
+          "step-c2a8cb1cdd4bcadaec88-0",
+          "step-4fc22d17105bcf769175-0"
+        ],
+        "method_context_ids": [
+          "method-d372be14ce4ac759deb3"
+        ],
+        "global_check_ids": [
+          "check-173d4e88dcfc72b69d7a",
+          "check-3d3a6de3799a90fdaab0",
+          "check-a8c196006b2c7622bc66",
+          "check-99e722a6e15e66bd250b",
+          "check-d2f326c4ea2692476a43",
+          "check-771b53efc0de9f11d86c",
+          "check-5f0ffd7f6fa038280257"
+        ],
+        "warnings": []
+      }
+    },
+    "physical_model_rejected": false
+  },
+  "missing": [],
+  "errors": []
+}

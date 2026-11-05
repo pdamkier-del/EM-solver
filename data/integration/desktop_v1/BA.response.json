@@ -1,0 +1,532 @@
+{
+  "schema_version": "1.0",
+  "status": "verified_with_assumptions",
+  "interpretation": {
+    "model": {
+      "objects": [
+        {
+          "id": "body",
+          "geometry": "cylinder",
+          "extent": "infinite",
+          "parameters": {
+            "radius": "R"
+          },
+          "position": null,
+          "material": "unspecified"
+        }
+      ],
+      "sources": [
+        {
+          "id": "source_J",
+          "kind": "J",
+          "formula": [
+            "0",
+            "0",
+            "0+(1)*(k*s)"
+          ],
+          "arguments": [
+            "s"
+          ],
+          "basis": "cartesian",
+          "evidence": "J(s)=k*s zhat"
+        }
+      ],
+      "relationships": [
+        {
+          "subject": "source_J",
+          "relation": "has_support",
+          "object": "body",
+          "regions": [
+            {
+              "lower": "0",
+              "upper": "R",
+              "density": [
+                "0",
+                "0",
+                "0+(1)*(k*s)"
+              ]
+            },
+            {
+              "lower": "R",
+              "upper": "oo",
+              "density": "0"
+            }
+          ]
+        }
+      ],
+      "coordinates": [
+        "s"
+      ],
+      "orientation": {},
+      "boundary_conditions": {},
+      "initial_conditions": {},
+      "assumptions": [
+        "infinite_cylindrical_symmetry",
+        "magnetostatic"
+      ],
+      "wanted": [
+        "B",
+        "I"
+      ],
+      "units": {
+        "epsilon_0": "F/m",
+        "mu_0": "H/m",
+        "eps0": "F/m",
+        "mu0": "H/m",
+        "R": "m",
+        "s": "m",
+        "k": "kg**(0)*m**(-3)*s**(0)*A**(1)"
+      },
+      "values": {},
+      "methods": [
+        {
+          "name": "ampere_radial",
+          "status": "GREEN"
+        }
+      ],
+      "dependencies": {
+        "seed_wanted": [
+          "B"
+        ],
+        "targets": [
+          "B",
+          "I"
+        ],
+        "current_scope": "total"
+      }
+    },
+    "fields": {
+      "geometry": {
+        "value": "cylinder",
+        "status": "GREEN",
+        "evidence": [
+          "cylinder"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "wanted": {
+        "value": [
+          "B",
+          "I"
+        ],
+        "status": "GREEN",
+        "evidence": [
+          " B og den totale strøm I."
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "source": {
+        "value": "J",
+        "status": "GREEN",
+        "evidence": [
+          "J(s)=k*s zhat"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "source_formula": {
+        "value": [
+          "0",
+          "0",
+          "0+(1)*(k*s)"
+        ],
+        "status": "GREEN",
+        "evidence": [
+          "J(s)=k*s zhat"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "extent": {
+        "value": "infinite",
+        "status": "GREEN",
+        "evidence": [
+          "uendelig/endelig i teksten"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "orientation": {
+        "value": "current +z; B follows right-hand rule",
+        "status": "GREEN",
+        "evidence": [
+          "J(s)=k*s zhat"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "regions": {
+        "value": [
+          {
+            "lower": "0",
+            "upper": "R",
+            "density": [
+              "0",
+              "0",
+              "0+(1)*(k*s)"
+            ]
+          },
+          {
+            "lower": "R",
+            "upper": "oo",
+            "density": "0"
+          }
+        ],
+        "status": "GREEN",
+        "evidence": [
+          "Kildens geometri og eksplicitte intervaller"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "domain": {
+        "value": "BA",
+        "status": "GREEN",
+        "evidence": [
+          "Kildetype og søgt fysisk relation"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "method": {
+        "value": "Ampère",
+        "status": "GREEN",
+        "evidence": [
+          "Radial tæthed og tilstrækkelig kildeudstrækning"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "units": {
+        "value": {
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m",
+          "R": "m",
+          "s": "m",
+          "k": "kg**(0)*m**(-3)*s**(0)*A**(1)"
+        },
+        "status": "GREEN",
+        "evidence": [
+          "Angivne enheder og dimensionelle ligninger"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "material": {
+        "value": "unspecified",
+        "status": "GREEN",
+        "evidence": [
+          "Materialeord i teksten"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      },
+      "symmetry": {
+        "value": "ampere_radial",
+        "status": "GREEN",
+        "evidence": [
+          "Geometri, udstrækning og funktionens afhængighed"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      }
+    },
+    "ready": true
+  },
+  "solution": {
+    "method": "Ampères lov → integreret strøm",
+    "reasoning": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+    "equations_latex": [
+      "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+    ],
+    "steps": [
+      {
+        "id": "step-5d0c1a3cb19df5536ff6-0",
+        "text": "Omsluttet strøm før integration",
+        "title": "Omsluttet strøm før integration",
+        "latex": "\\int\\limits_{0}^{s} 2 \\pi k s^{2}\\, ds",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Ampères lov",
+        "method_context_id": "method-4742775ea7fb46b5b888",
+        "intermediate_latex": [],
+        "assumptions": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-ab6ca1f176c52c47ba48-0",
+        "text": "Regionens strøm efter integration",
+        "title": "Regionens strøm efter integration",
+        "latex": "\\frac{2 \\pi k s^{3}}{3}",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Ampères lov",
+        "method_context_id": "method-4742775ea7fb46b5b888",
+        "intermediate_latex": [],
+        "assumptions": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-04168b28ed3187eedc85-0",
+        "text": "B 2πs = μ₀ I_enc; isolér B",
+        "title": "B 2πs = μ₀ I_enc; isolér B",
+        "latex": "\\begin{cases} \\frac{k \\mu_{0} s^{2}}{3} & \\text{for}\\: R \\geq s \\\\\\frac{R^{3} k \\mu_{0}}{3 s} & \\text{otherwise} \\end{cases}",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Ampères lov",
+        "method_context_id": "method-4742775ea7fb46b5b888",
+        "intermediate_latex": [],
+        "assumptions": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-770b0a29acd8fc2f0d47-0",
+        "text": "Strømmen fås ved integration af den aksiale strømtæthed",
+        "title": "Strømmen fås ved integration af den aksiale strømtæthed",
+        "latex": "\\frac{2 \\pi R^{3} k}{3}",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Ampères lov",
+        "method_context_id": "method-4742775ea7fb46b5b888",
+        "intermediate_latex": [],
+        "assumptions": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic"
+        ],
+        "validity": [],
+        "check_ids": []
+      }
+    ],
+    "results": {
+      "I_enc": {
+        "expression": "Piecewise((2*pi*k*s**3/3, R >= s), (2*pi*R**3*k/3, True))",
+        "latex": "\\begin{cases} \\frac{2 \\pi k s^{3}}{3} & \\text{for}\\: R \\geq s \\\\\\frac{2 \\pi R^{3} k}{3} & \\text{otherwise} \\end{cases}",
+        "unit": "A"
+      },
+      "B": {
+        "expression": "Piecewise((k*mu_0*s**2/3, R >= s), (R**3*k*mu_0/(3*s), True))",
+        "latex": "\\begin{cases} \\frac{k \\mu_{0} s^{2}}{3} & \\text{for}\\: R \\geq s \\\\\\frac{R^{3} k \\mu_{0}}{3 s} & \\text{otherwise} \\end{cases}",
+        "unit": "T"
+      },
+      "I": {
+        "expression": "2*pi*R**3*k/3",
+        "latex": "\\frac{2 \\pi R^{3} k}{3}",
+        "unit": "A"
+      }
+    },
+    "numerical": {},
+    "checks": [
+      {
+        "id": "check-cc1fd98f8754241af015",
+        "name": "Dimension: I_enc",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "A",
+        "step_ids": []
+      },
+      {
+        "id": "check-12b184778d9450e3b254",
+        "name": "Dimension: B",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "T",
+        "step_ids": []
+      },
+      {
+        "id": "check-c37dd8ec81d66a0e4ab8",
+        "name": "Inputdimension: coordinate",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      },
+      {
+        "id": "check-49358cc655e6c43c6b9c",
+        "name": "Inputdimension: region_0_lower",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      },
+      {
+        "id": "check-9705dbf7e3c69829257a",
+        "name": "Inputdimension: region_0_upper",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      },
+      {
+        "id": "check-6834f22d287ff0b76b2f",
+        "name": "Inputdimension: region_0_density",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "A/m^2",
+        "step_ids": []
+      },
+      {
+        "id": "check-47ae6dfec88018588c9f",
+        "name": "Ampère cirkulationsidentitet",
+        "passed": true,
+        "residual_latex": "0",
+        "detail": "",
+        "step_ids": []
+      },
+      {
+        "id": "check-1217fc31a6659c1a0934",
+        "name": "Ampère differentiallov i åben region",
+        "passed": true,
+        "residual_latex": "0",
+        "detail": "",
+        "step_ids": []
+      },
+      {
+        "id": "check-21186b584e237b8f5395",
+        "name": "Dimension: I_enc",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "A",
+        "step_ids": []
+      },
+      {
+        "id": "check-b5bcf075bf85e563a807",
+        "name": "Dimension: B",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "T",
+        "step_ids": []
+      },
+      {
+        "id": "check-e53bb84cf012aad8c83f",
+        "name": "Dimension: I",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "A",
+        "step_ids": []
+      }
+    ],
+    "direction": "Angivet orientering: . Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning.",
+    "warnings": [
+      "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring."
+    ],
+    "presentation_version": "1.0",
+    "latex_profile": "EM1-Math-1",
+    "method_contexts": {
+      "method-4742775ea7fb46b5b888": {
+        "method_id": "ampere",
+        "method": "Ampères lov",
+        "reasoning": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+        "equations": [
+          "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+        ],
+        "assumptions": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic"
+        ]
+      }
+    },
+    "views": {
+      "result": {
+        "wanted": [
+          "B",
+          "I"
+        ],
+        "results": {
+          "B": {
+            "expression": "Piecewise((k*mu_0*s**2/3, R >= s), (R**3*k*mu_0/(3*s), True))",
+            "latex": "\\begin{cases} \\frac{k \\mu_{0} s^{2}}{3} & \\text{for}\\: R \\geq s \\\\\\frac{R^{3} k \\mu_{0}}{3 s} & \\text{otherwise} \\end{cases}",
+            "unit": "T"
+          },
+          "I": {
+            "expression": "2*pi*R**3*k/3",
+            "latex": "\\frac{2 \\pi R^{3} k}{3}",
+            "unit": "A"
+          }
+        },
+        "numerical": {},
+        "direction": "Angivet orientering: . Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning."
+      },
+      "derivation": {
+        "equations_latex": [
+          "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+        ],
+        "step_ids": [
+          "step-5d0c1a3cb19df5536ff6-0",
+          "step-ab6ca1f176c52c47ba48-0",
+          "step-04168b28ed3187eedc85-0",
+          "step-770b0a29acd8fc2f0d47-0"
+        ]
+      },
+      "explanation": {
+        "step_ids": [
+          "step-5d0c1a3cb19df5536ff6-0",
+          "step-ab6ca1f176c52c47ba48-0",
+          "step-04168b28ed3187eedc85-0",
+          "step-770b0a29acd8fc2f0d47-0"
+        ],
+        "method_context_ids": [
+          "method-4742775ea7fb46b5b888"
+        ],
+        "global_check_ids": [
+          "check-cc1fd98f8754241af015",
+          "check-12b184778d9450e3b254",
+          "check-c37dd8ec81d66a0e4ab8",
+          "check-49358cc655e6c43c6b9c",
+          "check-9705dbf7e3c69829257a",
+          "check-6834f22d287ff0b76b2f",
+          "check-47ae6dfec88018588c9f",
+          "check-1217fc31a6659c1a0934",
+          "check-21186b584e237b8f5395",
+          "check-b5bcf075bf85e563a807",
+          "check-e53bb84cf012aad8c83f"
+        ],
+        "warnings": [
+          "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring."
+        ]
+      }
+    },
+    "physical_model_rejected": false
+  },
+  "missing": [],
+  "errors": []
+}

@@ -6,10 +6,17 @@ GEOMETRIES={'sphere':'kugle','spherical_shell':'kugleskal','cylinder':'cylinder'
 
 def compile_interpretation(interp):
     f=interp.facts;model=f['model'];source=f['source'];geometry=f['geometry']
-    allowed={'field_calculus':{'E','rho','B','curl_E','div_B'},'gauss_radial':{'E','D','Q_enc','Q','V'},'ampere_radial':{'B','I','I_enc'},'coulomb_curve':{'E','V','Q'},'biot_curve':{'B'},'ampere_maxwell':{'B','I_displacement','J_displacement'},'faraday':{'Phi','EMF','I','P','W'}}
+    allowed={'point_sources':{'E','V','F','U','Q','dipole'},'field_calculus':{'E','rho','B','curl_E','div_B'},'gauss_radial':{'E','D','P','Q_enc','Q','V'},'ampere_radial':{'B','I','I_enc'},'coulomb_curve':{'E','V','Q'},'biot_curve':{'B'},'ampere_maxwell':{'B','I_displacement','J_displacement'},'faraday':{'Phi','EMF','I','P','W'}}
     if set(f['wanted'])-allowed.get(model,set()):raise ValueError('Den valgte relation bestemmer ikke alle søgte størrelser. Brug Avanceret / Manuel til afhængige beregningstrin.')
     d={};assumptions=[];units=copy.deepcopy(f['units']);positive=list(f['positive'])
-    if model=='field_calculus':
+    if model=='point_sources':
+        variables=dict(charges=f['charges'])
+        if f.get('point') is not None:variables['point']=f['point']
+        if 'force_on_index' in f:variables['force_on_index']=f['force_on_index']
+        d=dict(solver_spec=dict(domain='EV',family='point_charges',variables=variables,wanted=f['wanted']))
+        assumptions=['electrostatic','distinct_point_sources']
+        if set(f['wanted'])&{'E','V'}:assumptions.append('observation_off_point_sources')
+    elif model=='field_calculus':
         d={source:f['formula'],'coordinates':f['coordinates'],'system':f['system']}
         if source in ('E','A','B') and not isinstance(f['formula'],list):raise ValueError('Vektorfeltet kræver tre komponenter og en eksplicit basis.')
         if 'curl_E' in f['wanted'] and 'elektrostatisk' in interp.normalized.lower():assumptions.append('electrostatic')
@@ -20,6 +27,8 @@ def compile_interpretation(interp):
         d={source:f.get('axial_component',f['formula']),'coordinate':f['coordinate'],'regions':rows,'extent':f['extent']}
         assumptions=['infinite_cylindrical_symmetry' if 'cylinder' in geometry else 'spherical_symmetry' if geometry in ('sphere','spherical_shell') else 'infinite_planar_symmetry']
         if model=='ampere_radial':assumptions.append('magnetostatic')
+        if f.get('material_model'):assumptions.append('linear_isotropic_dielectric')
+        if 'P' in f['wanted'] and not f.get('material_model'):raise ValueError('Polarisation kræver en eksplicit konstitutiv materialelov.')
         # A declared a<b is represented by b=a+positive_gap solely inside SymPy.
         for index,(lo,hi) in enumerate(f['orders']):
             if lo=='0' or not re.fullmatch(r'[A-Za-z_]\w*',lo) or not re.fullmatch(r'[A-Za-z_]\w*',hi):continue
@@ -90,7 +99,7 @@ def compile_interpretation(interp):
     p=Parsed(interp.original,GEOMETRIES.get(geometry,geometry),d,list(f['wanted']),copy.deepcopy(f['numbers']),units,positive,assumptions)
     if model=='gauss_radial' and set(f['wanted'])&{'Q','V'}:
         if geometry not in ('sphere','spherical_shell'):raise ValueError('Denne totale ladnings-/potentialvej kræver kuglesymmetri; angiv ellers integrationsgeometri manuelt.')
-        p.data['composition']=dict(seed_wanted=['Q_enc'] if f['wanted']==['Q'] else ['E'],targets=f['wanted'],operation='volume_charge' if f['wanted']==['Q'] else 'radial_field_relations')
+        p.data['composition']=dict(seed_wanted=['Q_enc'] if f['wanted']==['Q'] else (['E','P'] if 'P' in f['wanted'] else ['E']),targets=f['wanted'],operation='volume_charge' if f['wanted']==['Q'] else 'radial_field_relations')
         if f.get('boundary_conditions',{}).get('V_infinity')=='0':p.assumptions.append('V_infinity_zero')
     if model=='ampere_radial' and 'I' in f['wanted']:p.data['composition']=dict(seed_wanted=['B'],targets=f['wanted'],current_scope=f['current_scope'])
     build(p) # Validate shape, SI dimensions and numerical positivity before declaring ready.

@@ -85,8 +85,9 @@ def execute_plan(parsed,evaluate=False):
                     field=_branch(answer.symbolic_result['E'],coordinate,(lo+hi)/2)
                     step=solve(Problem('EV','potential_from_field',variables=dict(field=field,coordinate=coordinate,start=hi,end=coordinate),wanted=['delta_V'],symbol_units=problem.symbol_units))
                     value=_physical_logs(sp.simplify(edge+step.symbolic_result['delta_V']));answer.steps.extend(step.steps)
-                    answer.check('Potentialets gradient i åben region',sp.diff(value,coordinate)+field)
-                    answer.check('Potentialkontinuitet ved '+str(hi),value.subs(coordinate,hi)-edge)
+                    local_step=answer.add('Saml integralet og randværdien',value,reasoning='Integralet bestemmer potentialforskellen; den tilføjede randværdi sikrer kontinuitet til naboregionen.',law='Potentialforskel fra felt',intermediates=[edge,step.symbolic_result['delta_V']],validity=[str(lo)+' < '+str(coordinate)+' < '+str(hi)])
+                    answer.check('Potentialets gradient i åben region',sp.diff(value,coordinate)+field,step=local_step)
+                    answer.check('Potentialkontinuitet ved '+str(hi),value.subs(coordinate,hi)-edge,step=local_step)
                     values.append((value,sp.And(coordinate>=lo,coordinate<=hi)));edge=sp.limit(value,coordinate,lo,dir='+') if lo==0 else value.subs(coordinate,lo)
                 answer.symbolic_result['V']=sp.Piecewise(*reversed(values),(outer,True));answer.units['V']='V'
                 answer.equations.append(r'V(r)=V(b)+\int_r^b E_r(u)\,du')

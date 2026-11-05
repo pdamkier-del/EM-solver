@@ -100,7 +100,9 @@ def check_generated(case,p,answer):
     return dict(symbolic=True,numerical='symbolic parameter-space checks',dimensions=True)
 
 
-def main():
+def main(output_directory=None):
+    output_directory=Path(output_directory) if output_directory else ROOT/'reports/autonomy'
+    output_directory.mkdir(parents=True,exist_ok=True)
     block_network();frozen=manifest();baseline=json.loads((ROOT/'reports/parser/evaluation.json').read_text());labels=json.loads((ROOT/'data/parser/evaluation_ground_truth.json').read_text())
     bank=[];historical=[]
     for row in json.loads((ROOT/'data/blind_unseen_bank_v2.json').read_text())['tests']:
@@ -116,9 +118,12 @@ def main():
         fresh.append(dict(case=i,group=case['group'],expected_incomplete=case.get('incomplete',False),text=case['text'],result=result))
     assert frozen==manifest(),'Source changed during evaluation'
     holdout=[r for r in historical if r['exam'] in ('2022-02','2023-02')]
-    output=dict(protocol='Known-bank/historical regression; newly instantiated internal author-generated cases are not an independent external blind test. No tuning after these cases are seen.',baseline_summary=baseline['summary'],
+    output=dict(protocol='Known-bank, historical and previously seen internal-generated regression. This run is not a new independent blind test. IDs and references enter verification only.',baseline_summary=baseline['summary'],
         summary=dict(bank=metrics(bank),historical=metrics(historical),old_holdout_regression=metrics(holdout),internal_generated=metrics(fresh)),
         complete_generated=metrics([r for r in fresh if not r['expected_incomplete']]),correctly_refused_generated=sum(r['expected_incomplete'] and r['result']['status']=='abstained' for r in fresh),
         bank=bank,historical=historical,internal_generated=fresh,source_manifest=frozen,evaluator_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),seed_sha256=hashlib.sha256((ROOT/'data/autonomy/sealed_seed.json').read_bytes()).hexdigest())
-    (ROOT/'reports/autonomy/evaluation.json').write_text(json.dumps(output,ensure_ascii=False,indent=2,default=str)+'\n');print(json.dumps(output['summary'],indent=2))
-if __name__=='__main__':main()
+    (output_directory/'evaluation.json').write_text(json.dumps(output,ensure_ascii=False,indent=2,default=str)+'\n');print(json.dumps(output['summary'],indent=2))
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser();parser.add_argument('--output-directory',type=Path)
+    main(parser.parse_args().output_directory)

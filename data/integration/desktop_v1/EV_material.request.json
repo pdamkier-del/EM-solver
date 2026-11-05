@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0",
+  "text": "En kugle med radius R består af et lineært isotropt dielektrikum med relativ permittivitet epsilon_r. Den frie ladningstæthed er rho(r)=k*r. Der er vakuum udenfor. Bestem D, E og P.",
+  "corrections": {},
+  "evaluate_integrals": false
+}

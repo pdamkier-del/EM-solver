@@ -1,0 +1,766 @@
+{
+  "schema_version": "1.0",
+  "status": "verified_with_assumptions",
+  "interpretation": {
+    "model": {
+      "objects": [
+        {
+          "id": "body",
+          "geometry": "spherical_shell",
+          "extent": null,
+          "parameters": {},
+          "position": null,
+          "material": "unspecified"
+        }
+      ],
+      "sources": [
+        {
+          "id": "source_rho",
+          "kind": "rho",
+          "formula": "k/r**2",
+          "arguments": [
+            "r"
+          ],
+          "basis": null,
+          "evidence": "rho(r)=k/r**2"
+        }
+      ],
+      "relationships": [
+        {
+          "subject": "source_rho",
+          "relation": "has_support",
+          "object": "body",
+          "regions": [
+            {
+              "lower": "0",
+              "upper": "a",
+              "density": "0"
+            },
+            {
+              "lower": "a",
+              "upper": "b",
+              "density": "k/r**2"
+            },
+            {
+              "lower": "b",
+              "upper": "oo",
+              "density": "0"
+            }
+          ]
+        }
+      ],
+      "coordinates": [
+        "r"
+      ],
+      "orientation": {},
+      "boundary_conditions": {
+        "V_infinity": "0"
+      },
+      "initial_conditions": {},
+      "assumptions": [
+        "spherical_symmetry",
+        "V_infinity_zero"
+      ],
+      "wanted": [
+        "V",
+        "Q"
+      ],
+      "units": {
+        "epsilon_0": "F/m",
+        "mu_0": "H/m",
+        "eps0": "F/m",
+        "mu0": "H/m",
+        "r": "m",
+        "a": "m",
+        "b": "m",
+        "k": "kg**(0)*m**(-1)*s**(1)*A**(1)"
+      },
+      "values": {},
+      "methods": [
+        {
+          "name": "gauss_radial",
+          "status": "GREEN"
+        }
+      ],
+      "dependencies": {
+        "seed_wanted": [
+          "E"
+        ],
+        "targets": [
+          "V",
+          "Q"
+        ],
+        "operation": "radial_field_relations"
+      }
+    },
+    "fields": {
+      "geometry": {
+        "value": "spherical_shell",
+        "status": "GREEN",
+        "evidence": [
+          "kugleskal"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "wanted": {
+        "value": [
+          "V",
+          "Q"
+        ],
+        "status": "GREEN",
+        "evidence": [
+          " V og Q."
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "source": {
+        "value": "rho",
+        "status": "GREEN",
+        "evidence": [
+          "rho(r)=k/r**2"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "source_formula": {
+        "value": "k/r**2",
+        "status": "GREEN",
+        "evidence": [
+          "rho(r)=k/r**2"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "orientation": {
+        "value": "radial",
+        "status": "GREEN",
+        "evidence": [
+          "Den erklærede symmetri"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "regions": {
+        "value": [
+          {
+            "lower": "0",
+            "upper": "a",
+            "density": "0"
+          },
+          {
+            "lower": "a",
+            "upper": "b",
+            "density": "k/r**2"
+          },
+          {
+            "lower": "b",
+            "upper": "oo",
+            "density": "0"
+          }
+        ],
+        "status": "GREEN",
+        "evidence": [
+          "Kildens geometri og eksplicitte intervaller"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "domain": {
+        "value": "EV",
+        "status": "GREEN",
+        "evidence": [
+          "Kildetype og søgt fysisk relation"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "method": {
+        "value": "Gauss",
+        "status": "GREEN",
+        "evidence": [
+          "Radial tæthed og tilstrækkelig kildeudstrækning"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "units": {
+        "value": {
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m",
+          "r": "m",
+          "a": "m",
+          "b": "m",
+          "k": "kg**(0)*m**(-1)*s**(1)*A**(1)"
+        },
+        "status": "GREEN",
+        "evidence": [
+          "Angivne enheder og dimensionelle ligninger"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "material": {
+        "value": "unspecified",
+        "status": "GREEN",
+        "evidence": [
+          "Materialeord i teksten"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      },
+      "symmetry": {
+        "value": "gauss_radial",
+        "status": "GREEN",
+        "evidence": [
+          "Geometri, udstrækning og funktionens afhængighed"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      }
+    },
+    "ready": true
+  },
+  "solution": {
+    "method": "Gauss’ lov → samlet ladning, stykvis potentialintegration",
+    "reasoning": "Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+    "equations_latex": [
+      "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+      "\\mathbf D=\\epsilon\\mathbf E",
+      "V(r)=V(b)+\\int_r^b E_r(u)\\,du"
+    ],
+    "steps": [
+      {
+        "id": "step-a8f5d6909902403308bd-0",
+        "text": "Indesluttet bidrag fra området [a, a + (b-a)] før integration",
+        "title": "Indesluttet bidrag fra området [a, a + (b-a)] før integration",
+        "latex": "\\int\\limits_{a}^{r} 4 \\pi k\\, dr",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Gauss’ lov",
+        "method_context_id": "method-9ff0b144d8041963dc5d",
+        "intermediate_latex": [],
+        "assumptions": [
+          "spherical_symmetry",
+          "V_infinity_zero"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-edb6e35b02ce97437ad3-0",
+        "text": "Efter symbolsk integration",
+        "title": "Efter symbolsk integration",
+        "latex": "4 \\pi k \\left(- a + r\\right)",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Gauss’ lov",
+        "method_context_id": "method-9ff0b144d8041963dc5d",
+        "intermediate_latex": [],
+        "assumptions": [
+          "spherical_symmetry",
+          "V_infinity_zero"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-34e307f7090dfcb4a721-0",
+        "text": "Indsæt den indesluttede ladning i Gauss’ lov",
+        "title": "Indsæt den indesluttede ladning i Gauss’ lov",
+        "latex": "\\begin{cases} 0 & \\text{for}\\: a > r \\\\\\frac{k \\left(- a + r\\right)}{\\epsilon_{0} r^{2}} & \\text{for}\\: b \\geq r \\\\\\frac{k \\left(- a + b\\right)}{\\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Gauss’ lov",
+        "method_context_id": "method-9ff0b144d8041963dc5d",
+        "intermediate_latex": [],
+        "assumptions": [
+          "spherical_symmetry",
+          "V_infinity_zero"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-abb7789b81f3b9cc834d-0",
+        "text": "Kontrolpunkt i regionen (D)",
+        "title": "Kontrolpunkt i regionen (D)",
+        "latex": "\\frac{2 k \\left(- a + b\\right)}{\\left(a + b\\right)^{2}}",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Gauss’ lov",
+        "method_context_id": "method-9ff0b144d8041963dc5d",
+        "intermediate_latex": [],
+        "assumptions": [
+          "spherical_symmetry",
+          "V_infinity_zero"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-1849ecfe6d4d597ff196-0",
+        "text": "Total ladning: evaluér den omsluttede ladning ved kildens yderkant",
+        "title": "Total ladning: evaluér den omsluttede ladning ved kildens yderkant",
+        "latex": "4 \\pi k \\left(- a + b\\right)",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Gauss’ lov",
+        "method_context_id": "method-9ff0b144d8041963dc5d",
+        "intermediate_latex": [],
+        "assumptions": [
+          "spherical_symmetry",
+          "V_infinity_zero"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-4f253ec88852f8e936c2-0",
+        "text": "Indsæt feltkomponenten langs integrationsvejen",
+        "title": "Indsæt feltkomponenten langs integrationsvejen",
+        "latex": "- \\int\\limits_{b}^{r} \\frac{k \\left(- a + r\\right)}{\\epsilon_{0} r^{2}}\\, dr",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Potentialforskel fra feltet",
+        "method_context_id": "method-f735106d0b8468b0140b",
+        "intermediate_latex": [],
+        "assumptions": [],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-b709b0f88224898d406f-0",
+        "text": "Evaluer integralet og grænserne",
+        "title": "Evaluer integralet og grænserne",
+        "latex": "- \\frac{k \\left(b \\left(a + r \\log{\\left(r \\right)}\\right) - r \\left(a + b \\log{\\left(b \\right)}\\right)\\right)}{b \\epsilon_{0} r}",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Potentialforskel fra feltet",
+        "method_context_id": "method-f735106d0b8468b0140b",
+        "intermediate_latex": [],
+        "assumptions": [],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-2f4676e50467b23f2161-0",
+        "text": "Saml integralet og randværdien",
+        "title": "Saml integralet og randværdien",
+        "latex": "\\frac{k \\left(- a + r \\log{\\left(\\frac{b}{r} \\right)} + r\\right)}{\\epsilon_{0} r}",
+        "physical_reasoning": "Integralet bestemmer potentialforskellen; den tilføjede randværdi sikrer kontinuitet til naboregionen.",
+        "reasoning_scope": "step",
+        "law": "Potentialforskel fra felt",
+        "method_context_id": "method-9ff0b144d8041963dc5d",
+        "intermediate_latex": [
+          "\\frac{k \\left(- a + b\\right)}{b \\epsilon_{0}}",
+          "- \\frac{k \\left(b \\left(a + r \\log{\\left(r \\right)}\\right) - r \\left(a + b \\log{\\left(b \\right)}\\right)\\right)}{b \\epsilon_{0} r}"
+        ],
+        "assumptions": [
+          "spherical_symmetry",
+          "V_infinity_zero"
+        ],
+        "validity": [
+          "a < r < a + (b-a)"
+        ],
+        "check_ids": [
+          "check-8beb48487ea573a0e125",
+          "check-ec244fda249a478ea793"
+        ]
+      },
+      {
+        "id": "step-0108a2ebfbb4282a166a-0",
+        "text": "Indsæt feltkomponenten langs integrationsvejen",
+        "title": "Indsæt feltkomponenten langs integrationsvejen",
+        "latex": "- \\int\\limits_{a}^{r} 0\\, dr",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Potentialforskel fra feltet",
+        "method_context_id": "method-f735106d0b8468b0140b",
+        "intermediate_latex": [],
+        "assumptions": [],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-987a2d1b176adb031859-0",
+        "text": "Evaluer integralet og grænserne",
+        "title": "Evaluer integralet og grænserne",
+        "latex": "0",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Potentialforskel fra feltet",
+        "method_context_id": "method-f735106d0b8468b0140b",
+        "intermediate_latex": [],
+        "assumptions": [],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-7d00024e0f976ab909e4-0",
+        "text": "Saml integralet og randværdien",
+        "title": "Saml integralet og randværdien",
+        "latex": "\\frac{k \\log{\\left(\\frac{b}{a} \\right)}}{\\epsilon_{0}}",
+        "physical_reasoning": "Integralet bestemmer potentialforskellen; den tilføjede randværdi sikrer kontinuitet til naboregionen.",
+        "reasoning_scope": "step",
+        "law": "Potentialforskel fra felt",
+        "method_context_id": "method-9ff0b144d8041963dc5d",
+        "intermediate_latex": [
+          "\\frac{k \\log{\\left(\\frac{b}{a} \\right)}}{\\epsilon_{0}}",
+          "0"
+        ],
+        "assumptions": [
+          "spherical_symmetry",
+          "V_infinity_zero"
+        ],
+        "validity": [
+          "0 < r < a"
+        ],
+        "check_ids": [
+          "check-2aa377f270dcac2034b9",
+          "check-070f4730d8d0f5a1cf91"
+        ]
+      }
+    ],
+    "results": {
+      "Q_enc": {
+        "expression": "Piecewise((0, a > r), (4*pi*k*(-a + r), a >= a - b + r), (4*pi*k*(-a + b), True))",
+        "latex": "\\begin{cases} 0 & \\text{for}\\: a > r \\\\4 \\pi k \\left(- a + r\\right) & \\text{for}\\: a \\geq a - b + r \\\\4 \\pi k \\left(- a + b\\right) & \\text{otherwise} \\end{cases}",
+        "unit": "C"
+      },
+      "D": {
+        "expression": "Piecewise((0, a > r), (k*(-a + r)/r**2, a >= a - b + r), (k*(-a + b)/r**2, True))",
+        "latex": "\\begin{cases} 0 & \\text{for}\\: a > r \\\\\\frac{k \\left(- a + r\\right)}{r^{2}} & \\text{for}\\: a \\geq a - b + r \\\\\\frac{k \\left(- a + b\\right)}{r^{2}} & \\text{otherwise} \\end{cases}",
+        "unit": "C/m^2"
+      },
+      "E": {
+        "expression": "Piecewise((0, a > r), (k*(-a + r)/(epsilon_0*r**2), a >= a - b + r), (k*(-a + b)/(epsilon_0*r**2), True))",
+        "latex": "\\begin{cases} 0 & \\text{for}\\: a > r \\\\\\frac{k \\left(- a + r\\right)}{\\epsilon_{0} r^{2}} & \\text{for}\\: a \\geq a - b + r \\\\\\frac{k \\left(- a + b\\right)}{\\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+        "unit": "V/m"
+      },
+      "Q": {
+        "expression": "4*pi*k*(-a + b)",
+        "latex": "4 \\pi k \\left(- a + b\\right)",
+        "unit": "C"
+      },
+      "V": {
+        "expression": "Piecewise((k*log(b/a)/epsilon_0, a >= r), (k*(-a + r*log(b/r) + r)/(epsilon_0*r), (b >= r) & (a <= r)), (k*(-a + b)/(epsilon_0*r), True))",
+        "latex": "\\begin{cases} \\frac{k \\log{\\left(\\frac{b}{a} \\right)}}{\\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{k \\left(- a + r \\log{\\left(\\frac{b}{r} \\right)} + r\\right)}{\\epsilon_{0} r} & \\text{for}\\: b \\geq r \\wedge a \\leq r \\\\\\frac{k \\left(- a + b\\right)}{\\epsilon_{0} r} & \\text{otherwise} \\end{cases}",
+        "unit": "V"
+      }
+    },
+    "numerical": {},
+    "checks": [
+      {
+        "id": "check-b6d90b86b3053cbab2b3",
+        "name": "Dimension: Q_enc",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C",
+        "step_ids": []
+      },
+      {
+        "id": "check-56c215bd12f5e7e9cc01",
+        "name": "Dimension: D",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C/m^2",
+        "step_ids": []
+      },
+      {
+        "id": "check-ee9d9de5492cf7f727df",
+        "name": "Dimension: E",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "V/m",
+        "step_ids": []
+      },
+      {
+        "id": "check-d0cf8834af728ab532ef",
+        "name": "Inputdimension: coordinate",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      },
+      {
+        "id": "check-38f0ece4e1be9f63e39e",
+        "name": "Inputdimension: region_0_lower",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      },
+      {
+        "id": "check-8a4a54380ec528ff7422",
+        "name": "Inputdimension: region_0_upper",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      },
+      {
+        "id": "check-99267a8f68677e310173",
+        "name": "Inputdimension: region_0_density",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C/m^3",
+        "step_ids": []
+      },
+      {
+        "id": "check-3482485e9f303a751981",
+        "name": "Inputdimension: region_0_epsilon",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "F/m",
+        "step_ids": []
+      },
+      {
+        "id": "check-cd029f3261c233fdff84",
+        "name": "Gauss differentiallov i åben region",
+        "passed": true,
+        "residual_latex": "0",
+        "detail": "",
+        "step_ids": []
+      },
+      {
+        "id": "check-cad7ed98ad7d74c53ef6",
+        "name": "Normal D-kontinuitet uden fri fladeladning",
+        "passed": true,
+        "residual_latex": "0",
+        "detail": "",
+        "step_ids": []
+      },
+      {
+        "id": "check-8beb48487ea573a0e125",
+        "name": "Potentialets gradient i åben region",
+        "passed": true,
+        "residual_latex": "0",
+        "detail": "",
+        "step_ids": [
+          "step-2f4676e50467b23f2161-0"
+        ]
+      },
+      {
+        "id": "check-ec244fda249a478ea793",
+        "name": "Potentialkontinuitet ved a + (b-a)",
+        "passed": true,
+        "residual_latex": "0",
+        "detail": "",
+        "step_ids": [
+          "step-2f4676e50467b23f2161-0"
+        ]
+      },
+      {
+        "id": "check-2aa377f270dcac2034b9",
+        "name": "Potentialets gradient i åben region",
+        "passed": true,
+        "residual_latex": "0",
+        "detail": "",
+        "step_ids": [
+          "step-7d00024e0f976ab909e4-0"
+        ]
+      },
+      {
+        "id": "check-070f4730d8d0f5a1cf91",
+        "name": "Potentialkontinuitet ved a",
+        "passed": true,
+        "residual_latex": "0",
+        "detail": "",
+        "step_ids": [
+          "step-7d00024e0f976ab909e4-0"
+        ]
+      },
+      {
+        "id": "check-594e4a34fabbaaae4e0f",
+        "name": "Potentialets fjernreference",
+        "passed": true,
+        "residual_latex": "0",
+        "detail": "",
+        "step_ids": []
+      },
+      {
+        "id": "check-10a441af980e5aa04bb4",
+        "name": "Dimension: Q_enc",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C",
+        "step_ids": []
+      },
+      {
+        "id": "check-290b3466357b52fe1128",
+        "name": "Dimension: D",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C/m^2",
+        "step_ids": []
+      },
+      {
+        "id": "check-298f039e77b23d6c652c",
+        "name": "Dimension: E",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "V/m",
+        "step_ids": []
+      },
+      {
+        "id": "check-15d3eacb113a0f511925",
+        "name": "Dimension: Q",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C",
+        "step_ids": []
+      },
+      {
+        "id": "check-d60840ed10b991ff2a50",
+        "name": "Dimension: V",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "V",
+        "step_ids": []
+      }
+    ],
+    "direction": "Angivet orientering: . Radialt i positiv koordinatretning; negativt resultat betyder modsat retning. For plan: modsat retning på den anden side.",
+    "warnings": [
+      "Q_enc er total ladning for kugle, ladning pr. længde for cylinder og halvrums-ladning pr. areal for spejlsymmetrisk plan. Ved grænseflader angives ensidige grænser separat; punktværdien er ikke fysisk entydig ved overfladeladning.",
+      "Regionrækkefølgen gælder som angivet i opgaven: a < b"
+    ],
+    "presentation_version": "1.0",
+    "latex_profile": "EM1-Math-1",
+    "method_contexts": {
+      "method-9ff0b144d8041963dc5d": {
+        "method_id": "gauss_radial",
+        "method": "Gauss’ lov",
+        "reasoning": "Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+        "equations": [
+          "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+          "\\mathbf D=\\epsilon\\mathbf E"
+        ],
+        "assumptions": [
+          "spherical_symmetry",
+          "V_infinity_zero"
+        ]
+      },
+      "method-f735106d0b8468b0140b": {
+        "method_id": "potential_from_field",
+        "method": "Potentialforskel fra feltet",
+        "reasoning": "Potentialforskellen findes som minus feltets linjeintegral langs den angivne kurve/retning.",
+        "equations": [
+          "V(b)-V(a)=-\\int_a^b\\mathbf E\\cdot d\\mathbf l"
+        ],
+        "assumptions": []
+      }
+    },
+    "views": {
+      "result": {
+        "wanted": [
+          "V",
+          "Q"
+        ],
+        "results": {
+          "Q": {
+            "expression": "4*pi*k*(-a + b)",
+            "latex": "4 \\pi k \\left(- a + b\\right)",
+            "unit": "C"
+          },
+          "V": {
+            "expression": "Piecewise((k*log(b/a)/epsilon_0, a >= r), (k*(-a + r*log(b/r) + r)/(epsilon_0*r), (b >= r) & (a <= r)), (k*(-a + b)/(epsilon_0*r), True))",
+            "latex": "\\begin{cases} \\frac{k \\log{\\left(\\frac{b}{a} \\right)}}{\\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{k \\left(- a + r \\log{\\left(\\frac{b}{r} \\right)} + r\\right)}{\\epsilon_{0} r} & \\text{for}\\: b \\geq r \\wedge a \\leq r \\\\\\frac{k \\left(- a + b\\right)}{\\epsilon_{0} r} & \\text{otherwise} \\end{cases}",
+            "unit": "V"
+          }
+        },
+        "numerical": {},
+        "direction": "Angivet orientering: . Radialt i positiv koordinatretning; negativt resultat betyder modsat retning. For plan: modsat retning på den anden side."
+      },
+      "derivation": {
+        "equations_latex": [
+          "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+          "\\mathbf D=\\epsilon\\mathbf E",
+          "V(r)=V(b)+\\int_r^b E_r(u)\\,du"
+        ],
+        "step_ids": [
+          "step-a8f5d6909902403308bd-0",
+          "step-edb6e35b02ce97437ad3-0",
+          "step-34e307f7090dfcb4a721-0",
+          "step-abb7789b81f3b9cc834d-0",
+          "step-1849ecfe6d4d597ff196-0",
+          "step-4f253ec88852f8e936c2-0",
+          "step-b709b0f88224898d406f-0",
+          "step-2f4676e50467b23f2161-0",
+          "step-0108a2ebfbb4282a166a-0",
+          "step-987a2d1b176adb031859-0",
+          "step-7d00024e0f976ab909e4-0"
+        ]
+      },
+      "explanation": {
+        "step_ids": [
+          "step-a8f5d6909902403308bd-0",
+          "step-edb6e35b02ce97437ad3-0",
+          "step-34e307f7090dfcb4a721-0",
+          "step-abb7789b81f3b9cc834d-0",
+          "step-1849ecfe6d4d597ff196-0",
+          "step-4f253ec88852f8e936c2-0",
+          "step-b709b0f88224898d406f-0",
+          "step-2f4676e50467b23f2161-0",
+          "step-0108a2ebfbb4282a166a-0",
+          "step-987a2d1b176adb031859-0",
+          "step-7d00024e0f976ab909e4-0"
+        ],
+        "method_context_ids": [
+          "method-9ff0b144d8041963dc5d",
+          "method-f735106d0b8468b0140b"
+        ],
+        "global_check_ids": [
+          "check-b6d90b86b3053cbab2b3",
+          "check-56c215bd12f5e7e9cc01",
+          "check-ee9d9de5492cf7f727df",
+          "check-d0cf8834af728ab532ef",
+          "check-38f0ece4e1be9f63e39e",
+          "check-8a4a54380ec528ff7422",
+          "check-99267a8f68677e310173",
+          "check-3482485e9f303a751981",
+          "check-cd029f3261c233fdff84",
+          "check-cad7ed98ad7d74c53ef6",
+          "check-594e4a34fabbaaae4e0f",
+          "check-10a441af980e5aa04bb4",
+          "check-290b3466357b52fe1128",
+          "check-298f039e77b23d6c652c",
+          "check-15d3eacb113a0f511925",
+          "check-d60840ed10b991ff2a50"
+        ],
+        "warnings": [
+          "Q_enc er total ladning for kugle, ladning pr. længde for cylinder og halvrums-ladning pr. areal for spejlsymmetrisk plan. Ved grænseflader angives ensidige grænser separat; punktværdien er ikke fysisk entydig ved overfladeladning.",
+          "Regionrækkefølgen gælder som angivet i opgaven: a < b"
+        ]
+      }
+    },
+    "physical_model_rejected": false
+  },
+  "missing": [],
+  "errors": []
+}

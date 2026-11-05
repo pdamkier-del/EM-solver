@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "presentation_version": "1.0",
+  "python": "3.12.14",
+  "cases": [
+    {
+      "case": "EV_point",
+      "status": "verified_with_assumptions",
+      "levels": [
+        "result",
+        "derivation",
+        "explanation"
+      ],
+      "steps": 6
+    },
+    {
+      "case": "EV_potential",
+      "status": "verified_with_assumptions",
+      "levels": [
+        "result",
+        "derivation",
+        "explanation"
+      ],
+      "steps": 11
+    },
+    {
+      "case": "EV_material",
+      "status": "verified_with_assumptions",
+      "levels": [
+        "result",
+        "derivation",
+        "explanation"
+      ],
+      "steps": 5
+    },
+    {
+      "case": "BA",
+      "status": "verified_with_assumptions",
+      "levels": [
+        "result",
+        "derivation",
+        "explanation"
+      ],
+      "steps": 4
+    },
+    {
+      "case": "DYN",
+      "status": "verified_with_assumptions",
+      "levels": [
+        "result",
+        "derivation",
+        "explanation"
+      ],
+      "steps": 3
+    },
+    {
+      "case": "missing",
+      "status": "not_solved",
+      "levels": [
+        "result",
+        "derivation",
+        "explanation"
+      ],
+      "steps": 0
+    }
+  ],
+  "files_sha256": {
+    "BA.request.json": "79dfb8d4c5e53d2d1080cf752ff748d6bf71938e7d4c405c350833f94a717286",
+    "BA.response.json": "32ccb0b5974be46320f68c9916f60053ed67cce1afea20d29b222cd3dec8007a",
+    "DYN.request.json": "a3ade3933ee01ffc2ac09816d6d24d63f232a0321d7e8acb3ea29ea18293acea",
+    "DYN.response.json": "550eb87da3363b2d2547836b9a90ca2deae1828cfcfc7f27868fa5b588ea22a1",
+    "EV_material.request.json": "659bfc5f79493af3051b7245b4ccbd18e81968535b01e994b154ba6912994034",
+    "EV_material.response.json": "c0deb5a0ba4e5e6683ceed8ad39af8d2d4226e5f9259530ff5eadfde9ca7855e",
+    "EV_point.request.json": "735f2b35eeedbe786b87d3c859b338caf81bda975e814f15db35679d9471573a",
+    "EV_point.response.json": "f512a41f5b27e01481df5ac75023b352e610068e9927bb56ed8d4409f89b5a8b",
+    "EV_potential.request.json": "c88242bbacf2ff9c45f458c9a8472918e2191fd1a98bc26a90c79b67872d53af",
+    "EV_potential.response.json": "4ead7b6198327a34291de3369d4f73b012f9680e34b06febd4b203b7579d7c7d",
+    "missing.request.json": "3a9a1050e3b9160cb924c7f254e49e7523cb9265c3fb4f16fb11753b3c4a032e",
+    "missing.response.json": "e8fccd2c67e99705ba68305b154a6fd264baae00f5d4f411d87784b27939226d"
+  },
+  "source_sha256": {
+    "em1_solver/__init__.py": "564aed14d75205ee8c7a8c0d832f3854f172964e1124641f664d59b197ad256d",
+    "em1_solver/backend.py": "a7f4135e1a3a4888ae9fc652a94e1a9178e9beb7edbd53dcda8506b01728f111",
+    "em1_solver/backend_client.py": "898bca7d1fd492084ef4f0d30e50053182a15fa28193732a330a8c6cdfa3e12e",
+    "em1_solver/core/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "em1_solver/core/assisted.py": "991f2225ed353a4b39e26698f406c3086a6ebab0ed5ffa0b408a32ef673539fb",
+    "em1_solver/core/certification.py": "556fa7f471f7698d162fce5b7dc877aa55b3fc32fc9fc688edc235862c50276d",
+    "em1_solver/core/composition.py": "932fa188aa24045c43201a82a9483fdf993f020ae0314459753bd342d8dcb399",
+    "em1_solver/core/curve.py": "bc726f323b8b7a7e622b00677f0c426aa93ac509a13f6465a447508775f61f50",
+    "em1_solver/core/dimensions.py": "17f88eee3e9e90e5dc5c3de1144a25c93d3a03efa10a536bd0f55afa6e05a421",
+    "em1_solver/core/engine.py": "dac29154e1cf2281be2a6289bad2d31bbe68f6fe5c4ed787375488f688b9c26f",
+    "em1_solver/core/historical.py": "fcb8d61f7e6ef6e728d39493762d87732b9016b5ee8d7db0b7b178976dbc6033",
+    "em1_solver/core/local_state.py": "3fb149d8223169b7e1b67232e69b2b1c95d81f73ef451f8946ac4454fbaacc30",
+    "em1_solver/core/new_problem.py": "a57cc7b55e407b6ea710aba4618e2e78b8fbc946a1ee8b6520aa3fc696694f00",
+    "em1_solver/core/parsing.py": "67cafbaaf8753a5c8eb5f438faecdca0595ea8b7bef43d319c0e7a140ab38a80",
+    "em1_solver/core/planner.py": "b1dd952ea8740cb0895b1e61b2c3ac49acf5d9293f1a03e424a102769ac964ae",
+    "em1_solver/core/problem.py": "67446dd2d33909639b47f7c301b0a9e64a4aee676223c6d129a99621875356cb",
+    "em1_solver/core/registry.py": "1edc34f5760766518329de2ec99bfd1320fe796e2c86a621ca5998c8f6461162",
+    "em1_solver/core/scene.py": "7fdf38abd627ed2addc44e98928a7d747c1cd09facf83db41733e97683218ed3",
+    "em1_solver/core/solution.py": "3c9b682da7a7f6d180b25cd9efe0fbbe2560dff4d969fb5390c6cc8a8fbf3c23",
+    "em1_solver/core/startup.py": "d8ec2f9d0c708c76a55a66e9a74925231f1c0ca0fef47c2778a9e26f4ec67f9d",
+    "em1_solver/core/task_runtime.py": "21a41393708d5b8db1182c570ecbdab671ac5a6ed5460a1bcbcce52d1ae5a7da",
+    "em1_solver/core/text_rules.py": "3b846731038fb462c27e261dc4d343bb228e7726a582610b5cbbd840df4aad2d",
+    "em1_solver/core/units.py": "fab7a16bc62a1ce3256e48d405dc2589792ad5c1c6959d16dccc1bc24ce83b74",
+    "em1_solver/core/validation.py": "966ec73ec4d9686eccdf08c5bdb9e93f622331be81b2cb8f72ad119ba280d697",
+    "em1_solver/examples.py": "2ecdb7a834384cbb953c5c3507281e6049d75daf6926183a70f3f674f4ca4454",
+    "em1_solver/rendering/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "em1_solver/rendering/danish_solution.py": "10ea3760a1759f525e17e1aee3d3377a34545564beb0ca92a073f9caa5bba63a",
+    "em1_solver/rendering/latex.py": "c03b6595be6fb2d9d8ed44abe4f31b78480efe50e308df166c05faf3d5e8249e",
+    "em1_solver/rendering/math_profile.py": "2df04951dabca458917e259e809d8a0d611580d5d555ace36d2e15cfe93c90d7",
+    "em1_solver/rendering/plain.py": "144af520a16cd684a559cc68a8829b513d5d887d9450303c626e5070cafe2f6e",
+    "em1_solver/rendering/structured.py": "5eccad8d32e88ed54d2f9b7c7943039ea97a0230e8c4a991db8bbefa5ce250a8",
+    "em1_solver/rendering/text_task.py": "cc37d05485abe67e1bdb9bdf876dc172d8631aaab513b1ebbcdbe3e2a9a1d54f",
+    "em1_solver/solvers/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "em1_solver/solvers/algebra.py": "a489cd8307af7e213a21023823d235bc29c3100490f519f6616ffc138a07838a",
+    "em1_solver/solvers/dimensions.py": "3047efe88fb6016ce3938dbb99df9eb1499e9c3d7b6018d45fbf21e1c8e66ecf",
+    "em1_solver/solvers/electrodynamics.py": "a22e681bcca7f75210f863c38d6cacc0dca30362508e23dad6dadb0022a00164",
+    "em1_solver/solvers/electrostatics.py": "465524611a3b32c7b7389a4055ce384939bcb22bbbac610892deceb70a8a92f2",
+    "em1_solver/solvers/magnetostatics.py": "c2e00d9f8154aa96449e4428990fdd0346477bcea76bec4b6177675aa494b2e1",
+    "em1_solver/text_parser/__init__.py": "e378c7d849070c1ea8f5d8795600bce87f12f2361102306f001e714bed0ce594",
+    "em1_solver/text_parser/compile.py": "d21d51b9e5d0498e9ea32016654a96099dc7a51b1bda1d7c7d4bf27667cf2c43",
+    "em1_solver/text_parser/extract.py": "8ff649248bab18b5b25c9bd0a092b0d79e808116b3f58652d5f3a00de21b92b9",
+    "em1_solver/text_parser/latex_input.py": "1f697957e850b4b89f5f86be328621c0f273319ea013ef740d9aca44a0b4f53e",
+    "em1_solver/text_parser/lexicon.py": "cfaa97ad820455b9635a8e04376740863cc99f127b214de8207b75393a53d62e",
+    "em1_solver/text_parser/local_state.py": "d76bc3bcd5db2b5cc85438eee82b7d8a39357e8e7cb59bd1ea6ab99a5a132fdb",
+    "em1_solver/text_parser/materials.py": "3158089f956fb062a652566c679d0fc832fedce9e2e97fa7a66b09ebaf67ab6f",
+    "em1_solver/text_parser/normalize.py": "50edbfd62cf28370bbd86e319ca7b6d5ce8436d10b1bcaab34d77408df517b98",
+    "em1_solver/text_parser/parser.py": "74404f0bce1f763033ad1f5d9f68ea1eb6fb40d36bde46a7517a806cc85d8020",
+    "em1_solver/text_parser/point_scene.py": "59cbd6c3488707fa7947104450470e499892b0682ea7f3392013d05db0b35645",
+    "em1_solver/text_parser/profiles.py": "bcc3aae55fe783c1b053188563aba5e6a9d08cff54f739b138a915ebcacd6749",
+    "em1_solver/text_parser/runtime.py": "3855a6681d8a3591133de9ea5bb90661ca7b644545ee522008552885fbff58a6",
+    "em1_solver/text_parser/schema.py": "d1425bd4d18eb93a3ffcb6e45c6106500f1d02cb3ab375242e1c94fbffc72406",
+    "em1_solver/text_parser/units.py": "537af72f2148fe651ea9275c2a19935503b63066363a90327f7d75eb6f3cc202",
+    "em1_solver/ui_assisted.py": "716ba8004d94ef455d9b9accd24f827e71bcdb3dd92598eb0cbab61929abaa70",
+    "em1_solver/ui_new.py": "b655f45e1910ac29335a31143fec0a24b9494ed102e679d6672a1ef8ba72201e",
+    "em1_solver/ui_specialized.py": "06759a5750e500509de84ddb8efb9a0ce76200a5df37bd381b090cfd1f163c86",
+    "em1_solver/ui_text_parser.py": "1113de2d56618076763559c749d5df38da984be29f92f5917205889583a840f3",
+    "em1_solver/ui_workflows.py": "4a894176426c25408cc8de68b953f3ba2710a0944f930099cfaee4eea1eac600"
+  },
+  "requirements_sha256": "44983ffee97c49657a196d54b3dd8676431bb84c59ca48b1c4a6701d5beada1b"
+}

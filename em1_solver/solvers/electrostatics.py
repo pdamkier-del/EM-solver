@@ -12,25 +12,55 @@ def point_charges(p):
         if not isinstance(force_index,int) or not 0<=force_index<len(charges):raise InputError('Ugyldigt ladningsindeks til kraftberegning.')
         point=charges[force_index][1]
         if 'point' in p.variables and vector(p.variables['point'])!=vector(point):raise InputError('Feltpunkt og valgt ladningsposition stemmer ikke overens.')
-    else:point,=p.require('point')
-    point=vector(point)
+    elif 'point' in p.variables:point=p.variables['point']
+    elif set(p.wanted)&{'E','V','F','E_far','V_far'} or not p.wanted:point,=p.require('point')
+    else:point=None
+    if point is not None:point=vector(point)
     if not charges:
         raise InputError('Angiv mindst én ladning.')
+    geometry_values={}
+    if 'distinct_point_sources' in p.assumptions:
+        from ..core.units import si
+        for symbol,value in p.numerical_values.items():
+            geometry_values[symbol]=sp.Float(str(si(value,p.numerical_units[symbol]).magnitude)) if isinstance(value,str) else sp.sympify(value)
+        locations=[vector(position).subs(geometry_values) for _,position in charges]
+        samples=locations+([point.subs(geometry_values)] if point is not None else [])
+        if any(component.is_real is False or component.is_finite is False for location in samples for component in location):raise InputError('De givne værdier giver ikke reelle, endelige koordinater.')
+        for i,location in enumerate(locations):
+            if any((location-other).dot(location-other).equals(0) is True for other in locations[:i]):raise InputError('De givne værdier får kildeladninger til at falde sammen.')
+        if point is not None:
+            sample=point.subs(geometry_values)
+            if any((sample-location).dot(sample-location).equals(0) is True for i,location in enumerate(locations) if i!=force_index):raise InputError('Det givne feltpunkt falder sammen med en kilde; feltet er singulært.')
+
     result=solution(p,'Coulomb og superposition',
         'I vakuum summeres bidragene fra hver punktladning vektorielt. Selvfelt medtages ikke i kraften på en kilde.',
         [r'\mathbf E=\sum_i\frac{q_i(\mathbf r-\mathbf r_i)}{4\pi\epsilon_0|\mathbf r-\mathbf r_i|^3}',
          r'V=\sum_i\frac{q_i}{4\pi\epsilon_0|\mathbf r-\mathbf r_i|}',
          r'U=\sum_{i<j}\frac{q_iq_j}{4\pi\epsilon_0r_{ij}}'], 'Kartesiske komponenter; fortegn følger ladninger og forskydningsvektorer.')
+    if point is None:
+        result.method='Coulombs parenergi og summer over kilder'
+        result.reasoning='Kildernes indbyrdes afstande bestemmer parenergien. Hvert uordnet par medtages præcis én gang; intet observationspunkt er nødvendigt.'
+        result.equations=[r'U=\sum_{i<j}\frac{q_iq_j}{4\pi\epsilon_0r_{ij}}',r'Q=\sum_i q_i',r'\mathbf p=\sum_iq_i\mathbf r_i']
     e=sp.zeros(3,1); potential=sp.S.Zero; energy=sp.S.Zero; dipole=sp.zeros(3,1)
     for index,(q,pos) in enumerate(charges):
-        d=point-vector(pos); norm=sp.sqrt(d.dot(d))
-        self_field=norm.equals(0) and index==force_index
-        if norm.equals(0) and not self_field:raise InputError('Feltpunktet falder sammen med en punktladning (singularitet).')
-        term=sp.zeros(3,1) if self_field else q*d/(4*sp.pi*EPS0*norm**3)
-        result.add(f'Forskydning fra ladning {index+1} og afstand', sp.Tuple(*d,norm))
-        result.add(f'Coulomb-bidrag {index+1}',term)
-        e+=term
-        if not self_field:potential+=q/(4*sp.pi*EPS0*norm)
+        if point is not None:
+            d=point-vector(pos);norm=sp.sqrt(d.dot(d))
+            self_field=norm.equals(0) and index==force_index
+            if norm.equals(0) and not self_field:raise InputError('Feltpunktet falder sammen med en punktladning (singularitet).')
+            term=sp.zeros(3,1) if self_field else q*d/(4*sp.pi*EPS0*norm**3)
+            result.add(f'Forskydning fra ladning {index+1} og afstand',sp.Tuple(*d,norm))
+            contribution=result.add(f'Coulomb-bidrag {index+1}',term,reasoning='Kildens eget singulære felt udelades ved kraftberegning på denne kilde.' if self_field else 'Forskydningen er fra kildeladningen til feltpunktet; ladningens fortegn bestemmer feltets retning.',law='Coulombs lov',validity=['Feltpunktet er adskilt fra den medtagne kilde.'] if not self_field else ['Kun de øvrige kilder bidrager til kraften.'])
+            if 'distinct_point_sources' in p.assumptions and not self_field:
+                observation=sp.Matrix([sp.Dummy('observation_'+axis,real=True) for axis in 'xyz'])
+                delta=observation-vector(pos);length=sp.sqrt(delta.dot(delta))
+                potential_kernel=q/(4*sp.pi*EPS0*length)
+                field_kernel=q*delta/(4*sp.pi*EPS0*length**3)
+                gradient=sp.Matrix([sp.diff(potential_kernel,axis) for axis in observation])
+                divergence=sum(sp.diff(field_kernel[i],observation[i]) for i in range(3))
+                result.check('Lokalt: E = -grad(V) for punktkilden',field_kernel+gradient,'Gælder væk fra kildens position; kildens parametre holdes faste.',step=contribution)
+                result.check('Lokalt: div(E) = 0 væk fra punktkilden',divergence,'Delta-ladningen ved selve kilden er ikke en glat volumenladning.',step=contribution)
+            e+=term
+            if not self_field:potential+=q/(4*sp.pi*EPS0*norm)
         dipole+=q*vector(pos)
         for q2,pos2 in charges[:index]:
             distance=sp.sqrt((vector(pos)-vector(pos2)).dot(vector(pos)-vector(pos2)))
@@ -40,16 +70,19 @@ def point_charges(p):
             energy+=term_u
     result.symbolic_result={'E':sp.simplify(e),'V':sp.simplify(potential),'U':sp.simplify(energy),
                             'dipole':sp.simplify(dipole),'Q':sum(q for q,_ in charges)}
+    if point is None:
+        result.symbolic_result.pop('E',None);result.symbolic_result.pop('V',None)
     if 'test_charge' in p.variables:
         result.symbolic_result['F']=sp.simplify(p.variables['test_charge']*e)
     if force_index is not None:
         result.symbolic_result['F']=sp.simplify(charges[force_index][0]*e)
+        result.add('Kraft på den valgte ladning uden dens selvfelt',result.symbolic_result['F'],reasoning='Den elektriske kraft er ladningen gange feltet fra de øvrige kilder; det singulære selvfelt medtages ikke.',law='Elektrisk Lorentzkraft')
         result.warnings.append('Felt og potentiale ved den valgte kildeladning udelader dens eget singulære bidrag. Parenergien omfatter fortsat hele systemet.')
     if 'free_point_charges_3D' in p.assumptions:
         result.warnings.append('Earnshaws sætning: en elektrostatisk ligevægt af frit bevægelige punktladninger i tre dimensioner kan ikke være stabil. Mekaniske bindinger eller andre kræfter er ikke medtaget.')
         result.symbolic_result['equilibrium_stability']='unstable_if_unconstrained_3D'
     result.units={'E':'V/m','E_far':'V/m','V':'V','U':'J','dipole':'C*m','Q':'C','F':'N'}
-    result.add('Summér komponenterne og parenergierne',sp.Tuple(*result.symbolic_result['E'],energy))
+    result.add('Summér komponenterne og parenergierne',sp.Tuple(*result.symbolic_result.get('E',[]),energy))
     if 'far_coordinate' in p.variables:
         radial=p.variables['far_coordinate'];order=p.variables.get('series_order',5)
         if not isinstance(radial,sp.Symbol) or not isinstance(order,int) or not 1<=order<=8:raise InputError('Fjernfelt kræver et koordinatsymbol og heltalsorden fra 1 til 8.')
@@ -62,7 +95,7 @@ def point_charges(p):
         result.warnings.append('Fjernfeltsudtrykket er trunkeret og kræver afstand meget større end kildeudstrækningen.')
     if 'initial_charges' in p.variables:
         from ..core.problem import Problem
-        before=point_charges(Problem('EV','point_charges',variables={'charges':p.variables['initial_charges'],'point':list(point)}))
+        before=point_charges(Problem('EV','point_charges',variables={'charges':p.variables['initial_charges']}|({'point':list(point)} if point is not None else {}),wanted=['U'] if point is None else []))
         result.symbolic_result['W_external']=sp.simplify(energy-before.symbolic_result['U'])
         result.add('Arbejde ved kvasistatisk omplacering = slutenergi minus startenergi',result.symbolic_result['W_external'])
         result.units['W_external']='J'
@@ -180,15 +213,27 @@ def field_calculus(p):
         [r'\mathbf E=-\nabla V',r'\rho=\epsilon_0\nabla\cdot\mathbf E',r'\mathbf B=\nabla\times\mathbf A',r'\mathbf J=\mu_0^{-1}\nabla\times\mathbf B'],
         'Komponenter i den ortonormale basis for det valgte koordinatsystem.')
     data=p.variables|p.functions
+    # Record only laws this execution will actually apply.
+    result.equations=[]
+    if 'V' in data:result.equations.append(r'\mathbf E=-\nabla V')
+    if 'A' in data:result.equations.append(r'\mathbf B=\nabla\times\mathbf A')
+    if 'E' in data or 'V' in data:
+        result.equations.extend([r'\rho_{total}=\epsilon_0\nabla\cdot\mathbf E',r'\partial_t\mathbf B=-\nabla\times\mathbf E'])
+        if 'electrostatic' in p.assumptions:result.equations.append(r'\nabla\times\mathbf E=0')
+    if 'B' in data or 'A' in data:
+        result.equations.append(r'\nabla\cdot\mathbf B=0')
+        if 'magnetostatic' in p.assumptions:result.equations.append(r'\mathbf J=\mu_0^{-1}\nabla\times\mathbf B')
+    electric_step=None
     if 'V' in data:
-        result.add('Differentier potentialet med koordinatsystemets skaleringsfaktorer',grad(data['V']))
+        result.add('Differentier potentialet med koordinatsystemets skaleringsfaktorer',grad(data['V']),reasoning='Gradienten beregnes med de metriske faktorer i det givne koordinatsystem; feltet fås derefter med et minusfortegn.',law='Gradient af potentiale')
         derived=-grad(data['V'])
         if 'E' in data and any(v.equals(0) is not True for v in derived-vector(data['E'])):
             raise InputError('De angivne E og V er ikke verificeret indbyrdes konsistente: E skal være -grad(V).')
         data['E']=derived
+        electric_step=result.add('Tag minus gradienten: det elektriske felt',derived,reasoning='Det elektriske felt peger mod aftagende elektrostatisk potentiale og er derfor minus gradienten.',law='Elektrisk felt fra potentiale',validity=['Glat potentiale i det angivne område.'])
         result.symbolic_result['laplacian_V']=div(grad(data['V']))
     if 'A' in data:
-        result.add('Tag rotationen af vektorpotentialet',curl(data['A']))
+        result.add('Tag rotationen af vektorpotentialet',curl(data['A']),reasoning='Magnetfeltet bestemmes af definitionen B = curl(A); den angivne koordinatbasis bruges.',law='Magnetfelt fra vektorpotentiale')
         derived=curl(data['A'])
         if 'B' in data and any(v.equals(0) is not True for v in derived-vector(data['B'])):
             raise InputError('De angivne B og A er ikke verificeret indbyrdes konsistente: B skal være curl(A).')
@@ -197,11 +242,13 @@ def field_calculus(p):
         result.symbolic_result['laplacian_A']=sp.simplify(grad(div(data['A']))-curl(curl(data['A'])))
     if 'E' in data:
         e=vector(data['E']); divergence=div(e); rotation=curl(e)
-        result.add('Beregn divergensen led for led',divergence)
+        result.add('Beregn divergensen led for led',divergence,reasoning='Gauss differentiallov forbinder feltets divergens med den samlede lokale volumenladning.',law='Gauss differentiallov')
         result.add('Indsæt i Gauss’ differentiallov',EPS0*divergence)
         result.symbolic_result.update(E=e,rho=EPS0*divergence,curl_E=rotation,dB_dt=-rotation)
+        rotation_step=result.add('Beregn rotationen af E',rotation,reasoning='Faradays differentiallov bestemmer den krævede tidsændring af B; i elektrostatik skal rotationen være nul.',law='Faradays differentiallov',validity=['Differentialkontrollen gælder i glatte områder.'])
+        if electric_step is not None:result.check('Rotation af gradientfelt',rotation,step=electric_step)
         if 'electrostatic' in p.assumptions:
-            result.check('Elektrostatisk rotation',rotation)
+            result.check('Elektrostatisk rotation',rotation,step=rotation_step)
             if any(v.equals(0) is False for v in rotation):
                 result.warnings.append('Feltet har rotation forskellig fra nul og kan ikke være elektrostatisk.')
         if 'volume_bounds' in data:
@@ -210,9 +257,9 @@ def field_calculus(p):
             result.symbolic_result['Q']=finite_integral(EPS0*divergence*jac,*data['volume_bounds'])
     if 'B' in data:
         b=vector(data['B']); divergence=div(b)
-        result.add('Beregn divergensen af magnetfeltet',divergence)
+        divergence_step=result.add('Beregn divergensen af magnetfeltet',divergence,reasoning='Et fysisk magnetfelt skal have nul divergens; kontrollen afprøver denne Maxwell-relation.',law='Gauss lov for magnetfeltet')
         result.symbolic_result.update(B=b,div_B=divergence)
-        result.check('Magnetisk divergens',divergence)
+        result.check('Magnetisk divergens',divergence,step=divergence_step)
         if 'magnetostatic' in p.assumptions:
             result.symbolic_result['J']=curl(b)/sp.Symbol('mu_0',positive=True)
             result.add('Magnetostatik: beregn curl(B) og divider med μ₀',result.symbolic_result['J'])

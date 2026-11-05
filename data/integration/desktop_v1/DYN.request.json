@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0",
+  "text": "En kondensator har cirkulære plader med radius R. E(t)=E0*t**2 zhat er uniformt mellem pladerne. Randeffekter ignoreres. Bestem B(s,t) og forskydningsstrøm.",
+  "corrections": {},
+  "evaluate_integrals": false
+}

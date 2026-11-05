@@ -1,0 +1,2555 @@
+{
+  "baseline": "64520a0",
+  "total": 154,
+  "counts": {
+    "3_problem_representation": 86,
+    "4_method_selection": 16,
+    "2_missing_figure_or_context": 36,
+    "1_pdf_damage_suspected": 14,
+    "verified": 2,
+    "5_mathematical_operations": 0,
+    "6_symbolic_derivation": 0,
+    "7_verification_or_unverified_result": 0
+  },
+  "limitation": "All 154 diagnosed. PDF damage is heuristic, not verified against every original PDF/figure. Zero confirmed symbolic errors is not proof the unattempted solvers are correct.",
+  "records": [
+    {
+      "id": "2021-06:1a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2021-06:1b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2021-06:1c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2021-06:2a",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2021-06:3a",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2021-06:3b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2021-06:4a",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Flere uafhængige kilder/felter kræver en eksplicit sammenkobling. Brug Avanceret / Manuel.",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2021-06:5a",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2021-06:5b",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_conflict": "Ukendt funktionsanvendelse f(...). Skriv eksplicit * hvis symbolet er en konstant faktor.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2021-06:5c",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2021-06:6a",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2021-06:6b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2021-06:6c",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2021-06:6d",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "time": "Hvilket symbol er tiden?",
+        "plane": "Hvilket plan ligger løkken i?",
+        "B": "Hvilken retning har magnetfeltet?",
+        "turns": "Hvor mange vindinger er der?",
+        "area": "Hvad er løkkens areal som funktion af tiden? Fx (a+v*t)**2.",
+        "negligible_inductance": "Kan kredsens selvinduktans negligeres?",
+        "time_bounds": "Hvilket tidsinterval skal varmen integreres over? Fx 0,T.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2021-11:1a",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2021-11:1b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2021-11:2a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2021-11:2b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2021-11:2c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2021-11:2d",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2021-11:3a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_conflict": "Der mangler et + eller - mellem vektorkomponenter.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2021-11:3b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2021-11:4a",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Ukendt matematisk notation:  s2 ˆ",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2021-11:4b",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_conflict": "Ukendt matematisk notation:  s2 ˆ",
+        "extent": "Er kilden endelig eller uendelig?",
+        "radius": "Hvad hedder den ydre radius/halvtykkelse?"
+      }
+    },
+    {
+      "id": "2021-11:5a",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_conflict": "Ukendt matematisk notation: 12 mu0 ⇢0  ̇ a2 s2",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2021-11:6a",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_conflict": "Ukendt matematisk notation: VA VB = V0 cos(!t)",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2021-11:6b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_conflict": "Ukendt matematisk notation: VA VB = V0 cos(!t)",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2021-11:6c",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_conflict": "Ukendt matematisk notation: VA VB = V0 cos(!t)",
+        "units": "Angiv enheder for E0, s som navn:enhed; navn:enhed.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2022-02:1a",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": true,
+        "source": true,
+        "wanted": true,
+        "orientation": true
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2022-02:1b",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": true,
+        "source": true,
+        "wanted": true,
+        "orientation": true
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2022-02:1c",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": true,
+        "source": true,
+        "wanted": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2022-02:2a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": false,
+        "source": false,
+        "wanted": true,
+        "orientation": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2022-02:2b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": false,
+        "source": false,
+        "wanted": false,
+        "orientation": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2022-02:2c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": false,
+        "source": true,
+        "wanted": true,
+        "orientation": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "units": "Enhedskontrol: Ugyldigt matematisk udtryk."
+      }
+    },
+    {
+      "id": "2022-02:3a",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {
+        "geometry": false,
+        "source": false,
+        "wanted": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Flere uafhængige kilder/felter kræver en eksplicit sammenkobling. Brug Avanceret / Manuel.",
+        "time": "Hvilket symbol er tiden?",
+        "B": "Hvilken retning har magnetfeltet?",
+        "normal": "Hvilken normal definerer den positive flux/EMF?",
+        "turns": "Hvor mange vindinger er der?",
+        "area": "Hvad er løkkens areal som funktion af tiden? Fx (a+v*t)**2.",
+        "resistance": "Hvad er kredsens modstand?",
+        "negligible_inductance": "Kan kredsens selvinduktans negligeres?",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2022-02:4a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": false,
+        "source": true,
+        "wanted": true
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "coordinate": "Hvilket symbol er den radiale afstand?",
+        "regions": "Kildens rumlige udstrækning er ikke bestemt.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2022-02:4b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": false,
+        "source": true,
+        "wanted": true
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "coordinate": "Hvilket symbol er den radiale afstand?",
+        "regions": "Kildens rumlige udstrækning er ikke bestemt.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2022-02:5a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": false,
+        "source": true,
+        "wanted": false,
+        "orientation": true
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "units": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente."
+      }
+    },
+    {
+      "id": "2022-02:5b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": false,
+        "source": true,
+        "wanted": false,
+        "orientation": true
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "units": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente."
+      }
+    },
+    {
+      "id": "2022-02:6a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": true,
+        "source": true,
+        "wanted": true,
+        "orientation": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "plane": "Hvilket plan ligger løkken i?",
+        "turns": "Hvor mange vindinger er der?",
+        "resistance": "Hvad er kredsens modstand?",
+        "negligible_inductance": "Kan kredsens selvinduktans negligeres?"
+      }
+    },
+    {
+      "id": "2022-02:7a",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": true,
+        "source": false,
+        "wanted": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Ukendt funktionsanvendelse Az(...). Skriv eksplicit * hvis symbolet er en konstant faktor.",
+        "current": "Hvilken retning har den aksiale strøm?"
+      }
+    },
+    {
+      "id": "2022-02:7b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": true,
+        "source": false,
+        "wanted": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "current": "Hvilken retning har den aksiale strøm?",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+      }
+    },
+    {
+      "id": "2022-11:1a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2022-11:1b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2022-11:1c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2022-11:2a",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Tal efter en parentes er tvetydigt: skriv eksplicit * eller **.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2022-11:2b",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Tal efter en parentes er tvetydigt: skriv eksplicit * eller **.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2022-11:3a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "units": "Angiv enheder for gennem, kA, løber, vindingerne som navn:enhed; navn:enhed."
+      }
+    },
+    {
+      "id": "2022-11:3b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "units": "Angiv enheder for gennem, kA, løber, vindingerne som navn:enhed; navn:enhed."
+      }
+    },
+    {
+      "id": "2022-11:3c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Ukendt matematisk notation: 2.65 × 10-8 ohmm",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "units": "Angiv enheder for gennem, kA, løber, vindingerne som navn:enhed; navn:enhed."
+      }
+    },
+    {
+      "id": "2022-11:3d",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "units": "Angiv enheder for gennem, kA, løber, vindingerne som navn:enhed; navn:enhed."
+      }
+    },
+    {
+      "id": "2022-11:4a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "coordinate": "Hvilket symbol er den radiale afstand?",
+        "regions": "Kildens rumlige udstrækning er ikke bestemt.",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2022-11:4b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "coordinate": "Hvilket symbol er den radiale afstand?",
+        "regions": "Kildens rumlige udstrækning er ikke bestemt.",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2022-11:5a",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2022-11:5b",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2022-11:6a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "units": "Angiv enheder for B0, e som navn:enhed; navn:enhed."
+      }
+    },
+    {
+      "id": "2023-02:1a",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {
+        "geometry": true,
+        "source": true,
+        "wanted": true
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2023-02:1b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {
+        "geometry": true,
+        "source": true,
+        "wanted": true
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2023-02:1c",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": true,
+        "source": true,
+        "wanted": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2023-02:2a",
+      "first_diagnostic_category": "verified",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": true,
+        "source": true,
+        "wanted": true,
+        "orientation": true,
+        "regions": true,
+        "source_formula": true
+      },
+      "method": "Volumenintegral af ladning",
+      "equation_setup": "compiled",
+      "symbolic_verification": {
+        "symbolic": true,
+        "numerical": "not available",
+        "dimensions": true,
+        "reference_mapping": "Q_enc at source outer boundary -> total Q"
+      },
+      "uncertainties": {}
+    },
+    {
+      "id": "2023-02:2b",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": true,
+        "source": true,
+        "wanted": true,
+        "orientation": true,
+        "regions": true,
+        "source_formula": true
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2023-02:2c",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": true,
+        "source": true,
+        "wanted": true,
+        "orientation": true,
+        "regions": true,
+        "source_formula": true
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2023-02:3a",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": true,
+        "source": true,
+        "wanted": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2023-02:4a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": false,
+        "source": false,
+        "wanted": false,
+        "orientation": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_conflict": "Ukendt matematisk notation: κ 3zy",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2023-02:4b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": false,
+        "source": false,
+        "wanted": true
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_conflict": "Ukendt matematisk notation: κ 3zy",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2023-02:5a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": false,
+        "source": false,
+        "wanted": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2023-02:5b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": false,
+        "source": false,
+        "wanted": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2023-02:5c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": false,
+        "source": false,
+        "wanted": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2023-02:5d",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": false,
+        "source": false,
+        "wanted": false
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2023-02:6a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": true,
+        "source": true,
+        "wanted": true
+      },
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Flere forskellige definitioner af samme kilde kræver manuel regionstilknytning.",
+        "orientation": "Ampère–Maxwell kræver et eksplicit aksialt elektrisk felt, fx E(t)=E0*t zhat.",
+        "units": "Angiv enheder for omega, t som navn:enhed; navn:enhed."
+      }
+    },
+    {
+      "id": "2023-11:1a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2023-11:1b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2023-11:1c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+      }
+    },
+    {
+      "id": "2023-11:2a",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "axis": "Hvilken akse følger linjen/ledningen?",
+        "point": "Hvor skal feltet/potentialet findes? Angiv x,y,z.",
+        "current": "Hvilken retning har strømmen?",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2023-11:2b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "axis": "Hvilken akse følger linjen/ledningen?",
+        "point": "Hvor skal feltet/potentialet findes? Angiv x,y,z.",
+        "current": "Hvilken retning har strømmen?",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2023-11:3a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "units": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente."
+      }
+    },
+    {
+      "id": "2023-11:3b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "units": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente."
+      }
+    },
+    {
+      "id": "2023-11:4a",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2023-11:4b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2023-11:4c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "extent_conflict": "Både endelig og uendelig nævnes. Knyt udstrækningen til den relevante kilde i manuel mode.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2023-11:5a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2023-11:5b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2023-11:5c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2023-11:5d",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2024-02:1a",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+      }
+    },
+    {
+      "id": "2024-02:1b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+      }
+    },
+    {
+      "id": "2024-02:1c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+      }
+    },
+    {
+      "id": "2024-02:1d",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+      }
+    },
+    {
+      "id": "2024-02:2a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "units": "Angiv enheder for A, x, y, z som navn:enhed; navn:enhed.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2024-02:2b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "units": "Angiv enheder for A, x, y, z som navn:enhed; navn:enhed.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2024-02:3a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?"
+      }
+    },
+    {
+      "id": "2024-02:3b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U."
+      }
+    },
+    {
+      "id": "2024-02:4a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "extent": "Er kilden endelig eller uendelig?",
+        "units": "Enhedskontrol: Ugyldigt matematisk udtryk."
+      }
+    },
+    {
+      "id": "2024-02:4b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Den endelige kilde kræver fulde rumlige integrationsgrænser og feltpunkt. Brug Avanceret / Manuel; automatisk kompilering af denne profil er endnu ikke understøttet.",
+        "units": "Enhedskontrol: Ugyldigt matematisk udtryk."
+      }
+    },
+    {
+      "id": "2024-02:5a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Ukendt matematisk notation: √23 Bv 2 t",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2024-02:5b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2024-02:5c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2024-02:5d",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2024-11:1a",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2024-11:1b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2024-11:2a",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "units": "Angiv enheder for alpha, s2 som navn:enhed; navn:enhed.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2024-11:2b",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "units": "Angiv enheder for alpha, s2 som navn:enhed; navn:enhed.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2024-11:3a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U."
+      }
+    },
+    {
+      "id": "2024-11:3b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+      }
+    },
+    {
+      "id": "2024-11:4a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_conflict": "Flere uafhængige kilder/felter kræver en eksplicit sammenkobling. Brug Avanceret / Manuel.",
+        "coordinate": "Hvilket symbol er den radiale afstand?",
+        "extent": "Er kilden endelig eller uendelig?",
+        "regions": "Kildens rumlige udstrækning er ikke bestemt.",
+        "units": "Angiv enheder for V0, b, bd2, x som navn:enhed; navn:enhed.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2024-11:4b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Flere uafhængige kilder/felter kræver en eksplicit sammenkobling. Brug Avanceret / Manuel.",
+        "constant_values": "Tal uden enheder kræver eksplicit bekræftelse af enhed og værdi for x. Tilføj enhed i opgaveteksten.",
+        "units": "Angiv enheder for b, x som navn:enhed; navn:enhed.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+      }
+    },
+    {
+      "id": "2024-11:5a",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2024-11:5b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2024-11:5c",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2024-11:6a",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2024-11:6b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2024-11:6c",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-01:1a",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "constant_values": "Tal uden enheder kræver eksplicit bekræftelse af enhed og værdi for x. Tilføj enhed i opgaveteksten.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-01:1b",
+      "first_diagnostic_category": "1_pdf_damage_suspected",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "suspected_damage",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-01:2a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2025-01:2b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2025-01:2c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2025-01:3a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Ukendt matematisk notation: b + z 2 → a2 + z 2",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-01:3b",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-01:4a",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "constant_values": "Tal uden enheder kræver eksplicit bekræftelse af enhed og værdi for By. Tilføj enhed i opgaveteksten."
+      }
+    },
+    {
+      "id": "2025-01:5a",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "axis": "Hvilken akse følger linjen/ledningen?",
+        "point": "Hvor skal feltet/potentialet findes? Angiv x,y,z.",
+        "current": "Hvilken retning har strømmen?",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-01:5b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "arc_start": "Buens absolutte startvinkel og orientering kræver manuel kurveparameterisering.",
+        "bounds": "Hvad er buens start- og slutvinkel i radianer?",
+        "center": "Er kurvens centrum i koordinatsystemets origo?",
+        "point": "Hvor skal feltet/potentialet findes? Angiv x,y,z.",
+        "current_sense": "Strømretning set fra planets positive normal?",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-01:5c",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-01:6a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Ukendt matematisk notation: a(1 → e-t/tau ) + b",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2025-01:6b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Ukendt matematisk notation: a(1 → e-t/tau ) + b; Ukendt matematisk notation: 2.8 × 10-8 ohm * m",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2025-01:6c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_conflict": "Ukendt matematisk notation: a(1 → e-t/tau ) + b",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2025-11:1a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+      }
+    },
+    {
+      "id": "2025-11:1b",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "subproblem": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+      }
+    },
+    {
+      "id": "2025-11:2a",
+      "first_diagnostic_category": "verified",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {
+        "geometry": true,
+        "source": true,
+        "wanted": true,
+        "orientation": true,
+        "regions": true,
+        "source_formula": true
+      },
+      "method": "Gradient, divergens og rotation",
+      "equation_setup": "compiled",
+      "symbolic_verification": {
+        "symbolic": true,
+        "numerical": "not available",
+        "dimensions": true
+      },
+      "uncertainties": {}
+    },
+    {
+      "id": "2025-11:2b",
+      "first_diagnostic_category": "4_method_selection",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "validation": "Kan ikke bestemme modellen entydigt: Den valgte relation bestemmer ikke alle søgte størrelser. Brug Avanceret / Manuel til afhængige beregningstrin."
+      }
+    },
+    {
+      "id": "2025-11:2c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Flere uafhængige kilder/felter kræver en eksplicit sammenkobling. Brug Avanceret / Manuel.",
+        "units": "Enhedskontrol: Enhederne kan ikke opfylde de fysiske dimensionskrav."
+      }
+    },
+    {
+      "id": "2025-11:3a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "boundary_model": "Et randpotentiale er ikke et potentiale i hele rummet. Separation af variable eller andre randbetingelser skal vælges eksplicit i Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-11:3b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-11:4a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Flere uafhængige kilder/felter kræver en eksplicit sammenkobling. Brug Avanceret / Manuel.",
+        "extent": "Er kilden endelig eller uendelig?",
+        "units": "Angiv enheder for B, x, y, z som navn:enhed; navn:enhed.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-11:4b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "coordinate": "Hvilket symbol er den radiale afstand?",
+        "extent": "Er kilden endelig eller uendelig?",
+        "regions": "Kildens rumlige udstrækning er ikke bestemt.",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-11:4c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "coordinate": "Hvilket symbol er den radiale afstand?",
+        "extent": "Er kilden endelig eller uendelig?",
+        "regions": "Kildens rumlige udstrækning er ikke bestemt.",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-11:5a",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-11:5b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-11:5c",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2025-11:5d",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2026-01:1a",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_conflict": "Vektoren kunne ikke læses fuldstændigt.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2026-01:1b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2026-01:1c",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "method": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2026-01:2a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2026-01:2b",
+      "first_diagnostic_category": "2_missing_figure_or_context",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "detected_missing",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel.",
+        "figure": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2026-01:2c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2026-01:2d",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "boundary_model": "Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2026-01:3a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_conflict": "Ukendt funktionsanvendelse sin2(...). Skriv eksplicit * hvis symbolet er en konstant faktor.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2026-01:3b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "source_conflict": "Ukendt funktionsanvendelse sin2(...). Skriv eksplicit * hvis symbolet er en konstant faktor."
+      }
+    },
+    {
+      "id": "2026-01:3c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "geometry": "Hvilken geometri skal feltet beregnes for?",
+        "wanted": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "source_conflict": "Ukendt funktionsanvendelse sin2(...). Skriv eksplicit * hvis symbolet er en konstant faktor.",
+        "source_formula": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2."
+      }
+    },
+    {
+      "id": "2026-01:4a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "source_conflict": "Ukendt matematisk notation: -k s ×"
+      }
+    },
+    {
+      "id": "2026-01:5a",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "units": "Enhedskontrol: Ikke tilladt udtryk; brug kendte symboler og matematiske funktioner.",
+        "boundary_model": "Et randpotentiale er ikke et potentiale i hele rummet. Separation af variable eller andre randbetingelser skal vælges eksplicit i Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2026-01:5b",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "units": "Enhedskontrol: Ikke tilladt udtryk; brug kendte symboler og matematiske funktioner.",
+        "boundary_model": "Et randpotentiale er ikke et potentiale i hele rummet. Separation af variable eller andre randbetingelser skal vælges eksplicit i Avanceret / Manuel."
+      }
+    },
+    {
+      "id": "2026-01:5c",
+      "first_diagnostic_category": "3_problem_representation",
+      "first_true_error": "not established without full independent source/figure/model review",
+      "text_extraction": "unverified",
+      "figure_information": "unverified",
+      "problem_fields": {},
+      "method": null,
+      "equation_setup": "not_reached",
+      "symbolic_verification": null,
+      "uncertainties": {
+        "units": "Enhedskontrol: Ikke tilladt udtryk; brug kendte symboler og matematiske funktioner.",
+        "boundary_model": "Et randpotentiale er ikke et potentiale i hele rummet. Separation af variable eller andre randbetingelser skal vælges eksplicit i Avanceret / Manuel."
+      }
+    }
+  ]
+}

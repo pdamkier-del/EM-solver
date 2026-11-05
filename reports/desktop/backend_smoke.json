@@ -1,0 +1,66 @@
+{
+  "network": "outbound socket connections blocked",
+  "formal_json_schema_validated": true,
+  "cases": [
+    {
+      "case": "EV_point",
+      "status": "verified_with_assumptions",
+      "levels": [
+        "result",
+        "derivation",
+        "explanation"
+      ],
+      "steps": 6
+    },
+    {
+      "case": "EV_potential",
+      "status": "verified_with_assumptions",
+      "levels": [
+        "result",
+        "derivation",
+        "explanation"
+      ],
+      "steps": 11
+    },
+    {
+      "case": "EV_material",
+      "status": "verified_with_assumptions",
+      "levels": [
+        "result",
+        "derivation",
+        "explanation"
+      ],
+      "steps": 5
+    },
+    {
+      "case": "BA",
+      "status": "verified_with_assumptions",
+      "levels": [
+        "result",
+        "derivation",
+        "explanation"
+      ],
+      "steps": 4
+    },
+    {
+      "case": "DYN",
+      "status": "verified_with_assumptions",
+      "levels": [
+        "result",
+        "derivation",
+        "explanation"
+      ],
+      "steps": 3
+    },
+    {
+      "case": "missing",
+      "status": "not_solved",
+      "levels": [
+        "result",
+        "derivation",
+        "explanation"
+      ],
+      "steps": 0
+    }
+  ]
+}

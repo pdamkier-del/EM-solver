@@ -1,0 +1,582 @@
+{
+  "schema_version": "1.0",
+  "status": "verified_with_assumptions",
+  "interpretation": {
+    "model": {
+      "objects": [
+        {
+          "id": "body",
+          "geometry": "sphere",
+          "extent": null,
+          "parameters": {
+            "relative_permittivity": "epsilon_r",
+            "radius": "R"
+          },
+          "position": null,
+          "material": {
+            "kind": "linear_isotropic_dielectric",
+            "permittivity": "epsilon_0*epsilon_r",
+            "parameter": "epsilon_r",
+            "exterior_permittivity": "epsilon_0",
+            "source_kind": "free_volume_charge",
+            "evidence": [
+              "Lineært isotropt medium, givet fri ladning og eksplicit vakuum udenfor."
+            ],
+            "validity": [
+              "Permittiviteten er positiv og skalar; der er ingen yderligere frie fladeladninger."
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "id": "source_rho",
+          "kind": "rho",
+          "formula": "k*r",
+          "arguments": [
+            "r"
+          ],
+          "basis": null,
+          "evidence": "rho(r)=k*r"
+        }
+      ],
+      "relationships": [
+        {
+          "subject": "source_rho",
+          "relation": "has_support",
+          "object": "body",
+          "regions": [
+            {
+              "lower": "0",
+              "upper": "R",
+              "density": "k*r"
+            },
+            {
+              "lower": "R",
+              "upper": "oo",
+              "density": "0"
+            }
+          ]
+        }
+      ],
+      "coordinates": [
+        "r"
+      ],
+      "orientation": {},
+      "boundary_conditions": {
+        "exterior_permittivity": "epsilon_0"
+      },
+      "initial_conditions": {},
+      "assumptions": [
+        "spherical_symmetry",
+        "linear_isotropic_dielectric"
+      ],
+      "wanted": [
+        "D",
+        "E",
+        "P"
+      ],
+      "units": {
+        "epsilon_0": "F/m",
+        "mu_0": "H/m",
+        "eps0": "F/m",
+        "mu0": "H/m",
+        "epsilon_r": "1",
+        "R": "m",
+        "r": "m",
+        "k": "kg**(0)*m**(-4)*s**(1)*A**(1)"
+      },
+      "values": {},
+      "methods": [
+        {
+          "name": "gauss_radial",
+          "status": "GREEN"
+        }
+      ],
+      "dependencies": {}
+    },
+    "fields": {
+      "geometry": {
+        "value": "sphere",
+        "status": "GREEN",
+        "evidence": [
+          "kugle"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "wanted": {
+        "value": [
+          "D",
+          "E",
+          "P"
+        ],
+        "status": "GREEN",
+        "evidence": [
+          " D, E og P."
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "source": {
+        "value": "rho",
+        "status": "GREEN",
+        "evidence": [
+          "rho(r)=k*r"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "source_formula": {
+        "value": "k*r",
+        "status": "GREEN",
+        "evidence": [
+          "rho(r)=k*r"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "orientation": {
+        "value": "radial",
+        "status": "GREEN",
+        "evidence": [
+          "Den erklærede symmetri"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "regions": {
+        "value": [
+          {
+            "lower": "0",
+            "upper": "R",
+            "density": "k*r"
+          },
+          {
+            "lower": "R",
+            "upper": "oo",
+            "density": "0"
+          }
+        ],
+        "status": "GREEN",
+        "evidence": [
+          "Kildens geometri og eksplicitte intervaller"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "domain": {
+        "value": "EV",
+        "status": "GREEN",
+        "evidence": [
+          "Kildetype og søgt fysisk relation"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "method": {
+        "value": "Gauss",
+        "status": "GREEN",
+        "evidence": [
+          "Radial tæthed og tilstrækkelig kildeudstrækning"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "units": {
+        "value": {
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m",
+          "epsilon_r": "1",
+          "R": "m",
+          "r": "m",
+          "k": "kg**(0)*m**(-4)*s**(1)*A**(1)"
+        },
+        "status": "GREEN",
+        "evidence": [
+          "Angivne enheder og dimensionelle ligninger"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "material_relation": {
+        "value": {
+          "kind": "linear_isotropic_dielectric",
+          "permittivity": "epsilon_0*epsilon_r",
+          "parameter": "epsilon_r",
+          "exterior_permittivity": "epsilon_0",
+          "source_kind": "free_volume_charge",
+          "evidence": [
+            "Lineært isotropt medium, givet fri ladning og eksplicit vakuum udenfor."
+          ],
+          "validity": [
+            "Permittiviteten er positiv og skalar; der er ingen yderligere frie fladeladninger."
+          ]
+        },
+        "status": "GREEN",
+        "evidence": [
+          "Lineært isotropt medium, givet fri ladning og eksplicit vakuum udenfor."
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "material": {
+        "value": "dielectric",
+        "status": "GREEN",
+        "evidence": [
+          "Materialeord i teksten"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      },
+      "symmetry": {
+        "value": "gauss_radial",
+        "status": "GREEN",
+        "evidence": [
+          "Geometri, udstrækning og funktionens afhængighed"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      }
+    },
+    "ready": true
+  },
+  "solution": {
+    "method": "Gauss’ lov",
+    "reasoning": "Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+    "equations_latex": [
+      "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+      "\\mathbf D=\\epsilon\\mathbf E",
+      "\\mathbf P=\\mathbf D-\\epsilon_0\\mathbf E"
+    ],
+    "steps": [
+      {
+        "id": "step-360f75e1d76124a62690-0",
+        "text": "Indesluttet bidrag fra området [0, R] før integration",
+        "title": "Indesluttet bidrag fra området [0, R] før integration",
+        "latex": "\\int\\limits_{0}^{r} 4 \\pi k r^{3}\\, dr",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Gauss’ lov",
+        "method_context_id": "method-0b90a57c6a32f76ebc59",
+        "intermediate_latex": [],
+        "assumptions": [
+          "spherical_symmetry",
+          "linear_isotropic_dielectric"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-6584846de4b9f476cd2f-0",
+        "text": "Efter symbolsk integration",
+        "title": "Efter symbolsk integration",
+        "latex": "\\pi k r^{4}",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Gauss’ lov",
+        "method_context_id": "method-0b90a57c6a32f76ebc59",
+        "intermediate_latex": [],
+        "assumptions": [
+          "spherical_symmetry",
+          "linear_isotropic_dielectric"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-04f8b7ab9a88b7d40fd0-0",
+        "text": "Indsæt den indesluttede ladning i Gauss’ lov",
+        "title": "Indsæt den indesluttede ladning i Gauss’ lov",
+        "latex": "\\begin{cases} \\frac{k r^{2}}{4 \\epsilon_{0} \\epsilon_{r}} & \\text{for}\\: R \\geq r \\\\\\frac{R^{4} k}{4 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Gauss’ lov",
+        "method_context_id": "method-0b90a57c6a32f76ebc59",
+        "intermediate_latex": [],
+        "assumptions": [
+          "spherical_symmetry",
+          "linear_isotropic_dielectric"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-06156fd8e22062012847-0",
+        "text": "Kontrolpunkt i regionen (D)",
+        "title": "Kontrolpunkt i regionen (D)",
+        "latex": "\\frac{R^{2} k}{16}",
+        "physical_reasoning": null,
+        "reasoning_scope": "method",
+        "law": "Gauss’ lov",
+        "method_context_id": "method-0b90a57c6a32f76ebc59",
+        "intermediate_latex": [],
+        "assumptions": [
+          "spherical_symmetry",
+          "linear_isotropic_dielectric"
+        ],
+        "validity": [],
+        "check_ids": []
+      },
+      {
+        "id": "step-a4a1be21e62e5adb1482-0",
+        "text": "Linjært isotropt dielektrikum: P = D − epsilon_0 E",
+        "title": "Linjært isotropt dielektrikum: P = D − epsilon_0 E",
+        "latex": "\\begin{cases} \\frac{k r^{2} \\left(\\epsilon_{r} - 1\\right)}{4 \\epsilon_{r}} & \\text{for}\\: R \\geq r \\\\0 & \\text{otherwise} \\end{cases}",
+        "physical_reasoning": "Polarisationsvektoren er forskellen mellem D og vakuumbidraget epsilon_0 E i den angivne konstitutive model.",
+        "reasoning_scope": "step",
+        "law": "Definition af polarisation",
+        "method_context_id": "method-0b90a57c6a32f76ebc59",
+        "intermediate_latex": [],
+        "assumptions": [
+          "spherical_symmetry",
+          "linear_isotropic_dielectric"
+        ],
+        "validity": [],
+        "check_ids": []
+      }
+    ],
+    "results": {
+      "Q_enc": {
+        "expression": "Piecewise((pi*k*r**4, R >= r), (pi*R**4*k, True))",
+        "latex": "\\begin{cases} \\pi k r^{4} & \\text{for}\\: R \\geq r \\\\\\pi R^{4} k & \\text{otherwise} \\end{cases}",
+        "unit": "C"
+      },
+      "D": {
+        "expression": "Piecewise((k*r**2/4, R >= r), (R**4*k/(4*r**2), True))",
+        "latex": "\\begin{cases} \\frac{k r^{2}}{4} & \\text{for}\\: R \\geq r \\\\\\frac{R^{4} k}{4 r^{2}} & \\text{otherwise} \\end{cases}",
+        "unit": "C/m^2"
+      },
+      "E": {
+        "expression": "Piecewise((k*r**2/(4*epsilon_0*epsilon_r), R >= r), (R**4*k/(4*epsilon_0*r**2), True))",
+        "latex": "\\begin{cases} \\frac{k r^{2}}{4 \\epsilon_{0} \\epsilon_{r}} & \\text{for}\\: R \\geq r \\\\\\frac{R^{4} k}{4 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+        "unit": "V/m"
+      },
+      "P": {
+        "expression": "Piecewise((k*r**2*(epsilon_r - 1)/(4*epsilon_r), R >= r), (0, True))",
+        "latex": "\\begin{cases} \\frac{k r^{2} \\left(\\epsilon_{r} - 1\\right)}{4 \\epsilon_{r}} & \\text{for}\\: R \\geq r \\\\0 & \\text{otherwise} \\end{cases}",
+        "unit": "C/m^2"
+      }
+    },
+    "numerical": {},
+    "checks": [
+      {
+        "id": "check-b6d90b86b3053cbab2b3",
+        "name": "Dimension: Q_enc",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C",
+        "step_ids": []
+      },
+      {
+        "id": "check-56c215bd12f5e7e9cc01",
+        "name": "Dimension: D",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C/m^2",
+        "step_ids": []
+      },
+      {
+        "id": "check-ee9d9de5492cf7f727df",
+        "name": "Dimension: E",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "V/m",
+        "step_ids": []
+      },
+      {
+        "id": "check-d0cf8834af728ab532ef",
+        "name": "Inputdimension: coordinate",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      },
+      {
+        "id": "check-38f0ece4e1be9f63e39e",
+        "name": "Inputdimension: region_0_lower",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      },
+      {
+        "id": "check-8a4a54380ec528ff7422",
+        "name": "Inputdimension: region_0_upper",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "m",
+        "step_ids": []
+      },
+      {
+        "id": "check-99267a8f68677e310173",
+        "name": "Inputdimension: region_0_density",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C/m^3",
+        "step_ids": []
+      },
+      {
+        "id": "check-3482485e9f303a751981",
+        "name": "Inputdimension: region_0_epsilon",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "F/m",
+        "step_ids": []
+      },
+      {
+        "id": "check-ae9f87befb0db4d166e5",
+        "name": "Dimension: Q_enc",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C",
+        "step_ids": []
+      },
+      {
+        "id": "check-7cd8d835210c5d339ba2",
+        "name": "Dimension: D",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C/m^2",
+        "step_ids": []
+      },
+      {
+        "id": "check-a7b87b7ca90ca91a7896",
+        "name": "Dimension: E",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "V/m",
+        "step_ids": []
+      },
+      {
+        "id": "check-2fc1ed485079dca29f30",
+        "name": "Dimension: P",
+        "passed": true,
+        "residual_latex": null,
+        "detail": "C/m^2",
+        "step_ids": []
+      }
+    ],
+    "direction": "Angivet orientering: . Radialt i positiv koordinatretning; negativt resultat betyder modsat retning. For plan: modsat retning på den anden side.",
+    "warnings": [
+      "Q_enc er total ladning for kugle, ladning pr. længde for cylinder og halvrums-ladning pr. areal for spejlsymmetrisk plan. Ved grænseflader angives ensidige grænser separat; punktværdien er ikke fysisk entydig ved overfladeladning."
+    ],
+    "presentation_version": "1.0",
+    "latex_profile": "EM1-Math-1",
+    "method_contexts": {
+      "method-0b90a57c6a32f76ebc59": {
+        "method_id": "gauss_radial",
+        "method": "Gauss’ lov",
+        "reasoning": "Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+        "equations": [
+          "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+          "\\mathbf D=\\epsilon\\mathbf E"
+        ],
+        "assumptions": [
+          "spherical_symmetry",
+          "linear_isotropic_dielectric"
+        ]
+      }
+    },
+    "views": {
+      "result": {
+        "wanted": [
+          "D",
+          "E",
+          "P"
+        ],
+        "results": {
+          "D": {
+            "expression": "Piecewise((k*r**2/4, R >= r), (R**4*k/(4*r**2), True))",
+            "latex": "\\begin{cases} \\frac{k r^{2}}{4} & \\text{for}\\: R \\geq r \\\\\\frac{R^{4} k}{4 r^{2}} & \\text{otherwise} \\end{cases}",
+            "unit": "C/m^2"
+          },
+          "E": {
+            "expression": "Piecewise((k*r**2/(4*epsilon_0*epsilon_r), R >= r), (R**4*k/(4*epsilon_0*r**2), True))",
+            "latex": "\\begin{cases} \\frac{k r^{2}}{4 \\epsilon_{0} \\epsilon_{r}} & \\text{for}\\: R \\geq r \\\\\\frac{R^{4} k}{4 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+            "unit": "V/m"
+          },
+          "P": {
+            "expression": "Piecewise((k*r**2*(epsilon_r - 1)/(4*epsilon_r), R >= r), (0, True))",
+            "latex": "\\begin{cases} \\frac{k r^{2} \\left(\\epsilon_{r} - 1\\right)}{4 \\epsilon_{r}} & \\text{for}\\: R \\geq r \\\\0 & \\text{otherwise} \\end{cases}",
+            "unit": "C/m^2"
+          }
+        },
+        "numerical": {},
+        "direction": "Angivet orientering: . Radialt i positiv koordinatretning; negativt resultat betyder modsat retning. For plan: modsat retning på den anden side."
+      },
+      "derivation": {
+        "equations_latex": [
+          "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+          "\\mathbf D=\\epsilon\\mathbf E",
+          "\\mathbf P=\\mathbf D-\\epsilon_0\\mathbf E"
+        ],
+        "step_ids": [
+          "step-360f75e1d76124a62690-0",
+          "step-6584846de4b9f476cd2f-0",
+          "step-04f8b7ab9a88b7d40fd0-0",
+          "step-06156fd8e22062012847-0",
+          "step-a4a1be21e62e5adb1482-0"
+        ]
+      },
+      "explanation": {
+        "step_ids": [
+          "step-360f75e1d76124a62690-0",
+          "step-6584846de4b9f476cd2f-0",
+          "step-04f8b7ab9a88b7d40fd0-0",
+          "step-06156fd8e22062012847-0",
+          "step-a4a1be21e62e5adb1482-0"
+        ],
+        "method_context_ids": [
+          "method-0b90a57c6a32f76ebc59"
+        ],
+        "global_check_ids": [
+          "check-b6d90b86b3053cbab2b3",
+          "check-56c215bd12f5e7e9cc01",
+          "check-ee9d9de5492cf7f727df",
+          "check-d0cf8834af728ab532ef",
+          "check-38f0ece4e1be9f63e39e",
+          "check-8a4a54380ec528ff7422",
+          "check-99267a8f68677e310173",
+          "check-3482485e9f303a751981",
+          "check-ae9f87befb0db4d166e5",
+          "check-7cd8d835210c5d339ba2",
+          "check-a7b87b7ca90ca91a7896",
+          "check-2fc1ed485079dca29f30"
+        ],
+        "warnings": [
+          "Q_enc er total ladning for kugle, ladning pr. længde for cylinder og halvrums-ladning pr. areal for spejlsymmetrisk plan. Ved grænseflader angives ensidige grænser separat; punktværdien er ikke fysisk entydig ved overfladeladning."
+        ]
+      }
+    },
+    "physical_model_rejected": false
+  },
+  "missing": [],
+  "errors": []
+}

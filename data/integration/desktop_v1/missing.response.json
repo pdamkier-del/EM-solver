@@ -1,0 +1,246 @@
+{
+  "schema_version": "1.0",
+  "status": "not_solved",
+  "interpretation": {
+    "model": {
+      "objects": [
+        {
+          "id": "body",
+          "geometry": "cylinder",
+          "extent": null,
+          "parameters": {
+            "radius": "R"
+          },
+          "position": null,
+          "material": "unspecified"
+        }
+      ],
+      "sources": [
+        {
+          "id": "source_rho",
+          "kind": "rho",
+          "formula": "k*s",
+          "arguments": [
+            "s"
+          ],
+          "basis": null,
+          "evidence": "rho(s)=k*s"
+        }
+      ],
+      "relationships": [
+        {
+          "subject": "source_rho",
+          "relation": "has_support",
+          "object": "body",
+          "regions": [
+            {
+              "lower": "0",
+              "upper": "R",
+              "density": "k*s"
+            },
+            {
+              "lower": "R",
+              "upper": "oo",
+              "density": "0"
+            }
+          ]
+        }
+      ],
+      "coordinates": [
+        "s"
+      ],
+      "orientation": {},
+      "boundary_conditions": {},
+      "initial_conditions": {},
+      "assumptions": [],
+      "wanted": [
+        "E"
+      ],
+      "units": {
+        "epsilon_0": "F/m",
+        "mu_0": "H/m",
+        "eps0": "F/m",
+        "mu0": "H/m",
+        "R": "m",
+        "s": "m",
+        "k": "kg**(0)*m**(-4)*s**(1)*A**(1)"
+      },
+      "values": {},
+      "methods": [
+        {
+          "name": null,
+          "status": "YELLOW"
+        }
+      ],
+      "dependencies": {}
+    },
+    "fields": {
+      "geometry": {
+        "value": "cylinder",
+        "status": "GREEN",
+        "evidence": [
+          "cylinder"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "wanted": {
+        "value": [
+          "E"
+        ],
+        "status": "GREEN",
+        "evidence": [
+          " E."
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "source": {
+        "value": "rho",
+        "status": "GREEN",
+        "evidence": [
+          "rho(s)=k*s"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "source_formula": {
+        "value": "k*s",
+        "status": "GREEN",
+        "evidence": [
+          "rho(s)=k*s"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "extent": {
+        "value": null,
+        "status": "YELLOW",
+        "evidence": [],
+        "message": "Er kilden endelig eller uendelig?",
+        "options": [
+          "finite",
+          "infinite"
+        ],
+        "required": true,
+        "depends_on": []
+      },
+      "orientation": {
+        "value": {},
+        "status": "GREEN",
+        "evidence": [],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "regions": {
+        "value": [
+          {
+            "lower": "0",
+            "upper": "R",
+            "density": "k*s"
+          },
+          {
+            "lower": "R",
+            "upper": "oo",
+            "density": "0"
+          }
+        ],
+        "status": "GREEN",
+        "evidence": [
+          "Kildens geometri og eksplicitte intervaller"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "domain": {
+        "value": "EV",
+        "status": "GREEN",
+        "evidence": [
+          "Kildetype og søgt fysisk relation"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "method": {
+        "value": null,
+        "status": "YELLOW",
+        "evidence": [],
+        "message": "Metoden afhænger af kildens udstrækning.",
+        "options": [],
+        "required": true,
+        "depends_on": [
+          "extent"
+        ]
+      },
+      "units": {
+        "value": {
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m",
+          "R": "m",
+          "s": "m",
+          "k": "kg**(0)*m**(-4)*s**(1)*A**(1)"
+        },
+        "status": "GREEN",
+        "evidence": [
+          "Angivne enheder og dimensionelle ligninger"
+        ],
+        "message": "",
+        "options": [],
+        "required": true,
+        "depends_on": []
+      },
+      "material": {
+        "value": "unspecified",
+        "status": "GREEN",
+        "evidence": [
+          "Materialeord i teksten"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      },
+      "symmetry": {
+        "value": "not established",
+        "status": "GREEN",
+        "evidence": [
+          "Geometri, udstrækning og funktionens afhængighed"
+        ],
+        "message": "",
+        "options": [],
+        "required": false,
+        "depends_on": []
+      }
+    },
+    "ready": false
+  },
+  "solution": null,
+  "missing": [
+    {
+      "field": "extent",
+      "status": "YELLOW",
+      "message": "Er kilden endelig eller uendelig?",
+      "options": [
+        "finite",
+        "infinite"
+      ]
+    }
+  ],
+  "errors": []
+}

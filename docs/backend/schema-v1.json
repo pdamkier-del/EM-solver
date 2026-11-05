@@ -2,14 +2,227 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "EM1 backend response 1.0",
   "type": "object",
-  "required": ["schema_version", "status", "interpretation", "solution", "missing", "errors"],
+  "required": [
+    "schema_version",
+    "status",
+    "interpretation",
+    "solution",
+    "missing",
+    "errors"
+  ],
   "additionalProperties": false,
   "properties": {
-    "schema_version": {"const": "1.0"},
-    "status": {"enum": ["not_solved", "ready", "partial", "verified_with_assumptions", "verified"]},
-    "interpretation": {"type": ["object", "null"], "properties": {"model": {"type": "object"}, "fields": {"type": "object"}, "ready": {"type": "boolean"}}, "required": ["model", "fields", "ready"]},
-    "solution": {"type": ["object", "null"], "properties": {"method": {"type": "string"}, "reasoning": {"type": "string"}, "equations_latex": {"type": "array", "items": {"type": "string"}}, "steps": {"type": "array"}, "results": {"type": "object"}, "numerical": {"type": "object"}, "checks": {"type": "array"}, "warnings": {"type": "array"}, "physical_model_rejected": {"type": "boolean"}}, "required": ["method", "reasoning", "equations_latex", "steps", "results", "numerical", "checks", "warnings", "physical_model_rejected"]},
-    "missing": {"type": "array", "items": {"type": "object", "required": ["field", "status", "message", "options"]}},
-    "errors": {"type": "array", "items": {"type": "string"}}
+    "schema_version": {
+      "const": "1.0"
+    },
+    "status": {
+      "enum": [
+        "not_solved",
+        "ready",
+        "partial",
+        "verified_with_assumptions",
+        "verified"
+      ]
+    },
+    "interpretation": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "model": {
+          "type": "object"
+        },
+        "fields": {
+          "type": "object"
+        },
+        "ready": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "model",
+        "fields",
+        "ready"
+      ]
+    },
+    "solution": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "reasoning": {
+          "type": "string"
+        },
+        "equations_latex": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "text",
+              "latex"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "latex": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "physical_reasoning": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "reasoning_scope": {
+                "enum": [
+                  "step",
+                  "method",
+                  "unspecified"
+                ]
+              },
+              "method_context_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "law": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "assumptions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "validity": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "intermediate_latex": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "check_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "results": {
+          "type": "object"
+        },
+        "numerical": {
+          "type": "object"
+        },
+        "checks": {
+          "type": "array"
+        },
+        "warnings": {
+          "type": "array"
+        },
+        "physical_model_rejected": {
+          "type": "boolean"
+        },
+        "presentation_version": {
+          "const": "1.0"
+        },
+        "latex_profile": {
+          "const": "EM1-Math-1"
+        },
+        "method_contexts": {
+          "type": "object"
+        },
+        "views": {
+          "type": "object",
+          "required": [
+            "result",
+            "derivation",
+            "explanation"
+          ],
+          "properties": {
+            "result": {
+              "type": "object"
+            },
+            "derivation": {
+              "type": "object",
+              "required": [
+                "step_ids",
+                "equations_latex"
+              ]
+            },
+            "explanation": {
+              "type": "object",
+              "required": [
+                "step_ids",
+                "method_context_ids",
+                "global_check_ids",
+                "warnings"
+              ]
+            }
+          }
+        }
+      },
+      "required": [
+        "method",
+        "reasoning",
+        "equations_latex",
+        "steps",
+        "results",
+        "numerical",
+        "checks",
+        "warnings",
+        "physical_model_rejected"
+      ]
+    },
+    "missing": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "field",
+          "status",
+          "message",
+          "options"
+        ]
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
   }
 }

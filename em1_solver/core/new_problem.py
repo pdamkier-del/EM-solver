@@ -190,7 +190,7 @@ def execute(parsed,evaluate_integrals=False,budget=2):
             p.assume('linear_isotropic_dielectric')
             from .validation import EPS0
             out.symbolic_result['P']=sp.simplify(out.symbolic_result['D']-EPS0*out.symbolic_result['E']);out.units['P']='C/m^2'
-            out.add('Linjært isotropt dielektrikum: P = D − epsilon_0 E',out.symbolic_result['P']);out.equations.append(r'\mathbf P=\mathbf D-\epsilon_0\mathbf E')
+            out.add('Linjært isotropt dielektrikum: P = D − epsilon_0 E',out.symbolic_result['P'],reasoning='Polarisationsvektoren er forskellen mellem D og vakuumbidraget epsilon_0 E i den angivne konstitutive model.',law='Definition af polarisation');out.equations.append(r'\mathbf P=\mathbf D-\epsilon_0\mathbf E')
             check_solution(out,p.symbol_units)
         if 'signed_coordinate' in parsed.data:
             from .parsing import expression
