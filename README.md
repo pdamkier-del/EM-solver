@@ -1,3 +1,8 @@
+Denne branch anvendes til separat fysikudvikling i `/workspace/EM-solver-physics`.
+Desktopappen bruger den fastlåste branch `desktop-integration-2026-11-05`, commit
+`22c78ffdc545736ddb81c042f83a94b71613b3eb`, i `/workspace/EM-solver`.
+Se [lokal udviklingsstatus](reports/physics_development/status.md).
+
 # EM1 Solver – lokal eksamensapp
 
 Desktopintegration: [entrypoints og Windows-setup](docs/desktop/INTEGRATION.md),

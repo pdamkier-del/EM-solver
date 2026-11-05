@@ -261,8 +261,14 @@ def field_calculus(p):
         result.symbolic_result.update(B=b,div_B=divergence)
         result.check('Magnetisk divergens',divergence,step=divergence_step)
         if 'magnetostatic' in p.assumptions:
-            result.symbolic_result['J']=curl(b)/sp.Symbol('mu_0',positive=True)
-            result.add('Magnetostatik: beregn curl(B) og divider med μ₀',result.symbolic_result['J'])
+            if 'time' in data:
+                if not isinstance(data['time'],sp.Symbol):raise InputError('Magnetostatisk tidskontrol kræver et eksplicit tidssymbol.')
+                if any(value.equals(0) is not True for value in b.diff(data['time'])):raise InputError('Det givne B afhænger af tiden og er ikke verificeret magnetostatisk.')
+            current=curl(b)/sp.Symbol('mu_0',positive=True)
+            if 'J' in data and any(value.equals(0) is not True for value in sp.simplify(current-vector(data['J']))):raise InputError('Givet J og B er ikke verificeret indbyrdes konsistente: magnetostatik kræver J = curl(B)/mu_0.')
+            result.symbolic_result['J']=current
+            current_step=result.add('Magnetostatik: beregn curl(B) og divider med μ₀',current,reasoning='I magnetostatik giver Ampères differentiallov den samlede strømtæthed. Ladningsbevarelse kræver samtidig nul divergens af denne stationære strøm.',law='Ampères differentiallov',validity=['Stationære felter; strømmen omfatter alle kilder til det angivne B.'])
+            result.check('Statisk strømbevarelse: div(J)=0',div(current),'Kontinuitetsligningen reduceres til nul divergens, når ladningstætheden er stationær.',step=current_step)
     if 'E' not in data and 'B' not in data:
         raise InputError('Angiv V, E, A eller B.')
     result.units={'E':'V/m','rho':'C/m^3','B':'T','J':'A/m^2','Q':'C','dB_dt':'T/s','curl_E':'V/m^2','laplacian_V':'V/m^2','laplacian_A':'T/m','div_A':'T','div_B':'T/m'}
