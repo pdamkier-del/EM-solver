@@ -35,5 +35,7 @@
       "math_display_errors": [],
       "pdf_rasterized": true
     }
-  ]
+  ],
+  "run_app_bootstrap_tested": true,
+  "seconds_to_visible_window": 1.169
 }
