@@ -1,0 +1,117 @@
+{
+  "date_utc": "2026-11-05T18:08:21.296161+00:00",
+  "scope": "Five selected cases, not general EM1 accuracy.",
+  "cases": [
+    {
+      "id": "EV_sphere",
+      "title": "Gauss: kugle med rho(r)=kr",
+      "corrections": {},
+      "status": "verified_with_assumptions",
+      "step_count": 1,
+      "passed_checks": 1,
+      "failed_checks": [],
+      "result_keys": [
+        "Q"
+      ],
+      "expected_comparisons": {
+        "Q": {
+          "pass": true,
+          "actual": "pi*R**4*k",
+          "expected": "pi*k*R**4"
+        }
+      },
+      "pass": true
+    },
+    {
+      "id": "EV_shell",
+      "title": "Gauss: kugleskal rho=k/r²",
+      "corrections": {},
+      "status": "verified_with_assumptions",
+      "step_count": 11,
+      "passed_checks": 20,
+      "failed_checks": [],
+      "result_keys": [
+        "Q_enc",
+        "D",
+        "E",
+        "Q",
+        "V"
+      ],
+      "expected_comparisons": {
+        "Q": {
+          "pass": true,
+          "actual": "4*pi*k*(-a + b)",
+          "expected": "4*pi*k*(b-a)"
+        }
+      },
+      "pass": true
+    },
+    {
+      "id": "BA_cylinder",
+      "title": "Ampere: varierende strøm i cylinder",
+      "corrections": {},
+      "status": "verified_with_assumptions",
+      "step_count": 4,
+      "passed_checks": 11,
+      "failed_checks": [],
+      "result_keys": [
+        "I_enc",
+        "B",
+        "I"
+      ],
+      "expected_comparisons": {
+        "I": {
+          "pass": true,
+          "actual": "2*pi*R**3*k/3",
+          "expected": "2*pi*k*R**3/3"
+        }
+      },
+      "pass": true
+    },
+    {
+      "id": "DYN_capacitor",
+      "title": "Ampere–Maxwell: tidsafhængigt E",
+      "corrections": {},
+      "status": "verified_with_assumptions",
+      "step_count": 3,
+      "passed_checks": 7,
+      "failed_checks": [],
+      "result_keys": [
+        "J_displacement",
+        "I_displacement",
+        "B"
+      ],
+      "expected_comparisons": {
+        "J_displacement": {
+          "pass": true,
+          "actual": "2*E0*epsilon_0*t",
+          "expected": "2*E0*epsilon_0*t"
+        }
+      },
+      "pass": true
+    },
+    {
+      "id": "EV_cylinder_manual",
+      "title": "Gauss: massiv cylinder, assisteret",
+      "corrections": {
+        "coordinate": "s",
+        "geometry": "cylinder",
+        "extent": "infinite",
+        "radius": "R"
+      },
+      "status": "verified_with_assumptions",
+      "step_count": 4,
+      "passed_checks": 8,
+      "failed_checks": [],
+      "result_keys": [
+        "Q_enc",
+        "D",
+        "E"
+      ],
+      "expected_comparisons": {},
+      "pass": true
+    }
+  ],
+  "passed": 5,
+  "total": 5
+}

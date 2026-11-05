@@ -1,0 +1,20 @@
+{
+  "archive": "EM1-Solver-Desktop-Python313-2026-11-05.zip",
+  "bytes": 14152226,
+  "sha256": "0073c620e9c2b5f186f0b9e8289918ed504978034fdbb749fc42a0d2cd082d28",
+  "source_commit": "53c90341bd2a7251f3dc619c1026ee78cd5fdcd6",
+  "manifest_files_verified": 401,
+  "crc_verified": true,
+  "source_tree_clean_in_manifest": true,
+  "native_windows_tested": false,
+  "run_app_bootstrap_tested": true,
+  "seconds_to_visible_window": 0.726,
+  "python_tested": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "fresh_runtime_interpreter": "/workspace/em1-python313-offline/bin/python",
+  "offline_gui_domains": [
+    "EV",
+    "BA",
+    "DYN"
+  ],
+  "standalone_diagnostic_passed": 5
+}
