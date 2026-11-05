@@ -1,0 +1,39 @@
+{
+  "native_windows_tested": false,
+  "package_main_window": "/workspace/desktop-delivery-final/EM1-Desktop-Integrated/app.py",
+  "python_outbound_sockets": "blocked",
+  "process_to_window_seconds": 1.188,
+  "rc_result": {
+    "I_initial": {
+      "latex": "250.549450549451",
+      "unit": "A",
+      "value": "250.549450549451"
+    },
+    "U_initial": {
+      "latex": "178.516483516484",
+      "unit": "J",
+      "value": "178.516483516484"
+    },
+    "decay_time": {
+      "latex": "0.104767621731229",
+      "unit": "s",
+      "value": "0.104767621731229"
+    },
+    "tau": {
+      "latex": "0.02275",
+      "unit": "s",
+      "value": "0.0227500000000000"
+    }
+  },
+  "backend_module": "/workspace/desktop-delivery-final/EM1-Desktop-Integrated/vendor/EM-solver-assisted/em1_solver/__init__.py",
+  "backend_fingerprint": "56361c00d1e98d05f822511d8ffd1c321516c21afeea9c6b6a7e836ed86e4249",
+  "math_display_errors": 0,
+  "missing_Q0": "refused_without_result",
+  "source_code_commit": "80ed036045a211bd4f9b5fada8756bcac883c50b",
+  "archive": "EM1-Solver-Desktop-Integrated-2026-11-05.zip",
+  "bytes": 14128027,
+  "sha256": "dd350d2f7ce942c89fe466db845ce4b9515e9345f3556deef26a007a83c36f87",
+  "crc_verified": true,
+  "manifest_files_verified": 394,
+  "run_app_bootstrap_tested": true
+}

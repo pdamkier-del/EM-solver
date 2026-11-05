@@ -68,3 +68,9 @@ Linux/offscreen måling: {"main_window_seconds": 0.68, "rss_after_main_window_mb
 Windows er ikke kørt. Alle 21 låste afhængigheder kunne hentes som Windows/Python 3.12 x64-wheels, men dette er ikke en native installationsprøve. Følg [installations- og native testproceduren](../../desktop_app/WINDOWS_INTEGRATED.md). Installér før eksamen; START_WINDOWS.bat downloader intet.
 
 [Fuld evaluering og indtastet brugerhjælp pr. opgave](evaluation.json) · [Kilde-/testvalidering](validation.json)
+
+## Downloadklar kilde-/installationspakke
+
+[EM1-Solver-Desktop-Integrated-2026-11-05.zip](../../distribution/EM1-Solver-Desktop-Integrated-2026-11-05.zip) indeholder frontend og medfølgende backend. Størrelse: 14128027 bytes. SHA256: `dd350d2f7ce942c89fe466db845ce4b9515e9345f3556deef26a007a83c36f87`. Kildecommit: `80ed036045a211bd4f9b5fada8756bcac883c50b`.
+
+Den endelige pakke er udpakket og startet via dens faktiske run_app.py-bootstrap på Linux/offscreen. Alle 394 manifest-hashes og ZIP-CRC er kontrolleret; RC-resultatet og en afvisning ved manglende Q0 består fra pakkens egen backendsti. Målt proces-til-vindue: 1.188 s. Det er fortsat ikke native Windows-validering.
