@@ -1,0 +1,12 @@
+{
+  "reviewed_after_execution": true,
+  "reference_answers_not_used_as_input": true,
+  "notes": {
+    "1b": "Positive rho0 and positive radial scalar E agree with the radial-outward direction.",
+    "3b": "App explicitly states +phi for current along +z.",
+    "4a": "In cylindrical [s,phi,z] components the app gives negative phi bulk current and positive phi surface current.",
+    "5a": "EMF is negative relative to the stated +z normal/CCW contour; generic sign convention is provided.",
+    "5b": "RL output direction is empty and has no spatial clockwise explanation; graded partial despite correct I and heat.",
+    "6b": "Computed I is negative relative to the declared +y current, as required by v(+x) cross B(+z) pointing -y."
+  }
+}

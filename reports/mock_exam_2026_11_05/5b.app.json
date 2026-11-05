@@ -1,0 +1,967 @@
+{
+  "id": "5b",
+  "domain": "DYN",
+  "route": "manual_dependency",
+  "text": "En spole med N=3 vindinger har et homogent påtrykt normalfelt B(t)=B0*(1+t/T) og areal A(t)=A0*(1+t/(2*T)) for t>=0. B0=0,08 T, A0=20 cm^2, T=0,70 s. Positiv normal er +z og positiv strøm er mod uret set fra +z. Kredsen har R=7,0 ohm og L=140 mH med I(0)=0. Selvinduktansen må ikke negligeres. Koefficienterne er konstante.\nb) Brug den fundne emf til at bestemme I(t), I(T) og den samlede Joule-varme fra t=0 til t=T. Forklar strømretningen.",
+  "automatic_reply": {
+    "schema_version": "1.0",
+    "status": "not_solved",
+    "interpretation": {
+      "model": {
+        "objects": [
+          {
+            "id": "body",
+            "geometry": "solenoid",
+            "extent": null,
+            "parameters": {
+              "area": "A"
+            },
+            "position": null,
+            "material": "unspecified"
+          }
+        ],
+        "sources": [
+          {
+            "id": "source_B",
+            "kind": "B",
+            "formula": "B0",
+            "arguments": [],
+            "basis": null,
+            "evidence": "B0=0.08 T"
+          },
+          {
+            "id": "source_A",
+            "kind": "A",
+            "formula": "A0",
+            "arguments": [],
+            "basis": null,
+            "evidence": "A0=20 cm**2"
+          }
+        ],
+        "relationships": [
+          {
+            "subject": "source_B",
+            "relation": "has_support",
+            "object": "body",
+            "regions": "model dependent"
+          },
+          {
+            "subject": "source_A",
+            "relation": "has_support",
+            "object": "body",
+            "regions": "model dependent"
+          }
+        ],
+        "coordinates": [
+          "x",
+          "y",
+          "z"
+        ],
+        "orientation": {
+          "current_sense": "counterclockwise"
+        },
+        "boundary_conditions": {},
+        "initial_conditions": {},
+        "assumptions": [],
+        "wanted": [],
+        "units": {
+          "B0": "kilogram / ampere / second ** 2",
+          "A0": "meter ** 2",
+          "T": "second",
+          "R": "kilogram * meter ** 2 / ampere ** 2 / second ** 3",
+          "L": "kilogram * meter ** 2 / ampere ** 2 / second ** 2",
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m",
+          "A": "m^2",
+          "x": "m",
+          "y": "m",
+          "z": "m"
+        },
+        "values": {
+          "B0": "0.08 T",
+          "A0": "20 cm**2",
+          "T": "0.70 s",
+          "R": "7.0 ohm",
+          "L": "140 mH"
+        },
+        "methods": [
+          {
+            "name": "field_calculus",
+            "status": "GREEN"
+          }
+        ],
+        "dependencies": {}
+      },
+      "fields": {
+        "geometry": {
+          "value": "solenoid",
+          "status": "GREEN",
+          "evidence": [
+            "spole med"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "wanted": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source_conflict": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Flere uafhængige kilder/felter kræver en eksplicit sammenkobling. Brug Avanceret / Manuel.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source": {
+          "value": "A",
+          "status": "GREEN",
+          "evidence": [
+            "A0=20 cm**2"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source_formula": {
+          "value": "A0",
+          "status": "GREEN",
+          "evidence": [
+            "A0=20 cm**2"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "orientation": {
+          "value": "cartesian component basis",
+          "status": "GREEN",
+          "evidence": [
+            "Funktionens koordinater / basisvektorer"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "regions": {
+          "value": "model dependent",
+          "status": "GREEN",
+          "evidence": [
+            "Ikke en radial volumen-/strømtæthed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "domain": {
+          "value": "BA",
+          "status": "GREEN",
+          "evidence": [
+            "Kildetype og søgt fysisk relation"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "method": {
+          "value": "Gradient / divergens / rotation",
+          "status": "GREEN",
+          "evidence": [
+            "Eksplicit felt eller potentiale"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "moving_geometry": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "En geometriparameter er en funktion. Dens afhængighed skal indgå eksplicit i beregningen; brug Avanceret / Manuel.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "units": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente.",
+          "options": [],
+          "required": true,
+          "depends_on": [
+            "source_formula"
+          ]
+        },
+        "subproblem": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "material": {
+          "value": "unspecified",
+          "status": "GREEN",
+          "evidence": [
+            "Materialeord i teksten"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "symmetry": {
+          "value": "not established",
+          "status": "GREEN",
+          "evidence": [
+            "Geometri, udstrækning og funktionens afhængighed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        }
+      },
+      "ready": false
+    },
+    "solution": null,
+    "missing": [
+      {
+        "field": "wanted",
+        "status": "RED",
+        "message": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "options": []
+      },
+      {
+        "field": "source_conflict",
+        "status": "RED",
+        "message": "Flere uafhængige kilder/felter kræver en eksplicit sammenkobling. Brug Avanceret / Manuel.",
+        "options": []
+      },
+      {
+        "field": "moving_geometry",
+        "status": "RED",
+        "message": "En geometriparameter er en funktion. Dens afhængighed skal indgå eksplicit i beregningen; brug Avanceret / Manuel.",
+        "options": []
+      },
+      {
+        "field": "units",
+        "status": "RED",
+        "message": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente.",
+        "options": []
+      },
+      {
+        "field": "subproblem",
+        "status": "RED",
+        "message": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+        "options": []
+      }
+    ],
+    "errors": [],
+    "desktop_user_corrections": {}
+  },
+  "automatic_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Kan ikke løses med de givne oplysninger",
+    "prompt": "En spole med N=3 vindinger har et homogent påtrykt normalfelt B(t)=B0*(1+t/T) og areal A(t)=A0*(1+t/(2*T)) for t>=0. B0=0,08 T, A0=20 cm^2, T=0,70 s. Positiv normal er +z og positiv strøm er mod uret set fra +z. Kredsen har R=7,0 ohm og L=140 mH med I(0)=0. Selvinduktansen må ikke negligeres. Koefficienterne er konstante.\nb) Brug den fundne emf til at bestemme I(t), I(T) og den samlede Joule-varme fra t=0 til t=T. Forklar strømretningen.",
+    "status": "unsolved",
+    "result": {},
+    "steps": [],
+    "interpretation": {
+      "method": "Ikke afgjort",
+      "geometry": "Se opgavefortolkningen"
+    },
+    "warnings": [
+      "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+      "Flere uafhængige kilder/felter kræver en eksplicit sammenkobling. Brug Avanceret / Manuel.",
+      "En geometriparameter er en funktion. Dens afhængighed skal indgå eksplicit i beregningen; brug Avanceret / Manuel.",
+      "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente.",
+      "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+    ],
+    "backend_status": "not_solved",
+    "backend_schema": "1.0",
+    "audit": "# Kontrol og gyldighed\n\nBackend rapporterede 0 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\nIngen individuelle kontroller er rapporteret i svaret.\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "automatic_semantic_actions": 2,
+  "dependency_transferred": {
+    "from_part": "5a",
+    "result": "EMF",
+    "actual_expression": "-A0*B0*N*(3*T + 2*t)/(2*T**2)"
+  },
+  "manual_action_details": {
+    "prompt": 1,
+    "open_model": 1,
+    "model_selection": 1,
+    "scalar_field_entries": 5,
+    "table_cells": 0,
+    "scan_symbols": 1,
+    "unit_entries": 8,
+    "numeric_entries": 7,
+    "positive_flags": 6,
+    "wanted": 1,
+    "conditions": 1,
+    "orientation": 1,
+    "confirmation": 1,
+    "solve": 1,
+    "operation_cells": 12
+  },
+  "manual_semantic_actions": 47,
+  "manual_request": {
+    "schema_version": "assisted-1.0",
+    "text": "En spole med N=3 vindinger har et homogent påtrykt normalfelt B(t)=B0*(1+t/T) og areal A(t)=A0*(1+t/(2*T)) for t>=0. B0=0,08 T, A0=20 cm^2, T=0,70 s. Positiv normal er +z og positiv strøm er mod uret set fra +z. Kredsen har R=7,0 ohm og L=140 mH med I(0)=0. Selvinduktansen må ikke negligeres. Koefficienterne er konstante.\nb) Brug den fundne emf til at bestemme I(t), I(T) og den samlede Joule-varme fra t=0 til t=T. Forklar strømretningen.",
+    "confirmed": true,
+    "variables": {
+      "time": "t",
+      "R": "R",
+      "L": "L",
+      "voltage": "-A0*B0*N*(3*T + 2*t)/(2*T**2)",
+      "I0": "0"
+    },
+    "units": {
+      "t": "s",
+      "R": "ohm",
+      "L": "H",
+      "A0": "m^2",
+      "B0": "T",
+      "N": "1",
+      "T": "s",
+      "I": "A"
+    },
+    "numbers": {
+      "t": "0.70 s",
+      "R": "7 ohm",
+      "L": "140 mH",
+      "A0": "20 cm^2",
+      "B0": "0.08 T",
+      "N": "3",
+      "T": "0.70 s"
+    },
+    "positive": [
+      "R",
+      "L",
+      "A0",
+      "B0",
+      "N",
+      "T"
+    ],
+    "assumptions": [
+      "constant_coefficients"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "RL_driven",
+        "wanted": [
+          "I",
+          "heat"
+        ],
+        "orientation_confirmed": true,
+        "operations": [
+          {
+            "kind": "transform",
+            "id": "heat_rate",
+            "result": "I",
+            "variable": "t",
+            "value": "R*I**2",
+            "unit": "W"
+          },
+          {
+            "kind": "integrate",
+            "id": "heat",
+            "result": "heat_rate",
+            "variable": "t",
+            "lower": "0",
+            "upper": "T"
+          }
+        ]
+      }
+    ]
+  },
+  "manual_response": {
+    "schema_version": "assisted-1.0",
+    "status": "calculated_under_confirmed_model",
+    "questions": [],
+    "errors": [],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "RL_driven",
+        "status": "calculated_under_confirmed_model",
+        "solution": {
+          "method": "Lineær kredsløbsdifferentialligning",
+          "reasoning": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+          "equations_latex": [
+            "R\\dot Q+Q/C=0",
+            "L\\dot I+RI=V"
+          ],
+          "steps": [
+            {
+              "id": "step-f227a53f413b6a4f1993-0",
+              "text": "Den lineære differentialligning",
+              "title": "Den lineære differentialligning",
+              "latex": "L \\frac{d}{d t} I{\\left(t \\right)} + R I{\\left(t \\right)} = - \\frac{A_{0} B_{0} N \\left(3 T + 2 t\\right)}{2 T^{2}}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Lineær kredsløbsdifferentialligning",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-105dc68d23bf0455178b-0",
+              "text": "Løs med begyndelsesbetingelsen",
+              "title": "Løs med begyndelsesbetingelsen",
+              "latex": "I{\\left(t \\right)} = \\frac{A_{0} B_{0} L N}{R^{2} T^{2}} - \\frac{3 A_{0} B_{0} N}{2 R T} - \\frac{A_{0} B_{0} N t}{R T^{2}} + \\frac{\\left(- 2 A_{0} B_{0} L N + 3 A_{0} B_{0} N R T\\right) e^{- \\frac{R t}{L}}}{2 R^{2} T^{2}}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Lineær kredsløbsdifferentialligning",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-f6c077f1be128d9e4ccf-0",
+              "text": "Anvend den eksplicit bekræftede resultatforbindelse",
+              "title": "Anvend den eksplicit bekræftede resultatforbindelse",
+              "latex": "heat_{rate} = I^{2} R",
+              "physical_reasoning": "Enheder kontrolleres før de tidligere resultater indsættes. Sammenhængens fysiske relevans skal bekræftes af brugeren.",
+              "reasoning_scope": "step",
+              "law": "Brugerangivet fysisk sammenhæng",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-6ca27a08e034678912e3-0",
+              "text": "Indsæt de beregnede resultater",
+              "title": "Indsæt de beregnede resultater",
+              "latex": "\\frac{A_{0}^{2} B_{0}^{2} N^{2} \\left(- 2 L e^{\\frac{R t}{L}} + 2 L + 3 R T e^{\\frac{R t}{L}} - 3 R T + 2 R t e^{\\frac{R t}{L}}\\right)^{2} e^{- \\frac{2 R t}{L}}}{4 R^{3} T^{4}}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Lineær kredsløbsdifferentialligning",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-5877f84545fa571b26fc-0",
+              "text": "Integrer heat_rate over det eksplicit angivne interval",
+              "title": "Integrer heat_rate over det eksplicit angivne interval",
+              "latex": "\\int\\limits_{0}^{T} \\frac{A_{0}^{2} B_{0}^{2} N^{2} \\left(- 2 L e^{\\frac{R t}{L}} + 2 L + 3 R T e^{\\frac{R t}{L}} - 3 R T + 2 R t e^{\\frac{R t}{L}}\\right)^{2} e^{- \\frac{2 R t}{L}}}{4 R^{3} T^{4}}\\, dt",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Bestemt integration",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-8fc2cb3984bb4b7405aa-0",
+              "text": "Evaluér integralet",
+              "title": "Evaluér integralet",
+              "latex": "\\frac{A_{0}^{2} B_{0}^{2} N^{2}}{3 R T} + \\frac{- 2 A_{0}^{2} B_{0}^{2} L N^{2} + 3 A_{0}^{2} B_{0}^{2} N^{2} R T}{2 R^{2} T^{2}} + \\frac{4 A_{0}^{2} B_{0}^{2} L^{2} N^{2} - 12 A_{0}^{2} B_{0}^{2} L N^{2} R T + 9 A_{0}^{2} B_{0}^{2} N^{2} R^{2} T^{2}}{4 R^{3} T^{3}} + \\frac{\\left(- 80 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} + 120 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}\\right) e^{- \\frac{R T}{L}} + \\left(- 8 A_{0}^{2} B_{0}^{2} L^{3} N^{2} R^{3} T^{4} + 24 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} - 18 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}\\right) e^{- \\frac{2 R T}{L}}}{16 R^{7} T^{8}} - \\frac{- 8 A_{0}^{2} B_{0}^{2} L^{3} N^{2} R^{3} T^{4} - 24 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} + 54 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}}{16 R^{7} T^{8}}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Lineær kredsløbsdifferentialligning",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            }
+          ],
+          "results": {
+            "I": {
+              "expression": "A0*B0*N*(2*L*exp(R*t/L) - 2*L - 3*R*T*exp(R*t/L) + 3*R*T - 2*R*t*exp(R*t/L))*exp(-R*t/L)/(2*R**2*T**2)",
+              "latex": "\\frac{A_{0} B_{0} N \\left(2 L e^{\\frac{R t}{L}} - 2 L - 3 R T e^{\\frac{R t}{L}} + 3 R T - 2 R t e^{\\frac{R t}{L}}\\right) e^{- \\frac{R t}{L}}}{2 R^{2} T^{2}}",
+              "unit": "A"
+            },
+            "tau": {
+              "expression": "L/R",
+              "latex": "\\frac{L}{R}",
+              "unit": "s"
+            },
+            "I_initial": {
+              "expression": "0",
+              "latex": "0",
+              "unit": "A"
+            },
+            "heat_rate": {
+              "expression": "A0**2*B0**2*N**2*(-2*L*exp(R*t/L) + 2*L + 3*R*T*exp(R*t/L) - 3*R*T + 2*R*t*exp(R*t/L))**2*exp(-2*R*t/L)/(4*R**3*T**4)",
+              "latex": "\\frac{A_{0}^{2} B_{0}^{2} N^{2} \\left(- 2 L e^{\\frac{R t}{L}} + 2 L + 3 R T e^{\\frac{R t}{L}} - 3 R T + 2 R t e^{\\frac{R t}{L}}\\right)^{2} e^{- \\frac{2 R t}{L}}}{4 R^{3} T^{4}}",
+              "unit": "W"
+            },
+            "heat": {
+              "expression": "A0**2*B0**2*N**2/(3*R*T) + (-2*A0**2*B0**2*L*N**2 + 3*A0**2*B0**2*N**2*R*T)/(2*R**2*T**2) + (4*A0**2*B0**2*L**2*N**2 - 12*A0**2*B0**2*L*N**2*R*T + 9*A0**2*B0**2*N**2*R**2*T**2)/(4*R**3*T**3) + ((-80*A0**2*B0**2*L**2*N**2*R**4*T**5 + 120*A0**2*B0**2*L*N**2*R**5*T**6)*exp(-R*T/L) + (-8*A0**2*B0**2*L**3*N**2*R**3*T**4 + 24*A0**2*B0**2*L**2*N**2*R**4*T**5 - 18*A0**2*B0**2*L*N**2*R**5*T**6)*exp(-2*R*T/L))/(16*R**7*T**8) - (-8*A0**2*B0**2*L**3*N**2*R**3*T**4 - 24*A0**2*B0**2*L**2*N**2*R**4*T**5 + 54*A0**2*B0**2*L*N**2*R**5*T**6)/(16*R**7*T**8)",
+              "latex": "\\frac{A_{0}^{2} B_{0}^{2} N^{2}}{3 R T} + \\frac{- 2 A_{0}^{2} B_{0}^{2} L N^{2} + 3 A_{0}^{2} B_{0}^{2} N^{2} R T}{2 R^{2} T^{2}} + \\frac{4 A_{0}^{2} B_{0}^{2} L^{2} N^{2} - 12 A_{0}^{2} B_{0}^{2} L N^{2} R T + 9 A_{0}^{2} B_{0}^{2} N^{2} R^{2} T^{2}}{4 R^{3} T^{3}} + \\frac{\\left(- 80 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} + 120 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}\\right) e^{- \\frac{R T}{L}} + \\left(- 8 A_{0}^{2} B_{0}^{2} L^{3} N^{2} R^{3} T^{4} + 24 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} - 18 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}\\right) e^{- \\frac{2 R T}{L}}}{16 R^{7} T^{8}} - \\frac{- 8 A_{0}^{2} B_{0}^{2} L^{3} N^{2} R^{3} T^{4} - 24 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} + 54 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}}{16 R^{7} T^{8}}",
+              "unit": "(W)*(s)"
+            }
+          },
+          "numerical": {
+            "I": {
+              "value": "-0.000242099125364431",
+              "latex": "-0.000242099125364431",
+              "unit": "A"
+            },
+            "tau": {
+              "value": "0.0200000000000000",
+              "latex": "0.02",
+              "unit": "s"
+            },
+            "I_initial": {
+              "value": "0",
+              "latex": "0",
+              "unit": "A"
+            },
+            "heat_rate": {
+              "value": "4.10283905515559e-7",
+              "latex": "4.10283905515559 \\cdot 10^{-7}",
+              "unit": "W"
+            },
+            "heat": {
+              "value": "1.82188636639495e-7",
+              "latex": "1.82188636639495 \\cdot 10^{-7}",
+              "unit": "(W)*(s)"
+            }
+          },
+          "checks": [
+            {
+              "id": "check-23669e4b60d59f9eca52",
+              "name": "RL-ligning",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-38ee0012570ca658a1a8",
+              "name": "Dimension: I",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-4dd57c7f5b028ef0f583",
+              "name": "Dimension: tau",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-aefc18fb40c2c9b9419e",
+              "name": "Dimension: I_initial",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-d2f326c4ea2692476a43",
+              "name": "Inputdimension: time",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-b8b12d5e8360827c68e3",
+              "name": "Inputdimension: R",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "ohm",
+              "step_ids": []
+            },
+            {
+              "id": "check-d520e171bbb498d49bbd",
+              "name": "Inputdimension: L",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "H",
+              "step_ids": []
+            },
+            {
+              "id": "check-7a168c436480296c6749",
+              "name": "Inputdimension: voltage",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "V",
+              "step_ids": []
+            },
+            {
+              "id": "check-c865d0584101162bc7f2",
+              "name": "Inputdimension: I0",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-ac19f32f0ee124b93c19",
+              "name": "Dimension: I",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-fddfa5307a12e61ca76c",
+              "name": "Dimension: tau",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-88ad2656f08fa3adb45e",
+              "name": "Dimension: I_initial",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-9794d279a3dd881b30a1",
+              "name": "Dimension: heat_rate",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "W",
+              "step_ids": []
+            },
+            {
+              "id": "check-25869cec8378d077f903",
+              "name": "Dimension: heat",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "(W)*(s)",
+              "step_ids": []
+            }
+          ],
+          "direction": "",
+          "warnings": [
+            "En generel tidsafhængig spænding har ikke nødvendigvis en konstant slutstrøm. Brug en eksplicit grænseoperation, hvis grænsen findes."
+          ],
+          "presentation_version": "1.0",
+          "latex_profile": "EM1-Math-1",
+          "method_contexts": {
+            "method-6477c011bebda04cbe6f": {
+              "method_id": "rc_transient",
+              "method": "Lineær kredsløbsdifferentialligning",
+              "reasoning": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+              "equations": [
+                "R\\dot Q+Q/C=0",
+                "L\\dot I+RI=V"
+              ],
+              "assumptions": [
+                "constant_coefficients"
+              ]
+            }
+          },
+          "views": {
+            "result": {
+              "wanted": [
+                "I",
+                "heat",
+                "heat_rate"
+              ],
+              "results": {
+                "I": {
+                  "expression": "A0*B0*N*(2*L*exp(R*t/L) - 2*L - 3*R*T*exp(R*t/L) + 3*R*T - 2*R*t*exp(R*t/L))*exp(-R*t/L)/(2*R**2*T**2)",
+                  "latex": "\\frac{A_{0} B_{0} N \\left(2 L e^{\\frac{R t}{L}} - 2 L - 3 R T e^{\\frac{R t}{L}} + 3 R T - 2 R t e^{\\frac{R t}{L}}\\right) e^{- \\frac{R t}{L}}}{2 R^{2} T^{2}}",
+                  "unit": "A"
+                },
+                "heat_rate": {
+                  "expression": "A0**2*B0**2*N**2*(-2*L*exp(R*t/L) + 2*L + 3*R*T*exp(R*t/L) - 3*R*T + 2*R*t*exp(R*t/L))**2*exp(-2*R*t/L)/(4*R**3*T**4)",
+                  "latex": "\\frac{A_{0}^{2} B_{0}^{2} N^{2} \\left(- 2 L e^{\\frac{R t}{L}} + 2 L + 3 R T e^{\\frac{R t}{L}} - 3 R T + 2 R t e^{\\frac{R t}{L}}\\right)^{2} e^{- \\frac{2 R t}{L}}}{4 R^{3} T^{4}}",
+                  "unit": "W"
+                },
+                "heat": {
+                  "expression": "A0**2*B0**2*N**2/(3*R*T) + (-2*A0**2*B0**2*L*N**2 + 3*A0**2*B0**2*N**2*R*T)/(2*R**2*T**2) + (4*A0**2*B0**2*L**2*N**2 - 12*A0**2*B0**2*L*N**2*R*T + 9*A0**2*B0**2*N**2*R**2*T**2)/(4*R**3*T**3) + ((-80*A0**2*B0**2*L**2*N**2*R**4*T**5 + 120*A0**2*B0**2*L*N**2*R**5*T**6)*exp(-R*T/L) + (-8*A0**2*B0**2*L**3*N**2*R**3*T**4 + 24*A0**2*B0**2*L**2*N**2*R**4*T**5 - 18*A0**2*B0**2*L*N**2*R**5*T**6)*exp(-2*R*T/L))/(16*R**7*T**8) - (-8*A0**2*B0**2*L**3*N**2*R**3*T**4 - 24*A0**2*B0**2*L**2*N**2*R**4*T**5 + 54*A0**2*B0**2*L*N**2*R**5*T**6)/(16*R**7*T**8)",
+                  "latex": "\\frac{A_{0}^{2} B_{0}^{2} N^{2}}{3 R T} + \\frac{- 2 A_{0}^{2} B_{0}^{2} L N^{2} + 3 A_{0}^{2} B_{0}^{2} N^{2} R T}{2 R^{2} T^{2}} + \\frac{4 A_{0}^{2} B_{0}^{2} L^{2} N^{2} - 12 A_{0}^{2} B_{0}^{2} L N^{2} R T + 9 A_{0}^{2} B_{0}^{2} N^{2} R^{2} T^{2}}{4 R^{3} T^{3}} + \\frac{\\left(- 80 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} + 120 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}\\right) e^{- \\frac{R T}{L}} + \\left(- 8 A_{0}^{2} B_{0}^{2} L^{3} N^{2} R^{3} T^{4} + 24 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} - 18 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}\\right) e^{- \\frac{2 R T}{L}}}{16 R^{7} T^{8}} - \\frac{- 8 A_{0}^{2} B_{0}^{2} L^{3} N^{2} R^{3} T^{4} - 24 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} + 54 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}}{16 R^{7} T^{8}}",
+                  "unit": "(W)*(s)"
+                }
+              },
+              "numerical": {
+                "I": {
+                  "value": "-0.000242099125364431",
+                  "latex": "-0.000242099125364431",
+                  "unit": "A"
+                },
+                "heat_rate": {
+                  "value": "4.10283905515559e-7",
+                  "latex": "4.10283905515559 \\cdot 10^{-7}",
+                  "unit": "W"
+                },
+                "heat": {
+                  "value": "1.82188636639495e-7",
+                  "latex": "1.82188636639495 \\cdot 10^{-7}",
+                  "unit": "(W)*(s)"
+                }
+              },
+              "direction": ""
+            },
+            "derivation": {
+              "equations_latex": [
+                "R\\dot Q+Q/C=0",
+                "L\\dot I+RI=V"
+              ],
+              "step_ids": [
+                "step-f227a53f413b6a4f1993-0",
+                "step-105dc68d23bf0455178b-0",
+                "step-f6c077f1be128d9e4ccf-0",
+                "step-6ca27a08e034678912e3-0",
+                "step-5877f84545fa571b26fc-0",
+                "step-8fc2cb3984bb4b7405aa-0"
+              ]
+            },
+            "explanation": {
+              "step_ids": [
+                "step-f227a53f413b6a4f1993-0",
+                "step-105dc68d23bf0455178b-0",
+                "step-f6c077f1be128d9e4ccf-0",
+                "step-6ca27a08e034678912e3-0",
+                "step-5877f84545fa571b26fc-0",
+                "step-8fc2cb3984bb4b7405aa-0"
+              ],
+              "method_context_ids": [
+                "method-6477c011bebda04cbe6f"
+              ],
+              "global_check_ids": [
+                "check-23669e4b60d59f9eca52",
+                "check-38ee0012570ca658a1a8",
+                "check-4dd57c7f5b028ef0f583",
+                "check-aefc18fb40c2c9b9419e",
+                "check-d2f326c4ea2692476a43",
+                "check-b8b12d5e8360827c68e3",
+                "check-d520e171bbb498d49bbd",
+                "check-7a168c436480296c6749",
+                "check-c865d0584101162bc7f2",
+                "check-ac19f32f0ee124b93c19",
+                "check-fddfa5307a12e61ca76c",
+                "check-88ad2656f08fa3adb45e",
+                "check-9794d279a3dd881b30a1",
+                "check-25869cec8378d077f903"
+              ],
+              "warnings": [
+                "En generel tidsafhængig spænding har ikke nødvendigvis en konstant slutstrøm. Brug en eksplicit grænseoperation, hvis grænsen findes."
+              ]
+            }
+          }
+        },
+        "errors": [],
+        "verification": {
+          "interpretation": "user_confirmed_not_machine_verified",
+          "dimensions": "passed",
+          "physical_checks": [
+            "RL-ligning",
+            "Inputdimension: time",
+            "Inputdimension: R",
+            "Inputdimension: L",
+            "Inputdimension: voltage",
+            "Inputdimension: I0"
+          ],
+          "completeness": "requested_results_present",
+          "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+        }
+      }
+    ],
+    "interpretation_status": "user_confirmed",
+    "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+    "confirmed_model": {
+      "schema_version": "assisted-1.0",
+      "text": "En spole med N=3 vindinger har et homogent påtrykt normalfelt B(t)=B0*(1+t/T) og areal A(t)=A0*(1+t/(2*T)) for t>=0. B0=0,08 T, A0=20 cm^2, T=0,70 s. Positiv normal er +z og positiv strøm er mod uret set fra +z. Kredsen har R=7,0 ohm og L=140 mH med I(0)=0. Selvinduktansen må ikke negligeres. Koefficienterne er konstante.\nb) Brug den fundne emf til at bestemme I(t), I(T) og den samlede Joule-varme fra t=0 til t=T. Forklar strømretningen.",
+      "confirmed": true,
+      "variables": {
+        "time": "t",
+        "R": "R",
+        "L": "L",
+        "voltage": "-A0*B0*N*(3*T + 2*t)/(2*T**2)",
+        "I0": "0"
+      },
+      "units": {
+        "t": "s",
+        "R": "ohm",
+        "L": "H",
+        "A0": "m^2",
+        "B0": "T",
+        "N": "1",
+        "T": "s",
+        "I": "A"
+      },
+      "numbers": {
+        "t": "0.70 s",
+        "R": "7 ohm",
+        "L": "140 mH",
+        "A0": "20 cm^2",
+        "B0": "0.08 T",
+        "N": "3",
+        "T": "0.70 s"
+      },
+      "positive": [
+        "R",
+        "L",
+        "A0",
+        "B0",
+        "N",
+        "T"
+      ],
+      "assumptions": [
+        "constant_coefficients"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "RL_driven",
+          "wanted": [
+            "I",
+            "heat"
+          ],
+          "orientation_confirmed": true,
+          "operations": [
+            {
+              "kind": "transform",
+              "id": "heat_rate",
+              "result": "I",
+              "variable": "t",
+              "value": "R*I**2",
+              "unit": "W"
+            },
+            {
+              "kind": "integrate",
+              "id": "heat",
+              "result": "heat_rate",
+              "variable": "t",
+              "lower": "0",
+              "upper": "T"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "manual_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Beregnet under brugerbekræftet model",
+    "prompt": "En spole med N=3 vindinger har et homogent påtrykt normalfelt B(t)=B0*(1+t/T) og areal A(t)=A0*(1+t/(2*T)) for t>=0. B0=0,08 T, A0=20 cm^2, T=0,70 s. Positiv normal er +z og positiv strøm er mod uret set fra +z. Kredsen har R=7,0 ohm og L=140 mH med I(0)=0. Selvinduktansen må ikke negligeres. Koefficienterne er konstante.\nb) Brug den fundne emf til at bestemme I(t), I(T) og den samlede Joule-varme fra t=0 til t=T. Forklar strømretningen.",
+    "status": "assumptions",
+    "result": {
+      "symbolic_latex": "I = \\frac{A_{0} B_{0} N \\left(2 L e^{\\frac{R t}{L}} - 2 L - 3 R T e^{\\frac{R t}{L}} + 3 R T - 2 R t e^{\\frac{R t}{L}}\\right) e^{- \\frac{R t}{L}}}{2 R^{2} T^{2}}",
+      "extra_latex": [
+        "heat = \\frac{A_{0}^{2} B_{0}^{2} N^{2}}{3 R T} + \\frac{- 2 A_{0}^{2} B_{0}^{2} L N^{2} + 3 A_{0}^{2} B_{0}^{2} N^{2} R T}{2 R^{2} T^{2}} + \\frac{4 A_{0}^{2} B_{0}^{2} L^{2} N^{2} - 12 A_{0}^{2} B_{0}^{2} L N^{2} R T + 9 A_{0}^{2} B_{0}^{2} N^{2} R^{2} T^{2}}{4 R^{3} T^{3}} + \\frac{\\left(- 80 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} + 120 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}\\right) e^{- \\frac{R T}{L}} + \\left(- 8 A_{0}^{2} B_{0}^{2} L^{3} N^{2} R^{3} T^{4} + 24 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} - 18 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}\\right) e^{- \\frac{2 R T}{L}}}{16 R^{7} T^{8}} - \\frac{- 8 A_{0}^{2} B_{0}^{2} L^{3} N^{2} R^{3} T^{4} - 24 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} + 54 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}}{16 R^{7} T^{8}}",
+        "heat_rate = \\frac{A_{0}^{2} B_{0}^{2} N^{2} \\left(- 2 L e^{\\frac{R t}{L}} + 2 L + 3 R T e^{\\frac{R t}{L}} - 3 R T + 2 R t e^{\\frac{R t}{L}}\\right)^{2} e^{- \\frac{2 R t}{L}}}{4 R^{3} T^{4}}"
+      ],
+      "numeric_text": "I: -0.000242099125364431; heat: 1.82188636639495e-7; heat_rate: 4.10283905515559e-7",
+      "units": "I: A; heat: (W)*(s); heat_rate: W"
+    },
+    "steps": [
+      {
+        "title": "Grundligning 1",
+        "latex": "R\\dot Q+Q/C=0",
+        "reason": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten."
+      },
+      {
+        "title": "Grundligning 2",
+        "latex": "L\\dot I+RI=V",
+        "reason": ""
+      },
+      {
+        "id": "step-f227a53f413b6a4f1993-0",
+        "title": "Den lineære differentialligning",
+        "reason": "Anvendt lov: Lineær kredsløbsdifferentialligning. Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "latex": "\\[L \\frac{d}{d t} I{\\left(t \\right)} + R I{\\left(t \\right)} = - \\frac{A_{0} B_{0} N \\left(3 T + 2 t\\right)}{2 T^{2}}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-105dc68d23bf0455178b-0",
+        "title": "Løs med begyndelsesbetingelsen",
+        "reason": "Anvendt lov: Lineær kredsløbsdifferentialligning. Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "latex": "\\[I{\\left(t \\right)} = \\frac{A_{0} B_{0} L N}{R^{2} T^{2}} - \\frac{3 A_{0} B_{0} N}{2 R T} - \\frac{A_{0} B_{0} N t}{R T^{2}} + \\frac{\\left(- 2 A_{0} B_{0} L N + 3 A_{0} B_{0} N R T\\right) e^{- \\frac{R t}{L}}}{2 R^{2} T^{2}}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-f6c077f1be128d9e4ccf-0",
+        "title": "Anvend den eksplicit bekræftede resultatforbindelse",
+        "reason": "Anvendt lov: Brugerangivet fysisk sammenhæng. Enheder kontrolleres før de tidligere resultater indsættes. Sammenhængens fysiske relevans skal bekræftes af brugeren.",
+        "latex": "\\[heat_{rate} = I^{2} R\\]",
+        "check": ""
+      },
+      {
+        "id": "step-6ca27a08e034678912e3-0",
+        "title": "Indsæt de beregnede resultater",
+        "reason": "Anvendt lov: Lineær kredsløbsdifferentialligning. Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "latex": "\\[\\frac{A_{0}^{2} B_{0}^{2} N^{2} \\left(- 2 L e^{\\frac{R t}{L}} + 2 L + 3 R T e^{\\frac{R t}{L}} - 3 R T + 2 R t e^{\\frac{R t}{L}}\\right)^{2} e^{- \\frac{2 R t}{L}}}{4 R^{3} T^{4}}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-5877f84545fa571b26fc-0",
+        "title": "Integrer heat_rate over det eksplicit angivne interval",
+        "reason": "Anvendt lov: Bestemt integration. Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "latex": "\\[\\int\\limits_{0}^{T} \\frac{A_{0}^{2} B_{0}^{2} N^{2} \\left(- 2 L e^{\\frac{R t}{L}} + 2 L + 3 R T e^{\\frac{R t}{L}} - 3 R T + 2 R t e^{\\frac{R t}{L}}\\right)^{2} e^{- \\frac{2 R t}{L}}}{4 R^{3} T^{4}}\\, dt\\]",
+        "check": ""
+      },
+      {
+        "id": "step-8fc2cb3984bb4b7405aa-0",
+        "title": "Evaluér integralet",
+        "reason": "Anvendt lov: Lineær kredsløbsdifferentialligning. Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "latex": "\\[\\frac{A_{0}^{2} B_{0}^{2} N^{2}}{3 R T} + \\frac{- 2 A_{0}^{2} B_{0}^{2} L N^{2} + 3 A_{0}^{2} B_{0}^{2} N^{2} R T}{2 R^{2} T^{2}} + \\frac{4 A_{0}^{2} B_{0}^{2} L^{2} N^{2} - 12 A_{0}^{2} B_{0}^{2} L N^{2} R T + 9 A_{0}^{2} B_{0}^{2} N^{2} R^{2} T^{2}}{4 R^{3} T^{3}} + \\frac{\\left(- 80 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} + 120 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}\\right) e^{- \\frac{R T}{L}} + \\left(- 8 A_{0}^{2} B_{0}^{2} L^{3} N^{2} R^{3} T^{4} + 24 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} - 18 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}\\right) e^{- \\frac{2 R T}{L}}}{16 R^{7} T^{8}} - \\frac{- 8 A_{0}^{2} B_{0}^{2} L^{3} N^{2} R^{3} T^{4} - 24 A_{0}^{2} B_{0}^{2} L^{2} N^{2} R^{4} T^{5} + 54 A_{0}^{2} B_{0}^{2} L N^{2} R^{5} T^{6}}{16 R^{7} T^{8}}\\]",
+        "check": ""
+      }
+    ],
+    "interpretation": {
+      "method": "Lineær kredsløbsdifferentialligning",
+      "geometry": "RL_driven"
+    },
+    "warnings": [
+      "En generel tidsafhængig spænding har ikke nødvendigvis en konstant slutstrøm. Brug en eksplicit grænseoperation, hvis grænsen findes.",
+      "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+    ],
+    "backend_status": "calculated_under_confirmed_model",
+    "backend_schema": "assisted-1.0",
+    "audit": "# Brugerbekræftede oplysninger\n\nI0 = 0\n\nL = L\n\nR = R\n\ntime = t\n\nvoltage = -A0*B0*N*(3*T + 2*t)/(2*T**2)\n\nA0 = 20 cm^2\n\nB0 = 0.08 T\n\nL = 140 mH\n\nN = 3\n\nR = 7 ohm\n\nT = 0.70 s\n\nt = 0.70 s\n\nEnhed for A0: m^2\n\nEnhed for B0: T\n\nEnhed for I: A\n\nEnhed for L: H\n\nEnhed for N: 1\n\nEnhed for R: ohm\n\nEnhed for T: s\n\nEnhed for t: s\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 14 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- RL-ligning\n\n- Dimension: I — A\n\n- Dimension: tau — s\n\n- Dimension: I_initial — A\n\n- Inputdimension: time — s\n\n- Inputdimension: R — ohm\n\n- Inputdimension: L — H\n\n- Inputdimension: voltage — V\n\n- Inputdimension: I0 — A\n\n- Dimension: I — A\n\n- Dimension: tau — s\n\n- Dimension: I_initial — A\n\n- Dimension: heat_rate — W\n\n- Dimension: heat — (W)*(s)\n\n## Forudsætninger og gyldighed\n\n- constant_coefficients\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "manual_status_text": "Beregnet under din bekræftede model. Fortolkningen af opgaveteksten er ikke maskinverificeret.",
+  "math_display_errors": []
+}

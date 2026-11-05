@@ -1,0 +1,128 @@
+{
+  "1a": {
+    "law": "Qenc(r)=integral_0^r 4*pi*u²*rho0*u²/a² du =4*pi*rho0*r^5/(5*a²). Gauss E=Qenc/(4*pi*eps*r²). V(a)=rho0*a²/(5*eps); integrate E inward to V(0)=rho0*a²/(4*eps).",
+    "inputs_SI": {
+      "a": 0.07,
+      "rho0": 2.2e-08
+    }
+  },
+  "1b": {
+    "law": "Qenc(r)=integral_0^r 4*pi*u²*rho0*u²/a² du =4*pi*rho0*r^5/(5*a²). Gauss E=Qenc/(4*pi*eps*r²). V(a)=rho0*a²/(5*eps); integrate E inward to V(0)=rho0*a²/(4*eps).",
+    "inputs_SI": {
+      "a": 0.07,
+      "rho0": 2.2e-08
+    }
+  },
+  "1c": {
+    "law": "Qenc(r)=integral_0^r 4*pi*u²*rho0*u²/a² du =4*pi*rho0*r^5/(5*a²). Gauss E=Qenc/(4*pi*eps*r²). V(a)=rho0*a²/(5*eps); integrate E inward to V(0)=rho0*a²/(4*eps).",
+    "inputs_SI": {
+      "a": 0.07,
+      "rho0": 2.2e-08
+    }
+  },
+  "2a": {
+    "law": "Image -q at -d; force Fz=-q²/(16*pi*eps*d²). Induced total=-q. Quasistatic Wext=-integral_d^(2d)Fz(h)dh=q²/(32*pi*eps*d)>0. No fictitious charge-pair energy is used.",
+    "inputs_SI": {
+      "q": -5e-09,
+      "d": 0.11
+    },
+    "reference_work_J": 2.553281759165106e-07
+  },
+  "2b": {
+    "law": "Image -q at -d; force Fz=-q²/(16*pi*eps*d²). Induced total=-q. Quasistatic Wext=-integral_d^(2d)Fz(h)dh=q²/(32*pi*eps*d)>0. No fictitious charge-pair energy is used.",
+    "inputs_SI": {
+      "q": -5e-09,
+      "d": 0.11
+    },
+    "reference_work_J": 2.553281759165106e-07
+  },
+  "3a": {
+    "law": "Ienc=2*pi*J0*integral_0^s (u-u³/a²)du=pi*J0*(s²-s^4/(2*a²)). Itotal=pi*J0*a²/2; solve for J0. Bphi=mu*Ienc/(2*pi*s), outside use total I; positive +phi for +z current.",
+    "inputs_SI": {
+      "a": 0.06,
+      "I_given": 5.5,
+      "evaluation_radius_1": 0.03,
+      "evaluation_radius_2": 0.18
+    }
+  },
+  "3b": {
+    "law": "Ienc=2*pi*J0*integral_0^s (u-u³/a²)du=pi*J0*(s²-s^4/(2*a²)). Itotal=pi*J0*a²/2; solve for J0. Bphi=mu*Ienc/(2*pi*s), outside use total I; positive +phi for +z current.",
+    "inputs_SI": {
+      "a": 0.06,
+      "I_given": 5.5,
+      "evaluation_radius_1": 0.03,
+      "evaluation_radius_2": 0.18
+    }
+  },
+  "3c": {
+    "law": "Ienc=2*pi*J0*integral_0^s (u-u³/a²)du=pi*J0*(s²-s^4/(2*a²)). Itotal=pi*J0*a²/2; solve for J0. Bphi=mu*Ienc/(2*pi*s), outside use total I; positive +phi for +z current.",
+    "inputs_SI": {
+      "a": 0.06,
+      "I_given": 5.5,
+      "evaluation_radius_1": 0.03,
+      "evaluation_radius_2": 0.18
+    }
+  },
+  "4a": {
+    "law": "curl(M)=(0,-dMz/ds,0)=(0,-2*M0*s/a²,0); K=M×s_hat=(0,M0,0) at a. No free currents and div M=0, M.n=0 imply zero demagnetizing H with H(infinity)=0: H=0 everywhere, B=mu*M inside, B=0 outside. Tangential B jump matches K_bound.",
+    "inputs_SI": {
+      "a": 0.025,
+      "M0": 600
+    }
+  },
+  "4b": {
+    "law": "curl(M)=(0,-dMz/ds,0)=(0,-2*M0*s/a²,0); K=M×s_hat=(0,M0,0) at a. No free currents and div M=0, M.n=0 imply zero demagnetizing H with H(infinity)=0: H=0 everywhere, B=mu*M inside, B=0 outside. Tangential B jump matches K_bound.",
+    "inputs_SI": {
+      "a": 0.025,
+      "M0": 600
+    }
+  },
+  "5a": {
+    "law": "Phi=B0*A0*(1+t/T)*(1+t/(2T)). emf=-N*dPhi/dt=-N*B0*A0/T*(3/2+t/T). RL current from I(t)=exp(-t/tau)/L*integral_0^t exp(u/tau)*emf(u)du, tau=L/R. Joule heat by independent quadrature of R*I². Negative current is clockwise viewed from +z.",
+    "inputs_SI": {
+      "N": 3,
+      "B0": 0.08,
+      "A0": 0.002,
+      "T": 0.7,
+      "R": 7,
+      "L": 0.14
+    },
+    "reference_heat_J": 1.8218863663949547e-07
+  },
+  "5b": {
+    "law": "Phi=B0*A0*(1+t/T)*(1+t/(2T)). emf=-N*dPhi/dt=-N*B0*A0/T*(3/2+t/T). RL current from I(t)=exp(-t/tau)/L*integral_0^t exp(u/tau)*emf(u)du, tau=L/R. Joule heat by independent quadrature of R*I². Negative current is clockwise viewed from +z.",
+    "inputs_SI": {
+      "N": 3,
+      "B0": 0.08,
+      "A0": 0.002,
+      "T": 0.7,
+      "R": 7,
+      "L": 0.14
+    },
+    "reference_heat_J": 1.8218863663949547e-07
+  },
+  "6a": {
+    "law": "Rod +y moving +x in B+z has emf along -y. I=-B*ell*v/R, drag force along -x. Newton: m vprime=F0-(B*ell)² v/R. v=v_inf(1-exp(-t/tau)), tau=mR/(B*ell)². Joule heat from analytic integral of R I².",
+    "inputs_SI": {
+      "m": 0.035,
+      "R": 0.45,
+      "B": 0.6,
+      "ell": 0.18,
+      "F0": 0.012,
+      "T": 0.8
+    },
+    "reference_heat_J": 0.00034136357589182665
+  },
+  "6b": {
+    "law": "Rod +y moving +x in B+z has emf along -y. I=-B*ell*v/R, drag force along -x. Newton: m vprime=F0-(B*ell)² v/R. v=v_inf(1-exp(-t/tau)), tau=mR/(B*ell)². Joule heat from analytic integral of R I².",
+    "inputs_SI": {
+      "m": 0.035,
+      "R": 0.45,
+      "B": 0.6,
+      "ell": 0.18,
+      "F0": 0.012,
+      "T": 0.8
+    },
+    "reference_heat_J": 0.00034136357589182665
+  }
+}

@@ -1,0 +1,560 @@
+{
+  "id": "1a",
+  "domain": "EV",
+  "route": "manual",
+  "text": "En kugle med radius a=7,0 cm har rho(r)=rho0*(r/a)**2 for 0<r<a og nul udenfor. rho0=22 nC/m^3. Fordelingen er kuglesymmetrisk og statisk. Der er vakuum overalt og ingen fladeladning. V(infinity)=0.\na) Bestem kuglens totale ladning Q symbolsk og numerisk.",
+  "automatic_reply": {
+    "schema_version": "1.0",
+    "status": "not_solved",
+    "interpretation": {
+      "model": {
+        "objects": [
+          {
+            "id": "body",
+            "geometry": "sphere",
+            "extent": null,
+            "parameters": {
+              "radius": "a"
+            },
+            "position": null,
+            "material": "unspecified"
+          }
+        ],
+        "sources": [
+          {
+            "id": "source_rho",
+            "kind": "rho",
+            "formula": "rho0*(r/a)**2",
+            "arguments": [
+              "r"
+            ],
+            "basis": null,
+            "evidence": "rho(r)=rho0*(r/a)**2"
+          }
+        ],
+        "relationships": [
+          {
+            "subject": "source_rho",
+            "relation": "has_support",
+            "object": "body",
+            "regions": [
+              {
+                "lower": "0",
+                "upper": "a",
+                "density": "rho0*(r/a)**2"
+              },
+              {
+                "lower": "a",
+                "upper": "oo",
+                "density": "0"
+              }
+            ]
+          }
+        ],
+        "coordinates": [
+          "r"
+        ],
+        "orientation": {},
+        "boundary_conditions": {
+          "V_infinity": "0"
+        },
+        "initial_conditions": {},
+        "assumptions": [],
+        "wanted": [
+          "Q"
+        ],
+        "units": {
+          "a": "m",
+          "rho0": "ampere * second / meter ** 3",
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m",
+          "r": "m"
+        },
+        "values": {
+          "a": "7.0 cm",
+          "rho0": "22 nC/m**3"
+        },
+        "methods": [
+          {
+            "name": "gauss_radial",
+            "status": "GREEN"
+          }
+        ],
+        "dependencies": {}
+      },
+      "fields": {
+        "geometry": {
+          "value": "sphere",
+          "status": "GREEN",
+          "evidence": [
+            "kugle"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "wanted": {
+          "value": [
+            "Q"
+          ],
+          "status": "GREEN",
+          "evidence": [
+            " kuglens totale ladning Q symbolsk og numerisk."
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source": {
+          "value": "rho",
+          "status": "GREEN",
+          "evidence": [
+            "rho(r)=rho0*(r/a)**2"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source_formula": {
+          "value": "rho0*(r/a)**2",
+          "status": "GREEN",
+          "evidence": [
+            "rho(r)=rho0*(r/a)**2"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "orientation": {
+          "value": "radial",
+          "status": "GREEN",
+          "evidence": [
+            "Den erklærede symmetri"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "regions": {
+          "value": [
+            {
+              "lower": "0",
+              "upper": "a",
+              "density": "rho0*(r/a)**2"
+            },
+            {
+              "lower": "a",
+              "upper": "oo",
+              "density": "0"
+            }
+          ],
+          "status": "GREEN",
+          "evidence": [
+            "Kildens geometri og eksplicitte intervaller"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "domain": {
+          "value": "EV",
+          "status": "GREEN",
+          "evidence": [
+            "Kildetype og søgt fysisk relation"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "method": {
+          "value": "Gauss",
+          "status": "GREEN",
+          "evidence": [
+            "Radial tæthed og tilstrækkelig kildeudstrækning"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "units": {
+          "value": {
+            "a": "m",
+            "rho0": "ampere * second / meter ** 3",
+            "epsilon_0": "F/m",
+            "mu_0": "H/m",
+            "eps0": "F/m",
+            "mu0": "H/m",
+            "r": "m"
+          },
+          "status": "GREEN",
+          "evidence": [
+            "Angivne enheder og dimensionelle ligninger"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "subproblem": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "material": {
+          "value": "unspecified",
+          "status": "GREEN",
+          "evidence": [
+            "Materialeord i teksten"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "symmetry": {
+          "value": "gauss_radial",
+          "status": "GREEN",
+          "evidence": [
+            "Geometri, udstrækning og funktionens afhængighed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        }
+      },
+      "ready": false
+    },
+    "solution": null,
+    "missing": [
+      {
+        "field": "subproblem",
+        "status": "RED",
+        "message": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+        "options": []
+      }
+    ],
+    "errors": [],
+    "desktop_user_corrections": {}
+  },
+  "automatic_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Kan ikke løses med de givne oplysninger",
+    "prompt": "En kugle med radius a=7,0 cm har rho(r)=rho0*(r/a)**2 for 0<r<a og nul udenfor. rho0=22 nC/m^3. Fordelingen er kuglesymmetrisk og statisk. Der er vakuum overalt og ingen fladeladning. V(infinity)=0.\na) Bestem kuglens totale ladning Q symbolsk og numerisk.",
+    "status": "unsolved",
+    "result": {},
+    "steps": [],
+    "interpretation": {
+      "method": "Ikke afgjort",
+      "geometry": "Se opgavefortolkningen"
+    },
+    "warnings": [
+      "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+    ],
+    "backend_status": "not_solved",
+    "backend_schema": "1.0",
+    "audit": "# Kontrol og gyldighed\n\nBackend rapporterede 0 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\nIngen individuelle kontroller er rapporteret i svaret.\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "automatic_semantic_actions": 2,
+  "manual_action_details": {
+    "prompt": 1,
+    "open_model": 1,
+    "model_selection": 1,
+    "scalar_field_entries": 1,
+    "table_cells": 4,
+    "scan_symbols": 1,
+    "unit_entries": 3,
+    "numeric_entries": 2,
+    "positive_flags": 2,
+    "wanted": 1,
+    "conditions": 3,
+    "orientation": 1,
+    "confirmation": 1,
+    "solve": 1,
+    "operation_cells": 0
+  },
+  "manual_semantic_actions": 23,
+  "manual_request": {
+    "schema_version": "assisted-1.0",
+    "text": "En kugle med radius a=7,0 cm har rho(r)=rho0*(r/a)**2 for 0<r<a og nul udenfor. rho0=22 nC/m^3. Fordelingen er kuglesymmetrisk og statisk. Der er vakuum overalt og ingen fladeladning. V(infinity)=0.\na) Bestem kuglens totale ladning Q symbolsk og numerisk.",
+    "confirmed": true,
+    "variables": {
+      "coordinate": "r",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "a",
+          "density": "rho0*(r/a)**2",
+          "permittivity": "epsilon_0"
+        }
+      ]
+    },
+    "units": {
+      "r": "m",
+      "a": "m",
+      "rho0": "C/m^3"
+    },
+    "numbers": {
+      "a": "7 cm",
+      "rho0": "22 nC/m^3"
+    },
+    "positive": [
+      "r",
+      "a"
+    ],
+    "assumptions": [
+      "spherical_symmetry",
+      "linear_isotropic_medium",
+      "vacuum_outside_regions"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "sphere_regions",
+        "wanted": [
+          "Q"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  },
+  "manual_response": {
+    "schema_version": "assisted-1.0",
+    "status": "calculated_under_confirmed_model",
+    "questions": [],
+    "errors": [],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "sphere_regions",
+        "status": "calculated_under_confirmed_model",
+        "solution": {
+          "method": "Volumenintegral af ladning",
+          "reasoning": "Den givne volumenladning integreres over sit område. En materialelov er ikke nødvendig for den givne frie ladnings totale mængde.",
+          "equations_latex": [
+            "Q=\\int\\rho\\,d\\tau",
+            "d\\tau=4\\pi r^2dr"
+          ],
+          "steps": [
+            {
+              "id": "step-3aa6fa64ec72ce410a1c-0",
+              "text": "Integrer den givne ladning i regionen",
+              "title": "Integrer den givne ladning i regionen",
+              "latex": "\\int\\limits_{0}^{a} \\frac{4 \\pi r^{4} \\rho_{0}}{a^{2}}\\, dr",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Volumenintegral af ladning",
+              "method_context_id": "method-cdf75d6bb3dbe84644c1",
+              "intermediate_latex": [],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions"
+              ],
+              "validity": [],
+              "check_ids": []
+            }
+          ],
+          "results": {
+            "Q": {
+              "expression": "4*pi*a**3*rho0/5",
+              "latex": "\\frac{4 \\pi a^{3} \\rho_{0}}{5}",
+              "unit": "C"
+            }
+          },
+          "numerical": {
+            "Q": {
+              "value": "1.89651665311909e-11",
+              "latex": "1.89651665311909 \\cdot 10^{-11}",
+              "unit": "C"
+            }
+          },
+          "checks": [
+            {
+              "id": "check-606879a6de073fa657b1",
+              "name": "Dimension: Q",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "C",
+              "step_ids": []
+            }
+          ],
+          "direction": "",
+          "warnings": [],
+          "presentation_version": "1.0",
+          "latex_profile": "EM1-Math-1",
+          "method_contexts": {
+            "method-cdf75d6bb3dbe84644c1": {
+              "method_id": "gauss_radial",
+              "method": "Volumenintegral af ladning",
+              "reasoning": "Den givne volumenladning integreres over sit område. En materialelov er ikke nødvendig for den givne frie ladnings totale mængde.",
+              "equations": [
+                "Q=\\int\\rho\\,d\\tau",
+                "d\\tau=4\\pi r^2dr"
+              ],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions"
+              ]
+            }
+          },
+          "views": {
+            "result": {
+              "wanted": [
+                "Q"
+              ],
+              "results": {
+                "Q": {
+                  "expression": "4*pi*a**3*rho0/5",
+                  "latex": "\\frac{4 \\pi a^{3} \\rho_{0}}{5}",
+                  "unit": "C"
+                }
+              },
+              "numerical": {
+                "Q": {
+                  "value": "1.89651665311909e-11",
+                  "latex": "1.89651665311909 \\cdot 10^{-11}",
+                  "unit": "C"
+                }
+              },
+              "direction": ""
+            },
+            "derivation": {
+              "equations_latex": [
+                "Q=\\int\\rho\\,d\\tau",
+                "d\\tau=4\\pi r^2dr"
+              ],
+              "step_ids": [
+                "step-3aa6fa64ec72ce410a1c-0"
+              ]
+            },
+            "explanation": {
+              "step_ids": [
+                "step-3aa6fa64ec72ce410a1c-0"
+              ],
+              "method_context_ids": [
+                "method-cdf75d6bb3dbe84644c1"
+              ],
+              "global_check_ids": [
+                "check-606879a6de073fa657b1"
+              ],
+              "warnings": []
+            }
+          }
+        },
+        "errors": [],
+        "verification": {
+          "interpretation": "user_confirmed_not_machine_verified",
+          "dimensions": "passed",
+          "physical_checks": [],
+          "completeness": "requested_results_present",
+          "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+        }
+      }
+    ],
+    "interpretation_status": "user_confirmed",
+    "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+    "confirmed_model": {
+      "schema_version": "assisted-1.0",
+      "text": "En kugle med radius a=7,0 cm har rho(r)=rho0*(r/a)**2 for 0<r<a og nul udenfor. rho0=22 nC/m^3. Fordelingen er kuglesymmetrisk og statisk. Der er vakuum overalt og ingen fladeladning. V(infinity)=0.\na) Bestem kuglens totale ladning Q symbolsk og numerisk.",
+      "confirmed": true,
+      "variables": {
+        "coordinate": "r",
+        "regions": [
+          {
+            "lower": "0",
+            "upper": "a",
+            "density": "rho0*(r/a)**2",
+            "permittivity": "epsilon_0"
+          }
+        ]
+      },
+      "units": {
+        "r": "m",
+        "a": "m",
+        "rho0": "C/m^3"
+      },
+      "numbers": {
+        "a": "7 cm",
+        "rho0": "22 nC/m^3"
+      },
+      "positive": [
+        "r",
+        "a"
+      ],
+      "assumptions": [
+        "spherical_symmetry",
+        "linear_isotropic_medium",
+        "vacuum_outside_regions"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "sphere_regions",
+          "wanted": [
+            "Q"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    }
+  },
+  "manual_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Beregnet under brugerbekræftet model",
+    "prompt": "En kugle med radius a=7,0 cm har rho(r)=rho0*(r/a)**2 for 0<r<a og nul udenfor. rho0=22 nC/m^3. Fordelingen er kuglesymmetrisk og statisk. Der er vakuum overalt og ingen fladeladning. V(infinity)=0.\na) Bestem kuglens totale ladning Q symbolsk og numerisk.",
+    "status": "assumptions",
+    "result": {
+      "symbolic_latex": "Q = \\frac{4 \\pi a^{3} \\rho_{0}}{5}",
+      "extra_latex": [],
+      "numeric_text": "Q: 1.89651665311909e-11",
+      "units": "Q: C"
+    },
+    "steps": [
+      {
+        "title": "Grundligning 1",
+        "latex": "Q=\\int\\rho\\,d\\tau",
+        "reason": "Den givne volumenladning integreres over sit område. En materialelov er ikke nødvendig for den givne frie ladnings totale mængde."
+      },
+      {
+        "title": "Grundligning 2",
+        "latex": "d\\tau=4\\pi r^2dr",
+        "reason": ""
+      },
+      {
+        "id": "step-3aa6fa64ec72ce410a1c-0",
+        "title": "Integrer den givne ladning i regionen",
+        "reason": "Anvendt lov: Volumenintegral af ladning. Den givne volumenladning integreres over sit område. En materialelov er ikke nødvendig for den givne frie ladnings totale mængde.",
+        "latex": "\\[\\int\\limits_{0}^{a} \\frac{4 \\pi r^{4} \\rho_{0}}{a^{2}}\\, dr\\]",
+        "check": ""
+      }
+    ],
+    "interpretation": {
+      "method": "Volumenintegral af ladning",
+      "geometry": "sphere_regions"
+    },
+    "warnings": [
+      "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+    ],
+    "backend_status": "calculated_under_confirmed_model",
+    "backend_schema": "assisted-1.0",
+    "audit": "# Brugerbekræftede oplysninger\n\ncoordinate = r\n\nregions = [{'density': 'rho0*(r/a)**2', 'lower': '0', 'permittivity': 'epsilon_0', 'upper': 'a'}]\n\na = 7 cm\n\nrho0 = 22 nC/m^3\n\nEnhed for a: m\n\nEnhed for r: m\n\nEnhed for rho0: C/m^3\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 1 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- Dimension: Q — C\n\n## Forudsætninger og gyldighed\n\n- spherical_symmetry\n\n- linear_isotropic_medium\n\n- vacuum_outside_regions\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "manual_status_text": "Beregnet under din bekræftede model. Fortolkningen af opgaveteksten er ikke maskinverificeret.",
+  "math_display_errors": []
+}

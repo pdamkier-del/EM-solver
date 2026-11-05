@@ -1,0 +1,716 @@
+{
+  "total": 14,
+  "heads": 6,
+  "counts": {
+    "fully_correct": 11,
+    "partial": 1,
+    "wrong": 0,
+    "abstained": 2
+  },
+  "full_percent": 78.57142857142857,
+  "automatic_full": 0,
+  "automatic_abstained": 14,
+  "guided_full": 3,
+  "manual_full": 8,
+  "manual_partial": 1,
+  "native_windows_tested": false,
+  "externally_independent_blind_test": false,
+  "cases": [
+    {
+      "id": "1a",
+      "domain": "EV",
+      "grade": "fully_correct",
+      "mode": "manual",
+      "automatic_grade": "abstained",
+      "checks": [
+        {
+          "result": "Q",
+          "at": "",
+          "expected": 1.8965166531190866e-11,
+          "actual": 1.896516653119087e-11,
+          "passed": true
+        },
+        {
+          "result": "Q exact symbolic",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "result": "numerical display Q",
+          "passed": true
+        }
+      ],
+      "model": "sphere_regions",
+      "manual_semantic_actions": 23,
+      "guided_semantic_actions": null,
+      "shared_actions_with": null,
+      "harness_or_form_error": null,
+      "reported_direction": "",
+      "qualitative_note": ""
+    },
+    {
+      "id": "1b",
+      "domain": "EV",
+      "grade": "fully_correct",
+      "mode": "manual",
+      "automatic_grade": "abstained",
+      "checks": [
+        {
+          "result": "E",
+          "at": "r=0.014000000000000002 m",
+          "expected": 0.27828639420071194,
+          "actual": 0.2782863942007119,
+          "passed": true
+        },
+        {
+          "result": "E",
+          "at": "r=0.05600000000000001 m",
+          "expected": 17.810329228845564,
+          "actual": 17.81032922884556,
+          "passed": true
+        },
+        {
+          "result": "E",
+          "at": "r=0.098 m",
+          "expected": 17.747856773004585,
+          "actual": 17.74785677300459,
+          "passed": true
+        },
+        {
+          "result": "E",
+          "at": "r=0.21000000000000002 m",
+          "expected": 3.865088808343221,
+          "actual": 3.8650888083432213,
+          "passed": true
+        },
+        {
+          "result": "E exact symbolic",
+          "passed": true,
+          "residual": "0"
+        }
+      ],
+      "model": "sphere_regions",
+      "manual_semantic_actions": 23,
+      "guided_semantic_actions": null,
+      "shared_actions_with": null,
+      "harness_or_form_error": null,
+      "reported_direction": "Radialt i positiv koordinatretning; negativt resultat betyder modsat retning. For plan: modsat retning på den anden side.",
+      "qualitative_note": ""
+    },
+    {
+      "id": "1c",
+      "domain": "EV",
+      "grade": "fully_correct",
+      "mode": "manual",
+      "automatic_grade": "abstained",
+      "checks": [
+        {
+          "result": "V_center",
+          "at": "",
+          "expected": 3.043757436570287,
+          "actual": 3.043757436570287,
+          "passed": true
+        },
+        {
+          "result": "V_far",
+          "at": "",
+          "expected": 1.2175029746281147,
+          "actual": 1.2175029746281147,
+          "passed": true
+        },
+        {
+          "result": "V_center exact symbolic",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "result": "V_far exact symbolic",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "result": "numerical display V_center",
+          "passed": true
+        },
+        {
+          "result": "numerical display V_far",
+          "passed": true
+        }
+      ],
+      "model": "sphere_regions",
+      "manual_semantic_actions": 34,
+      "guided_semantic_actions": null,
+      "shared_actions_with": null,
+      "harness_or_form_error": null,
+      "reported_direction": "Radialt i positiv koordinatretning; negativt resultat betyder modsat retning. For plan: modsat retning på den anden side.",
+      "qualitative_note": ""
+    },
+    {
+      "id": "2a",
+      "domain": "EV",
+      "grade": "fully_correct",
+      "mode": "manual",
+      "automatic_grade": "abstained",
+      "checks": [
+        {
+          "result": "F",
+          "at": "",
+          "expected": [
+            0,
+            0,
+            -4.642330471209283e-06
+          ],
+          "actual": [
+            0.0,
+            0.0,
+            -4.642330471209284e-06
+          ],
+          "passed": true
+        },
+        {
+          "result": "Q_induced",
+          "at": "",
+          "expected": 5e-09,
+          "actual": 5e-09,
+          "passed": true
+        },
+        {
+          "result": "F exact symbolic",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "result": "Q_induced exact symbolic",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "result": "numerical display F",
+          "passed": true
+        },
+        {
+          "result": "numerical display Q_induced",
+          "passed": true
+        }
+      ],
+      "model": "image_plane",
+      "manual_semantic_actions": 22,
+      "guided_semantic_actions": null,
+      "shared_actions_with": null,
+      "harness_or_form_error": null,
+      "reported_direction": "Kartesiske komponenter. Kraftkolonner følger de virkelige ladningers rækkefølge; hjælpeladninger er ikke fysiske kilder.",
+      "qualitative_note": ""
+    },
+    {
+      "id": "2b",
+      "domain": "EV",
+      "grade": "abstained",
+      "mode": "abstained",
+      "automatic_grade": "abstained",
+      "checks": [],
+      "model": "image_plane",
+      "manual_semantic_actions": 22,
+      "guided_semantic_actions": null,
+      "shared_actions_with": null,
+      "harness_or_form_error": null,
+      "reported_direction": null,
+      "qualitative_note": ""
+    },
+    {
+      "id": "3a",
+      "domain": "BA",
+      "grade": "fully_correct",
+      "mode": "guided",
+      "automatic_grade": "abstained",
+      "checks": [
+        {
+          "result": "density_amplitude",
+          "at": "",
+          "expected": 972.6135411171382,
+          "actual": 972.6135411171382,
+          "passed": true
+        },
+        {
+          "result": "density_amplitude exact symbolic",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "result": "numerical display density_amplitude",
+          "passed": true
+        }
+      ],
+      "model": "ampere_regions",
+      "manual_semantic_actions": null,
+      "guided_semantic_actions": 4,
+      "shared_actions_with": null,
+      "harness_or_form_error": null,
+      "reported_direction": "Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning.",
+      "qualitative_note": ""
+    },
+    {
+      "id": "3b",
+      "domain": "BA",
+      "grade": "fully_correct",
+      "mode": "guided",
+      "automatic_grade": "abstained",
+      "checks": [
+        {
+          "result": "normalized_B",
+          "at": "s=0.006 m",
+          "expected": 3.648333335319398e-06,
+          "actual": 3.648333335319398e-06,
+          "passed": true
+        },
+        {
+          "result": "normalized_B",
+          "at": "s=0.036 m",
+          "expected": 1.8040000009820537e-05,
+          "actual": 1.8040000009820537e-05,
+          "passed": true
+        },
+        {
+          "result": "normalized_B",
+          "at": "s=0.072 m",
+          "expected": 1.527777778609463e-05,
+          "actual": 1.527777778609463e-05,
+          "passed": true
+        },
+        {
+          "result": "normalized_B",
+          "at": "s=0.24 m",
+          "expected": 4.583333335828389e-06,
+          "actual": 4.583333335828389e-06,
+          "passed": true
+        },
+        {
+          "result": "normalized_B exact symbolic",
+          "passed": true,
+          "residual": "0"
+        }
+      ],
+      "model": "ampere_regions",
+      "manual_semantic_actions": null,
+      "guided_semantic_actions": 4,
+      "shared_actions_with": "3a",
+      "harness_or_form_error": null,
+      "reported_direction": "Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning.",
+      "qualitative_note": ""
+    },
+    {
+      "id": "3c",
+      "domain": "BA",
+      "grade": "fully_correct",
+      "mode": "guided",
+      "automatic_grade": "abstained",
+      "checks": [
+        {
+          "result": "B_point_1",
+          "at": "",
+          "expected": 1.6041666675399362e-05,
+          "actual": 1.604166667539936e-05,
+          "passed": true
+        },
+        {
+          "result": "B_point_2",
+          "at": "",
+          "expected": 6.111111114437852e-06,
+          "actual": 6.111111114437851e-06,
+          "passed": true
+        },
+        {
+          "result": "actual numerical B_point_1",
+          "passed": true
+        },
+        {
+          "result": "actual numerical B_point_2",
+          "passed": true
+        },
+        {
+          "result": "numerical display B_point_1",
+          "passed": true
+        },
+        {
+          "result": "numerical display B_point_2",
+          "passed": true
+        }
+      ],
+      "model": "ampere_regions",
+      "manual_semantic_actions": null,
+      "guided_semantic_actions": 4,
+      "shared_actions_with": "3a",
+      "harness_or_form_error": null,
+      "reported_direction": "Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning.",
+      "qualitative_note": ""
+    },
+    {
+      "id": "4a",
+      "domain": "BA",
+      "grade": "fully_correct",
+      "mode": "manual",
+      "automatic_grade": "abstained",
+      "checks": [
+        {
+          "result": "J_bound",
+          "at": "s=0.005000000000000001 m",
+          "expected": [
+            0,
+            -9600.0,
+            0
+          ],
+          "actual": [
+            0.0,
+            -9600.0,
+            0.0
+          ],
+          "passed": true
+        },
+        {
+          "result": "J_bound",
+          "at": "s=0.017499999999999998 m",
+          "expected": [
+            0,
+            -33599.999999999985,
+            0
+          ],
+          "actual": [
+            0.0,
+            -33599.99999999999,
+            0.0
+          ],
+          "passed": true
+        },
+        {
+          "result": "K_bound",
+          "at": "",
+          "expected": [
+            0,
+            600,
+            0
+          ],
+          "actual": [
+            0.0,
+            600.0,
+            0.0
+          ],
+          "passed": true
+        },
+        {
+          "result": "J_bound exact symbolic",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "result": "K_bound exact symbolic",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ],
+      "model": "magnetization_currents",
+      "manual_semantic_actions": 24,
+      "guided_semantic_actions": null,
+      "shared_actions_with": null,
+      "harness_or_form_error": null,
+      "reported_direction": "Komponenterne følger den angivne ortonormale koordinatbasis. Normalen skal pege ud af det magnetiserede materiale.",
+      "qualitative_note": ""
+    },
+    {
+      "id": "4b",
+      "domain": "BA",
+      "grade": "abstained",
+      "mode": "abstained",
+      "automatic_grade": "abstained",
+      "checks": [],
+      "model": "magnetization_currents",
+      "manual_semantic_actions": 24,
+      "guided_semantic_actions": null,
+      "shared_actions_with": null,
+      "harness_or_form_error": null,
+      "reported_direction": null,
+      "qualitative_note": ""
+    },
+    {
+      "id": "5a",
+      "domain": "DYN",
+      "grade": "fully_correct",
+      "mode": "manual",
+      "automatic_grade": "abstained",
+      "checks": [
+        {
+          "result": "Phi",
+          "at": "t=0 s",
+          "expected": 0.00016,
+          "actual": 0.00016,
+          "passed": true
+        },
+        {
+          "result": "EMF",
+          "at": "t=0 s",
+          "expected": -0.0010285714285714286,
+          "actual": -0.0010285714285714286,
+          "passed": true
+        },
+        {
+          "result": "Phi",
+          "at": "t=0.13 s",
+          "expected": 0.000207330612244898,
+          "actual": 0.00020733061224489796,
+          "passed": true
+        },
+        {
+          "result": "EMF",
+          "at": "t=0.13 s",
+          "expected": -0.0011559183673469388,
+          "actual": -0.0011559183673469388,
+          "passed": true
+        },
+        {
+          "result": "Phi",
+          "at": "t=0.7 s",
+          "expected": 0.00048000000000000007,
+          "actual": 0.00047999999999999996,
+          "passed": true
+        },
+        {
+          "result": "EMF",
+          "at": "t=0.7 s",
+          "expected": -0.0017142857142857144,
+          "actual": -0.0017142857142857144,
+          "passed": true
+        },
+        {
+          "result": "Phi exact symbolic",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "result": "EMF exact symbolic",
+          "passed": true,
+          "residual": "0"
+        }
+      ],
+      "model": "faraday_uniform",
+      "manual_semantic_actions": 27,
+      "guided_semantic_actions": null,
+      "shared_actions_with": null,
+      "harness_or_form_error": null,
+      "reported_direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb.",
+      "qualitative_note": ""
+    },
+    {
+      "id": "5b",
+      "domain": "DYN",
+      "grade": "partial",
+      "mode": "manual",
+      "automatic_grade": "abstained",
+      "checks": [
+        {
+          "result": "I",
+          "at": "t=0 s",
+          "expected": -0.0,
+          "actual": 0.0,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "at": "t=0.011 s",
+          "expected": -6.25177882646902e-05,
+          "actual": -6.251778826469019e-05,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "at": "t=0.2 s",
+          "expected": -0.0001721217359401532,
+          "actual": -0.00017212173594015323,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "at": "t=0.7 s",
+          "expected": -0.0002420991253644314,
+          "actual": -0.0002420991253644314,
+          "passed": true
+        },
+        {
+          "result": "heat",
+          "at": "",
+          "expected": 1.8218863663949547e-07,
+          "actual": 1.8218863663949547e-07,
+          "passed": true
+        },
+        {
+          "result": "numerical I(T)",
+          "passed": true
+        },
+        {
+          "result": "I exact symbolic",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "result": "numerical display I",
+          "passed": true
+        },
+        {
+          "result": "numerical display heat",
+          "passed": true
+        },
+        {
+          "result": "requested physical current-direction explanation",
+          "passed": false,
+          "classification": "missing_explanation_not_wrong_math",
+          "detail": "I(t), I(T) and heat are correct, but an explicit explanation of clockwise current relative to +z is missing."
+        }
+      ],
+      "model": "RL_driven",
+      "manual_semantic_actions": 47,
+      "guided_semantic_actions": null,
+      "shared_actions_with": null,
+      "harness_or_form_error": null,
+      "reported_direction": "",
+      "qualitative_note": "I(t), I(T) and heat are correct, but an explicit explanation of clockwise current relative to +z is missing."
+    },
+    {
+      "id": "6a",
+      "domain": "DYN",
+      "grade": "fully_correct",
+      "mode": "manual",
+      "automatic_grade": "abstained",
+      "checks": [
+        {
+          "result": "v",
+          "at": "t=0 s",
+          "expected": 0.0,
+          "actual": 0.0,
+          "passed": true
+        },
+        {
+          "result": "v",
+          "at": "t=0.2 s",
+          "expected": 0.06373492730646266,
+          "actual": 0.06373492730646269,
+          "passed": true
+        },
+        {
+          "result": "v",
+          "at": "t=0.8 s",
+          "expected": 0.20695977063602325,
+          "actual": 0.20695977063602328,
+          "passed": true
+        },
+        {
+          "result": "v",
+          "at": "t=2 s",
+          "expected": 0.357695518689634,
+          "actual": 0.357695518689634,
+          "passed": true
+        },
+        {
+          "result": "tau",
+          "at": "",
+          "expected": 1.350308641975309,
+          "actual": 1.350308641975309,
+          "passed": true
+        },
+        {
+          "result": "v_infinity",
+          "at": "",
+          "expected": 0.462962962962963,
+          "actual": 0.4629629629629631,
+          "passed": true
+        },
+        {
+          "result": "numerical terminal velocity",
+          "passed": true
+        },
+        {
+          "result": "v exact symbolic",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "result": "tau exact symbolic",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "result": "v_infinity exact symbolic",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "result": "numerical display v_infinity",
+          "passed": true
+        }
+      ],
+      "model": "feedback",
+      "manual_semantic_actions": 33,
+      "guided_semantic_actions": null,
+      "shared_actions_with": null,
+      "harness_or_form_error": null,
+      "reported_direction": "Den valgte positive bevægelsesretning skal give EMF=k v og magnetisk kraft=k I; angiv denne orientering i problemet.",
+      "qualitative_note": ""
+    },
+    {
+      "id": "6b",
+      "domain": "DYN",
+      "grade": "fully_correct",
+      "mode": "manual",
+      "automatic_grade": "abstained",
+      "checks": [
+        {
+          "result": "I",
+          "at": "t=0 s",
+          "expected": -0.0,
+          "actual": 0.0,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "at": "t=0.2 s",
+          "expected": -0.015296382553551037,
+          "actual": -0.015296382553551036,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "at": "t=0.8 s",
+          "expected": -0.04967034495264557,
+          "actual": -0.04967034495264557,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "at": "t=2 s",
+          "expected": -0.08584692448551216,
+          "actual": -0.08584692448551215,
+          "passed": true
+        },
+        {
+          "result": "W",
+          "at": "",
+          "expected": 0.00034136357589182665,
+          "actual": 0.0003413635758918262,
+          "passed": true
+        },
+        {
+          "result": "I exact symbolic",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "result": "numerical display W",
+          "passed": true
+        }
+      ],
+      "model": "feedback",
+      "manual_semantic_actions": 37,
+      "guided_semantic_actions": null,
+      "shared_actions_with": null,
+      "harness_or_form_error": null,
+      "reported_direction": "Den valgte positive bevægelsesretning skal give EMF=k v og magnetisk kraft=k I; angiv denne orientering i problemet.",
+      "qualitative_note": ""
+    }
+  ]
+}

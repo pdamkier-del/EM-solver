@@ -1,0 +1,1010 @@
+{
+  "id": "6b",
+  "domain": "DYN",
+  "route": "manual",
+  "text": "En ledende stang med længde ell=18 cm og masse m=35 g glider uden friktion langs to vandrette skinner. Stangen er langs y, bevægelsen er langs +x og et homogent B=0,60 T peger langs +z. Hele kredsens modstand er R=0,45 ohm, selvinduktansen negligeres, og ingen spændingskilde er tilsluttet. Fra t=0 påvirkes stangen af en konstant kraft F0=0,012 N langs +x; v(0)=0. Positiv strøm langs stangen er +y. T=0,80 s.\nb) Bestem I(t) med fortegn og den samlede Joule-varme afsat fra t=0 til t=T.",
+  "automatic_reply": {
+    "schema_version": "1.0",
+    "status": "not_solved",
+    "interpretation": {
+      "model": {
+        "objects": [
+          {
+            "id": "body",
+            "geometry": "sliding_rod",
+            "extent": null,
+            "parameters": {
+              "length": "ell",
+              "mass": "m"
+            },
+            "position": null,
+            "material": "conductor"
+          }
+        ],
+        "sources": [
+          {
+            "id": "source_B",
+            "kind": "B",
+            "formula": "0.60*T*peger",
+            "arguments": [],
+            "basis": null,
+            "evidence": "B=0.60 T peger"
+          }
+        ],
+        "relationships": [
+          {
+            "subject": "source_B",
+            "relation": "has_support",
+            "object": "body",
+            "regions": "model dependent"
+          }
+        ],
+        "coordinates": [],
+        "orientation": {},
+        "boundary_conditions": {},
+        "initial_conditions": {},
+        "assumptions": [],
+        "wanted": [
+          "I"
+        ],
+        "units": {
+          "ell": "m",
+          "R": "kilogram * meter ** 2 / ampere ** 2 / second ** 3",
+          "T": "second",
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m",
+          "m": "kg",
+          "peger": "kg**(1)*m**(0)*s**(-3)*A**(-1)"
+        },
+        "values": {
+          "ell": "18 cm",
+          "R": "0.45 ohm",
+          "T": "0.80 s"
+        },
+        "methods": [
+          {
+            "name": "faraday",
+            "status": "GREEN"
+          }
+        ],
+        "dependencies": {}
+      },
+      "fields": {
+        "geometry": {
+          "value": "sliding_rod",
+          "status": "GREEN",
+          "evidence": [
+            "stang med længde ell=18 cm og masse m=35 g glider uden friktion langs to vandrette skinner"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "wanted": {
+          "value": [
+            "I"
+          ],
+          "status": "GREEN",
+          "evidence": [
+            " I(t) med fortegn og den samlede Joule-varme afsat fra t=0 til t=T."
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source": {
+          "value": "B",
+          "status": "GREEN",
+          "evidence": [
+            "B=0.60 T peger"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source_formula": {
+          "value": "0.60*T*peger",
+          "status": "GREEN",
+          "evidence": [
+            "B=0.60 T peger"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "orientation": {
+          "value": {},
+          "status": "GREEN",
+          "evidence": [],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "regions": {
+          "value": "model dependent",
+          "status": "GREEN",
+          "evidence": [
+            "Ikke en radial volumen-/strømtæthed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "domain": {
+          "value": "DYN",
+          "status": "GREEN",
+          "evidence": [],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "method": {
+          "value": "Fluxintegral og Faraday",
+          "status": "GREEN",
+          "evidence": [
+            "Tidsafhængigt magnetfelt / flux"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "time": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Hvilket symbol er tiden?",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "plane": {
+          "value": null,
+          "status": "YELLOW",
+          "evidence": [],
+          "message": "Hvilket plan ligger løkken i?",
+          "options": [
+            "xy",
+            "yz",
+            "zx"
+          ],
+          "required": true,
+          "depends_on": []
+        },
+        "B": {
+          "value": null,
+          "status": "YELLOW",
+          "evidence": [],
+          "message": "Hvilken retning har magnetfeltet?",
+          "options": [
+            "+x",
+            "-x",
+            "+y",
+            "-y",
+            "+z",
+            "-z"
+          ],
+          "required": true,
+          "depends_on": []
+        },
+        "normal": {
+          "value": null,
+          "status": "YELLOW",
+          "evidence": [],
+          "message": "Hvilken normal definerer den positive flux/EMF?",
+          "options": [
+            "+x",
+            "-x",
+            "+y",
+            "-y",
+            "+z",
+            "-z"
+          ],
+          "required": true,
+          "depends_on": [
+            "plane"
+          ]
+        },
+        "turns": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Hvor mange vindinger er der?",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "area": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Hvad er løkkens areal som funktion af tiden? Fx (a+v*t)**2.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "resistance": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Hvad er kredsens modstand?",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "negligible_inductance": {
+          "value": null,
+          "status": "YELLOW",
+          "evidence": [],
+          "message": "Kan kredsens selvinduktans negligeres?",
+          "options": [
+            "yes",
+            "no"
+          ],
+          "required": true,
+          "depends_on": []
+        },
+        "units": {
+          "value": {
+            "ell": "m",
+            "R": "kilogram * meter ** 2 / ampere ** 2 / second ** 3",
+            "T": "second",
+            "epsilon_0": "F/m",
+            "mu_0": "H/m",
+            "eps0": "F/m",
+            "mu0": "H/m",
+            "m": "kg",
+            "peger": "kg**(1)*m**(0)*s**(-3)*A**(-1)"
+          },
+          "status": "GREEN",
+          "evidence": [
+            "Angivne enheder og dimensionelle ligninger"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "subproblem": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "material": {
+          "value": "conductor",
+          "status": "GREEN",
+          "evidence": [
+            "Materialeord i teksten"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "symmetry": {
+          "value": "not established",
+          "status": "GREEN",
+          "evidence": [
+            "Geometri, udstrækning og funktionens afhængighed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        }
+      },
+      "ready": false
+    },
+    "solution": null,
+    "missing": [
+      {
+        "field": "time",
+        "status": "RED",
+        "message": "Hvilket symbol er tiden?",
+        "options": []
+      },
+      {
+        "field": "plane",
+        "status": "YELLOW",
+        "message": "Hvilket plan ligger løkken i?",
+        "options": [
+          "xy",
+          "yz",
+          "zx"
+        ]
+      },
+      {
+        "field": "B",
+        "status": "YELLOW",
+        "message": "Hvilken retning har magnetfeltet?",
+        "options": [
+          "+x",
+          "-x",
+          "+y",
+          "-y",
+          "+z",
+          "-z"
+        ]
+      },
+      {
+        "field": "turns",
+        "status": "RED",
+        "message": "Hvor mange vindinger er der?",
+        "options": []
+      },
+      {
+        "field": "area",
+        "status": "RED",
+        "message": "Hvad er løkkens areal som funktion af tiden? Fx (a+v*t)**2.",
+        "options": []
+      },
+      {
+        "field": "resistance",
+        "status": "RED",
+        "message": "Hvad er kredsens modstand?",
+        "options": []
+      },
+      {
+        "field": "negligible_inductance",
+        "status": "YELLOW",
+        "message": "Kan kredsens selvinduktans negligeres?",
+        "options": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "field": "subproblem",
+        "status": "RED",
+        "message": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+        "options": []
+      }
+    ],
+    "errors": [],
+    "desktop_user_corrections": {}
+  },
+  "automatic_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Kan ikke løses med de givne oplysninger",
+    "prompt": "En ledende stang med længde ell=18 cm og masse m=35 g glider uden friktion langs to vandrette skinner. Stangen er langs y, bevægelsen er langs +x og et homogent B=0,60 T peger langs +z. Hele kredsens modstand er R=0,45 ohm, selvinduktansen negligeres, og ingen spændingskilde er tilsluttet. Fra t=0 påvirkes stangen af en konstant kraft F0=0,012 N langs +x; v(0)=0. Positiv strøm langs stangen er +y. T=0,80 s.\nb) Bestem I(t) med fortegn og den samlede Joule-varme afsat fra t=0 til t=T.",
+    "status": "unsolved",
+    "result": {},
+    "steps": [],
+    "interpretation": {
+      "method": "Ikke afgjort",
+      "geometry": "Se opgavefortolkningen"
+    },
+    "warnings": [
+      "Hvilket symbol er tiden?",
+      "Hvilket plan ligger løkken i?",
+      "Hvilken retning har magnetfeltet?",
+      "Hvor mange vindinger er der?",
+      "Hvad er løkkens areal som funktion af tiden? Fx (a+v*t)**2.",
+      "Hvad er kredsens modstand?",
+      "Kan kredsens selvinduktans negligeres?",
+      "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+    ],
+    "backend_status": "not_solved",
+    "backend_schema": "1.0",
+    "audit": "# Kontrol og gyldighed\n\nBackend rapporterede 0 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\nIngen individuelle kontroller er rapporteret i svaret.\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "automatic_semantic_actions": 2,
+  "manual_action_details": {
+    "prompt": 1,
+    "open_model": 1,
+    "model_selection": 1,
+    "scalar_field_entries": 8,
+    "table_cells": 0,
+    "scan_symbols": 1,
+    "unit_entries": 7,
+    "numeric_entries": 6,
+    "positive_flags": 5,
+    "wanted": 1,
+    "conditions": 3,
+    "orientation": 1,
+    "confirmation": 1,
+    "solve": 1,
+    "operation_cells": 0
+  },
+  "manual_semantic_actions": 37,
+  "manual_request": {
+    "schema_version": "assisted-1.0",
+    "text": "En ledende stang med længde ell=18 cm og masse m=35 g glider uden friktion langs to vandrette skinner. Stangen er langs y, bevægelsen er langs +x og et homogent B=0,60 T peger langs +z. Hele kredsens modstand er R=0,45 ohm, selvinduktansen negligeres, og ingen spændingskilde er tilsluttet. Fra t=0 påvirkes stangen af en konstant kraft F0=0,012 N langs +x; v(0)=0. Positiv strøm langs stangen er +y. T=0,80 s.\nb) Bestem I(t) med fortegn og den samlede Joule-varme afsat fra t=0 til t=T.",
+    "confirmed": true,
+    "variables": {
+      "mass": "m",
+      "R": "R",
+      "coupling": "B*ell",
+      "voltage": "0",
+      "drive_force": "F0",
+      "time": "t",
+      "initial_velocity": "0",
+      "time_bounds": [
+        "0",
+        "T"
+      ]
+    },
+    "units": {
+      "m": "kg",
+      "R": "ohm",
+      "B": "T",
+      "ell": "m",
+      "F0": "N",
+      "t": "s",
+      "T": "s"
+    },
+    "numbers": {
+      "m": "35 g",
+      "R": "0.45 ohm",
+      "B": "0.60 T",
+      "ell": "18 cm",
+      "F0": "0.012 N",
+      "T": "0.80 s"
+    },
+    "positive": [
+      "m",
+      "R",
+      "B",
+      "ell",
+      "T"
+    ],
+    "assumptions": [
+      "constant_coefficients",
+      "negligible_self_inductance",
+      "no_friction"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "feedback",
+        "wanted": [
+          "I",
+          "W"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  },
+  "manual_response": {
+    "schema_version": "assisted-1.0",
+    "status": "calculated_under_confirmed_model",
+    "questions": [],
+    "errors": [],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "feedback",
+        "status": "calculated_under_confirmed_model",
+        "solution": {
+          "method": "Kredsløbsligning og Newtons anden lov",
+          "reasoning": "Bevægelses-EMF modvirker den påtrykte spænding. Strømmen bestemmer den mekaniske kraft, så kredsløb og bevægelse løses samlet.",
+          "equations_latex": [
+            "I=(V-kv)/R",
+            "m\\dot v=F_{drive}+kI",
+            "\\tau=mR/k^2"
+          ],
+          "steps": [
+            {
+              "id": "step-6360bb5d4955834cbf8b-0",
+              "text": "Sammenkæd Ohms lov og Newtons anden lov",
+              "title": "Sammenkæd Ohms lov og Newtons anden lov",
+              "latex": "m \\frac{d}{d t} v{\\left(t \\right)} = - \\frac{B^{2} \\ell^{2} v{\\left(t \\right)}}{R} + F_{0}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Kredsløbsligning og Newtons anden lov",
+              "method_context_id": "method-65d5b6bb913d50ab79db",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients",
+                "negligible_self_inductance",
+                "no_friction"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-5a160b63c927452a7b04-0",
+              "text": "Løs den lineære differentialligning med begyndelsesbetingelsen",
+              "title": "Løs den lineære differentialligning med begyndelsesbetingelsen",
+              "latex": "v{\\left(t \\right)} = \\frac{F_{0} R}{B^{2} \\ell^{2}} - \\frac{F_{0} R e^{- \\frac{B^{2} \\ell^{2} t}{R m}}}{B^{2} \\ell^{2}}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Kredsløbsligning og Newtons anden lov",
+              "method_context_id": "method-65d5b6bb913d50ab79db",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients",
+                "negligible_self_inductance",
+                "no_friction"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-74d0fc89c5caf113b870-0",
+              "text": "Batterienergi = integral af V I(t)",
+              "title": "Batterienergi = integral af V I(t)",
+              "latex": "\\int\\limits_{0}^{T} 0\\, dt",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Kredsløbsligning og Newtons anden lov",
+              "method_context_id": "method-65d5b6bb913d50ab79db",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients",
+                "negligible_self_inductance",
+                "no_friction"
+              ],
+              "validity": [],
+              "check_ids": []
+            }
+          ],
+          "results": {
+            "v": {
+              "expression": "F0*R/(B**2*ell**2) - F0*R*exp(-B**2*ell**2*t/(R*m))/(B**2*ell**2)",
+              "latex": "\\frac{F_{0} R}{B^{2} \\ell^{2}} - \\frac{F_{0} R e^{- \\frac{B^{2} \\ell^{2} t}{R m}}}{B^{2} \\ell^{2}}",
+              "unit": "m/s"
+            },
+            "I": {
+              "expression": "-F0/(B*ell) + F0*exp(-B**2*ell**2*t/(R*m))/(B*ell)",
+              "latex": "- \\frac{F_{0}}{B \\ell} + \\frac{F_{0} e^{- \\frac{B^{2} \\ell^{2} t}{R m}}}{B \\ell}",
+              "unit": "A"
+            },
+            "tau": {
+              "expression": "R*m/(B**2*ell**2)",
+              "latex": "\\frac{R m}{B^{2} \\ell^{2}}",
+              "unit": "s"
+            },
+            "v_infinity": {
+              "expression": "F0*R/(B**2*ell**2)",
+              "latex": "\\frac{F_{0} R}{B^{2} \\ell^{2}}",
+              "unit": "m/s"
+            },
+            "acceleration_initial": {
+              "expression": "F0/m",
+              "latex": "\\frac{F_{0}}{m}",
+              "unit": "m/s^2"
+            },
+            "P": {
+              "expression": "F0**2*R*(1 - exp(B**2*ell**2*t/(R*m)))**2*exp(-2*B**2*ell**2*t/(R*m))/(B**2*ell**2)",
+              "latex": "\\frac{F_{0}^{2} R \\left(1 - e^{\\frac{B^{2} \\ell^{2} t}{R m}}\\right)^{2} e^{- \\frac{2 B^{2} \\ell^{2} t}{R m}}}{B^{2} \\ell^{2}}",
+              "unit": "W"
+            },
+            "battery_energy": {
+              "expression": "0",
+              "latex": "0",
+              "unit": "J"
+            },
+            "W": {
+              "expression": "F0**2*R*(2*B**2*T*ell**2*exp(2*B**2*T*ell**2/(R*m)) + R*m*(4*exp(B**2*T*ell**2/(R*m)) - 1) - 3*R*m*exp(2*B**2*T*ell**2/(R*m)))*exp(-2*B**2*T*ell**2/(R*m))/(2*B**4*ell**4)",
+              "latex": "\\frac{F_{0}^{2} R \\left(2 B^{2} T \\ell^{2} e^{\\frac{2 B^{2} T \\ell^{2}}{R m}} + R m \\left(4 e^{\\frac{B^{2} T \\ell^{2}}{R m}} - 1\\right) - 3 R m e^{\\frac{2 B^{2} T \\ell^{2}}{R m}}\\right) e^{- \\frac{2 B^{2} T \\ell^{2}}{R m}}}{2 B^{4} \\ell^{4}}",
+              "unit": "J"
+            }
+          },
+          "numerical": {
+            "tau": {
+              "value": "1.35030864197531",
+              "latex": "1.35030864197531",
+              "unit": "s"
+            },
+            "v_infinity": {
+              "value": "0.462962962962963",
+              "latex": "0.462962962962963",
+              "unit": "m/s"
+            },
+            "acceleration_initial": {
+              "value": "0.342857142857143",
+              "latex": "0.342857142857143",
+              "unit": "m/s^2"
+            },
+            "battery_energy": {
+              "value": "0",
+              "latex": "0",
+              "unit": "J"
+            },
+            "W": {
+              "value": "0.000341363575891826",
+              "latex": "0.000341363575891826",
+              "unit": "J"
+            }
+          },
+          "checks": [
+            {
+              "id": "check-5a9614a768775023aca7",
+              "name": "Differentialligning",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-9021e17dc64cb52c8ca9",
+              "name": "Begyndelseshastighed",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-6f5aa9ad004d4c4513fe",
+              "name": "Effektbalance",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-5ce840c4418b51da0834",
+              "name": "Dimension: v",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m/s",
+              "step_ids": []
+            },
+            {
+              "id": "check-02f04a3da58e5bca97ac",
+              "name": "Dimension: I",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-c867842205d5d7ce542a",
+              "name": "Dimension: tau",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-f43fa0f0df0bc2a62ef5",
+              "name": "Dimension: v_infinity",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m/s",
+              "step_ids": []
+            },
+            {
+              "id": "check-f03177dffe004e56e050",
+              "name": "Dimension: acceleration_initial",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m/s^2",
+              "step_ids": []
+            },
+            {
+              "id": "check-01afbda9e76b9e755649",
+              "name": "Dimension: P",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "W",
+              "step_ids": []
+            },
+            {
+              "id": "check-6e048a717566d541e03f",
+              "name": "Dimension: battery_energy",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "J",
+              "step_ids": []
+            },
+            {
+              "id": "check-70aca44c15f4694aaec3",
+              "name": "Dimension: W",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "J",
+              "step_ids": []
+            },
+            {
+              "id": "check-7408ea34d79912cd35e3",
+              "name": "Inputdimension: mass",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "kg",
+              "step_ids": []
+            },
+            {
+              "id": "check-a8635df392102a0d846b",
+              "name": "Inputdimension: R",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "ohm",
+              "step_ids": []
+            },
+            {
+              "id": "check-34d8a6b9cf67d706853a",
+              "name": "Inputdimension: coupling",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "T*m",
+              "step_ids": []
+            },
+            {
+              "id": "check-fad079f761483fcc67ed",
+              "name": "Inputdimension: voltage",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "V",
+              "step_ids": []
+            },
+            {
+              "id": "check-f1677fda1cfeb704d1a9",
+              "name": "Inputdimension: drive_force",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "N",
+              "step_ids": []
+            },
+            {
+              "id": "check-c88ffff6b827c43e1732",
+              "name": "Inputdimension: time",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-cf55bc4038787f5411f1",
+              "name": "Inputdimension: initial_velocity",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m/s",
+              "step_ids": []
+            }
+          ],
+          "direction": "Den valgte positive bevægelsesretning skal give EMF=k v og magnetisk kraft=k I; angiv denne orientering i problemet.",
+          "warnings": [],
+          "presentation_version": "1.0",
+          "latex_profile": "EM1-Math-1",
+          "method_contexts": {
+            "method-65d5b6bb913d50ab79db": {
+              "method_id": "feedback",
+              "method": "Kredsløbsligning og Newtons anden lov",
+              "reasoning": "Bevægelses-EMF modvirker den påtrykte spænding. Strømmen bestemmer den mekaniske kraft, så kredsløb og bevægelse løses samlet.",
+              "equations": [
+                "I=(V-kv)/R",
+                "m\\dot v=F_{drive}+kI",
+                "\\tau=mR/k^2"
+              ],
+              "assumptions": [
+                "constant_coefficients",
+                "negligible_self_inductance",
+                "no_friction"
+              ]
+            }
+          },
+          "views": {
+            "result": {
+              "wanted": [
+                "I",
+                "W"
+              ],
+              "results": {
+                "I": {
+                  "expression": "-F0/(B*ell) + F0*exp(-B**2*ell**2*t/(R*m))/(B*ell)",
+                  "latex": "- \\frac{F_{0}}{B \\ell} + \\frac{F_{0} e^{- \\frac{B^{2} \\ell^{2} t}{R m}}}{B \\ell}",
+                  "unit": "A"
+                },
+                "W": {
+                  "expression": "F0**2*R*(2*B**2*T*ell**2*exp(2*B**2*T*ell**2/(R*m)) + R*m*(4*exp(B**2*T*ell**2/(R*m)) - 1) - 3*R*m*exp(2*B**2*T*ell**2/(R*m)))*exp(-2*B**2*T*ell**2/(R*m))/(2*B**4*ell**4)",
+                  "latex": "\\frac{F_{0}^{2} R \\left(2 B^{2} T \\ell^{2} e^{\\frac{2 B^{2} T \\ell^{2}}{R m}} + R m \\left(4 e^{\\frac{B^{2} T \\ell^{2}}{R m}} - 1\\right) - 3 R m e^{\\frac{2 B^{2} T \\ell^{2}}{R m}}\\right) e^{- \\frac{2 B^{2} T \\ell^{2}}{R m}}}{2 B^{4} \\ell^{4}}",
+                  "unit": "J"
+                }
+              },
+              "numerical": {
+                "W": {
+                  "value": "0.000341363575891826",
+                  "latex": "0.000341363575891826",
+                  "unit": "J"
+                }
+              },
+              "direction": "Den valgte positive bevægelsesretning skal give EMF=k v og magnetisk kraft=k I; angiv denne orientering i problemet."
+            },
+            "derivation": {
+              "equations_latex": [
+                "I=(V-kv)/R",
+                "m\\dot v=F_{drive}+kI",
+                "\\tau=mR/k^2"
+              ],
+              "step_ids": [
+                "step-6360bb5d4955834cbf8b-0",
+                "step-5a160b63c927452a7b04-0",
+                "step-74d0fc89c5caf113b870-0"
+              ]
+            },
+            "explanation": {
+              "step_ids": [
+                "step-6360bb5d4955834cbf8b-0",
+                "step-5a160b63c927452a7b04-0",
+                "step-74d0fc89c5caf113b870-0"
+              ],
+              "method_context_ids": [
+                "method-65d5b6bb913d50ab79db"
+              ],
+              "global_check_ids": [
+                "check-5a9614a768775023aca7",
+                "check-9021e17dc64cb52c8ca9",
+                "check-6f5aa9ad004d4c4513fe",
+                "check-5ce840c4418b51da0834",
+                "check-02f04a3da58e5bca97ac",
+                "check-c867842205d5d7ce542a",
+                "check-f43fa0f0df0bc2a62ef5",
+                "check-f03177dffe004e56e050",
+                "check-01afbda9e76b9e755649",
+                "check-6e048a717566d541e03f",
+                "check-70aca44c15f4694aaec3",
+                "check-7408ea34d79912cd35e3",
+                "check-a8635df392102a0d846b",
+                "check-34d8a6b9cf67d706853a",
+                "check-fad079f761483fcc67ed",
+                "check-f1677fda1cfeb704d1a9",
+                "check-c88ffff6b827c43e1732",
+                "check-cf55bc4038787f5411f1"
+              ],
+              "warnings": []
+            }
+          }
+        },
+        "errors": [],
+        "verification": {
+          "interpretation": "user_confirmed_not_machine_verified",
+          "dimensions": "passed",
+          "physical_checks": [
+            "Differentialligning",
+            "Begyndelseshastighed",
+            "Effektbalance",
+            "Inputdimension: mass",
+            "Inputdimension: R",
+            "Inputdimension: coupling",
+            "Inputdimension: voltage",
+            "Inputdimension: drive_force",
+            "Inputdimension: time",
+            "Inputdimension: initial_velocity"
+          ],
+          "completeness": "requested_results_present",
+          "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+        }
+      }
+    ],
+    "interpretation_status": "user_confirmed",
+    "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+    "confirmed_model": {
+      "schema_version": "assisted-1.0",
+      "text": "En ledende stang med længde ell=18 cm og masse m=35 g glider uden friktion langs to vandrette skinner. Stangen er langs y, bevægelsen er langs +x og et homogent B=0,60 T peger langs +z. Hele kredsens modstand er R=0,45 ohm, selvinduktansen negligeres, og ingen spændingskilde er tilsluttet. Fra t=0 påvirkes stangen af en konstant kraft F0=0,012 N langs +x; v(0)=0. Positiv strøm langs stangen er +y. T=0,80 s.\nb) Bestem I(t) med fortegn og den samlede Joule-varme afsat fra t=0 til t=T.",
+      "confirmed": true,
+      "variables": {
+        "mass": "m",
+        "R": "R",
+        "coupling": "B*ell",
+        "voltage": "0",
+        "drive_force": "F0",
+        "time": "t",
+        "initial_velocity": "0",
+        "time_bounds": [
+          "0",
+          "T"
+        ]
+      },
+      "units": {
+        "m": "kg",
+        "R": "ohm",
+        "B": "T",
+        "ell": "m",
+        "F0": "N",
+        "t": "s",
+        "T": "s"
+      },
+      "numbers": {
+        "m": "35 g",
+        "R": "0.45 ohm",
+        "B": "0.60 T",
+        "ell": "18 cm",
+        "F0": "0.012 N",
+        "T": "0.80 s"
+      },
+      "positive": [
+        "m",
+        "R",
+        "B",
+        "ell",
+        "T"
+      ],
+      "assumptions": [
+        "constant_coefficients",
+        "negligible_self_inductance",
+        "no_friction"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "feedback",
+          "wanted": [
+            "I",
+            "W"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    }
+  },
+  "manual_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Beregnet under brugerbekræftet model",
+    "prompt": "En ledende stang med længde ell=18 cm og masse m=35 g glider uden friktion langs to vandrette skinner. Stangen er langs y, bevægelsen er langs +x og et homogent B=0,60 T peger langs +z. Hele kredsens modstand er R=0,45 ohm, selvinduktansen negligeres, og ingen spændingskilde er tilsluttet. Fra t=0 påvirkes stangen af en konstant kraft F0=0,012 N langs +x; v(0)=0. Positiv strøm langs stangen er +y. T=0,80 s.\nb) Bestem I(t) med fortegn og den samlede Joule-varme afsat fra t=0 til t=T.",
+    "status": "assumptions",
+    "result": {
+      "symbolic_latex": "I = - \\frac{F_{0}}{B \\ell} + \\frac{F_{0} e^{- \\frac{B^{2} \\ell^{2} t}{R m}}}{B \\ell}",
+      "extra_latex": [
+        "W = \\frac{F_{0}^{2} R \\left(2 B^{2} T \\ell^{2} e^{\\frac{2 B^{2} T \\ell^{2}}{R m}} + R m \\left(4 e^{\\frac{B^{2} T \\ell^{2}}{R m}} - 1\\right) - 3 R m e^{\\frac{2 B^{2} T \\ell^{2}}{R m}}\\right) e^{- \\frac{2 B^{2} T \\ell^{2}}{R m}}}{2 B^{4} \\ell^{4}}"
+      ],
+      "numeric_text": "W: 0.000341363575891826",
+      "units": "I: A; W: J"
+    },
+    "steps": [
+      {
+        "title": "Grundligning 1",
+        "latex": "I=(V-kv)/R",
+        "reason": "Bevægelses-EMF modvirker den påtrykte spænding. Strømmen bestemmer den mekaniske kraft, så kredsløb og bevægelse løses samlet."
+      },
+      {
+        "title": "Grundligning 2",
+        "latex": "m\\dot v=F_{drive}+kI",
+        "reason": ""
+      },
+      {
+        "title": "Grundligning 3",
+        "latex": "\\tau=mR/k^2",
+        "reason": ""
+      },
+      {
+        "id": "step-6360bb5d4955834cbf8b-0",
+        "title": "Sammenkæd Ohms lov og Newtons anden lov",
+        "reason": "Anvendt lov: Kredsløbsligning og Newtons anden lov. Bevægelses-EMF modvirker den påtrykte spænding. Strømmen bestemmer den mekaniske kraft, så kredsløb og bevægelse løses samlet.",
+        "latex": "\\[m \\frac{d}{d t} v{\\left(t \\right)} = - \\frac{B^{2} \\ell^{2} v{\\left(t \\right)}}{R} + F_{0}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-5a160b63c927452a7b04-0",
+        "title": "Løs den lineære differentialligning med begyndelsesbetingelsen",
+        "reason": "Anvendt lov: Kredsløbsligning og Newtons anden lov. Bevægelses-EMF modvirker den påtrykte spænding. Strømmen bestemmer den mekaniske kraft, så kredsløb og bevægelse løses samlet.",
+        "latex": "\\[v{\\left(t \\right)} = \\frac{F_{0} R}{B^{2} \\ell^{2}} - \\frac{F_{0} R e^{- \\frac{B^{2} \\ell^{2} t}{R m}}}{B^{2} \\ell^{2}}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-74d0fc89c5caf113b870-0",
+        "title": "Batterienergi = integral af V I(t)",
+        "reason": "Anvendt lov: Kredsløbsligning og Newtons anden lov. Bevægelses-EMF modvirker den påtrykte spænding. Strømmen bestemmer den mekaniske kraft, så kredsløb og bevægelse løses samlet.",
+        "latex": "\\[\\int\\limits_{0}^{T} 0\\, dt\\]",
+        "check": ""
+      }
+    ],
+    "interpretation": {
+      "method": "Kredsløbsligning og Newtons anden lov",
+      "geometry": "feedback"
+    },
+    "warnings": [
+      "Retning: Den valgte positive bevægelsesretning skal give EMF=k v og magnetisk kraft=k I; angiv denne orientering i problemet.",
+      "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+    ],
+    "backend_status": "calculated_under_confirmed_model",
+    "backend_schema": "assisted-1.0",
+    "audit": "# Brugerbekræftede oplysninger\n\nR = R\n\ncoupling = B*ell\n\ndrive_force = F0\n\ninitial_velocity = 0\n\nmass = m\n\ntime = t\n\ntime_bounds = ['0', 'T']\n\nvoltage = 0\n\nB = 0.60 T\n\nF0 = 0.012 N\n\nR = 0.45 ohm\n\nT = 0.80 s\n\nell = 18 cm\n\nm = 35 g\n\nEnhed for B: T\n\nEnhed for F0: N\n\nEnhed for R: ohm\n\nEnhed for T: s\n\nEnhed for ell: m\n\nEnhed for m: kg\n\nEnhed for t: s\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 18 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- Differentialligning\n\n- Begyndelseshastighed\n\n- Effektbalance\n\n- Dimension: v — m/s\n\n- Dimension: I — A\n\n- Dimension: tau — s\n\n- Dimension: v_infinity — m/s\n\n- Dimension: acceleration_initial — m/s^2\n\n- Dimension: P — W\n\n- Dimension: battery_energy — J\n\n- Dimension: W — J\n\n- Inputdimension: mass — kg\n\n- Inputdimension: R — ohm\n\n- Inputdimension: coupling — T*m\n\n- Inputdimension: voltage — V\n\n- Inputdimension: drive_force — N\n\n- Inputdimension: time — s\n\n- Inputdimension: initial_velocity — m/s\n\n## Forudsætninger og gyldighed\n\n- constant_coefficients\n\n- negligible_self_inductance\n\n- no_friction\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "manual_status_text": "Beregnet under din bekræftede model. Fortolkningen af opgaveteksten er ikke maskinverificeret.",
+  "math_display_errors": []
+}
