@@ -1,3 +1,7 @@
+> **Ny desktop-udviklingsversion:** På branchen `em1-generalization-2026-11-05` findes en samlet PySide6-pakke under `distribution/EM1-Solver-Desktop-Development-2026-11-05.zip`. Udpak i en ny mappe, kør `INSTALL_WINDOWS.bat` online og derefter `START_WINDOWS.bat`. Læs [den danske startvejledning](desktop_app/START_HER_DANSK.md). Den tidligere integrationspakke og frosne releases er bevaret.
+>
+> [Fysiklove og afgrænsninger](reports/generalization/law_audit.md) · [Evaluering af 20 nye opgaver](reports/generalization/evaluation20/report.md). 17/20 fuldt korrekte **med brugerhjælp**, 3 afståelser; 0 fuldt automatiske. Ikke en ekstern blindtest. Native Windows kræver brugerafprøvning.
+
 # EM1 Solver – samlet desktopintegration
 
 Den eksisterende uploadede PySide6-app ligger i [desktop_app](desktop_app).
