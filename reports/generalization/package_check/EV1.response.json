@@ -1,0 +1,439 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "image_plane",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Billedladninger, Coulomb-superposition og entydighed",
+        "reasoning": "Hjælpeladninger konstrueres så lederens randbetingelse opfyldes. I det specificerede fysiske område giver entydighedssætningen den elektrostatiske løsning. Selvfeltet udelades ved kraft på en virkelig ladning.",
+        "equations_latex": [
+          "V=\\sum_i\\frac{q_i}{4\\pi\\epsilon_0|\\mathbf r-\\mathbf r_i|}",
+          "\\mathbf E=-\\nabla V",
+          "\\mathbf F_i=q_i\\mathbf E_{andre}(\\mathbf r_i)"
+        ],
+        "steps": [
+          {
+            "id": "step-3e232051a26f63225d36-0",
+            "text": "Planets ligning er n dot r = h; spejl positionen normalt til planet",
+            "title": "Planets ligning er n dot r = h; spejl positionen normalt til planet",
+            "latex": "n_{dot r} = d",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Billedladninger, Coulomb-superposition og entydighed",
+            "method_context_id": "method-dd968875d2cea3853135",
+            "intermediate_latex": [],
+            "assumptions": [
+              "grounded_infinite_plane",
+              "vacuum_medium",
+              "electrostatic"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-fbe61ab6f52686e73250-0",
+            "text": "Spejlladning og position",
+            "title": "Spejlladning og position",
+            "latex": "\\left( - q, \\  - a + d, \\  0, \\  0\\right)",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Spejling i et jordet plan",
+            "method_context_id": "method-dd968875d2cea3853135",
+            "intermediate_latex": [],
+            "assumptions": [
+              "grounded_infinite_plane",
+              "vacuum_medium",
+              "electrostatic"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-6bda1607bbcdc7aba827-0",
+            "text": "Summér potentiale og felt fra virkelige kilder og hjælpekilder",
+            "title": "Summér potentiale og felt fra virkelige kilder og hjælpekilder",
+            "latex": "\\left( \\frac{q}{6 \\pi a \\epsilon_{0}}, \\  \\frac{2 q}{9 \\pi a^{2} \\epsilon_{0}}, \\  0, \\  0\\right)",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Billedladninger, Coulomb-superposition og entydighed",
+            "method_context_id": "method-dd968875d2cea3853135",
+            "intermediate_latex": [],
+            "assumptions": [
+              "grounded_infinite_plane",
+              "vacuum_medium",
+              "electrostatic"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-d1fc3418ad2bef1e85a2-0",
+            "text": "Kraft på virkelige ladninger uden deres selvfelt",
+            "title": "Kraft på virkelige ladninger uden deres selvfelt",
+            "latex": "\\left[\\begin{matrix}- \\frac{q^{2}}{16 \\pi a^{2} \\epsilon_{0}}\\\\0\\\\0\\end{matrix}\\right]",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Billedladninger, Coulomb-superposition og entydighed",
+            "method_context_id": "method-dd968875d2cea3853135",
+            "intermediate_latex": [],
+            "assumptions": [
+              "grounded_infinite_plane",
+              "vacuum_medium",
+              "electrostatic"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "V": {
+            "expression": "q/(6*pi*a*epsilon_0)",
+            "latex": "\\frac{q}{6 \\pi a \\epsilon_{0}}",
+            "unit": "V"
+          },
+          "E": {
+            "expression": "Matrix([[2*q/(9*pi*a**2*epsilon_0)], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}\\frac{2 q}{9 \\pi a^{2} \\epsilon_{0}}\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "V/m"
+          },
+          "forces": {
+            "expression": "Matrix([[-q**2/(16*pi*a**2*epsilon_0)], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}- \\frac{q^{2}}{16 \\pi a^{2} \\epsilon_{0}}\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "N"
+          },
+          "F": {
+            "expression": "Matrix([[-q**2/(16*pi*a**2*epsilon_0)], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}- \\frac{q^{2}}{16 \\pi a^{2} \\epsilon_{0}}\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "N"
+          },
+          "Q_conductor": {
+            "expression": "-q",
+            "latex": "- q",
+            "unit": "C"
+          },
+          "Q_induced": {
+            "expression": "-q",
+            "latex": "- q",
+            "unit": "C"
+          }
+        },
+        "numerical": {
+          "V": {
+            "value": "266.297830881813",
+            "latex": "266.297830881813",
+            "unit": "V"
+          },
+          "E": {
+            "value": "Matrix([[3945.15305010093], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}3945.15305010093\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "V/m"
+          },
+          "forces": {
+            "value": "Matrix([[-4.43829718136354e-6], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}-4.43829718136354 \\cdot 10^{-6}\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "N"
+          },
+          "F": {
+            "value": "Matrix([[-4.43829718136354e-6], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}-4.43829718136354 \\cdot 10^{-6}\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "N"
+          },
+          "Q_conductor": {
+            "value": "-4.00000000000000e-9",
+            "latex": "-4.0 \\cdot 10^{-9}",
+            "unit": "C"
+          },
+          "Q_induced": {
+            "value": "-4.00000000000000e-9",
+            "latex": "-4.0 \\cdot 10^{-9}",
+            "unit": "C"
+          }
+        },
+        "checks": [
+          {
+            "id": "check-46d9047273145dc3ab2b",
+            "name": "Lige kildeafstande på lederplanet",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-1175a4ac287873075937",
+            "name": "Modsat ladning sikrer V=0 på planet",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-cb6e3426dd3cff9a2a79",
+            "name": "Dimension: V",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V",
+            "step_ids": []
+          },
+          {
+            "id": "check-bcbed59ea60ce4b2757f",
+            "name": "Dimension: E",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V/m",
+            "step_ids": []
+          },
+          {
+            "id": "check-de2befdb47ce07dc0eb8",
+            "name": "Dimension: forces",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "N",
+            "step_ids": []
+          },
+          {
+            "id": "check-2169c07328223e085ae6",
+            "name": "Dimension: F",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "N",
+            "step_ids": []
+          },
+          {
+            "id": "check-5c3fe3409a3827604bc6",
+            "name": "Dimension: Q_conductor",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-883bf4c569b5cfb4e061",
+            "name": "Dimension: Q_induced",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-d6f3d064b0634340f3bb",
+            "name": "Inputdimension: point",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-10b2de649ca6cec3978a",
+            "name": "Inputdimension: normal",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "1",
+            "step_ids": []
+          },
+          {
+            "id": "check-bc2820a218f296a96e2c",
+            "name": "Inputdimension: offset",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-8954009570ed5d44ffc9",
+            "name": "Inputdimension: charges_0_q",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-ea43d73c0067b7d2b1cf",
+            "name": "Inputdimension: charges_0_position",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          }
+        ],
+        "direction": "Kartesiske komponenter. Kraftkolonner følger de virkelige ladningers rækkefølge; hjælpeladninger er ikke fysiske kilder.",
+        "warnings": [
+          "Parenergien af virkelige og fiktive ladninger er ikke den fysiske energi og returneres ikke. Formlerne gælder kun i det deklarerede fysiske område."
+        ],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-dd968875d2cea3853135": {
+            "method_id": "images",
+            "method": "Billedladninger, Coulomb-superposition og entydighed",
+            "reasoning": "Hjælpeladninger konstrueres så lederens randbetingelse opfyldes. I det specificerede fysiske område giver entydighedssætningen den elektrostatiske løsning. Selvfeltet udelades ved kraft på en virkelig ladning.",
+            "equations": [
+              "V=\\sum_i\\frac{q_i}{4\\pi\\epsilon_0|\\mathbf r-\\mathbf r_i|}",
+              "\\mathbf E=-\\nabla V",
+              "\\mathbf F_i=q_i\\mathbf E_{andre}(\\mathbf r_i)"
+            ],
+            "assumptions": [
+              "grounded_infinite_plane",
+              "vacuum_medium",
+              "electrostatic"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "F",
+              "E"
+            ],
+            "results": {
+              "E": {
+                "expression": "Matrix([[2*q/(9*pi*a**2*epsilon_0)], [0], [0]])",
+                "latex": "\\left[\\begin{matrix}\\frac{2 q}{9 \\pi a^{2} \\epsilon_{0}}\\\\0\\\\0\\end{matrix}\\right]",
+                "unit": "V/m"
+              },
+              "F": {
+                "expression": "Matrix([[-q**2/(16*pi*a**2*epsilon_0)], [0], [0]])",
+                "latex": "\\left[\\begin{matrix}- \\frac{q^{2}}{16 \\pi a^{2} \\epsilon_{0}}\\\\0\\\\0\\end{matrix}\\right]",
+                "unit": "N"
+              }
+            },
+            "numerical": {
+              "E": {
+                "value": "Matrix([[3945.15305010093], [0], [0]])",
+                "latex": "\\left[\\begin{matrix}3945.15305010093\\\\0\\\\0\\end{matrix}\\right]",
+                "unit": "V/m"
+              },
+              "F": {
+                "value": "Matrix([[-4.43829718136354e-6], [0], [0]])",
+                "latex": "\\left[\\begin{matrix}-4.43829718136354 \\cdot 10^{-6}\\\\0\\\\0\\end{matrix}\\right]",
+                "unit": "N"
+              }
+            },
+            "direction": "Kartesiske komponenter. Kraftkolonner følger de virkelige ladningers rækkefølge; hjælpeladninger er ikke fysiske kilder."
+          },
+          "derivation": {
+            "equations_latex": [
+              "V=\\sum_i\\frac{q_i}{4\\pi\\epsilon_0|\\mathbf r-\\mathbf r_i|}",
+              "\\mathbf E=-\\nabla V",
+              "\\mathbf F_i=q_i\\mathbf E_{andre}(\\mathbf r_i)"
+            ],
+            "step_ids": [
+              "step-3e232051a26f63225d36-0",
+              "step-fbe61ab6f52686e73250-0",
+              "step-6bda1607bbcdc7aba827-0",
+              "step-d1fc3418ad2bef1e85a2-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-3e232051a26f63225d36-0",
+              "step-fbe61ab6f52686e73250-0",
+              "step-6bda1607bbcdc7aba827-0",
+              "step-d1fc3418ad2bef1e85a2-0"
+            ],
+            "method_context_ids": [
+              "method-dd968875d2cea3853135"
+            ],
+            "global_check_ids": [
+              "check-46d9047273145dc3ab2b",
+              "check-1175a4ac287873075937",
+              "check-cb6e3426dd3cff9a2a79",
+              "check-bcbed59ea60ce4b2757f",
+              "check-de2befdb47ce07dc0eb8",
+              "check-2169c07328223e085ae6",
+              "check-5c3fe3409a3827604bc6",
+              "check-883bf4c569b5cfb4e061",
+              "check-d6f3d064b0634340f3bb",
+              "check-10b2de649ca6cec3978a",
+              "check-bc2820a218f296a96e2c",
+              "check-8954009570ed5d44ffc9",
+              "check-ea43d73c0067b7d2b1cf"
+            ],
+            "warnings": [
+              "Parenergien af virkelige og fiktive ladninger er ikke den fysiske energi og returneres ikke. Formlerne gælder kun i det deklarerede fysiske område."
+            ]
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Lige kildeafstande på lederplanet",
+          "Modsat ladning sikrer V=0 på planet",
+          "Inputdimension: point",
+          "Inputdimension: normal",
+          "Inputdimension: offset",
+          "Inputdimension: charges_0_q",
+          "Inputdimension: charges_0_position"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "En punktladning q=4 nC ligger i (d+a,0,0), d=3 cm, a=9 cm. Planet x=d er en jordet uendelig leder, fysisk område x>d i vakuum. Bestem kraft på q og feltet i (d+2a,0,0).",
+    "confirmed": true,
+    "variables": {
+      "normal": [
+        "1",
+        "0",
+        "0"
+      ],
+      "offset": "d",
+      "point": [
+        "d+2*a",
+        "0",
+        "0"
+      ],
+      "charges": [
+        [
+          "q",
+          [
+            "d+a",
+            "0",
+            "0"
+          ]
+        ]
+      ]
+    },
+    "units": {
+      "d": "m",
+      "a": "m",
+      "q": "C"
+    },
+    "numbers": {
+      "d": "3 cm",
+      "a": "9 cm",
+      "q": "4 nC"
+    },
+    "positive": [
+      "a"
+    ],
+    "assumptions": [
+      "grounded_infinite_plane",
+      "vacuum_medium",
+      "electrostatic"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "image_plane",
+        "wanted": [
+          "F",
+          "E"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

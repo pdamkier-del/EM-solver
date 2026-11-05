@@ -1,0 +1,314 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "magnetization_currents",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Magnetiseringens bundne strømme",
+        "reasoning": "Rotationen af magnetiseringen giver volumenstrømmen. Magnetiseringens tangentiale spring ved grænsen giver overfladestrømmen. M alene bestemmer ikke generelt H eller B.",
+        "equations_latex": [
+          "\\mathbf J_b=\\nabla\\times\\mathbf M",
+          "\\mathbf K_b=\\mathbf M\\times\\hat{\\mathbf n}",
+          "\\mathbf B=\\mu_0(\\mathbf H+\\mathbf M)"
+        ],
+        "steps": [
+          {
+            "id": "step-8ff835464a30d3c9c549-0",
+            "text": "Beregn curl(M) med koordinatsystemets korrekte målestokke",
+            "title": "Beregn curl(M) med koordinatsystemets korrekte målestokke",
+            "latex": "\\left[\\begin{matrix}k\\\\0\\\\0\\end{matrix}\\right]",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetiseringens bundne strømme",
+            "method_context_id": "method-62c83d49ea27836d9b1a",
+            "intermediate_latex": [],
+            "assumptions": [
+              "magnetostatic"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-8d7f556e062167edd528-0",
+            "text": "Beregn M kryds den udadrettede enhedsnormal på fladen",
+            "title": "Beregn M kryds den udadrettede enhedsnormal på fladen",
+            "latex": "\\left[\\begin{matrix}0\\\\b k\\\\0\\end{matrix}\\right]",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetiseringens bundne strømme",
+            "method_context_id": "method-62c83d49ea27836d9b1a",
+            "intermediate_latex": [],
+            "assumptions": [
+              "magnetostatic"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "J_bound": {
+            "expression": "Matrix([[k], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}k\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "A/m^2"
+          },
+          "K_bound": {
+            "expression": "Matrix([[0], [b*k], [0]])",
+            "latex": "\\left[\\begin{matrix}0\\\\b k\\\\0\\end{matrix}\\right]",
+            "unit": "A/m"
+          }
+        },
+        "numerical": {
+          "J_bound": {
+            "value": "Matrix([[2400.00000000000], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}2400.0\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "A/m^2"
+          },
+          "K_bound": {
+            "value": "Matrix([[0], [48.0000000000000], [0]])",
+            "latex": "\\left[\\begin{matrix}0\\\\48.0\\\\0\\end{matrix}\\right]",
+            "unit": "A/m"
+          }
+        },
+        "checks": [
+          {
+            "id": "check-f8fec9295583611503b1",
+            "name": "Bundne volumenstrømmes kontinuitet i glatte områder",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-dd5263ee856d20e322ce",
+            "name": "Overfladestrømmen er tangentiel",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-f6cc9f52ede123ffdd56",
+            "name": "Dimension: J_bound",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A/m^2",
+            "step_ids": []
+          },
+          {
+            "id": "check-7e31424f1d5f6ff1baa7",
+            "name": "Dimension: K_bound",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A/m",
+            "step_ids": []
+          },
+          {
+            "id": "check-cbda61e8b979973cc063",
+            "name": "Inputdimension: M",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A/m",
+            "step_ids": []
+          },
+          {
+            "id": "check-30419ccb771f71a08bc3",
+            "name": "Inputdimension: normal",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "1",
+            "step_ids": []
+          },
+          {
+            "id": "check-5e1d00d8c6f0c0a0bdf8",
+            "name": "Inputdimension: coordinate_0",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-b2bf9ed77cbc7c00040a",
+            "name": "Inputdimension: coordinate_1",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-5d2e5caa7e73db4aec11",
+            "name": "Inputdimension: coordinate_2",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          }
+        ],
+        "direction": "Komponenterne følger den angivne ortonormale koordinatbasis. Normalen skal pege ud af det magnetiserede materiale.",
+        "warnings": [
+          "H og B bestemmes ikke af M alene uden yderligere geometri, frie strømme og randbetingelser."
+        ],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-62c83d49ea27836d9b1a": {
+            "method_id": "magnetic_material",
+            "method": "Magnetiseringens bundne strømme",
+            "reasoning": "Rotationen af magnetiseringen giver volumenstrømmen. Magnetiseringens tangentiale spring ved grænsen giver overfladestrømmen. M alene bestemmer ikke generelt H eller B.",
+            "equations": [
+              "\\mathbf J_b=\\nabla\\times\\mathbf M",
+              "\\mathbf K_b=\\mathbf M\\times\\hat{\\mathbf n}",
+              "\\mathbf B=\\mu_0(\\mathbf H+\\mathbf M)"
+            ],
+            "assumptions": [
+              "magnetostatic"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "J_bound",
+              "K_bound"
+            ],
+            "results": {
+              "J_bound": {
+                "expression": "Matrix([[k], [0], [0]])",
+                "latex": "\\left[\\begin{matrix}k\\\\0\\\\0\\end{matrix}\\right]",
+                "unit": "A/m^2"
+              },
+              "K_bound": {
+                "expression": "Matrix([[0], [b*k], [0]])",
+                "latex": "\\left[\\begin{matrix}0\\\\b k\\\\0\\end{matrix}\\right]",
+                "unit": "A/m"
+              }
+            },
+            "numerical": {
+              "J_bound": {
+                "value": "Matrix([[2400.00000000000], [0], [0]])",
+                "latex": "\\left[\\begin{matrix}2400.0\\\\0\\\\0\\end{matrix}\\right]",
+                "unit": "A/m^2"
+              },
+              "K_bound": {
+                "value": "Matrix([[0], [48.0000000000000], [0]])",
+                "latex": "\\left[\\begin{matrix}0\\\\48.0\\\\0\\end{matrix}\\right]",
+                "unit": "A/m"
+              }
+            },
+            "direction": "Komponenterne følger den angivne ortonormale koordinatbasis. Normalen skal pege ud af det magnetiserede materiale."
+          },
+          "derivation": {
+            "equations_latex": [
+              "\\mathbf J_b=\\nabla\\times\\mathbf M",
+              "\\mathbf K_b=\\mathbf M\\times\\hat{\\mathbf n}",
+              "\\mathbf B=\\mu_0(\\mathbf H+\\mathbf M)"
+            ],
+            "step_ids": [
+              "step-8ff835464a30d3c9c549-0",
+              "step-8d7f556e062167edd528-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-8ff835464a30d3c9c549-0",
+              "step-8d7f556e062167edd528-0"
+            ],
+            "method_context_ids": [
+              "method-62c83d49ea27836d9b1a"
+            ],
+            "global_check_ids": [
+              "check-f8fec9295583611503b1",
+              "check-dd5263ee856d20e322ce",
+              "check-f6cc9f52ede123ffdd56",
+              "check-7e31424f1d5f6ff1baa7",
+              "check-cbda61e8b979973cc063",
+              "check-30419ccb771f71a08bc3",
+              "check-5e1d00d8c6f0c0a0bdf8",
+              "check-b2bf9ed77cbc7c00040a",
+              "check-5d2e5caa7e73db4aec11"
+            ],
+            "warnings": [
+              "H og B bestemmes ikke af M alene uden yderligere geometri, frie strømme og randbetingelser."
+            ]
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Bundne volumenstrømmes kontinuitet i glatte områder",
+          "Overfladestrømmen er tangentiel",
+          "Inputdimension: M",
+          "Inputdimension: normal",
+          "Inputdimension: coordinate_0",
+          "Inputdimension: coordinate_1",
+          "Inputdimension: coordinate_2"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "I et stationært magnetiseret materiale er M=(0,0,k*y), k=2400 A/m^2. Find Jb og Kb på fladen x=a med udadnormal +x ved y=b=2 cm. Brug kartesiske komponenter.",
+    "confirmed": true,
+    "variables": {
+      "M": [
+        "0",
+        "0",
+        "k*y"
+      ],
+      "coordinates": [
+        "x",
+        "y",
+        "z"
+      ],
+      "system": "cartesian",
+      "normal": [
+        "1",
+        "0",
+        "0"
+      ],
+      "surface_coordinate": "y",
+      "surface_value": "b"
+    },
+    "units": {
+      "k": "A/m^2",
+      "y": "m",
+      "x": "m",
+      "z": "m",
+      "b": "m"
+    },
+    "numbers": {
+      "k": "2400 A/m^2",
+      "y": "2 cm",
+      "x": "0 m",
+      "z": "0 m",
+      "b": "2 cm"
+    },
+    "positive": [],
+    "assumptions": [
+      "magnetostatic"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "magnetization_currents",
+        "wanted": [
+          "J_bound",
+          "K_bound"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

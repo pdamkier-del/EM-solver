@@ -1,0 +1,502 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "faraday_flux",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Magnetisk flux og Faradays lov",
+        "reasoning": "Først integreres magnetfeltets normalprojektion over den orienterede flade. Derefter differentieres hele fluxen, også eventuelle tidsafhængige grænser eller arealer. Minusfortegnet er Lenz’ lov.",
+        "equations_latex": [
+          "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+          "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+        ],
+        "steps": [
+          {
+            "id": "step-509fc2ee13f67a1308ef-0",
+            "text": "Den eksplicit givne flux pr. vinding",
+            "title": "Den eksplicit givne flux pr. vinding",
+            "latex": "- \\alpha t",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-bf1199c6ae269944e25f",
+            "intermediate_latex": [],
+            "assumptions": [],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-459ebc3e1825681fb115-0",
+            "text": "Differentier den samlede flux og indsæt minusfortegnet",
+            "title": "Differentier den samlede flux og indsæt minusfortegnet",
+            "latex": "\\alpha",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-bf1199c6ae269944e25f",
+            "intermediate_latex": [],
+            "assumptions": [],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-b05a1a9929cf1d2158db-0",
+            "text": "Opstil a dy/dt + b y = EMF med y(0) givet",
+            "title": "Opstil a dy/dt + b y = EMF med y(0) givet",
+            "latex": "L \\frac{d}{d t} \\operatorname{coil}_{current}{\\left(t \\right)} + R \\operatorname{coil}_{current}{\\left(t \\right)} = \\alpha",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Lineær førsteordens differentialligning",
+            "method_context_id": "method-bf1199c6ae269944e25f",
+            "intermediate_latex": [],
+            "assumptions": [],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-f6a449a5738152d531fa-0",
+            "text": "Løs den drevne differentialligning med begyndelsesbetingelsen",
+            "title": "Løs den drevne differentialligning med begyndelsesbetingelsen",
+            "latex": "\\operatorname{coil}_{current}{\\left(t \\right)} = \\frac{\\alpha}{R} - \\frac{\\alpha e^{- \\frac{R t}{L}}}{R}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-bf1199c6ae269944e25f",
+            "intermediate_latex": [],
+            "assumptions": [],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-43a57db9dd3e45aaf1d0-0",
+            "text": "Anvend den eksplicit bekræftede resultatforbindelse",
+            "title": "Anvend den eksplicit bekræftede resultatforbindelse",
+            "latex": "joule_{power} = R coil_{current}^{2}",
+            "physical_reasoning": "Enheder kontrolleres før de tidligere resultater indsættes. Sammenhængens fysiske relevans skal bekræftes af brugeren.",
+            "reasoning_scope": "step",
+            "law": "Brugerangivet fysisk sammenhæng",
+            "method_context_id": "method-bf1199c6ae269944e25f",
+            "intermediate_latex": [],
+            "assumptions": [],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-a2af92b533fecc359a7b-0",
+            "text": "Indsæt de beregnede resultater",
+            "title": "Indsæt de beregnede resultater",
+            "latex": "\\frac{\\alpha^{2} \\left(1 - e^{\\frac{R t}{L}}\\right)^{2} e^{- \\frac{2 R t}{L}}}{R}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-bf1199c6ae269944e25f",
+            "intermediate_latex": [],
+            "assumptions": [],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-4d9cfb31b9a46c8a9f2b-0",
+            "text": "Integrer joule_power over det eksplicit angivne interval",
+            "title": "Integrer joule_power over det eksplicit angivne interval",
+            "latex": "\\int\\limits_{0}^{T} \\frac{\\alpha^{2} \\left(1 - e^{\\frac{R t}{L}}\\right)^{2} e^{- \\frac{2 R t}{L}}}{R}\\, dt",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Bestemt integration",
+            "method_context_id": "method-bf1199c6ae269944e25f",
+            "intermediate_latex": [],
+            "assumptions": [],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-058e0d1df73026fae5cf-0",
+            "text": "Evaluér integralet",
+            "title": "Evaluér integralet",
+            "latex": "- \\frac{3 L \\alpha^{2}}{2 R^{2}} + \\frac{T \\alpha^{2}}{R} + \\frac{4 L R^{2} \\alpha^{2} e^{- \\frac{R T}{L}} - L R^{2} \\alpha^{2} e^{- \\frac{2 R T}{L}}}{2 R^{4}}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-bf1199c6ae269944e25f",
+            "intermediate_latex": [],
+            "assumptions": [],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "Phi": {
+            "expression": "-alpha*t",
+            "latex": "- \\alpha t",
+            "unit": "Wb"
+          },
+          "EMF": {
+            "expression": "alpha",
+            "latex": "\\alpha",
+            "unit": "V"
+          },
+          "coil_current": {
+            "expression": "alpha/R - alpha*exp(-R*t/L)/R",
+            "latex": "\\frac{\\alpha}{R} - \\frac{\\alpha e^{- \\frac{R t}{L}}}{R}",
+            "unit": "A"
+          },
+          "joule_power": {
+            "expression": "alpha**2*(1 - exp(R*t/L))**2*exp(-2*R*t/L)/R",
+            "latex": "\\frac{\\alpha^{2} \\left(1 - e^{\\frac{R t}{L}}\\right)^{2} e^{- \\frac{2 R t}{L}}}{R}",
+            "unit": "W"
+          },
+          "heat": {
+            "expression": "-3*L*alpha**2/(2*R**2) + T*alpha**2/R + (4*L*R**2*alpha**2*exp(-R*T/L) - L*R**2*alpha**2*exp(-2*R*T/L))/(2*R**4)",
+            "latex": "- \\frac{3 L \\alpha^{2}}{2 R^{2}} + \\frac{T \\alpha^{2}}{R} + \\frac{4 L R^{2} \\alpha^{2} e^{- \\frac{R T}{L}} - L R^{2} \\alpha^{2} e^{- \\frac{2 R T}{L}}}{2 R^{4}}",
+            "unit": "(W)*(s)"
+          }
+        },
+        "numerical": {
+          "Phi": {
+            "value": "-0.0400000000000000",
+            "latex": "-0.04",
+            "unit": "Wb"
+          },
+          "EMF": {
+            "value": "0.400000000000000",
+            "latex": "0.4",
+            "unit": "V"
+          },
+          "coil_current": {
+            "value": "0.0864664716763387",
+            "latex": "0.0864664716763387",
+            "unit": "A"
+          },
+          "joule_power": {
+            "value": "0.0299058028966204",
+            "latex": "0.0299058028966204",
+            "unit": "W"
+          },
+          "heat": {
+            "value": "0.00152302549405772",
+            "latex": "0.00152302549405772",
+            "unit": "(W)*(s)"
+          }
+        },
+        "checks": [
+          {
+            "id": "check-c75ed7ccd12f80c6640b",
+            "name": "Faradays/Lenz’ fortegnsrelation",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-59de9b2db910b6a975f4",
+            "name": "Dimension: Phi",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "Wb",
+            "step_ids": []
+          },
+          {
+            "id": "check-82f2dbc97ebd26146d50",
+            "name": "Dimension: EMF",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V",
+            "step_ids": []
+          },
+          {
+            "id": "check-7ea03733b2f281a7dd08",
+            "name": "Inputdimension: time",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "s",
+            "step_ids": []
+          },
+          {
+            "id": "check-19583d35e5a715837733",
+            "name": "Inputdimension: flux",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "Wb",
+            "step_ids": []
+          },
+          {
+            "id": "check-8d57065bd2b538085c18",
+            "name": "Inputdimension: N",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "1",
+            "step_ids": []
+          },
+          {
+            "id": "check-9feb28e848ae40ab5c44",
+            "name": "coil_current: differentialligning",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-c606b4dace15d1bb1894",
+            "name": "coil_current: begyndelsesbetingelse",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-3441393237f46b6acdd9",
+            "name": "Dimension: Phi",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "Wb",
+            "step_ids": []
+          },
+          {
+            "id": "check-df1ee094b70568015d2c",
+            "name": "Dimension: EMF",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V",
+            "step_ids": []
+          },
+          {
+            "id": "check-e1872e9cdbdac27c04b5",
+            "name": "Dimension: coil_current",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-94612758e0d175b28536",
+            "name": "Dimension: joule_power",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "W",
+            "step_ids": []
+          },
+          {
+            "id": "check-6a16e4e413e796ec76db",
+            "name": "Dimension: heat",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "(W)*(s)",
+            "step_ids": []
+          }
+        ],
+        "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb.",
+        "warnings": [
+          "Strøm fra EMF/R gælder kun under den eksplicitte antagelse om negligerbar selvinduktans. Retning kræver valgt fladenormal."
+        ],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-bf1199c6ae269944e25f": {
+            "method_id": "faraday",
+            "method": "Magnetisk flux og Faradays lov",
+            "reasoning": "Først integreres magnetfeltets normalprojektion over den orienterede flade. Derefter differentieres hele fluxen, også eventuelle tidsafhængige grænser eller arealer. Minusfortegnet er Lenz’ lov.",
+            "equations": [
+              "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+              "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+            ],
+            "assumptions": []
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "EMF",
+              "coil_current",
+              "joule_power",
+              "heat"
+            ],
+            "results": {
+              "EMF": {
+                "expression": "alpha",
+                "latex": "\\alpha",
+                "unit": "V"
+              },
+              "coil_current": {
+                "expression": "alpha/R - alpha*exp(-R*t/L)/R",
+                "latex": "\\frac{\\alpha}{R} - \\frac{\\alpha e^{- \\frac{R t}{L}}}{R}",
+                "unit": "A"
+              },
+              "joule_power": {
+                "expression": "alpha**2*(1 - exp(R*t/L))**2*exp(-2*R*t/L)/R",
+                "latex": "\\frac{\\alpha^{2} \\left(1 - e^{\\frac{R t}{L}}\\right)^{2} e^{- \\frac{2 R t}{L}}}{R}",
+                "unit": "W"
+              },
+              "heat": {
+                "expression": "-3*L*alpha**2/(2*R**2) + T*alpha**2/R + (4*L*R**2*alpha**2*exp(-R*T/L) - L*R**2*alpha**2*exp(-2*R*T/L))/(2*R**4)",
+                "latex": "- \\frac{3 L \\alpha^{2}}{2 R^{2}} + \\frac{T \\alpha^{2}}{R} + \\frac{4 L R^{2} \\alpha^{2} e^{- \\frac{R T}{L}} - L R^{2} \\alpha^{2} e^{- \\frac{2 R T}{L}}}{2 R^{4}}",
+                "unit": "(W)*(s)"
+              }
+            },
+            "numerical": {
+              "EMF": {
+                "value": "0.400000000000000",
+                "latex": "0.4",
+                "unit": "V"
+              },
+              "coil_current": {
+                "value": "0.0864664716763387",
+                "latex": "0.0864664716763387",
+                "unit": "A"
+              },
+              "joule_power": {
+                "value": "0.0299058028966204",
+                "latex": "0.0299058028966204",
+                "unit": "W"
+              },
+              "heat": {
+                "value": "0.00152302549405772",
+                "latex": "0.00152302549405772",
+                "unit": "(W)*(s)"
+              }
+            },
+            "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb."
+          },
+          "derivation": {
+            "equations_latex": [
+              "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+              "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+            ],
+            "step_ids": [
+              "step-509fc2ee13f67a1308ef-0",
+              "step-459ebc3e1825681fb115-0",
+              "step-b05a1a9929cf1d2158db-0",
+              "step-f6a449a5738152d531fa-0",
+              "step-43a57db9dd3e45aaf1d0-0",
+              "step-a2af92b533fecc359a7b-0",
+              "step-4d9cfb31b9a46c8a9f2b-0",
+              "step-058e0d1df73026fae5cf-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-509fc2ee13f67a1308ef-0",
+              "step-459ebc3e1825681fb115-0",
+              "step-b05a1a9929cf1d2158db-0",
+              "step-f6a449a5738152d531fa-0",
+              "step-43a57db9dd3e45aaf1d0-0",
+              "step-a2af92b533fecc359a7b-0",
+              "step-4d9cfb31b9a46c8a9f2b-0",
+              "step-058e0d1df73026fae5cf-0"
+            ],
+            "method_context_ids": [
+              "method-bf1199c6ae269944e25f"
+            ],
+            "global_check_ids": [
+              "check-c75ed7ccd12f80c6640b",
+              "check-59de9b2db910b6a975f4",
+              "check-82f2dbc97ebd26146d50",
+              "check-7ea03733b2f281a7dd08",
+              "check-19583d35e5a715837733",
+              "check-8d57065bd2b538085c18",
+              "check-9feb28e848ae40ab5c44",
+              "check-c606b4dace15d1bb1894",
+              "check-3441393237f46b6acdd9",
+              "check-df1ee094b70568015d2c",
+              "check-e1872e9cdbdac27c04b5",
+              "check-94612758e0d175b28536",
+              "check-6a16e4e413e796ec76db"
+            ],
+            "warnings": [
+              "Strøm fra EMF/R gælder kun under den eksplicitte antagelse om negligerbar selvinduktans. Retning kræver valgt fladenormal."
+            ]
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Faradays/Lenz’ fortegnsrelation",
+          "Inputdimension: time",
+          "Inputdimension: flux",
+          "Inputdimension: N",
+          "coil_current: differentialligning",
+          "coil_current: begyndelsesbetingelse"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "En en-vindingskreds har ekstern flux Phi(t)=-alpha*t,alpha=0.4 V. R=4 ohm,L=200 mH,I(0)=0. Find den induktive strøm, Joule-effekt og samlet varme til T=0.1 s. Brug emf=-dPhi/dt.",
+    "confirmed": true,
+    "variables": {
+      "time": "t",
+      "flux": "-alpha*t",
+      "N": "1"
+    },
+    "units": {
+      "t": "s",
+      "alpha": "V",
+      "L": "H",
+      "R": "ohm",
+      "T": "s"
+    },
+    "numbers": {
+      "t": "0.1 s",
+      "alpha": "0.4 V",
+      "L": "200 mH",
+      "R": "4 ohm",
+      "T": "0.1 s"
+    },
+    "positive": [
+      "L",
+      "R",
+      "T"
+    ],
+    "assumptions": [],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "faraday_flux",
+        "wanted": [
+          "EMF"
+        ],
+        "orientation_confirmed": true,
+        "operations": [
+          {
+            "kind": "linear_ode",
+            "id": "coil_current",
+            "result": "EMF",
+            "variable": "t",
+            "unit": "A",
+            "coefficient": "L",
+            "resistance": "R",
+            "initial": "0"
+          },
+          {
+            "kind": "transform",
+            "id": "joule_power",
+            "result": "coil_current",
+            "variable": "t",
+            "value": "coil_current**2*R",
+            "unit": "W"
+          },
+          {
+            "kind": "integrate",
+            "id": "heat",
+            "result": "joule_power",
+            "variable": "t",
+            "lower": "0",
+            "upper": "T"
+          }
+        ]
+      }
+    ]
+  }
+}

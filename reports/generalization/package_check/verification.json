@@ -1,0 +1,39 @@
+{
+  "native_windows_tested": false,
+  "platform": "Linux Qt offscreen",
+  "archive": "EM1-Solver-Desktop-Development-2026-11-05.zip",
+  "bytes": 14151665,
+  "sha256": "97bb389482c02fb5f106d7be673f5e013114cde15cc9f5130d9d64fd57276f6e",
+  "source_commit": "4a3deae427f417c76d02fd1d555807894a531e7f",
+  "manifest_files_verified": 400,
+  "crc_verified": true,
+  "source_tree_clean_in_manifest": true,
+  "backend_fingerprint": "290a97c60e0362bcc69a65b4badd4fd726fdd28fe69bd108e8c85931df145daa",
+  "python_network_sockets": "blocked",
+  "cases": [
+    {
+      "case": "EV1",
+      "status": "calculated_under_confirmed_model",
+      "math_display_errors": [],
+      "pdf_rasterized": true
+    },
+    {
+      "case": "BA1",
+      "status": "calculated_under_confirmed_model",
+      "math_display_errors": [],
+      "pdf_rasterized": true
+    },
+    {
+      "case": "DYN5",
+      "status": "calculated_under_confirmed_model",
+      "math_display_errors": [],
+      "pdf_rasterized": true
+    },
+    {
+      "case": "DYN1",
+      "status": "calculated_under_confirmed_model",
+      "math_display_errors": [],
+      "pdf_rasterized": true
+    }
+  ]
+}
