@@ -985,7 +985,7 @@ class SolverPage(QWidget):
         if not (backend_root/'em1_solver'/'backend_client.py').is_file() or not backend_python.is_file():
             QMessageBox.warning(self,'Installer backend først',
                 'Fysikmotoren mangler. Kør SETUP_BACKEND_WINDOWS.bat fra programmappen én gang.\n'
-                'Backend er testet på Python 3.12. Python 3.13 kan forsøges. Dine fem demoopgaver virker uden installation.')
+                'Denne pakke bruger Python 3.13 x64. Kør INSTALL_WINDOWS.bat. Dine fem demoopgaver virker uden installation.')
             return
         if self._backend_process and self._backend_process.state()!=QProcess.ProcessState.NotRunning:
             QMessageBox.information(self,'Beregning i gang','Der kører allerede en beregning.')

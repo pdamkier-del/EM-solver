@@ -1,0 +1,5 @@
+{
+  "sha256": "e36d22453e9855d37bf988b0af35a1a53c69cd00b5e5e05478fbea5e3acf9547",
+  "cases": 20,
+  "protocol": "Self-authored prospective evaluation, not an external blind test. Inputs sealed before any calculations. No production changes during evaluation; references calculated only afterwards."
+}

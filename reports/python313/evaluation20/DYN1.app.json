@@ -1,0 +1,798 @@
+{
+  "id": "DYN1",
+  "domain": "DYN",
+  "model": "RL_step",
+  "automatic_response": {
+    "schema_version": "1.0",
+    "status": "not_solved",
+    "interpretation": {
+      "model": {
+        "objects": [
+          {
+            "id": "body",
+            "geometry": "RL",
+            "extent": null,
+            "parameters": {},
+            "position": null,
+            "material": "unspecified"
+          }
+        ],
+        "sources": [],
+        "relationships": [],
+        "coordinates": [],
+        "orientation": {},
+        "boundary_conditions": {},
+        "initial_conditions": {},
+        "assumptions": [],
+        "wanted": [],
+        "units": {
+          "R": "kilogram * meter ** 2 / ampere ** 2 / second ** 3",
+          "L": "kilogram * meter ** 2 / ampere ** 2 / second ** 2",
+          "voltage": "kilogram * meter ** 2 / ampere / second ** 3",
+          "I0": "ampere",
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m"
+        },
+        "values": {
+          "R": "8 ohm",
+          "L": "60 mH",
+          "voltage": "-4 V",
+          "I0": "0.2 A"
+        },
+        "methods": [
+          {
+            "name": "RL",
+            "status": "RED"
+          }
+        ],
+        "dependencies": {}
+      },
+      "fields": {
+        "geometry": {
+          "value": "RL",
+          "status": "GREEN",
+          "evidence": [
+            "RL"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "wanted": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Angiv den givne funktion eller ladning, fx rho(s)=alpha*s**2.",
+          "options": [],
+          "required": true,
+          "depends_on": [
+            "source_formula"
+          ]
+        },
+        "source_formula": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "orientation": {
+          "value": {},
+          "status": "GREEN",
+          "evidence": [],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "regions": {
+          "value": null,
+          "status": "YELLOW",
+          "evidence": [],
+          "message": "Kildens rumlige udstrækning er ikke bestemt.",
+          "options": [],
+          "required": true,
+          "depends_on": [
+            "source_formula",
+            "geometry"
+          ]
+        },
+        "domain": {
+          "value": "DYN",
+          "status": "GREEN",
+          "evidence": [],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "method": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "RL-kredsløbet kræver begyndelsesstrøm, spændingskilde og kobling. Brug Avanceret / Manuel; automatisk kompilering af denne profil er endnu ikke understøttet.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "units": {
+          "value": {
+            "R": "kilogram * meter ** 2 / ampere ** 2 / second ** 3",
+            "L": "kilogram * meter ** 2 / ampere ** 2 / second ** 2",
+            "voltage": "kilogram * meter ** 2 / ampere / second ** 3",
+            "I0": "ampere",
+            "epsilon_0": "F/m",
+            "mu_0": "H/m",
+            "eps0": "F/m",
+            "mu0": "H/m"
+          },
+          "status": "GREEN",
+          "evidence": [
+            "Angivne enheder og dimensionelle ligninger"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "material": {
+          "value": "unspecified",
+          "status": "GREEN",
+          "evidence": [
+            "Materialeord i teksten"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "symmetry": {
+          "value": "not established",
+          "status": "GREEN",
+          "evidence": [
+            "Geometri, udstrækning og funktionens afhængighed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        }
+      },
+      "ready": false
+    },
+    "solution": null,
+    "missing": [
+      {
+        "field": "wanted",
+        "status": "RED",
+        "message": "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+        "options": []
+      },
+      {
+        "field": "source_formula",
+        "status": "RED",
+        "message": "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+        "options": []
+      },
+      {
+        "field": "method",
+        "status": "RED",
+        "message": "RL-kredsløbet kræver begyndelsesstrøm, spændingskilde og kobling. Brug Avanceret / Manuel; automatisk kompilering af denne profil er endnu ikke understøttet.",
+        "options": []
+      }
+    ],
+    "errors": [],
+    "desktop_user_corrections": {}
+  },
+  "automatic_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Kan ikke løses med de givne oplysninger",
+    "prompt": "En RL-kreds har R=8 ohm,L=60 mH og konstant voltage=-4 V fra t=0. I0=0.2 A. Bestem startafledte og første ikke-negative nulpassagetid.",
+    "status": "unsolved",
+    "result": {},
+    "steps": [],
+    "interpretation": {
+      "method": "Ikke afgjort",
+      "geometry": "Se opgavefortolkningen"
+    },
+    "warnings": [
+      "Hvad skal findes? Fx E, V, B, EMF, I, U.",
+      "Hvilken ladnings-/strøm-/feltfunktion er givet? Skriv fx rho(s)=alpha*s**2.",
+      "RL-kredsløbet kræver begyndelsesstrøm, spændingskilde og kobling. Brug Avanceret / Manuel; automatisk kompilering af denne profil er endnu ikke understøttet."
+    ],
+    "backend_status": "not_solved",
+    "backend_schema": "1.0",
+    "audit": "# Kontrol og gyldighed\n\nBackend rapporterede 0 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\nIngen individuelle kontroller er rapporteret i svaret.\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "automatic_seconds": 0.833,
+  "submitted_request": {
+    "schema_version": "assisted-1.0",
+    "text": "En RL-kreds har R=8 ohm,L=60 mH og konstant voltage=-4 V fra t=0. I0=0.2 A. Bestem startafledte og første ikke-negative nulpassagetid.",
+    "confirmed": true,
+    "variables": {
+      "time": "t",
+      "R": "R",
+      "L": "L",
+      "voltage": "voltage",
+      "I0": "I0"
+    },
+    "units": {
+      "t": "s",
+      "R": "ohm",
+      "L": "H",
+      "voltage": "V",
+      "I0": "A"
+    },
+    "numbers": {
+      "R": "8 ohm",
+      "L": "60 mH",
+      "voltage": "-4 V",
+      "I0": "0.2 A"
+    },
+    "positive": [
+      "R",
+      "L"
+    ],
+    "assumptions": [
+      "constant_coefficients"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "RL_step",
+        "wanted": [
+          "I",
+          "initial_slope",
+          "zero_time"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  },
+  "extra_result_unit_rows": [],
+  "assistance_actions": {
+    "prompt": 1,
+    "open_model": 1,
+    "model_selection": 1,
+    "scalar_fields": 5,
+    "table_cells": 0,
+    "scan_symbols": 1,
+    "unit_entries": 5,
+    "numeric_entries": 4,
+    "positive_flags": 2,
+    "wanted": 1,
+    "assumption_checks": 1,
+    "orientation": 1,
+    "confirmation": 1,
+    "solve": 1,
+    "operation_cells": 0
+  },
+  "assistance_action_count": 25,
+  "assisted_response": {
+    "schema_version": "assisted-1.0",
+    "status": "calculated_under_confirmed_model",
+    "questions": [],
+    "errors": [],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "RL_step",
+        "status": "calculated_under_confirmed_model",
+        "solution": {
+          "method": "Lineær kredsløbsdifferentialligning",
+          "reasoning": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+          "equations_latex": [
+            "R\\dot Q+Q/C=0",
+            "L\\dot I+RI=V"
+          ],
+          "steps": [
+            {
+              "id": "step-361996cea3ee30ee5fdc-0",
+              "text": "Den lineære differentialligning",
+              "title": "Den lineære differentialligning",
+              "latex": "L \\frac{d}{d t} I{\\left(t \\right)} + R I{\\left(t \\right)} = voltage",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Lineær kredsløbsdifferentialligning",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-4992895b03915ba9f000-0",
+              "text": "Løs med begyndelsesbetingelsen",
+              "title": "Løs med begyndelsesbetingelsen",
+              "latex": "I{\\left(t \\right)} = \\frac{voltage}{R} + \\frac{\\left(I_{0} R - voltage\\right) e^{- \\frac{R t}{L}}}{R}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Lineær kredsløbsdifferentialligning",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-2a09312c0f8f8bec1220-0",
+              "text": "Differentier I med hensyn til t",
+              "title": "Differentier I med hensyn til t",
+              "latex": "\\frac{- I_{0} R + voltage}{L}",
+              "physical_reasoning": "Den afledte beregnes af det allerede fundne resultat; et eventuelt punkt indsættes bagefter.",
+              "reasoning_scope": "step",
+              "law": "Symbolsk differentiation",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-a297520ed0cd1c2534f6-0",
+              "text": "Løs I = 0 for t",
+              "title": "Løs I = 0 for t",
+              "latex": "\\frac{L \\log{\\left(\\frac{- I_{0} R + voltage}{voltage} \\right)}}{R}",
+              "physical_reasoning": "Alle fundne reelle grene bevares; ingen gren vælges ud fra et forventet svar.",
+              "reasoning_scope": "step",
+              "law": "Symbolsk ligningsløsning",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            }
+          ],
+          "results": {
+            "I": {
+              "expression": "(I0*R + voltage*exp(R*t/L) - voltage)*exp(-R*t/L)/R",
+              "latex": "\\frac{\\left(I_{0} R + voltage e^{\\frac{R t}{L}} - voltage\\right) e^{- \\frac{R t}{L}}}{R}",
+              "unit": "A"
+            },
+            "tau": {
+              "expression": "L/R",
+              "latex": "\\frac{L}{R}",
+              "unit": "s"
+            },
+            "I_initial": {
+              "expression": "I0",
+              "latex": "I_{0}",
+              "unit": "A"
+            },
+            "I_infinity": {
+              "expression": "voltage/R",
+              "latex": "\\frac{voltage}{R}",
+              "unit": "A"
+            },
+            "initial_slope": {
+              "expression": "(-I0*R + voltage)/L",
+              "latex": "\\frac{- I_{0} R + voltage}{L}",
+              "unit": "(A)/(s)"
+            },
+            "zero_time": {
+              "expression": "L*log((-I0*R + voltage)/voltage)/R",
+              "latex": "\\frac{L \\log{\\left(\\frac{- I_{0} R + voltage}{voltage} \\right)}}{R}",
+              "unit": "s"
+            }
+          },
+          "numerical": {
+            "tau": {
+              "value": "0.00750000000000000",
+              "latex": "0.0075",
+              "unit": "s"
+            },
+            "I_initial": {
+              "value": "0.200000000000000",
+              "latex": "0.2",
+              "unit": "A"
+            },
+            "I_infinity": {
+              "value": "-0.500000000000000",
+              "latex": "-0.5",
+              "unit": "A"
+            },
+            "initial_slope": {
+              "value": "-93.3333333333333",
+              "latex": "-93.3333333333333",
+              "unit": "(A)/(s)"
+            },
+            "zero_time": {
+              "value": "0.00252354177465910",
+              "latex": "0.0025235417746591",
+              "unit": "s"
+            }
+          },
+          "checks": [
+            {
+              "id": "check-23669e4b60d59f9eca52",
+              "name": "RL-ligning",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-38ee0012570ca658a1a8",
+              "name": "Dimension: I",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-4dd57c7f5b028ef0f583",
+              "name": "Dimension: tau",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-aefc18fb40c2c9b9419e",
+              "name": "Dimension: I_initial",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-c095cccf862db7db06be",
+              "name": "Dimension: I_infinity",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-4c32547fefd840549cf1",
+              "name": "Inputdimension: time",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-64e3b8b5f6170ad9923d",
+              "name": "Inputdimension: R",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "ohm",
+              "step_ids": []
+            },
+            {
+              "id": "check-8a86fec6305ba8bad8dc",
+              "name": "Inputdimension: L",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "H",
+              "step_ids": []
+            },
+            {
+              "id": "check-888010357d505ee9304d",
+              "name": "Inputdimension: voltage",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "V",
+              "step_ids": []
+            },
+            {
+              "id": "check-203ac823f3bed98786a9",
+              "name": "Inputdimension: I0",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-927be0057d50c32a794b",
+              "name": "zero_time: indsættelse i oprindelig ligning",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-a9ad72691d383ac51497",
+              "name": "Dimension: I",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-c407748c01d53012d8b5",
+              "name": "Dimension: tau",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-07bb52018c518a069fa0",
+              "name": "Dimension: I_initial",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-9597c20d57b4e895e16e",
+              "name": "Dimension: I_infinity",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-fb8fb3ed525d985cfba0",
+              "name": "Dimension: initial_slope",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "(A)/(s)",
+              "step_ids": []
+            },
+            {
+              "id": "check-783df8d0c49da3b430c9",
+              "name": "Dimension: zero_time",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            }
+          ],
+          "direction": "",
+          "warnings": [],
+          "presentation_version": "1.0",
+          "latex_profile": "EM1-Math-1",
+          "method_contexts": {
+            "method-6477c011bebda04cbe6f": {
+              "method_id": "rc_transient",
+              "method": "Lineær kredsløbsdifferentialligning",
+              "reasoning": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+              "equations": [
+                "R\\dot Q+Q/C=0",
+                "L\\dot I+RI=V"
+              ],
+              "assumptions": [
+                "constant_coefficients"
+              ]
+            }
+          },
+          "views": {
+            "result": {
+              "wanted": [
+                "I",
+                "initial_slope",
+                "zero_time"
+              ],
+              "results": {
+                "I": {
+                  "expression": "(I0*R + voltage*exp(R*t/L) - voltage)*exp(-R*t/L)/R",
+                  "latex": "\\frac{\\left(I_{0} R + voltage e^{\\frac{R t}{L}} - voltage\\right) e^{- \\frac{R t}{L}}}{R}",
+                  "unit": "A"
+                },
+                "initial_slope": {
+                  "expression": "(-I0*R + voltage)/L",
+                  "latex": "\\frac{- I_{0} R + voltage}{L}",
+                  "unit": "(A)/(s)"
+                },
+                "zero_time": {
+                  "expression": "L*log((-I0*R + voltage)/voltage)/R",
+                  "latex": "\\frac{L \\log{\\left(\\frac{- I_{0} R + voltage}{voltage} \\right)}}{R}",
+                  "unit": "s"
+                }
+              },
+              "numerical": {
+                "initial_slope": {
+                  "value": "-93.3333333333333",
+                  "latex": "-93.3333333333333",
+                  "unit": "(A)/(s)"
+                },
+                "zero_time": {
+                  "value": "0.00252354177465910",
+                  "latex": "0.0025235417746591",
+                  "unit": "s"
+                }
+              },
+              "direction": ""
+            },
+            "derivation": {
+              "equations_latex": [
+                "R\\dot Q+Q/C=0",
+                "L\\dot I+RI=V"
+              ],
+              "step_ids": [
+                "step-361996cea3ee30ee5fdc-0",
+                "step-4992895b03915ba9f000-0",
+                "step-2a09312c0f8f8bec1220-0",
+                "step-a297520ed0cd1c2534f6-0"
+              ]
+            },
+            "explanation": {
+              "step_ids": [
+                "step-361996cea3ee30ee5fdc-0",
+                "step-4992895b03915ba9f000-0",
+                "step-2a09312c0f8f8bec1220-0",
+                "step-a297520ed0cd1c2534f6-0"
+              ],
+              "method_context_ids": [
+                "method-6477c011bebda04cbe6f"
+              ],
+              "global_check_ids": [
+                "check-23669e4b60d59f9eca52",
+                "check-38ee0012570ca658a1a8",
+                "check-4dd57c7f5b028ef0f583",
+                "check-aefc18fb40c2c9b9419e",
+                "check-c095cccf862db7db06be",
+                "check-4c32547fefd840549cf1",
+                "check-64e3b8b5f6170ad9923d",
+                "check-8a86fec6305ba8bad8dc",
+                "check-888010357d505ee9304d",
+                "check-203ac823f3bed98786a9",
+                "check-927be0057d50c32a794b",
+                "check-a9ad72691d383ac51497",
+                "check-c407748c01d53012d8b5",
+                "check-07bb52018c518a069fa0",
+                "check-9597c20d57b4e895e16e",
+                "check-fb8fb3ed525d985cfba0",
+                "check-783df8d0c49da3b430c9"
+              ],
+              "warnings": []
+            }
+          }
+        },
+        "errors": [],
+        "verification": {
+          "interpretation": "user_confirmed_not_machine_verified",
+          "dimensions": "passed",
+          "physical_checks": [
+            "RL-ligning",
+            "Inputdimension: time",
+            "Inputdimension: R",
+            "Inputdimension: L",
+            "Inputdimension: voltage",
+            "Inputdimension: I0",
+            "zero_time: indsættelse i oprindelig ligning"
+          ],
+          "completeness": "requested_results_present",
+          "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+        }
+      }
+    ],
+    "interpretation_status": "user_confirmed",
+    "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+    "confirmed_model": {
+      "schema_version": "assisted-1.0",
+      "text": "En RL-kreds har R=8 ohm,L=60 mH og konstant voltage=-4 V fra t=0. I0=0.2 A. Bestem startafledte og første ikke-negative nulpassagetid.",
+      "confirmed": true,
+      "variables": {
+        "time": "t",
+        "R": "R",
+        "L": "L",
+        "voltage": "voltage",
+        "I0": "I0"
+      },
+      "units": {
+        "t": "s",
+        "R": "ohm",
+        "L": "H",
+        "voltage": "V",
+        "I0": "A"
+      },
+      "numbers": {
+        "R": "8 ohm",
+        "L": "60 mH",
+        "voltage": "-4 V",
+        "I0": "0.2 A"
+      },
+      "positive": [
+        "R",
+        "L"
+      ],
+      "assumptions": [
+        "constant_coefficients"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "RL_step",
+          "wanted": [
+            "I",
+            "initial_slope",
+            "zero_time"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    }
+  },
+  "assisted_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Beregnet under brugerbekræftet model",
+    "prompt": "En RL-kreds har R=8 ohm,L=60 mH og konstant voltage=-4 V fra t=0. I0=0.2 A. Bestem startafledte og første ikke-negative nulpassagetid.",
+    "status": "assumptions",
+    "result": {
+      "symbolic_latex": "I = \\frac{\\left(I_{0} R + voltage e^{\\frac{R t}{L}} - voltage\\right) e^{- \\frac{R t}{L}}}{R}",
+      "extra_latex": [
+        "initial_slope = \\frac{- I_{0} R + voltage}{L}",
+        "zero_time = \\frac{L \\log{\\left(\\frac{- I_{0} R + voltage}{voltage} \\right)}}{R}"
+      ],
+      "numeric_text": "initial_slope: -93.3333333333333; zero_time: 0.00252354177465910",
+      "units": "I: A; initial_slope: (A)/(s); zero_time: s"
+    },
+    "steps": [
+      {
+        "title": "Grundligning 1",
+        "latex": "R\\dot Q+Q/C=0",
+        "reason": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten."
+      },
+      {
+        "title": "Grundligning 2",
+        "latex": "L\\dot I+RI=V",
+        "reason": ""
+      },
+      {
+        "id": "step-361996cea3ee30ee5fdc-0",
+        "title": "Den lineære differentialligning",
+        "reason": "Anvendt lov: Lineær kredsløbsdifferentialligning. Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "latex": "\\[L \\frac{d}{d t} I{\\left(t \\right)} + R I{\\left(t \\right)} = voltage\\]",
+        "check": ""
+      },
+      {
+        "id": "step-4992895b03915ba9f000-0",
+        "title": "Løs med begyndelsesbetingelsen",
+        "reason": "Anvendt lov: Lineær kredsløbsdifferentialligning. Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "latex": "\\[I{\\left(t \\right)} = \\frac{voltage}{R} + \\frac{\\left(I_{0} R - voltage\\right) e^{- \\frac{R t}{L}}}{R}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-2a09312c0f8f8bec1220-0",
+        "title": "Differentier I med hensyn til t",
+        "reason": "Anvendt lov: Symbolsk differentiation. Den afledte beregnes af det allerede fundne resultat; et eventuelt punkt indsættes bagefter.",
+        "latex": "\\[\\frac{- I_{0} R + voltage}{L}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-a297520ed0cd1c2534f6-0",
+        "title": "Løs I = 0 for t",
+        "reason": "Anvendt lov: Symbolsk ligningsløsning. Alle fundne reelle grene bevares; ingen gren vælges ud fra et forventet svar.",
+        "latex": "\\[\\frac{L \\log{\\left(\\frac{- I_{0} R + voltage}{voltage} \\right)}}{R}\\]",
+        "check": ""
+      }
+    ],
+    "interpretation": {
+      "method": "Lineær kredsløbsdifferentialligning",
+      "geometry": "RL_step"
+    },
+    "warnings": [
+      "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+    ],
+    "backend_status": "calculated_under_confirmed_model",
+    "backend_schema": "assisted-1.0",
+    "audit": "# Brugerbekræftede oplysninger\n\nI0 = I0\n\nL = L\n\nR = R\n\ntime = t\n\nvoltage = voltage\n\nI0 = 0.2 A\n\nL = 60 mH\n\nR = 8 ohm\n\nvoltage = -4 V\n\nEnhed for I0: A\n\nEnhed for L: H\n\nEnhed for R: ohm\n\nEnhed for t: s\n\nEnhed for voltage: V\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 17 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- RL-ligning\n\n- Dimension: I — A\n\n- Dimension: tau — s\n\n- Dimension: I_initial — A\n\n- Dimension: I_infinity — A\n\n- Inputdimension: time — s\n\n- Inputdimension: R — ohm\n\n- Inputdimension: L — H\n\n- Inputdimension: voltage — V\n\n- Inputdimension: I0 — A\n\n- zero_time: indsættelse i oprindelig ligning\n\n- Dimension: I — A\n\n- Dimension: tau — s\n\n- Dimension: I_initial — A\n\n- Dimension: I_infinity — A\n\n- Dimension: initial_slope — (A)/(s)\n\n- Dimension: zero_time — s\n\n## Forudsætninger og gyldighed\n\n- constant_coefficients\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "assisted_seconds": 2.487,
+  "math_display_errors": []
+}

@@ -1,0 +1,721 @@
+{
+  "id": "DYN6",
+  "domain": "DYN",
+  "model": "motional_curve",
+  "automatic_response": {
+    "schema_version": "1.0",
+    "status": "not_solved",
+    "interpretation": {
+      "model": {
+        "objects": [
+          {
+            "id": "body",
+            "geometry": "rotating_rod",
+            "extent": null,
+            "parameters": {
+              "radius": "a"
+            },
+            "position": null,
+            "material": "conductor"
+          }
+        ],
+        "sources": [
+          {
+            "id": "source_B",
+            "kind": "B",
+            "formula": "B0",
+            "arguments": [],
+            "basis": null,
+            "evidence": "B0=0.2 T"
+          }
+        ],
+        "relationships": [
+          {
+            "subject": "source_B",
+            "relation": "has_support",
+            "object": "body",
+            "regions": "model dependent"
+          }
+        ],
+        "coordinates": [],
+        "orientation": {
+          "current_sense": "counterclockwise"
+        },
+        "boundary_conditions": {},
+        "initial_conditions": {},
+        "assumptions": [],
+        "wanted": [
+          "L",
+          "EMF"
+        ],
+        "units": {
+          "B0": "kilogram / ampere / second ** 2",
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m",
+          "a": "m"
+        },
+        "values": {
+          "B0": "0.2 T"
+        },
+        "methods": [
+          {
+            "name": "faraday",
+            "status": "GREEN"
+          }
+        ],
+        "dependencies": {}
+      },
+      "fields": {
+        "geometry": {
+          "value": "rotating_rod",
+          "status": "GREEN",
+          "evidence": [
+            "stang fra origo til radius a=15 cm roter"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "wanted": {
+          "value": [
+            "L",
+            "EMF"
+          ],
+          "status": "GREEN",
+          "evidence": [
+            " bevægelses-emf orienteret fra centrum til spids. Returledningen er stationær, selvinduktans negligeres."
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source": {
+          "value": "B",
+          "status": "GREEN",
+          "evidence": [
+            "B0=0.2 T"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source_formula": {
+          "value": "B0",
+          "status": "GREEN",
+          "evidence": [
+            "B0=0.2 T"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "orientation": {
+          "value": {
+            "current_sense": "counterclockwise"
+          },
+          "status": "GREEN",
+          "evidence": [
+            "counterclockwise / mod uret"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "regions": {
+          "value": "model dependent",
+          "status": "GREEN",
+          "evidence": [
+            "Ikke en radial volumen-/strømtæthed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "domain": {
+          "value": "DYN",
+          "status": "GREEN",
+          "evidence": [],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "method": {
+          "value": "Fluxintegral og Faraday",
+          "status": "GREEN",
+          "evidence": [
+            "Tidsafhængigt magnetfelt / flux"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "time": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Hvilket symbol er tiden?",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "plane": {
+          "value": null,
+          "status": "YELLOW",
+          "evidence": [],
+          "message": "Hvilket plan ligger løkken i?",
+          "options": [
+            "xy",
+            "yz",
+            "zx"
+          ],
+          "required": true,
+          "depends_on": []
+        },
+        "B": {
+          "value": null,
+          "status": "YELLOW",
+          "evidence": [],
+          "message": "Hvilken retning har magnetfeltet?",
+          "options": [
+            "+x",
+            "-x",
+            "+y",
+            "-y",
+            "+z",
+            "-z"
+          ],
+          "required": true,
+          "depends_on": []
+        },
+        "normal": {
+          "value": null,
+          "status": "YELLOW",
+          "evidence": [],
+          "message": "Hvilken normal definerer den positive flux/EMF?",
+          "options": [
+            "+x",
+            "-x",
+            "+y",
+            "-y",
+            "+z",
+            "-z"
+          ],
+          "required": true,
+          "depends_on": [
+            "plane"
+          ]
+        },
+        "turns": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Hvor mange vindinger er der?",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "area": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Hvad er løkkens areal som funktion af tiden? Fx (a+v*t)**2.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "units": {
+          "value": {
+            "B0": "kilogram / ampere / second ** 2",
+            "epsilon_0": "F/m",
+            "mu_0": "H/m",
+            "eps0": "F/m",
+            "mu0": "H/m",
+            "a": "m"
+          },
+          "status": "GREEN",
+          "evidence": [
+            "Angivne enheder og dimensionelle ligninger"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "material": {
+          "value": "conductor",
+          "status": "GREEN",
+          "evidence": [
+            "Materialeord i teksten"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "symmetry": {
+          "value": "not established",
+          "status": "GREEN",
+          "evidence": [
+            "Geometri, udstrækning og funktionens afhængighed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        }
+      },
+      "ready": false
+    },
+    "solution": null,
+    "missing": [
+      {
+        "field": "time",
+        "status": "RED",
+        "message": "Hvilket symbol er tiden?",
+        "options": []
+      },
+      {
+        "field": "plane",
+        "status": "YELLOW",
+        "message": "Hvilket plan ligger løkken i?",
+        "options": [
+          "xy",
+          "yz",
+          "zx"
+        ]
+      },
+      {
+        "field": "B",
+        "status": "YELLOW",
+        "message": "Hvilken retning har magnetfeltet?",
+        "options": [
+          "+x",
+          "-x",
+          "+y",
+          "-y",
+          "+z",
+          "-z"
+        ]
+      },
+      {
+        "field": "turns",
+        "status": "RED",
+        "message": "Hvor mange vindinger er der?",
+        "options": []
+      },
+      {
+        "field": "area",
+        "status": "RED",
+        "message": "Hvad er løkkens areal som funktion af tiden? Fx (a+v*t)**2.",
+        "options": []
+      }
+    ],
+    "errors": [],
+    "desktop_user_corrections": {}
+  },
+  "automatic_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Kan ikke løses med de givne oplysninger",
+    "prompt": "En radial ledende stang fra origo til radius a=15 cm roterer med omega=12 1/s mod uret i homogent B0=0.2 T langs +z. I det aktuelle øjeblik er kurven (u,0,0), hastighed (0,omega*u,0). Find bevægelses-emf orienteret fra centrum til spids. Returledningen er stationær, selvinduktans negligeres.",
+    "status": "unsolved",
+    "result": {},
+    "steps": [],
+    "interpretation": {
+      "method": "Ikke afgjort",
+      "geometry": "Se opgavefortolkningen"
+    },
+    "warnings": [
+      "Hvilket symbol er tiden?",
+      "Hvilket plan ligger løkken i?",
+      "Hvilken retning har magnetfeltet?",
+      "Hvor mange vindinger er der?",
+      "Hvad er løkkens areal som funktion af tiden? Fx (a+v*t)**2."
+    ],
+    "backend_status": "not_solved",
+    "backend_schema": "1.0",
+    "audit": "# Kontrol og gyldighed\n\nBackend rapporterede 0 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\nIngen individuelle kontroller er rapporteret i svaret.\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "automatic_seconds": 0.811,
+  "submitted_request": {
+    "schema_version": "assisted-1.0",
+    "text": "En radial ledende stang fra origo til radius a=15 cm roterer med omega=12 1/s mod uret i homogent B0=0.2 T langs +z. I det aktuelle øjeblik er kurven (u,0,0), hastighed (0,omega*u,0). Find bevægelses-emf orienteret fra centrum til spids. Returledningen er stationær, selvinduktans negligeres.",
+    "confirmed": true,
+    "variables": {
+      "source": [
+        "u",
+        "0",
+        "0"
+      ],
+      "parameter": "u",
+      "bounds": [
+        "0",
+        "a"
+      ],
+      "v": [
+        "0",
+        "omega*u",
+        "0"
+      ],
+      "B": [
+        "0",
+        "0",
+        "B0"
+      ],
+      "time": "t"
+    },
+    "units": {
+      "u": "m",
+      "a": "m",
+      "omega": "1/s",
+      "B0": "T",
+      "t": "s"
+    },
+    "numbers": {
+      "a": "15 cm",
+      "omega": "12 1/s",
+      "B0": "0.2 T"
+    },
+    "positive": [
+      "a"
+    ],
+    "assumptions": [
+      "negligible_self_inductance",
+      "stationary_return_path"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "motional_curve",
+        "wanted": [
+          "EMF"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  },
+  "extra_result_unit_rows": [],
+  "assistance_actions": {
+    "prompt": 1,
+    "open_model": 1,
+    "model_selection": 1,
+    "scalar_fields": 8,
+    "table_cells": 0,
+    "scan_symbols": 1,
+    "unit_entries": 5,
+    "numeric_entries": 3,
+    "positive_flags": 1,
+    "wanted": 1,
+    "assumption_checks": 2,
+    "orientation": 1,
+    "confirmation": 1,
+    "solve": 1,
+    "operation_cells": 0
+  },
+  "assistance_action_count": 27,
+  "assisted_response": {
+    "schema_version": "assisted-1.0",
+    "status": "calculated_under_confirmed_model",
+    "questions": [],
+    "errors": [],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "motional_curve",
+        "status": "calculated_under_confirmed_model",
+        "solution": {
+          "method": "Bevægelsesinduktion",
+          "reasoning": "Ladninger i den bevægelige leder påvirkes af v kryds B. Kraft pr. ladning integreres langs den eksplicit orienterede leder.",
+          "equations_latex": [
+            "\\mathcal E=\\int(\\mathbf v\\times\\mathbf B)\\cdot d\\mathbf l"
+          ],
+          "steps": [
+            {
+              "id": "step-3eea0056bb321d4b917e-0",
+              "text": "Magnetisk kraft pr. ladning",
+              "title": "Magnetisk kraft pr. ladning",
+              "latex": "\\left[\\begin{matrix}B_{0} \\omega u\\\\0\\\\0\\end{matrix}\\right]",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Bevægelsesinduktion",
+              "method_context_id": "method-3d8cfc3d6b5b995676b6",
+              "intermediate_latex": [],
+              "assumptions": [
+                "negligible_self_inductance",
+                "stationary_return_path"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-fae29bc7175c028ab7bf-0",
+              "text": "Projektér på ledningselementet og integrer",
+              "title": "Projektér på ledningselementet og integrer",
+              "latex": "\\int\\limits_{0}^{a} B_{0} \\omega u\\, du",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Bevægelsesinduktion",
+              "method_context_id": "method-3d8cfc3d6b5b995676b6",
+              "intermediate_latex": [],
+              "assumptions": [
+                "negligible_self_inductance",
+                "stationary_return_path"
+              ],
+              "validity": [],
+              "check_ids": []
+            }
+          ],
+          "results": {
+            "EMF": {
+              "expression": "B0*a**2*omega/2",
+              "latex": "\\frac{B_{0} a^{2} \\omega}{2}",
+              "unit": "V"
+            }
+          },
+          "numerical": {
+            "EMF": {
+              "value": "0.0270000000000000",
+              "latex": "0.027",
+              "unit": "V"
+            }
+          },
+          "checks": [
+            {
+              "id": "check-5c5cc0e30bae43a30b7e",
+              "name": "Dimension: EMF",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "V",
+              "step_ids": []
+            },
+            {
+              "id": "check-306f790f49e6d1c741ce",
+              "name": "Inputdimension: time",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-5117b9a4abdd5ba28062",
+              "name": "Inputdimension: source",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m",
+              "step_ids": []
+            },
+            {
+              "id": "check-ccb48c0f593168a0f332",
+              "name": "Inputdimension: v",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m/s",
+              "step_ids": []
+            },
+            {
+              "id": "check-b5dba29376e1ea1318f0",
+              "name": "Inputdimension: B",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "T",
+              "step_ids": []
+            }
+          ],
+          "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb.",
+          "warnings": [],
+          "presentation_version": "1.0",
+          "latex_profile": "EM1-Math-1",
+          "method_contexts": {
+            "method-3d8cfc3d6b5b995676b6": {
+              "method_id": "motional_emf",
+              "method": "Bevægelsesinduktion",
+              "reasoning": "Ladninger i den bevægelige leder påvirkes af v kryds B. Kraft pr. ladning integreres langs den eksplicit orienterede leder.",
+              "equations": [
+                "\\mathcal E=\\int(\\mathbf v\\times\\mathbf B)\\cdot d\\mathbf l"
+              ],
+              "assumptions": [
+                "negligible_self_inductance",
+                "stationary_return_path"
+              ]
+            }
+          },
+          "views": {
+            "result": {
+              "wanted": [
+                "EMF"
+              ],
+              "results": {
+                "EMF": {
+                  "expression": "B0*a**2*omega/2",
+                  "latex": "\\frac{B_{0} a^{2} \\omega}{2}",
+                  "unit": "V"
+                }
+              },
+              "numerical": {
+                "EMF": {
+                  "value": "0.0270000000000000",
+                  "latex": "0.027",
+                  "unit": "V"
+                }
+              },
+              "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb."
+            },
+            "derivation": {
+              "equations_latex": [
+                "\\mathcal E=\\int(\\mathbf v\\times\\mathbf B)\\cdot d\\mathbf l"
+              ],
+              "step_ids": [
+                "step-3eea0056bb321d4b917e-0",
+                "step-fae29bc7175c028ab7bf-0"
+              ]
+            },
+            "explanation": {
+              "step_ids": [
+                "step-3eea0056bb321d4b917e-0",
+                "step-fae29bc7175c028ab7bf-0"
+              ],
+              "method_context_ids": [
+                "method-3d8cfc3d6b5b995676b6"
+              ],
+              "global_check_ids": [
+                "check-5c5cc0e30bae43a30b7e",
+                "check-306f790f49e6d1c741ce",
+                "check-5117b9a4abdd5ba28062",
+                "check-ccb48c0f593168a0f332",
+                "check-b5dba29376e1ea1318f0"
+              ],
+              "warnings": []
+            }
+          }
+        },
+        "errors": [],
+        "verification": {
+          "interpretation": "user_confirmed_not_machine_verified",
+          "dimensions": "passed",
+          "physical_checks": [
+            "Inputdimension: time",
+            "Inputdimension: source",
+            "Inputdimension: v",
+            "Inputdimension: B"
+          ],
+          "completeness": "requested_results_present",
+          "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+        }
+      }
+    ],
+    "interpretation_status": "user_confirmed",
+    "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+    "confirmed_model": {
+      "schema_version": "assisted-1.0",
+      "text": "En radial ledende stang fra origo til radius a=15 cm roterer med omega=12 1/s mod uret i homogent B0=0.2 T langs +z. I det aktuelle øjeblik er kurven (u,0,0), hastighed (0,omega*u,0). Find bevægelses-emf orienteret fra centrum til spids. Returledningen er stationær, selvinduktans negligeres.",
+      "confirmed": true,
+      "variables": {
+        "source": [
+          "u",
+          "0",
+          "0"
+        ],
+        "parameter": "u",
+        "bounds": [
+          "0",
+          "a"
+        ],
+        "v": [
+          "0",
+          "omega*u",
+          "0"
+        ],
+        "B": [
+          "0",
+          "0",
+          "B0"
+        ],
+        "time": "t"
+      },
+      "units": {
+        "u": "m",
+        "a": "m",
+        "omega": "1/s",
+        "B0": "T",
+        "t": "s"
+      },
+      "numbers": {
+        "a": "15 cm",
+        "omega": "12 1/s",
+        "B0": "0.2 T"
+      },
+      "positive": [
+        "a"
+      ],
+      "assumptions": [
+        "negligible_self_inductance",
+        "stationary_return_path"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "motional_curve",
+          "wanted": [
+            "EMF"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    }
+  },
+  "assisted_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Beregnet under brugerbekræftet model",
+    "prompt": "En radial ledende stang fra origo til radius a=15 cm roterer med omega=12 1/s mod uret i homogent B0=0.2 T langs +z. I det aktuelle øjeblik er kurven (u,0,0), hastighed (0,omega*u,0). Find bevægelses-emf orienteret fra centrum til spids. Returledningen er stationær, selvinduktans negligeres.",
+    "status": "assumptions",
+    "result": {
+      "symbolic_latex": "EMF = \\frac{B_{0} a^{2} \\omega}{2}",
+      "extra_latex": [],
+      "numeric_text": "EMF: 0.0270000000000000",
+      "units": "EMF: V"
+    },
+    "steps": [
+      {
+        "title": "Grundligning 1",
+        "latex": "\\mathcal E=\\int(\\mathbf v\\times\\mathbf B)\\cdot d\\mathbf l",
+        "reason": "Ladninger i den bevægelige leder påvirkes af v kryds B. Kraft pr. ladning integreres langs den eksplicit orienterede leder."
+      },
+      {
+        "id": "step-3eea0056bb321d4b917e-0",
+        "title": "Magnetisk kraft pr. ladning",
+        "reason": "Anvendt lov: Bevægelsesinduktion. Ladninger i den bevægelige leder påvirkes af v kryds B. Kraft pr. ladning integreres langs den eksplicit orienterede leder.",
+        "latex": "\\[\\left[\\begin{matrix}B_{0} \\omega u\\\\0\\\\0\\end{matrix}\\right]\\]",
+        "check": ""
+      },
+      {
+        "id": "step-fae29bc7175c028ab7bf-0",
+        "title": "Projektér på ledningselementet og integrer",
+        "reason": "Anvendt lov: Bevægelsesinduktion. Ladninger i den bevægelige leder påvirkes af v kryds B. Kraft pr. ladning integreres langs den eksplicit orienterede leder.",
+        "latex": "\\[\\int\\limits_{0}^{a} B_{0} \\omega u\\, du\\]",
+        "check": ""
+      }
+    ],
+    "interpretation": {
+      "method": "Bevægelsesinduktion",
+      "geometry": "motional_curve"
+    },
+    "warnings": [
+      "Retning: Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb.",
+      "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+    ],
+    "backend_status": "calculated_under_confirmed_model",
+    "backend_schema": "assisted-1.0",
+    "audit": "# Brugerbekræftede oplysninger\n\nB = ['0', '0', 'B0']\n\nbounds = ['0', 'a']\n\nparameter = u\n\nsource = ['u', '0', '0']\n\ntime = t\n\nv = ['0', 'omega*u', '0']\n\nB0 = 0.2 T\n\na = 15 cm\n\nomega = 12 1/s\n\nEnhed for B0: T\n\nEnhed for a: m\n\nEnhed for omega: 1/s\n\nEnhed for t: s\n\nEnhed for u: m\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 5 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- Dimension: EMF — V\n\n- Inputdimension: time — s\n\n- Inputdimension: source — m\n\n- Inputdimension: v — m/s\n\n- Inputdimension: B — T\n\n## Forudsætninger og gyldighed\n\n- negligible_self_inductance\n\n- stationary_return_path\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "assisted_seconds": 1.978,
+  "math_display_errors": []
+}

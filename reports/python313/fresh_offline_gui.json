@@ -1,0 +1,81 @@
+{
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "interpreter": "/workspace/em1-python313-offline/bin/python",
+  "environment": "Fresh venv installed from local wheelhouse with --no-index; desktop runtime only, no pytest/Streamlit",
+  "network": "Python sockets blocked in GUI and worker",
+  "native_windows_tested": false,
+  "cases": [
+    {
+      "domain": "EV",
+      "status": "correct",
+      "numerical": {
+        "laplacian_V": {
+          "value": "200.000000000000",
+          "latex": "200.0",
+          "unit": "V/m^2"
+        },
+        "E": {
+          "value": "Matrix([[-4.00000000000000], [0], [0]])",
+          "latex": "\\left[\\begin{matrix}-4.0\\\\0\\\\0\\end{matrix}\\right]",
+          "unit": "V/m"
+        },
+        "rho": {
+          "value": "-1.77083756256000e-9",
+          "latex": "-1.77083756256 \\cdot 10^{-9}",
+          "unit": "C/m^3"
+        },
+        "curl_E": {
+          "value": "Matrix([[0], [0], [0]])",
+          "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+          "unit": "V/m^2"
+        },
+        "dB_dt": {
+          "value": "Matrix([[0], [0], [0]])",
+          "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+          "unit": "T/s"
+        }
+      },
+      "pdf_rendered": true,
+      "notes_persisted": true,
+      "math_display_errors": []
+    },
+    {
+      "domain": "BA",
+      "status": "correct",
+      "numerical": {
+        "B": {
+          "value": "8.00000000435501e-6",
+          "latex": "8.00000000435501 \\cdot 10^{-6}",
+          "unit": "T"
+        }
+      },
+      "pdf_rendered": true,
+      "notes_persisted": true,
+      "math_display_errors": []
+    },
+    {
+      "domain": "DYN",
+      "status": "correct",
+      "numerical": {
+        "tau": {
+          "value": "0.00100000000000000",
+          "latex": "0.001",
+          "unit": "s"
+        },
+        "I_initial": {
+          "value": "1.00000000000000",
+          "latex": "1.0",
+          "unit": "A"
+        },
+        "U_initial": {
+          "value": "0.00500000000000000",
+          "latex": "0.005",
+          "unit": "J"
+        }
+      },
+      "pdf_rendered": true,
+      "notes_persisted": true,
+      "math_display_errors": []
+    }
+  ]
+}

@@ -1,3 +1,2 @@
-# Optional Qt host component; old backend lock remains unchanged.
--r requirements-backend-lock.txt
-PySide6==6.8.3
+# Complete desktop runtime; standard CPython 3.13 x64.
+-r desktop_app/requirements-windows-lock.txt

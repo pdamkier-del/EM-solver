@@ -1,0 +1,838 @@
+{
+  "id": "DYN2",
+  "domain": "DYN",
+  "model": "RL_driven",
+  "automatic_response": {
+    "schema_version": "1.0",
+    "status": "not_solved",
+    "interpretation": {
+      "model": {
+        "objects": [
+          {
+            "id": "body",
+            "geometry": "RL",
+            "extent": null,
+            "parameters": {},
+            "position": null,
+            "material": "unspecified"
+          }
+        ],
+        "sources": [
+          {
+            "id": "source_V",
+            "kind": "V",
+            "formula": "v0*exp(-R*t/L)",
+            "arguments": [
+              "t"
+            ],
+            "basis": null,
+            "evidence": "V(t)=v0*exp(-R*t/L)"
+          }
+        ],
+        "relationships": [
+          {
+            "subject": "source_V",
+            "relation": "has_support",
+            "object": "body",
+            "regions": "model dependent"
+          }
+        ],
+        "coordinates": [],
+        "orientation": {},
+        "boundary_conditions": {},
+        "initial_conditions": {},
+        "assumptions": [],
+        "wanted": [
+          "I"
+        ],
+        "units": {
+          "R": "kilogram * meter ** 2 / ampere ** 2 / second ** 3",
+          "L": "kilogram * meter ** 2 / ampere ** 2 / second ** 2",
+          "v0": "kilogram * meter ** 2 / ampere / second ** 3",
+          "t": "second",
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m"
+        },
+        "values": {
+          "R": "6 ohm",
+          "L": "120 mH",
+          "v0": "9 V",
+          "t": "30 ms"
+        },
+        "methods": [
+          {
+            "name": "RL",
+            "status": "RED"
+          }
+        ],
+        "dependencies": {}
+      },
+      "fields": {
+        "geometry": {
+          "value": "RL",
+          "status": "GREEN",
+          "evidence": [
+            "RL"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "wanted": {
+          "value": [
+            "I"
+          ],
+          "status": "GREEN",
+          "evidence": [
+            " I(t), den stationære tid og strømmen ved t=30 ms."
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source": {
+          "value": "V",
+          "status": "GREEN",
+          "evidence": [
+            "V(t)=v0*exp(-R*t/L)"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source_formula": {
+          "value": "v0*exp(-R*t/L)",
+          "status": "GREEN",
+          "evidence": [
+            "V(t)=v0*exp(-R*t/L)"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "orientation": {
+          "value": {},
+          "status": "GREEN",
+          "evidence": [],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "regions": {
+          "value": "model dependent",
+          "status": "GREEN",
+          "evidence": [
+            "Ikke en radial volumen-/strømtæthed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "domain": {
+          "value": "DYN",
+          "status": "GREEN",
+          "evidence": [],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "method": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "RL-kredsløbet kræver begyndelsesstrøm, spændingskilde og kobling. Brug Avanceret / Manuel; automatisk kompilering af denne profil er endnu ikke understøttet.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "time_model": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Tidsafhængige kilder/potentialer kræver yderligere Maxwell-relationer. En statisk direkte metode vælges ikke automatisk.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "units": {
+          "value": {
+            "R": "kilogram * meter ** 2 / ampere ** 2 / second ** 3",
+            "L": "kilogram * meter ** 2 / ampere ** 2 / second ** 2",
+            "v0": "kilogram * meter ** 2 / ampere / second ** 3",
+            "t": "second",
+            "epsilon_0": "F/m",
+            "mu_0": "H/m",
+            "eps0": "F/m",
+            "mu0": "H/m"
+          },
+          "status": "GREEN",
+          "evidence": [
+            "Angivne enheder og dimensionelle ligninger"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "material": {
+          "value": "unspecified",
+          "status": "GREEN",
+          "evidence": [
+            "Materialeord i teksten"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "symmetry": {
+          "value": "not established",
+          "status": "GREEN",
+          "evidence": [
+            "Geometri, udstrækning og funktionens afhængighed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        }
+      },
+      "ready": false
+    },
+    "solution": null,
+    "missing": [
+      {
+        "field": "method",
+        "status": "RED",
+        "message": "RL-kredsløbet kræver begyndelsesstrøm, spændingskilde og kobling. Brug Avanceret / Manuel; automatisk kompilering af denne profil er endnu ikke understøttet.",
+        "options": []
+      },
+      {
+        "field": "time_model",
+        "status": "RED",
+        "message": "Tidsafhængige kilder/potentialer kræver yderligere Maxwell-relationer. En statisk direkte metode vælges ikke automatisk.",
+        "options": []
+      }
+    ],
+    "errors": [],
+    "desktop_user_corrections": {}
+  },
+  "automatic_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Kan ikke løses med de givne oplysninger",
+    "prompt": "En RL-kreds har R=6 ohm,L=120 mH,I(0)=0 og V(t)=v0*exp(-R*t/L),v0=9 V. Find I(t), den stationære tid og strømmen ved t=30 ms.",
+    "status": "unsolved",
+    "result": {},
+    "steps": [],
+    "interpretation": {
+      "method": "Ikke afgjort",
+      "geometry": "Se opgavefortolkningen"
+    },
+    "warnings": [
+      "RL-kredsløbet kræver begyndelsesstrøm, spændingskilde og kobling. Brug Avanceret / Manuel; automatisk kompilering af denne profil er endnu ikke understøttet.",
+      "Tidsafhængige kilder/potentialer kræver yderligere Maxwell-relationer. En statisk direkte metode vælges ikke automatisk."
+    ],
+    "backend_status": "not_solved",
+    "backend_schema": "1.0",
+    "audit": "# Kontrol og gyldighed\n\nBackend rapporterede 0 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\nIngen individuelle kontroller er rapporteret i svaret.\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "automatic_seconds": 0.749,
+  "submitted_request": {
+    "schema_version": "assisted-1.0",
+    "text": "En RL-kreds har R=6 ohm,L=120 mH,I(0)=0 og V(t)=v0*exp(-R*t/L),v0=9 V. Find I(t), den stationære tid og strømmen ved t=30 ms.",
+    "confirmed": true,
+    "variables": {
+      "time": "t",
+      "R": "R",
+      "L": "L",
+      "voltage": "v0*exp(-R*t/L)",
+      "I0": "0"
+    },
+    "units": {
+      "t": "s",
+      "R": "ohm",
+      "L": "H",
+      "v0": "V"
+    },
+    "numbers": {
+      "t": "30 ms",
+      "R": "6 ohm",
+      "L": "120 mH",
+      "v0": "9 V"
+    },
+    "positive": [
+      "R",
+      "L",
+      "v0"
+    ],
+    "assumptions": [
+      "constant_coefficients"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "RL_driven",
+        "wanted": [
+          "I",
+          "extremum_times"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  },
+  "extra_result_unit_rows": [],
+  "assistance_actions": {
+    "prompt": 1,
+    "open_model": 1,
+    "model_selection": 1,
+    "scalar_fields": 5,
+    "table_cells": 0,
+    "scan_symbols": 1,
+    "unit_entries": 4,
+    "numeric_entries": 4,
+    "positive_flags": 3,
+    "wanted": 1,
+    "assumption_checks": 1,
+    "orientation": 1,
+    "confirmation": 1,
+    "solve": 1,
+    "operation_cells": 0
+  },
+  "assistance_action_count": 25,
+  "assisted_response": {
+    "schema_version": "assisted-1.0",
+    "status": "calculated_under_confirmed_model",
+    "questions": [],
+    "errors": [],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "RL_driven",
+        "status": "calculated_under_confirmed_model",
+        "solution": {
+          "method": "Lineær kredsløbsdifferentialligning",
+          "reasoning": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+          "equations_latex": [
+            "R\\dot Q+Q/C=0",
+            "L\\dot I+RI=V"
+          ],
+          "steps": [
+            {
+              "id": "step-1ef7c670a506af013f05-0",
+              "text": "Den lineære differentialligning",
+              "title": "Den lineære differentialligning",
+              "latex": "L \\frac{d}{d t} I{\\left(t \\right)} + R I{\\left(t \\right)} = v_{0} e^{- \\frac{R t}{L}}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Lineær kredsløbsdifferentialligning",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-bd4142aa4c77d102db8c-0",
+              "text": "Løs med begyndelsesbetingelsen",
+              "title": "Løs med begyndelsesbetingelsen",
+              "latex": "I{\\left(t \\right)} = \\frac{t v_{0} e^{- \\frac{R t}{L}}}{L}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Lineær kredsløbsdifferentialligning",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-9a71c01b28c0bb783f3c-0",
+              "text": "Differentier I med hensyn til t",
+              "title": "Differentier I med hensyn til t",
+              "latex": "\\frac{v_{0} \\left(L - R t\\right) e^{- \\frac{R t}{L}}}{L^{2}}",
+              "physical_reasoning": "Den afledte beregnes af det allerede fundne resultat; et eventuelt punkt indsættes bagefter.",
+              "reasoning_scope": "step",
+              "law": "Symbolsk differentiation",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-607029a2228b95df7d16-0",
+              "text": "Løs current_derivative = 0 for t",
+              "title": "Løs current_derivative = 0 for t",
+              "latex": "\\frac{L}{R}",
+              "physical_reasoning": "Alle fundne reelle grene bevares; ingen gren vælges ud fra et forventet svar.",
+              "reasoning_scope": "step",
+              "law": "Symbolsk ligningsløsning",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-b9d3b7750d757f3b0b2c-0",
+              "text": "Andenafledte-test ved den stationære tid: lokalt maksimum",
+              "title": "Andenafledte-test ved den stationære tid: lokalt maksimum",
+              "latex": "- \\frac{R v_{0}}{e L^{2}}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Klassifikation af stationære punkter",
+              "method_context_id": "method-6477c011bebda04cbe6f",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            }
+          ],
+          "results": {
+            "I": {
+              "expression": "t*v0*exp(-R*t/L)/L",
+              "latex": "\\frac{t v_{0} e^{- \\frac{R t}{L}}}{L}",
+              "unit": "A"
+            },
+            "tau": {
+              "expression": "L/R",
+              "latex": "\\frac{L}{R}",
+              "unit": "s"
+            },
+            "I_initial": {
+              "expression": "0",
+              "latex": "0",
+              "unit": "A"
+            },
+            "current_derivative": {
+              "expression": "v0*(L - R*t)*exp(-R*t/L)/L**2",
+              "latex": "\\frac{v_{0} \\left(L - R t\\right) e^{- \\frac{R t}{L}}}{L^{2}}",
+              "unit": "(A)/(s)"
+            },
+            "extremum_times": {
+              "expression": "L/R",
+              "latex": "\\frac{L}{R}",
+              "unit": "s"
+            }
+          },
+          "numerical": {
+            "I": {
+              "value": "0.502042860333967",
+              "latex": "0.502042860333967",
+              "unit": "A"
+            },
+            "tau": {
+              "value": "0.0200000000000000",
+              "latex": "0.02",
+              "unit": "s"
+            },
+            "I_initial": {
+              "value": "0",
+              "latex": "0",
+              "unit": "A"
+            },
+            "current_derivative": {
+              "value": "-8.36738100556612",
+              "latex": "-8.36738100556612",
+              "unit": "(A)/(s)"
+            },
+            "extremum_times": {
+              "value": "0.0200000000000000",
+              "latex": "0.02",
+              "unit": "s"
+            }
+          },
+          "checks": [
+            {
+              "id": "check-23669e4b60d59f9eca52",
+              "name": "RL-ligning",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-38ee0012570ca658a1a8",
+              "name": "Dimension: I",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-4dd57c7f5b028ef0f583",
+              "name": "Dimension: tau",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-aefc18fb40c2c9b9419e",
+              "name": "Dimension: I_initial",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-d2f326c4ea2692476a43",
+              "name": "Inputdimension: time",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-b8b12d5e8360827c68e3",
+              "name": "Inputdimension: R",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "ohm",
+              "step_ids": []
+            },
+            {
+              "id": "check-d520e171bbb498d49bbd",
+              "name": "Inputdimension: L",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "H",
+              "step_ids": []
+            },
+            {
+              "id": "check-7a168c436480296c6749",
+              "name": "Inputdimension: voltage",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "V",
+              "step_ids": []
+            },
+            {
+              "id": "check-c865d0584101162bc7f2",
+              "name": "Inputdimension: I0",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-e7e0ddaa09689abe16ec",
+              "name": "extremum_times: indsættelse i oprindelig ligning",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-e53bb84cf012aad8c83f",
+              "name": "Dimension: I",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-9ce126d7ee9746a0eddb",
+              "name": "Dimension: tau",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-9a5d21b5c59e1bea3391",
+              "name": "Dimension: I_initial",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-e269b2f8845cb9d7eee3",
+              "name": "Dimension: current_derivative",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "(A)/(s)",
+              "step_ids": []
+            },
+            {
+              "id": "check-c04c3962b4bb21605f73",
+              "name": "Dimension: extremum_times",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            }
+          ],
+          "direction": "",
+          "warnings": [
+            "En generel tidsafhængig spænding har ikke nødvendigvis en konstant slutstrøm. Brug en eksplicit grænseoperation, hvis grænsen findes.",
+            "Stationær tid L/R: lokalt maksimum. Endepunkter og globalt ekstremum er ikke bestemt af denne test."
+          ],
+          "presentation_version": "1.0",
+          "latex_profile": "EM1-Math-1",
+          "method_contexts": {
+            "method-6477c011bebda04cbe6f": {
+              "method_id": "rc_transient",
+              "method": "Lineær kredsløbsdifferentialligning",
+              "reasoning": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+              "equations": [
+                "R\\dot Q+Q/C=0",
+                "L\\dot I+RI=V"
+              ],
+              "assumptions": [
+                "constant_coefficients"
+              ]
+            }
+          },
+          "views": {
+            "result": {
+              "wanted": [
+                "I",
+                "extremum_times",
+                "current_derivative"
+              ],
+              "results": {
+                "I": {
+                  "expression": "t*v0*exp(-R*t/L)/L",
+                  "latex": "\\frac{t v_{0} e^{- \\frac{R t}{L}}}{L}",
+                  "unit": "A"
+                },
+                "current_derivative": {
+                  "expression": "v0*(L - R*t)*exp(-R*t/L)/L**2",
+                  "latex": "\\frac{v_{0} \\left(L - R t\\right) e^{- \\frac{R t}{L}}}{L^{2}}",
+                  "unit": "(A)/(s)"
+                },
+                "extremum_times": {
+                  "expression": "L/R",
+                  "latex": "\\frac{L}{R}",
+                  "unit": "s"
+                }
+              },
+              "numerical": {
+                "I": {
+                  "value": "0.502042860333967",
+                  "latex": "0.502042860333967",
+                  "unit": "A"
+                },
+                "current_derivative": {
+                  "value": "-8.36738100556612",
+                  "latex": "-8.36738100556612",
+                  "unit": "(A)/(s)"
+                },
+                "extremum_times": {
+                  "value": "0.0200000000000000",
+                  "latex": "0.02",
+                  "unit": "s"
+                }
+              },
+              "direction": ""
+            },
+            "derivation": {
+              "equations_latex": [
+                "R\\dot Q+Q/C=0",
+                "L\\dot I+RI=V"
+              ],
+              "step_ids": [
+                "step-1ef7c670a506af013f05-0",
+                "step-bd4142aa4c77d102db8c-0",
+                "step-9a71c01b28c0bb783f3c-0",
+                "step-607029a2228b95df7d16-0",
+                "step-b9d3b7750d757f3b0b2c-0"
+              ]
+            },
+            "explanation": {
+              "step_ids": [
+                "step-1ef7c670a506af013f05-0",
+                "step-bd4142aa4c77d102db8c-0",
+                "step-9a71c01b28c0bb783f3c-0",
+                "step-607029a2228b95df7d16-0",
+                "step-b9d3b7750d757f3b0b2c-0"
+              ],
+              "method_context_ids": [
+                "method-6477c011bebda04cbe6f"
+              ],
+              "global_check_ids": [
+                "check-23669e4b60d59f9eca52",
+                "check-38ee0012570ca658a1a8",
+                "check-4dd57c7f5b028ef0f583",
+                "check-aefc18fb40c2c9b9419e",
+                "check-d2f326c4ea2692476a43",
+                "check-b8b12d5e8360827c68e3",
+                "check-d520e171bbb498d49bbd",
+                "check-7a168c436480296c6749",
+                "check-c865d0584101162bc7f2",
+                "check-e7e0ddaa09689abe16ec",
+                "check-e53bb84cf012aad8c83f",
+                "check-9ce126d7ee9746a0eddb",
+                "check-9a5d21b5c59e1bea3391",
+                "check-e269b2f8845cb9d7eee3",
+                "check-c04c3962b4bb21605f73"
+              ],
+              "warnings": [
+                "En generel tidsafhængig spænding har ikke nødvendigvis en konstant slutstrøm. Brug en eksplicit grænseoperation, hvis grænsen findes.",
+                "Stationær tid L/R: lokalt maksimum. Endepunkter og globalt ekstremum er ikke bestemt af denne test."
+              ]
+            }
+          }
+        },
+        "errors": [],
+        "verification": {
+          "interpretation": "user_confirmed_not_machine_verified",
+          "dimensions": "passed",
+          "physical_checks": [
+            "RL-ligning",
+            "Inputdimension: time",
+            "Inputdimension: R",
+            "Inputdimension: L",
+            "Inputdimension: voltage",
+            "Inputdimension: I0",
+            "extremum_times: indsættelse i oprindelig ligning"
+          ],
+          "completeness": "requested_results_present",
+          "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+        }
+      }
+    ],
+    "interpretation_status": "user_confirmed",
+    "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+    "confirmed_model": {
+      "schema_version": "assisted-1.0",
+      "text": "En RL-kreds har R=6 ohm,L=120 mH,I(0)=0 og V(t)=v0*exp(-R*t/L),v0=9 V. Find I(t), den stationære tid og strømmen ved t=30 ms.",
+      "confirmed": true,
+      "variables": {
+        "time": "t",
+        "R": "R",
+        "L": "L",
+        "voltage": "v0*exp(-R*t/L)",
+        "I0": "0"
+      },
+      "units": {
+        "t": "s",
+        "R": "ohm",
+        "L": "H",
+        "v0": "V"
+      },
+      "numbers": {
+        "t": "30 ms",
+        "R": "6 ohm",
+        "L": "120 mH",
+        "v0": "9 V"
+      },
+      "positive": [
+        "R",
+        "L",
+        "v0"
+      ],
+      "assumptions": [
+        "constant_coefficients"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "RL_driven",
+          "wanted": [
+            "I",
+            "extremum_times"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    }
+  },
+  "assisted_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Beregnet under brugerbekræftet model",
+    "prompt": "En RL-kreds har R=6 ohm,L=120 mH,I(0)=0 og V(t)=v0*exp(-R*t/L),v0=9 V. Find I(t), den stationære tid og strømmen ved t=30 ms.",
+    "status": "assumptions",
+    "result": {
+      "symbolic_latex": "I = \\frac{t v_{0} e^{- \\frac{R t}{L}}}{L}",
+      "extra_latex": [
+        "extremum_times = \\frac{L}{R}",
+        "current_derivative = \\frac{v_{0} \\left(L - R t\\right) e^{- \\frac{R t}{L}}}{L^{2}}"
+      ],
+      "numeric_text": "I: 0.502042860333967; current_derivative: -8.36738100556612; extremum_times: 0.0200000000000000",
+      "units": "I: A; extremum_times: s; current_derivative: (A)/(s)"
+    },
+    "steps": [
+      {
+        "title": "Grundligning 1",
+        "latex": "R\\dot Q+Q/C=0",
+        "reason": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten."
+      },
+      {
+        "title": "Grundligning 2",
+        "latex": "L\\dot I+RI=V",
+        "reason": ""
+      },
+      {
+        "id": "step-1ef7c670a506af013f05-0",
+        "title": "Den lineære differentialligning",
+        "reason": "Anvendt lov: Lineær kredsløbsdifferentialligning. Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "latex": "\\[L \\frac{d}{d t} I{\\left(t \\right)} + R I{\\left(t \\right)} = v_{0} e^{- \\frac{R t}{L}}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-bd4142aa4c77d102db8c-0",
+        "title": "Løs med begyndelsesbetingelsen",
+        "reason": "Anvendt lov: Lineær kredsløbsdifferentialligning. Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "latex": "\\[I{\\left(t \\right)} = \\frac{t v_{0} e^{- \\frac{R t}{L}}}{L}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-9a71c01b28c0bb783f3c-0",
+        "title": "Differentier I med hensyn til t",
+        "reason": "Anvendt lov: Symbolsk differentiation. Den afledte beregnes af det allerede fundne resultat; et eventuelt punkt indsættes bagefter.",
+        "latex": "\\[\\frac{v_{0} \\left(L - R t\\right) e^{- \\frac{R t}{L}}}{L^{2}}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-607029a2228b95df7d16-0",
+        "title": "Løs current_derivative = 0 for t",
+        "reason": "Anvendt lov: Symbolsk ligningsløsning. Alle fundne reelle grene bevares; ingen gren vælges ud fra et forventet svar.",
+        "latex": "\\[\\frac{L}{R}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-b9d3b7750d757f3b0b2c-0",
+        "title": "Andenafledte-test ved den stationære tid: lokalt maksimum",
+        "reason": "Anvendt lov: Klassifikation af stationære punkter. Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "latex": "\\[- \\frac{R v_{0}}{e L^{2}}\\]",
+        "check": ""
+      }
+    ],
+    "interpretation": {
+      "method": "Lineær kredsløbsdifferentialligning",
+      "geometry": "RL_driven"
+    },
+    "warnings": [
+      "En generel tidsafhængig spænding har ikke nødvendigvis en konstant slutstrøm. Brug en eksplicit grænseoperation, hvis grænsen findes.",
+      "Stationær tid L/R: lokalt maksimum. Endepunkter og globalt ekstremum er ikke bestemt af denne test.",
+      "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+    ],
+    "backend_status": "calculated_under_confirmed_model",
+    "backend_schema": "assisted-1.0",
+    "audit": "# Brugerbekræftede oplysninger\n\nI0 = 0\n\nL = L\n\nR = R\n\ntime = t\n\nvoltage = v0*exp(-R*t/L)\n\nL = 120 mH\n\nR = 6 ohm\n\nt = 30 ms\n\nv0 = 9 V\n\nEnhed for L: H\n\nEnhed for R: ohm\n\nEnhed for t: s\n\nEnhed for v0: V\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 15 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- RL-ligning\n\n- Dimension: I — A\n\n- Dimension: tau — s\n\n- Dimension: I_initial — A\n\n- Inputdimension: time — s\n\n- Inputdimension: R — ohm\n\n- Inputdimension: L — H\n\n- Inputdimension: voltage — V\n\n- Inputdimension: I0 — A\n\n- extremum_times: indsættelse i oprindelig ligning\n\n- Dimension: I — A\n\n- Dimension: tau — s\n\n- Dimension: I_initial — A\n\n- Dimension: current_derivative — (A)/(s)\n\n- Dimension: extremum_times — s\n\n## Forudsætninger og gyldighed\n\n- constant_coefficients\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "assisted_seconds": 2.173,
+  "math_display_errors": []
+}

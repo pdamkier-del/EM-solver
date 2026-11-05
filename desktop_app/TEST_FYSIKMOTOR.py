@@ -68,6 +68,9 @@ CASES=[
 
 
 def run():
+    import sys
+    from backend_paths import location
+    sys.path.insert(0,str(location()[0]))
     from em1_solver.backend_client import run_text
     report={'date_utc':datetime.now(timezone.utc).isoformat(),'scope':'Five selected cases, not general EM1 accuracy.', 'cases':[]}
     good=0

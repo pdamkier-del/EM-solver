@@ -16,6 +16,5 @@ def location(assisted=False):
     current=Path(sys.executable)
     base=Path(os.getenv('LOCALAPPDATA',str(Path.home())))/'EM1'
     candidates=[Path(os.environ['EM1_BACKEND_PYTHON'])] if os.environ.get('EM1_BACKEND_PYTHON') else []
-    if not assisted and root==legacy:candidates += [base/'backend312'/'Scripts'/'python.exe',base/'backend313'/'Scripts'/'python.exe']
     candidates.append(current)
     return root,next((p for p in candidates if p.is_file()),current)

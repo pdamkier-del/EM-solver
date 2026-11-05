@@ -1,3 +1,5 @@
+AKTUEL PYTHON 3.13-PAKKE: Brug START_HER_DANSK.md og WINDOWS_INTEGRATED.md; kør INSTALL_WINDOWS.bat. Teksten nedenfor er bevaret prototypehistorik.
+
 # EM1 Solver v1.0 – integration med Codex backend
 
 Denne pakke bevarer desktopappens layout fra v0.9 og tilføjer live offline-kald til en separat fysikmotor.

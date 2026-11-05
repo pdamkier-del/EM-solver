@@ -1,4 +1,4 @@
-# Windows CPython 3.12 x64, exact versions tested on Linux; native Windows validation required.
+# Standard CPython 3.13 x64: Windows wheels resolved and inspected; runtime tested on Linux 3.13. Native Windows test required.
 contourpy==1.4.0
 cycler==0.12.1
 flexcache==0.3

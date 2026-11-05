@@ -40,7 +40,7 @@
   "not_migrated": [],
   "partial": [],
   "tests": {
-    "total": 869,
+    "total": 873,
     "physics_core_and_historical": 470,
     "historical_end_to_end": 153,
     "variations": 149,

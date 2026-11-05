@@ -2,7 +2,7 @@
 
 ## Installér uden at ændre din gamle app
 
-1. Installér Python 3.12 x64 med Python Launcher (`py`).
+1. Installér Python 3.13 x64 med Python Launcher (`py`).
 2. Udpak hele ZIP-filen i en NY mappe. Kør ikke direkte inde fra ZIP'en.
 3. Dobbeltklik INSTALL_WINDOWS.bat én gang med internet. Vent på “Installation OK”.
 4. Dobbeltklik START_WINDOWS.bat. Denne fil downloader intet.

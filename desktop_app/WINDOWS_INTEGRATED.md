@@ -7,9 +7,9 @@ Ingen LLM, webserver eller API-nøgle.
 ## Installation
 
 1. Bevar din gamle app. Udpak hele den nye ZIP i en ny mappe.
-2. Installér Python **3.12 x64** med `py`-launcher, hvis det mangler.
+2. Installér Python **3.13 x64** med `py`-launcher, hvis det mangler.
 3. Dobbeltklik `INSTALL_WINDOWS.bat` én gang online. Et separat miljø oprettes
-   i `%LOCALAPPDATA%\EM1\desktop-development-20261105`; dit gamle miljø ændres ikke.
+   i `%LOCALAPPDATA%\EM1\desktop-python313-20261105`; dit gamle miljø ændres ikke.
 4. Dobbeltklik `START_WINDOWS.bat`. Startfilen downloader og installerer intet.
    Fejl skrives i `EM1_START_LOG.txt`.
 
@@ -18,7 +18,7 @@ skal ikke køres for denne pakke. En eksisterende `vendor/EM-solver` bevares til
 den almindelige backendvej, hvis den findes.
 
 For installation på en anden computer uden internet: kør først
-`PREPARE_OFFLINE_WINDOWS.bat` online på Windows/Python 3.12 x64. Kopiér hele
+`PREPARE_OFFLINE_WINDOWS.bat` online på Windows/Python 3.13 x64. Kopiér hele
 mappen inklusive wheelhouse. Installeren bruger `--no-index`, når wheels findes.
 Python skal stadig være installeret. Runtime kræver ingen forbindelse.
 
@@ -82,7 +82,7 @@ Ingen model må vælges alene fordi den giver et ønsket facitsvar.
 
 ## Denne udviklingspakke
 
-Installér i en ny mappe; miljøet hedder `desktop-development-20261105` og
+Installér i en ny mappe; miljøet hedder `desktop-python313-20261105` og
 ændrer ikke den tidligere fungerende integrationsinstallation. Dette er en
 udviklingsversion, ikke en erstatning for den frosne eksamensrelease.
 
@@ -126,3 +126,28 @@ svaret være delvist. Flere/ukendte rødder må ikke læses som en entydig tid.
 PDF'er, noter og den almindelige backendvej er bevaret. Den indbyggede
 formelsamling er fortsat filen mærket `GAMMEL_2026-10-30`; kontrollér mod
 kursets aktuelle formelsamling.
+
+
+## Python 3.13 x64 – kontrolleret kompatibilitet
+
+Denne pakke kræver standard CPython **3.13 x64** med GIL, ikke den
+free-threaded 3.13t-variant, ARM64- eller 32-bit Python. Installer og startfil
+kontrollerer version og arkitektur. Et eksisterende miljø med forkert version
+bruges ikke. Python 3.12-pakken er bevaret separat som sikkerhedskopi.
+
+Alle 21 runtimeafhængigheder er fortsat fastlåst til samme kompatible versioner:
+PySide6 Essentials/shiboken6 6.8.3, SymPy 1.14.0, PyMuPDF 1.26.7 og
+matplotlib 3.10.8. Faktiske Windows-wheels er hentet og kontrolleret for
+Python-version, wheel-tags, transitiv dependency-lukning, CRC og AMD64 PE-
+arkitektur. En lokal pip-resolution uden internet kontrollerer hele låsen.
+Linux-runtime testes under **Python 3.13.5**, inklusive app, PDF, noter,
+modelvalg og beregninger. Det er ikke en native Windows-installationstest.
+
+`requirements.txt` i desktopmappen og `requirements-desktop-integration.txt`
+i repository peger nu begge på den komplette låste runtime. Det kræver
+ikke Streamlit at bruge desktopappen. Første installation skal være online,
+medmindre den komplette 3.13-wheelhouse er forberedt med
+PREPARE_OFFLINE_WINDOWS.bat. Startfilen installerer eller downloader intet.
+
+Bevar den gamle appmappe og tag backup af APPDATA/EM1SolverDesktop før test.
+Notedatabasen deles med den gamle app; kør ikke begge samtidig.

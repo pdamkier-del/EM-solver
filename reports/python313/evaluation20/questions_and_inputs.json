@@ -1,0 +1,1031 @@
+[
+  {
+    "id": "EV1",
+    "domain": "EV",
+    "text": "En punktladning q=4 nC ligger i (d+a,0,0), d=3 cm, a=9 cm. Planet x=d er en jordet uendelig leder, fysisk område x>d i vakuum. Bestem kraft på q og feltet i (d+2a,0,0).",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "En punktladning q=4 nC ligger i (d+a,0,0), d=3 cm, a=9 cm. Planet x=d er en jordet uendelig leder, fysisk område x>d i vakuum. Bestem kraft på q og feltet i (d+2a,0,0).",
+      "confirmed": true,
+      "variables": {
+        "charges": [
+          [
+            "q",
+            [
+              "d+a",
+              "0",
+              "0"
+            ]
+          ]
+        ],
+        "normal": [
+          "1",
+          "0",
+          "0"
+        ],
+        "offset": "d",
+        "point": [
+          "d+2*a",
+          "0",
+          "0"
+        ]
+      },
+      "units": {
+        "q": "C",
+        "d": "m",
+        "a": "m"
+      },
+      "positive": [
+        "a"
+      ],
+      "numbers": {
+        "q": "4 nC",
+        "d": "3 cm",
+        "a": "9 cm"
+      },
+      "assumptions": [
+        "grounded_infinite_plane",
+        "vacuum_medium",
+        "electrostatic"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "image_plane",
+          "wanted": [
+            "F",
+            "E"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "image_plane"
+  },
+  {
+    "id": "EV2",
+    "domain": "EV",
+    "text": "En jordet lederkugle med centrum i origo og a=3 cm har en ekstern punktladning q=4 nC i (0,0,d), d=11 cm, i vakuum. Ingen andre kilder. Bestem kraft og induceret nettoladning.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "En jordet lederkugle med centrum i origo og a=3 cm har en ekstern punktladning q=4 nC i (0,0,d), d=11 cm, i vakuum. Ingen andre kilder. Bestem kraft og induceret nettoladning.",
+      "confirmed": true,
+      "variables": {
+        "charges": [
+          [
+            "q",
+            [
+              "0",
+              "0",
+              "d"
+            ]
+          ]
+        ],
+        "center": [
+          "0",
+          "0",
+          "0"
+        ],
+        "radius": "a"
+      },
+      "units": {
+        "q": "C",
+        "d": "m",
+        "a": "m"
+      },
+      "positive": [
+        "a",
+        "d"
+      ],
+      "numbers": {
+        "q": "4 nC",
+        "d": "11 cm",
+        "a": "3 cm"
+      },
+      "assumptions": [
+        "grounded_sphere",
+        "vacuum_medium",
+        "electrostatic",
+        "no_other_external_sources"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "image_sphere_grounded",
+          "wanted": [
+            "F",
+            "Q_induced"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "image_sphere_grounded"
+  },
+  {
+    "id": "EV3",
+    "domain": "EV",
+    "text": "En isoleret lederkugle har a=5 cm og nettoladning Qs=1 nC. En ekstern ladning q=-2 nC ligger i (0,0,d), d=16 cm. Kuglen er centreret i origo, vakuum, ingen andre kilder, V(infinity)=0. Bestem kraft på q og kuglepotentialet.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "En isoleret lederkugle har a=5 cm og nettoladning Qs=1 nC. En ekstern ladning q=-2 nC ligger i (0,0,d), d=16 cm. Kuglen er centreret i origo, vakuum, ingen andre kilder, V(infinity)=0. Bestem kraft på q og kuglepotentialet.",
+      "confirmed": true,
+      "variables": {
+        "charges": [
+          [
+            "q",
+            [
+              "0",
+              "0",
+              "d"
+            ]
+          ]
+        ],
+        "center": [
+          "0",
+          "0",
+          "0"
+        ],
+        "radius": "a",
+        "sphere_charge": "Qs"
+      },
+      "units": {
+        "q": "C",
+        "Qs": "C",
+        "d": "m",
+        "a": "m"
+      },
+      "positive": [
+        "a",
+        "d"
+      ],
+      "numbers": {
+        "q": "-2 nC",
+        "Qs": "1 nC",
+        "d": "16 cm",
+        "a": "5 cm"
+      },
+      "assumptions": [
+        "isolated_conducting_sphere",
+        "vacuum_medium",
+        "electrostatic",
+        "no_other_external_sources"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "image_sphere_isolated",
+          "wanted": [
+            "F",
+            "V_sphere"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "image_sphere_isolated"
+  },
+  {
+    "id": "EV4",
+    "domain": "EV",
+    "text": "I vakuum ligger q i (-a,0,0) og -2q i (a,0,0), q=2 nC, a=3 cm. Bestem E og V i (0,b,0), b=4 cm, med V(infinity)=0.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "I vakuum ligger q i (-a,0,0) og -2q i (a,0,0), q=2 nC, a=3 cm. Bestem E og V i (0,b,0), b=4 cm, med V(infinity)=0.",
+      "confirmed": true,
+      "variables": {
+        "charges": [
+          [
+            "q",
+            [
+              "-a",
+              "0",
+              "0"
+            ]
+          ],
+          [
+            "-2*q",
+            [
+              "a",
+              "0",
+              "0"
+            ]
+          ]
+        ],
+        "point": [
+          "0",
+          "b",
+          "0"
+        ]
+      },
+      "units": {
+        "q": "C",
+        "a": "m",
+        "b": "m"
+      },
+      "positive": [
+        "a",
+        "b"
+      ],
+      "numbers": {
+        "q": "2 nC",
+        "a": "3 cm",
+        "b": "4 cm"
+      },
+      "assumptions": [
+        "electrostatic",
+        "vacuum_medium",
+        "distinct_point_sources"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "point_superposition",
+          "wanted": [
+            "E",
+            "V"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "point_superposition"
+  },
+  {
+    "id": "EV5",
+    "domain": "EV",
+    "text": "En kuglesymmetrisk volumenladning i vakuum har rho(r)=rho0*(1-r/a) for 0<r<a og nul udenfor. a=10 cm, rho0=15 nC/m^3. Find E,V,total Q samt kraft og potentiel energi for en testladning q=2 nC ved r=a/3. V(infinity)=0, testladningen ændrer ikke kilden.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "En kuglesymmetrisk volumenladning i vakuum har rho(r)=rho0*(1-r/a) for 0<r<a og nul udenfor. a=10 cm, rho0=15 nC/m^3. Find E,V,total Q samt kraft og potentiel energi for en testladning q=2 nC ved r=a/3. V(infinity)=0, testladningen ændrer ikke kilden.",
+      "confirmed": true,
+      "variables": {
+        "coordinate": "r",
+        "regions": [
+          {
+            "lower": "0",
+            "upper": "a",
+            "density": "rho0*(1-r/a)",
+            "permittivity": "epsilon_0"
+          }
+        ]
+      },
+      "units": {
+        "r": "m",
+        "a": "m",
+        "rho0": "C/m^3",
+        "q": "C"
+      },
+      "positive": [
+        "r",
+        "a"
+      ],
+      "numbers": {
+        "r": "0.03333333333333333 m",
+        "a": "10 cm",
+        "rho0": "15 nC/m^3",
+        "q": "2 nC"
+      },
+      "assumptions": [
+        "spherical_symmetry",
+        "linear_isotropic_medium",
+        "vacuum_outside_regions",
+        "V_infinity_zero"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "sphere_regions",
+          "wanted": [
+            "E",
+            "V",
+            "Q",
+            "test_force",
+            "test_energy"
+          ],
+          "orientation_confirmed": true,
+          "operations": [
+            {
+              "kind": "transform",
+              "id": "test_force",
+              "result": "E",
+              "variable": "r",
+              "value": "q*E",
+              "unit": "N"
+            },
+            {
+              "kind": "transform",
+              "id": "test_energy",
+              "result": "V",
+              "variable": "r",
+              "value": "q*V",
+              "unit": "J"
+            }
+          ]
+        }
+      ]
+    },
+    "model": "sphere_regions"
+  },
+  {
+    "id": "EV6",
+    "domain": "EV",
+    "text": "Et glat elektrostatisk potentiale i vakuum er V(s,phi,z)=k*s**2*z. k=3000 V/m^3. Bestem E og rho ved s=4 cm, phi=0, z=6 cm i cylindrisk basis.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "Et glat elektrostatisk potentiale i vakuum er V(s,phi,z)=k*s**2*z. k=3000 V/m^3. Bestem E og rho ved s=4 cm, phi=0, z=6 cm i cylindrisk basis.",
+      "confirmed": true,
+      "variables": {
+        "V": "k*s**2*z",
+        "coordinates": [
+          "s",
+          "phi",
+          "z"
+        ],
+        "system": "cylindrical"
+      },
+      "units": {
+        "k": "V/m^3",
+        "s": "m",
+        "phi": "1",
+        "z": "m"
+      },
+      "positive": [
+        "s"
+      ],
+      "numbers": {
+        "k": "3000 V/m^3",
+        "s": "4 cm",
+        "phi": "0",
+        "z": "6 cm"
+      },
+      "assumptions": [
+        "electrostatic",
+        "vacuum_medium"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "potential_field",
+          "wanted": [
+            "E",
+            "rho"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "potential_field"
+  },
+  {
+    "id": "EV7",
+    "domain": "EV",
+    "text": "En jordet ledende kube med sidelængde 10 cm er centreret i origo. En ladning 1 nC ligger ved (0,0,20 cm) i vakuum. Bestem den lokale overfladeladning på hele kuben.",
+    "request": null,
+    "model": null
+  },
+  {
+    "id": "BA1",
+    "domain": "BA",
+    "text": "I et stationært magnetiseret materiale er M=(0,0,k*y), k=2400 A/m^2. Find Jb og Kb på fladen x=a med udadnormal +x ved y=b=2 cm. Brug kartesiske komponenter.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "I et stationært magnetiseret materiale er M=(0,0,k*y), k=2400 A/m^2. Find Jb og Kb på fladen x=a med udadnormal +x ved y=b=2 cm. Brug kartesiske komponenter.",
+      "confirmed": true,
+      "variables": {
+        "M": [
+          "0",
+          "0",
+          "k*y"
+        ],
+        "coordinates": [
+          "x",
+          "y",
+          "z"
+        ],
+        "system": "cartesian",
+        "normal": [
+          "1",
+          "0",
+          "0"
+        ],
+        "surface_coordinate": "y",
+        "surface_value": "b"
+      },
+      "units": {
+        "k": "A/m^2",
+        "x": "m",
+        "y": "m",
+        "z": "m",
+        "b": "m"
+      },
+      "positive": [],
+      "numbers": {
+        "k": "2400 A/m^2",
+        "b": "2 cm",
+        "x": "0 m",
+        "y": "2 cm",
+        "z": "0 m"
+      },
+      "assumptions": [
+        "magnetostatic"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "magnetization_currents",
+          "wanted": [
+            "J_bound",
+            "K_bound"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "magnetization_currents"
+  },
+  {
+    "id": "BA2",
+    "domain": "BA",
+    "text": "En kugle i vakuum, a=6 cm og centrum i origo, har uniform foreskrevet M=(m,2m,0), m=350 A/m. Ingen frie strømme eller påtrykte felter. Bestem indre B og ydre B i (0,0,3a).",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "En kugle i vakuum, a=6 cm og centrum i origo, har uniform foreskrevet M=(m,2m,0), m=350 A/m. Ingen frie strømme eller påtrykte felter. Bestem indre B og ydre B i (0,0,3a).",
+      "confirmed": true,
+      "variables": {
+        "M": [
+          "m",
+          "2*m",
+          "0"
+        ],
+        "radius": "a",
+        "center": [
+          "0",
+          "0",
+          "0"
+        ],
+        "point": [
+          "0",
+          "0",
+          "3*a"
+        ],
+        "normal": [
+          "0",
+          "0",
+          "1"
+        ]
+      },
+      "units": {
+        "m": "A/m",
+        "a": "m"
+      },
+      "positive": [
+        "a"
+      ],
+      "numbers": {
+        "m": "350 A/m",
+        "a": "6 cm"
+      },
+      "assumptions": [
+        "uniform_magnetization",
+        "spherical_body",
+        "no_free_current",
+        "no_applied_field",
+        "vacuum_exterior"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "magnetized_sphere",
+          "wanted": [
+            "B_inside",
+            "B",
+            "J_bound"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "magnetized_sphere"
+  },
+  {
+    "id": "BA3",
+    "domain": "BA",
+    "text": "En uendelig cylinder langs z har Jz(s)=J0*(1+s**2/a**2) for s<a og nul udenfor. J0=700 A/m^2, a=8 mm. Find B og total strøm ved s=2a i et ikke-magnetisk medium.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "En uendelig cylinder langs z har Jz(s)=J0*(1+s**2/a**2) for s<a og nul udenfor. J0=700 A/m^2, a=8 mm. Find B og total strøm ved s=2a i et ikke-magnetisk medium.",
+      "confirmed": true,
+      "variables": {
+        "coordinate": "s",
+        "regions": [
+          {
+            "lower": "0",
+            "upper": "a",
+            "density": "J0*(1+s**2/a**2)"
+          }
+        ]
+      },
+      "units": {
+        "J0": "A/m^2",
+        "s": "m",
+        "a": "m"
+      },
+      "positive": [
+        "s",
+        "a"
+      ],
+      "numbers": {
+        "J0": "700 A/m^2",
+        "s": "16 mm",
+        "a": "8 mm"
+      },
+      "assumptions": [
+        "infinite_cylindrical_symmetry",
+        "magnetostatic",
+        "nonmagnetic_medium"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "ampere_regions",
+          "wanted": [
+            "B",
+            "I"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "ampere_regions"
+  },
+  {
+    "id": "BA4",
+    "domain": "BA",
+    "text": "To uendelige z-ledninger ligger i (-a,0) og (a,0) med signerede strømme +I og -I. a=4 cm,I=3 A. Find B i (0,b,0), b=3 cm, i vakuum.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "To uendelige z-ledninger ligger i (-a,0) og (a,0) med signerede strømme +I og -I. a=4 cm,I=3 A. Find B i (0,b,0), b=3 cm, i vakuum.",
+      "confirmed": true,
+      "variables": {
+        "wires": [
+          {
+            "I": "I",
+            "x": "-a",
+            "y": "0"
+          },
+          {
+            "I": "-I",
+            "x": "a",
+            "y": "0"
+          }
+        ],
+        "point": [
+          "0",
+          "b",
+          "0"
+        ]
+      },
+      "units": {
+        "a": "m",
+        "b": "m",
+        "I": "A"
+      },
+      "positive": [
+        "a",
+        "b"
+      ],
+      "numbers": {
+        "a": "4 cm",
+        "b": "3 cm",
+        "I": "3 A"
+      },
+      "assumptions": [
+        "parallel_infinite_sources",
+        "magnetostatic",
+        "nonmagnetic_medium"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "magnetic_wires",
+          "wanted": [
+            "B"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "magnetic_wires"
+  },
+  {
+    "id": "BA5",
+    "domain": "BA",
+    "text": "En tynd kvartcirkel i xy-plan har radius a=7 cm og strøm I=2.4 A langs stigende u fra 0 til pi/2. Kildekurven er (a*cos(u),a*sin(u),0). Bestem dens bidrag til B i centrum i vakuum; returledningens bidrag er ikke medtaget.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "En tynd kvartcirkel i xy-plan har radius a=7 cm og strøm I=2.4 A langs stigende u fra 0 til pi/2. Kildekurven er (a*cos(u),a*sin(u),0). Bestem dens bidrag til B i centrum i vakuum; returledningens bidrag er ikke medtaget.",
+      "confirmed": true,
+      "variables": {
+        "source": [
+          "a*cos(u)",
+          "a*sin(u)",
+          "0"
+        ],
+        "parameter": "u",
+        "bounds": [
+          "0",
+          "pi/2"
+        ],
+        "I": "I",
+        "point": [
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "units": {
+        "a": "m",
+        "u": "1",
+        "I": "A"
+      },
+      "positive": [
+        "a"
+      ],
+      "numbers": {
+        "a": "7 cm",
+        "I": "2.4 A"
+      },
+      "assumptions": [
+        "magnetostatic",
+        "nonmagnetic_medium"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "biot_savart_curve",
+          "wanted": [
+            "B"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "biot_savart_curve"
+  },
+  {
+    "id": "BA6",
+    "domain": "BA",
+    "text": "Et ferromagnetisk toroidmateriale har hysterese og ukendt tidligere magnetiseringstilstand. Vindingstal 500, strøm 2 A og middellængde 30 cm. Bestem B entydigt uden yderligere materialedata.",
+    "request": null,
+    "model": null
+  },
+  {
+    "id": "DYN1",
+    "domain": "DYN",
+    "text": "En RL-kreds har R=8 ohm,L=60 mH og konstant voltage=-4 V fra t=0. I0=0.2 A. Bestem startafledte og første ikke-negative nulpassagetid.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "En RL-kreds har R=8 ohm,L=60 mH og konstant voltage=-4 V fra t=0. I0=0.2 A. Bestem startafledte og første ikke-negative nulpassagetid.",
+      "confirmed": true,
+      "variables": {
+        "time": "t",
+        "R": "R",
+        "L": "L",
+        "voltage": "voltage",
+        "I0": "I0"
+      },
+      "units": {
+        "t": "s",
+        "R": "ohm",
+        "L": "H",
+        "voltage": "V",
+        "I0": "A"
+      },
+      "positive": [
+        "R",
+        "L"
+      ],
+      "numbers": {
+        "R": "8 ohm",
+        "L": "60 mH",
+        "voltage": "-4 V",
+        "I0": "0.2 A"
+      },
+      "assumptions": [
+        "constant_coefficients"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "RL_step",
+          "wanted": [
+            "I",
+            "initial_slope",
+            "zero_time"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "RL_step"
+  },
+  {
+    "id": "DYN2",
+    "domain": "DYN",
+    "text": "En RL-kreds har R=6 ohm,L=120 mH,I(0)=0 og V(t)=v0*exp(-R*t/L),v0=9 V. Find I(t), den stationære tid og strømmen ved t=30 ms.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "En RL-kreds har R=6 ohm,L=120 mH,I(0)=0 og V(t)=v0*exp(-R*t/L),v0=9 V. Find I(t), den stationære tid og strømmen ved t=30 ms.",
+      "confirmed": true,
+      "variables": {
+        "time": "t",
+        "R": "R",
+        "L": "L",
+        "voltage": "v0*exp(-R*t/L)",
+        "I0": "0"
+      },
+      "units": {
+        "t": "s",
+        "R": "ohm",
+        "L": "H",
+        "v0": "V"
+      },
+      "positive": [
+        "R",
+        "L",
+        "v0"
+      ],
+      "numbers": {
+        "R": "6 ohm",
+        "L": "120 mH",
+        "v0": "9 V",
+        "t": "30 ms"
+      },
+      "assumptions": [
+        "constant_coefficients"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "RL_driven",
+          "wanted": [
+            "I",
+            "extremum_times"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "RL_driven"
+  },
+  {
+    "id": "DYN3",
+    "domain": "DYN",
+    "text": "En RC-kreds har R=20 ohm,C=2 mF,Q(0)=0. Spændingen er V(t)=beta*t, beta=5 V/s. Find Q og den positivt opladende strøm I ved t=80 ms.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "En RC-kreds har R=20 ohm,C=2 mF,Q(0)=0. Spændingen er V(t)=beta*t, beta=5 V/s. Find Q og den positivt opladende strøm I ved t=80 ms.",
+      "confirmed": true,
+      "variables": {
+        "time": "t",
+        "R": "R",
+        "C": "C",
+        "voltage": "beta*t",
+        "Q0": "0"
+      },
+      "units": {
+        "t": "s",
+        "R": "ohm",
+        "C": "F",
+        "beta": "V/s"
+      },
+      "positive": [
+        "R",
+        "C"
+      ],
+      "numbers": {
+        "R": "20 ohm",
+        "C": "2 mF",
+        "beta": "5 V/s",
+        "t": "80 ms"
+      },
+      "assumptions": [
+        "constant_coefficients"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "RC_driven",
+          "wanted": [
+            "Q",
+            "I",
+            "I_initial"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "RC_driven"
+  },
+  {
+    "id": "DYN4",
+    "domain": "DYN",
+    "text": "En spole med N=5 og R=3 ohm har homogent normalfelt B(t)=B0*(1+t/T)**2 og positivt areal A(t)=A0/(1+t/T). B0=0.12 T,A0=8 cm^2,T=0.6 s. Selvinduktans negligeres. Find emf og signeret strøm ved t=0.3 s; normal +z og positiv omløbsretning mod uret set fra +z.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "En spole med N=5 og R=3 ohm har homogent normalfelt B(t)=B0*(1+t/T)**2 og positivt areal A(t)=A0/(1+t/T). B0=0.12 T,A0=8 cm^2,T=0.6 s. Selvinduktans negligeres. Find emf og signeret strøm ved t=0.3 s; normal +z og positiv omløbsretning mod uret set fra +z.",
+      "confirmed": true,
+      "variables": {
+        "time": "t",
+        "N": "N",
+        "B_normal": "B0*(1+t/T)**2",
+        "area": "A0/(1+t/T)",
+        "R": "R"
+      },
+      "units": {
+        "t": "s",
+        "N": "1",
+        "B0": "T",
+        "T": "s",
+        "A0": "m^2",
+        "R": "ohm"
+      },
+      "positive": [
+        "N",
+        "T",
+        "A0",
+        "R"
+      ],
+      "numbers": {
+        "N": "5",
+        "B0": "0.12 T",
+        "T": "0.6 s",
+        "A0": "8 cm^2",
+        "R": "3 ohm",
+        "t": "0.3 s"
+      },
+      "assumptions": [
+        "uniform_normal_B",
+        "negligible_self_inductance",
+        "positive_area_on_interval"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "faraday_uniform",
+          "wanted": [
+            "EMF",
+            "I"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "faraday_uniform"
+  },
+  {
+    "id": "DYN5",
+    "domain": "DYN",
+    "text": "En en-vindingskreds har ekstern flux Phi(t)=-alpha*t,alpha=0.4 V. R=4 ohm,L=200 mH,I(0)=0. Find den induktive strøm, Joule-effekt og samlet varme til T=0.1 s. Brug emf=-dPhi/dt.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "En en-vindingskreds har ekstern flux Phi(t)=-alpha*t,alpha=0.4 V. R=4 ohm,L=200 mH,I(0)=0. Find den induktive strøm, Joule-effekt og samlet varme til T=0.1 s. Brug emf=-dPhi/dt.",
+      "confirmed": true,
+      "variables": {
+        "time": "t",
+        "N": "1",
+        "flux": "-alpha*t"
+      },
+      "units": {
+        "t": "s",
+        "alpha": "V",
+        "R": "ohm",
+        "L": "H",
+        "T": "s"
+      },
+      "positive": [
+        "R",
+        "L",
+        "T"
+      ],
+      "numbers": {
+        "alpha": "0.4 V",
+        "R": "4 ohm",
+        "L": "200 mH",
+        "T": "0.1 s",
+        "t": "0.1 s"
+      },
+      "assumptions": [],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "faraday_flux",
+          "wanted": [
+            "EMF"
+          ],
+          "orientation_confirmed": true,
+          "operations": [
+            {
+              "kind": "linear_ode",
+              "id": "coil_current",
+              "result": "EMF",
+              "variable": "t",
+              "coefficient": "L",
+              "resistance": "R",
+              "initial": "0",
+              "unit": "A"
+            },
+            {
+              "kind": "transform",
+              "id": "joule_power",
+              "result": "coil_current",
+              "variable": "t",
+              "value": "coil_current**2*R",
+              "unit": "W"
+            },
+            {
+              "kind": "integrate",
+              "id": "heat",
+              "result": "joule_power",
+              "variable": "t",
+              "lower": "0",
+              "upper": "T"
+            }
+          ]
+        }
+      ]
+    },
+    "model": "faraday_flux"
+  },
+  {
+    "id": "DYN6",
+    "domain": "DYN",
+    "text": "En radial ledende stang fra origo til radius a=15 cm roterer med omega=12 1/s mod uret i homogent B0=0.2 T langs +z. I det aktuelle øjeblik er kurven (u,0,0), hastighed (0,omega*u,0). Find bevægelses-emf orienteret fra centrum til spids. Returledningen er stationær, selvinduktans negligeres.",
+    "request": {
+      "schema_version": "assisted-1.0",
+      "text": "En radial ledende stang fra origo til radius a=15 cm roterer med omega=12 1/s mod uret i homogent B0=0.2 T langs +z. I det aktuelle øjeblik er kurven (u,0,0), hastighed (0,omega*u,0). Find bevægelses-emf orienteret fra centrum til spids. Returledningen er stationær, selvinduktans negligeres.",
+      "confirmed": true,
+      "variables": {
+        "time": "t",
+        "source": [
+          "u",
+          "0",
+          "0"
+        ],
+        "parameter": "u",
+        "bounds": [
+          "0",
+          "a"
+        ],
+        "v": [
+          "0",
+          "omega*u",
+          "0"
+        ],
+        "B": [
+          "0",
+          "0",
+          "B0"
+        ]
+      },
+      "units": {
+        "t": "s",
+        "u": "m",
+        "a": "m",
+        "omega": "1/s",
+        "B0": "T"
+      },
+      "positive": [
+        "a"
+      ],
+      "numbers": {
+        "a": "15 cm",
+        "omega": "12 1/s",
+        "B0": "0.2 T"
+      },
+      "assumptions": [
+        "stationary_return_path",
+        "negligible_self_inductance"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "motional_curve",
+          "wanted": [
+            "EMF"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    },
+    "model": "motional_curve"
+  },
+  {
+    "id": "DYN7",
+    "domain": "DYN",
+    "text": "Et serielt RLC-kredsløb uden kilde har R=2 ohm,L=1 H,C=0.01 F,Q(0)=1 C og I(0)=0. Find den underdæmpede Q(t) og strømmen for alle t>=0.",
+    "request": null,
+    "model": null
+  }
+]

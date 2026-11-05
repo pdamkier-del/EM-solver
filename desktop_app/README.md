@@ -1,7 +1,7 @@
 # Samlet desktopversion – 5. november 2026
 
 **Aktuelle instruktioner: [WINDOWS_INTEGRATED.md](WINDOWS_INTEGRATED.md).**
-Brug Python 3.12 x64, kør `INSTALL_WINDOWS.bat` én gang og derefter
+Brug Python 3.13 x64, kør `INSTALL_WINDOWS.bat` én gang og derefter
 `START_WINDOWS.bat`. Backend følger med. Startfilen installerer intet.
 De ældre prototypeinstruktioner nedenfor er bevaret som historik og beskriver
 ikke den nye installationsprocedure.

@@ -1,0 +1,794 @@
+{
+  "id": "DYN3",
+  "domain": "DYN",
+  "model": "RC_driven",
+  "automatic_response": {
+    "schema_version": "1.0",
+    "status": "not_solved",
+    "interpretation": {
+      "model": {
+        "objects": [
+          {
+            "id": "body",
+            "geometry": "RC",
+            "extent": null,
+            "parameters": {},
+            "position": null,
+            "material": "unspecified"
+          }
+        ],
+        "sources": [
+          {
+            "id": "source_V",
+            "kind": "V",
+            "formula": "beta*t",
+            "arguments": [
+              "t"
+            ],
+            "basis": null,
+            "evidence": "V(t)=beta*t"
+          }
+        ],
+        "relationships": [
+          {
+            "subject": "source_V",
+            "relation": "has_support",
+            "object": "body",
+            "regions": "model dependent"
+          }
+        ],
+        "coordinates": [],
+        "orientation": {},
+        "boundary_conditions": {},
+        "initial_conditions": {},
+        "assumptions": [],
+        "wanted": [
+          "Q",
+          "I"
+        ],
+        "units": {
+          "R": "kilogram * meter ** 2 / ampere ** 2 / second ** 3",
+          "C": "ampere ** 2 * second ** 4 / kilogram / meter ** 2",
+          "beta": "kilogram * meter ** 2 / ampere / second ** 4",
+          "t": "second",
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m"
+        },
+        "values": {
+          "R": "20 ohm",
+          "C": "2 mF",
+          "beta": "5 V/s",
+          "t": "80 ms"
+        },
+        "methods": [
+          {
+            "name": "RC",
+            "status": "RED"
+          }
+        ],
+        "dependencies": {}
+      },
+      "fields": {
+        "geometry": {
+          "value": "RC",
+          "status": "GREEN",
+          "evidence": [
+            "RC"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "wanted": {
+          "value": [
+            "Q",
+            "I"
+          ],
+          "status": "GREEN",
+          "evidence": [
+            " Q og den positivt opladende strøm I ved t=80 ms."
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source": {
+          "value": "V",
+          "status": "GREEN",
+          "evidence": [
+            "V(t)=beta*t"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source_formula": {
+          "value": "beta*t",
+          "status": "GREEN",
+          "evidence": [
+            "V(t)=beta*t"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "orientation": {
+          "value": {},
+          "status": "GREEN",
+          "evidence": [],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "regions": {
+          "value": "model dependent",
+          "status": "GREEN",
+          "evidence": [
+            "Ikke en radial volumen-/strømtæthed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "domain": {
+          "value": "DYN",
+          "status": "GREEN",
+          "evidence": [],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "method": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "RC-kredsløbet kræver begyndelsesladning, kobling og komponentværdier. Brug Avanceret / Manuel; automatisk kompilering af denne profil er endnu ikke understøttet.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "time_model": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Tidsafhængige kilder/potentialer kræver yderligere Maxwell-relationer. En statisk direkte metode vælges ikke automatisk.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "units": {
+          "value": {
+            "R": "kilogram * meter ** 2 / ampere ** 2 / second ** 3",
+            "C": "ampere ** 2 * second ** 4 / kilogram / meter ** 2",
+            "beta": "kilogram * meter ** 2 / ampere / second ** 4",
+            "t": "second",
+            "epsilon_0": "F/m",
+            "mu_0": "H/m",
+            "eps0": "F/m",
+            "mu0": "H/m"
+          },
+          "status": "GREEN",
+          "evidence": [
+            "Angivne enheder og dimensionelle ligninger"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "material": {
+          "value": "unspecified",
+          "status": "GREEN",
+          "evidence": [
+            "Materialeord i teksten"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "symmetry": {
+          "value": "not established",
+          "status": "GREEN",
+          "evidence": [
+            "Geometri, udstrækning og funktionens afhængighed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        }
+      },
+      "ready": false
+    },
+    "solution": null,
+    "missing": [
+      {
+        "field": "method",
+        "status": "RED",
+        "message": "RC-kredsløbet kræver begyndelsesladning, kobling og komponentværdier. Brug Avanceret / Manuel; automatisk kompilering af denne profil er endnu ikke understøttet.",
+        "options": []
+      },
+      {
+        "field": "time_model",
+        "status": "RED",
+        "message": "Tidsafhængige kilder/potentialer kræver yderligere Maxwell-relationer. En statisk direkte metode vælges ikke automatisk.",
+        "options": []
+      }
+    ],
+    "errors": [],
+    "desktop_user_corrections": {}
+  },
+  "automatic_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Kan ikke løses med de givne oplysninger",
+    "prompt": "En RC-kreds har R=20 ohm,C=2 mF,Q(0)=0. Spændingen er V(t)=beta*t, beta=5 V/s. Find Q og den positivt opladende strøm I ved t=80 ms.",
+    "status": "unsolved",
+    "result": {},
+    "steps": [],
+    "interpretation": {
+      "method": "Ikke afgjort",
+      "geometry": "Se opgavefortolkningen"
+    },
+    "warnings": [
+      "RC-kredsløbet kræver begyndelsesladning, kobling og komponentværdier. Brug Avanceret / Manuel; automatisk kompilering af denne profil er endnu ikke understøttet.",
+      "Tidsafhængige kilder/potentialer kræver yderligere Maxwell-relationer. En statisk direkte metode vælges ikke automatisk."
+    ],
+    "backend_status": "not_solved",
+    "backend_schema": "1.0",
+    "audit": "# Kontrol og gyldighed\n\nBackend rapporterede 0 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\nIngen individuelle kontroller er rapporteret i svaret.\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "automatic_seconds": 0.764,
+  "submitted_request": {
+    "schema_version": "assisted-1.0",
+    "text": "En RC-kreds har R=20 ohm,C=2 mF,Q(0)=0. Spændingen er V(t)=beta*t, beta=5 V/s. Find Q og den positivt opladende strøm I ved t=80 ms.",
+    "confirmed": true,
+    "variables": {
+      "time": "t",
+      "R": "R",
+      "C": "C",
+      "voltage": "beta*t",
+      "Q0": "0"
+    },
+    "units": {
+      "t": "s",
+      "R": "ohm",
+      "C": "F",
+      "beta": "V/s"
+    },
+    "numbers": {
+      "t": "80 ms",
+      "R": "20 ohm",
+      "C": "2 mF",
+      "beta": "5 V/s"
+    },
+    "positive": [
+      "R",
+      "C"
+    ],
+    "assumptions": [
+      "constant_coefficients"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "RC_driven",
+        "wanted": [
+          "Q",
+          "I",
+          "I_initial"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  },
+  "extra_result_unit_rows": [],
+  "assistance_actions": {
+    "prompt": 1,
+    "open_model": 1,
+    "model_selection": 1,
+    "scalar_fields": 5,
+    "table_cells": 0,
+    "scan_symbols": 1,
+    "unit_entries": 4,
+    "numeric_entries": 4,
+    "positive_flags": 2,
+    "wanted": 1,
+    "assumption_checks": 1,
+    "orientation": 1,
+    "confirmation": 1,
+    "solve": 1,
+    "operation_cells": 0
+  },
+  "assistance_action_count": 24,
+  "assisted_response": {
+    "schema_version": "assisted-1.0",
+    "status": "calculated_under_confirmed_model",
+    "questions": [],
+    "errors": [],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "RC_driven",
+        "status": "calculated_under_confirmed_model",
+        "solution": {
+          "method": "Lineær kredsløbsdifferentialligning",
+          "reasoning": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+          "equations_latex": [
+            "R\\dot Q+Q/C=V(t)",
+            "I=\\dot Q"
+          ],
+          "steps": [
+            {
+              "id": "step-1e6206edd68e4b05918f-0",
+              "text": "Generelt drevet RC: vælg den eksplicitte opladningsorientering",
+              "title": "Generelt drevet RC: vælg den eksplicitte opladningsorientering",
+              "latex": "C \\beta - C \\beta e^{- \\frac{t}{C R}}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Lineær kredsløbsdifferentialligning",
+              "method_context_id": "method-636f77554c8785ad2b02",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-61589eca227169a9be8b-0",
+              "text": "Den lineære differentialligning",
+              "title": "Den lineære differentialligning",
+              "latex": "R \\frac{d}{d t} Q{\\left(t \\right)} + \\frac{Q{\\left(t \\right)}}{C} = \\beta t",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Lineær kredsløbsdifferentialligning",
+              "method_context_id": "method-636f77554c8785ad2b02",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-f6912b857ac9f0c84801-0",
+              "text": "Løs med begyndelsesbetingelsen",
+              "title": "Løs med begyndelsesbetingelsen",
+              "latex": "Q{\\left(t \\right)} = - C^{2} R \\beta + C^{2} R \\beta e^{- \\frac{t}{C R}} + C \\beta t",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Lineær kredsløbsdifferentialligning",
+              "method_context_id": "method-636f77554c8785ad2b02",
+              "intermediate_latex": [],
+              "assumptions": [
+                "constant_coefficients"
+              ],
+              "validity": [],
+              "check_ids": []
+            }
+          ],
+          "results": {
+            "Q": {
+              "expression": "-C**2*R*beta + C**2*R*beta*exp(-t/(C*R)) + C*beta*t",
+              "latex": "- C^{2} R \\beta + C^{2} R \\beta e^{- \\frac{t}{C R}} + C \\beta t",
+              "unit": "C"
+            },
+            "I": {
+              "expression": "C*beta - C*beta*exp(-t/(C*R))",
+              "latex": "C \\beta - C \\beta e^{- \\frac{t}{C R}}",
+              "unit": "A"
+            },
+            "I_charge": {
+              "expression": "C*beta - C*beta*exp(-t/(C*R))",
+              "latex": "C \\beta - C \\beta e^{- \\frac{t}{C R}}",
+              "unit": "A"
+            },
+            "tau": {
+              "expression": "C*R",
+              "latex": "C R",
+              "unit": "s"
+            },
+            "I_initial": {
+              "expression": "0",
+              "latex": "0",
+              "unit": "A"
+            },
+            "U_initial": {
+              "expression": "0",
+              "latex": "0",
+              "unit": "J"
+            },
+            "I_discharge": {
+              "expression": "-C*beta + C*beta*exp(-t/(C*R))",
+              "latex": "- C \\beta + C \\beta e^{- \\frac{t}{C R}}",
+              "unit": "A"
+            }
+          },
+          "numerical": {
+            "Q": {
+              "value": "0.000454134113294645",
+              "latex": "0.000454134113294645",
+              "unit": "C"
+            },
+            "I": {
+              "value": "0.00864664716763387",
+              "latex": "0.00864664716763387",
+              "unit": "A"
+            },
+            "I_charge": {
+              "value": "0.00864664716763387",
+              "latex": "0.00864664716763387",
+              "unit": "A"
+            },
+            "tau": {
+              "value": "0.0400000000000000",
+              "latex": "0.04",
+              "unit": "s"
+            },
+            "I_initial": {
+              "value": "0",
+              "latex": "0",
+              "unit": "A"
+            },
+            "U_initial": {
+              "value": "0",
+              "latex": "0",
+              "unit": "J"
+            },
+            "I_discharge": {
+              "value": "-0.00864664716763387",
+              "latex": "-0.00864664716763387",
+              "unit": "A"
+            }
+          },
+          "checks": [
+            {
+              "id": "check-7984e51449b3d48fd829",
+              "name": "RC-ligning",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-a65677a29b9d89877bf5",
+              "name": "RC-begyndelsesbetingelse",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-7793be57dcab8eebd872",
+              "name": "Dimension: Q",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "C",
+              "step_ids": []
+            },
+            {
+              "id": "check-8de96589aec781d06477",
+              "name": "Dimension: I",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-243a936d9145bb5e4b66",
+              "name": "Dimension: I_charge",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-c867842205d5d7ce542a",
+              "name": "Dimension: tau",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-62fe84cd44c132febd5f",
+              "name": "Dimension: I_initial",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-3a7ea1424517a970e50e",
+              "name": "Dimension: U_initial",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "J",
+              "step_ids": []
+            },
+            {
+              "id": "check-28c92d1bdb217d532d4b",
+              "name": "Dimension: I_discharge",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A",
+              "step_ids": []
+            },
+            {
+              "id": "check-73d41c0594eb02e57b37",
+              "name": "Inputdimension: time",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "s",
+              "step_ids": []
+            },
+            {
+              "id": "check-46501789f395e5d62165",
+              "name": "Inputdimension: R",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "ohm",
+              "step_ids": []
+            },
+            {
+              "id": "check-52f0e1ddedd1cc94c04a",
+              "name": "Inputdimension: C",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "F",
+              "step_ids": []
+            },
+            {
+              "id": "check-02c783a4298058669071",
+              "name": "Inputdimension: Q0",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "C",
+              "step_ids": []
+            },
+            {
+              "id": "check-8e2611be5f025d13412b",
+              "name": "Inputdimension: voltage",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "V",
+              "step_ids": []
+            }
+          ],
+          "direction": "Dette generelle RC-kort bruger positiv opladningsstrøm I=dQ/dt. I_discharge=-I er den modsatte orientering.",
+          "warnings": [],
+          "presentation_version": "1.0",
+          "latex_profile": "EM1-Math-1",
+          "method_contexts": {
+            "method-636f77554c8785ad2b02": {
+              "method_id": "rc_transient",
+              "method": "Lineær kredsløbsdifferentialligning",
+              "reasoning": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+              "equations": [
+                "R\\dot Q+Q/C=V(t)",
+                "I=\\dot Q"
+              ],
+              "assumptions": [
+                "constant_coefficients"
+              ]
+            }
+          },
+          "views": {
+            "result": {
+              "wanted": [
+                "Q",
+                "I",
+                "I_initial"
+              ],
+              "results": {
+                "Q": {
+                  "expression": "-C**2*R*beta + C**2*R*beta*exp(-t/(C*R)) + C*beta*t",
+                  "latex": "- C^{2} R \\beta + C^{2} R \\beta e^{- \\frac{t}{C R}} + C \\beta t",
+                  "unit": "C"
+                },
+                "I": {
+                  "expression": "C*beta - C*beta*exp(-t/(C*R))",
+                  "latex": "C \\beta - C \\beta e^{- \\frac{t}{C R}}",
+                  "unit": "A"
+                },
+                "I_initial": {
+                  "expression": "0",
+                  "latex": "0",
+                  "unit": "A"
+                }
+              },
+              "numerical": {
+                "Q": {
+                  "value": "0.000454134113294645",
+                  "latex": "0.000454134113294645",
+                  "unit": "C"
+                },
+                "I": {
+                  "value": "0.00864664716763387",
+                  "latex": "0.00864664716763387",
+                  "unit": "A"
+                },
+                "I_initial": {
+                  "value": "0",
+                  "latex": "0",
+                  "unit": "A"
+                }
+              },
+              "direction": "Dette generelle RC-kort bruger positiv opladningsstrøm I=dQ/dt. I_discharge=-I er den modsatte orientering."
+            },
+            "derivation": {
+              "equations_latex": [
+                "R\\dot Q+Q/C=V(t)",
+                "I=\\dot Q"
+              ],
+              "step_ids": [
+                "step-1e6206edd68e4b05918f-0",
+                "step-61589eca227169a9be8b-0",
+                "step-f6912b857ac9f0c84801-0"
+              ]
+            },
+            "explanation": {
+              "step_ids": [
+                "step-1e6206edd68e4b05918f-0",
+                "step-61589eca227169a9be8b-0",
+                "step-f6912b857ac9f0c84801-0"
+              ],
+              "method_context_ids": [
+                "method-636f77554c8785ad2b02"
+              ],
+              "global_check_ids": [
+                "check-7984e51449b3d48fd829",
+                "check-a65677a29b9d89877bf5",
+                "check-7793be57dcab8eebd872",
+                "check-8de96589aec781d06477",
+                "check-243a936d9145bb5e4b66",
+                "check-c867842205d5d7ce542a",
+                "check-62fe84cd44c132febd5f",
+                "check-3a7ea1424517a970e50e",
+                "check-28c92d1bdb217d532d4b",
+                "check-73d41c0594eb02e57b37",
+                "check-46501789f395e5d62165",
+                "check-52f0e1ddedd1cc94c04a",
+                "check-02c783a4298058669071",
+                "check-8e2611be5f025d13412b"
+              ],
+              "warnings": []
+            }
+          }
+        },
+        "errors": [],
+        "verification": {
+          "interpretation": "user_confirmed_not_machine_verified",
+          "dimensions": "passed",
+          "physical_checks": [
+            "RC-ligning",
+            "RC-begyndelsesbetingelse",
+            "Inputdimension: time",
+            "Inputdimension: R",
+            "Inputdimension: C",
+            "Inputdimension: Q0",
+            "Inputdimension: voltage"
+          ],
+          "completeness": "requested_results_present",
+          "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+        }
+      }
+    ],
+    "interpretation_status": "user_confirmed",
+    "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+    "confirmed_model": {
+      "schema_version": "assisted-1.0",
+      "text": "En RC-kreds har R=20 ohm,C=2 mF,Q(0)=0. Spændingen er V(t)=beta*t, beta=5 V/s. Find Q og den positivt opladende strøm I ved t=80 ms.",
+      "confirmed": true,
+      "variables": {
+        "time": "t",
+        "R": "R",
+        "C": "C",
+        "voltage": "beta*t",
+        "Q0": "0"
+      },
+      "units": {
+        "t": "s",
+        "R": "ohm",
+        "C": "F",
+        "beta": "V/s"
+      },
+      "numbers": {
+        "t": "80 ms",
+        "R": "20 ohm",
+        "C": "2 mF",
+        "beta": "5 V/s"
+      },
+      "positive": [
+        "R",
+        "C"
+      ],
+      "assumptions": [
+        "constant_coefficients"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "RC_driven",
+          "wanted": [
+            "Q",
+            "I",
+            "I_initial"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    }
+  },
+  "assisted_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Beregnet under brugerbekræftet model",
+    "prompt": "En RC-kreds har R=20 ohm,C=2 mF,Q(0)=0. Spændingen er V(t)=beta*t, beta=5 V/s. Find Q og den positivt opladende strøm I ved t=80 ms.",
+    "status": "assumptions",
+    "result": {
+      "symbolic_latex": "Q = - C^{2} R \\beta + C^{2} R \\beta e^{- \\frac{t}{C R}} + C \\beta t",
+      "extra_latex": [
+        "I = C \\beta - C \\beta e^{- \\frac{t}{C R}}",
+        "I_initial = 0"
+      ],
+      "numeric_text": "I: 0.00864664716763387; I_initial: 0; Q: 0.000454134113294645",
+      "units": "Q: C; I: A; I_initial: A"
+    },
+    "steps": [
+      {
+        "title": "Grundligning 1",
+        "latex": "R\\dot Q+Q/C=V(t)",
+        "reason": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten."
+      },
+      {
+        "title": "Grundligning 2",
+        "latex": "I=\\dot Q",
+        "reason": ""
+      },
+      {
+        "id": "step-1e6206edd68e4b05918f-0",
+        "title": "Generelt drevet RC: vælg den eksplicitte opladningsorientering",
+        "reason": "Anvendt lov: Lineær kredsløbsdifferentialligning. Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "latex": "\\[C \\beta - C \\beta e^{- \\frac{t}{C R}}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-61589eca227169a9be8b-0",
+        "title": "Den lineære differentialligning",
+        "reason": "Anvendt lov: Lineær kredsløbsdifferentialligning. Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "latex": "\\[R \\frac{d}{d t} Q{\\left(t \\right)} + \\frac{Q{\\left(t \\right)}}{C} = \\beta t\\]",
+        "check": ""
+      },
+      {
+        "id": "step-f6912b857ac9f0c84801-0",
+        "title": "Løs med begyndelsesbetingelsen",
+        "reason": "Anvendt lov: Lineær kredsløbsdifferentialligning. Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "latex": "\\[Q{\\left(t \\right)} = - C^{2} R \\beta + C^{2} R \\beta e^{- \\frac{t}{C R}} + C \\beta t\\]",
+        "check": ""
+      }
+    ],
+    "interpretation": {
+      "method": "Lineær kredsløbsdifferentialligning",
+      "geometry": "RC_driven"
+    },
+    "warnings": [
+      "Retning: Dette generelle RC-kort bruger positiv opladningsstrøm I=dQ/dt. I_discharge=-I er den modsatte orientering.",
+      "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+    ],
+    "backend_status": "calculated_under_confirmed_model",
+    "backend_schema": "assisted-1.0",
+    "audit": "# Brugerbekræftede oplysninger\n\nC = C\n\nQ0 = 0\n\nR = R\n\ntime = t\n\nvoltage = beta*t\n\nC = 2 mF\n\nR = 20 ohm\n\nbeta = 5 V/s\n\nt = 80 ms\n\nEnhed for C: F\n\nEnhed for R: ohm\n\nEnhed for beta: V/s\n\nEnhed for t: s\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 14 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- RC-ligning\n\n- RC-begyndelsesbetingelse\n\n- Dimension: Q — C\n\n- Dimension: I — A\n\n- Dimension: I_charge — A\n\n- Dimension: tau — s\n\n- Dimension: I_initial — A\n\n- Dimension: U_initial — J\n\n- Dimension: I_discharge — A\n\n- Inputdimension: time — s\n\n- Inputdimension: R — ohm\n\n- Inputdimension: C — F\n\n- Inputdimension: Q0 — C\n\n- Inputdimension: voltage — V\n\n## Forudsætninger og gyldighed\n\n- constant_coefficients\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "assisted_seconds": 2.407,
+  "math_display_errors": []
+}
