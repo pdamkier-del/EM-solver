@@ -8,11 +8,21 @@ kræves under eksamen. Installationen kan kræve internet; appen gør ikke.
 Se [Windows-installation og offline-forberedelse](docs/WINDOWS_INSTALLATION.md)
 og [den korte eksamens-runbook](docs/EXAM_UI_RUNBOOK.md).
 
-Forsiden **Ny opgave** bruger et redigerbart bekræftelsespanel. **Manuel
-solver** giver samme fysikmotor gennem geometri-formularer. **Historiske
-opgaver** og **Hjælp** er de øvrige to navigationspunkter. Eksamenstilstand
-er standard; Forklaring er sekundær. Lokal autosave og tekst-/LaTeX-eksport
-er inkluderet. Kopiering sker med kopi-ikonet i tekstfelterne.
+Denne branch er **Parser Preview**. Den frosne eksamensversion er stadig tagget
+`exam-ready-2026-11-05` på commit `2f839c9`; dens ZIP ændres ikke.
+Se [måling, begrænsninger og reproducerbare tests](reports/parser/status.md).
+
+Forsiden **Ny opgave** bruger nu rå dansk tekst: **Analysér opgave** →
+kontrollér kun uafklarede oplysninger → vælg symbolsk/numerisk visning →
+**Løs opgave**. Sammenfoldet fortolkning kan gennemgås og rettes.
+**Avanceret / Manuel** indeholder den oprindelige geometri-formular,
+specialiserede metoder og **Tekst med fuld bekræftelse** som fallback.
+**Historiske opgaver** og **Hjælp** er de øvrige navigationspunkter.
+Eksamenstilstand, separat lokal tekst-autosave og tekst-/LaTeX-eksport er bevaret.
+
+Parseren afstår, når den ikke sikkert kan bestemme model og data.
+Den er stadig under udvikling; historiske presets og manuelt metodevalg
+dokumenterer ikke autonom forståelse af nye tekster.
 
 Windows-batchfilerne kræver lokal validering på eksamenscomputeren;
 udviklingsmiljøet her er Linux. Se dokumentationen for den præcise grænse.

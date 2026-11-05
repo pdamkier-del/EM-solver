@@ -1,0 +1,1289 @@
+{
+  "EV01": {
+    "fields": {
+      "geometry": "sphere",
+      "source": "rho",
+      "wanted": [
+        "E"
+      ],
+      "orientation": "radial",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "R",
+          "density": "rho0*(1-r/R)"
+        },
+        {
+          "lower": "R",
+          "upper": "oo",
+          "density": "0"
+        }
+      ]
+    },
+    "full_review": true,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "source_expression": "rho0*(1-r/R)"
+  },
+  "EV02": {
+    "fields": {
+      "geometry": "sphere",
+      "source": "rho",
+      "wanted": [
+        "V"
+      ],
+      "orientation": "radial"
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "EV03": {
+    "fields": {
+      "geometry": "spherical_shell",
+      "source": "rho",
+      "wanted": [
+        "E"
+      ],
+      "orientation": "radial",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "a",
+          "density": "0"
+        },
+        {
+          "lower": "a",
+          "upper": "b",
+          "density": "k/r**2"
+        },
+        {
+          "lower": "b",
+          "upper": "oo",
+          "density": "0"
+        }
+      ]
+    },
+    "full_review": true,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "source_expression": "k/r**2"
+  },
+  "EV04": {
+    "fields": {
+      "geometry": "cylinder",
+      "source": "rho",
+      "wanted": [
+        "E"
+      ],
+      "orientation": "radial",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "R",
+          "density": "rho0*(1-s/R)"
+        },
+        {
+          "lower": "R",
+          "upper": "oo",
+          "density": "0"
+        }
+      ]
+    },
+    "full_review": true,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "source_expression": "rho0*(1-s/R)"
+  },
+  "EV05": {
+    "fields": {
+      "geometry": "hollow_cylinder",
+      "source": "rho",
+      "wanted": [
+        "E"
+      ],
+      "orientation": "radial",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "a",
+          "density": "0"
+        },
+        {
+          "lower": "a",
+          "upper": "b",
+          "density": "k*s"
+        },
+        {
+          "lower": "b",
+          "upper": "oo",
+          "density": "0"
+        }
+      ]
+    },
+    "full_review": true,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "source_expression": "k*s"
+  },
+  "EV06": {
+    "fields": {
+      "geometry": "slab",
+      "source": "rho",
+      "wanted": [
+        "E"
+      ],
+      "orientation": "normal / odd mirror field",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "a",
+          "density": "rho0*z**2"
+        },
+        {
+          "lower": "a",
+          "upper": "oo",
+          "density": "0"
+        }
+      ]
+    },
+    "full_review": true,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "source_expression": "rho0*z**2"
+  },
+  "EV07": {
+    "fields": {
+      "geometry": "field",
+      "source": "V",
+      "wanted": [
+        "E",
+        "rho"
+      ],
+      "orientation": "cartesian component basis"
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "corrections": {
+      "units": "V0:V; L:m"
+    },
+    "correction_note": "Explicit additional user information/conventions for assisted evaluation; never autonomous."
+  },
+  "EV08": {
+    "fields": {
+      "geometry": "field",
+      "source": "V",
+      "wanted": [
+        "E",
+        "rho"
+      ],
+      "orientation": "cartesian component basis"
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "corrections": {
+      "units": "V0:V; L:m"
+    },
+    "correction_note": "Explicit additional user information/conventions for assisted evaluation; never autonomous."
+  },
+  "EV09": {
+    "fields": {
+      "geometry": "line",
+      "source": "lambda",
+      "wanted": [
+        "V",
+        "E"
+      ],
+      "orientation": "line along x"
+    },
+    "full_review": true,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "source_expression": "lam",
+    "facts": {
+      "axis": "x",
+      "bounds": [
+        "-L",
+        "L"
+      ],
+      "point": [
+        "0",
+        "a",
+        "0"
+      ]
+    }
+  },
+  "EV10": {
+    "fields": {
+      "geometry": "arc",
+      "source": "lambda",
+      "wanted": [
+        "V",
+        "E"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "EV11": {
+    "fields": {
+      "geometry": "ring",
+      "source": "lambda",
+      "wanted": [
+        "V",
+        "E"
+      ],
+      "orientation": {
+        "plane": "xy"
+      }
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "corrections": {
+      "radius": "R"
+    },
+    "correction_note": "Explicit additional user information/conventions for assisted evaluation; never autonomous."
+  },
+  "EV12": {
+    "fields": {
+      "geometry": "capacitor",
+      "source": "q",
+      "wanted": [
+        "E",
+        "V",
+        "C"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "EV13": {
+    "fields": {
+      "geometry": "capacitor",
+      "source": "permittivity",
+      "wanted": [
+        "C"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "EV14": {
+    "fields": {
+      "geometry": "capacitor",
+      "source": "permittivity",
+      "wanted": [
+        "C"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "EV15": {
+    "fields": {
+      "geometry": "cylinder",
+      "source": "P",
+      "wanted": [
+        "rho_bound",
+        "sigma_bound",
+        "lambda_total"
+      ],
+      "orientation": "cylindrical component basis"
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "EV16": {
+    "fields": {
+      "geometry": "cylinder",
+      "source": "rho",
+      "wanted": [
+        "D",
+        "E",
+        "P"
+      ],
+      "orientation": "radial"
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "EV17": {
+    "fields": {
+      "geometry": "conductor",
+      "source": "q",
+      "wanted": [
+        "F",
+        "U"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "EV18": {
+    "fields": {
+      "geometry": "point_charges",
+      "source": "q",
+      "wanted": [
+        "V"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "EV19": {
+    "fields": {
+      "geometry": "sphere",
+      "source": "V",
+      "wanted": [
+        "V_inside",
+        "V_outside"
+      ],
+      "orientation": "spherical component basis"
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "BA01": {
+    "fields": {
+      "geometry": "cylinder",
+      "source": "J",
+      "wanted": [
+        "B"
+      ],
+      "orientation": "current +z; B follows right-hand rule",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "R",
+          "density": [
+            "0",
+            "0",
+            "J0*(1-s/R)"
+          ]
+        },
+        {
+          "lower": "R",
+          "upper": "oo",
+          "density": "0"
+        }
+      ]
+    },
+    "full_review": true,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "source_expression": [
+      "0",
+      "0",
+      "J0*(1-s/R)"
+    ]
+  },
+  "BA02": {
+    "fields": {
+      "geometry": "hollow_cylinder",
+      "source": "J",
+      "wanted": [
+        "B"
+      ],
+      "orientation": "current +z; B follows right-hand rule",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "a",
+          "density": "0"
+        },
+        {
+          "lower": "a",
+          "upper": "b",
+          "density": [
+            "0",
+            "0",
+            "k/s"
+          ]
+        },
+        {
+          "lower": "b",
+          "upper": "oo",
+          "density": "0"
+        }
+      ]
+    },
+    "full_review": true,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "source_expression": [
+      "0",
+      "0",
+      "k/s"
+    ],
+    "corrections": {
+      "extent": "infinite"
+    },
+    "correction_note": "Explicit additional user information/conventions for assisted evaluation; never autonomous."
+  },
+  "BA03": {
+    "fields": {
+      "geometry": "current_sheet",
+      "source": "K",
+      "wanted": [
+        "B"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "BA04": {
+    "fields": {
+      "geometry": "current_sheet",
+      "source": "K",
+      "wanted": [
+        "B"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "BA05": {
+    "fields": {
+      "geometry": "wire",
+      "source": "I",
+      "wanted": [
+        "B"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "corrections": {
+      "current": "+z"
+    },
+    "correction_note": "Explicit additional user information/conventions for assisted evaluation; never autonomous."
+  },
+  "BA06": {
+    "fields": {
+      "geometry": "ring",
+      "source": "I",
+      "wanted": [
+        "B"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "corrections": {
+      "plane": "xy",
+      "current_sense": "counterclockwise"
+    },
+    "correction_note": "Explicit additional user information/conventions for assisted evaluation; never autonomous."
+  },
+  "BA07": {
+    "fields": {
+      "geometry": "ring",
+      "source": "I",
+      "wanted": [
+        "B"
+      ],
+      "orientation": {
+        "plane": "xy"
+      }
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "corrections": {
+      "center": "origin",
+      "point": "0,0,z",
+      "current_sense": "counterclockwise"
+    },
+    "correction_note": "Explicit additional user information/conventions for assisted evaluation; never autonomous."
+  },
+  "BA08": {
+    "fields": {
+      "geometry": "arc",
+      "source": "I",
+      "wanted": [
+        "B"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "BA09": {
+    "fields": {
+      "geometry": "concentric_loops",
+      "source": "I",
+      "wanted": [
+        "B"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "BA10": {
+    "fields": {
+      "geometry": "field",
+      "source": "A",
+      "wanted": [
+        "B"
+      ],
+      "orientation": "cartesian component basis"
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "corrections": {
+      "units": "B0:T; L:m"
+    },
+    "correction_note": "Explicit additional user information/conventions for assisted evaluation; never autonomous."
+  },
+  "BA11": {
+    "fields": {
+      "geometry": "field",
+      "source": "A",
+      "wanted": [
+        "B"
+      ],
+      "orientation": "cylindrical component basis"
+    },
+    "full_review": true,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "source_expression": [
+      "0",
+      "A0*s**2",
+      "0"
+    ]
+  },
+  "BA12": {
+    "fields": {
+      "geometry": "field",
+      "source": "E_and_B",
+      "wanted": [
+        "v"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "BA13": {
+    "fields": {
+      "geometry": "parallel_wires",
+      "source": "I",
+      "wanted": [
+        "F_per_length"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "BA14": {
+    "fields": {
+      "geometry": "dipole",
+      "source": "m",
+      "wanted": [
+        "torque",
+        "U"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "BA15": {
+    "fields": {
+      "geometry": "toroid",
+      "source": "I",
+      "wanted": [
+        "B",
+        "H_core",
+        "H_gap"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "BA16": {
+    "fields": {
+      "geometry": "cylinder",
+      "source": "M",
+      "wanted": [
+        "J_bound",
+        "K_bound",
+        "B"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN01": {
+    "fields": {
+      "geometry": "ring",
+      "source": "B",
+      "wanted": [
+        "Phi",
+        "EMF"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN02": {
+    "fields": {
+      "geometry": "square_loop",
+      "source": "B",
+      "wanted": [
+        "Phi",
+        "EMF"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN03": {
+    "fields": {
+      "geometry": "capacitor",
+      "source": "E",
+      "wanted": [
+        "B"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN04": {
+    "fields": {
+      "geometry": "coaxial_cylinders",
+      "source": "I",
+      "wanted": [
+        "L",
+        "U"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN05": {
+    "fields": {
+      "geometry": "wire",
+      "source": "conductivity",
+      "wanted": [
+        "R",
+        "E",
+        "rho"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN06": {
+    "fields": {
+      "geometry": "rotating_loop",
+      "source": "B",
+      "wanted": [
+        "Phi",
+        "EMF"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN07": {
+    "fields": {
+      "geometry": "sliding_rod",
+      "source": "B",
+      "wanted": [
+        "v_infinity",
+        "tau",
+        "v"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN08": {
+    "fields": {
+      "geometry": "rectangular_loop",
+      "source": "B",
+      "wanted": [
+        "EMF",
+        "I",
+        "F"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN09": {
+    "fields": {
+      "geometry": "solenoid",
+      "source": "I",
+      "wanted": [
+        "L"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN10": {
+    "fields": {
+      "geometry": "solenoid",
+      "source": "I",
+      "wanted": [
+        "M"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN11": {
+    "fields": {
+      "geometry": "RL",
+      "source": "voltage",
+      "wanted": [
+        "I",
+        "tau",
+        "U"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN12": {
+    "fields": {
+      "geometry": "RC",
+      "source": "Q0",
+      "wanted": [
+        "Q",
+        "I",
+        "U"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN13": {
+    "fields": {
+      "geometry": "cylinder",
+      "source": "B",
+      "wanted": [
+        "E_phi"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN14": {
+    "fields": {
+      "geometry": "rotating_rod",
+      "source": "B",
+      "wanted": [
+        "EMF"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "DYN15": {
+    "fields": {
+      "geometry": "square_loop",
+      "source": "B",
+      "wanted": [
+        "Phi",
+        "EMF"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "GEN01": {
+    "fields": {
+      "geometry": "parameterized_line",
+      "source": "lambda",
+      "wanted": [
+        "V"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "GEN02": {
+    "fields": {
+      "geometry": "field",
+      "source": "E",
+      "wanted": [
+        "curl_E"
+      ],
+      "orientation": "cartesian component basis"
+    },
+    "full_review": true,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "source_expression": [
+      "alpha*y",
+      "beta*z",
+      "gamma*x"
+    ]
+  },
+  "GEN03": {
+    "fields": {
+      "geometry": "field",
+      "source": "B",
+      "wanted": [
+        "div_B"
+      ],
+      "orientation": "cartesian component basis"
+    },
+    "full_review": true,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct.",
+    "source_expression": [
+      "alpha*x",
+      "alpha*y",
+      "alpha*z"
+    ]
+  },
+  "GEN04": {
+    "fields": {
+      "geometry": "cylinder",
+      "source": "rho",
+      "wanted": [
+        "E"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "GEN05": {
+    "fields": {
+      "geometry": "wire",
+      "source": "I",
+      "wanted": [
+        "B"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Manual semantic annotation of raw text; null is unscorable/underdetermined and excluded, not counted correct."
+  },
+  "2022-02:1a": {
+    "fields": {
+      "geometry": "point_charges",
+      "source": "q",
+      "wanted": [
+        "U"
+      ],
+      "orientation": {
+        "plane": "xy"
+      }
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2022-02:1b": {
+    "fields": {
+      "geometry": "point_charges",
+      "source": "q",
+      "wanted": [
+        "E"
+      ],
+      "orientation": {
+        "plane": "xy"
+      }
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2022-02:1c": {
+    "fields": {
+      "geometry": "point_charges",
+      "source": "q",
+      "wanted": [
+        "dipole",
+        "V"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2022-02:2a": {
+    "fields": {
+      "geometry": "coaxial_cylinders",
+      "source": "lambda",
+      "wanted": [
+        "E"
+      ],
+      "orientation": "radial"
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2022-02:2b": {
+    "fields": {
+      "geometry": "coaxial_cylinders",
+      "source": "lambda",
+      "wanted": [
+        "sigma_inner",
+        "sigma_outer"
+      ],
+      "orientation": "radial"
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2022-02:2c": {
+    "fields": {
+      "geometry": "coaxial_cylinders",
+      "source": "lambda",
+      "wanted": [
+        "V"
+      ],
+      "orientation": "radial"
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2022-02:3a": {
+    "fields": {
+      "geometry": "composite_wire",
+      "source": "I_and_B",
+      "wanted": [
+        "F_a",
+        "F_b",
+        "F_total"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2022-02:4a": {
+    "fields": {
+      "geometry": "cylinder_with_cavity",
+      "source": "J",
+      "wanted": [
+        "I"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2022-02:4b": {
+    "fields": {
+      "geometry": "cylinder_with_cavity",
+      "source": "J",
+      "wanted": [
+        "B"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2022-02:5a": {
+    "fields": {
+      "geometry": "field",
+      "source": "E",
+      "wanted": [
+        "curl_E",
+        "rho"
+      ],
+      "orientation": "cartesian component basis"
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2022-02:5b": {
+    "fields": {
+      "geometry": "field",
+      "source": "E",
+      "wanted": [
+        "W"
+      ],
+      "orientation": "cartesian component basis"
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2022-02:6a": {
+    "fields": {
+      "geometry": "ring",
+      "source": "B",
+      "wanted": [
+        "I"
+      ],
+      "orientation": {
+        "B": "+z"
+      }
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2022-02:7a": {
+    "fields": {
+      "geometry": "cylinder",
+      "source": "A",
+      "wanted": [
+        "laplacian_A",
+        "div_A"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2022-02:7b": {
+    "fields": {
+      "geometry": "cylinder",
+      "source": "A",
+      "wanted": [
+        "B",
+        "C"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2023-02:1a": {
+    "fields": {
+      "geometry": "point_charges",
+      "source": "q",
+      "wanted": [
+        "F"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2023-02:1b": {
+    "fields": {
+      "geometry": "point_charges",
+      "source": "q",
+      "wanted": [
+        "F"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2023-02:1c": {
+    "fields": {
+      "geometry": "point_charges",
+      "source": "q",
+      "wanted": [
+        "U"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2023-02:2a": {
+    "fields": {
+      "geometry": "sphere",
+      "source": "rho",
+      "wanted": [
+        "Q"
+      ],
+      "orientation": "radial",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "R",
+          "density": "k*r"
+        },
+        {
+          "lower": "R",
+          "upper": "oo",
+          "density": "0"
+        }
+      ]
+    },
+    "full_review": true,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun.",
+    "source_expression": "k*r"
+  },
+  "2023-02:2b": {
+    "fields": {
+      "geometry": "sphere",
+      "source": "rho",
+      "wanted": [
+        "E"
+      ],
+      "orientation": "radial",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "R",
+          "density": "k*r"
+        },
+        {
+          "lower": "R",
+          "upper": "oo",
+          "density": "0"
+        }
+      ]
+    },
+    "full_review": true,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun.",
+    "source_expression": "k*r"
+  },
+  "2023-02:2c": {
+    "fields": {
+      "geometry": "sphere",
+      "source": "rho",
+      "wanted": [
+        "P"
+      ],
+      "orientation": "radial",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "R",
+          "density": "k*r"
+        },
+        {
+          "lower": "R",
+          "upper": "oo",
+          "density": "0"
+        }
+      ]
+    },
+    "full_review": true,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun.",
+    "source_expression": "k*r"
+  },
+  "2023-02:3a": {
+    "fields": {
+      "geometry": "point_charges",
+      "source": "q",
+      "wanted": [
+        "E",
+        "K"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2023-02:4a": {
+    "fields": {
+      "geometry": "field",
+      "source": "A",
+      "wanted": [
+        "B",
+        "J"
+      ],
+      "orientation": "cartesian component basis"
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2023-02:4b": {
+    "fields": {
+      "geometry": "field",
+      "source": "A",
+      "wanted": [
+        "I"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2023-02:5a": {
+    "fields": {
+      "geometry": "wire_and_loop",
+      "source": "I",
+      "wanted": [
+        "Phi",
+        "C"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2023-02:5b": {
+    "fields": {
+      "geometry": "wire_and_loop",
+      "source": "I",
+      "wanted": [
+        "EMF"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2023-02:5c": {
+    "fields": {
+      "geometry": "wire_and_loop",
+      "source": "I",
+      "wanted": [
+        "P"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2023-02:5d": {
+    "fields": {
+      "geometry": "wire_and_loop",
+      "source": "I",
+      "wanted": [
+        "I0"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2023-02:6a": {
+    "fields": {
+      "geometry": "capacitor",
+      "source": "E",
+      "wanted": [
+        "I_displacement",
+        "B"
+      ],
+      "orientation": null
+    },
+    "full_review": false,
+    "note": "Human annotation AFTER first development code freeze. OCR-lost mathematical glyphs are not reconstructed by the parser. Composite geometry labels deliberately require more than detecting one noun."
+  },
+  "2025-11:2a": {
+    "fields": {
+      "geometry": "sphere",
+      "source": "V",
+      "wanted": [
+        "E"
+      ],
+      "orientation": "spherical component basis",
+      "regions": "0 < r < R"
+    },
+    "source_expression": "-a*log(r/R)",
+    "full_review": true
+  }
+}

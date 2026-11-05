@@ -1,0 +1,21 @@
+{
+  "baseline_commit": "2f839c9696c12e7431b39fe431b693b8190049d1",
+  "development_exams": [
+    "2021-06",
+    "2021-11",
+    "2022-11",
+    "2023-11",
+    "2024-02",
+    "2024-11",
+    "2025-01",
+    "2025-11",
+    "2026-01"
+  ],
+  "holdout_exams": [
+    "2022-02",
+    "2023-02"
+  ],
+  "development_count": 126,
+  "holdout_count": 28,
+  "limitation": "Alle historiske sæt har været set tidligere i projektet; denne opdeling beskytter kun den nye parserudviklingsrunde."
+}

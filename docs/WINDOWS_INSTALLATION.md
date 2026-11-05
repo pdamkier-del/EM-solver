@@ -7,7 +7,7 @@
 4. Dobbeltklik **START_EM1_SOLVER.bat**. Appen starter på `127.0.0.1`
    og åbner standardbrowseren. Adressen står også i vinduet, hvis browseren
    ikke åbner. Lad startvinduet være åbent under eksamen.
-5. Vælg Ny opgave eller Manuel solver. Ingen terminalkommandoer kræves.
+5. Vælg Ny opgave eller Avanceret / Manuel. Ingen terminalkommandoer kræves.
 
 Installationen behøver normalt internet; selve appdriften gør ikke.
 Ingen API-nøgler, lokale sprogmodeller eller cloud-konti bruges.

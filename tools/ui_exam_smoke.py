@@ -10,7 +10,7 @@ def choose(app,key,value):
 
 def run_case(name,domain,preset):
     app=AppTest.from_file(str(ROOT/'app.py'),default_timeout=40).run()
-    app.radio[0].set_value('Manuel solver').run()
+    app.radio[0].set_value('Avanceret / Manuel').run()
     choose(app,'af_domain',domain)
     choose(app,'af_preset',preset)
     assert not app.exception,(name,app.exception)

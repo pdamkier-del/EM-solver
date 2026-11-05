@@ -4,20 +4,24 @@
 
 1. Dobbeltklik START_EM1_SOLVER.bat og kontrollér **Systemstatus: Klar**.
 2. Indsæt opgaven i **Ny opgave**, vælg **Analysér opgave**.
-3. Ret område/preset, kildefunktion og søges. Feltværdier er symbolske,
-   indtil der indsættes tal; symbolske standardnavne er synlige modeller,
-   ikke gættede tal fra opgaveteksten.
-4. Kontrollér regioner og orientering. En uendelig model er ikke gyldig
-   for en endelig kilde. Brug `a+h` med positiv h til ordnede radier, eller
-   indtast numeriske radier med enheder som `1 cm` og `3 cm`.
-5. Bekræft de synlige vilkår og tryk **Løs opgave**.
-6. Læs resultat, retning og kontrol. Gem LaTeX/tekst, eller brug
-   kopi-ikonet i felterne **Kopiér løsning / Kopiér slutresultat**.
+3. Se fortolkningen i det sammenfoldede panel. Besvar kun viste spørgsmål;
+   intet fysisk valg er forhåndsvalgt. Brug **Ret fortolkningen**, hvis et
+   genkendt felt skal ændres.
+4. Kontrollér geometri, udstrækning, regioner, retning og givne værdier.
+   GREEN er en regelbaseret status, ikke en sandsynlighed eller fuld validering
+   af alle oplysninger i teksten.
+5. Vælg **Symbolsk** eller **Symbolsk og numerisk**, og tryk **Løs opgave**.
+6. Læs resultat, retning og kontrol. Gem LaTeX/tekst, eller brug kopi-ikonet
+   ved **Kopiér løsning / Kopiér slutresultat**.
 
-Hvis parseren fejler: gå til **Manuel solver**. Teksten bevares. Vælg
-geometri-formularen; de sjældnere oprindelige solvermodeller findes under
-**Specialiseret metode**. Denne avancerede vej kan kræve strukturerede
-liste-/vektorinput, men ingen kildekode eller terminal skal åbnes.
+Hvis parseren afstår: gå til **Avanceret / Manuel**. Her ligger den oprindelige
+geometri-formular, **Specialiseret metode** og **Tekst med fuld bekræftelse**.
+De oprindelige formularer er bevaret. Den nye råtekst gemmes separat og findes
+fortsat, når du vender tilbage til Ny opgave. Ingen kildekode behøver åbnes.
+
+Parser-preview er ikke en ny exam-ready-godkendelse. Den frosne eksamensversion
+findes stadig på tagget exam-ready-2026-11-05. Se reports/parser/status.md for
+målt autonomi og aktuelle begrænsninger.
 
 ## Retning
 
