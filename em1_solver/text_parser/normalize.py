@@ -8,6 +8,9 @@ SUB=str.maketrans('₀₁₂₃₄₅₆₇₈₉','0123456789')
 
 def normalize(text):
     if len(text)>24000:raise ValueError('Opgaven må højst indeholde 24000 tegn.')
+    if '\\' in text or '$' in text or re.search(r'[_^]\{',text):
+        from .latex_input import plain
+        text=plain(text)
     text=re.sub(r'([A-Za-zæøåÆØÅ]{3,})-\s*\n\s*([a-zæøå])',r'\1\2',text)
     text=re.sub(r'([xyzrs])\u0302',r' \1hat ',text)
     text=text.replace('φ̂',' phihat ').replace('ϕ̂',' phihat ').replace('θ̂',' thetahat ')
