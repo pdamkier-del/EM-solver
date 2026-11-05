@@ -20,6 +20,10 @@ def apply(parsed,answer):
         if not isinstance(variable,sp.Symbol):raise InputError('Efterbehandling kræver et koordinat-/parameternavn.')
         value=answer.symbolic_result[key];unit=answer.units.get(key)
         argument=expression(operation.get('value','0'),symbols)
+        reference=operation.get('value')
+        if kind in ('evaluate','limit') and reference in {op['id'] for op in parsed.data.get('operations',[])} and reference in answer.symbolic_result and reference not in parsed.quantities:
+            argument=answer.symbolic_result[reference]
+            if not isinstance(argument,sp.Expr):raise InputError('Evalueringspunktet skal være et allerede beregnet skalart resultat.')
         if kind in ('evaluate','limit') and argument not in (sp.oo,-sp.oo) and argument!=0:
             expected=problem.symbol_units.get(variable)
             if expected and dimension(argument,problem.symbol_units)!=unit_dimension(expected):raise InputError('Evalueringspunktets enhed passer ikke til '+str(variable))

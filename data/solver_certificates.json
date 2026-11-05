@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "fingerprint": "277cc378499739ae6931e409cb507c0d2ce23a2e47c9eff1cced8df913582b71",
+  "fingerprint": "6b4bc04054fb30186df7a9a8ef63d2e74036b528d58280bc0979df6e31c13f47",
   "stable_families": [
     "point_charges",
     "coulomb_integral",

@@ -1,0 +1,2928 @@
+{
+  "platform": "Linux Qt offscreen",
+  "native_windows_tested": false,
+  "network": "Python sockets blocked in GUI and symbolic worker",
+  "same_mainwindow_reused": true,
+  "actions_definition": "Semantic UI actions, not individual keystrokes, reading time or a measured human usability study.",
+  "cases": [
+    {
+      "id": "user_cylinder",
+      "text": "En uendeligt lang, massiv cylindrisk leder har radius \\(a=4,0\\,\\mathrm{cm}\\) og fører en samlet strøm \\(I=8,0\\,\\mathrm A\\) i positiv \\(z\\)-retning.\nStrømtætheden er ikke konstant, men givet ved\n\\[ \\mathbf J(s)=J_0\\frac{s^2}{a^2}\\,\\hat{\\mathbf z}, \\]\nhvor \\(s\\) er den cylindriske afstand fra lederens akse.\na) Bestem konstanten \\(J_0\\).\nb) Bestem magnetfeltet \\(\\mathbf B(s)\\) både inden for og uden for lederen.\nc) Beregn feltets størrelse ved \\(s=2,0\\,\\mathrm{cm}\\) og \\(s=8,0\\,\\mathrm{cm}\\).",
+      "actions": [
+        "Indsæt opgavetekst",
+        "Analysér opgave",
+        "Bekræft læste data og viste fysiske betingelser",
+        "Beregn opgaven"
+      ],
+      "semantic_user_actions": 4,
+      "manual_reentry": [],
+      "proposal_before_confirmation": {
+        "text": "En uendeligt lang, massiv cylindrisk leder har radius \\(a=4,0\\,\\mathrm{cm}\\) og fører en samlet strøm \\(I=8,0\\,\\mathrm A\\) i positiv \\(z\\)-retning.\nStrømtætheden er ikke konstant, men givet ved\n\\[ \\mathbf J(s)=J_0\\frac{s^2}{a^2}\\,\\hat{\\mathbf z}, \\]\nhvor \\(s\\) er den cylindriske afstand fra lederens akse.\na) Bestem konstanten \\(J_0\\).\nb) Bestem magnetfeltet \\(\\mathbf B(s)\\) både inden for og uden for lederen.\nc) Beregn feltets størrelse ved \\(s=2,0\\,\\mathrm{cm}\\) og \\(s=8,0\\,\\mathrm{cm}\\).",
+        "normalized": "En uendeligt lang, massiv cylindrisk leder har radius a=4.0 cm og fører en samlet strøm I=8.0 A i positiv z-retning.\nStrømtætheden er ikke konstant, men givet ved\n J(s)=J_0*((s**2)/(a**2))  zhat , \nhvor s er den cylindriske afstand fra lederens akse.\na) Bestem konstanten J_0.\nb) Bestem magnetfeltet B(s) både inden for og uden for lederen.\nc) Beregn feltets størrelse ved s=2.0 cm og s=8.0 cm.",
+        "issues": [],
+        "quantities": {
+          "a": "4.0 cm"
+        },
+        "unit_edits": {},
+        "evidence": [
+          "J(s)=J_0*((s**2)/(a**2))  zhat"
+        ],
+        "wanted": [
+          "B"
+        ],
+        "kind": "cylinder",
+        "model": "ampere_regions",
+        "title": "Cylindrisk strømfordeling – integration og Ampères lov",
+        "source": "J_0*((s**2)/(a**2))",
+        "coordinate": "s",
+        "radius_symbol": "a",
+        "reasoning": "Strømtætheden integreres over tværsnittet. En eventuel ukendt amplitude bestemmes fra den oplyste samlede strøm. Feltet beregnes i hver region.",
+        "physical_conditions": "Uendelig massiv cylinder, stationær aksial strøm og ikke-magnetisk medium (mu=mu_0). Fortegn angives relativt til +z.",
+        "assumptions": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic",
+          "nonmagnetic_medium"
+        ],
+        "positive": [
+          "s",
+          "a"
+        ],
+        "notes": [
+          "Permeabiliteten er ikke oplyst. Bekræft kun mu_0 nedenfor, hvis lederen er ikke-magnetisk."
+        ],
+        "direction": "+z",
+        "points": [
+          "2.0 cm",
+          "8.0 cm"
+        ],
+        "units": {
+          "J_0": "A/m^2",
+          "s": "m",
+          "a": "m"
+        },
+        "total_current": "8.0 A",
+        "normalization_symbol": "J_0"
+      },
+      "submitted_request": {
+        "schema_version": "assisted-1.0",
+        "text": "En uendeligt lang, massiv cylindrisk leder har radius \\(a=4,0\\,\\mathrm{cm}\\) og fører en samlet strøm \\(I=8,0\\,\\mathrm A\\) i positiv \\(z\\)-retning.\nStrømtætheden er ikke konstant, men givet ved\n\\[ \\mathbf J(s)=J_0\\frac{s^2}{a^2}\\,\\hat{\\mathbf z}, \\]\nhvor \\(s\\) er den cylindriske afstand fra lederens akse.\na) Bestem konstanten \\(J_0\\).\nb) Bestem magnetfeltet \\(\\mathbf B(s)\\) både inden for og uden for lederen.\nc) Beregn feltets størrelse ved \\(s=2,0\\,\\mathrm{cm}\\) og \\(s=8,0\\,\\mathrm{cm}\\).",
+        "confirmed": true,
+        "variables": {
+          "coordinate": "s",
+          "regions": [
+            {
+              "lower": "0",
+              "upper": "a",
+              "density": "J_0*((s**2)/(a**2))"
+            }
+          ]
+        },
+        "units": {
+          "s": "m",
+          "a": "m",
+          "J_0": "A/m^2",
+          "I_given": "A",
+          "evaluation_radius_1": "m",
+          "evaluation_radius_2": "m"
+        },
+        "numbers": {
+          "a": "4.0 cm",
+          "I_given": "8.0 A",
+          "evaluation_radius_1": "2.0 cm",
+          "evaluation_radius_2": "8.0 cm"
+        },
+        "positive": [
+          "s",
+          "a"
+        ],
+        "assumptions": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic",
+          "nonmagnetic_medium"
+        ],
+        "subproblems": [
+          {
+            "id": "a",
+            "model": "ampere_regions",
+            "wanted": [
+              "density_amplitude",
+              "normalized_B"
+            ],
+            "orientation_confirmed": true,
+            "operations": [
+              {
+                "kind": "solve",
+                "id": "density_amplitude",
+                "result": "I",
+                "variable": "J_0",
+                "value": "I_given",
+                "domain": "real"
+              },
+              {
+                "kind": "evaluate",
+                "id": "normalized_B",
+                "result": "B",
+                "variable": "J_0",
+                "value": "density_amplitude"
+              },
+              {
+                "kind": "evaluate",
+                "id": "B_point_1",
+                "result": "normalized_B",
+                "variable": "s",
+                "value": "evaluation_radius_1"
+              },
+              {
+                "kind": "evaluate",
+                "id": "B_point_2",
+                "result": "normalized_B",
+                "variable": "s",
+                "value": "evaluation_radius_2"
+              }
+            ]
+          }
+        ]
+      },
+      "response": {
+        "schema_version": "assisted-1.0",
+        "status": "calculated_under_confirmed_model",
+        "questions": [],
+        "errors": [],
+        "subproblems": [
+          {
+            "id": "a",
+            "model": "ampere_regions",
+            "status": "calculated_under_confirmed_model",
+            "solution": {
+              "method": "Ampères lov → integreret strøm",
+              "reasoning": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+              "equations_latex": [
+                "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+              ],
+              "steps": [
+                {
+                  "id": "step-b1755ba2d987fc5df6fb-0",
+                  "text": "Omsluttet strøm før integration",
+                  "title": "Omsluttet strøm før integration",
+                  "latex": "\\int\\limits_{0}^{s} \\frac{2 \\pi J_{0} s^{3}}{a^{2}}\\, ds",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Ampères lov",
+                  "method_context_id": "method-afd6847929a5a6cdb9d1",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-790c22e5dd2e189f662e-0",
+                  "text": "Regionens strøm efter integration",
+                  "title": "Regionens strøm efter integration",
+                  "latex": "\\frac{\\pi J_{0} s^{4}}{2 a^{2}}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Ampères lov",
+                  "method_context_id": "method-afd6847929a5a6cdb9d1",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-66421a2c8e875f342baf-0",
+                  "text": "B 2πs = μ₀ I_enc; isolér B",
+                  "title": "B 2πs = μ₀ I_enc; isolér B",
+                  "latex": "\\begin{cases} \\frac{J_{0} \\mu_{0} s^{3}}{4 a^{2}} & \\text{for}\\: a \\geq s \\\\\\frac{J_{0} a^{2} \\mu_{0}}{4 s} & \\text{otherwise} \\end{cases}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Ampères lov",
+                  "method_context_id": "method-afd6847929a5a6cdb9d1",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-3fc5d84661a9685d9f46-0",
+                  "text": "Strømmen fås ved integration af den aksiale strømtæthed",
+                  "title": "Strømmen fås ved integration af den aksiale strømtæthed",
+                  "latex": "\\frac{\\pi J_{0} a^{2}}{2}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Ampères lov",
+                  "method_context_id": "method-afd6847929a5a6cdb9d1",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-d493432f5902eb741b50-0",
+                  "text": "Løs I = I_given for J_0",
+                  "title": "Løs I = I_given for J_0",
+                  "latex": "\\frac{2 I_{given}}{\\pi a^{2}}",
+                  "physical_reasoning": "Alle fundne reelle grene bevares; ingen gren vælges ud fra et forventet svar.",
+                  "reasoning_scope": "step",
+                  "law": "Symbolsk ligningsløsning",
+                  "method_context_id": "method-3073ce96fd2dd8514941",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-f2982293b81419535ea3-0",
+                  "text": "Evaluér B ved J_0=2*I_given/(pi*a**2)",
+                  "title": "Evaluér B ved J_0=2*I_given/(pi*a**2)",
+                  "latex": "\\begin{cases} \\frac{I_{given} \\mu_{0} s^{3}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq s \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi s} & \\text{otherwise} \\end{cases}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Indsættelse i beregnet resultat",
+                  "method_context_id": "method-3073ce96fd2dd8514941",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-79847a0b5950c829d07c-0",
+                  "text": "Evaluér normalized_B ved s=evaluation_radius_1",
+                  "title": "Evaluér normalized_B ved s=evaluation_radius_1",
+                  "latex": "\\begin{cases} \\frac{I_{given} evaluation_{radius 1}^{3} \\mu_{0}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq evaluation_{radius 1} \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi evaluation_{radius 1}} & \\text{otherwise} \\end{cases}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Indsættelse i beregnet resultat",
+                  "method_context_id": "method-3073ce96fd2dd8514941",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-6f37847df34856b2b9f2-0",
+                  "text": "Evaluér normalized_B ved s=evaluation_radius_2",
+                  "title": "Evaluér normalized_B ved s=evaluation_radius_2",
+                  "latex": "\\begin{cases} \\frac{I_{given} evaluation_{radius 2}^{3} \\mu_{0}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq evaluation_{radius 2} \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi evaluation_{radius 2}} & \\text{otherwise} \\end{cases}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Indsættelse i beregnet resultat",
+                  "method_context_id": "method-3073ce96fd2dd8514941",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                }
+              ],
+              "results": {
+                "I_enc": {
+                  "expression": "Piecewise((pi*J_0*s**4/(2*a**2), a >= s), (pi*J_0*a**2/2, True))",
+                  "latex": "\\begin{cases} \\frac{\\pi J_{0} s^{4}}{2 a^{2}} & \\text{for}\\: a \\geq s \\\\\\frac{\\pi J_{0} a^{2}}{2} & \\text{otherwise} \\end{cases}",
+                  "unit": "A"
+                },
+                "B": {
+                  "expression": "Piecewise((J_0*mu_0*s**3/(4*a**2), a >= s), (J_0*a**2*mu_0/(4*s), True))",
+                  "latex": "\\begin{cases} \\frac{J_{0} \\mu_{0} s^{3}}{4 a^{2}} & \\text{for}\\: a \\geq s \\\\\\frac{J_{0} a^{2} \\mu_{0}}{4 s} & \\text{otherwise} \\end{cases}",
+                  "unit": "T"
+                },
+                "I": {
+                  "expression": "pi*J_0*a**2/2",
+                  "latex": "\\frac{\\pi J_{0} a^{2}}{2}",
+                  "unit": "A"
+                },
+                "density_amplitude": {
+                  "expression": "2*I_given/(pi*a**2)",
+                  "latex": "\\frac{2 I_{given}}{\\pi a^{2}}",
+                  "unit": "A/m^2"
+                },
+                "normalized_B": {
+                  "expression": "Piecewise((I_given*mu_0*s**3/(2*pi*a**4), a >= s), (I_given*mu_0/(2*pi*s), True))",
+                  "latex": "\\begin{cases} \\frac{I_{given} \\mu_{0} s^{3}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq s \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi s} & \\text{otherwise} \\end{cases}",
+                  "unit": "T"
+                },
+                "B_point_1": {
+                  "expression": "Piecewise((I_given*evaluation_radius_1**3*mu_0/(2*pi*a**4), a >= evaluation_radius_1), (I_given*mu_0/(2*pi*evaluation_radius_1), True))",
+                  "latex": "\\begin{cases} \\frac{I_{given} evaluation_{radius 1}^{3} \\mu_{0}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq evaluation_{radius 1} \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi evaluation_{radius 1}} & \\text{otherwise} \\end{cases}",
+                  "unit": "T"
+                },
+                "B_point_2": {
+                  "expression": "Piecewise((I_given*evaluation_radius_2**3*mu_0/(2*pi*a**4), a >= evaluation_radius_2), (I_given*mu_0/(2*pi*evaluation_radius_2), True))",
+                  "latex": "\\begin{cases} \\frac{I_{given} evaluation_{radius 2}^{3} \\mu_{0}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq evaluation_{radius 2} \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi evaluation_{radius 2}} & \\text{otherwise} \\end{cases}",
+                  "unit": "T"
+                }
+              },
+              "numerical": {
+                "density_amplitude": {
+                  "value": "3183.09886183791",
+                  "latex": "3183.09886183791",
+                  "unit": "A/m^2"
+                },
+                "B_point_1": {
+                  "value": "5.00000000272188e-6",
+                  "latex": "5.00000000272188 \\cdot 10^{-6}",
+                  "unit": "T"
+                },
+                "B_point_2": {
+                  "value": "2.00000000108875e-5",
+                  "latex": "2.00000000108875 \\cdot 10^{-5}",
+                  "unit": "T"
+                }
+              },
+              "checks": [
+                {
+                  "id": "check-cc1fd98f8754241af015",
+                  "name": "Dimension: I_enc",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-12b184778d9450e3b254",
+                  "name": "Dimension: B",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-c37dd8ec81d66a0e4ab8",
+                  "name": "Inputdimension: coordinate",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "m",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-49358cc655e6c43c6b9c",
+                  "name": "Inputdimension: region_0_lower",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "m",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-9705dbf7e3c69829257a",
+                  "name": "Inputdimension: region_0_upper",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "m",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-6834f22d287ff0b76b2f",
+                  "name": "Inputdimension: region_0_density",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A/m^2",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-47ae6dfec88018588c9f",
+                  "name": "Ampère cirkulationsidentitet",
+                  "passed": true,
+                  "residual_latex": "0",
+                  "detail": "",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-1217fc31a6659c1a0934",
+                  "name": "Ampère differentiallov i åben region",
+                  "passed": true,
+                  "residual_latex": "0",
+                  "detail": "",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-21186b584e237b8f5395",
+                  "name": "Dimension: I_enc",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-b5bcf075bf85e563a807",
+                  "name": "Dimension: B",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-e53bb84cf012aad8c83f",
+                  "name": "Dimension: I",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-134b8b157450c4f943ab",
+                  "name": "density_amplitude: indsættelse i oprindelig ligning",
+                  "passed": true,
+                  "residual_latex": "0",
+                  "detail": "",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-c221e84329422a446be9",
+                  "name": "Dimension: I_enc",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-28cb56028afe3d830d12",
+                  "name": "Dimension: B",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-52605af484314aba9e9d",
+                  "name": "Dimension: I",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-fb4887ec483bae65f51c",
+                  "name": "Dimension: density_amplitude",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A/m^2",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-9f997e59f123abf249d2",
+                  "name": "Dimension: normalized_B",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-4c059bdf0bdd80bff331",
+                  "name": "Dimension: B_point_1",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-45a5ddd2679dd8a9c1a6",
+                  "name": "Dimension: B_point_2",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                }
+              ],
+              "direction": "Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning.",
+              "warnings": [
+                "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring."
+              ],
+              "presentation_version": "1.0",
+              "latex_profile": "EM1-Math-1",
+              "method_contexts": {
+                "method-afd6847929a5a6cdb9d1": {
+                  "method_id": "ampere",
+                  "method": "Ampères lov",
+                  "reasoning": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+                  "equations": [
+                    "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+                  ],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ]
+                },
+                "method-3073ce96fd2dd8514941": {
+                  "method_id": "ampere",
+                  "method": "Ampères lov → integreret strøm",
+                  "reasoning": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+                  "equations": [
+                    "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+                  ],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ]
+                }
+              },
+              "views": {
+                "result": {
+                  "wanted": [
+                    "density_amplitude",
+                    "normalized_B",
+                    "B_point_1",
+                    "B_point_2"
+                  ],
+                  "results": {
+                    "density_amplitude": {
+                      "expression": "2*I_given/(pi*a**2)",
+                      "latex": "\\frac{2 I_{given}}{\\pi a^{2}}",
+                      "unit": "A/m^2"
+                    },
+                    "normalized_B": {
+                      "expression": "Piecewise((I_given*mu_0*s**3/(2*pi*a**4), a >= s), (I_given*mu_0/(2*pi*s), True))",
+                      "latex": "\\begin{cases} \\frac{I_{given} \\mu_{0} s^{3}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq s \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi s} & \\text{otherwise} \\end{cases}",
+                      "unit": "T"
+                    },
+                    "B_point_1": {
+                      "expression": "Piecewise((I_given*evaluation_radius_1**3*mu_0/(2*pi*a**4), a >= evaluation_radius_1), (I_given*mu_0/(2*pi*evaluation_radius_1), True))",
+                      "latex": "\\begin{cases} \\frac{I_{given} evaluation_{radius 1}^{3} \\mu_{0}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq evaluation_{radius 1} \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi evaluation_{radius 1}} & \\text{otherwise} \\end{cases}",
+                      "unit": "T"
+                    },
+                    "B_point_2": {
+                      "expression": "Piecewise((I_given*evaluation_radius_2**3*mu_0/(2*pi*a**4), a >= evaluation_radius_2), (I_given*mu_0/(2*pi*evaluation_radius_2), True))",
+                      "latex": "\\begin{cases} \\frac{I_{given} evaluation_{radius 2}^{3} \\mu_{0}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq evaluation_{radius 2} \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi evaluation_{radius 2}} & \\text{otherwise} \\end{cases}",
+                      "unit": "T"
+                    }
+                  },
+                  "numerical": {
+                    "density_amplitude": {
+                      "value": "3183.09886183791",
+                      "latex": "3183.09886183791",
+                      "unit": "A/m^2"
+                    },
+                    "B_point_1": {
+                      "value": "5.00000000272188e-6",
+                      "latex": "5.00000000272188 \\cdot 10^{-6}",
+                      "unit": "T"
+                    },
+                    "B_point_2": {
+                      "value": "2.00000000108875e-5",
+                      "latex": "2.00000000108875 \\cdot 10^{-5}",
+                      "unit": "T"
+                    }
+                  },
+                  "direction": "Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning."
+                },
+                "derivation": {
+                  "equations_latex": [
+                    "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+                  ],
+                  "step_ids": [
+                    "step-b1755ba2d987fc5df6fb-0",
+                    "step-790c22e5dd2e189f662e-0",
+                    "step-66421a2c8e875f342baf-0",
+                    "step-3fc5d84661a9685d9f46-0",
+                    "step-d493432f5902eb741b50-0",
+                    "step-f2982293b81419535ea3-0",
+                    "step-79847a0b5950c829d07c-0",
+                    "step-6f37847df34856b2b9f2-0"
+                  ]
+                },
+                "explanation": {
+                  "step_ids": [
+                    "step-b1755ba2d987fc5df6fb-0",
+                    "step-790c22e5dd2e189f662e-0",
+                    "step-66421a2c8e875f342baf-0",
+                    "step-3fc5d84661a9685d9f46-0",
+                    "step-d493432f5902eb741b50-0",
+                    "step-f2982293b81419535ea3-0",
+                    "step-79847a0b5950c829d07c-0",
+                    "step-6f37847df34856b2b9f2-0"
+                  ],
+                  "method_context_ids": [
+                    "method-afd6847929a5a6cdb9d1",
+                    "method-3073ce96fd2dd8514941"
+                  ],
+                  "global_check_ids": [
+                    "check-cc1fd98f8754241af015",
+                    "check-12b184778d9450e3b254",
+                    "check-c37dd8ec81d66a0e4ab8",
+                    "check-49358cc655e6c43c6b9c",
+                    "check-9705dbf7e3c69829257a",
+                    "check-6834f22d287ff0b76b2f",
+                    "check-47ae6dfec88018588c9f",
+                    "check-1217fc31a6659c1a0934",
+                    "check-21186b584e237b8f5395",
+                    "check-b5bcf075bf85e563a807",
+                    "check-e53bb84cf012aad8c83f",
+                    "check-134b8b157450c4f943ab",
+                    "check-c221e84329422a446be9",
+                    "check-28cb56028afe3d830d12",
+                    "check-52605af484314aba9e9d",
+                    "check-fb4887ec483bae65f51c",
+                    "check-9f997e59f123abf249d2",
+                    "check-4c059bdf0bdd80bff331",
+                    "check-45a5ddd2679dd8a9c1a6"
+                  ],
+                  "warnings": [
+                    "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring."
+                  ]
+                }
+              }
+            },
+            "errors": [],
+            "verification": {
+              "interpretation": "user_confirmed_not_machine_verified",
+              "dimensions": "passed",
+              "physical_checks": [
+                "Inputdimension: coordinate",
+                "Inputdimension: region_0_lower",
+                "Inputdimension: region_0_upper",
+                "Inputdimension: region_0_density",
+                "Ampère cirkulationsidentitet",
+                "Ampère differentiallov i åben region",
+                "density_amplitude: indsættelse i oprindelig ligning"
+              ],
+              "completeness": "requested_results_present",
+              "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+            }
+          }
+        ],
+        "interpretation_status": "user_confirmed",
+        "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+        "confirmed_model": {
+          "schema_version": "assisted-1.0",
+          "text": "En uendeligt lang, massiv cylindrisk leder har radius \\(a=4,0\\,\\mathrm{cm}\\) og fører en samlet strøm \\(I=8,0\\,\\mathrm A\\) i positiv \\(z\\)-retning.\nStrømtætheden er ikke konstant, men givet ved\n\\[ \\mathbf J(s)=J_0\\frac{s^2}{a^2}\\,\\hat{\\mathbf z}, \\]\nhvor \\(s\\) er den cylindriske afstand fra lederens akse.\na) Bestem konstanten \\(J_0\\).\nb) Bestem magnetfeltet \\(\\mathbf B(s)\\) både inden for og uden for lederen.\nc) Beregn feltets størrelse ved \\(s=2,0\\,\\mathrm{cm}\\) og \\(s=8,0\\,\\mathrm{cm}\\).",
+          "confirmed": true,
+          "variables": {
+            "coordinate": "s",
+            "regions": [
+              {
+                "lower": "0",
+                "upper": "a",
+                "density": "J_0*((s**2)/(a**2))"
+              }
+            ]
+          },
+          "units": {
+            "s": "m",
+            "a": "m",
+            "J_0": "A/m^2",
+            "I_given": "A",
+            "evaluation_radius_1": "m",
+            "evaluation_radius_2": "m"
+          },
+          "numbers": {
+            "a": "4.0 cm",
+            "I_given": "8.0 A",
+            "evaluation_radius_1": "2.0 cm",
+            "evaluation_radius_2": "8.0 cm"
+          },
+          "positive": [
+            "s",
+            "a"
+          ],
+          "assumptions": [
+            "infinite_cylindrical_symmetry",
+            "magnetostatic",
+            "nonmagnetic_medium"
+          ],
+          "subproblems": [
+            {
+              "id": "a",
+              "model": "ampere_regions",
+              "wanted": [
+                "density_amplitude",
+                "normalized_B"
+              ],
+              "orientation_confirmed": true,
+              "operations": [
+                {
+                  "kind": "solve",
+                  "id": "density_amplitude",
+                  "result": "I",
+                  "variable": "J_0",
+                  "value": "I_given",
+                  "domain": "real"
+                },
+                {
+                  "kind": "evaluate",
+                  "id": "normalized_B",
+                  "result": "B",
+                  "variable": "J_0",
+                  "value": "density_amplitude"
+                },
+                {
+                  "kind": "evaluate",
+                  "id": "B_point_1",
+                  "result": "normalized_B",
+                  "variable": "s",
+                  "value": "evaluation_radius_1"
+                },
+                {
+                  "kind": "evaluate",
+                  "id": "B_point_2",
+                  "result": "normalized_B",
+                  "variable": "s",
+                  "value": "evaluation_radius_2"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "viewer": {
+        "viewer_schema": "em1.desktop.solution.v1",
+        "title": "Beregnet under brugerbekræftet model",
+        "prompt": "En uendeligt lang, massiv cylindrisk leder har radius \\(a=4,0\\,\\mathrm{cm}\\) og fører en samlet strøm \\(I=8,0\\,\\mathrm A\\) i positiv \\(z\\)-retning.\nStrømtætheden er ikke konstant, men givet ved\n\\[ \\mathbf J(s)=J_0\\frac{s^2}{a^2}\\,\\hat{\\mathbf z}, \\]\nhvor \\(s\\) er den cylindriske afstand fra lederens akse.\na) Bestem konstanten \\(J_0\\).\nb) Bestem magnetfeltet \\(\\mathbf B(s)\\) både inden for og uden for lederen.\nc) Beregn feltets størrelse ved \\(s=2,0\\,\\mathrm{cm}\\) og \\(s=8,0\\,\\mathrm{cm}\\).",
+        "status": "assumptions",
+        "result": {
+          "symbolic_latex": "J_0 = \\frac{2 I_{given}}{\\pi a^{2}}",
+          "extra_latex": [
+            "B = \\begin{cases} \\frac{I_{given} \\mu_{0} s^{3}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq s \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi s} & \\text{otherwise} \\end{cases}",
+            "B_1 = \\begin{cases} \\frac{I_{given} evaluation_{radius 1}^{3} \\mu_{0}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq evaluation_{radius 1} \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi evaluation_{radius 1}} & \\text{otherwise} \\end{cases}",
+            "B_2 = \\begin{cases} \\frac{I_{given} evaluation_{radius 2}^{3} \\mu_{0}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq evaluation_{radius 2} \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi evaluation_{radius 2}} & \\text{otherwise} \\end{cases}"
+          ],
+          "numeric_text": "B_1 ved s=2.0 cm, B_2 ved s=8.0 cm\nB_1: 5.00000000272188e-6; B_2: 2.00000000108875e-5; J_0: 3183.09886183791",
+          "units": "J_0: A/m^2; B: T; B_1: T; B_2: T"
+        },
+        "steps": [
+          {
+            "title": "Grundligning 1",
+            "latex": "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}",
+            "reason": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen."
+          },
+          {
+            "id": "step-b1755ba2d987fc5df6fb-0",
+            "title": "Omsluttet strøm før integration",
+            "reason": "Anvendt lov: Ampères lov. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\int\\limits_{0}^{s} \\frac{2 \\pi J_{0} s^{3}}{a^{2}}\\, ds\\]",
+            "check": ""
+          },
+          {
+            "id": "step-790c22e5dd2e189f662e-0",
+            "title": "Regionens strøm efter integration",
+            "reason": "Anvendt lov: Ampères lov. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\frac{\\pi J_{0} s^{4}}{2 a^{2}}\\]",
+            "check": ""
+          },
+          {
+            "id": "step-66421a2c8e875f342baf-0",
+            "title": "B 2πs = μ₀ I_enc; isolér B",
+            "reason": "Anvendt lov: Ampères lov. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\begin{cases} \\frac{J_{0} \\mu_{0} s^{3}}{4 a^{2}} & \\text{for}\\: a \\geq s \\\\\\frac{J_{0} a^{2} \\mu_{0}}{4 s} & \\text{otherwise} \\end{cases}\\]",
+            "check": ""
+          },
+          {
+            "id": "step-3fc5d84661a9685d9f46-0",
+            "title": "Strømmen fås ved integration af den aksiale strømtæthed",
+            "reason": "Anvendt lov: Ampères lov. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\frac{\\pi J_{0} a^{2}}{2}\\]",
+            "check": ""
+          },
+          {
+            "id": "step-d493432f5902eb741b50-0",
+            "title": "Løs I = I_given for J_0",
+            "reason": "Anvendt lov: Symbolsk ligningsløsning. Alle fundne reelle grene bevares; ingen gren vælges ud fra et forventet svar.",
+            "latex": "\\[\\frac{2 I_{given}}{\\pi a^{2}}\\]",
+            "check": ""
+          },
+          {
+            "id": "step-f2982293b81419535ea3-0",
+            "title": "Evaluér B ved J_0=2*I_given/(pi*a**2)",
+            "reason": "Anvendt lov: Indsættelse i beregnet resultat. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\begin{cases} \\frac{I_{given} \\mu_{0} s^{3}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq s \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi s} & \\text{otherwise} \\end{cases}\\]",
+            "check": ""
+          },
+          {
+            "id": "step-79847a0b5950c829d07c-0",
+            "title": "Evaluér normalized_B ved s=evaluation_radius_1",
+            "reason": "Anvendt lov: Indsættelse i beregnet resultat. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\begin{cases} \\frac{I_{given} evaluation_{radius 1}^{3} \\mu_{0}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq evaluation_{radius 1} \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi evaluation_{radius 1}} & \\text{otherwise} \\end{cases}\\]",
+            "check": ""
+          },
+          {
+            "id": "step-6f37847df34856b2b9f2-0",
+            "title": "Evaluér normalized_B ved s=evaluation_radius_2",
+            "reason": "Anvendt lov: Indsættelse i beregnet resultat. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\begin{cases} \\frac{I_{given} evaluation_{radius 2}^{3} \\mu_{0}}{2 \\pi a^{4}} & \\text{for}\\: a \\geq evaluation_{radius 2} \\\\\\frac{I_{given} \\mu_{0}}{2 \\pi evaluation_{radius 2}} & \\text{otherwise} \\end{cases}\\]",
+            "check": ""
+          }
+        ],
+        "interpretation": {
+          "method": "Ampères lov → integreret strøm",
+          "geometry": "ampere_regions"
+        },
+        "warnings": [
+          "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring.",
+          "Retning: Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning.",
+          "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+        ],
+        "backend_status": "calculated_under_confirmed_model",
+        "backend_schema": "assisted-1.0",
+        "audit": "# Brugerbekræftede oplysninger\n\ncoordinate = s\n\nregions = [{'density': 'J_0*((s**2)/(a**2))', 'lower': '0', 'upper': 'a'}]\n\nI_given = 8.0 A\n\na = 4.0 cm\n\nevaluation_radius_1 = 2.0 cm\n\nevaluation_radius_2 = 8.0 cm\n\nEnhed for I_given: A\n\nEnhed for J_0: A/m^2\n\nEnhed for a: m\n\nEnhed for evaluation_radius_1: m\n\nEnhed for evaluation_radius_2: m\n\nEnhed for s: m\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 19 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- Dimension: I_enc — A\n\n- Dimension: B — T\n\n- Inputdimension: coordinate — m\n\n- Inputdimension: region_0_lower — m\n\n- Inputdimension: region_0_upper — m\n\n- Inputdimension: region_0_density — A/m^2\n\n- Ampère cirkulationsidentitet\n\n- Ampère differentiallov i åben region\n\n- Dimension: I_enc — A\n\n- Dimension: B — T\n\n- Dimension: I — A\n\n- density_amplitude: indsættelse i oprindelig ligning\n\n- Dimension: I_enc — A\n\n- Dimension: B — T\n\n- Dimension: I — A\n\n- Dimension: density_amplitude — A/m^2\n\n- Dimension: normalized_B — T\n\n- Dimension: B_point_1 — T\n\n- Dimension: B_point_2 — T\n\n## Forudsætninger og gyldighed\n\n- infinite_cylindrical_symmetry\n\n- magnetostatic\n\n- nonmagnetic_medium\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist.\n\nEvalueringspunkter: B_1 ved s=2.0 cm, B_2 ved s=8.0 cm"
+      },
+      "math_display_errors": []
+    },
+    {
+      "id": "user_potential",
+      "text": "Et elektrisk potentiale er givet ved V(x,y,z) = a*x**2 + b*y**2. Bestem det elektriske felt E og ladningstætheden rho.",
+      "actions": [
+        "Indsæt opgavetekst",
+        "Analysér opgave",
+        "Bekræft læste data og viste fysiske betingelser",
+        "Beregn opgaven"
+      ],
+      "semantic_user_actions": 4,
+      "manual_reentry": [],
+      "proposal_before_confirmation": {
+        "text": "Et elektrisk potentiale er givet ved V(x,y,z) = a*x**2 + b*y**2. Bestem det elektriske felt E og ladningstætheden rho.",
+        "normalized": "Et elektrisk potentiale er givet ved V(x,y,z) = a*x**2 + b*y**2. Bestem det elektriske felt E og ladningstætheden rho.",
+        "issues": [],
+        "quantities": {},
+        "unit_edits": {},
+        "evidence": [
+          "V(x,y,z) = a*x**2 + b*y**2"
+        ],
+        "wanted": [
+          "E",
+          "rho"
+        ],
+        "kind": "potential",
+        "model": "potential_field",
+        "title": "Elektrisk felt og ladning fra potentiale",
+        "source": "a*x**2+b*y**2",
+        "reasoning": "Funktionen V er givet. E findes med -grad(V), og samlet volumenladning med epsilon_0*div(E).",
+        "physical_conditions": "Elektrostatisk model; kartesiske koordinater x,y,z i meter. rho er samlet volumenladningstæthed, ikke kun fri ladning i et materiale.",
+        "assumptions": [
+          "electrostatic"
+        ],
+        "positive": [],
+        "units": {
+          "z": "m",
+          "a": "V/m^2",
+          "y": "m",
+          "x": "m",
+          "b": "V/m^2"
+        },
+        "notes": [
+          "Gauss’ lov for E giver samlet ladning med epsilon_0; der kræves ingen gættet permittivitet eller vakuumantagelse."
+        ]
+      },
+      "submitted_request": {
+        "schema_version": "assisted-1.0",
+        "text": "Et elektrisk potentiale er givet ved V(x,y,z) = a*x**2 + b*y**2. Bestem det elektriske felt E og ladningstætheden rho.",
+        "confirmed": true,
+        "variables": {
+          "V": "a*x**2+b*y**2",
+          "coordinates": [
+            "x",
+            "y",
+            "z"
+          ],
+          "system": "cartesian"
+        },
+        "units": {
+          "y": "m",
+          "z": "m",
+          "x": "m",
+          "b": "V/m^2",
+          "a": "V/m^2"
+        },
+        "numbers": {},
+        "positive": [],
+        "assumptions": [
+          "electrostatic"
+        ],
+        "subproblems": [
+          {
+            "id": "a",
+            "model": "potential_field",
+            "wanted": [
+              "E",
+              "rho"
+            ],
+            "orientation_confirmed": true
+          }
+        ]
+      },
+      "response": {
+        "schema_version": "assisted-1.0",
+        "status": "calculated_under_confirmed_model",
+        "questions": [],
+        "errors": [],
+        "subproblems": [
+          {
+            "id": "a",
+            "model": "potential_field",
+            "status": "calculated_under_confirmed_model",
+            "solution": {
+              "method": "Gradient, divergens og rotation",
+              "reasoning": "Maxwells differentialligninger forbinder felt, potentiale og kilder. Metriske faktorer medtages i det valgte ortogonale koordinatsystem.",
+              "equations_latex": [
+                "\\mathbf E=-\\nabla V",
+                "\\rho_{total}=\\epsilon_0\\nabla\\cdot\\mathbf E",
+                "\\partial_t\\mathbf B=-\\nabla\\times\\mathbf E",
+                "\\nabla\\times\\mathbf E=0"
+              ],
+              "steps": [
+                {
+                  "id": "step-2119ef20018cd9d79947-0",
+                  "text": "Differentier potentialet med koordinatsystemets skaleringsfaktorer",
+                  "title": "Differentier potentialet med koordinatsystemets skaleringsfaktorer",
+                  "latex": "\\left[\\begin{matrix}2 a x\\\\2 b y\\\\0\\end{matrix}\\right]",
+                  "physical_reasoning": "Gradienten beregnes med de metriske faktorer i det givne koordinatsystem; feltet fås derefter med et minusfortegn.",
+                  "reasoning_scope": "step",
+                  "law": "Gradient af potentiale",
+                  "method_context_id": "method-e42853945b7f9afd9c0b",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "electrostatic"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-e6926ac3fec8ff45188d-0",
+                  "text": "Tag minus gradienten: det elektriske felt",
+                  "title": "Tag minus gradienten: det elektriske felt",
+                  "latex": "\\left[\\begin{matrix}- 2 a x\\\\- 2 b y\\\\0\\end{matrix}\\right]",
+                  "physical_reasoning": "Det elektriske felt peger mod aftagende elektrostatisk potentiale og er derfor minus gradienten.",
+                  "reasoning_scope": "step",
+                  "law": "Elektrisk felt fra potentiale",
+                  "method_context_id": "method-e42853945b7f9afd9c0b",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "electrostatic"
+                  ],
+                  "validity": [
+                    "Glat potentiale i det angivne område."
+                  ],
+                  "check_ids": [
+                    "check-141ea52cd6568614096a"
+                  ]
+                },
+                {
+                  "id": "step-8a5b9e7eda0aac2af9c8-0",
+                  "text": "Beregn divergensen led for led",
+                  "title": "Beregn divergensen led for led",
+                  "latex": "- 2 a - 2 b",
+                  "physical_reasoning": "Gauss differentiallov forbinder feltets divergens med den samlede lokale volumenladning.",
+                  "reasoning_scope": "step",
+                  "law": "Gauss differentiallov",
+                  "method_context_id": "method-e42853945b7f9afd9c0b",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "electrostatic"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-ce1b71b556cd6934d1c2-0",
+                  "text": "Indsæt i Gauss’ differentiallov",
+                  "title": "Indsæt i Gauss’ differentiallov",
+                  "latex": "\\epsilon_{0} \\left(- 2 a - 2 b\\right)",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Gradient, divergens og rotation",
+                  "method_context_id": "method-e42853945b7f9afd9c0b",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "electrostatic"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-290fdd6ab25ad372761a-0",
+                  "text": "Beregn rotationen af E",
+                  "title": "Beregn rotationen af E",
+                  "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+                  "physical_reasoning": "Faradays differentiallov bestemmer den krævede tidsændring af B; i elektrostatik skal rotationen være nul.",
+                  "reasoning_scope": "step",
+                  "law": "Faradays differentiallov",
+                  "method_context_id": "method-e42853945b7f9afd9c0b",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "electrostatic"
+                  ],
+                  "validity": [
+                    "Differentialkontrollen gælder i glatte områder."
+                  ],
+                  "check_ids": [
+                    "check-71a1be0167374ecdda97"
+                  ]
+                }
+              ],
+              "results": {
+                "laplacian_V": {
+                  "expression": "2*a + 2*b",
+                  "latex": "2 a + 2 b",
+                  "unit": "V/m^2"
+                },
+                "E": {
+                  "expression": "Matrix([[-2*a*x], [-2*b*y], [0]])",
+                  "latex": "\\left[\\begin{matrix}- 2 a x\\\\- 2 b y\\\\0\\end{matrix}\\right]",
+                  "unit": "V/m"
+                },
+                "rho": {
+                  "expression": "epsilon_0*(-2*a - 2*b)",
+                  "latex": "\\epsilon_{0} \\left(- 2 a - 2 b\\right)",
+                  "unit": "C/m^3"
+                },
+                "curl_E": {
+                  "expression": "Matrix([[0], [0], [0]])",
+                  "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+                  "unit": "V/m^2"
+                },
+                "dB_dt": {
+                  "expression": "Matrix([[0], [0], [0]])",
+                  "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+                  "unit": "T/s"
+                }
+              },
+              "numerical": {},
+              "checks": [
+                {
+                  "id": "check-141ea52cd6568614096a",
+                  "name": "Rotation af gradientfelt",
+                  "passed": true,
+                  "residual_latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+                  "detail": "",
+                  "step_ids": [
+                    "step-e6926ac3fec8ff45188d-0"
+                  ]
+                },
+                {
+                  "id": "check-71a1be0167374ecdda97",
+                  "name": "Elektrostatisk rotation",
+                  "passed": true,
+                  "residual_latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+                  "detail": "",
+                  "step_ids": [
+                    "step-290fdd6ab25ad372761a-0"
+                  ]
+                },
+                {
+                  "id": "check-f20fad2b15032e30c064",
+                  "name": "Dimension: laplacian_V",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "V/m^2",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-bcbed59ea60ce4b2757f",
+                  "name": "Dimension: E",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "V/m",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-8018d944e02656f68b6b",
+                  "name": "Dimension: rho",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "C/m^3",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-671cefa85974fe2a8c6f",
+                  "name": "Dimension: curl_E",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "V/m^2",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-f0bf5f971e2f6519ef82",
+                  "name": "Dimension: dB_dt",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T/s",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-93ce1fe997d84873e99f",
+                  "name": "Inputdimension: V",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "V",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-2e2512b5805047efe28d",
+                  "name": "Inputdimension: coordinate_0",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "m",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-5e673b4b89fbf62cc466",
+                  "name": "Inputdimension: coordinate_1",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "m",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-08760873e5d278e8ce0b",
+                  "name": "Inputdimension: coordinate_2",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "m",
+                  "step_ids": []
+                }
+              ],
+              "direction": "Komponenter i den ortonormale basis for det valgte koordinatsystem.",
+              "warnings": [
+                "Differentialkontroller gælder i glatte områder. Delta-kilder og grænseflader kræver særskilt integral-/springkontrol."
+              ],
+              "presentation_version": "1.0",
+              "latex_profile": "EM1-Math-1",
+              "method_contexts": {
+                "method-e42853945b7f9afd9c0b": {
+                  "method_id": "field_calculus",
+                  "method": "Gradient, divergens og rotation",
+                  "reasoning": "Maxwells differentialligninger forbinder felt, potentiale og kilder. Metriske faktorer medtages i det valgte ortogonale koordinatsystem.",
+                  "equations": [
+                    "\\mathbf E=-\\nabla V",
+                    "\\rho_{total}=\\epsilon_0\\nabla\\cdot\\mathbf E",
+                    "\\partial_t\\mathbf B=-\\nabla\\times\\mathbf E",
+                    "\\nabla\\times\\mathbf E=0"
+                  ],
+                  "assumptions": [
+                    "electrostatic"
+                  ]
+                }
+              },
+              "views": {
+                "result": {
+                  "wanted": [
+                    "E",
+                    "rho"
+                  ],
+                  "results": {
+                    "E": {
+                      "expression": "Matrix([[-2*a*x], [-2*b*y], [0]])",
+                      "latex": "\\left[\\begin{matrix}- 2 a x\\\\- 2 b y\\\\0\\end{matrix}\\right]",
+                      "unit": "V/m"
+                    },
+                    "rho": {
+                      "expression": "epsilon_0*(-2*a - 2*b)",
+                      "latex": "\\epsilon_{0} \\left(- 2 a - 2 b\\right)",
+                      "unit": "C/m^3"
+                    }
+                  },
+                  "numerical": {},
+                  "direction": "Komponenter i den ortonormale basis for det valgte koordinatsystem."
+                },
+                "derivation": {
+                  "equations_latex": [
+                    "\\mathbf E=-\\nabla V",
+                    "\\rho_{total}=\\epsilon_0\\nabla\\cdot\\mathbf E",
+                    "\\partial_t\\mathbf B=-\\nabla\\times\\mathbf E",
+                    "\\nabla\\times\\mathbf E=0"
+                  ],
+                  "step_ids": [
+                    "step-2119ef20018cd9d79947-0",
+                    "step-e6926ac3fec8ff45188d-0",
+                    "step-8a5b9e7eda0aac2af9c8-0",
+                    "step-ce1b71b556cd6934d1c2-0",
+                    "step-290fdd6ab25ad372761a-0"
+                  ]
+                },
+                "explanation": {
+                  "step_ids": [
+                    "step-2119ef20018cd9d79947-0",
+                    "step-e6926ac3fec8ff45188d-0",
+                    "step-8a5b9e7eda0aac2af9c8-0",
+                    "step-ce1b71b556cd6934d1c2-0",
+                    "step-290fdd6ab25ad372761a-0"
+                  ],
+                  "method_context_ids": [
+                    "method-e42853945b7f9afd9c0b"
+                  ],
+                  "global_check_ids": [
+                    "check-f20fad2b15032e30c064",
+                    "check-bcbed59ea60ce4b2757f",
+                    "check-8018d944e02656f68b6b",
+                    "check-671cefa85974fe2a8c6f",
+                    "check-f0bf5f971e2f6519ef82",
+                    "check-93ce1fe997d84873e99f",
+                    "check-2e2512b5805047efe28d",
+                    "check-5e673b4b89fbf62cc466",
+                    "check-08760873e5d278e8ce0b"
+                  ],
+                  "warnings": [
+                    "Differentialkontroller gælder i glatte områder. Delta-kilder og grænseflader kræver særskilt integral-/springkontrol."
+                  ]
+                }
+              }
+            },
+            "errors": [],
+            "verification": {
+              "interpretation": "user_confirmed_not_machine_verified",
+              "dimensions": "passed",
+              "physical_checks": [
+                "Rotation af gradientfelt",
+                "Elektrostatisk rotation",
+                "Inputdimension: V",
+                "Inputdimension: coordinate_0",
+                "Inputdimension: coordinate_1",
+                "Inputdimension: coordinate_2"
+              ],
+              "completeness": "requested_results_present",
+              "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+            }
+          }
+        ],
+        "interpretation_status": "user_confirmed",
+        "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+        "confirmed_model": {
+          "schema_version": "assisted-1.0",
+          "text": "Et elektrisk potentiale er givet ved V(x,y,z) = a*x**2 + b*y**2. Bestem det elektriske felt E og ladningstætheden rho.",
+          "confirmed": true,
+          "variables": {
+            "V": "a*x**2+b*y**2",
+            "coordinates": [
+              "x",
+              "y",
+              "z"
+            ],
+            "system": "cartesian"
+          },
+          "units": {
+            "y": "m",
+            "z": "m",
+            "x": "m",
+            "b": "V/m^2",
+            "a": "V/m^2"
+          },
+          "numbers": {},
+          "positive": [],
+          "assumptions": [
+            "electrostatic"
+          ],
+          "subproblems": [
+            {
+              "id": "a",
+              "model": "potential_field",
+              "wanted": [
+                "E",
+                "rho"
+              ],
+              "orientation_confirmed": true
+            }
+          ]
+        }
+      },
+      "viewer": {
+        "viewer_schema": "em1.desktop.solution.v1",
+        "title": "Beregnet under brugerbekræftet model",
+        "prompt": "Et elektrisk potentiale er givet ved V(x,y,z) = a*x**2 + b*y**2. Bestem det elektriske felt E og ladningstætheden rho.",
+        "status": "assumptions",
+        "result": {
+          "symbolic_latex": "E = \\left[\\begin{matrix}- 2 a x\\\\- 2 b y\\\\0\\end{matrix}\\right]",
+          "extra_latex": [
+            "rho = \\epsilon_{0} \\left(- 2 a - 2 b\\right)"
+          ],
+          "numeric_text": "",
+          "units": "E: V/m; rho: C/m^3"
+        },
+        "steps": [
+          {
+            "title": "Grundligning 1",
+            "latex": "\\mathbf E=-\\nabla V",
+            "reason": "Maxwells differentialligninger forbinder felt, potentiale og kilder. Metriske faktorer medtages i det valgte ortogonale koordinatsystem."
+          },
+          {
+            "title": "Grundligning 2",
+            "latex": "\\rho_{total}=\\epsilon_0\\nabla\\cdot\\mathbf E",
+            "reason": ""
+          },
+          {
+            "title": "Grundligning 3",
+            "latex": "\\partial_t\\mathbf B=-\\nabla\\times\\mathbf E",
+            "reason": ""
+          },
+          {
+            "title": "Grundligning 4",
+            "latex": "\\nabla\\times\\mathbf E=0",
+            "reason": ""
+          },
+          {
+            "id": "step-2119ef20018cd9d79947-0",
+            "title": "Differentier potentialet med koordinatsystemets skaleringsfaktorer",
+            "reason": "Anvendt lov: Gradient af potentiale. Gradienten beregnes med de metriske faktorer i det givne koordinatsystem; feltet fås derefter med et minusfortegn.",
+            "latex": "\\[\\left[\\begin{matrix}2 a x\\\\2 b y\\\\0\\end{matrix}\\right]\\]",
+            "check": ""
+          },
+          {
+            "id": "step-e6926ac3fec8ff45188d-0",
+            "title": "Tag minus gradienten: det elektriske felt",
+            "reason": "Anvendt lov: Elektrisk felt fra potentiale. Det elektriske felt peger mod aftagende elektrostatisk potentiale og er derfor minus gradienten.",
+            "latex": "\\[\\left[\\begin{matrix}- 2 a x\\\\- 2 b y\\\\0\\end{matrix}\\right]\\]",
+            "check": "Rotation af gradientfelt: bestået"
+          },
+          {
+            "id": "step-8a5b9e7eda0aac2af9c8-0",
+            "title": "Beregn divergensen led for led",
+            "reason": "Gauss differentiallov forbinder feltets divergens med den samlede lokale volumenladning.",
+            "latex": "\\[- 2 a - 2 b\\]",
+            "check": ""
+          },
+          {
+            "id": "step-ce1b71b556cd6934d1c2-0",
+            "title": "Indsæt i Gauss’ differentiallov",
+            "reason": "Anvendt lov: Gradient, divergens og rotation. Maxwells differentialligninger forbinder felt, potentiale og kilder. Metriske faktorer medtages i det valgte ortogonale koordinatsystem.",
+            "latex": "\\[\\epsilon_{0} \\left(- 2 a - 2 b\\right)\\]",
+            "check": ""
+          },
+          {
+            "id": "step-290fdd6ab25ad372761a-0",
+            "title": "Beregn rotationen af E",
+            "reason": "Faradays differentiallov bestemmer den krævede tidsændring af B; i elektrostatik skal rotationen være nul.",
+            "latex": "\\[\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]\\]",
+            "check": "Elektrostatisk rotation: bestået"
+          }
+        ],
+        "interpretation": {
+          "method": "Gradient, divergens og rotation",
+          "geometry": "potential_field"
+        },
+        "warnings": [
+          "Differentialkontroller gælder i glatte områder. Delta-kilder og grænseflader kræver særskilt integral-/springkontrol.",
+          "Retning: Komponenter i den ortonormale basis for det valgte koordinatsystem.",
+          "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+        ],
+        "backend_status": "calculated_under_confirmed_model",
+        "backend_schema": "assisted-1.0",
+        "audit": "# Brugerbekræftede oplysninger\n\nV = a*x**2+b*y**2\n\ncoordinates = ['x', 'y', 'z']\n\nsystem = cartesian\n\nEnhed for a: V/m^2\n\nEnhed for b: V/m^2\n\nEnhed for x: m\n\nEnhed for y: m\n\nEnhed for z: m\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 11 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- Rotation af gradientfelt\n\n- Elektrostatisk rotation\n\n- Dimension: laplacian_V — V/m^2\n\n- Dimension: E — V/m\n\n- Dimension: rho — C/m^3\n\n- Dimension: curl_E — V/m^2\n\n- Dimension: dB_dt — T/s\n\n- Inputdimension: V — V\n\n- Inputdimension: coordinate_0 — m\n\n- Inputdimension: coordinate_1 — m\n\n- Inputdimension: coordinate_2 — m\n\n## Forudsætninger og gyldighed\n\n- electrostatic\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+      },
+      "math_display_errors": []
+    },
+    {
+      "id": "historical_2024_02_p4b",
+      "text": "Den elektriske strøm i en lang, cylinderformet leder med radius S = 3,1 mm går i lederens\nlængderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,\nhar formen                                   !     s\"\n                                    J(s) = J0 1 −     ,\n                                                   S\nhvor J0 = 96,0 A/mm2 .\nAngiv retningen af magnetfeltet, som genereres af strømmen. Bestem dernæst mag-\n     netfeltets styrke som funktion af s for alle værdier af s. Angiv endelig feltstyrken,\n     både symbolsk og numerisk, for i) s = 0, ii) s = S og iii) s = 2S.",
+      "actions": [
+        "Indsæt opgavetekst",
+        "Analysér opgave",
+        "Ret den ødelagte PDF-formel",
+        "Bekræft læste data og viste fysiske betingelser",
+        "Beregn opgaven"
+      ],
+      "semantic_user_actions": 5,
+      "manual_reentry": [
+        "J(s) rettet fra det originale opgavebillede på side 27, ikke fra facit."
+      ],
+      "proposal_before_confirmation": {
+        "text": "Den elektriske strøm i en lang, cylinderformet leder med radius S = 3,1 mm går i lederens\nlængderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,\nhar formen                                   !     s\"\n                                    J(s) = J0 1 −     ,\n                                                   S\nhvor J0 = 96,0 A/mm2 .\nAngiv retningen af magnetfeltet, som genereres af strømmen. Bestem dernæst mag-\n     netfeltets styrke som funktion af s for alle værdier af s. Angiv endelig feltstyrken,\n     både symbolsk og numerisk, for i) s = 0, ii) s = S og iii) s = 2S.",
+        "normalized": "Den elektriske strøm i en lang, cylinderformet leder med radius S = 3.1 mm går i lederens\nlængderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,\nhar formen                                   !     s\"\n                                    J(s) = J0 1 -     ,\n                                                   S\nhvor J0 = 96.0 A/mm2 .\nAngiv retningen af magnetfeltet, som genereres af strømmen. Bestem dernæst magnetfeltets styrke som funktion af s for alle værdier af s. Angiv endelig feltstyrken,\n     både symbolsk og numerisk, for i) s = 0, ii) s = S og iii) s = 2S.",
+        "issues": [
+          {
+            "field": "source",
+            "label": "J(s)",
+            "reason": "Tæthedsformlen kan ikke aflæses sikkert fra teksten. Ret formlen fra opgave/PDF; ingen parenteser gættes."
+          }
+        ],
+        "quantities": {
+          "S": "3.1 mm",
+          "J0": "96.0 A/mm**2"
+        },
+        "unit_edits": {},
+        "evidence": [
+          "J(s) = J0 1 -"
+        ],
+        "wanted": [
+          "B"
+        ],
+        "kind": "cylinder",
+        "model": "ampere_regions",
+        "title": "Cylindrisk strømfordeling – integration og Ampères lov",
+        "source": "",
+        "coordinate": "s",
+        "radius_symbol": "S",
+        "reasoning": "Strømtætheden integreres over tværsnittet. En eventuel ukendt amplitude bestemmes fra den oplyste samlede strøm. Feltet beregnes i hver region.",
+        "physical_conditions": "Uendelig massiv cylinder, stationær aksial strøm og ikke-magnetisk medium (mu=mu_0). Fortegn angives relativt til +z.",
+        "assumptions": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic",
+          "nonmagnetic_medium"
+        ],
+        "positive": [
+          "s",
+          "S"
+        ],
+        "notes": [
+          "Teksten siger ikke uendelig. Bekræft kun idealmodellen, hvis en lang cylinder må tilnærmes sådan.",
+          "Permeabiliteten er ikke oplyst. Bekræft kun mu_0 nedenfor, hvis lederen er ikke-magnetisk.",
+          "Koordinatkonvention: +z vælges langs den oplyste strømretning i lederens længderetning. Der gættes ingen retning i en figur."
+        ],
+        "direction": "+z",
+        "points": [
+          "0 m",
+          "S",
+          "2*S"
+        ],
+        "units": {
+          "S": "m",
+          "s": "m"
+        },
+        "normalization_symbol": ""
+      },
+      "submitted_request": {
+        "schema_version": "assisted-1.0",
+        "text": "Den elektriske strøm i en lang, cylinderformet leder med radius S = 3,1 mm går i lederens\nlængderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,\nhar formen                                   !     s\"\n                                    J(s) = J0 1 −     ,\n                                                   S\nhvor J0 = 96,0 A/mm2 .\nAngiv retningen af magnetfeltet, som genereres af strømmen. Bestem dernæst mag-\n     netfeltets styrke som funktion af s for alle værdier af s. Angiv endelig feltstyrken,\n     både symbolsk og numerisk, for i) s = 0, ii) s = S og iii) s = 2S.",
+        "confirmed": true,
+        "variables": {
+          "coordinate": "s",
+          "regions": [
+            {
+              "lower": "0",
+              "upper": "S",
+              "density": "J0*(1-s/S)"
+            }
+          ]
+        },
+        "units": {
+          "S": "m",
+          "s": "m",
+          "J0": "A/m^2",
+          "evaluation_radius_1": "m"
+        },
+        "numbers": {
+          "S": "3.1 mm",
+          "J0": "96.0 A/mm**2",
+          "evaluation_radius_1": "0 m"
+        },
+        "positive": [
+          "s",
+          "S"
+        ],
+        "assumptions": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic",
+          "nonmagnetic_medium"
+        ],
+        "subproblems": [
+          {
+            "id": "a",
+            "model": "ampere_regions",
+            "wanted": [
+              "B"
+            ],
+            "orientation_confirmed": true,
+            "operations": [
+              {
+                "kind": "limit",
+                "id": "B_point_1",
+                "result": "B",
+                "variable": "s",
+                "value": "0"
+              },
+              {
+                "kind": "evaluate",
+                "id": "B_point_2",
+                "result": "B",
+                "variable": "s",
+                "value": "S"
+              },
+              {
+                "kind": "evaluate",
+                "id": "B_point_3",
+                "result": "B",
+                "variable": "s",
+                "value": "2*S"
+              }
+            ]
+          }
+        ]
+      },
+      "response": {
+        "schema_version": "assisted-1.0",
+        "status": "calculated_under_confirmed_model",
+        "questions": [],
+        "errors": [],
+        "subproblems": [
+          {
+            "id": "a",
+            "model": "ampere_regions",
+            "status": "calculated_under_confirmed_model",
+            "solution": {
+              "method": "Ampères lov → ",
+              "reasoning": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+              "equations_latex": [
+                "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+              ],
+              "steps": [
+                {
+                  "id": "step-f91f2eb3f86a2c8e8010-0",
+                  "text": "Omsluttet strøm før integration",
+                  "title": "Omsluttet strøm før integration",
+                  "latex": "\\int\\limits_{0}^{s} 2 \\pi J_{0} s \\left(1 - \\frac{s}{S}\\right)\\, ds",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Ampères lov",
+                  "method_context_id": "method-afd6847929a5a6cdb9d1",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-ffbdacff3992b2a4631f-0",
+                  "text": "Regionens strøm efter integration",
+                  "title": "Regionens strøm efter integration",
+                  "latex": "\\frac{\\pi J_{0} s^{2} \\left(3 S - 2 s\\right)}{3 S}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Ampères lov",
+                  "method_context_id": "method-afd6847929a5a6cdb9d1",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-8991ccce17111fdd2e5b-0",
+                  "text": "B 2πs = μ₀ I_enc; isolér B",
+                  "title": "B 2πs = μ₀ I_enc; isolér B",
+                  "latex": "\\begin{cases} \\frac{J_{0} \\mu_{0} s \\left(3 S - 2 s\\right)}{6 S} & \\text{for}\\: S \\geq s \\\\\\frac{J_{0} S^{2} \\mu_{0}}{6 s} & \\text{otherwise} \\end{cases}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Ampères lov",
+                  "method_context_id": "method-afd6847929a5a6cdb9d1",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-414ee2894e92d3bd4a2d-0",
+                  "text": "Grænse af B ved s → 0",
+                  "title": "Grænse af B ved s → 0",
+                  "latex": "0",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Symbolsk grænseberegning",
+                  "method_context_id": "method-7c39666480a23a59b50c",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-9ed6aba3ef1093d8af75-0",
+                  "text": "Evaluér B ved s=S",
+                  "title": "Evaluér B ved s=S",
+                  "latex": "\\frac{J_{0} S \\mu_{0}}{6}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Indsættelse i beregnet resultat",
+                  "method_context_id": "method-7c39666480a23a59b50c",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-4d6c47d4f588c47bcea5-0",
+                  "text": "Evaluér B ved s=2*S",
+                  "title": "Evaluér B ved s=2*S",
+                  "latex": "\\frac{J_{0} S \\mu_{0}}{12}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Indsættelse i beregnet resultat",
+                  "method_context_id": "method-7c39666480a23a59b50c",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                }
+              ],
+              "results": {
+                "I_enc": {
+                  "expression": "Piecewise((pi*J0*s**2*(3*S - 2*s)/(3*S), S >= s), (pi*J0*S**2/3, True))",
+                  "latex": "\\begin{cases} \\frac{\\pi J_{0} s^{2} \\left(3 S - 2 s\\right)}{3 S} & \\text{for}\\: S \\geq s \\\\\\frac{\\pi J_{0} S^{2}}{3} & \\text{otherwise} \\end{cases}",
+                  "unit": "A"
+                },
+                "B": {
+                  "expression": "Piecewise((J0*mu_0*s*(3*S - 2*s)/(6*S), S >= s), (J0*S**2*mu_0/(6*s), True))",
+                  "latex": "\\begin{cases} \\frac{J_{0} \\mu_{0} s \\left(3 S - 2 s\\right)}{6 S} & \\text{for}\\: S \\geq s \\\\\\frac{J_{0} S^{2} \\mu_{0}}{6 s} & \\text{otherwise} \\end{cases}",
+                  "unit": "T"
+                },
+                "B_point_1": {
+                  "expression": "0",
+                  "latex": "0",
+                  "unit": "T"
+                },
+                "B_point_2": {
+                  "expression": "J0*S*mu_0/6",
+                  "latex": "\\frac{J_{0} S \\mu_{0}}{6}",
+                  "unit": "T"
+                },
+                "B_point_3": {
+                  "expression": "J0*S*mu_0/12",
+                  "latex": "\\frac{J_{0} S \\mu_{0}}{12}",
+                  "unit": "T"
+                }
+              },
+              "numerical": {
+                "B_point_1": {
+                  "value": "0",
+                  "latex": "0",
+                  "unit": "T"
+                },
+                "B_point_2": {
+                  "value": "0.0623291982811520",
+                  "latex": "0.062329198281152",
+                  "unit": "T"
+                },
+                "B_point_3": {
+                  "value": "0.0311645991405760",
+                  "latex": "0.031164599140576",
+                  "unit": "T"
+                }
+              },
+              "checks": [
+                {
+                  "id": "check-cc1fd98f8754241af015",
+                  "name": "Dimension: I_enc",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-12b184778d9450e3b254",
+                  "name": "Dimension: B",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-c37dd8ec81d66a0e4ab8",
+                  "name": "Inputdimension: coordinate",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "m",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-49358cc655e6c43c6b9c",
+                  "name": "Inputdimension: region_0_lower",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "m",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-9705dbf7e3c69829257a",
+                  "name": "Inputdimension: region_0_upper",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "m",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-6834f22d287ff0b76b2f",
+                  "name": "Inputdimension: region_0_density",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A/m^2",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-47ae6dfec88018588c9f",
+                  "name": "Ampère cirkulationsidentitet",
+                  "passed": true,
+                  "residual_latex": "0",
+                  "detail": "",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-1217fc31a6659c1a0934",
+                  "name": "Ampère differentiallov i åben region",
+                  "passed": true,
+                  "residual_latex": "0",
+                  "detail": "",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-21186b584e237b8f5395",
+                  "name": "Dimension: I_enc",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-b5bcf075bf85e563a807",
+                  "name": "Dimension: B",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-462d117f1abb671d3c44",
+                  "name": "Dimension: I_enc",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-0cb1b445f92bfc78d3a1",
+                  "name": "Dimension: B",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-c96b616efcf908e2b16c",
+                  "name": "Dimension: B_point_1",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-4e21b7e578e9369f024e",
+                  "name": "Dimension: B_point_2",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-d819c1fa73608d229c3a",
+                  "name": "Dimension: B_point_3",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                }
+              ],
+              "direction": "Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning.",
+              "warnings": [
+                "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring."
+              ],
+              "presentation_version": "1.0",
+              "latex_profile": "EM1-Math-1",
+              "method_contexts": {
+                "method-afd6847929a5a6cdb9d1": {
+                  "method_id": "ampere",
+                  "method": "Ampères lov",
+                  "reasoning": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+                  "equations": [
+                    "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+                  ],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ]
+                },
+                "method-7c39666480a23a59b50c": {
+                  "method_id": "ampere",
+                  "method": "Ampères lov → ",
+                  "reasoning": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+                  "equations": [
+                    "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+                  ],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ]
+                }
+              },
+              "views": {
+                "result": {
+                  "wanted": [
+                    "B",
+                    "B_point_1",
+                    "B_point_2",
+                    "B_point_3"
+                  ],
+                  "results": {
+                    "B": {
+                      "expression": "Piecewise((J0*mu_0*s*(3*S - 2*s)/(6*S), S >= s), (J0*S**2*mu_0/(6*s), True))",
+                      "latex": "\\begin{cases} \\frac{J_{0} \\mu_{0} s \\left(3 S - 2 s\\right)}{6 S} & \\text{for}\\: S \\geq s \\\\\\frac{J_{0} S^{2} \\mu_{0}}{6 s} & \\text{otherwise} \\end{cases}",
+                      "unit": "T"
+                    },
+                    "B_point_1": {
+                      "expression": "0",
+                      "latex": "0",
+                      "unit": "T"
+                    },
+                    "B_point_2": {
+                      "expression": "J0*S*mu_0/6",
+                      "latex": "\\frac{J_{0} S \\mu_{0}}{6}",
+                      "unit": "T"
+                    },
+                    "B_point_3": {
+                      "expression": "J0*S*mu_0/12",
+                      "latex": "\\frac{J_{0} S \\mu_{0}}{12}",
+                      "unit": "T"
+                    }
+                  },
+                  "numerical": {
+                    "B_point_1": {
+                      "value": "0",
+                      "latex": "0",
+                      "unit": "T"
+                    },
+                    "B_point_2": {
+                      "value": "0.0623291982811520",
+                      "latex": "0.062329198281152",
+                      "unit": "T"
+                    },
+                    "B_point_3": {
+                      "value": "0.0311645991405760",
+                      "latex": "0.031164599140576",
+                      "unit": "T"
+                    }
+                  },
+                  "direction": "Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning."
+                },
+                "derivation": {
+                  "equations_latex": [
+                    "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+                  ],
+                  "step_ids": [
+                    "step-f91f2eb3f86a2c8e8010-0",
+                    "step-ffbdacff3992b2a4631f-0",
+                    "step-8991ccce17111fdd2e5b-0",
+                    "step-414ee2894e92d3bd4a2d-0",
+                    "step-9ed6aba3ef1093d8af75-0",
+                    "step-4d6c47d4f588c47bcea5-0"
+                  ]
+                },
+                "explanation": {
+                  "step_ids": [
+                    "step-f91f2eb3f86a2c8e8010-0",
+                    "step-ffbdacff3992b2a4631f-0",
+                    "step-8991ccce17111fdd2e5b-0",
+                    "step-414ee2894e92d3bd4a2d-0",
+                    "step-9ed6aba3ef1093d8af75-0",
+                    "step-4d6c47d4f588c47bcea5-0"
+                  ],
+                  "method_context_ids": [
+                    "method-afd6847929a5a6cdb9d1",
+                    "method-7c39666480a23a59b50c"
+                  ],
+                  "global_check_ids": [
+                    "check-cc1fd98f8754241af015",
+                    "check-12b184778d9450e3b254",
+                    "check-c37dd8ec81d66a0e4ab8",
+                    "check-49358cc655e6c43c6b9c",
+                    "check-9705dbf7e3c69829257a",
+                    "check-6834f22d287ff0b76b2f",
+                    "check-47ae6dfec88018588c9f",
+                    "check-1217fc31a6659c1a0934",
+                    "check-21186b584e237b8f5395",
+                    "check-b5bcf075bf85e563a807",
+                    "check-462d117f1abb671d3c44",
+                    "check-0cb1b445f92bfc78d3a1",
+                    "check-c96b616efcf908e2b16c",
+                    "check-4e21b7e578e9369f024e",
+                    "check-d819c1fa73608d229c3a"
+                  ],
+                  "warnings": [
+                    "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring."
+                  ]
+                }
+              }
+            },
+            "errors": [],
+            "verification": {
+              "interpretation": "user_confirmed_not_machine_verified",
+              "dimensions": "passed",
+              "physical_checks": [
+                "Inputdimension: coordinate",
+                "Inputdimension: region_0_lower",
+                "Inputdimension: region_0_upper",
+                "Inputdimension: region_0_density",
+                "Ampère cirkulationsidentitet",
+                "Ampère differentiallov i åben region"
+              ],
+              "completeness": "requested_results_present",
+              "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+            }
+          }
+        ],
+        "interpretation_status": "user_confirmed",
+        "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+        "confirmed_model": {
+          "schema_version": "assisted-1.0",
+          "text": "Den elektriske strøm i en lang, cylinderformet leder med radius S = 3,1 mm går i lederens\nlængderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,\nhar formen                                   !     s\"\n                                    J(s) = J0 1 −     ,\n                                                   S\nhvor J0 = 96,0 A/mm2 .\nAngiv retningen af magnetfeltet, som genereres af strømmen. Bestem dernæst mag-\n     netfeltets styrke som funktion af s for alle værdier af s. Angiv endelig feltstyrken,\n     både symbolsk og numerisk, for i) s = 0, ii) s = S og iii) s = 2S.",
+          "confirmed": true,
+          "variables": {
+            "coordinate": "s",
+            "regions": [
+              {
+                "lower": "0",
+                "upper": "S",
+                "density": "J0*(1-s/S)"
+              }
+            ]
+          },
+          "units": {
+            "S": "m",
+            "s": "m",
+            "J0": "A/m^2",
+            "evaluation_radius_1": "m"
+          },
+          "numbers": {
+            "S": "3.1 mm",
+            "J0": "96.0 A/mm**2",
+            "evaluation_radius_1": "0 m"
+          },
+          "positive": [
+            "s",
+            "S"
+          ],
+          "assumptions": [
+            "infinite_cylindrical_symmetry",
+            "magnetostatic",
+            "nonmagnetic_medium"
+          ],
+          "subproblems": [
+            {
+              "id": "a",
+              "model": "ampere_regions",
+              "wanted": [
+                "B"
+              ],
+              "orientation_confirmed": true,
+              "operations": [
+                {
+                  "kind": "limit",
+                  "id": "B_point_1",
+                  "result": "B",
+                  "variable": "s",
+                  "value": "0"
+                },
+                {
+                  "kind": "evaluate",
+                  "id": "B_point_2",
+                  "result": "B",
+                  "variable": "s",
+                  "value": "S"
+                },
+                {
+                  "kind": "evaluate",
+                  "id": "B_point_3",
+                  "result": "B",
+                  "variable": "s",
+                  "value": "2*S"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "viewer": {
+        "viewer_schema": "em1.desktop.solution.v1",
+        "title": "Beregnet under brugerbekræftet model",
+        "prompt": "Den elektriske strøm i en lang, cylinderformet leder med radius S = 3,1 mm går i lederens\nlængderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,\nhar formen                                   !     s\"\n                                    J(s) = J0 1 −     ,\n                                                   S\nhvor J0 = 96,0 A/mm2 .\nAngiv retningen af magnetfeltet, som genereres af strømmen. Bestem dernæst mag-\n     netfeltets styrke som funktion af s for alle værdier af s. Angiv endelig feltstyrken,\n     både symbolsk og numerisk, for i) s = 0, ii) s = S og iii) s = 2S.",
+        "status": "assumptions",
+        "result": {
+          "symbolic_latex": "B = \\begin{cases} \\frac{J_{0} \\mu_{0} s \\left(3 S - 2 s\\right)}{6 S} & \\text{for}\\: S \\geq s \\\\\\frac{J_{0} S^{2} \\mu_{0}}{6 s} & \\text{otherwise} \\end{cases}",
+          "extra_latex": [
+            "B_1 = 0",
+            "B_2 = \\frac{J_{0} S \\mu_{0}}{6}",
+            "B_3 = \\frac{J_{0} S \\mu_{0}}{12}"
+          ],
+          "numeric_text": "B_1 ved s=0 m, B_2 ved s=S, B_3 ved s=2*S\nB_1: 0; B_2: 0.0623291982811520; B_3: 0.0311645991405760",
+          "units": "B: T; B_1: T; B_2: T; B_3: T"
+        },
+        "steps": [
+          {
+            "title": "Grundligning 1",
+            "latex": "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}",
+            "reason": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen."
+          },
+          {
+            "id": "step-f91f2eb3f86a2c8e8010-0",
+            "title": "Omsluttet strøm før integration",
+            "reason": "Anvendt lov: Ampères lov. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\int\\limits_{0}^{s} 2 \\pi J_{0} s \\left(1 - \\frac{s}{S}\\right)\\, ds\\]",
+            "check": ""
+          },
+          {
+            "id": "step-ffbdacff3992b2a4631f-0",
+            "title": "Regionens strøm efter integration",
+            "reason": "Anvendt lov: Ampères lov. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\frac{\\pi J_{0} s^{2} \\left(3 S - 2 s\\right)}{3 S}\\]",
+            "check": ""
+          },
+          {
+            "id": "step-8991ccce17111fdd2e5b-0",
+            "title": "B 2πs = μ₀ I_enc; isolér B",
+            "reason": "Anvendt lov: Ampères lov. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\begin{cases} \\frac{J_{0} \\mu_{0} s \\left(3 S - 2 s\\right)}{6 S} & \\text{for}\\: S \\geq s \\\\\\frac{J_{0} S^{2} \\mu_{0}}{6 s} & \\text{otherwise} \\end{cases}\\]",
+            "check": ""
+          },
+          {
+            "id": "step-414ee2894e92d3bd4a2d-0",
+            "title": "Grænse af B ved s → 0",
+            "reason": "Anvendt lov: Symbolsk grænseberegning. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[0\\]",
+            "check": ""
+          },
+          {
+            "id": "step-9ed6aba3ef1093d8af75-0",
+            "title": "Evaluér B ved s=S",
+            "reason": "Anvendt lov: Indsættelse i beregnet resultat. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\frac{J_{0} S \\mu_{0}}{6}\\]",
+            "check": ""
+          },
+          {
+            "id": "step-4d6c47d4f588c47bcea5-0",
+            "title": "Evaluér B ved s=2*S",
+            "reason": "Anvendt lov: Indsættelse i beregnet resultat. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\frac{J_{0} S \\mu_{0}}{12}\\]",
+            "check": ""
+          }
+        ],
+        "interpretation": {
+          "method": "Ampères lov → ",
+          "geometry": "ampere_regions"
+        },
+        "warnings": [
+          "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring.",
+          "Retning: Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning.",
+          "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+        ],
+        "backend_status": "calculated_under_confirmed_model",
+        "backend_schema": "assisted-1.0",
+        "audit": "# Brugerbekræftede oplysninger\n\ncoordinate = s\n\nregions = [{'density': 'J0*(1-s/S)', 'lower': '0', 'upper': 'S'}]\n\nJ0 = 96.0 A/mm**2\n\nS = 3.1 mm\n\nevaluation_radius_1 = 0 m\n\nEnhed for J0: A/m^2\n\nEnhed for S: m\n\nEnhed for evaluation_radius_1: m\n\nEnhed for s: m\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 15 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- Dimension: I_enc — A\n\n- Dimension: B — T\n\n- Inputdimension: coordinate — m\n\n- Inputdimension: region_0_lower — m\n\n- Inputdimension: region_0_upper — m\n\n- Inputdimension: region_0_density — A/m^2\n\n- Ampère cirkulationsidentitet\n\n- Ampère differentiallov i åben region\n\n- Dimension: I_enc — A\n\n- Dimension: B — T\n\n- Dimension: I_enc — A\n\n- Dimension: B — T\n\n- Dimension: B_point_1 — T\n\n- Dimension: B_point_2 — T\n\n- Dimension: B_point_3 — T\n\n## Forudsætninger og gyldighed\n\n- infinite_cylindrical_symmetry\n\n- magnetostatic\n\n- nonmagnetic_medium\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist.\n\nEvalueringspunkter: B_1 ved s=0 m, B_2 ved s=S, B_3 ved s=2*S"
+      },
+      "math_display_errors": []
+    },
+    {
+      "id": "historical_2024_02_p4ab",
+      "text": "Den elektriske strøm i en lang, cylinderformet leder med radius S = 3,1 mm går i lederens\nlængderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,\nhar formen                                   !     s\"\n                                    J(s) = J0 1 −     ,\n                                                   S\nhvor J0 = 96,0 A/mm2 .\nBestem et udtryk for strømmen, I(s), indeholdt i en cylinder med radius s ≤ S\n     rundt om lederens akse. Beregn dernæst den totale strøm i lederen ved anvendelse\n     af de opgivne talstørrelser.\nAngiv retningen af magnetfeltet, som genereres af strømmen. Bestem dernæst mag-\n     netfeltets styrke som funktion af s for alle værdier af s. Angiv endelig feltstyrken,\n     både symbolsk og numerisk, for i) s = 0, ii) s = S og iii) s = 2S.",
+      "actions": [
+        "Indsæt opgavetekst",
+        "Analysér opgave",
+        "Ret den ødelagte PDF-formel",
+        "Bekræft læste data og viste fysiske betingelser",
+        "Beregn opgaven"
+      ],
+      "semantic_user_actions": 5,
+      "manual_reentry": [
+        "J(s) rettet fra det originale opgavebillede på side 27, ikke fra facit."
+      ],
+      "proposal_before_confirmation": {
+        "text": "Den elektriske strøm i en lang, cylinderformet leder med radius S = 3,1 mm går i lederens\nlængderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,\nhar formen                                   !     s\"\n                                    J(s) = J0 1 −     ,\n                                                   S\nhvor J0 = 96,0 A/mm2 .\nBestem et udtryk for strømmen, I(s), indeholdt i en cylinder med radius s ≤ S\n     rundt om lederens akse. Beregn dernæst den totale strøm i lederen ved anvendelse\n     af de opgivne talstørrelser.\nAngiv retningen af magnetfeltet, som genereres af strømmen. Bestem dernæst mag-\n     netfeltets styrke som funktion af s for alle værdier af s. Angiv endelig feltstyrken,\n     både symbolsk og numerisk, for i) s = 0, ii) s = S og iii) s = 2S.",
+        "normalized": "Den elektriske strøm i en lang, cylinderformet leder med radius S = 3.1 mm går i lederens\nlængderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,\nhar formen                                   !     s\"\n                                    J(s) = J0 1 -     ,\n                                                   S\nhvor J0 = 96.0 A/mm2 .\nBestem et udtryk for strømmen, I(s), indeholdt i en cylinder med radius s ≤ S\n     rundt om lederens akse. Beregn dernæst den totale strøm i lederen ved anvendelse\n     af de opgivne talstørrelser.\nAngiv retningen af magnetfeltet, som genereres af strømmen. Bestem dernæst magnetfeltets styrke som funktion af s for alle værdier af s. Angiv endelig feltstyrken,\n     både symbolsk og numerisk, for i) s = 0, ii) s = S og iii) s = 2S.",
+        "issues": [
+          {
+            "field": "source",
+            "label": "J(s)",
+            "reason": "Tæthedsformlen kan ikke aflæses sikkert fra teksten. Ret formlen fra opgave/PDF; ingen parenteser gættes."
+          }
+        ],
+        "quantities": {
+          "S": "3.1 mm",
+          "J0": "96.0 A/mm**2"
+        },
+        "unit_edits": {},
+        "evidence": [
+          "J(s) = J0 1 -"
+        ],
+        "wanted": [
+          "B",
+          "I_enc",
+          "I"
+        ],
+        "kind": "cylinder",
+        "model": "ampere_regions",
+        "title": "Cylindrisk strømfordeling – integration og Ampères lov",
+        "source": "",
+        "coordinate": "s",
+        "radius_symbol": "S",
+        "reasoning": "Strømtætheden integreres over tværsnittet. En eventuel ukendt amplitude bestemmes fra den oplyste samlede strøm. Feltet beregnes i hver region.",
+        "physical_conditions": "Uendelig massiv cylinder, stationær aksial strøm og ikke-magnetisk medium (mu=mu_0). Fortegn angives relativt til +z.",
+        "assumptions": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic",
+          "nonmagnetic_medium"
+        ],
+        "positive": [
+          "s",
+          "S"
+        ],
+        "notes": [
+          "Teksten siger ikke uendelig. Bekræft kun idealmodellen, hvis en lang cylinder må tilnærmes sådan.",
+          "Permeabiliteten er ikke oplyst. Bekræft kun mu_0 nedenfor, hvis lederen er ikke-magnetisk.",
+          "Koordinatkonvention: +z vælges langs den oplyste strømretning i lederens længderetning. Der gættes ingen retning i en figur."
+        ],
+        "direction": "+z",
+        "points": [
+          "0 m",
+          "S",
+          "2*S"
+        ],
+        "units": {
+          "S": "m",
+          "s": "m"
+        },
+        "normalization_symbol": ""
+      },
+      "submitted_request": {
+        "schema_version": "assisted-1.0",
+        "text": "Den elektriske strøm i en lang, cylinderformet leder med radius S = 3,1 mm går i lederens\nlængderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,\nhar formen                                   !     s\"\n                                    J(s) = J0 1 −     ,\n                                                   S\nhvor J0 = 96,0 A/mm2 .\nBestem et udtryk for strømmen, I(s), indeholdt i en cylinder med radius s ≤ S\n     rundt om lederens akse. Beregn dernæst den totale strøm i lederen ved anvendelse\n     af de opgivne talstørrelser.\nAngiv retningen af magnetfeltet, som genereres af strømmen. Bestem dernæst mag-\n     netfeltets styrke som funktion af s for alle værdier af s. Angiv endelig feltstyrken,\n     både symbolsk og numerisk, for i) s = 0, ii) s = S og iii) s = 2S.",
+        "confirmed": true,
+        "variables": {
+          "coordinate": "s",
+          "regions": [
+            {
+              "lower": "0",
+              "upper": "S",
+              "density": "J0*(1-s/S)"
+            }
+          ]
+        },
+        "units": {
+          "s": "m",
+          "S": "m",
+          "J0": "A/m^2",
+          "evaluation_radius_1": "m"
+        },
+        "numbers": {
+          "S": "3.1 mm",
+          "J0": "96.0 A/mm**2",
+          "evaluation_radius_1": "0 m"
+        },
+        "positive": [
+          "s",
+          "S"
+        ],
+        "assumptions": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic",
+          "nonmagnetic_medium"
+        ],
+        "subproblems": [
+          {
+            "id": "a",
+            "model": "ampere_regions",
+            "wanted": [
+              "B",
+              "I_enc",
+              "I"
+            ],
+            "orientation_confirmed": true,
+            "operations": [
+              {
+                "kind": "limit",
+                "id": "B_point_1",
+                "result": "B",
+                "variable": "s",
+                "value": "0"
+              },
+              {
+                "kind": "evaluate",
+                "id": "B_point_2",
+                "result": "B",
+                "variable": "s",
+                "value": "S"
+              },
+              {
+                "kind": "evaluate",
+                "id": "B_point_3",
+                "result": "B",
+                "variable": "s",
+                "value": "2*S"
+              }
+            ]
+          }
+        ]
+      },
+      "response": {
+        "schema_version": "assisted-1.0",
+        "status": "calculated_under_confirmed_model",
+        "questions": [],
+        "errors": [],
+        "subproblems": [
+          {
+            "id": "a",
+            "model": "ampere_regions",
+            "status": "calculated_under_confirmed_model",
+            "solution": {
+              "method": "Ampères lov → integreret strøm",
+              "reasoning": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+              "equations_latex": [
+                "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+              ],
+              "steps": [
+                {
+                  "id": "step-f91f2eb3f86a2c8e8010-0",
+                  "text": "Omsluttet strøm før integration",
+                  "title": "Omsluttet strøm før integration",
+                  "latex": "\\int\\limits_{0}^{s} 2 \\pi J_{0} s \\left(1 - \\frac{s}{S}\\right)\\, ds",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Ampères lov",
+                  "method_context_id": "method-afd6847929a5a6cdb9d1",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-ffbdacff3992b2a4631f-0",
+                  "text": "Regionens strøm efter integration",
+                  "title": "Regionens strøm efter integration",
+                  "latex": "\\frac{\\pi J_{0} s^{2} \\left(3 S - 2 s\\right)}{3 S}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Ampères lov",
+                  "method_context_id": "method-afd6847929a5a6cdb9d1",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-8991ccce17111fdd2e5b-0",
+                  "text": "B 2πs = μ₀ I_enc; isolér B",
+                  "title": "B 2πs = μ₀ I_enc; isolér B",
+                  "latex": "\\begin{cases} \\frac{J_{0} \\mu_{0} s \\left(3 S - 2 s\\right)}{6 S} & \\text{for}\\: S \\geq s \\\\\\frac{J_{0} S^{2} \\mu_{0}}{6 s} & \\text{otherwise} \\end{cases}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Ampères lov",
+                  "method_context_id": "method-afd6847929a5a6cdb9d1",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-c33448f3a0aa3bad2930-0",
+                  "text": "Strømmen fås ved integration af den aksiale strømtæthed",
+                  "title": "Strømmen fås ved integration af den aksiale strømtæthed",
+                  "latex": "\\frac{\\pi J_{0} S^{2}}{3}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Ampères lov",
+                  "method_context_id": "method-afd6847929a5a6cdb9d1",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-01c5af049e8ad28a8d9d-0",
+                  "text": "Grænse af B ved s → 0",
+                  "title": "Grænse af B ved s → 0",
+                  "latex": "0",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Symbolsk grænseberegning",
+                  "method_context_id": "method-3073ce96fd2dd8514941",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-19d1c219d49d4b1164ed-0",
+                  "text": "Evaluér B ved s=S",
+                  "title": "Evaluér B ved s=S",
+                  "latex": "\\frac{J_{0} S \\mu_{0}}{6}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Indsættelse i beregnet resultat",
+                  "method_context_id": "method-3073ce96fd2dd8514941",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                },
+                {
+                  "id": "step-433f853dac13e0eb2525-0",
+                  "text": "Evaluér B ved s=2*S",
+                  "title": "Evaluér B ved s=2*S",
+                  "latex": "\\frac{J_{0} S \\mu_{0}}{12}",
+                  "physical_reasoning": null,
+                  "reasoning_scope": "method",
+                  "law": "Indsættelse i beregnet resultat",
+                  "method_context_id": "method-3073ce96fd2dd8514941",
+                  "intermediate_latex": [],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ],
+                  "validity": [],
+                  "check_ids": []
+                }
+              ],
+              "results": {
+                "I_enc": {
+                  "expression": "Piecewise((pi*J0*s**2*(3*S - 2*s)/(3*S), S >= s), (pi*J0*S**2/3, True))",
+                  "latex": "\\begin{cases} \\frac{\\pi J_{0} s^{2} \\left(3 S - 2 s\\right)}{3 S} & \\text{for}\\: S \\geq s \\\\\\frac{\\pi J_{0} S^{2}}{3} & \\text{otherwise} \\end{cases}",
+                  "unit": "A"
+                },
+                "B": {
+                  "expression": "Piecewise((J0*mu_0*s*(3*S - 2*s)/(6*S), S >= s), (J0*S**2*mu_0/(6*s), True))",
+                  "latex": "\\begin{cases} \\frac{J_{0} \\mu_{0} s \\left(3 S - 2 s\\right)}{6 S} & \\text{for}\\: S \\geq s \\\\\\frac{J_{0} S^{2} \\mu_{0}}{6 s} & \\text{otherwise} \\end{cases}",
+                  "unit": "T"
+                },
+                "I": {
+                  "expression": "pi*J0*S**2/3",
+                  "latex": "\\frac{\\pi J_{0} S^{2}}{3}",
+                  "unit": "A"
+                },
+                "B_point_1": {
+                  "expression": "0",
+                  "latex": "0",
+                  "unit": "T"
+                },
+                "B_point_2": {
+                  "expression": "J0*S*mu_0/6",
+                  "latex": "\\frac{J_{0} S \\mu_{0}}{6}",
+                  "unit": "T"
+                },
+                "B_point_3": {
+                  "expression": "J0*S*mu_0/12",
+                  "latex": "\\frac{J_{0} S \\mu_{0}}{12}",
+                  "unit": "T"
+                }
+              },
+              "numerical": {
+                "I": {
+                  "value": "966.102572831933",
+                  "latex": "966.102572831933",
+                  "unit": "A"
+                },
+                "B_point_1": {
+                  "value": "0",
+                  "latex": "0",
+                  "unit": "T"
+                },
+                "B_point_2": {
+                  "value": "0.0623291982811520",
+                  "latex": "0.062329198281152",
+                  "unit": "T"
+                },
+                "B_point_3": {
+                  "value": "0.0311645991405760",
+                  "latex": "0.031164599140576",
+                  "unit": "T"
+                }
+              },
+              "checks": [
+                {
+                  "id": "check-cc1fd98f8754241af015",
+                  "name": "Dimension: I_enc",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-12b184778d9450e3b254",
+                  "name": "Dimension: B",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-c37dd8ec81d66a0e4ab8",
+                  "name": "Inputdimension: coordinate",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "m",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-49358cc655e6c43c6b9c",
+                  "name": "Inputdimension: region_0_lower",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "m",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-9705dbf7e3c69829257a",
+                  "name": "Inputdimension: region_0_upper",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "m",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-6834f22d287ff0b76b2f",
+                  "name": "Inputdimension: region_0_density",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A/m^2",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-47ae6dfec88018588c9f",
+                  "name": "Ampère cirkulationsidentitet",
+                  "passed": true,
+                  "residual_latex": "0",
+                  "detail": "",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-1217fc31a6659c1a0934",
+                  "name": "Ampère differentiallov i åben region",
+                  "passed": true,
+                  "residual_latex": "0",
+                  "detail": "",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-21186b584e237b8f5395",
+                  "name": "Dimension: I_enc",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-b5bcf075bf85e563a807",
+                  "name": "Dimension: B",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-e53bb84cf012aad8c83f",
+                  "name": "Dimension: I",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-986d69ad7466b7038822",
+                  "name": "Dimension: I_enc",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-47ba88b1f81dcfe22ef3",
+                  "name": "Dimension: B",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-5026e0cb0d22e53d36e3",
+                  "name": "Dimension: I",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "A",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-36c52bbd8bd211349e2c",
+                  "name": "Dimension: B_point_1",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-7103716688d95194b768",
+                  "name": "Dimension: B_point_2",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                },
+                {
+                  "id": "check-b04da200b1a3e59a2d66",
+                  "name": "Dimension: B_point_3",
+                  "passed": true,
+                  "residual_latex": null,
+                  "detail": "T",
+                  "step_ids": []
+                }
+              ],
+              "direction": "Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning.",
+              "warnings": [
+                "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring."
+              ],
+              "presentation_version": "1.0",
+              "latex_profile": "EM1-Math-1",
+              "method_contexts": {
+                "method-afd6847929a5a6cdb9d1": {
+                  "method_id": "ampere",
+                  "method": "Ampères lov",
+                  "reasoning": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+                  "equations": [
+                    "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+                  ],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ]
+                },
+                "method-3073ce96fd2dd8514941": {
+                  "method_id": "ampere",
+                  "method": "Ampères lov → integreret strøm",
+                  "reasoning": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+                  "equations": [
+                    "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+                  ],
+                  "assumptions": [
+                    "infinite_cylindrical_symmetry",
+                    "magnetostatic",
+                    "nonmagnetic_medium"
+                  ]
+                }
+              },
+              "views": {
+                "result": {
+                  "wanted": [
+                    "B",
+                    "I_enc",
+                    "I",
+                    "B_point_1",
+                    "B_point_2",
+                    "B_point_3"
+                  ],
+                  "results": {
+                    "I_enc": {
+                      "expression": "Piecewise((pi*J0*s**2*(3*S - 2*s)/(3*S), S >= s), (pi*J0*S**2/3, True))",
+                      "latex": "\\begin{cases} \\frac{\\pi J_{0} s^{2} \\left(3 S - 2 s\\right)}{3 S} & \\text{for}\\: S \\geq s \\\\\\frac{\\pi J_{0} S^{2}}{3} & \\text{otherwise} \\end{cases}",
+                      "unit": "A"
+                    },
+                    "B": {
+                      "expression": "Piecewise((J0*mu_0*s*(3*S - 2*s)/(6*S), S >= s), (J0*S**2*mu_0/(6*s), True))",
+                      "latex": "\\begin{cases} \\frac{J_{0} \\mu_{0} s \\left(3 S - 2 s\\right)}{6 S} & \\text{for}\\: S \\geq s \\\\\\frac{J_{0} S^{2} \\mu_{0}}{6 s} & \\text{otherwise} \\end{cases}",
+                      "unit": "T"
+                    },
+                    "I": {
+                      "expression": "pi*J0*S**2/3",
+                      "latex": "\\frac{\\pi J_{0} S^{2}}{3}",
+                      "unit": "A"
+                    },
+                    "B_point_1": {
+                      "expression": "0",
+                      "latex": "0",
+                      "unit": "T"
+                    },
+                    "B_point_2": {
+                      "expression": "J0*S*mu_0/6",
+                      "latex": "\\frac{J_{0} S \\mu_{0}}{6}",
+                      "unit": "T"
+                    },
+                    "B_point_3": {
+                      "expression": "J0*S*mu_0/12",
+                      "latex": "\\frac{J_{0} S \\mu_{0}}{12}",
+                      "unit": "T"
+                    }
+                  },
+                  "numerical": {
+                    "I": {
+                      "value": "966.102572831933",
+                      "latex": "966.102572831933",
+                      "unit": "A"
+                    },
+                    "B_point_1": {
+                      "value": "0",
+                      "latex": "0",
+                      "unit": "T"
+                    },
+                    "B_point_2": {
+                      "value": "0.0623291982811520",
+                      "latex": "0.062329198281152",
+                      "unit": "T"
+                    },
+                    "B_point_3": {
+                      "value": "0.0311645991405760",
+                      "latex": "0.031164599140576",
+                      "unit": "T"
+                    }
+                  },
+                  "direction": "Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning."
+                },
+                "derivation": {
+                  "equations_latex": [
+                    "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+                  ],
+                  "step_ids": [
+                    "step-f91f2eb3f86a2c8e8010-0",
+                    "step-ffbdacff3992b2a4631f-0",
+                    "step-8991ccce17111fdd2e5b-0",
+                    "step-c33448f3a0aa3bad2930-0",
+                    "step-01c5af049e8ad28a8d9d-0",
+                    "step-19d1c219d49d4b1164ed-0",
+                    "step-433f853dac13e0eb2525-0"
+                  ]
+                },
+                "explanation": {
+                  "step_ids": [
+                    "step-f91f2eb3f86a2c8e8010-0",
+                    "step-ffbdacff3992b2a4631f-0",
+                    "step-8991ccce17111fdd2e5b-0",
+                    "step-c33448f3a0aa3bad2930-0",
+                    "step-01c5af049e8ad28a8d9d-0",
+                    "step-19d1c219d49d4b1164ed-0",
+                    "step-433f853dac13e0eb2525-0"
+                  ],
+                  "method_context_ids": [
+                    "method-afd6847929a5a6cdb9d1",
+                    "method-3073ce96fd2dd8514941"
+                  ],
+                  "global_check_ids": [
+                    "check-cc1fd98f8754241af015",
+                    "check-12b184778d9450e3b254",
+                    "check-c37dd8ec81d66a0e4ab8",
+                    "check-49358cc655e6c43c6b9c",
+                    "check-9705dbf7e3c69829257a",
+                    "check-6834f22d287ff0b76b2f",
+                    "check-47ae6dfec88018588c9f",
+                    "check-1217fc31a6659c1a0934",
+                    "check-21186b584e237b8f5395",
+                    "check-b5bcf075bf85e563a807",
+                    "check-e53bb84cf012aad8c83f",
+                    "check-986d69ad7466b7038822",
+                    "check-47ba88b1f81dcfe22ef3",
+                    "check-5026e0cb0d22e53d36e3",
+                    "check-36c52bbd8bd211349e2c",
+                    "check-7103716688d95194b768",
+                    "check-b04da200b1a3e59a2d66"
+                  ],
+                  "warnings": [
+                    "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring."
+                  ]
+                }
+              }
+            },
+            "errors": [],
+            "verification": {
+              "interpretation": "user_confirmed_not_machine_verified",
+              "dimensions": "passed",
+              "physical_checks": [
+                "Inputdimension: coordinate",
+                "Inputdimension: region_0_lower",
+                "Inputdimension: region_0_upper",
+                "Inputdimension: region_0_density",
+                "Ampère cirkulationsidentitet",
+                "Ampère differentiallov i åben region"
+              ],
+              "completeness": "requested_results_present",
+              "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+            }
+          }
+        ],
+        "interpretation_status": "user_confirmed",
+        "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+        "confirmed_model": {
+          "schema_version": "assisted-1.0",
+          "text": "Den elektriske strøm i en lang, cylinderformet leder med radius S = 3,1 mm går i lederens\nlængderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,\nhar formen                                   !     s\"\n                                    J(s) = J0 1 −     ,\n                                                   S\nhvor J0 = 96,0 A/mm2 .\nBestem et udtryk for strømmen, I(s), indeholdt i en cylinder med radius s ≤ S\n     rundt om lederens akse. Beregn dernæst den totale strøm i lederen ved anvendelse\n     af de opgivne talstørrelser.\nAngiv retningen af magnetfeltet, som genereres af strømmen. Bestem dernæst mag-\n     netfeltets styrke som funktion af s for alle værdier af s. Angiv endelig feltstyrken,\n     både symbolsk og numerisk, for i) s = 0, ii) s = S og iii) s = 2S.",
+          "confirmed": true,
+          "variables": {
+            "coordinate": "s",
+            "regions": [
+              {
+                "lower": "0",
+                "upper": "S",
+                "density": "J0*(1-s/S)"
+              }
+            ]
+          },
+          "units": {
+            "s": "m",
+            "S": "m",
+            "J0": "A/m^2",
+            "evaluation_radius_1": "m"
+          },
+          "numbers": {
+            "S": "3.1 mm",
+            "J0": "96.0 A/mm**2",
+            "evaluation_radius_1": "0 m"
+          },
+          "positive": [
+            "s",
+            "S"
+          ],
+          "assumptions": [
+            "infinite_cylindrical_symmetry",
+            "magnetostatic",
+            "nonmagnetic_medium"
+          ],
+          "subproblems": [
+            {
+              "id": "a",
+              "model": "ampere_regions",
+              "wanted": [
+                "B",
+                "I_enc",
+                "I"
+              ],
+              "orientation_confirmed": true,
+              "operations": [
+                {
+                  "kind": "limit",
+                  "id": "B_point_1",
+                  "result": "B",
+                  "variable": "s",
+                  "value": "0"
+                },
+                {
+                  "kind": "evaluate",
+                  "id": "B_point_2",
+                  "result": "B",
+                  "variable": "s",
+                  "value": "S"
+                },
+                {
+                  "kind": "evaluate",
+                  "id": "B_point_3",
+                  "result": "B",
+                  "variable": "s",
+                  "value": "2*S"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "viewer": {
+        "viewer_schema": "em1.desktop.solution.v1",
+        "title": "Beregnet under brugerbekræftet model",
+        "prompt": "Den elektriske strøm i en lang, cylinderformet leder med radius S = 3,1 mm går i lederens\nlængderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,\nhar formen                                   !     s\"\n                                    J(s) = J0 1 −     ,\n                                                   S\nhvor J0 = 96,0 A/mm2 .\nBestem et udtryk for strømmen, I(s), indeholdt i en cylinder med radius s ≤ S\n     rundt om lederens akse. Beregn dernæst den totale strøm i lederen ved anvendelse\n     af de opgivne talstørrelser.\nAngiv retningen af magnetfeltet, som genereres af strømmen. Bestem dernæst mag-\n     netfeltets styrke som funktion af s for alle værdier af s. Angiv endelig feltstyrken,\n     både symbolsk og numerisk, for i) s = 0, ii) s = S og iii) s = 2S.",
+        "status": "assumptions",
+        "result": {
+          "symbolic_latex": "B = \\begin{cases} \\frac{J_{0} \\mu_{0} s \\left(3 S - 2 s\\right)}{6 S} & \\text{for}\\: S \\geq s \\\\\\frac{J_{0} S^{2} \\mu_{0}}{6 s} & \\text{otherwise} \\end{cases}",
+          "extra_latex": [
+            "I_enc = \\begin{cases} \\frac{\\pi J_{0} s^{2} \\left(3 S - 2 s\\right)}{3 S} & \\text{for}\\: S \\geq s \\\\\\frac{\\pi J_{0} S^{2}}{3} & \\text{otherwise} \\end{cases}",
+            "I = \\frac{\\pi J_{0} S^{2}}{3}",
+            "B_1 = 0",
+            "B_2 = \\frac{J_{0} S \\mu_{0}}{6}",
+            "B_3 = \\frac{J_{0} S \\mu_{0}}{12}"
+          ],
+          "numeric_text": "B_1 ved s=0 m, B_2 ved s=S, B_3 ved s=2*S\nB_1: 0; B_2: 0.0623291982811520; B_3: 0.0311645991405760; I: 966.102572831933",
+          "units": "B: T; I_enc: A; I: A; B_1: T; B_2: T; B_3: T"
+        },
+        "steps": [
+          {
+            "title": "Grundligning 1",
+            "latex": "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}",
+            "reason": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen."
+          },
+          {
+            "id": "step-f91f2eb3f86a2c8e8010-0",
+            "title": "Omsluttet strøm før integration",
+            "reason": "Anvendt lov: Ampères lov. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\int\\limits_{0}^{s} 2 \\pi J_{0} s \\left(1 - \\frac{s}{S}\\right)\\, ds\\]",
+            "check": ""
+          },
+          {
+            "id": "step-ffbdacff3992b2a4631f-0",
+            "title": "Regionens strøm efter integration",
+            "reason": "Anvendt lov: Ampères lov. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\frac{\\pi J_{0} s^{2} \\left(3 S - 2 s\\right)}{3 S}\\]",
+            "check": ""
+          },
+          {
+            "id": "step-8991ccce17111fdd2e5b-0",
+            "title": "B 2πs = μ₀ I_enc; isolér B",
+            "reason": "Anvendt lov: Ampères lov. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\begin{cases} \\frac{J_{0} \\mu_{0} s \\left(3 S - 2 s\\right)}{6 S} & \\text{for}\\: S \\geq s \\\\\\frac{J_{0} S^{2} \\mu_{0}}{6 s} & \\text{otherwise} \\end{cases}\\]",
+            "check": ""
+          },
+          {
+            "id": "step-c33448f3a0aa3bad2930-0",
+            "title": "Strømmen fås ved integration af den aksiale strømtæthed",
+            "reason": "Anvendt lov: Ampères lov. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\frac{\\pi J_{0} S^{2}}{3}\\]",
+            "check": ""
+          },
+          {
+            "id": "step-01c5af049e8ad28a8d9d-0",
+            "title": "Grænse af B ved s → 0",
+            "reason": "Anvendt lov: Symbolsk grænseberegning. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[0\\]",
+            "check": ""
+          },
+          {
+            "id": "step-19d1c219d49d4b1164ed-0",
+            "title": "Evaluér B ved s=S",
+            "reason": "Anvendt lov: Indsættelse i beregnet resultat. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\frac{J_{0} S \\mu_{0}}{6}\\]",
+            "check": ""
+          },
+          {
+            "id": "step-433f853dac13e0eb2525-0",
+            "title": "Evaluér B ved s=2*S",
+            "reason": "Anvendt lov: Indsættelse i beregnet resultat. Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "latex": "\\[\\frac{J_{0} S \\mu_{0}}{12}\\]",
+            "check": ""
+          }
+        ],
+        "interpretation": {
+          "method": "Ampères lov → integreret strøm",
+          "geometry": "ampere_regions"
+        },
+        "warnings": [
+          "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring.",
+          "Retning: Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning.",
+          "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+        ],
+        "backend_status": "calculated_under_confirmed_model",
+        "backend_schema": "assisted-1.0",
+        "audit": "# Brugerbekræftede oplysninger\n\ncoordinate = s\n\nregions = [{'density': 'J0*(1-s/S)', 'lower': '0', 'upper': 'S'}]\n\nJ0 = 96.0 A/mm**2\n\nS = 3.1 mm\n\nevaluation_radius_1 = 0 m\n\nEnhed for J0: A/m^2\n\nEnhed for S: m\n\nEnhed for evaluation_radius_1: m\n\nEnhed for s: m\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 17 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- Dimension: I_enc — A\n\n- Dimension: B — T\n\n- Inputdimension: coordinate — m\n\n- Inputdimension: region_0_lower — m\n\n- Inputdimension: region_0_upper — m\n\n- Inputdimension: region_0_density — A/m^2\n\n- Ampère cirkulationsidentitet\n\n- Ampère differentiallov i åben region\n\n- Dimension: I_enc — A\n\n- Dimension: B — T\n\n- Dimension: I — A\n\n- Dimension: I_enc — A\n\n- Dimension: B — T\n\n- Dimension: I — A\n\n- Dimension: B_point_1 — T\n\n- Dimension: B_point_2 — T\n\n- Dimension: B_point_3 — T\n\n## Forudsætninger og gyldighed\n\n- infinite_cylindrical_symmetry\n\n- magnetostatic\n\n- nonmagnetic_medium\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist.\n\nEvalueringspunkter: B_1 ved s=0 m, B_2 ved s=S, B_3 ved s=2*S"
+      },
+      "math_display_errors": []
+    }
+  ]
+}

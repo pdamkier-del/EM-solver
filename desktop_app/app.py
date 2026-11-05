@@ -857,7 +857,8 @@ class SolverPage(QWidget):
         self.prompt.setMinimumHeight(85);self.prompt.setMaximumHeight(155)
         root.addWidget(label('Opgavetekst',12,True));root.addWidget(self.prompt)
         actions=QHBoxLayout()
-        self.solve_button=QPushButton('Løs opgave med backend');self.solve_button.setObjectName('primary');actions.addWidget(self.solve_button)
+        self.review_button=QPushButton('Analysér opgave');self.review_button.setObjectName('primary');actions.addWidget(self.review_button)
+        self.solve_button=QPushButton('Løs direkte med backend');self.solve_button.setObjectName('primary');actions.addWidget(self.solve_button)
         self.assist_button=QPushButton('Ret fortolkning'); self.assist_button.setEnabled(False); actions.addWidget(self.assist_button)
         self.physical_model_button=QPushButton('Vælg fysisk model');actions.addWidget(self.physical_model_button)
         self.import_button=QPushButton('Åbn opgavetekst');actions.addWidget(self.import_button)
@@ -894,8 +895,46 @@ class SolverPage(QWidget):
         self._backend_corrections={}
         self._backend_reply=None
         self.assisted=None
+        self.task_review=None
+        self.review_button.clicked.connect(self.open_task_review)
         self.physical_model_button.clicked.connect(self.open_physical_model)
         self.prompt.textChanged.connect(self._sync_assisted_prompt)
+
+    def open_task_review(self):
+        if self.task_review is None:
+            backend_root,python=backend_location(assisted=True)
+            sys.path.insert(0,str(backend_root))
+            from desktop_integration.task_review import TaskReview
+            self.task_review=TaskReview(python,backend_root,parent=self)
+            self.task_review.solutionReady.connect(self._review_completed)
+            self.task_review.modelInvalidated.connect(self._clear_assisted_result)
+            self.review_index=self.tabs.addTab(self.task_review,'Bekræft opgaven')
+        self.tabs.setCurrentIndex(self.review_index)
+        self.warning.setText('GENNEMGANG · Kontrollér læste data og de fysiske betingelser før beregning.')
+        self.interpret.hide()
+        self.task_review.analyze(self.prompt.toPlainText())
+
+    def _review_completed(self,reply):
+        from backend_bridge import translate_assisted
+        payload=translate_assisted(reply,self.prompt.toPlainText())
+        proposal=self.task_review.proposal
+        labels={'density_amplitude':proposal.get('normalization_symbol','J0'),'normalized_B':'B'}
+        for i,point in enumerate(proposal.get('points',[])):
+            labels['B_point_'+str(i+1)]='B_'+str(i+1)
+        for key,value in payload.get('result',{}).items():
+            if isinstance(value,str):
+                for old,new in labels.items():value=value.replace(old+' =',new+' =').replace(old+':',new+':')
+                payload['result'][key]=value
+            elif isinstance(value,list):
+                for i,line in enumerate(value):
+                    for old,new in labels.items():line=line.replace(old+' =',new+' =')
+                    value[i]=line
+        if proposal.get('points'):
+            legend=', '.join('B_'+str(i+1)+' ved '+proposal.get('coordinate','s')+'='+v for i,v in enumerate(proposal['points']))
+            payload['audit']+='\n\nEvalueringspunkter: '+legend
+            if payload.get('result'):payload['result']['numeric_text']=legend+'\n'+payload['result'].get('numeric_text','')
+        self.show_solution(payload,origin='ASSISTED')
+        if not any(p.get('solution') for p in reply.get('subproblems',[])):self.tabs.setCurrentIndex(self.review_index)
 
     def open_physical_model(self):
         if self.assisted is None:
@@ -916,6 +955,7 @@ class SolverPage(QWidget):
         self.tabs.setCurrentIndex(self.assisted_index)
 
     def _sync_assisted_prompt(self):
+        if self.task_review is not None:self.task_review.invalidate_text(self.prompt.toPlainText())
         if self.assisted is not None and self.assisted.text.toPlainText()!=self.prompt.toPlainText():
             self.assisted.text.setPlainText(self.prompt.toPlainText())
 
@@ -1061,6 +1101,7 @@ class SolverPage(QWidget):
             QMessageBox.warning(self,'Testopgave kunne ikke indlæses',str(exc))
 
     def show_solution(self,payload,origin):
+        self.interpret.show()
         view=present_backend_json(payload)
         self.last_payload=payload
         self.prompt.setPlainText(_as_text(payload.get('prompt','')))
@@ -1264,6 +1305,8 @@ class MainWindow(QMainWindow):
         self.notes_side.current_id=None;self.notes_side.reload()
 
     def closeEvent(self,event):
+        if self.solver.task_review is not None and self.solver.task_review.busy:
+            self.solver.warning.setText('Afvent den igangværende beregning.');event.ignore();return
         if self.solver.assisted is not None and self.solver.assisted.busy:
             self.solver.warning.setText('Afvent backendberegningen før lukning.');event.ignore();return
         if self.solver._backend_process and self.solver._backend_process.state()!=QProcess.NotRunning:

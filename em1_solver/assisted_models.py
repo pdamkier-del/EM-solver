@@ -17,7 +17,7 @@ MODELS.update({
     assumptions=['electrostatic','closed_conductor','spherical_outer_surface','no_external_sources','vacuum_exterior','potential_zero_infinity'],
     orientation='Kun totale indre/ydre overfladeladninger og lederpotentiale. Lokal ladningsfordeling/felt i et asymmetrisk hulrum bestemmes ikke.'),
  'potential_field':dict(domain='EV',family='field_calculus',required=['V','coordinates','system'],optional=['volume_bounds'],
-    assumptions=['electrostatic','vacuum_medium'],orientation='Komponenter følger den angivne ortonormale koordinatbasis; E=-grad(V).'),
+    assumptions=['electrostatic'],orientation='Komponenter følger den angivne ortonormale koordinatbasis; E=-grad(V).'),
  'electric_field_charge':dict(domain='EV',family='field_calculus',required=['E','coordinates','system'],optional=['volume_bounds'],
     assumptions=['electrostatic','vacuum_medium'],orientation='E-komponenter følger koordinatbasen. rho er samlet lokal volumenladning i et glat område; singulariteter kræver særskilt kontrol.'),
  'potential_difference':dict(domain='EV',family='potential_from_field',required=['field','coordinate','start','end'],optional=['test_charge'],

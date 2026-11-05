@@ -1,0 +1,21 @@
+{
+  "exam": "2024-02",
+  "problem": 4,
+  "checked_after_app_execution": true,
+  "question_pdf": "desktop_app/resources/EM1_eksamenssaet.pdf",
+  "question_page": 27,
+  "answer_pdf": "desktop_app/resources/EM1_facit.pdf",
+  "answer_page": 3,
+  "source_givens": {
+    "S": "3.1 mm",
+    "J0": "96 A/mm^2"
+  },
+  "independent_total_current": "pi*J0*S**2/3",
+  "independent_total_current_A": 2898.3077184957992,
+  "printed_total_current": "70 kA",
+  "current_numeric_agrees_with_printed_answer": false,
+  "symbolic_current_agrees": true,
+  "field_symbolic_agrees": true,
+  "field_numeric_agrees_to_printed_precision": true,
+  "explanation": "Ampere consistency with the printed 62 mT at S also gives about 966 A. The printed 70 kA is inconsistent with the supplied quantities and its own field value. No solver tuning or source-data replacement was made."
+}

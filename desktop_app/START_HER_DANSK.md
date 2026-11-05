@@ -1,4 +1,64 @@
-# Start her – EM1 Solver, udviklingsversion
+# Enkel opgavegennemgang – ny arbejdsgang
+
+Brug først **Analysér opgave** på forsiden. For potentialer V(x,y,z) og
+massive cylindriske strømfordelinger åbner appen nu et udfyldt, redigerbart
+forslag. **Vælg fysisk model** er fortsat den avancerede manuelle vej.
+
+1. Indsæt opgaveteksten, gerne hele hovedopgaven med fælles data.
+2. Klik **Analysér opgave**. Gennemgå funktion, radius/strøm og søgte størrelser.
+3. Bekræft de viste data og fysiske betingelser.
+4. Klik **Beregn opgaven**. Læs Resultat, Udledning og Forklaring.
+
+Når oplysningerne står entydigt i teksten, kræves ingen genindtastning af
+formler, symboler eller enheder. Det er fire semantiske handlinger inklusive
+indsættelse af teksten; læsning og eventuelle rettelser kommer oveni.
+
+## Kontrollér de to konkrete forløb
+
+**Potentiale:** Indsæt:
+
+```
+Et elektrisk potentiale er givet ved V(x,y,z)=a*x**2+b*y**2.
+Bestem det elektriske felt E og ladningstætheden rho.
+```
+
+Forvent E=(-2ax,-2by,0) og rho_total=-2*epsilon_0*(a+b).
+a,b behøver ikke talværdier. Deres enheder udledes som V/m². Bekræft
+at opgaven er elektrostatisk; rho er samlet ladning, ikke kun fri ladning.
+Der skal ikke vælges eller gættes en permittivitet til denne relation.
+
+**Cylindrisk leder:** Indsæt:
+
+```
+En uendeligt lang, massiv cylindrisk leder med radius a=4,0 cm fører
+samlet strøm I=8,0 A i positiv z-retning. J(s)=J0*s**2/a**2 langs z.
+a) Bestem J0. b) Bestem B(s) inde og ude.
+c) Beregn feltet ved s=2,0 cm og s=8,0 cm.
+```
+
+Forvent J0≈3183,10 A/m², B inde=mu_0*I*s³/(2*pi*a⁴),
+B ude=mu_0*I/(2*pi*s), samt 5 mikrotesla og 20 mikrotesla.
+J0 skal findes og skal derfor ikke indtastes som en given talværdi.
+Magnetfeltet kræver den viste uendelige, stationære, ikke-magnetiske model.
+Hvis mu ikke er oplyst, skal du selv kunne begrunde/bekræfte mu_0.
+B_1 og B_2 følger rækkefølgen af evalueringspunkterne; de står også i Forklaring.
+
+## Hvis noget mangler
+
+Feltet under gennemgangen forklarer hvad der mangler og hvorfor. En ødelagt
+PDF-formel skal rettes fra opgavens originale billede; appen gætter ikke
+parenteser. Ved enhedstvivl vises kun de uafklarede enhedsfelter.
+Modstridende tal bliver ikke automatisk afgjort ved at tage den sidste værdi.
+Ændres teksten, skal den analyseres igen. Ændres data, skal de bekræftes igen.
+
+Denne korte gennemgang gælder de to nævnte opgavetyper. Brug den bevarede
+manuelle solver eller direkte backendvej til andre emner. Ingen nye
+fysikmodeller er tilføjet. Native Windows skal fortsat afprøves på din maskine.
+Udførlig installation og den manuelle vej står nedenfor.
+
+---
+
+# Installation og manuel fallback for øvrige modeller
 
 ## Installér uden at ændre din gamle app
 
@@ -18,7 +78,7 @@ Native Windows er ikke testet i udviklingsmiljøet. Test derfor selv opstart,
 PDF-visning og at en prøvenote bevares efter genstart. Ved fejl: gem
 EM1_START_LOG.txt og eventuelt EM1_ERROR_LOG.txt fra programmappen.
 
-## Den mest pålidelige arbejdsgang
+## Manuel arbejdsgang for øvrige modeller
 
 1. Indsæt ét delspørgsmål sammen med de fælles data, som det afhænger af.
    Hele hovedopgaven kan bruges som kontekst, men løs ét delmål ad gangen.
@@ -56,7 +116,7 @@ Opgave: V(x,y,z)=k*x**2 i vakuum, k=100 V/m^2. Find E ved x=2 cm.
 Kort: EV – felt og ladning fra potentiale.
 Felter: V=k*x**2; coordinates=[x,y,z]; system=cartesian; søges E.
 Symboler: k:V/m^2, tal 100 V/m^2; x,y,z:m, tal 2 cm,0 m,0 m.
-Bekræft elektrostatik og vakuum. Forvent E=(-4,0,0) V/m.
+Bekræft elektrostatik. Forvent E=(-4,0,0) V/m.
 
 ### BA: uendelig ret ledning
 
