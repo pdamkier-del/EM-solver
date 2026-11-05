@@ -1,0 +1,301 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "ampere_regions",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Ampères lov → ",
+        "reasoning": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+        "equations_latex": [
+          "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+        ],
+        "steps": [
+          {
+            "id": "step-e723252e3476a7da9f80-0",
+            "text": "Omsluttet strøm før integration",
+            "title": "Omsluttet strøm før integration",
+            "latex": "\\int\\limits_{0}^{s} 2 \\pi J s\\, ds",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Ampères lov",
+            "method_context_id": "method-afd6847929a5a6cdb9d1",
+            "intermediate_latex": [],
+            "assumptions": [
+              "infinite_cylindrical_symmetry",
+              "magnetostatic",
+              "nonmagnetic_medium"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-5ec346418b8cc1afe772-0",
+            "text": "Regionens strøm efter integration",
+            "title": "Regionens strøm efter integration",
+            "latex": "\\pi J s^{2}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Ampères lov",
+            "method_context_id": "method-afd6847929a5a6cdb9d1",
+            "intermediate_latex": [],
+            "assumptions": [
+              "infinite_cylindrical_symmetry",
+              "magnetostatic",
+              "nonmagnetic_medium"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-96de85bda2e38db4bdd0-0",
+            "text": "B 2πs = μ₀ I_enc; isolér B",
+            "title": "B 2πs = μ₀ I_enc; isolér B",
+            "latex": "\\begin{cases} \\frac{J \\mu_{0} s}{2} & \\text{for}\\: R \\geq s \\\\\\frac{J R^{2} \\mu_{0}}{2 s} & \\text{otherwise} \\end{cases}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Ampères lov",
+            "method_context_id": "method-afd6847929a5a6cdb9d1",
+            "intermediate_latex": [],
+            "assumptions": [
+              "infinite_cylindrical_symmetry",
+              "magnetostatic",
+              "nonmagnetic_medium"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "I_enc": {
+            "expression": "Piecewise((pi*J*s**2, R >= s), (pi*J*R**2, True))",
+            "latex": "\\begin{cases} \\pi J s^{2} & \\text{for}\\: R \\geq s \\\\\\pi J R^{2} & \\text{otherwise} \\end{cases}",
+            "unit": "A"
+          },
+          "B": {
+            "expression": "Piecewise((J*mu_0*s/2, R >= s), (J*R**2*mu_0/(2*s), True))",
+            "latex": "\\begin{cases} \\frac{J \\mu_{0} s}{2} & \\text{for}\\: R \\geq s \\\\\\frac{J R^{2} \\mu_{0}}{2 s} & \\text{otherwise} \\end{cases}",
+            "unit": "T"
+          }
+        },
+        "numerical": {},
+        "checks": [
+          {
+            "id": "check-cc1fd98f8754241af015",
+            "name": "Dimension: I_enc",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-12b184778d9450e3b254",
+            "name": "Dimension: B",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T",
+            "step_ids": []
+          },
+          {
+            "id": "check-c37dd8ec81d66a0e4ab8",
+            "name": "Inputdimension: coordinate",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-49358cc655e6c43c6b9c",
+            "name": "Inputdimension: region_0_lower",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-9705dbf7e3c69829257a",
+            "name": "Inputdimension: region_0_upper",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-6834f22d287ff0b76b2f",
+            "name": "Inputdimension: region_0_density",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A/m^2",
+            "step_ids": []
+          },
+          {
+            "id": "check-47ae6dfec88018588c9f",
+            "name": "Ampère cirkulationsidentitet",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-1217fc31a6659c1a0934",
+            "name": "Ampère differentiallov i åben region",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-21186b584e237b8f5395",
+            "name": "Dimension: I_enc",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-b5bcf075bf85e563a807",
+            "name": "Dimension: B",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T",
+            "step_ids": []
+          }
+        ],
+        "direction": "Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning.",
+        "warnings": [
+          "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring."
+        ],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-afd6847929a5a6cdb9d1": {
+            "method_id": "ampere",
+            "method": "Ampères lov",
+            "reasoning": "Kun den eksplicit angivne symmetri bruges til at flytte feltstyrken uden for kurveintegralet. Højrehåndsreglen bestemmer omløbsretningen.",
+            "equations": [
+              "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+            ],
+            "assumptions": [
+              "infinite_cylindrical_symmetry",
+              "magnetostatic",
+              "nonmagnetic_medium"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "B"
+            ],
+            "results": {
+              "B": {
+                "expression": "Piecewise((J*mu_0*s/2, R >= s), (J*R**2*mu_0/(2*s), True))",
+                "latex": "\\begin{cases} \\frac{J \\mu_{0} s}{2} & \\text{for}\\: R \\geq s \\\\\\frac{J R^{2} \\mu_{0}}{2 s} & \\text{otherwise} \\end{cases}",
+                "unit": "T"
+              }
+            },
+            "numerical": {},
+            "direction": "Azimutalt for aksial strøm; positiv strøm langs z giver positiv phi-retning."
+          },
+          "derivation": {
+            "equations_latex": [
+              "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{enc}"
+            ],
+            "step_ids": [
+              "step-e723252e3476a7da9f80-0",
+              "step-5ec346418b8cc1afe772-0",
+              "step-96de85bda2e38db4bdd0-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-e723252e3476a7da9f80-0",
+              "step-5ec346418b8cc1afe772-0",
+              "step-96de85bda2e38db4bdd0-0"
+            ],
+            "method_context_ids": [
+              "method-afd6847929a5a6cdb9d1"
+            ],
+            "global_check_ids": [
+              "check-cc1fd98f8754241af015",
+              "check-12b184778d9450e3b254",
+              "check-c37dd8ec81d66a0e4ab8",
+              "check-49358cc655e6c43c6b9c",
+              "check-9705dbf7e3c69829257a",
+              "check-6834f22d287ff0b76b2f",
+              "check-47ae6dfec88018588c9f",
+              "check-1217fc31a6659c1a0934",
+              "check-21186b584e237b8f5395",
+              "check-b5bcf075bf85e563a807"
+            ],
+            "warnings": [
+              "B er phi-komponenten; dens grænse ved aksen skal tages før s=0 indsættes. Overfladestrømme kan give spring."
+            ]
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Inputdimension: coordinate",
+          "Inputdimension: region_0_lower",
+          "Inputdimension: region_0_upper",
+          "Inputdimension: region_0_density",
+          "Ampère cirkulationsidentitet",
+          "Ampère differentiallov i åben region"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "Problemstillinger med en tilsyneladende kompliceret geometri kan i visse tilfælde be-\nskrives som en superposition af flere bestanddele, hvor hver bestanddel har en simpel\ngeometri, hvis løsning let lader sig bestemme. Det sammensatte tilfælde kan da løses via\nsuperpositionsprincippet.\nVi starter med at betragte en simpel geometri, som senere skal benyttes til at bygge\net sammensat tilfælde. Den simple geometri, illustreret i tværsnit på figuren til venstre,\nbestår af en lang, lige leder med radius R, som bærer den uniforme strømtæthed J\nparallel med aksen. På figuren peger strømmen ud af papirets plan.\n                                                                 y\n\n                   R                                   R                 R\n                       !                                   !\n                                                               d d   !\n                                                                                 x\n                           J                          J                  J\n                           \"                          \"                  ⊗\n\n\nMagnetfeltet efterspørges som funktion af afstanden, s, til lederens akse.\nBestem magnetfeltets retning og styrke, B(s), såvel inden i, s < R, som uden for\n     lederen, s > R. For s < R skal det eftervises, at feltet har styrken B(s) = ks, hvor\n     k er en konstant, som ønskes fastlagt.\nEt tværsnit af en lang, lige, todelt leder er vist på figuren til højre. Lederen kan tænkes\nsammensat af to cylindriske halvdele, hver med radius R, som er forskudt med afstanden\n2d i forhold til hinanden (d < R), og hvor området, hvor de to cylindre overlapper, er\nfjernet, hvorved der opstår et hulrum med et linseformet tværsnit. Der er indlagt et\nkoordinatsystem, således at de to cylindre har akser på linjer bestemt ved henholdsvis\n(x, y, z) = (−d, 0, z) og (x, y, z) = (d, 0, z). Overalt i lederen er strømtætheden J. I den\nvenstre del (markeret med rødt) løber strømmen ud af papirets plan; i den højre del\n(markeret med blåt) løber strømmen ind i papirets plan.\nMagnetfeltet ønskes bestemt forskellige steder inde i hulrummet. Resultaterne bedes\ngivet på vektorform i kartesiske koordineter, B = Bx x̂ + By ŷ + Bz ẑ.",
+    "confirmed": true,
+    "variables": {
+      "coordinate": "s",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "R",
+          "density": "J"
+        }
+      ]
+    },
+    "units": {
+      "s": "m",
+      "R": "m",
+      "J": "A/m^2"
+    },
+    "numbers": {},
+    "positive": [
+      "s",
+      "R",
+      "J"
+    ],
+    "assumptions": [
+      "infinite_cylindrical_symmetry",
+      "magnetostatic",
+      "nonmagnetic_medium"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "ampere_regions",
+        "wanted": [
+          "B"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

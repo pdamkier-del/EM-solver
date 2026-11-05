@@ -1,5 +1,13 @@
 # Assisteret DYN-backend – særskilt integrationsforslag
 
+Aktuel desktopintegration findes nu i `desktop_app/`; se
+[Windows-guide](../../desktop_app/WINDOWS_INTEGRATED.md).
+Kataloget indeholder desuden EV/BA-kort fra `em1_solver/assisted_models.py`.
+Samme `assisted-1.0`-kontrakt og bekræftelsesregler gælder. Regioner angives
+eksplicit som objekter med lower/upper/density og for EV permittivity;
+den faktiske desktopapp tilbyder tabelfelter til disse data.
+Den tidligere beskrevne DYN-grænseflade bevares.
+
 Denne kontrakt er `assisted-1.0`. Den erstatter **ikke** desktopintegrationens
 frosne JSON API 1.0. Der er ingen ændringer i frontend eller nye fysikmoduler.
 

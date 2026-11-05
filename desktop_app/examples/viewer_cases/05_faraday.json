@@ -1,0 +1,65 @@
+{
+  "viewer_schema": "em1.desktop.solution.v1",
+  "title": "05 · Induktion: tidsafhængig flux",
+  "prompt": "En spole har N identiske, stationære vindinger med samme tidsafhængige magnetiske flux Φ_B(t) gennem hver vinding. Bestem den inducerede EMF.",
+  "status": "unverified",
+  "interpretation": {
+    "method": "Faradays induktionslov",
+    "geometry": "Stationær spole med N vindinger"
+  },
+  "result": {
+    "symbolic_latex": "\\mathcal{E}=-N\\frac{d\\Phi_B}{dt}",
+    "numeric_text": null,
+    "units": null
+  },
+  "steps": [
+    {
+      "id": "trin-01",
+      "title": "Identificér den fysiske mekanisme",
+      "reason": "Magnetisk flux gennem spolen ændres med tiden. Vi bruger derfor Faradays induktionslov; hverken Coulombs lov eller Ampères lov giver EMF direkte.",
+      "substitution": "",
+      "operation": "",
+      "latex": "\\mathcal{E}=-\\frac{d\\Lambda}{dt}",
+      "check": ""
+    },
+    {
+      "id": "trin-02",
+      "title": "Skriv fluxen per vinding",
+      "reason": "Magnetisk flux er integralet af feltets normalkomponent gennem den valgte flade.",
+      "substitution": "",
+      "operation": "",
+      "latex": "\\Phi_B(t)=\\int_S\\mathbf{B}(t)\\cdot d\\mathbf{a}",
+      "check": ""
+    },
+    {
+      "id": "trin-03",
+      "title": "Beregn fluxkoblingen",
+      "reason": "Alle N vindinger har samme orienterede flux, så deres bidrag summeres til N gange fluxen per vinding.",
+      "substitution": "Indsæt samme Φ_B for hver af de N vindinger.",
+      "operation": "",
+      "latex": "\\Lambda(t)=N\\Phi_B(t)",
+      "check": ""
+    },
+    {
+      "id": "trin-04",
+      "title": "Indsæt i Faradays lov",
+      "reason": "Vi erstatter fluxkoblingen Λ med NΦ_B i Faradays lov.",
+      "substitution": "Indsæt Λ = NΦ_B i ε = −dΛ/dt.",
+      "operation": "",
+      "latex": "\\mathcal{E}=-\\frac{d}{dt}(N\\Phi_B)",
+      "check": ""
+    },
+    {
+      "id": "trin-05",
+      "title": "Udfør differentiationen",
+      "reason": "Antallet af vindinger N er konstant og kan trækkes uden for den tidsafledte.",
+      "substitution": "",
+      "operation": "Brug d(NΦ_B)/dt = N·dΦ_B/dt.",
+      "latex": "\\mathcal{E}=-N\\frac{d\\Phi_B}{dt}",
+      "check": "Minustegnet angiver Lenz’ lov: induktionen modvirker ændringen i flux."
+    }
+  ],
+  "warnings": [
+    "Antager N konstante, identiske stationære vindinger med samme orienterede flux."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "viewer_schema": "em1.desktop.solution.v1",
+  "title": "Elektrisk felt fra massiv cylinder",
+  "prompt": "En uendelig lang massiv cylinder med radius R har homogen volumenladningstæthed rho. Bestem E(s) indenfor og udenfor.",
+  "status": "unverified",
+  "interpretation": {
+    "method": "Gauss' lov",
+    "geometry": "Uendelig massiv cylinder i vakuum"
+  },
+  "result": {
+    "symbolic_latex": "E(s)=\\frac{\\rho s}{2\\varepsilon_0}\\quad (s<R)",
+    "numeric_text": null,
+    "units": "N/C"
+  },
+  "steps": [
+    {
+      "id": "symmetry",
+      "title": "Symmetri og metodevalg",
+      "reason": "Vi bruger Gauss' lov, fordi en uendelig cylinder med homogen ladning har rotations- og translationssymmetri. Derfor er feltet radialt og kun afhængigt af afstanden s.",
+      "latex": "\\mathbf{E}(s)=E(s)\\hat{\\mathbf{s}}",
+      "check": "Antagelserne gælder for en uendelig cylinder i vakuum."
+    },
+    {
+      "id": "flux",
+      "title": "Flux gennem Gauss-fladen",
+      "reason": "Vi vælger en koaksial cylinder, så fluxen gennem endefladerne er nul, mens feltet er konstant på den krumme side.",
+      "latex": "E(s)2\\pi sL=\\frac{Q_{\\mathrm{enc}}}{\\varepsilon_0}",
+      "check": "Kun sidefladen bidrager."
+    },
+    {
+      "id": "charge",
+      "title": "Omsluttet ladning for s < R",
+      "reason": "Den omsluttede volumen er pi s² L, og volumenladningstætheden er konstant.",
+      "latex": "Q_{\\mathrm{enc}}=\\rho\\pi s^2L",
+      "check": "Gælder inden for den ladede cylinder."
+    }
+  ],
+  "warnings": ["Illustrativt eksempel, ikke beregnet eller verificeret af Codex-backend."]
+}

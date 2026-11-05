@@ -1,0 +1,272 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "conductor_cavity_totals",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Gauss i en leder og ydre kuglesymmetri",
+        "reasoning": "En Gauss-flade i metallet har nul flux og nul total omsluttet ladning. Den ydre kugleflade er ækvipotential; uden eksterne kilder er ydre felt kuglesymmetrisk.",
+        "equations_latex": [
+          "Q_{inner}=-q_{cavity}",
+          "Q_{outer}=Q_{metal}+q_{cavity}",
+          "V_{metal}=Q_{outer}/(4\\pi\\epsilon_0 R)"
+        ],
+        "steps": [
+          {
+            "id": "step-7431114f3ccc7fd9f0ee-0",
+            "text": "Nul indesluttet ladning på Gauss-fladen i metallet",
+            "title": "Nul indesluttet ladning på Gauss-fladen i metallet",
+            "latex": "- q",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Gauss i en leder og ydre kuglesymmetri",
+            "method_context_id": "method-583c694acab51dc312fd",
+            "intermediate_latex": [],
+            "assumptions": [
+              "electrostatic",
+              "closed_conductor",
+              "spherical_outer_surface",
+              "no_external_sources",
+              "vacuum_exterior",
+              "potential_zero_infinity"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-a85fd2a60e2440ee378b-0",
+            "text": "Ladningsbevarelse bestemmer den ydre overfladeladning",
+            "title": "Ladningsbevarelse bestemmer den ydre overfladeladning",
+            "latex": "4 q",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Gauss i en leder og ydre kuglesymmetri",
+            "method_context_id": "method-583c694acab51dc312fd",
+            "intermediate_latex": [],
+            "assumptions": [
+              "electrostatic",
+              "closed_conductor",
+              "spherical_outer_surface",
+              "no_external_sources",
+              "vacuum_exterior",
+              "potential_zero_infinity"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "Q_inner": {
+            "expression": "-q",
+            "latex": "- q",
+            "unit": "C"
+          },
+          "Q_outer": {
+            "expression": "4*q",
+            "latex": "4 q",
+            "unit": "C"
+          },
+          "V": {
+            "expression": "q/(pi*R*epsilon_0)",
+            "latex": "\\frac{q}{\\pi R \\epsilon_{0}}",
+            "unit": "V"
+          }
+        },
+        "numerical": {},
+        "checks": [
+          {
+            "id": "check-3ac91dd8015a0869e87b",
+            "name": "Dimension: Q_inner",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-750a378d579d01675b5c",
+            "name": "Dimension: Q_outer",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-cb6e3426dd3cff9a2a79",
+            "name": "Dimension: V",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V",
+            "step_ids": []
+          },
+          {
+            "id": "check-ed64e0c303606281f9aa",
+            "name": "Inputdimension: enclosed_charge",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-7543e0481bc96a79c486",
+            "name": "Inputdimension: metal_charge",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-176e449b4ce30ba7f749",
+            "name": "Inputdimension: outer_radius",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          }
+        ],
+        "direction": "",
+        "warnings": [
+          "Dette bestemmer ikke lokal overfladeladning i et asymmetrisk hulrum eller feltlinjeskitsen."
+        ],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-583c694acab51dc312fd": {
+            "method_id": "conductors",
+            "method": "Gauss i en leder og ydre kuglesymmetri",
+            "reasoning": "En Gauss-flade i metallet har nul flux og nul total omsluttet ladning. Den ydre kugleflade er ækvipotential; uden eksterne kilder er ydre felt kuglesymmetrisk.",
+            "equations": [
+              "Q_{inner}=-q_{cavity}",
+              "Q_{outer}=Q_{metal}+q_{cavity}",
+              "V_{metal}=Q_{outer}/(4\\pi\\epsilon_0 R)"
+            ],
+            "assumptions": [
+              "electrostatic",
+              "closed_conductor",
+              "spherical_outer_surface",
+              "no_external_sources",
+              "vacuum_exterior",
+              "potential_zero_infinity"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "Q_inner",
+              "Q_outer",
+              "V"
+            ],
+            "results": {
+              "Q_inner": {
+                "expression": "-q",
+                "latex": "- q",
+                "unit": "C"
+              },
+              "Q_outer": {
+                "expression": "4*q",
+                "latex": "4 q",
+                "unit": "C"
+              },
+              "V": {
+                "expression": "q/(pi*R*epsilon_0)",
+                "latex": "\\frac{q}{\\pi R \\epsilon_{0}}",
+                "unit": "V"
+              }
+            },
+            "numerical": {},
+            "direction": ""
+          },
+          "derivation": {
+            "equations_latex": [
+              "Q_{inner}=-q_{cavity}",
+              "Q_{outer}=Q_{metal}+q_{cavity}",
+              "V_{metal}=Q_{outer}/(4\\pi\\epsilon_0 R)"
+            ],
+            "step_ids": [
+              "step-7431114f3ccc7fd9f0ee-0",
+              "step-a85fd2a60e2440ee378b-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-7431114f3ccc7fd9f0ee-0",
+              "step-a85fd2a60e2440ee378b-0"
+            ],
+            "method_context_ids": [
+              "method-583c694acab51dc312fd"
+            ],
+            "global_check_ids": [
+              "check-3ac91dd8015a0869e87b",
+              "check-750a378d579d01675b5c",
+              "check-cb6e3426dd3cff9a2a79",
+              "check-ed64e0c303606281f9aa",
+              "check-7543e0481bc96a79c486",
+              "check-176e449b4ce30ba7f749"
+            ],
+            "warnings": [
+              "Dette bestemmer ikke lokal overfladeladning i et asymmetrisk hulrum eller feltlinjeskitsen."
+            ]
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Inputdimension: enclosed_charge",
+          "Inputdimension: metal_charge",
+          "Inputdimension: outer_radius"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "Et elektrostatisk arrangement består af en perfekt ledende kugleskal med indre radius\nb, ydre radius c og samlet elektrisk ladning Q = 3q, q > 0. Inden for kugleskallen er en\npunktladning, q, placeret i afstanden a fra centrum.\nAngiv den totale ladning på henholdsvis den indre, Qb , og den ydre, Qc , overflade\n     af kugleskallen.",
+    "confirmed": true,
+    "variables": {
+      "enclosed_charge": "q",
+      "metal_charge": "3*q",
+      "outer_radius": "R"
+    },
+    "units": {
+      "q": "C",
+      "R": "m"
+    },
+    "numbers": {},
+    "positive": [
+      "q",
+      "R"
+    ],
+    "assumptions": [
+      "electrostatic",
+      "closed_conductor",
+      "spherical_outer_surface",
+      "no_external_sources",
+      "vacuum_exterior",
+      "potential_zero_infinity"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "conductor_cavity_totals",
+        "wanted": [
+          "Q_inner",
+          "Q_outer",
+          "V"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

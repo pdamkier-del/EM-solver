@@ -1,0 +1,96 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "I en uendelig lang cylinderformet metalstang med radius a løber en strøm, I1 = I, i\nretningen angivet på figuren. Rundt om metalstangen og ko-aksialt med denne er der\nanbragt en ledende cylinderskal med forsvindende tykkelse og radius b. I cylinderskallen\nløber en strøm, I2 = 34 I, i modsat retning af I1 .\nBestem størrelse og retning af det magnetiske felt for a < r < b og for r > b, hvor\n     r angiver afstanden til systemets symmetriakse.\nEn anden uendelig lang cylinderformet metalstang er anbragt parallelt med den første i\nafstanden d fra dennes centrum. I denne stang løber strømmen I3 = I i samme retning\nsom I1 . Metalstangen vil herved udsættes for en magnetisk kraft.",
+  "confirmed": true,
+  "variables": {
+    "coordinate": "s",
+    "surface_currents": [
+      [
+        "a+d",
+        "-3*I/(8*pi*(a+d))"
+      ]
+    ],
+    "regions": [
+      {
+        "lower": "0",
+        "upper": "a",
+        "density": "I/(pi*a^2)"
+      }
+    ]
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0"
+  ],
+  "assumptions": [
+    "infinite_cylindrical_symmetry",
+    "magnetostatic",
+    "nonmagnetic_medium"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "ampere_regions",
+      "wanted": [
+        "B"
+      ],
+      "orientation_confirmed": true
+    }
+  ]
+}

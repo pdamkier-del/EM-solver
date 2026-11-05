@@ -1,0 +1,117 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "To lange parallelle metalskinner med indbyrdes afstand L = 20 cm er forbundet til en\nmodstand med resistans R = 0.30 ⌦, som vist på figuren. Et konstant og homogent mag-\nnetfelt med styrke B = 1.2 Tesla er rettet vinkelret på skinnerne ud af figurens plan. En\nmetalstang hviler på skinnerne, således at der til enhver tid er elektrisk kontakt mellem\nstang og skinner. Metalstangen er frit bevægelig langs skinnerne med forsvindende frik-\ntion. Stangen trækkes med konstant fart, v = 3.4 m/s, i retningen væk fra modstanden,\nsom angivet på figuren. Der kan ses bort fra resistans i skinnerne og i metalstangen.\nTil de følgende spørgsmål ønskes samtlige størrelser angivet både symbolsk og numerisk.\nDe symbolske udtryk skal udtrykkes ved de i opgaveteksten opgivne størrelser.\nBeregn den totale energimængde afsat i modstanden, fra bevægelsen starter, til\n     stangen har tilbagelagt afstanden d = 1.2 m.",
+  "confirmed": true,
+  "variables": {
+    "source": [
+      "0",
+      "s",
+      "0"
+    ],
+    "parameter": "s",
+    "bounds": [
+      "0",
+      "L"
+    ],
+    "v": [
+      "v",
+      "0",
+      "0"
+    ],
+    "B": [
+      "0",
+      "0",
+      "B"
+    ],
+    "time": "t",
+    "R": "R",
+    "time_bounds": [
+      "0",
+      "d/v"
+    ]
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "ohm",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0"
+  ],
+  "assumptions": [
+    "negligible_self_inductance",
+    "stationary_return_path"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "motional_curve",
+      "wanted": [
+        "I",
+        "F_external",
+        "P_mechanical",
+        "W"
+      ],
+      "orientation_confirmed": true
+    }
+  ],
+  "numbers": {
+    "L": "20 cm",
+    "B": "1.2 T",
+    "v": "3.4 m/s",
+    "R": "0.30 ohm",
+    "d": "1.2 m"
+  }
+}

@@ -19,6 +19,12 @@ LABELS={'faraday_flux':'Faraday – givet flux','faraday_uniform':'Faraday – h
     'faraday_integral':'Faraday – fluxintegral','motional_curve':'Bevægelsesinduktion',
     'feedback':'Stang med elektromekanisk tilbagekobling','RC_discharge':'RC – afladning',
     'RL_step':'RL – spændingstrin','displacement_disk':'Forskydningsstrøm – cirkulære plader'}
+LABELS.update({'sphere_regions':'EV – Gauss, kugle med regioner','cylinder_regions':'EV – Gauss, uendelig cylinder med regioner',
+    'plane_regions':'EV – Gauss, spejlsymmetrisk plan/slab','concentric_conductors':'EV – koncentriske sfæriske ledere',
+    'conductor_cavity_totals':'EV – lederhulrum, totale overfladeladninger','potential_field':'EV – felt og ladning fra potentiale',
+    'electric_field_charge':'EV – ladning og kontrol fra elektrisk felt','potential_difference':'EV – potentialforskel fra felt',
+    'ampere_wire':'BA – Ampère, uendelig ledning','ampere_regions':'BA – Ampère, cylinder med flere strømregioner',
+    'biot_savart_curve':'BA – Biot–Savart, parameteriseret ledning','vector_potential_field':'BA – magnetfelt fra vektorpotentiale'})
 FIELDS={'time':'Tidsvariabel','flux':'Flux pr. vinding','N':'Vindingstal',
     'B_normal':'Signeret normalfelt','area':'Positivt areal','R':'Samlet modstand',
     'source':'Orienteret kildekurve [x,y,z]','parameter':'Kurveparameter',
@@ -29,12 +35,25 @@ FIELDS={'time':'Tidsvariabel','flux':'Flux pr. vinding','N':'Vindingstal',
     'L':'Selvinduktans','I0':'Strøm ved t=0','fraction':'Søgt tilbageværende brøk',
     'E':'Signeret aksialt E(t)','coordinate':'Positiv radialkoordinat',
     'plate_radius':'Pladeradius','time_bounds':'Tidsinterval [fra,til]'}
+FIELDS.update({'coordinates':'Koordinater [x,y,z], [s,phi,z] eller [r,theta,phi]','system':'Koordinatsystem: cartesian / cylindrical / spherical',
+    'length':'Gaussfladens aksiale længde (ikke kildens længde)','volume_bounds':'Integrationsområde [[x,0,L],[y,0,L],[z,0,L]]',
+    'point':'Feltpunkt [x,y,z]','I':'Signeret strøm','distance':'Positiv afstand fra lederen','V':'Potentialfunktion',
+    'A':'Vektorpotentiale [A1,A2,A3]','field':'Feltkomponent langs koordinaten','start':'Startpunkt','end':'Slutpunkt',
+    'central_charge':'Central ladning (angiv 0 hvis ingen)','enclosed_charge':'Samlet ladning i hulrummet','metal_charge':'Lederens nettoladning',
+    'outer_radius':'Lederens ydre radius','outside_permittivity':'Permittivitet udenfor','gap_permittivities':'Permittiviteter før hver leder [eps1,eps2,...]',
+    'surface_charges':'Overfladeladninger [[radius,sigma],...]','surface_currents':'Overfladestrømme [[radius,Kz],...]','test_charge':'Testladning'})
 WANTED={'faraday_flux':'Phi, EMF, I, P, W','faraday_uniform':'Phi, EMF, I, P, W',
     'faraday_integral':'Phi, EMF, I, P, W','motional_curve':'EMF, I, P, W, F_external, F_magnetic',
     'feedback':'v, I, tau, v_infinity, acceleration_initial, P, W',
     'RC_discharge':'Q, I, tau, I_initial, decay_time',
     'RL_step':'I, tau, I_initial, I_infinity',
     'displacement_disk':'B, J_displacement, I_displacement'}
+for name in ('sphere_regions','cylinder_regions','plane_regions'):WANTED[name]='E, D, Q_enc'
+WANTED['sphere_regions']='E, D, Q_enc, Q, V (kræver V(infinity)=0)'
+WANTED.update({'concentric_conductors':'E, V, surfaces, U (kun uden central punktladning)',
+    'conductor_cavity_totals':'Q_inner, Q_outer, V','potential_field':'E, rho, curl_E, laplacian_V',
+    'electric_field_charge':'E, rho, curl_E, Q (kræver volume_bounds)','potential_difference':'delta_V, W_external (kræver test_charge)',
+    'ampere_wire':'B','ampere_regions':'B, I_enc, I (total strøm)','biot_savart_curve':'B','vector_potential_field':'B, div_B, J'})
 CONDITIONS={'constant_coefficients':'Kredsløbs- og mekaniske koefficienter er konstante',
     'uniform_normal_B':'Normalfeltet er homogent over fladen',
     'negligible_self_inductance':'Kredsens selvinduktans kan negligeres',
@@ -45,6 +64,14 @@ CONDITIONS={'constant_coefficients':'Kredsløbs- og mekaniske koefficienter er k
     'negligible_edge_effects':'Randeffekter kan negligeres',
     'vacuum_gap':'Der er vakuum mellem pladerne',
     'positive_area_on_interval':'Arealet er positivt i hele det anvendte tidsinterval'}
+CONDITIONS.update({'spherical_symmetry':'Kuglesymmetri','infinite_cylindrical_symmetry':'Uendelig cylindrisk symmetri',
+    'infinite_planar_symmetry':'Uendelig plan- og spejlsymmetri','linear_isotropic_medium':'De angivne medier er lineære og isotrope med konstante permittiviteter',
+    'vacuum_outside_regions':'Udeladte områder er vakuum uden volumenladning','electrostatic':'Elektrostatisk ligevægt',
+    'concentric_spheres':'Alle lederflader er koncentriske sfærer','no_external_sources':'Ingen eksterne kilder',
+    'potential_zero_infinity':'Potentialet sættes til nul i det uendelige','closed_conductor':'Hulrummet er omgivet af en lukket leder',
+    'V_infinity_zero':'Potentialets reference: V(infinity)=0 (kun nødvendigt ved søgt V)',
+    'spherical_outer_surface':'Lederens ydre flade er sfærisk','vacuum_exterior':'Vakuum udenfor lederen','vacuum_medium':'Vakuum i det betragtede område',
+    'infinite_straight_wire':'Uendelig ret ledning','magnetostatic':'Stationære magnetiske kilder/felter','nonmagnetic_medium':'Permeabilitet mu_0 (ikke-magnetisk medium)'})
 
 
 def expression_input(text):
@@ -62,12 +89,13 @@ def expression_input(text):
 class DynPanel(QWidget):
     solutionReady=Signal(dict)
     activityChanged=Signal(bool)
+    modelInvalidated=Signal()
 
     def __init__(self,python_exe=None,repository=None,parent=None,allowed_models=None):
         super().__init__(parent)
         self.python_exe=str(python_exe or sys.executable)
         self.repository=str(repository or Path(__file__).resolve().parents[1])
-        self.cards=catalog();self.fields={};self.conditions={};self.last_reply=None
+        self.cards=catalog();self.fields={};self.tables={};self.conditions={};self.last_reply=None
         self._loading=False;self._active_request=None
         self.process=QProcess(self)
         self.process.finished.connect(self._finished)
@@ -111,13 +139,15 @@ class DynPanel(QWidget):
 
     def _confirmation_changed(self,checked):
         if not self._loading and not self.busy:
-            if not checked:self.last_reply=None;self.output.clear()
+            if not checked:
+                self.last_reply=None;self.output.clear();self.modelInvalidated.emit()
             self.status.setText('Model: bekræftet af dig; endnu ikke beregnet.' if checked else 'Model: ikke bekræftet.')
 
     def _invalidate(self,*args):
         if self._loading:return
         self.last_reply=None;self.confirm.setChecked(False)
         self.output.clear();self.status.setText('Input ændret. Modellen skal bekræftes igen; ingen aktuel løsning.')
+        self.modelInvalidated.emit()
 
     def _clear_layout(self,layout):
         while layout.count():
@@ -126,9 +156,24 @@ class DynPanel(QWidget):
 
     def _build_form(self,*args):
         self._loading=True;self._clear_layout(self.form);self._clear_layout(self.condition_layout)
-        self.fields={};self.conditions={};self.symbols.setRowCount(0)
+        self.fields={};self.tables={};self.conditions={};self.symbols.setRowCount(0)
         self.card=self.cards['models'][self.model.currentData()]
         for key in self.card['required']+self.card['optional']:
+            if key in self.card.get('tables',{}):
+                columns=list(self.card['tables'][key]);table=QTableWidget(0,len(columns));self.tables[key]=table
+                labels={'lower':'Nedre grænse','upper':'Øvre grænse','density':'Fri rho' if self.card.get('domain')=='EV' else 'J_z',
+                    'permittivity':'Permittivitet','inner':'Indre radius','outer':'Ydre radius','charge':'Lederens nettoladning'}
+                table.setHorizontalHeaderLabels([labels.get(c,c)+' ['+self.card['tables'][key][c]+']' for c in columns])
+                table.setMaximumHeight(170);table.itemChanged.connect(self._invalidate)
+                group=QWidget();box=QVBoxLayout(group);box.setContentsMargins(0,0,0,0);box.addWidget(table)
+                button=QPushButton('Tilføj region' if key=='regions' else 'Tilføj leder')
+                def add_row(checked=False,table=table):
+                    row=table.rowCount();table.insertRow(row)
+                    for col in range(table.columnCount()):table.setItem(row,col,QTableWidgetItem(''))
+                    self._invalidate()
+                button.clicked.connect(add_row);box.addWidget(button)
+                self.form.addRow('Regioner' if key=='regions' else 'Koncentriske ledere',group)
+                continue
             field=QLineEdit();self.fields[key]=field
             unit=self.cards['variable_units'].get(key,'')
             field.setPlaceholderText(unit+(' – valgfrit' if key in self.card['optional'] else ' – skal angives'))
@@ -137,6 +182,7 @@ class DynPanel(QWidget):
         orientation=QLabel(self.card['orientation']);orientation.setWordWrap(True);self.condition_layout.addWidget(orientation)
         # Optional circuit/area conditions remain explicit and unchecked.
         required=list(self.card['assumptions'])
+        if self.model.currentData()=='sphere_regions':required.append('V_infinity_zero')
         if self.card['family'] in ('faraday','motional_emf'):required.append('negligible_self_inductance')
         if self.card['family']=='motional_emf':required.append('stationary_return_path')
         if self.model.currentData()=='faraday_uniform':required.append('positive_area_on_interval')
@@ -163,12 +209,20 @@ class DynPanel(QWidget):
         known={self.symbols.item(row,0).text() for row in range(self.symbols.rowCount()) if self.symbols.item(row,0)}
         reserved={'pi','oo','sin','cos','tan','exp','log','sqrt','Abs','asin','acos','atan','epsilon_0','mu_0'}
         for key,field in self.fields.items():
+            if key=='system':continue
             raw=field.text().strip()
             for name in re.findall(r'\b[A-Za-z_]\w*\b',raw):
                 if name in known or name in reserved:continue
                 role=self.cards['variable_units'].get(key,'')
                 unit=role if raw==name and '(' not in role and ' ' not in role else ''
                 self._add_symbol(name,unit);known.add(name)
+        for key,table in self.tables.items():
+            for row in range(table.rowCount()):
+                for col,role in enumerate(self.card['tables'][key].values()):
+                    raw=table.item(row,col).text().strip() if table.item(row,col) else ''
+                    for name in re.findall(r'\b[A-Za-z_]\w*\b',raw):
+                        if name in known or name in reserved:continue
+                        self._add_symbol(name,role if raw==name else '');known.add(name)
         self._invalidate()
 
     def request(self):
@@ -183,6 +237,13 @@ class DynPanel(QWidget):
             if number:numbers[name]=number
             if self.symbols.item(row,3).checkState()==Qt.Checked:positive.append(name)
         variables={key:expression_input(field.text()) for key,field in self.fields.items() if field.text().strip()}
+        for key,table in self.tables.items():
+            rows=[]
+            for row in range(table.rowCount()):
+                cells=[table.item(row,col).text().strip() if table.item(row,col) else '' for col in range(table.columnCount())]
+                if not all(cells):raise ValueError('Udfyld alle felter i region-/ledertabellen.')
+                rows.append(dict(zip(self.card['tables'][key],cells)) if key=='regions' else cells)
+            variables[key]=rows
         return dict(schema_version=VERSION,text=self.text.toPlainText(),confirmed=self.confirm.isChecked(),variables=variables,
             units=units,numbers=numbers,positive=positive,assumptions=[key for key,box in self.conditions.items() if box.isChecked()],
             subproblems=[dict(id='a',model=self.model.currentData(),wanted=[v.strip() for v in self.wanted.text().split(',') if v.strip()],orientation_confirmed=self.orientation.isChecked())])

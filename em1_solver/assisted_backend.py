@@ -1,4 +1,4 @@
-"""Explicit, offline DYN modelling boundary; separate from frozen raw-text API.
+"""Explicit offline EV/BA/DYN modelling; separate from frozen raw-text API.
 
 No example values, orientations or initial conditions become physical givens.
 Every subproblem shares declared data but is solved independently: no hidden
@@ -37,6 +37,9 @@ MODELS = {
     'displacement_disk': dict(family='ampere_maxwell', required=['E','time','coordinate','plate_radius'], optional=[],
         assumptions=['uniform_axial_E','circular_symmetry','negligible_edge_effects','vacuum_gap'], orientation='E er den signerede +z-komponent; coordinate er positiv cylindrisk afstand; B er +phi-komponenten.'),
 }
+from .assisted_models import MODELS as EXTRA_MODELS,UNITS as EXTRA_UNITS
+MODELS.update(EXTRA_MODELS)
+VARIABLE_UNITS.update(EXTRA_UNITS)
 
 
 def validate_card(parsed):
@@ -46,6 +49,17 @@ def validate_card(parsed):
     from .core.validation import positive
     from .core.units import si
     problem=build(parsed);v=problem.variables;model=parsed.data['assisted_model_card']
+    if problem.domain in ('EV','BA'):
+        from .core.assisted import validate
+        preflight=copy.deepcopy(parsed)
+        if problem.family=='field_calculus':
+            # The old manual form's availability list omits Q/laplacian_V,
+            # which this existing kernel does compute. Check the same full
+            # input via a base target; execute still enforces every requested
+            # result and its dimensions afterwards.
+            preflight.data['solver_spec']['wanted']=['E'] if 'V' in v or 'E' in v else ['B']
+        validate(preflight)
+        return
     t=v.get('time')
     if not isinstance(t,sp.Symbol):raise ValueError('Tid skal være et variabelnavn, ikke et tal eller udtryk.')
     numbers={k:sp.Float(str(si(value,problem.numerical_units[k]).magnitude)) for k,value in problem.numerical_values.items()}
@@ -71,7 +85,7 @@ def validate_card(parsed):
 
 def catalog():
     """No values are filled automatically. A frontend can render these cards."""
-    return dict(schema_version=VERSION, domain='DYN', models=copy.deepcopy(MODELS),
+    return dict(schema_version=VERSION, domain='EV/BA/DYN', models=copy.deepcopy(MODELS),
                 variable_units=dict(VARIABLE_UNITS),
                 note='Brugeren bekræfter modellen; programmet verificerer ikke at modellen svarer til råteksten.')
 
@@ -88,6 +102,12 @@ def plan(text):
         'faraday_uniform':r'homogent.*magnetfelt|magnetfelt.*homogent|faraday|induktion',
         'faraday_integral':r'fluxintegral|inhomogent.*magnetfelt|magnetfelt.*inhomogent',
         'faraday_flux':r'flux|fluxkobling',
+        'sphere_regions':r'kuglesymmetr|ladning.*kugle',
+        'cylinder_regions':r'cylinder.*ladning|ladning.*cylinder',
+        'plane_regions':r'plansymmetr|ladet plade',
+        'concentric_conductors':r'koncentrisk.*leder|ledende kugleskal',
+        'ampere_regions':r'cylinder.*strøm|strøm.*cylinder',
+        'biot_savart_curve':r'biot.savart|strømloop',
     }
     candidates=[]
     for model,pattern in patterns.items():
@@ -137,6 +157,8 @@ def respond(request, *, solve=False):
             if model not in MODELS:
                 out['questions'].append(dict(subproblem=id,field='model',message='Vælg en understøttet fysisk model.',options=list(MODELS)));continue
             spec=MODELS[model];local=part.get('variables',{})
+            if model in ('cylinder_regions','ampere_regions','ampere_wire') and re.search(r'\b(?:endelig(?:e)?|finite)\s+(?:massiv\w*\s+)?(?:cylinder|ledning|wire)\b',request.get('text',''),re.I):
+                raise ValueError('Teksten angiver en endelig kilde; dette modelkort kræver uendelig udstrækning. Ret den fysiske model frem for at bruge Gauss/Ampère direkte.')
             if not isinstance(local,dict):raise ValueError('Delspørgsmålets variables skal være et objekt.')
             # Shared data may contain quantities for other parts. Only this card's
             # declared variables enter its solver. Local typos are rejected.
@@ -155,6 +177,8 @@ def respond(request, *, solve=False):
             if part.get('orientation_confirmed') is not True:
                 out['questions'].append(dict(subproblem=id,field='orientation_confirmed',message=spec['orientation']))
             wanted=_strings(part.get('wanted',[]),'wanted')
+            if model=='sphere_regions' and 'V' in wanted and 'V_infinity_zero' not in conditions:
+                out['questions'].append(dict(subproblem=id,field='assumptions',value='V_infinity_zero',message='Bekræft referencepotentialet V(infinity)=0 før potentialintegrationen.'))
             if not wanted:out['questions'].append(dict(subproblem=id,field='wanted',message='Hvilke resultater søges?'))
             prepared.append((id,model,variables|spec.get('fixed',{}),conditions,wanted))
         if not out['questions'] and set(shared)-declared:
@@ -168,10 +192,22 @@ def respond(request, *, solve=False):
         for id,model,variables,conditions,wanted in prepared:
             record=dict(id=id,model=model,status='not_solved',solution=None,errors=[])
             try:
-                parsed=Parsed(request.get('text',''),MODELS[model]['orientation'],
-                    dict(assisted_model_card=model,solver_spec=dict(domain='DYN',family=MODELS[model]['family'],variables=variables,wanted=wanted)),
+                spec=MODELS[model];variables=copy.deepcopy(variables);regions=variables.pop('regions',[])
+                if not isinstance(regions,list):raise ValueError('Regioner skal være en liste.')
+                if 'regions' in spec['required']:
+                    expected=set(spec['tables']['regions'])
+                    if not regions or any(not isinstance(r,dict) or set(r)!=expected for r in regions):raise ValueError('Angiv alle regioners grænser, tæthed og relevante materialedata eksplicit.')
+                parsed=Parsed(request.get('text',''),spec.get('geometry',spec['orientation']),
+                    dict(assisted_model_card=model,solver_spec=dict(domain=spec.get('domain','DYN'),family=spec['family'],variables=variables,regions=regions,wanted=wanted)),
                     wanted,dict(numbers),dict(units),list(positive),conditions)
-                answer=run_confirmed(parsed)
+                if model in ('sphere_regions','cylinder_regions','plane_regions','ampere_regions'):
+                    sheets=variables.get('surface_charges') or variables.get('surface_currents')
+                    if sheets and set(wanted)&{'V','Q','I'}:raise ValueError('Denne sammensatte potential-/totalkæde understøtter endnu ikke ekstra fladekilder.')
+                    if not sheets:
+                        seed=['B','I_enc'] if model=='ampere_regions' else ['E','D','Q_enc']
+                        parsed.data['solver_spec']['wanted']=seed
+                        parsed.data['composition']={'seed_wanted':seed,'current_scope':'total'}
+                answer=run_confirmed(parsed,evaluate=bool(spec.get('evaluate_integrals',False)))
                 failed=[c.name for c in answer.checks if c.passed is False]
                 if failed:raise ValueError('Fejlede kontroller: '+', '.join(failed))
                 solution=serialize(answer)

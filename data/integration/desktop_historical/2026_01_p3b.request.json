@@ -1,0 +1,106 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "En cirkulær løkke med radius S ligger i xy-planet af et koordinatsystem med centrum i\norigo. I området er der et ikke-homogent, tidsafhængigt magnetfelt, som i cylinderkoordi-\nnater tager formen B(s, φ, t) = ks sin2 (φ) cos(t/T ) ẑ, hvor k og T er positive konstanter.\nLøkken har den elektriske modstand R. Der kan ses bort fra løkkens selvinduktans.\nFastlæg et udtryk, I(t), for strømmen i løkken som funktion af tiden. Angiv (med\n     argumenter) strømmens retning til tiden t = 5T .",
+  "confirmed": true,
+  "variables": {
+    "time": "t",
+    "flux_integrand": "k*s^2*sin(phi)^2*cos(t/T)",
+    "bounds": [
+      [
+        "s",
+        "0",
+        "S"
+      ],
+      [
+        "phi",
+        "0",
+        "2*pi"
+      ]
+    ],
+    "R": "R",
+    "time_bounds": [
+      "0",
+      "2*pi*T"
+    ],
+    "N": "1"
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "ohm",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "T/m",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "S": "m",
+    "T": "s"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0",
+    "S",
+    "T"
+  ],
+  "assumptions": [
+    "negligible_self_inductance"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "faraday_integral",
+      "wanted": [
+        "Phi",
+        "I",
+        "W"
+      ],
+      "orientation_confirmed": true
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "potential_difference",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Potentialforskel fra feltet",
+        "reasoning": "Potentialforskellen findes som minus feltets linjeintegral langs den angivne kurve/retning.",
+        "equations_latex": [
+          "V(b)-V(a)=-\\int_a^b\\mathbf E\\cdot d\\mathbf l"
+        ],
+        "steps": [
+          {
+            "id": "step-d63ce59d08173c4c5e2a-0",
+            "text": "Indsæt feltkomponenten langs integrationsvejen",
+            "title": "Indsæt feltkomponenten langs integrationsvejen",
+            "latex": "- \\int\\limits_{0}^{L} \\left(a + b x\\right)\\, dx",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Potentialforskel fra feltet",
+            "method_context_id": "method-a42597b9944c44db4839",
+            "intermediate_latex": [],
+            "assumptions": [
+              "electrostatic"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-1e228c03b9c741f47799-0",
+            "text": "Evaluer integralet og grænserne",
+            "title": "Evaluer integralet og grænserne",
+            "latex": "- \\frac{L \\left(L b + 2 a\\right)}{2}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Potentialforskel fra feltet",
+            "method_context_id": "method-a42597b9944c44db4839",
+            "intermediate_latex": [],
+            "assumptions": [
+              "electrostatic"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "delta_V": {
+            "expression": "-L*(L*b + 2*a)/2",
+            "latex": "- \\frac{L \\left(L b + 2 a\\right)}{2}",
+            "unit": "V"
+          }
+        },
+        "numerical": {
+          "delta_V": {
+            "value": "-20000.0000000000",
+            "latex": "-20000.0",
+            "unit": "V"
+          }
+        },
+        "checks": [
+          {
+            "id": "check-3aa76ffeaa1659204b1c",
+            "name": "Dimension: delta_V",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V",
+            "step_ids": []
+          }
+        ],
+        "direction": "",
+        "warnings": [],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-a42597b9944c44db4839": {
+            "method_id": "potential_from_field",
+            "method": "Potentialforskel fra feltet",
+            "reasoning": "Potentialforskellen findes som minus feltets linjeintegral langs den angivne kurve/retning.",
+            "equations": [
+              "V(b)-V(a)=-\\int_a^b\\mathbf E\\cdot d\\mathbf l"
+            ],
+            "assumptions": [
+              "electrostatic"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "delta_V"
+            ],
+            "results": {
+              "delta_V": {
+                "expression": "-L*(L*b + 2*a)/2",
+                "latex": "- \\frac{L \\left(L b + 2 a\\right)}{2}",
+                "unit": "V"
+              }
+            },
+            "numerical": {
+              "delta_V": {
+                "value": "-20000.0000000000",
+                "latex": "-20000.0",
+                "unit": "V"
+              }
+            },
+            "direction": ""
+          },
+          "derivation": {
+            "equations_latex": [
+              "V(b)-V(a)=-\\int_a^b\\mathbf E\\cdot d\\mathbf l"
+            ],
+            "step_ids": [
+              "step-d63ce59d08173c4c5e2a-0",
+              "step-1e228c03b9c741f47799-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-d63ce59d08173c4c5e2a-0",
+              "step-1e228c03b9c741f47799-0"
+            ],
+            "method_context_ids": [
+              "method-a42597b9944c44db4839"
+            ],
+            "global_check_ids": [
+              "check-3aa76ffeaa1659204b1c"
+            ],
+            "warnings": []
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "I et kubisk område af rummet med sidelængde L = 20,0 m er det elektriske felt givet ved\nE = (a + bx) x̂, hvor a = 500 V/m, og b = 50,0 V/m2 . Permitiviteten i området er #0 .\n                                          y\n\n\n\n\n                                                       x\n                                     L\n                                                   L\n                                 z        L\n\nBesvar følgende spørgsmål såvel symbolsk som numerisk.\nBestem forskellen i elektrisk potential mellem endefladen ved x = L og endefladen\n     ved x = 0. Hvilken af endefladerne har det højeste potential?",
+    "confirmed": true,
+    "variables": {
+      "field": "a+b*x",
+      "coordinate": "x",
+      "start": "0",
+      "end": "L"
+    },
+    "units": {
+      "a": "V/m",
+      "b": "V/m^2",
+      "x": "m",
+      "L": "m"
+    },
+    "numbers": {
+      "a": "500 V/m",
+      "b": "50 V/m^2",
+      "L": "20.0 m"
+    },
+    "positive": [
+      "a",
+      "b",
+      "L"
+    ],
+    "assumptions": [
+      "electrostatic"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "potential_difference",
+        "wanted": [
+          "delta_V"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,539 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "motional_curve",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Bevægelsesinduktion",
+        "reasoning": "Ladninger i den bevægelige leder påvirkes af v kryds B. Kraft pr. ladning integreres langs den eksplicit orienterede leder.",
+        "equations_latex": [
+          "\\mathcal E=\\int(\\mathbf v\\times\\mathbf B)\\cdot d\\mathbf l"
+        ],
+        "steps": [
+          {
+            "id": "step-0cdca0aab47256e707a3-0",
+            "text": "Magnetisk kraft pr. ladning",
+            "title": "Magnetisk kraft pr. ladning",
+            "latex": "\\left[\\begin{matrix}0\\\\- B v\\\\0\\end{matrix}\\right]",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Bevægelsesinduktion",
+            "method_context_id": "method-3d8cfc3d6b5b995676b6",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance",
+              "stationary_return_path"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-43c198dbb83f8078261f-0",
+            "text": "Projektér på ledningselementet og integrer",
+            "title": "Projektér på ledningselementet og integrer",
+            "latex": "\\int\\limits_{0}^{L} \\left(- B v\\right)\\, ds",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Bevægelsesinduktion",
+            "method_context_id": "method-3d8cfc3d6b5b995676b6",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance",
+              "stationary_return_path"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-a00272ce7def6078a971-0",
+            "text": "Ohms lov: I = EMF/R",
+            "title": "Ohms lov: I = EMF/R",
+            "latex": "- \\frac{B L v}{R}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Bevægelsesinduktion",
+            "method_context_id": "method-3d8cfc3d6b5b995676b6",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance",
+              "stationary_return_path"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-d8e475daf4d90f7051d6-0",
+            "text": "Joule-effekt: P = I²R",
+            "title": "Joule-effekt: P = I²R",
+            "latex": "\\frac{B^{2} L^{2} v^{2}}{R}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Bevægelsesinduktion",
+            "method_context_id": "method-3d8cfc3d6b5b995676b6",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance",
+              "stationary_return_path"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-63f475234e9af6df024a-0",
+            "text": "Varmeenergien før tidsintegration",
+            "title": "Varmeenergien før tidsintegration",
+            "latex": "\\int\\limits_{0}^{\\frac{d}{v}} \\frac{B^{2} L^{2} v^{2}}{R}\\, dt",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Bevægelsesinduktion",
+            "method_context_id": "method-3d8cfc3d6b5b995676b6",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance",
+              "stationary_return_path"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-874ac109016e240062a6-0",
+            "text": "Udfør tidsintegrationen",
+            "title": "Udfør tidsintegrationen",
+            "latex": "\\frac{B^{2} L^{2} d v}{R}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Bevægelsesinduktion",
+            "method_context_id": "method-3d8cfc3d6b5b995676b6",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance",
+              "stationary_return_path"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-4fa45b70359b732dfd0c-0",
+            "text": "Magnetisk kraft på den bevægelige leder: I integral dl kryds B",
+            "title": "Magnetisk kraft på den bevægelige leder: I integral dl kryds B",
+            "latex": "\\left[\\begin{matrix}- \\frac{B^{2} L^{2} v}{R}\\\\0\\\\0\\end{matrix}\\right]",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Bevægelsesinduktion",
+            "method_context_id": "method-3d8cfc3d6b5b995676b6",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance",
+              "stationary_return_path"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "EMF": {
+            "expression": "-B*L*v",
+            "latex": "- B L v",
+            "unit": "V"
+          },
+          "I": {
+            "expression": "-B*L*v/R",
+            "latex": "- \\frac{B L v}{R}",
+            "unit": "A"
+          },
+          "P": {
+            "expression": "B**2*L**2*v**2/R",
+            "latex": "\\frac{B^{2} L^{2} v^{2}}{R}",
+            "unit": "W"
+          },
+          "W": {
+            "expression": "B**2*L**2*d*v/R",
+            "latex": "\\frac{B^{2} L^{2} d v}{R}",
+            "unit": "J"
+          },
+          "F_magnetic": {
+            "expression": "Matrix([[-B**2*L**2*v/R], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}- \\frac{B^{2} L^{2} v}{R}\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "N"
+          },
+          "F_external": {
+            "expression": "Matrix([[B**2*L**2*v/R], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}\\frac{B^{2} L^{2} v}{R}\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "N"
+          },
+          "P_mechanical": {
+            "expression": "B**2*L**2*v**2/R",
+            "latex": "\\frac{B^{2} L^{2} v^{2}}{R}",
+            "unit": "W"
+          }
+        },
+        "numerical": {
+          "EMF": {
+            "value": "-0.816000000000000",
+            "latex": "-0.816",
+            "unit": "V"
+          },
+          "I": {
+            "value": "-2.72000000000000",
+            "latex": "-2.72",
+            "unit": "A"
+          },
+          "P": {
+            "value": "2.21952000000000",
+            "latex": "2.21952",
+            "unit": "W"
+          },
+          "W": {
+            "value": "0.783360000000000",
+            "latex": "0.78336",
+            "unit": "J"
+          },
+          "F_magnetic": {
+            "value": "Matrix([[-0.652800000000000], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}-0.6528\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "N"
+          },
+          "F_external": {
+            "value": "Matrix([[0.652800000000000], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}0.6528\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "N"
+          },
+          "P_mechanical": {
+            "value": "2.21952000000000",
+            "latex": "2.21952",
+            "unit": "W"
+          }
+        },
+        "checks": [
+          {
+            "id": "check-5a462d5ffe67bb25a721",
+            "name": "Effektbalance P = EMF I",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-feaa1f0ad369854db838",
+            "name": "Mekanisk effekt = Joule-effekt",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-82f2dbc97ebd26146d50",
+            "name": "Dimension: EMF",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V",
+            "step_ids": []
+          },
+          {
+            "id": "check-8de96589aec781d06477",
+            "name": "Dimension: I",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-fc174918ed08504bcee4",
+            "name": "Dimension: P",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "W",
+            "step_ids": []
+          },
+          {
+            "id": "check-bb76f353503d90ee21a4",
+            "name": "Dimension: W",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "J",
+            "step_ids": []
+          },
+          {
+            "id": "check-62fc07675eaa311882f1",
+            "name": "Dimension: F_magnetic",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "N",
+            "step_ids": []
+          },
+          {
+            "id": "check-3fdf3ddee62ac663dc66",
+            "name": "Dimension: F_external",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "N",
+            "step_ids": []
+          },
+          {
+            "id": "check-26d636f937375486078e",
+            "name": "Dimension: P_mechanical",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "W",
+            "step_ids": []
+          },
+          {
+            "id": "check-73d41c0594eb02e57b37",
+            "name": "Inputdimension: time",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "s",
+            "step_ids": []
+          },
+          {
+            "id": "check-64f9cee886057a220208",
+            "name": "Inputdimension: source",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-b4dab86146fb5d924a0f",
+            "name": "Inputdimension: v",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m/s",
+            "step_ids": []
+          },
+          {
+            "id": "check-963fb6e8f1eaadac8842",
+            "name": "Inputdimension: B",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T",
+            "step_ids": []
+          },
+          {
+            "id": "check-29139291dc597cbd98c8",
+            "name": "Inputdimension: R",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "ohm",
+            "step_ids": []
+          }
+        ],
+        "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb.",
+        "warnings": [],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-3d8cfc3d6b5b995676b6": {
+            "method_id": "motional_emf",
+            "method": "Bevægelsesinduktion",
+            "reasoning": "Ladninger i den bevægelige leder påvirkes af v kryds B. Kraft pr. ladning integreres langs den eksplicit orienterede leder.",
+            "equations": [
+              "\\mathcal E=\\int(\\mathbf v\\times\\mathbf B)\\cdot d\\mathbf l"
+            ],
+            "assumptions": [
+              "negligible_self_inductance",
+              "stationary_return_path"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "I",
+              "F_external",
+              "P_mechanical",
+              "W"
+            ],
+            "results": {
+              "I": {
+                "expression": "-B*L*v/R",
+                "latex": "- \\frac{B L v}{R}",
+                "unit": "A"
+              },
+              "W": {
+                "expression": "B**2*L**2*d*v/R",
+                "latex": "\\frac{B^{2} L^{2} d v}{R}",
+                "unit": "J"
+              },
+              "F_external": {
+                "expression": "Matrix([[B**2*L**2*v/R], [0], [0]])",
+                "latex": "\\left[\\begin{matrix}\\frac{B^{2} L^{2} v}{R}\\\\0\\\\0\\end{matrix}\\right]",
+                "unit": "N"
+              },
+              "P_mechanical": {
+                "expression": "B**2*L**2*v**2/R",
+                "latex": "\\frac{B^{2} L^{2} v^{2}}{R}",
+                "unit": "W"
+              }
+            },
+            "numerical": {
+              "I": {
+                "value": "-2.72000000000000",
+                "latex": "-2.72",
+                "unit": "A"
+              },
+              "W": {
+                "value": "0.783360000000000",
+                "latex": "0.78336",
+                "unit": "J"
+              },
+              "F_external": {
+                "value": "Matrix([[0.652800000000000], [0], [0]])",
+                "latex": "\\left[\\begin{matrix}0.6528\\\\0\\\\0\\end{matrix}\\right]",
+                "unit": "N"
+              },
+              "P_mechanical": {
+                "value": "2.21952000000000",
+                "latex": "2.21952",
+                "unit": "W"
+              }
+            },
+            "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb."
+          },
+          "derivation": {
+            "equations_latex": [
+              "\\mathcal E=\\int(\\mathbf v\\times\\mathbf B)\\cdot d\\mathbf l"
+            ],
+            "step_ids": [
+              "step-0cdca0aab47256e707a3-0",
+              "step-43c198dbb83f8078261f-0",
+              "step-a00272ce7def6078a971-0",
+              "step-d8e475daf4d90f7051d6-0",
+              "step-63f475234e9af6df024a-0",
+              "step-874ac109016e240062a6-0",
+              "step-4fa45b70359b732dfd0c-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-0cdca0aab47256e707a3-0",
+              "step-43c198dbb83f8078261f-0",
+              "step-a00272ce7def6078a971-0",
+              "step-d8e475daf4d90f7051d6-0",
+              "step-63f475234e9af6df024a-0",
+              "step-874ac109016e240062a6-0",
+              "step-4fa45b70359b732dfd0c-0"
+            ],
+            "method_context_ids": [
+              "method-3d8cfc3d6b5b995676b6"
+            ],
+            "global_check_ids": [
+              "check-5a462d5ffe67bb25a721",
+              "check-feaa1f0ad369854db838",
+              "check-82f2dbc97ebd26146d50",
+              "check-8de96589aec781d06477",
+              "check-fc174918ed08504bcee4",
+              "check-bb76f353503d90ee21a4",
+              "check-62fc07675eaa311882f1",
+              "check-3fdf3ddee62ac663dc66",
+              "check-26d636f937375486078e",
+              "check-73d41c0594eb02e57b37",
+              "check-64f9cee886057a220208",
+              "check-b4dab86146fb5d924a0f",
+              "check-963fb6e8f1eaadac8842",
+              "check-29139291dc597cbd98c8"
+            ],
+            "warnings": []
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Effektbalance P = EMF I",
+          "Mekanisk effekt = Joule-effekt",
+          "Inputdimension: time",
+          "Inputdimension: source",
+          "Inputdimension: v",
+          "Inputdimension: B",
+          "Inputdimension: R"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "To lange parallelle metalskinner med indbyrdes afstand L = 20 cm er forbundet til en\nmodstand med resistans R = 0.30 ⌦, som vist på figuren. Et konstant og homogent mag-\nnetfelt med styrke B = 1.2 Tesla er rettet vinkelret på skinnerne ud af figurens plan. En\nmetalstang hviler på skinnerne, således at der til enhver tid er elektrisk kontakt mellem\nstang og skinner. Metalstangen er frit bevægelig langs skinnerne med forsvindende frik-\ntion. Stangen trækkes med konstant fart, v = 3.4 m/s, i retningen væk fra modstanden,\nsom angivet på figuren. Der kan ses bort fra resistans i skinnerne og i metalstangen.\nTil de følgende spørgsmål ønskes samtlige størrelser angivet både symbolsk og numerisk.\nDe symbolske udtryk skal udtrykkes ved de i opgaveteksten opgivne størrelser.\nBeregn den totale energimængde afsat i modstanden, fra bevægelsen starter, til\n     stangen har tilbagelagt afstanden d = 1.2 m.",
+    "confirmed": true,
+    "variables": {
+      "source": [
+        "0",
+        "s",
+        "0"
+      ],
+      "parameter": "s",
+      "bounds": [
+        "0",
+        "L"
+      ],
+      "v": [
+        "v",
+        "0",
+        "0"
+      ],
+      "B": [
+        "0",
+        "0",
+        "B"
+      ],
+      "time": "t",
+      "R": "R",
+      "time_bounds": [
+        "0",
+        "d/v"
+      ]
+    },
+    "units": {
+      "s": "m",
+      "L": "m",
+      "v": "m/s",
+      "B": "T",
+      "t": "s",
+      "R": "ohm",
+      "d": "m"
+    },
+    "numbers": {
+      "L": "20 cm",
+      "v": "3.4 m/s",
+      "B": "1.2 T",
+      "R": "0.30 ohm",
+      "d": "1.2 m"
+    },
+    "positive": [
+      "s",
+      "L",
+      "v",
+      "B",
+      "R",
+      "d"
+    ],
+    "assumptions": [
+      "negligible_self_inductance",
+      "stationary_return_path"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "motional_curve",
+        "wanted": [
+          "I",
+          "F_external",
+          "P_mechanical",
+          "W"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

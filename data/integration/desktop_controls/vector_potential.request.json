@@ -1,0 +1,41 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "Eksplicit fysisk model til integrationskontrol.",
+  "confirmed": true,
+  "variables": {
+    "A": [
+      "0",
+      "0",
+      "B0*x"
+    ],
+    "coordinates": [
+      "x",
+      "y",
+      "z"
+    ],
+    "system": "cartesian"
+  },
+  "units": {
+    "B0": "T",
+    "x": "m",
+    "y": "m",
+    "z": "m"
+  },
+  "positive": [],
+  "assumptions": [
+    "magnetostatic",
+    "nonmagnetic_medium"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "vector_potential_field",
+      "wanted": [
+        "B",
+        "div_B",
+        "J"
+      ],
+      "orientation_confirmed": true
+    }
+  ]
+}

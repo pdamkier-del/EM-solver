@@ -1,0 +1,89 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "En cirkulær pladekapacitor i vakuum med radius a og afstand d mellem pladerne på-\ntrykkes en spændingsforskel V = VA VB = V0 cos(!t). Et koordinatsystems z-akse\ner orienteret langs systemets symmetriakse, som vist på figuren. Her betragtes kun\nfelter mellem pladerne, og der ses bort fra rande↵ekter ved s ' a. Det antages, at\nvinkelfrekvensen ! er så lav, at elektro- og magnetostatiske sammenhænge kan benyttes\n(den kvasistatiske grænse).\n\n\n\n\nDe på figuren indtegnede røde kurver tilsvarer integrationsløkker, som kan komme til\nanvendelse i opgaveløsningen.\nTil det tidsafhængige felt E0 svarer en forskydningsstrøm Jd . Beregn denne samt\n     det tilhørende magnetfelt B1 begge inklusive retning og tidsafhængighed.",
+  "confirmed": true,
+  "variables": {
+    "E": "V*cos(omega*t)/d",
+    "time": "t",
+    "coordinate": "s",
+    "plate_radius": "a"
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0"
+  ],
+  "assumptions": [
+    "circular_symmetry",
+    "negligible_edge_effects",
+    "uniform_axial_E",
+    "vacuum_gap"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "displacement_disk",
+      "wanted": [
+        "J_displacement",
+        "I_displacement",
+        "B"
+      ],
+      "orientation_confirmed": true
+    }
+  ]
+}

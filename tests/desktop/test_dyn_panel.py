@@ -33,6 +33,12 @@ def fill(panel,request):
     panel.text.setPlainText(request['text'])
     panel.model.setCurrentIndex(panel.model.findData(request['subproblems'][0]['model']))
     for key,value in request['variables'].items():
+        if key in panel.tables:
+            table=panel.tables[key];table.setRowCount(len(value))
+            for row,item in enumerate(value):
+                cells=list(item.values()) if isinstance(item,dict) else item
+                for col,cell in enumerate(cells):table.setItem(row,col,QTableWidgetItem(str(cell)))
+            continue
         if isinstance(value,list):
             def form(x):return '['+','.join(form(v) for v in x)+']' if isinstance(x,list) else str(x)
             value=form(value)

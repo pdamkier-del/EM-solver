@@ -1,0 +1,296 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "displacement_disk",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Ampère–Maxwells lov",
+        "reasoning": "Det tidsafhængige elektriske felt giver en forskydningsstrøm. Den cirkulære symmetri gør det magnetiske felt konstant langs en cirkulær Ampère-kurve.",
+        "equations_latex": [
+          "J_d=\\epsilon_0\\partial_tE",
+          "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0\\epsilon_0\\frac{d\\Phi_E}{dt}"
+        ],
+        "steps": [
+          {
+            "id": "step-fff8591a86e027958f47-0",
+            "text": "Differentier E med hensyn til tid",
+            "title": "Differentier E med hensyn til tid",
+            "latex": "- \\frac{V \\epsilon_{0} \\omega \\sin{\\left(\\omega t \\right)}}{d}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Ampère–Maxwells lov",
+            "method_context_id": "method-d7d65353b06d3eb8d719",
+            "intermediate_latex": [],
+            "assumptions": [
+              "uniform_axial_E",
+              "circular_symmetry",
+              "negligible_edge_effects",
+              "vacuum_gap"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-2b6638a19331b7ae0e3c-0",
+            "text": "Integrer J_d over den omsluttede cirkelflade",
+            "title": "Integrer J_d over den omsluttede cirkelflade",
+            "latex": "\\begin{cases} - \\frac{\\pi V \\epsilon_{0} \\omega s^{2} \\sin{\\left(\\omega t \\right)}}{d} & \\text{for}\\: a \\geq s \\\\- \\frac{\\pi V a^{2} \\epsilon_{0} \\omega \\sin{\\left(\\omega t \\right)}}{d} & \\text{otherwise} \\end{cases}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Ampère–Maxwells lov",
+            "method_context_id": "method-d7d65353b06d3eb8d719",
+            "intermediate_latex": [],
+            "assumptions": [
+              "uniform_axial_E",
+              "circular_symmetry",
+              "negligible_edge_effects",
+              "vacuum_gap"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-1450bea299bb60ebb405-0",
+            "text": "Brug B 2πs = μ₀ I_d",
+            "title": "Brug B 2πs = μ₀ I_d",
+            "latex": "\\begin{cases} - \\frac{V \\epsilon_{0} \\mu_{0} \\omega s \\sin{\\left(\\omega t \\right)}}{2 d} & \\text{for}\\: a \\geq s \\\\- \\frac{V a^{2} \\epsilon_{0} \\mu_{0} \\omega \\sin{\\left(\\omega t \\right)}}{2 d s} & \\text{otherwise} \\end{cases}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Ampère–Maxwells lov",
+            "method_context_id": "method-d7d65353b06d3eb8d719",
+            "intermediate_latex": [],
+            "assumptions": [
+              "uniform_axial_E",
+              "circular_symmetry",
+              "negligible_edge_effects",
+              "vacuum_gap"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "J_displacement": {
+            "expression": "-V*epsilon_0*omega*sin(omega*t)/d",
+            "latex": "- \\frac{V \\epsilon_{0} \\omega \\sin{\\left(\\omega t \\right)}}{d}",
+            "unit": "A/m^2"
+          },
+          "I_displacement": {
+            "expression": "Piecewise((-pi*V*epsilon_0*omega*s**2*sin(omega*t)/d, a >= s), (-pi*V*a**2*epsilon_0*omega*sin(omega*t)/d, True))",
+            "latex": "\\begin{cases} - \\frac{\\pi V \\epsilon_{0} \\omega s^{2} \\sin{\\left(\\omega t \\right)}}{d} & \\text{for}\\: a \\geq s \\\\- \\frac{\\pi V a^{2} \\epsilon_{0} \\omega \\sin{\\left(\\omega t \\right)}}{d} & \\text{otherwise} \\end{cases}",
+            "unit": "A"
+          },
+          "B": {
+            "expression": "Piecewise((-V*epsilon_0*mu_0*omega*s*sin(omega*t)/(2*d), a >= s), (-V*a**2*epsilon_0*mu_0*omega*sin(omega*t)/(2*d*s), True))",
+            "latex": "\\begin{cases} - \\frac{V \\epsilon_{0} \\mu_{0} \\omega s \\sin{\\left(\\omega t \\right)}}{2 d} & \\text{for}\\: a \\geq s \\\\- \\frac{V a^{2} \\epsilon_{0} \\mu_{0} \\omega \\sin{\\left(\\omega t \\right)}}{2 d s} & \\text{otherwise} \\end{cases}",
+            "unit": "T"
+          }
+        },
+        "numerical": {},
+        "checks": [
+          {
+            "id": "check-173d4e88dcfc72b69d7a",
+            "name": "Dimension: J_displacement",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A/m^2",
+            "step_ids": []
+          },
+          {
+            "id": "check-3d3a6de3799a90fdaab0",
+            "name": "Dimension: I_displacement",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-a8c196006b2c7622bc66",
+            "name": "Dimension: B",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T",
+            "step_ids": []
+          },
+          {
+            "id": "check-99e722a6e15e66bd250b",
+            "name": "Inputdimension: E",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V/m",
+            "step_ids": []
+          },
+          {
+            "id": "check-d2f326c4ea2692476a43",
+            "name": "Inputdimension: time",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "s",
+            "step_ids": []
+          },
+          {
+            "id": "check-771b53efc0de9f11d86c",
+            "name": "Inputdimension: coordinate",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-5f0ffd7f6fa038280257",
+            "name": "Inputdimension: plate_radius",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          }
+        ],
+        "direction": "Positiv dE_z/dt giver positiv phi-retning for B. Korrektionen er langs z.",
+        "warnings": [],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-d7d65353b06d3eb8d719": {
+            "method_id": "ampere_maxwell",
+            "method": "Ampère–Maxwells lov",
+            "reasoning": "Det tidsafhængige elektriske felt giver en forskydningsstrøm. Den cirkulære symmetri gør det magnetiske felt konstant langs en cirkulær Ampère-kurve.",
+            "equations": [
+              "J_d=\\epsilon_0\\partial_tE",
+              "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0\\epsilon_0\\frac{d\\Phi_E}{dt}"
+            ],
+            "assumptions": [
+              "uniform_axial_E",
+              "circular_symmetry",
+              "negligible_edge_effects",
+              "vacuum_gap"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "J_displacement",
+              "I_displacement",
+              "B"
+            ],
+            "results": {
+              "J_displacement": {
+                "expression": "-V*epsilon_0*omega*sin(omega*t)/d",
+                "latex": "- \\frac{V \\epsilon_{0} \\omega \\sin{\\left(\\omega t \\right)}}{d}",
+                "unit": "A/m^2"
+              },
+              "I_displacement": {
+                "expression": "Piecewise((-pi*V*epsilon_0*omega*s**2*sin(omega*t)/d, a >= s), (-pi*V*a**2*epsilon_0*omega*sin(omega*t)/d, True))",
+                "latex": "\\begin{cases} - \\frac{\\pi V \\epsilon_{0} \\omega s^{2} \\sin{\\left(\\omega t \\right)}}{d} & \\text{for}\\: a \\geq s \\\\- \\frac{\\pi V a^{2} \\epsilon_{0} \\omega \\sin{\\left(\\omega t \\right)}}{d} & \\text{otherwise} \\end{cases}",
+                "unit": "A"
+              },
+              "B": {
+                "expression": "Piecewise((-V*epsilon_0*mu_0*omega*s*sin(omega*t)/(2*d), a >= s), (-V*a**2*epsilon_0*mu_0*omega*sin(omega*t)/(2*d*s), True))",
+                "latex": "\\begin{cases} - \\frac{V \\epsilon_{0} \\mu_{0} \\omega s \\sin{\\left(\\omega t \\right)}}{2 d} & \\text{for}\\: a \\geq s \\\\- \\frac{V a^{2} \\epsilon_{0} \\mu_{0} \\omega \\sin{\\left(\\omega t \\right)}}{2 d s} & \\text{otherwise} \\end{cases}",
+                "unit": "T"
+              }
+            },
+            "numerical": {},
+            "direction": "Positiv dE_z/dt giver positiv phi-retning for B. Korrektionen er langs z."
+          },
+          "derivation": {
+            "equations_latex": [
+              "J_d=\\epsilon_0\\partial_tE",
+              "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0\\epsilon_0\\frac{d\\Phi_E}{dt}"
+            ],
+            "step_ids": [
+              "step-fff8591a86e027958f47-0",
+              "step-2b6638a19331b7ae0e3c-0",
+              "step-1450bea299bb60ebb405-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-fff8591a86e027958f47-0",
+              "step-2b6638a19331b7ae0e3c-0",
+              "step-1450bea299bb60ebb405-0"
+            ],
+            "method_context_ids": [
+              "method-d7d65353b06d3eb8d719"
+            ],
+            "global_check_ids": [
+              "check-173d4e88dcfc72b69d7a",
+              "check-3d3a6de3799a90fdaab0",
+              "check-a8c196006b2c7622bc66",
+              "check-99e722a6e15e66bd250b",
+              "check-d2f326c4ea2692476a43",
+              "check-771b53efc0de9f11d86c",
+              "check-5f0ffd7f6fa038280257"
+            ],
+            "warnings": []
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Inputdimension: E",
+          "Inputdimension: time",
+          "Inputdimension: coordinate",
+          "Inputdimension: plate_radius"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "En cirkulær pladekapacitor i vakuum med radius a og afstand d mellem pladerne på-\ntrykkes en spændingsforskel V = VA VB = V0 cos(!t). Et koordinatsystems z-akse\ner orienteret langs systemets symmetriakse, som vist på figuren. Her betragtes kun\nfelter mellem pladerne, og der ses bort fra rande↵ekter ved s ' a. Det antages, at\nvinkelfrekvensen ! er så lav, at elektro- og magnetostatiske sammenhænge kan benyttes\n(den kvasistatiske grænse).\n\n\n\n\nDe på figuren indtegnede røde kurver tilsvarer integrationsløkker, som kan komme til\nanvendelse i opgaveløsningen.\nTil det tidsafhængige felt E0 svarer en forskydningsstrøm Jd . Beregn denne samt\n     det tilhørende magnetfelt B1 begge inklusive retning og tidsafhængighed.",
+    "confirmed": true,
+    "variables": {
+      "E": "V*cos(omega*t)/d",
+      "time": "t",
+      "coordinate": "s",
+      "plate_radius": "a"
+    },
+    "units": {
+      "V": "V",
+      "omega": "1/s",
+      "t": "s",
+      "d": "m",
+      "s": "m",
+      "a": "m"
+    },
+    "numbers": {},
+    "positive": [
+      "V",
+      "omega",
+      "d",
+      "s",
+      "a"
+    ],
+    "assumptions": [
+      "uniform_axial_E",
+      "circular_symmetry",
+      "negligible_edge_effects",
+      "vacuum_gap"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "displacement_disk",
+        "wanted": [
+          "J_displacement",
+          "I_displacement",
+          "B"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

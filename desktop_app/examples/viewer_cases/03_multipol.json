@@ -1,0 +1,83 @@
+{
+  "viewer_schema": "em1.desktop.solution.v1",
+  "title": "03 · Multipoler: fjernfelt",
+  "prompt": "Skriv monopoldelen og dipoldelen af potentialet fra en lokaliseret ladningsfordeling observeret langt fra kilden.",
+  "status": "unverified",
+  "interpretation": {
+    "method": "Multipoludvikling",
+    "geometry": "Lokaliseret ladningsfordeling"
+  },
+  "result": {
+    "symbolic_latex": "V(\\mathbf{r})=\\frac{1}{4\\pi\\varepsilon_0}(\\frac{Q}{r}+\\frac{\\mathbf{p}\\cdot\\hat{\\mathbf{r}}}{r^2})",
+    "numeric_text": null,
+    "units": null
+  },
+  "steps": [
+    {
+      "id": "trin-01",
+      "title": "Start med potentialeintegralet",
+      "reason": "For en kontinuert ladningsfordeling summerer vi potentialbidragene fra alle volumenelementer. Vi bruger potentialet, fordi det er en skalar og enklere at udvikle end feltet.",
+      "substitution": "",
+      "operation": "",
+      "latex": "V(\\mathbf{r})=\\frac{1}{4\\pi\\varepsilon_0}\\int\\frac{\\rho(\\mathbf{r}^{\\prime})}{|\\mathbf{r}-\\mathbf{r}^{\\prime}|}\\,d\\tau^{\\prime}",
+      "check": ""
+    },
+    {
+      "id": "trin-02",
+      "title": "Brug fjernfeltsbetingelsen",
+      "reason": "Observationen ligger langt fra hele ladningsfordelingen. Derfor er r′/r en lille parameter og kernens nævner kan udvikles.",
+      "substitution": "",
+      "operation": "",
+      "latex": "r\\gg r^{\\prime}",
+      "check": ""
+    },
+    {
+      "id": "trin-03",
+      "title": "Udvid Coulombkernen",
+      "reason": "Behold kun de to første led i Taylor-/Legendre-udviklingen. Resten er højere multipolordener.",
+      "substitution": "",
+      "operation": "",
+      "latex": "\\frac{1}{|\\mathbf{r}-\\mathbf{r}^{\\prime}|}\\simeq\\frac{1}{r}+\\frac{\\mathbf{r}^{\\prime}\\cdot\\hat{\\mathbf{r}}}{r^2}",
+      "check": ""
+    },
+    {
+      "id": "trin-04",
+      "title": "Indsæt udviklingen i integralet",
+      "reason": "Det første led afhænger ikke af kildekoordinaten. Vi kan tage 1/r uden for integralet og samle de to bidrag hver for sig.",
+      "substitution": "Erstat 1/|r−r′| med udviklingen fra trin 3.",
+      "operation": "",
+      "latex": "V\\simeq\\frac{1}{4\\pi\\varepsilon_0}(\\frac{1}{r}\\int\\rho\\,d\\tau^{\\prime}+\\frac{1}{r^2}\\int\\rho\\,\\mathbf{r}^{\\prime}\\cdot\\hat{\\mathbf{r}}\\,d\\tau^{\\prime})",
+      "check": ""
+    },
+    {
+      "id": "trin-05",
+      "title": "Definér monopolmomentet",
+      "reason": "Integralets første faktor er den totale ladning Q.",
+      "substitution": "",
+      "operation": "",
+      "latex": "Q=\\int\\rho(\\mathbf{r}^{\\prime})\\,d\\tau^{\\prime}",
+      "check": ""
+    },
+    {
+      "id": "trin-06",
+      "title": "Definér dipolmomentet",
+      "reason": "Den første vægtede sum af ladningernes positioner er dipolmomentet p.",
+      "substitution": "",
+      "operation": "",
+      "latex": "\\mathbf{p}=\\int\\mathbf{r}^{\\prime}\\rho(\\mathbf{r}^{\\prime})\\,d\\tau^{\\prime}",
+      "check": ""
+    },
+    {
+      "id": "trin-07",
+      "title": "Saml potentialet",
+      "reason": "Indsæt definitionerne af Q og p i udtrykket fra trin 4. Vektoren r-hat er uafhængig af integrationsvariablen.",
+      "substitution": "",
+      "operation": "",
+      "latex": "V(\\mathbf{r})\\simeq\\frac{1}{4\\pi\\varepsilon_0}(\\frac{Q}{r}+\\frac{\\mathbf{p}\\cdot\\hat{\\mathbf{r}}}{r^2})",
+      "check": "Monopolleddet falder som 1/r; dipolleddet som 1/r²."
+    }
+  ],
+  "warnings": [
+    "Kun de to første multipolbidrag er vist. Dipolmomentet afhænger generelt af valg af origo, hvis Q ≠ 0."
+  ]
+}

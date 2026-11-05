@@ -1,0 +1,93 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "En ladning Q bevæges√langs en cirkelbue med radius R og centrum i origo fra punktet\n(R, 0, 0) til punktet ( 23 R, 12 R, 0). Ladningen er i hvile både før og efter flytningen. I\nområdet er der et statisk elektrisk felt med formen\n                                       V0 !               \"\n                                E=−      3\n                                            2xy x̂ + x2 ŷ ,\n                                       R\nhvor V0 er en konstant.\nVis, at E beskriver et muligt elektrostatisk felt. Bestem ladningstætheden i områ-\n     det.",
+  "confirmed": true,
+  "variables": {
+    "coordinates": [
+      "x",
+      "y",
+      "z"
+    ],
+    "system": "cartesian",
+    "E": [
+      "-2*V*x*y/R^3",
+      "-V*x^2/R^3",
+      "0"
+    ]
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0"
+  ],
+  "assumptions": [
+    "electrostatic",
+    "vacuum_medium"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "electric_field_charge",
+      "wanted": [
+        "rho",
+        "curl_E"
+      ],
+      "orientation_confirmed": true
+    }
+  ]
+}

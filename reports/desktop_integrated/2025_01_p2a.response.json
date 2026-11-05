@@ -1,0 +1,398 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "concentric_conductors",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Gauss, lederligevægt og potentialintegral",
+        "reasoning": "Feltet er nul i metallet. Gauss-flader i hver leder bestemmer den inducerede indre ladning; resten sidder på den ydre overflade.",
+        "equations_latex": [
+          "\\mathbf E_{metal}=0",
+          "Q_{inner}=-Q_{cavity}",
+          "\\sigma=Q/(4\\pi r^2)",
+          "V(r)=\\int_r^\\infty E(r^\\prime)dr^\\prime"
+        ],
+        "steps": [
+          {
+            "id": "step-eca6b58c22247fb49abf-0",
+            "text": "Leder 1: indre og ydre ladning",
+            "title": "Leder 1: indre og ydre ladning",
+            "latex": "\\left( 0, \\  Q\\right)",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Gauss, lederligevægt og potentialintegral",
+            "method_context_id": "method-d9de74ecc31a481ff118",
+            "intermediate_latex": [],
+            "assumptions": [
+              "concentric_spheres",
+              "electrostatic",
+              "no_external_sources",
+              "potential_zero_infinity",
+              "linear_isotropic_medium"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-b41c809b92e7ea2580a2-0",
+            "text": "Leder 2: indre og ydre ladning",
+            "title": "Leder 2: indre og ydre ladning",
+            "latex": "\\left( - Q, \\  Q + q\\right)",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Gauss, lederligevægt og potentialintegral",
+            "method_context_id": "method-d9de74ecc31a481ff118",
+            "intermediate_latex": [],
+            "assumptions": [
+              "concentric_spheres",
+              "electrostatic",
+              "no_external_sources",
+              "potential_zero_infinity",
+              "linear_isotropic_medium"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-f56ab22364229be8be2b-0",
+            "text": "Overfladeladningstætheder (radius, ladning, tæthed)",
+            "title": "Overfladeladningstætheder (radius, ladning, tæthed)",
+            "latex": "\\left( \\left( a, \\  Q, \\  \\frac{Q}{4 \\pi a^{2}}\\right), \\  \\left( a + d, \\  - Q, \\  - \\frac{Q}{4 \\pi \\left(a + d\\right)^{2}}\\right), \\  \\left( a + d + h, \\  Q + q, \\  \\frac{Q + q}{4 \\pi \\left(a + d + h\\right)^{2}}\\right)\\right)",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Gauss, lederligevægt og potentialintegral",
+            "method_context_id": "method-d9de74ecc31a481ff118",
+            "intermediate_latex": [],
+            "assumptions": [
+              "concentric_spheres",
+              "electrostatic",
+              "no_external_sources",
+              "potential_zero_infinity",
+              "linear_isotropic_medium"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "E": {
+            "expression": "Piecewise((0, a >= r), (Q/(4*pi*epsilon_0*r**2), r < a + d), (0, r <= a + d + h), ((Q + q)/(4*pi*epsilon_0*r**2), True))",
+            "latex": "\\begin{cases} 0 & \\text{for}\\: a \\geq r \\\\\\frac{Q}{4 \\pi \\epsilon_{0} r^{2}} & \\text{for}\\: r < a + d \\\\0 & \\text{for}\\: r \\leq a + d + h \\\\\\frac{Q + q}{4 \\pi \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+            "unit": "V/m"
+          },
+          "V": {
+            "expression": "Piecewise(((-Q/(a + d) + Q/a + (Q + q)/(a + d + h))/(4*pi*epsilon_0), a > r), ((-Q/(a + d) + Q/r + (Q + q)/(a + d + h))/(4*pi*epsilon_0), a > -d + r), ((Q + q)/(4*pi*epsilon_0*(a + d + h)), a > -d - h + r), ((Q + q)/(4*pi*epsilon_0*r), True))",
+            "latex": "\\begin{cases} \\frac{- \\frac{Q}{a + d} + \\frac{Q}{a} + \\frac{Q + q}{a + d + h}}{4 \\pi \\epsilon_{0}} & \\text{for}\\: a > r \\\\\\frac{- \\frac{Q}{a + d} + \\frac{Q}{r} + \\frac{Q + q}{a + d + h}}{4 \\pi \\epsilon_{0}} & \\text{for}\\: a > - d + r \\\\\\frac{Q + q}{4 \\pi \\epsilon_{0} \\left(a + d + h\\right)} & \\text{for}\\: a > - d - h + r \\\\\\frac{Q + q}{4 \\pi \\epsilon_{0} r} & \\text{otherwise} \\end{cases}",
+            "unit": "V"
+          },
+          "surfaces": {
+            "expression": "[(a, Q, Q/(4*pi*a**2)), (a + d, -Q, -Q/(4*pi*(a + d)**2)), (a + d + h, Q + q, (Q + q)/(4*pi*(a + d + h)**2))]",
+            "latex": "\\left[ \\left( a, \\  Q, \\  \\frac{Q}{4 \\pi a^{2}}\\right), \\  \\left( a + d, \\  - Q, \\  - \\frac{Q}{4 \\pi \\left(a + d\\right)^{2}}\\right), \\  \\left( a + d + h, \\  Q + q, \\  \\frac{Q + q}{4 \\pi \\left(a + d + h\\right)^{2}}\\right)\\right]",
+            "unit": "(m, C, C/m^2)"
+          },
+          "U": {
+            "expression": "(Q**2*d*(a + d + h) + a*(Q + q)**2*(a + d))/(8*pi*a*epsilon_0*(a + d)*(a + d + h))",
+            "latex": "\\frac{Q^{2} d \\left(a + d + h\\right) + a \\left(Q + q\\right)^{2} \\left(a + d\\right)}{8 \\pi a \\epsilon_{0} \\left(a + d\\right) \\left(a + d + h\\right)}",
+            "unit": "J"
+          }
+        },
+        "numerical": {},
+        "checks": [
+          {
+            "id": "check-376173a0fa017ee2c32b",
+            "name": "Samlet overfladeladning",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-f1858a8d39e890124072",
+            "name": "Dimension: E",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V/m",
+            "step_ids": []
+          },
+          {
+            "id": "check-cb6e3426dd3cff9a2a79",
+            "name": "Dimension: V",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V",
+            "step_ids": []
+          },
+          {
+            "id": "check-d75a9af49f78ea5835ff",
+            "name": "Dimension: U",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "J",
+            "step_ids": []
+          },
+          {
+            "id": "check-51eea50e450a87367113",
+            "name": "Inputdimension: coordinate",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-06b473d992ea80164cec",
+            "name": "Inputdimension: central_charge",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-94b3494464f325d0d2dc",
+            "name": "Inputdimension: shell_0_inner",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-62071cf677986082c584",
+            "name": "Inputdimension: shell_0_outer",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-7ac297efded2b6091169",
+            "name": "Inputdimension: shell_0_charge",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-2ea50ff442a02d8e3279",
+            "name": "Inputdimension: shell_1_inner",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-b59f3c6b7b7381509f47",
+            "name": "Inputdimension: shell_1_outer",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-84f4151fd4d393c15770",
+            "name": "Inputdimension: shell_1_charge",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-bd01a94f7a6b7979debd",
+            "name": "Inputdimension: gap_epsilon",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "F/m",
+            "step_ids": []
+          },
+          {
+            "id": "check-676d20ba8e1af0e47b5e",
+            "name": "Inputdimension: gap_epsilon",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "F/m",
+            "step_ids": []
+          }
+        ],
+        "direction": "Radialt udad ved positivt E. Koncentriske sfærer med eksplicitte konstante permittiviteter i mellemrummene.",
+        "warnings": [],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-d9de74ecc31a481ff118": {
+            "method_id": "conductors",
+            "method": "Gauss, lederligevægt og potentialintegral",
+            "reasoning": "Feltet er nul i metallet. Gauss-flader i hver leder bestemmer den inducerede indre ladning; resten sidder på den ydre overflade.",
+            "equations": [
+              "\\mathbf E_{metal}=0",
+              "Q_{inner}=-Q_{cavity}",
+              "\\sigma=Q/(4\\pi r^2)",
+              "V(r)=\\int_r^\\infty E(r^\\prime)dr^\\prime"
+            ],
+            "assumptions": [
+              "concentric_spheres",
+              "electrostatic",
+              "no_external_sources",
+              "potential_zero_infinity",
+              "linear_isotropic_medium"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "E",
+              "U",
+              "surfaces"
+            ],
+            "results": {
+              "E": {
+                "expression": "Piecewise((0, a >= r), (Q/(4*pi*epsilon_0*r**2), r < a + d), (0, r <= a + d + h), ((Q + q)/(4*pi*epsilon_0*r**2), True))",
+                "latex": "\\begin{cases} 0 & \\text{for}\\: a \\geq r \\\\\\frac{Q}{4 \\pi \\epsilon_{0} r^{2}} & \\text{for}\\: r < a + d \\\\0 & \\text{for}\\: r \\leq a + d + h \\\\\\frac{Q + q}{4 \\pi \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+                "unit": "V/m"
+              },
+              "surfaces": {
+                "expression": "[(a, Q, Q/(4*pi*a**2)), (a + d, -Q, -Q/(4*pi*(a + d)**2)), (a + d + h, Q + q, (Q + q)/(4*pi*(a + d + h)**2))]",
+                "latex": "\\left[ \\left( a, \\  Q, \\  \\frac{Q}{4 \\pi a^{2}}\\right), \\  \\left( a + d, \\  - Q, \\  - \\frac{Q}{4 \\pi \\left(a + d\\right)^{2}}\\right), \\  \\left( a + d + h, \\  Q + q, \\  \\frac{Q + q}{4 \\pi \\left(a + d + h\\right)^{2}}\\right)\\right]",
+                "unit": "(m, C, C/m^2)"
+              },
+              "U": {
+                "expression": "(Q**2*d*(a + d + h) + a*(Q + q)**2*(a + d))/(8*pi*a*epsilon_0*(a + d)*(a + d + h))",
+                "latex": "\\frac{Q^{2} d \\left(a + d + h\\right) + a \\left(Q + q\\right)^{2} \\left(a + d\\right)}{8 \\pi a \\epsilon_{0} \\left(a + d\\right) \\left(a + d + h\\right)}",
+                "unit": "J"
+              }
+            },
+            "numerical": {},
+            "direction": "Radialt udad ved positivt E. Koncentriske sfærer med eksplicitte konstante permittiviteter i mellemrummene."
+          },
+          "derivation": {
+            "equations_latex": [
+              "\\mathbf E_{metal}=0",
+              "Q_{inner}=-Q_{cavity}",
+              "\\sigma=Q/(4\\pi r^2)",
+              "V(r)=\\int_r^\\infty E(r^\\prime)dr^\\prime"
+            ],
+            "step_ids": [
+              "step-eca6b58c22247fb49abf-0",
+              "step-b41c809b92e7ea2580a2-0",
+              "step-f56ab22364229be8be2b-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-eca6b58c22247fb49abf-0",
+              "step-b41c809b92e7ea2580a2-0",
+              "step-f56ab22364229be8be2b-0"
+            ],
+            "method_context_ids": [
+              "method-d9de74ecc31a481ff118"
+            ],
+            "global_check_ids": [
+              "check-376173a0fa017ee2c32b",
+              "check-f1858a8d39e890124072",
+              "check-cb6e3426dd3cff9a2a79",
+              "check-d75a9af49f78ea5835ff",
+              "check-51eea50e450a87367113",
+              "check-06b473d992ea80164cec",
+              "check-94b3494464f325d0d2dc",
+              "check-62071cf677986082c584",
+              "check-7ac297efded2b6091169",
+              "check-2ea50ff442a02d8e3279",
+              "check-b59f3c6b7b7381509f47",
+              "check-84f4151fd4d393c15770",
+              "check-bd01a94f7a6b7979debd",
+              "check-676d20ba8e1af0e47b5e"
+            ],
+            "warnings": []
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Samlet overfladeladning",
+          "Inputdimension: coordinate",
+          "Inputdimension: central_charge",
+          "Inputdimension: shell_0_inner",
+          "Inputdimension: shell_0_outer",
+          "Inputdimension: shell_0_charge",
+          "Inputdimension: shell_1_inner",
+          "Inputdimension: shell_1_outer",
+          "Inputdimension: shell_1_charge",
+          "Inputdimension: gap_epsilon",
+          "Inputdimension: gap_epsilon"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "En massiv metalkugle med radius a bærer ladningen Q1 . Koncentrisk med kuglen er\nanbragt en elektrisk ledende kugleskal med indre radius b og ydre radius c, a < b < c.\nKugleskallen bærer ladningen Q2 . Der er vacuum i områderne a < r < b og r > c.\n\n\n\n                                                              Q2\n                                             Q1\n                                                  a\n                                     c\n                                                      b\nBestem det elektriske felt i hvert af områderne, r < a, a < r < b, b < r < c, r > c.\n     Angiv resultaterne på vektorform.",
+    "confirmed": true,
+    "variables": {
+      "coordinate": "r",
+      "central_charge": "0",
+      "gap_permittivities": [
+        "epsilon_0",
+        "epsilon_0"
+      ],
+      "outside_permittivity": "epsilon_0",
+      "shells": [
+        [
+          "0",
+          "a",
+          "Q"
+        ],
+        [
+          "a+d",
+          "a+d+h",
+          "q"
+        ]
+      ]
+    },
+    "units": {
+      "r": "m",
+      "a": "m",
+      "Q": "C",
+      "d": "m",
+      "h": "m",
+      "q": "C"
+    },
+    "numbers": {},
+    "positive": [
+      "r",
+      "a",
+      "Q",
+      "d",
+      "h",
+      "q"
+    ],
+    "assumptions": [
+      "concentric_spheres",
+      "electrostatic",
+      "no_external_sources",
+      "potential_zero_infinity",
+      "linear_isotropic_medium"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "concentric_conductors",
+        "wanted": [
+          "E",
+          "U",
+          "surfaces"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "Vi betragter en kubisk område i rummet, V, defineret ved 0 < x < L, 0 < y < L og\n0 < z < L, hvor L angiver en længde.\nI V er et statisk vektorfelt givet ved\n                                       ⇥                                 ⇤\n                      f (x, y, z) = C · y 2 x̂ + (2xy + z 2 ) ŷ + 2yz ẑ ,\n\nhvor C er en konstant.\nVis, at f opfylder det grundlæggende krav til et statisk elektrisk felt, men ikke til\n     et magnetisk felt.",
+  "confirmed": true,
+  "variables": {
+    "coordinates": [
+      "x",
+      "y",
+      "z"
+    ],
+    "system": "cartesian",
+    "E": [
+      "k*y^2",
+      "k*(2*x*y+z^2)",
+      "2*k*y*z"
+    ],
+    "volume_bounds": [
+      [
+        "x",
+        "0",
+        "L"
+      ],
+      [
+        "y",
+        "0",
+        "L"
+      ],
+      [
+        "z",
+        "0",
+        "L"
+      ]
+    ]
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "V/m^3",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0"
+  ],
+  "assumptions": [
+    "electrostatic",
+    "vacuum_medium"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "electric_field_charge",
+      "wanted": [
+        "curl_E",
+        "rho",
+        "Q"
+      ],
+      "orientation_confirmed": true
+    }
+  ]
+}

@@ -1,5 +1,10 @@
 # Assisteret DYN: indlejring i den eksisterende PySide6-app
 
+**Nyere status:** Frontend-ZIP er nu modtaget, og den faktiske app er integreret
+i `desktop_app/`. Se [samlet leverance](../../reports/desktop_integrated/status.md)
+og [aktuel Windows-guide](../../desktop_app/WINDOWS_INTEGRATED.md).
+Beskrivelsen nedenfor er det tidligere komponentstadium før ZIP-modtagelsen.
+
 Status: komponenten er testet med rigtige Qt-widgets og backendprocesser på
 Linux/offscreen. Den eksisterende desktop-ZIP er endnu ikke modtaget i dette
 workspace; integration i dens `app.py` er derfor **ikke** udført. Dette dokument

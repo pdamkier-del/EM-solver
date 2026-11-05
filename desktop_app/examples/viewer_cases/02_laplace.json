@@ -1,0 +1,101 @@
+{
+  "viewer_schema": "em1.desktop.solution.v1",
+  "title": "02 · Laplace: sfærisk potentiale",
+  "prompt": "Find den generelle aksialsymmetriske løsning til Laplaces ligning i et ladningsfrit sfærisk område, der indeholder origo, og hvor V er endelig dér.",
+  "status": "unverified",
+  "interpretation": {
+    "method": "Laplace og separation",
+    "geometry": "Sfærisk aksialsymmetri"
+  },
+  "result": {
+    "symbolic_latex": "V(r,\\theta)=\\sum_{l=0}^{\\infty}A_l r^lP_l(\\cos\\theta)",
+    "numeric_text": null,
+    "units": null
+  },
+  "steps": [
+    {
+      "id": "trin-01",
+      "title": "Fra Poisson til Laplace",
+      "reason": "Vi bruger Poissons ligning, fordi potentialet bestemmes af rumladningen. Her er ρ = 0, så højresiden forsvinder.",
+      "substitution": "Indsæt ρ = 0 i ∇²V = −ρ/ε₀.",
+      "operation": "",
+      "latex": "\\nabla^2V=0",
+      "check": ""
+    },
+    {
+      "id": "trin-02",
+      "title": "Vælg koordinater",
+      "reason": "Randgeometrien er sfærisk, og aksialsymmetri betyder, at V ikke afhænger af azimutvinklen φ. Vi bruger derfor Laplaceoperatoren i sfæriske koordinater.",
+      "substitution": "",
+      "operation": "",
+      "latex": "\\frac{1}{r^2}\\frac{\\partial}{\\partial r}(r^2\\frac{\\partial V}{\\partial r})+\\frac{1}{r^2\\sin\\theta}\\frac{\\partial}{\\partial\\theta}(\\sin\\theta\\frac{\\partial V}{\\partial\\theta})=0",
+      "check": ""
+    },
+    {
+      "id": "trin-03",
+      "title": "Separer variablerne",
+      "reason": "Vi prøver et produkt V = F(r)G(θ), fordi ligningen er lineær, og geometrien giver adskilte radial- og vinkelafhængigheder.",
+      "substitution": "",
+      "operation": "",
+      "latex": "V(r,\\theta)=F(r)G(\\theta)",
+      "check": ""
+    },
+    {
+      "id": "trin-04",
+      "title": "Indsæt produktet",
+      "reason": "Indsæt V = FG i Laplaceoperatoren; dividér med FG og gang med r². Derved bliver ét led kun radialt og ét kun vinkelafhængigt.",
+      "substitution": "",
+      "operation": "Gang med r² og dividér med F(r)G(θ).",
+      "latex": "\\frac{1}{F}\\frac{d}{dr}(r^2\\frac{dF}{dr})+\\frac{1}{G\\sin\\theta}\\frac{d}{d\\theta}(\\sin\\theta\\frac{dG}{d\\theta})=0",
+      "check": ""
+    },
+    {
+      "id": "trin-05",
+      "title": "Indfør separationskonstant",
+      "reason": "De to led afhænger af uafhængige variable. De må derfor hver være konstante med modsatte fortegn. For regulære vinkelmodi vælges l(l+1).",
+      "substitution": "",
+      "operation": "",
+      "latex": "\\frac{1}{F}\\frac{d}{dr}(r^2\\frac{dF}{dr})=l(l+1)",
+      "check": ""
+    },
+    {
+      "id": "trin-06",
+      "title": "Løs den radiale ligning",
+      "reason": "Den radiale differentialligning er en Euler-ligning. Ved forsøget F = r^k fås to eksponenter k = l og k = −l−1.",
+      "substitution": "Indsæt F = r^k i den radiale ligning.",
+      "operation": "",
+      "latex": "F_l(r)=A_l r^l+B_l r^{-l-1}",
+      "check": ""
+    },
+    {
+      "id": "trin-07",
+      "title": "Løs vinkelafhængigheden",
+      "reason": "Den regulære vinkelafhængighed på hele kuglen er givet ved Legendre-polynomier P_l(cos θ).",
+      "substitution": "",
+      "operation": "",
+      "latex": "G_l(\\theta)=P_l(\\cos\\theta)",
+      "check": ""
+    },
+    {
+      "id": "trin-08",
+      "title": "Sammensæt alle løsninger",
+      "reason": "Laplaces ligning er lineær, så vi lægger alle separerede modi sammen.",
+      "substitution": "",
+      "operation": "",
+      "latex": "V(r,\\theta)=\\sum_{l=0}^{\\infty}(A_lr^l+B_lr^{-l-1})P_l(\\cos\\theta)",
+      "check": ""
+    },
+    {
+      "id": "trin-09",
+      "title": "Anvend betingelsen i origo",
+      "reason": "Fordi området indeholder origo og V skal være endelig der, må alle divergerende r^(-l−1)-led fjernes.",
+      "substitution": "",
+      "operation": "",
+      "latex": "B_l=0",
+      "check": "De tilbageværende led er endelige ved r = 0."
+    }
+  ],
+  "warnings": [
+    "Dette er formen for et område, der indeholder origo. Koeficienterne A_l bestemmes først ved konkrete randbetingelser."
+  ]
+}

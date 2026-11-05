@@ -1,0 +1,90 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "Et elektrostatisk arrangement består af en perfekt ledende kugleskal med indre radius\nb, ydre radius c og samlet elektrisk ladning Q = 3q, q > 0. Inden for kugleskallen er en\npunktladning, q, placeret i afstanden a fra centrum.\nBeregn kugleskallens elektriske potential, idet potentialet sættes til nul i det uen-\n     deligt fjerne.\n\f                                                                      Side 2 af 4 sider",
+  "confirmed": true,
+  "variables": {
+    "enclosed_charge": "q",
+    "metal_charge": "3*q",
+    "outer_radius": "R"
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0"
+  ],
+  "assumptions": [
+    "electrostatic",
+    "closed_conductor",
+    "spherical_outer_surface",
+    "no_external_sources",
+    "vacuum_exterior",
+    "potential_zero_infinity"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "conductor_cavity_totals",
+      "wanted": [
+        "Q_inner",
+        "Q_outer",
+        "V"
+      ],
+      "orientation_confirmed": true
+    }
+  ]
+}

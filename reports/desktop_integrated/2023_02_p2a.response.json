@@ -1,0 +1,367 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "sphere_regions",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Gauss’ lov → ",
+        "reasoning": "Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+        "equations_latex": [
+          "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+          "\\mathbf D=\\epsilon\\mathbf E"
+        ],
+        "steps": [
+          {
+            "id": "step-9d3b63aa1e50bf6f640e-0",
+            "text": "Indesluttet bidrag fra området [0, R] før integration",
+            "title": "Indesluttet bidrag fra området [0, R] før integration",
+            "latex": "\\int\\limits_{0}^{r} 4 \\pi k r^{3}\\, dr",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Gauss’ lov",
+            "method_context_id": "method-4856eebcf9a911307fd9",
+            "intermediate_latex": [],
+            "assumptions": [
+              "spherical_symmetry",
+              "linear_isotropic_medium",
+              "vacuum_outside_regions"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-5ec49ee93b0fb3c542bf-0",
+            "text": "Efter symbolsk integration",
+            "title": "Efter symbolsk integration",
+            "latex": "\\pi k r^{4}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Gauss’ lov",
+            "method_context_id": "method-4856eebcf9a911307fd9",
+            "intermediate_latex": [],
+            "assumptions": [
+              "spherical_symmetry",
+              "linear_isotropic_medium",
+              "vacuum_outside_regions"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-38602a9ae8fed8d2d10e-0",
+            "text": "Indsæt den indesluttede ladning i Gauss’ lov",
+            "title": "Indsæt den indesluttede ladning i Gauss’ lov",
+            "latex": "\\begin{cases} \\frac{k r^{2}}{4 \\epsilon_{0} \\epsilon_{r}} & \\text{for}\\: R \\geq r \\\\\\frac{R^{4} k}{4 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Gauss’ lov",
+            "method_context_id": "method-4856eebcf9a911307fd9",
+            "intermediate_latex": [],
+            "assumptions": [
+              "spherical_symmetry",
+              "linear_isotropic_medium",
+              "vacuum_outside_regions"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-8cf8df381e3b98955909-0",
+            "text": "Kontrolpunkt i regionen (D)",
+            "title": "Kontrolpunkt i regionen (D)",
+            "latex": "\\frac{R^{2} k}{16}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Gauss’ lov",
+            "method_context_id": "method-4856eebcf9a911307fd9",
+            "intermediate_latex": [],
+            "assumptions": [
+              "spherical_symmetry",
+              "linear_isotropic_medium",
+              "vacuum_outside_regions"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "Q_enc": {
+            "expression": "Piecewise((pi*k*r**4, R >= r), (pi*R**4*k, True))",
+            "latex": "\\begin{cases} \\pi k r^{4} & \\text{for}\\: R \\geq r \\\\\\pi R^{4} k & \\text{otherwise} \\end{cases}",
+            "unit": "C"
+          },
+          "D": {
+            "expression": "Piecewise((k*r**2/4, R >= r), (R**4*k/(4*r**2), True))",
+            "latex": "\\begin{cases} \\frac{k r^{2}}{4} & \\text{for}\\: R \\geq r \\\\\\frac{R^{4} k}{4 r^{2}} & \\text{otherwise} \\end{cases}",
+            "unit": "C/m^2"
+          },
+          "E": {
+            "expression": "Piecewise((k*r**2/(4*epsilon_0*epsilon_r), R >= r), (R**4*k/(4*epsilon_0*r**2), True))",
+            "latex": "\\begin{cases} \\frac{k r^{2}}{4 \\epsilon_{0} \\epsilon_{r}} & \\text{for}\\: R \\geq r \\\\\\frac{R^{4} k}{4 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+            "unit": "V/m"
+          }
+        },
+        "numerical": {},
+        "checks": [
+          {
+            "id": "check-b6d90b86b3053cbab2b3",
+            "name": "Dimension: Q_enc",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-56c215bd12f5e7e9cc01",
+            "name": "Dimension: D",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C/m^2",
+            "step_ids": []
+          },
+          {
+            "id": "check-ee9d9de5492cf7f727df",
+            "name": "Dimension: E",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V/m",
+            "step_ids": []
+          },
+          {
+            "id": "check-d0cf8834af728ab532ef",
+            "name": "Inputdimension: coordinate",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-38f0ece4e1be9f63e39e",
+            "name": "Inputdimension: region_0_lower",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-8a4a54380ec528ff7422",
+            "name": "Inputdimension: region_0_upper",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-99267a8f68677e310173",
+            "name": "Inputdimension: region_0_density",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C/m^3",
+            "step_ids": []
+          },
+          {
+            "id": "check-3482485e9f303a751981",
+            "name": "Inputdimension: region_0_epsilon",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "F/m",
+            "step_ids": []
+          },
+          {
+            "id": "check-cd029f3261c233fdff84",
+            "name": "Gauss differentiallov i åben region",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-cad7ed98ad7d74c53ef6",
+            "name": "Normal D-kontinuitet uden fri fladeladning",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-f3ee4000ced5d1101c0c",
+            "name": "Dimension: Q_enc",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-bb91a8d9cdb61a6dd027",
+            "name": "Dimension: D",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C/m^2",
+            "step_ids": []
+          },
+          {
+            "id": "check-f4d3aa3882cb771719f6",
+            "name": "Dimension: E",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V/m",
+            "step_ids": []
+          }
+        ],
+        "direction": "Radialt i positiv koordinatretning; negativt resultat betyder modsat retning. For plan: modsat retning på den anden side.",
+        "warnings": [
+          "Q_enc er total ladning for kugle, ladning pr. længde for cylinder og halvrums-ladning pr. areal for spejlsymmetrisk plan. Ved grænseflader angives ensidige grænser separat; punktværdien er ikke fysisk entydig ved overfladeladning."
+        ],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-4856eebcf9a911307fd9": {
+            "method_id": "gauss_radial",
+            "method": "Gauss’ lov",
+            "reasoning": "Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+            "equations": [
+              "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+              "\\mathbf D=\\epsilon\\mathbf E"
+            ],
+            "assumptions": [
+              "spherical_symmetry",
+              "linear_isotropic_medium",
+              "vacuum_outside_regions"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "Q_enc",
+              "E"
+            ],
+            "results": {
+              "Q_enc": {
+                "expression": "Piecewise((pi*k*r**4, R >= r), (pi*R**4*k, True))",
+                "latex": "\\begin{cases} \\pi k r^{4} & \\text{for}\\: R \\geq r \\\\\\pi R^{4} k & \\text{otherwise} \\end{cases}",
+                "unit": "C"
+              },
+              "E": {
+                "expression": "Piecewise((k*r**2/(4*epsilon_0*epsilon_r), R >= r), (R**4*k/(4*epsilon_0*r**2), True))",
+                "latex": "\\begin{cases} \\frac{k r^{2}}{4 \\epsilon_{0} \\epsilon_{r}} & \\text{for}\\: R \\geq r \\\\\\frac{R^{4} k}{4 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+                "unit": "V/m"
+              }
+            },
+            "numerical": {},
+            "direction": "Radialt i positiv koordinatretning; negativt resultat betyder modsat retning. For plan: modsat retning på den anden side."
+          },
+          "derivation": {
+            "equations_latex": [
+              "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+              "\\mathbf D=\\epsilon\\mathbf E"
+            ],
+            "step_ids": [
+              "step-9d3b63aa1e50bf6f640e-0",
+              "step-5ec49ee93b0fb3c542bf-0",
+              "step-38602a9ae8fed8d2d10e-0",
+              "step-8cf8df381e3b98955909-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-9d3b63aa1e50bf6f640e-0",
+              "step-5ec49ee93b0fb3c542bf-0",
+              "step-38602a9ae8fed8d2d10e-0",
+              "step-8cf8df381e3b98955909-0"
+            ],
+            "method_context_ids": [
+              "method-4856eebcf9a911307fd9"
+            ],
+            "global_check_ids": [
+              "check-b6d90b86b3053cbab2b3",
+              "check-56c215bd12f5e7e9cc01",
+              "check-ee9d9de5492cf7f727df",
+              "check-d0cf8834af728ab532ef",
+              "check-38f0ece4e1be9f63e39e",
+              "check-8a4a54380ec528ff7422",
+              "check-99267a8f68677e310173",
+              "check-3482485e9f303a751981",
+              "check-cd029f3261c233fdff84",
+              "check-cad7ed98ad7d74c53ef6",
+              "check-f3ee4000ced5d1101c0c",
+              "check-bb91a8d9cdb61a6dd027",
+              "check-f4d3aa3882cb771719f6"
+            ],
+            "warnings": [
+              "Q_enc er total ladning for kugle, ladning pr. længde for cylinder og halvrums-ladning pr. areal for spejlsymmetrisk plan. Ved grænseflader angives ensidige grænser separat; punktværdien er ikke fysisk entydig ved overfladeladning."
+            ]
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Inputdimension: coordinate",
+          "Inputdimension: region_0_lower",
+          "Inputdimension: region_0_upper",
+          "Inputdimension: region_0_density",
+          "Inputdimension: region_0_epsilon",
+          "Gauss differentiallov i åben region",
+          "Normal D-kontinuitet uden fri fladeladning"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "En kugle med radius R er lavet af et lineært dielektrikum med den relative permittivitet\nϵr . Kuglen bærer en radiusafhængig volumentæthed af frie ladninger ρ(r) = kr, hvor k\ner en konstant.\nBestem kuglens totale frie ladning, Q.",
+    "confirmed": true,
+    "variables": {
+      "coordinate": "r",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "R",
+          "density": "k*r",
+          "permittivity": "epsilon_0*epsilon_r"
+        }
+      ]
+    },
+    "units": {
+      "r": "m",
+      "R": "m",
+      "k": "C/m^4",
+      "epsilon_r": "1"
+    },
+    "numbers": {},
+    "positive": [
+      "r",
+      "R",
+      "k",
+      "epsilon_r"
+    ],
+    "assumptions": [
+      "spherical_symmetry",
+      "linear_isotropic_medium",
+      "vacuum_outside_regions"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "sphere_regions",
+        "wanted": [
+          "Q_enc",
+          "E"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

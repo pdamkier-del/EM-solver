@@ -1,0 +1,318 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "electric_field_charge",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Gradient, divergens og rotation",
+        "reasoning": "Maxwells differentialligninger forbinder felt, potentiale og kilder. Metriske faktorer medtages i det valgte ortogonale koordinatsystem.",
+        "equations_latex": [
+          "\\rho_{total}=\\epsilon_0\\nabla\\cdot\\mathbf E",
+          "\\partial_t\\mathbf B=-\\nabla\\times\\mathbf E",
+          "\\nabla\\times\\mathbf E=0"
+        ],
+        "steps": [
+          {
+            "id": "step-96ace6786e1795340297-0",
+            "text": "Beregn divergensen led for led",
+            "title": "Beregn divergensen led for led",
+            "latex": "- \\frac{2 V y}{R^{3}}",
+            "physical_reasoning": "Gauss differentiallov forbinder feltets divergens med den samlede lokale volumenladning.",
+            "reasoning_scope": "step",
+            "law": "Gauss differentiallov",
+            "method_context_id": "method-99be9140cf1eb67e0208",
+            "intermediate_latex": [],
+            "assumptions": [
+              "electrostatic",
+              "vacuum_medium"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-0a373125d3caaff352e3-0",
+            "text": "Indsæt i Gauss’ differentiallov",
+            "title": "Indsæt i Gauss’ differentiallov",
+            "latex": "- \\frac{2 V \\epsilon_{0} y}{R^{3}}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Gradient, divergens og rotation",
+            "method_context_id": "method-99be9140cf1eb67e0208",
+            "intermediate_latex": [],
+            "assumptions": [
+              "electrostatic",
+              "vacuum_medium"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-a22e35c4c48a0fe146ad-0",
+            "text": "Beregn rotationen af E",
+            "title": "Beregn rotationen af E",
+            "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+            "physical_reasoning": "Faradays differentiallov bestemmer den krævede tidsændring af B; i elektrostatik skal rotationen være nul.",
+            "reasoning_scope": "step",
+            "law": "Faradays differentiallov",
+            "method_context_id": "method-99be9140cf1eb67e0208",
+            "intermediate_latex": [],
+            "assumptions": [
+              "electrostatic",
+              "vacuum_medium"
+            ],
+            "validity": [
+              "Differentialkontrollen gælder i glatte områder."
+            ],
+            "check_ids": [
+              "check-a8dc5fc72a8f441ed30b"
+            ]
+          }
+        ],
+        "results": {
+          "E": {
+            "expression": "Matrix([[-2*V*x*y/R**3], [-V*x**2/R**3], [0]])",
+            "latex": "\\left[\\begin{matrix}- \\frac{2 V x y}{R^{3}}\\\\- \\frac{V x^{2}}{R^{3}}\\\\0\\end{matrix}\\right]",
+            "unit": "V/m"
+          },
+          "rho": {
+            "expression": "-2*V*epsilon_0*y/R**3",
+            "latex": "- \\frac{2 V \\epsilon_{0} y}{R^{3}}",
+            "unit": "C/m^3"
+          },
+          "curl_E": {
+            "expression": "Matrix([[0], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "V/m^2"
+          },
+          "dB_dt": {
+            "expression": "Matrix([[0], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "T/s"
+          }
+        },
+        "numerical": {},
+        "checks": [
+          {
+            "id": "check-a8dc5fc72a8f441ed30b",
+            "name": "Elektrostatisk rotation",
+            "passed": true,
+            "residual_latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+            "detail": "",
+            "step_ids": [
+              "step-a22e35c4c48a0fe146ad-0"
+            ]
+          },
+          {
+            "id": "check-f1858a8d39e890124072",
+            "name": "Dimension: E",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V/m",
+            "step_ids": []
+          },
+          {
+            "id": "check-bf07352f56a47990e308",
+            "name": "Dimension: rho",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C/m^3",
+            "step_ids": []
+          },
+          {
+            "id": "check-3a29e50101a5f3634295",
+            "name": "Dimension: curl_E",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V/m^2",
+            "step_ids": []
+          },
+          {
+            "id": "check-0e6f6c75997e5e1ea685",
+            "name": "Dimension: dB_dt",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T/s",
+            "step_ids": []
+          },
+          {
+            "id": "check-4b1b64bf243bb55e1224",
+            "name": "Inputdimension: E",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V/m",
+            "step_ids": []
+          },
+          {
+            "id": "check-5e1d00d8c6f0c0a0bdf8",
+            "name": "Inputdimension: coordinate_0",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-b2bf9ed77cbc7c00040a",
+            "name": "Inputdimension: coordinate_1",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-5d2e5caa7e73db4aec11",
+            "name": "Inputdimension: coordinate_2",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          }
+        ],
+        "direction": "Komponenter i den ortonormale basis for det valgte koordinatsystem.",
+        "warnings": [
+          "Differentialkontroller gælder i glatte områder. Delta-kilder og grænseflader kræver særskilt integral-/springkontrol."
+        ],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-99be9140cf1eb67e0208": {
+            "method_id": "field_calculus",
+            "method": "Gradient, divergens og rotation",
+            "reasoning": "Maxwells differentialligninger forbinder felt, potentiale og kilder. Metriske faktorer medtages i det valgte ortogonale koordinatsystem.",
+            "equations": [
+              "\\rho_{total}=\\epsilon_0\\nabla\\cdot\\mathbf E",
+              "\\partial_t\\mathbf B=-\\nabla\\times\\mathbf E",
+              "\\nabla\\times\\mathbf E=0"
+            ],
+            "assumptions": [
+              "electrostatic",
+              "vacuum_medium"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "rho",
+              "curl_E"
+            ],
+            "results": {
+              "rho": {
+                "expression": "-2*V*epsilon_0*y/R**3",
+                "latex": "- \\frac{2 V \\epsilon_{0} y}{R^{3}}",
+                "unit": "C/m^3"
+              },
+              "curl_E": {
+                "expression": "Matrix([[0], [0], [0]])",
+                "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+                "unit": "V/m^2"
+              }
+            },
+            "numerical": {},
+            "direction": "Komponenter i den ortonormale basis for det valgte koordinatsystem."
+          },
+          "derivation": {
+            "equations_latex": [
+              "\\rho_{total}=\\epsilon_0\\nabla\\cdot\\mathbf E",
+              "\\partial_t\\mathbf B=-\\nabla\\times\\mathbf E",
+              "\\nabla\\times\\mathbf E=0"
+            ],
+            "step_ids": [
+              "step-96ace6786e1795340297-0",
+              "step-0a373125d3caaff352e3-0",
+              "step-a22e35c4c48a0fe146ad-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-96ace6786e1795340297-0",
+              "step-0a373125d3caaff352e3-0",
+              "step-a22e35c4c48a0fe146ad-0"
+            ],
+            "method_context_ids": [
+              "method-99be9140cf1eb67e0208"
+            ],
+            "global_check_ids": [
+              "check-f1858a8d39e890124072",
+              "check-bf07352f56a47990e308",
+              "check-3a29e50101a5f3634295",
+              "check-0e6f6c75997e5e1ea685",
+              "check-4b1b64bf243bb55e1224",
+              "check-5e1d00d8c6f0c0a0bdf8",
+              "check-b2bf9ed77cbc7c00040a",
+              "check-5d2e5caa7e73db4aec11"
+            ],
+            "warnings": [
+              "Differentialkontroller gælder i glatte områder. Delta-kilder og grænseflader kræver særskilt integral-/springkontrol."
+            ]
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Elektrostatisk rotation",
+          "Inputdimension: E",
+          "Inputdimension: coordinate_0",
+          "Inputdimension: coordinate_1",
+          "Inputdimension: coordinate_2"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "En ladning Q bevæges√langs en cirkelbue med radius R og centrum i origo fra punktet\n(R, 0, 0) til punktet ( 23 R, 12 R, 0). Ladningen er i hvile både før og efter flytningen. I\nområdet er der et statisk elektrisk felt med formen\n                                       V0 !               \"\n                                E=−      3\n                                            2xy x̂ + x2 ŷ ,\n                                       R\nhvor V0 er en konstant.\nVis, at E beskriver et muligt elektrostatisk felt. Bestem ladningstætheden i områ-\n     det.",
+    "confirmed": true,
+    "variables": {
+      "E": [
+        "-2*V*x*y/R^3",
+        "-V*x^2/R^3",
+        "0"
+      ],
+      "coordinates": [
+        "x",
+        "y",
+        "z"
+      ],
+      "system": "cartesian"
+    },
+    "units": {
+      "V": "V",
+      "x": "m",
+      "y": "m",
+      "R": "m",
+      "z": "m"
+    },
+    "numbers": {},
+    "positive": [
+      "V",
+      "R"
+    ],
+    "assumptions": [
+      "electrostatic",
+      "vacuum_medium"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "electric_field_charge",
+        "wanted": [
+          "rho",
+          "curl_E"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

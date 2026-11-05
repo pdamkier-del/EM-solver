@@ -1,0 +1,91 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "Den elektriske strøm i en lang, cylinderformet leder med radius S = 3,1 mm går i lederens\nlængderetning. Strømtæthedens afhængighed af s, den radielle afstand til lederens akse,\nhar formen                                   !     s\"\n                                    J(s) = J0 1 −     ,\n                                                   S\nhvor J0 = 96,0 A/mm2 .\nBestem et udtryk for strømmen, I(s), indeholdt i en cylinder med radius s ≤ S\n     rundt om lederens akse. Beregn dernæst den totale strøm i lederen ved anvendelse\n     af de opgivne talstørrelser.",
+  "confirmed": true,
+  "variables": {
+    "coordinate": "s",
+    "regions": [
+      {
+        "lower": "0",
+        "upper": "R",
+        "density": "J*(1-s/R)"
+      }
+    ]
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0"
+  ],
+  "assumptions": [
+    "infinite_cylindrical_symmetry",
+    "magnetostatic",
+    "nonmagnetic_medium"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "ampere_regions",
+      "wanted": [
+        "I_enc",
+        "B"
+      ],
+      "orientation_confirmed": true
+    }
+  ]
+}

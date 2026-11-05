@@ -1,0 +1,103 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "Betragt to koncentriske kugleskaller af metal. Den indre kugleskal har indre radius a og\nydre radius b. Den ydre kugleskal har indre radius c og ydre radius d.\n\n\n\n\nI første del af opgaven er der vakuum overalt omkring kugleskallerne. Den indre kugleskal\ntilføres nu ladningen Q1 , den ydre tilføjes ladningen Q2 .\nAngiv ladningstætheden på hver af de fire overflader.",
+  "confirmed": true,
+  "variables": {
+    "coordinate": "r",
+    "shells": [
+      [
+        "a",
+        "a+d",
+        "Q"
+      ],
+      [
+        "a+d+h",
+        "a+d+h+L",
+        "q"
+      ]
+    ],
+    "central_charge": "0",
+    "gap_permittivities": [
+      "epsilon_0",
+      "epsilon_0"
+    ],
+    "outside_permittivity": "epsilon_0"
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0"
+  ],
+  "assumptions": [
+    "concentric_spheres",
+    "electrostatic",
+    "no_external_sources",
+    "potential_zero_infinity",
+    "linear_isotropic_medium"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "concentric_conductors",
+      "wanted": [
+        "surfaces"
+      ],
+      "orientation_confirmed": true
+    }
+  ]
+}

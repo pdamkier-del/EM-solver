@@ -1,0 +1,1555 @@
+{
+  "scope": "Existing uploaded desktop MainWindow, explicit expert-supplied models; known historical regression, not blind/autonomous.",
+  "platform": "Linux Qt offscreen; native Windows not tested",
+  "python_outbound_sockets": "blocked",
+  "summary": {
+    "correct_assisted": 35,
+    "partial": 0,
+    "reasoned_refusal": 0,
+    "incorrect": 0
+  },
+  "metrics": {
+    "main_window_seconds": 0.68,
+    "rss_after_main_window_mb": 204.9,
+    "peak_parent_rss_mb": 248.2,
+    "peak_parent_and_children_rss_mb": 388.7,
+    "limitation": "RSS sum sampled every 30 ms while Qt event loop runs; can double-count shared pages or miss brief spikes; Linux not Windows"
+  },
+  "original_raw_text_flow": "verified",
+  "records": [
+    {
+      "case": "2021_06_p1a",
+      "model": "conductor_cavity_totals",
+      "seconds": 4.502,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "enclosed_charge",
+          "metal_charge",
+          "outer_radius"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "electrostatic",
+          "closed_conductor",
+          "spherical_outer_surface",
+          "no_external_sources",
+          "vacuum_exterior",
+          "potential_zero_infinity"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "Q_inner",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "Q_outer",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "V",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2021_06_p1c",
+      "model": "conductor_cavity_totals",
+      "seconds": 1.944,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "enclosed_charge",
+          "metal_charge",
+          "outer_radius"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "electrostatic",
+          "closed_conductor",
+          "spherical_outer_surface",
+          "no_external_sources",
+          "vacuum_exterior",
+          "potential_zero_infinity"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "Q_inner",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "Q_outer",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "V",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2021_06_p3a",
+      "model": "ampere_regions",
+      "seconds": 2.81,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinate",
+          "surface_currents",
+          "regions"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic",
+          "nonmagnetic_medium"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "B",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "B",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2021_06_p5a",
+      "model": "electric_field_charge",
+      "seconds": 2.333,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinates",
+          "system",
+          "E",
+          "volume_bounds"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "electrostatic",
+          "vacuum_medium"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "curl_E",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "rho",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "Q",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2021_06_p6a",
+      "model": "motional_curve",
+      "seconds": 3.421,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "source",
+          "parameter",
+          "bounds",
+          "v",
+          "B",
+          "time",
+          "R",
+          "time_bounds"
+        ],
+        "numerical_values_entered": {
+          "L": "20 cm",
+          "B": "1.2 T",
+          "v": "3.4 m/s",
+          "R": "0.30 ohm",
+          "d": "1.2 m"
+        },
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "negligible_self_inductance",
+          "stationary_return_path"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "I",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "F_external",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "P_mechanical",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "W",
+          "passed": true,
+          "numerical_emitted": true
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2021_06_p6b",
+      "model": "motional_curve",
+      "seconds": 2.295,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "source",
+          "parameter",
+          "bounds",
+          "v",
+          "B",
+          "time",
+          "R",
+          "time_bounds"
+        ],
+        "numerical_values_entered": {
+          "L": "20 cm",
+          "B": "1.2 T",
+          "v": "3.4 m/s",
+          "R": "0.30 ohm",
+          "d": "1.2 m"
+        },
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "negligible_self_inductance",
+          "stationary_return_path"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "I",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "F_external",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "P_mechanical",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "W",
+          "passed": true,
+          "numerical_emitted": true
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2021_06_p6c",
+      "model": "motional_curve",
+      "seconds": 3.77,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "source",
+          "parameter",
+          "bounds",
+          "v",
+          "B",
+          "time",
+          "R",
+          "time_bounds"
+        ],
+        "numerical_values_entered": {
+          "L": "20 cm",
+          "B": "1.2 T",
+          "v": "3.4 m/s",
+          "R": "0.30 ohm",
+          "d": "1.2 m"
+        },
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "negligible_self_inductance",
+          "stationary_return_path"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "I",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "F_external",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "P_mechanical",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "W",
+          "passed": true,
+          "numerical_emitted": true
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2021_06_p6d",
+      "model": "motional_curve",
+      "seconds": 2.597,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "source",
+          "parameter",
+          "bounds",
+          "v",
+          "B",
+          "time",
+          "R",
+          "time_bounds"
+        ],
+        "numerical_values_entered": {
+          "L": "20 cm",
+          "B": "1.2 T",
+          "v": "3.4 m/s",
+          "R": "0.30 ohm",
+          "d": "1.2 m"
+        },
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "negligible_self_inductance",
+          "stationary_return_path"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "I",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "F_external",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "P_mechanical",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "W",
+          "passed": true,
+          "numerical_emitted": true
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2021_11_p2a",
+      "model": "concentric_conductors",
+      "seconds": 7.297,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinate",
+          "shells",
+          "central_charge",
+          "gap_permittivities",
+          "outside_permittivity"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "concentric_spheres",
+          "electrostatic",
+          "no_external_sources",
+          "potential_zero_infinity",
+          "linear_isotropic_medium"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "surfaces",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "surfaces",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "surfaces",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "surfaces",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2021_11_p3b",
+      "model": "potential_field",
+      "seconds": 4.466,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinates",
+          "system",
+          "V"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "electrostatic",
+          "vacuum_medium"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "laplacian_V",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2021_11_p6b",
+      "model": "displacement_disk",
+      "seconds": 2.232,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "E",
+          "time",
+          "coordinate",
+          "plate_radius"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "circular_symmetry",
+          "negligible_edge_effects",
+          "uniform_axial_E",
+          "vacuum_gap"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "J_displacement",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "I_displacement",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "B",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2022_02_p2a",
+      "model": "cylinder_regions",
+      "seconds": 2.656,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinate",
+          "surface_charges",
+          "regions"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "infinite_cylindrical_symmetry",
+          "linear_isotropic_medium",
+          "vacuum_outside_regions"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "E",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2022_02_p5a",
+      "model": "electric_field_charge",
+      "seconds": 2.315,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinates",
+          "system",
+          "E"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "electrostatic",
+          "vacuum_medium"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "rho",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "curl_E",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2023_02_p2a",
+      "model": "sphere_regions",
+      "seconds": 2.65,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinate",
+          "regions"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "spherical_symmetry",
+          "linear_isotropic_medium",
+          "vacuum_outside_regions"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "Q_enc",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "E",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "E",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2023_02_p2b",
+      "model": "sphere_regions",
+      "seconds": 2.302,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinate",
+          "regions"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "spherical_symmetry",
+          "linear_isotropic_medium",
+          "vacuum_outside_regions"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "Q_enc",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "E",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "E",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2023_02_p5b",
+      "model": "faraday_flux",
+      "seconds": 2.256,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "time",
+          "flux",
+          "R",
+          "N"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "negligible_self_inductance"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "EMF",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "P",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2023_02_p5c",
+      "model": "faraday_flux",
+      "seconds": 2.026,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "time",
+          "flux",
+          "R",
+          "N"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "negligible_self_inductance"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "EMF",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "P",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2023_02_p6a",
+      "model": "displacement_disk",
+      "seconds": 2.882,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "E",
+          "time",
+          "coordinate",
+          "plate_radius"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "circular_symmetry",
+          "negligible_edge_effects",
+          "uniform_axial_E",
+          "vacuum_gap"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "J_displacement",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "I_displacement",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "B",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2023_11_p5a",
+      "model": "faraday_uniform",
+      "seconds": 2.124,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "time",
+          "B_normal",
+          "area",
+          "R",
+          "N"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "negligible_self_inductance",
+          "uniform_normal_B"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "EMF",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "P",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2023_11_p5b",
+      "model": "faraday_uniform",
+      "seconds": 1.872,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "time",
+          "B_normal",
+          "area",
+          "R",
+          "N"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "negligible_self_inductance",
+          "uniform_normal_B"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "EMF",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "P",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2023_11_p5c",
+      "model": "feedback",
+      "seconds": 2.812,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "mass",
+          "R",
+          "coupling",
+          "voltage",
+          "drive_force",
+          "time",
+          "initial_velocity"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "constant_coefficients",
+          "negligible_self_inductance",
+          "no_friction"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "v_infinity",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2023_11_p5d",
+      "model": "feedback",
+      "seconds": 2.468,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "mass",
+          "R",
+          "coupling",
+          "voltage",
+          "drive_force",
+          "time",
+          "initial_velocity"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "constant_coefficients",
+          "negligible_self_inductance",
+          "no_friction"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "v_infinity",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "I",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2024_02_p4a",
+      "model": "ampere_regions",
+      "seconds": 2.694,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinate",
+          "regions"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic",
+          "nonmagnetic_medium"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "I_enc",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "B",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "B",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2024_02_p4b",
+      "model": "ampere_regions",
+      "seconds": 2.062,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinate",
+          "regions"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic",
+          "nonmagnetic_medium"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "I_enc",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "B",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "B",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2024_11_p2a",
+      "model": "cylinder_regions",
+      "seconds": 2.043,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinate",
+          "length",
+          "regions"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "infinite_cylindrical_symmetry",
+          "linear_isotropic_medium",
+          "vacuum_outside_regions"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "Q_enc",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "E",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "E",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2024_11_p2b",
+      "model": "cylinder_regions",
+      "seconds": 2.422,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinate",
+          "length",
+          "regions"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "infinite_cylindrical_symmetry",
+          "linear_isotropic_medium",
+          "vacuum_outside_regions"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "Q_enc",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "E",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "E",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2025_01_p1a",
+      "model": "potential_difference",
+      "seconds": 1.874,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinate",
+          "field",
+          "start",
+          "end"
+        ],
+        "numerical_values_entered": {
+          "L": "20.0 m",
+          "a": "500 V/m",
+          "b": "50 V/m^2"
+        },
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "electrostatic"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "delta_V",
+          "passed": true,
+          "numerical_emitted": true
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2025_01_p2a",
+      "model": "concentric_conductors",
+      "seconds": 2.887,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinate",
+          "shells",
+          "central_charge",
+          "gap_permittivities",
+          "outside_permittivity"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "concentric_spheres",
+          "electrostatic",
+          "no_external_sources",
+          "potential_zero_infinity",
+          "linear_isotropic_medium"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "E",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "E",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "E",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "E",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "U",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "surfaces",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "surfaces",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "surfaces",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2025_01_p6a",
+      "model": "faraday_uniform",
+      "seconds": 2.797,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "time",
+          "B_normal",
+          "area",
+          "N",
+          "R",
+          "time_bounds"
+        ],
+        "numerical_values_entered": {
+          "N": "12",
+          "a": "0.20 m",
+          "B": "5.0 T",
+          "B_offset": "-2.0 T",
+          "tau": "60 s",
+          "R": "1.2 ohm",
+          "T": "55 s"
+        },
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "negligible_self_inductance",
+          "uniform_normal_B"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "EMF",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "W",
+          "passed": true,
+          "numerical_emitted": true
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2025_01_p6b",
+      "model": "faraday_uniform",
+      "seconds": 2.297,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "time",
+          "B_normal",
+          "area",
+          "N",
+          "R",
+          "time_bounds"
+        ],
+        "numerical_values_entered": {
+          "N": "12",
+          "a": "0.20 m",
+          "B": "5.0 T",
+          "B_offset": "-2.0 T",
+          "tau": "60 s",
+          "R": "1.2 ohm",
+          "T": "55 s"
+        },
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "negligible_self_inductance",
+          "uniform_normal_B"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "EMF",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "W",
+          "passed": true,
+          "numerical_emitted": true
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2025_11_p4a",
+      "model": "ampere_regions",
+      "seconds": 2.094,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "coordinate",
+          "regions"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "infinite_cylindrical_symmetry",
+          "magnetostatic",
+          "nonmagnetic_medium"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "B",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "B",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2026_01_p2c",
+      "model": "RC_discharge",
+      "seconds": 2.068,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "time",
+          "R",
+          "C",
+          "Q0",
+          "fraction"
+        ],
+        "numerical_values_entered": {
+          "R": "0.25 ohm",
+          "C": "91 mF",
+          "Q0": "5.7 C"
+        },
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "constant_coefficients"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "I",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "decay_time",
+          "passed": true,
+          "numerical_emitted": true
+        },
+        {
+          "result": "I_initial",
+          "passed": true,
+          "numerical_emitted": true
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2026_01_p3a",
+      "model": "faraday_integral",
+      "seconds": 2.073,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "time",
+          "flux_integrand",
+          "bounds",
+          "R",
+          "time_bounds",
+          "N"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "negligible_self_inductance"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "Phi",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "I",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "W",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "I",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2026_01_p3b",
+      "model": "faraday_integral",
+      "seconds": 1.896,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "time",
+          "flux_integrand",
+          "bounds",
+          "R",
+          "time_bounds",
+          "N"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "negligible_self_inductance"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "Phi",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "I",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "W",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "I",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    },
+    {
+      "case": "2026_01_p3c",
+      "model": "faraday_integral",
+      "seconds": 1.972,
+      "user_assistance": {
+        "model_chosen": true,
+        "givens_entered": [
+          "time",
+          "flux_integrand",
+          "bounds",
+          "R",
+          "time_bounds",
+          "N"
+        ],
+        "numerical_values_entered": {},
+        "units_entered": true,
+        "orientation_confirmed": true,
+        "assumptions_confirmed": [
+          "negligible_self_inductance"
+        ]
+      },
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "backend_status": "calculated_under_confirmed_model",
+      "reference_checks": [
+        {
+          "result": "Phi",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "I",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "W",
+          "passed": true,
+          "numerical_emitted": null
+        },
+        {
+          "result": "I",
+          "passed": true,
+          "numerical_emitted": null
+        }
+      ],
+      "math_display_errors": []
+    }
+  ]
+}

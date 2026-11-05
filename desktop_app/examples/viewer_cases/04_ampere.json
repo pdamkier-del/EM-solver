@@ -1,0 +1,65 @@
+{
+  "viewer_schema": "em1.desktop.solution.v1",
+  "title": "04 · Ampère: lang strømleder",
+  "prompt": "En uendeligt lang, lige leder fører den konstante strøm I. Bestem magnetfeltet i afstanden s uden for lederen.",
+  "status": "unverified",
+  "interpretation": {
+    "method": "Ampères lov",
+    "geometry": "Cylindersymmetri"
+  },
+  "result": {
+    "symbolic_latex": "B(s)=\\frac{\\mu_0 I}{2\\pi s}",
+    "numeric_text": null,
+    "units": null
+  },
+  "steps": [
+    {
+      "id": "trin-01",
+      "title": "Bestem symmetrien",
+      "reason": "En uendelig, lige strømleder er invariant ved forskydning langs lederen og rotation om dens akse. Magnetfeltet må derfor have samme størrelse på en cirkel med radius s.",
+      "substitution": "",
+      "operation": "",
+      "latex": "\\mathbf{B}(s)=B(s)\\hat{\\boldsymbol{\\phi}}",
+      "check": ""
+    },
+    {
+      "id": "trin-02",
+      "title": "Vælg Ampères lov",
+      "reason": "Vi bruger Ampères lov, fordi feltet er tangentielt og konstant langs en cirkulær integrationsvej. Det reducerer et kurveintegral til én multiplikation.",
+      "substitution": "",
+      "operation": "",
+      "latex": "\\oint_C\\mathbf{B}\\cdot d\\mathbf{l}=\\mu_0I_{\\mathrm{enc}}",
+      "check": ""
+    },
+    {
+      "id": "trin-03",
+      "title": "Beregn venstresiden",
+      "reason": "Vælg en cirkel med radius s. Feltet er parallelt med linjeelementet hele vejen rundt.",
+      "substitution": "Brug cirklens omkreds 2πs og konstant B(s).",
+      "operation": "",
+      "latex": "\\oint_C\\mathbf{B}\\cdot d\\mathbf{l}=B(s)\\,2\\pi s",
+      "check": ""
+    },
+    {
+      "id": "trin-04",
+      "title": "Indsæt den omsluttede strøm",
+      "reason": "Uden for lederen omslutter kurven hele strømmen I. Indsæt dette og fluxintegralet fra trin 3 i Ampères lov.",
+      "substitution": "Venstre: B(s)2πs. Højre: μ₀I.",
+      "operation": "",
+      "latex": "B(s)\\,2\\pi s=\\mu_0I",
+      "check": ""
+    },
+    {
+      "id": "trin-05",
+      "title": "Isolér B",
+      "reason": "Divider begge sider med 2πs for at få magnetfeltets størrelse.",
+      "substitution": "",
+      "operation": "Divider med cirklens omkreds 2πs.",
+      "latex": "B(s)=\\frac{\\mu_0I}{2\\pi s}",
+      "check": "Retningen følger højrehåndsreglen, og størrelsen falder som 1/s."
+    }
+  ],
+  "warnings": [
+    "Gælder uden for en uendeligt lang, lige strømleder med konstant totalstrøm."
+  ]
+}

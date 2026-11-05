@@ -1,0 +1,89 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "I et kubisk område af rummet med sidelængde L = 20,0 m er det elektriske felt givet ved\nE = (a + bx) x̂, hvor a = 500 V/m, og b = 50,0 V/m2 . Permitiviteten i området er #0 .\n                                          y\n\n\n\n\n                                                       x\n                                     L\n                                                   L\n                                 z        L\n\nBesvar følgende spørgsmål såvel symbolsk som numerisk.\nBestem forskellen i elektrisk potential mellem endefladen ved x = L og endefladen\n     ved x = 0. Hvilken af endefladerne har det højeste potential?",
+  "confirmed": true,
+  "variables": {
+    "coordinate": "x",
+    "field": "a+b*x",
+    "start": "0",
+    "end": "L"
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "V/m",
+    "b": "V/m^2",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0"
+  ],
+  "assumptions": [
+    "electrostatic"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "potential_difference",
+      "wanted": [
+        "delta_V"
+      ],
+      "orientation_confirmed": true
+    }
+  ],
+  "numbers": {
+    "L": "20.0 m",
+    "a": "500 V/m",
+    "b": "50 V/m^2"
+  }
+}

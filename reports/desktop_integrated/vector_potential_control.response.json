@@ -1,0 +1,348 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "vector_potential_field",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Gradient, divergens og rotation",
+        "reasoning": "Maxwells differentialligninger forbinder felt, potentiale og kilder. Metriske faktorer medtages i det valgte ortogonale koordinatsystem.",
+        "equations_latex": [
+          "\\mathbf B=\\nabla\\times\\mathbf A",
+          "\\nabla\\cdot\\mathbf B=0",
+          "\\mathbf J=\\mu_0^{-1}\\nabla\\times\\mathbf B"
+        ],
+        "steps": [
+          {
+            "id": "step-0260b518102ce29665fa-0",
+            "text": "Tag rotationen af vektorpotentialet",
+            "title": "Tag rotationen af vektorpotentialet",
+            "latex": "\\left[\\begin{matrix}0\\\\- B_{0}\\\\0\\end{matrix}\\right]",
+            "physical_reasoning": "Magnetfeltet bestemmes af definitionen B = curl(A); den angivne koordinatbasis bruges.",
+            "reasoning_scope": "step",
+            "law": "Magnetfelt fra vektorpotentiale",
+            "method_context_id": "method-a4dfa3cd94a492952e5d",
+            "intermediate_latex": [],
+            "assumptions": [
+              "magnetostatic",
+              "nonmagnetic_medium"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-2ce0f8bdfd1b72cf528f-0",
+            "text": "Beregn divergensen af magnetfeltet",
+            "title": "Beregn divergensen af magnetfeltet",
+            "latex": "0",
+            "physical_reasoning": "Et fysisk magnetfelt skal have nul divergens; kontrollen afprøver denne Maxwell-relation.",
+            "reasoning_scope": "step",
+            "law": "Gauss lov for magnetfeltet",
+            "method_context_id": "method-a4dfa3cd94a492952e5d",
+            "intermediate_latex": [],
+            "assumptions": [
+              "magnetostatic",
+              "nonmagnetic_medium"
+            ],
+            "validity": [],
+            "check_ids": [
+              "check-bc0373e0baa2c5df920e"
+            ]
+          },
+          {
+            "id": "step-16cdb60647389a0fc6b2-0",
+            "text": "Magnetostatik: beregn curl(B) og divider med μ₀",
+            "title": "Magnetostatik: beregn curl(B) og divider med μ₀",
+            "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+            "physical_reasoning": "I magnetostatik giver Ampères differentiallov den samlede strømtæthed. Ladningsbevarelse kræver samtidig nul divergens af denne stationære strøm.",
+            "reasoning_scope": "step",
+            "law": "Ampères differentiallov",
+            "method_context_id": "method-a4dfa3cd94a492952e5d",
+            "intermediate_latex": [],
+            "assumptions": [
+              "magnetostatic",
+              "nonmagnetic_medium"
+            ],
+            "validity": [
+              "Stationære felter; strømmen omfatter alle kilder til det angivne B."
+            ],
+            "check_ids": [
+              "check-870919ab23666fac71f5"
+            ]
+          }
+        ],
+        "results": {
+          "div_A": {
+            "expression": "0",
+            "latex": "0",
+            "unit": "T"
+          },
+          "laplacian_A": {
+            "expression": "Matrix([[0], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "T/m"
+          },
+          "B": {
+            "expression": "Matrix([[0], [-B0], [0]])",
+            "latex": "\\left[\\begin{matrix}0\\\\- B_{0}\\\\0\\end{matrix}\\right]",
+            "unit": "T"
+          },
+          "div_B": {
+            "expression": "0",
+            "latex": "0",
+            "unit": "T/m"
+          },
+          "J": {
+            "expression": "Matrix([[0], [0], [0]])",
+            "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+            "unit": "A/m^2"
+          }
+        },
+        "numerical": {},
+        "checks": [
+          {
+            "id": "check-bc0373e0baa2c5df920e",
+            "name": "Magnetisk divergens",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": [
+              "step-2ce0f8bdfd1b72cf528f-0"
+            ]
+          },
+          {
+            "id": "check-870919ab23666fac71f5",
+            "name": "Statisk strømbevarelse: div(J)=0",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "Kontinuitetsligningen reduceres til nul divergens, når ladningstætheden er stationær.",
+            "step_ids": [
+              "step-16cdb60647389a0fc6b2-0"
+            ]
+          },
+          {
+            "id": "check-c315c229b88015bdda54",
+            "name": "Dimension: div_A",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T",
+            "step_ids": []
+          },
+          {
+            "id": "check-44ff88d1fb85e447100f",
+            "name": "Dimension: laplacian_A",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T/m",
+            "step_ids": []
+          },
+          {
+            "id": "check-0aff1958a581a7de7429",
+            "name": "Dimension: B",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T",
+            "step_ids": []
+          },
+          {
+            "id": "check-67a5a81041f0cfb53547",
+            "name": "Dimension: div_B",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T/m",
+            "step_ids": []
+          },
+          {
+            "id": "check-383f4535485ad7ea33c7",
+            "name": "Dimension: J",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A/m^2",
+            "step_ids": []
+          },
+          {
+            "id": "check-410636e4011dc9960b3d",
+            "name": "Inputdimension: A",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T*m",
+            "step_ids": []
+          },
+          {
+            "id": "check-2e2512b5805047efe28d",
+            "name": "Inputdimension: coordinate_0",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-5e673b4b89fbf62cc466",
+            "name": "Inputdimension: coordinate_1",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-08760873e5d278e8ce0b",
+            "name": "Inputdimension: coordinate_2",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          }
+        ],
+        "direction": "Komponenter i den ortonormale basis for det valgte koordinatsystem.",
+        "warnings": [
+          "Differentialkontroller gælder i glatte områder. Delta-kilder og grænseflader kræver særskilt integral-/springkontrol."
+        ],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-a4dfa3cd94a492952e5d": {
+            "method_id": "field_calculus",
+            "method": "Gradient, divergens og rotation",
+            "reasoning": "Maxwells differentialligninger forbinder felt, potentiale og kilder. Metriske faktorer medtages i det valgte ortogonale koordinatsystem.",
+            "equations": [
+              "\\mathbf B=\\nabla\\times\\mathbf A",
+              "\\nabla\\cdot\\mathbf B=0",
+              "\\mathbf J=\\mu_0^{-1}\\nabla\\times\\mathbf B"
+            ],
+            "assumptions": [
+              "magnetostatic",
+              "nonmagnetic_medium"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "B",
+              "div_B",
+              "J"
+            ],
+            "results": {
+              "B": {
+                "expression": "Matrix([[0], [-B0], [0]])",
+                "latex": "\\left[\\begin{matrix}0\\\\- B_{0}\\\\0\\end{matrix}\\right]",
+                "unit": "T"
+              },
+              "div_B": {
+                "expression": "0",
+                "latex": "0",
+                "unit": "T/m"
+              },
+              "J": {
+                "expression": "Matrix([[0], [0], [0]])",
+                "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+                "unit": "A/m^2"
+              }
+            },
+            "numerical": {},
+            "direction": "Komponenter i den ortonormale basis for det valgte koordinatsystem."
+          },
+          "derivation": {
+            "equations_latex": [
+              "\\mathbf B=\\nabla\\times\\mathbf A",
+              "\\nabla\\cdot\\mathbf B=0",
+              "\\mathbf J=\\mu_0^{-1}\\nabla\\times\\mathbf B"
+            ],
+            "step_ids": [
+              "step-0260b518102ce29665fa-0",
+              "step-2ce0f8bdfd1b72cf528f-0",
+              "step-16cdb60647389a0fc6b2-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-0260b518102ce29665fa-0",
+              "step-2ce0f8bdfd1b72cf528f-0",
+              "step-16cdb60647389a0fc6b2-0"
+            ],
+            "method_context_ids": [
+              "method-a4dfa3cd94a492952e5d"
+            ],
+            "global_check_ids": [
+              "check-c315c229b88015bdda54",
+              "check-44ff88d1fb85e447100f",
+              "check-0aff1958a581a7de7429",
+              "check-67a5a81041f0cfb53547",
+              "check-383f4535485ad7ea33c7",
+              "check-410636e4011dc9960b3d",
+              "check-2e2512b5805047efe28d",
+              "check-5e673b4b89fbf62cc466",
+              "check-08760873e5d278e8ce0b"
+            ],
+            "warnings": [
+              "Differentialkontroller gælder i glatte områder. Delta-kilder og grænseflader kræver særskilt integral-/springkontrol."
+            ]
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Magnetisk divergens",
+          "Statisk strømbevarelse: div(J)=0",
+          "Inputdimension: A",
+          "Inputdimension: coordinate_0",
+          "Inputdimension: coordinate_1",
+          "Inputdimension: coordinate_2"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "Eksplicit fysisk model til integrationskontrol.",
+    "confirmed": true,
+    "variables": {
+      "A": [
+        "0",
+        "0",
+        "B0*x"
+      ],
+      "coordinates": [
+        "x",
+        "y",
+        "z"
+      ],
+      "system": "cartesian"
+    },
+    "units": {
+      "B0": "T",
+      "x": "m",
+      "y": "m",
+      "z": "m"
+    },
+    "numbers": {},
+    "positive": [],
+    "assumptions": [
+      "magnetostatic",
+      "nonmagnetic_medium"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "vector_potential_field",
+        "wanted": [
+          "B",
+          "div_B",
+          "J"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

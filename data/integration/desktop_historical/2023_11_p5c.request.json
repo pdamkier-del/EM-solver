@@ -1,0 +1,93 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "En ring lavet af et ledende materiale falder i tyngdefeltet med farten v i et område\naf rummet, hvor der er et magnetfelt. Magnetfeltets lodrette komponent har formen\nBz = B0 (1 − κz), hvor B0 og κ er positive konstanter, og z-aksen er opadrettet. Ringen\nser altså et magnetfelt, hvis lodrette komponent gennem ringen vokser under faldet, som\nantydet på figuren. Under bevægelsen er ringens plan hele tiden vandret. Ringen har\nmasse m, udspænder et areal A, og dens elektriske modstand er R. Tyndeaccelerationen\nbetegnes g, og der ses bort fra luftmodstand.\nBestem størrelsen af den konstante hastighed v∞ .",
+  "confirmed": true,
+  "variables": {
+    "mass": "m",
+    "R": "R",
+    "coupling": "A*B*k",
+    "voltage": "0",
+    "drive_force": "m*g",
+    "time": "t",
+    "initial_velocity": "0"
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "ohm",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1/m",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "A": "m^2",
+    "g": "m/s^2"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0",
+    "A",
+    "g"
+  ],
+  "assumptions": [
+    "constant_coefficients",
+    "negligible_self_inductance",
+    "no_friction"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "feedback",
+      "wanted": [
+        "v_infinity"
+      ],
+      "orientation_confirmed": true
+    }
+  ]
+}

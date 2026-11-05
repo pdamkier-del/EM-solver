@@ -1,0 +1,104 @@
+{
+  "viewer_schema": "em1.desktop.solution.v1",
+  "title": "01 · Gauss: ladet cylinder",
+  "prompt": "En uendeligt lang massiv cylinder af radius R har ensartet volumenladningstæthed ρ. Bestem E indenfor og udenfor cylinderen.",
+  "status": "unverified",
+  "interpretation": {
+    "method": "Gauss’ lov",
+    "geometry": "Cylindersymmetri"
+  },
+  "result": {
+    "symbolic_latex": "E(s)=\\frac{\\rho s}{2\\varepsilon_0}\\quad(s<R)",
+    "numeric_text": null,
+    "units": null,
+    "extra_latex": [
+      "E(s)=\\frac{\\rho R^2}{2\\varepsilon_0 s}\\quad(s>R)"
+    ]
+  },
+  "steps": [
+    {
+      "id": "trin-01",
+      "title": "Bestem feltets retning",
+      "reason": "Fordi cylinderen er uendeligt lang og ensartet, kan feltet ikke afhænge af højden eller vinklen. Det må være radialt. Vi bruger denne symmetri, før vi vælger en integrationsflade.",
+      "substitution": "",
+      "operation": "",
+      "latex": "\\mathbf{E}(s)=E(s)\\hat{\\mathbf{s}}",
+      "check": ""
+    },
+    {
+      "id": "trin-02",
+      "title": "Vælg Gauss’ lov",
+      "reason": "Vi bruger Gauss’ lov frem for at integrere Coulombs lov punkt for punkt, fordi feltet er konstant på den krumme side af en koaksial cylinder.",
+      "substitution": "",
+      "operation": "",
+      "latex": "\\oint_S\\mathbf{E}\\cdot d\\mathbf{a}=\\frac{Q_{\\mathrm{enc}}}{\\varepsilon_0}",
+      "check": ""
+    },
+    {
+      "id": "trin-03",
+      "title": "Beregn fluxen",
+      "reason": "Vi vælger en Gauss-cylinder med radius s og længde L. Feltet står vinkelret på sidefladen; på endefladerne er prikproduktet nul.",
+      "substitution": "Indsæt sidefladens areal A = 2πsL, og brug at E er konstant på denne flade.",
+      "operation": "",
+      "latex": "\\oint_S\\mathbf{E}\\cdot d\\mathbf{a}=E(s)\\,2\\pi sL",
+      "check": ""
+    },
+    {
+      "id": "trin-04",
+      "title": "Indsæt den omsluttede ladning indenfor",
+      "reason": "Når s<R er kun den del af cylinderen med radius s omsluttet. Vi bruger Q = ρV og volumenet af en cylinder.",
+      "substitution": "Indsæt V = πs²L i Q = ρV.",
+      "operation": "",
+      "latex": "Q_{\\mathrm{enc}}=\\rho\\pi s^2L",
+      "check": ""
+    },
+    {
+      "id": "trin-05",
+      "title": "Sæt flux og ladning ind i Gauss’ lov",
+      "reason": "Venstresiden fra trin 3 og højresiden fra trin 4 sættes ind i den samme ligning. Nu har vi én ubekendt: E(s).",
+      "substitution": "Venstre: E(s)·2πsL. Højre: ρπs²L/ε₀.",
+      "operation": "",
+      "latex": "E(s)\\,2\\pi sL=\\frac{\\rho\\pi s^2L}{\\varepsilon_0}",
+      "check": ""
+    },
+    {
+      "id": "trin-06",
+      "title": "Isolér det indvendige felt",
+      "reason": "Divider begge sider med 2πsL. Faktoren πL forkortes, og s²/s bliver s.",
+      "substitution": "",
+      "operation": "Divider med 2πsL og reducer brøken.",
+      "latex": "E(s)=\\frac{\\rho s}{2\\varepsilon_0}",
+      "check": "Feltet går mod nul for s → 0."
+    },
+    {
+      "id": "trin-07",
+      "title": "Beregn den omsluttede ladning udenfor",
+      "reason": "Når s>R, er hele den fysiske cylinders tværsnit omsluttet. Vi må derfor bruge R – ikke s – i ladningsvolumenet.",
+      "substitution": "Indsæt det fysiske volumen V = πR²L i Q = ρV.",
+      "operation": "",
+      "latex": "Q_{\\mathrm{enc}}=\\rho\\pi R^2L",
+      "check": ""
+    },
+    {
+      "id": "trin-08",
+      "title": "Indsæt i Gauss’ lov udenfor",
+      "reason": "Fluxen er stadig E(s)2πsL, men ladningen er nu konstant, når Gauss-fladen bliver større.",
+      "substitution": "Brug fluxen fra trin 3 og ladningen fra trin 7.",
+      "operation": "",
+      "latex": "E(s)\\,2\\pi sL=\\frac{\\rho\\pi R^2L}{\\varepsilon_0}",
+      "check": ""
+    },
+    {
+      "id": "trin-09",
+      "title": "Isolér det udvendige felt",
+      "reason": "Divider begge sider med 2πsL. Resultatet falder som 1/s, fordi samme ladning fordeles over en større Gauss-flade.",
+      "substitution": "",
+      "operation": "Divider med 2πsL; forkort πL.",
+      "latex": "E(s)=\\frac{\\rho R^2}{2\\varepsilon_0s}",
+      "check": "Ved s = R giver indenfor- og udenforudtrykket samme feltstyrke."
+    }
+  ],
+  "warnings": [
+    "Eksempeldata: Metode og algebra er fagligt gennemgået, men er ikke genereret af den autonome solver."
+  ]
+}

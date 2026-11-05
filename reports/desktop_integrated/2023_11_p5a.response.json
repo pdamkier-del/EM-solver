@@ -1,0 +1,347 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "faraday_uniform",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Magnetisk flux og Faradays lov",
+        "reasoning": "Først integreres magnetfeltets normalprojektion over den orienterede flade. Derefter differentieres hele fluxen, også eventuelle tidsafhængige grænser eller arealer. Minusfortegnet er Lenz’ lov.",
+        "equations_latex": [
+          "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+          "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+        ],
+        "steps": [
+          {
+            "id": "step-4d27e3fdfa0c2a59fcbe-0",
+            "text": "Homogent normalt felt: flux = B_n A",
+            "title": "Homogent normalt felt: flux = B_n A",
+            "latex": "A B \\left(k t v + 1\\right)",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-9970c390f6da66072b33",
+            "intermediate_latex": [],
+            "assumptions": [
+              "uniform_normal_B",
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-d10476d09ce40f5b9ad4-0",
+            "text": "Differentier den samlede flux og indsæt minusfortegnet",
+            "title": "Differentier den samlede flux og indsæt minusfortegnet",
+            "latex": "- A B k v",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-9970c390f6da66072b33",
+            "intermediate_latex": [],
+            "assumptions": [
+              "uniform_normal_B",
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-be1a0408e29c7df788ba-0",
+            "text": "Ohms lov: I = EMF/R",
+            "title": "Ohms lov: I = EMF/R",
+            "latex": "- \\frac{A B k v}{R}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-9970c390f6da66072b33",
+            "intermediate_latex": [],
+            "assumptions": [
+              "uniform_normal_B",
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-cee8eae910546c1da5aa-0",
+            "text": "Joule-effekt: P = I²R",
+            "title": "Joule-effekt: P = I²R",
+            "latex": "\\frac{A^{2} B^{2} k^{2} v^{2}}{R}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-9970c390f6da66072b33",
+            "intermediate_latex": [],
+            "assumptions": [
+              "uniform_normal_B",
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "Phi": {
+            "expression": "A*B*(k*t*v + 1)",
+            "latex": "A B \\left(k t v + 1\\right)",
+            "unit": "Wb"
+          },
+          "EMF": {
+            "expression": "-A*B*k*v",
+            "latex": "- A B k v",
+            "unit": "V"
+          },
+          "I": {
+            "expression": "-A*B*k*v/R",
+            "latex": "- \\frac{A B k v}{R}",
+            "unit": "A"
+          },
+          "P": {
+            "expression": "A**2*B**2*k**2*v**2/R",
+            "latex": "\\frac{A^{2} B^{2} k^{2} v^{2}}{R}",
+            "unit": "W"
+          }
+        },
+        "numerical": {},
+        "checks": [
+          {
+            "id": "check-c75ed7ccd12f80c6640b",
+            "name": "Faradays/Lenz’ fortegnsrelation",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-36a8064acb2cb8b9e51d",
+            "name": "Effektbalance P = EMF I",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-b0402bdfd02384005379",
+            "name": "Dimension: Phi",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "Wb",
+            "step_ids": []
+          },
+          {
+            "id": "check-a9435c60e1a89b5fac43",
+            "name": "Dimension: EMF",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V",
+            "step_ids": []
+          },
+          {
+            "id": "check-02f04a3da58e5bca97ac",
+            "name": "Dimension: I",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-6bd35c1b468822c560f7",
+            "name": "Dimension: P",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "W",
+            "step_ids": []
+          },
+          {
+            "id": "check-1226f97a4d5760dc6646",
+            "name": "Inputdimension: time",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "s",
+            "step_ids": []
+          },
+          {
+            "id": "check-7bc9fb065ed817c83eec",
+            "name": "Inputdimension: B_normal",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T",
+            "step_ids": []
+          },
+          {
+            "id": "check-b3ee41211afbd1310fda",
+            "name": "Inputdimension: area",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m^2",
+            "step_ids": []
+          },
+          {
+            "id": "check-62d092a90acedb1d5e63",
+            "name": "Inputdimension: N",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "1",
+            "step_ids": []
+          },
+          {
+            "id": "check-46501789f395e5d62165",
+            "name": "Inputdimension: R",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "ohm",
+            "step_ids": []
+          }
+        ],
+        "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb.",
+        "warnings": [
+          "Strøm fra EMF/R gælder kun under den eksplicitte antagelse om negligerbar selvinduktans. Retning kræver valgt fladenormal."
+        ],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-9970c390f6da66072b33": {
+            "method_id": "faraday",
+            "method": "Magnetisk flux og Faradays lov",
+            "reasoning": "Først integreres magnetfeltets normalprojektion over den orienterede flade. Derefter differentieres hele fluxen, også eventuelle tidsafhængige grænser eller arealer. Minusfortegnet er Lenz’ lov.",
+            "equations": [
+              "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+              "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+            ],
+            "assumptions": [
+              "uniform_normal_B",
+              "negligible_self_inductance"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "EMF",
+              "P"
+            ],
+            "results": {
+              "EMF": {
+                "expression": "-A*B*k*v",
+                "latex": "- A B k v",
+                "unit": "V"
+              },
+              "P": {
+                "expression": "A**2*B**2*k**2*v**2/R",
+                "latex": "\\frac{A^{2} B^{2} k^{2} v^{2}}{R}",
+                "unit": "W"
+              }
+            },
+            "numerical": {},
+            "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb."
+          },
+          "derivation": {
+            "equations_latex": [
+              "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+              "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+            ],
+            "step_ids": [
+              "step-4d27e3fdfa0c2a59fcbe-0",
+              "step-d10476d09ce40f5b9ad4-0",
+              "step-be1a0408e29c7df788ba-0",
+              "step-cee8eae910546c1da5aa-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-4d27e3fdfa0c2a59fcbe-0",
+              "step-d10476d09ce40f5b9ad4-0",
+              "step-be1a0408e29c7df788ba-0",
+              "step-cee8eae910546c1da5aa-0"
+            ],
+            "method_context_ids": [
+              "method-9970c390f6da66072b33"
+            ],
+            "global_check_ids": [
+              "check-c75ed7ccd12f80c6640b",
+              "check-36a8064acb2cb8b9e51d",
+              "check-b0402bdfd02384005379",
+              "check-a9435c60e1a89b5fac43",
+              "check-02f04a3da58e5bca97ac",
+              "check-6bd35c1b468822c560f7",
+              "check-1226f97a4d5760dc6646",
+              "check-7bc9fb065ed817c83eec",
+              "check-b3ee41211afbd1310fda",
+              "check-62d092a90acedb1d5e63",
+              "check-46501789f395e5d62165"
+            ],
+            "warnings": [
+              "Strøm fra EMF/R gælder kun under den eksplicitte antagelse om negligerbar selvinduktans. Retning kræver valgt fladenormal."
+            ]
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Faradays/Lenz’ fortegnsrelation",
+          "Effektbalance P = EMF I",
+          "Inputdimension: time",
+          "Inputdimension: B_normal",
+          "Inputdimension: area",
+          "Inputdimension: N",
+          "Inputdimension: R"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "En ring lavet af et ledende materiale falder i tyngdefeltet med farten v i et område\naf rummet, hvor der er et magnetfelt. Magnetfeltets lodrette komponent har formen\nBz = B0 (1 − κz), hvor B0 og κ er positive konstanter, og z-aksen er opadrettet. Ringen\nser altså et magnetfelt, hvis lodrette komponent gennem ringen vokser under faldet, som\nantydet på figuren. Under bevægelsen er ringens plan hele tiden vandret. Ringen har\nmasse m, udspænder et areal A, og dens elektriske modstand er R. Tyndeaccelerationen\nbetegnes g, og der ses bort fra luftmodstand.\nBestem størrelsen af den elektromotoriske kraft, E, i ringen.",
+    "confirmed": true,
+    "variables": {
+      "time": "t",
+      "B_normal": "B*(1+k*v*t)",
+      "area": "A",
+      "N": "1",
+      "R": "R"
+    },
+    "units": {
+      "t": "s",
+      "B": "T",
+      "k": "1/m",
+      "v": "m/s",
+      "A": "m^2",
+      "R": "ohm"
+    },
+    "numbers": {},
+    "positive": [
+      "B",
+      "k",
+      "v",
+      "A",
+      "R"
+    ],
+    "assumptions": [
+      "uniform_normal_B",
+      "negligible_self_inductance"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "faraday_uniform",
+        "wanted": [
+          "EMF",
+          "P"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

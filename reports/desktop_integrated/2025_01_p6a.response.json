@@ -1,0 +1,426 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "faraday_uniform",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Magnetisk flux og Faradays lov",
+        "reasoning": "Først integreres magnetfeltets normalprojektion over den orienterede flade. Derefter differentieres hele fluxen, også eventuelle tidsafhængige grænser eller arealer. Minusfortegnet er Lenz’ lov.",
+        "equations_latex": [
+          "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+          "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+        ],
+        "steps": [
+          {
+            "id": "step-8267efb1e4a814059dfb-0",
+            "text": "Homogent normalt felt: flux = B_n A",
+            "title": "Homogent normalt felt: flux = B_n A",
+            "latex": "\\pi a^{2} \\left(- B \\left(1 - e^{\\frac{t}{\\tau}}\\right) + B_{offset} e^{\\frac{t}{\\tau}}\\right) e^{- \\frac{t}{\\tau}}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-9970c390f6da66072b33",
+            "intermediate_latex": [],
+            "assumptions": [
+              "uniform_normal_B",
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-c6e9b78b96e56d4ce40e-0",
+            "text": "Differentier den samlede flux og indsæt minusfortegnet",
+            "title": "Differentier den samlede flux og indsæt minusfortegnet",
+            "latex": "- \\frac{\\pi B N a^{2} e^{- \\frac{t}{\\tau}}}{\\tau}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-9970c390f6da66072b33",
+            "intermediate_latex": [],
+            "assumptions": [
+              "uniform_normal_B",
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-585c7ef36089f2be1e96-0",
+            "text": "Ohms lov: I = EMF/R",
+            "title": "Ohms lov: I = EMF/R",
+            "latex": "- \\frac{\\pi B N a^{2} e^{- \\frac{t}{\\tau}}}{R \\tau}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-9970c390f6da66072b33",
+            "intermediate_latex": [],
+            "assumptions": [
+              "uniform_normal_B",
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-12c16b066441e508d691-0",
+            "text": "Joule-effekt: P = I²R",
+            "title": "Joule-effekt: P = I²R",
+            "latex": "\\frac{\\pi^{2} B^{2} N^{2} a^{4} e^{- \\frac{2 t}{\\tau}}}{R \\tau^{2}}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-9970c390f6da66072b33",
+            "intermediate_latex": [],
+            "assumptions": [
+              "uniform_normal_B",
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-65fe02d9dc18b5b3f20f-0",
+            "text": "Varmeenergien før tidsintegration",
+            "title": "Varmeenergien før tidsintegration",
+            "latex": "\\int\\limits_{0}^{T} \\frac{\\pi^{2} B^{2} N^{2} a^{4} e^{- \\frac{2 t}{\\tau}}}{R \\tau^{2}}\\, dt",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-9970c390f6da66072b33",
+            "intermediate_latex": [],
+            "assumptions": [
+              "uniform_normal_B",
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-da273d148f440a58c646-0",
+            "text": "Udfør tidsintegrationen",
+            "title": "Udfør tidsintegrationen",
+            "latex": "\\frac{\\pi^{2} B^{2} N^{2} a^{4} \\left(e^{\\frac{2 T}{\\tau}} - 1\\right) e^{- \\frac{2 T}{\\tau}}}{2 R \\tau}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-9970c390f6da66072b33",
+            "intermediate_latex": [],
+            "assumptions": [
+              "uniform_normal_B",
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "Phi": {
+            "expression": "pi*a**2*(-B*(1 - exp(t/tau)) + B_offset*exp(t/tau))*exp(-t/tau)",
+            "latex": "\\pi a^{2} \\left(- B \\left(1 - e^{\\frac{t}{\\tau}}\\right) + B_{offset} e^{\\frac{t}{\\tau}}\\right) e^{- \\frac{t}{\\tau}}",
+            "unit": "Wb"
+          },
+          "EMF": {
+            "expression": "-pi*B*N*a**2*exp(-t/tau)/tau",
+            "latex": "- \\frac{\\pi B N a^{2} e^{- \\frac{t}{\\tau}}}{\\tau}",
+            "unit": "V"
+          },
+          "I": {
+            "expression": "-pi*B*N*a**2*exp(-t/tau)/(R*tau)",
+            "latex": "- \\frac{\\pi B N a^{2} e^{- \\frac{t}{\\tau}}}{R \\tau}",
+            "unit": "A"
+          },
+          "P": {
+            "expression": "pi**2*B**2*N**2*a**4*exp(-2*t/tau)/(R*tau**2)",
+            "latex": "\\frac{\\pi^{2} B^{2} N^{2} a^{4} e^{- \\frac{2 t}{\\tau}}}{R \\tau^{2}}",
+            "unit": "W"
+          },
+          "W": {
+            "expression": "pi**2*B**2*N**2*a**4*(exp(2*T/tau) - 1)*exp(-2*T/tau)/(2*R*tau)",
+            "latex": "\\frac{\\pi^{2} B^{2} N^{2} a^{4} \\left(e^{\\frac{2 T}{\\tau}} - 1\\right) e^{- \\frac{2 T}{\\tau}}}{2 R \\tau}",
+            "unit": "J"
+          }
+        },
+        "numerical": {
+          "W": {
+            "value": "0.331666182221447",
+            "latex": "0.331666182221447",
+            "unit": "J"
+          }
+        },
+        "checks": [
+          {
+            "id": "check-c75ed7ccd12f80c6640b",
+            "name": "Faradays/Lenz’ fortegnsrelation",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-36a8064acb2cb8b9e51d",
+            "name": "Effektbalance P = EMF I",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-b0402bdfd02384005379",
+            "name": "Dimension: Phi",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "Wb",
+            "step_ids": []
+          },
+          {
+            "id": "check-a9435c60e1a89b5fac43",
+            "name": "Dimension: EMF",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V",
+            "step_ids": []
+          },
+          {
+            "id": "check-02f04a3da58e5bca97ac",
+            "name": "Dimension: I",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-6bd35c1b468822c560f7",
+            "name": "Dimension: P",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "W",
+            "step_ids": []
+          },
+          {
+            "id": "check-5376164a8631ef9eb987",
+            "name": "Dimension: W",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "J",
+            "step_ids": []
+          },
+          {
+            "id": "check-51c2e4431d8a70bde17e",
+            "name": "Inputdimension: time",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "s",
+            "step_ids": []
+          },
+          {
+            "id": "check-01008c3eaa91388be736",
+            "name": "Inputdimension: B_normal",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T",
+            "step_ids": []
+          },
+          {
+            "id": "check-31c2f7e19eb9d49124a9",
+            "name": "Inputdimension: area",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m^2",
+            "step_ids": []
+          },
+          {
+            "id": "check-1ae283f8b4e56f884553",
+            "name": "Inputdimension: N",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "1",
+            "step_ids": []
+          },
+          {
+            "id": "check-3883b8cc1819323ae987",
+            "name": "Inputdimension: R",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "ohm",
+            "step_ids": []
+          }
+        ],
+        "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb.",
+        "warnings": [
+          "Strøm fra EMF/R gælder kun under den eksplicitte antagelse om negligerbar selvinduktans. Retning kræver valgt fladenormal."
+        ],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-9970c390f6da66072b33": {
+            "method_id": "faraday",
+            "method": "Magnetisk flux og Faradays lov",
+            "reasoning": "Først integreres magnetfeltets normalprojektion over den orienterede flade. Derefter differentieres hele fluxen, også eventuelle tidsafhængige grænser eller arealer. Minusfortegnet er Lenz’ lov.",
+            "equations": [
+              "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+              "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+            ],
+            "assumptions": [
+              "uniform_normal_B",
+              "negligible_self_inductance"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "EMF",
+              "W"
+            ],
+            "results": {
+              "EMF": {
+                "expression": "-pi*B*N*a**2*exp(-t/tau)/tau",
+                "latex": "- \\frac{\\pi B N a^{2} e^{- \\frac{t}{\\tau}}}{\\tau}",
+                "unit": "V"
+              },
+              "W": {
+                "expression": "pi**2*B**2*N**2*a**4*(exp(2*T/tau) - 1)*exp(-2*T/tau)/(2*R*tau)",
+                "latex": "\\frac{\\pi^{2} B^{2} N^{2} a^{4} \\left(e^{\\frac{2 T}{\\tau}} - 1\\right) e^{- \\frac{2 T}{\\tau}}}{2 R \\tau}",
+                "unit": "J"
+              }
+            },
+            "numerical": {
+              "W": {
+                "value": "0.331666182221447",
+                "latex": "0.331666182221447",
+                "unit": "J"
+              }
+            },
+            "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb."
+          },
+          "derivation": {
+            "equations_latex": [
+              "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+              "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+            ],
+            "step_ids": [
+              "step-8267efb1e4a814059dfb-0",
+              "step-c6e9b78b96e56d4ce40e-0",
+              "step-585c7ef36089f2be1e96-0",
+              "step-12c16b066441e508d691-0",
+              "step-65fe02d9dc18b5b3f20f-0",
+              "step-da273d148f440a58c646-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-8267efb1e4a814059dfb-0",
+              "step-c6e9b78b96e56d4ce40e-0",
+              "step-585c7ef36089f2be1e96-0",
+              "step-12c16b066441e508d691-0",
+              "step-65fe02d9dc18b5b3f20f-0",
+              "step-da273d148f440a58c646-0"
+            ],
+            "method_context_ids": [
+              "method-9970c390f6da66072b33"
+            ],
+            "global_check_ids": [
+              "check-c75ed7ccd12f80c6640b",
+              "check-36a8064acb2cb8b9e51d",
+              "check-b0402bdfd02384005379",
+              "check-a9435c60e1a89b5fac43",
+              "check-02f04a3da58e5bca97ac",
+              "check-6bd35c1b468822c560f7",
+              "check-5376164a8631ef9eb987",
+              "check-51c2e4431d8a70bde17e",
+              "check-01008c3eaa91388be736",
+              "check-31c2f7e19eb9d49124a9",
+              "check-1ae283f8b4e56f884553",
+              "check-3883b8cc1819323ae987"
+            ],
+            "warnings": [
+              "Strøm fra EMF/R gælder kun under den eksplicitte antagelse om negligerbar selvinduktans. Retning kræver valgt fladenormal."
+            ]
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Faradays/Lenz’ fortegnsrelation",
+          "Effektbalance P = EMF I",
+          "Inputdimension: time",
+          "Inputdimension: B_normal",
+          "Inputdimension: area",
+          "Inputdimension: N",
+          "Inputdimension: R"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "En cirkulær spole med N = 12 vindinger og radius r = 0,20 m ligger i xy-planet af et\nkoordinatsystem som illustreret på figuren. Spolen har ringe udstrækning i z-retningen.\nDe to ender af ledningen, der danner spolen, er forbundne med hinanden, således at\nder dannes et kredsløb. Kredsens modstand er R = 1,2 Ω. Et tidsafhængigt, homogent\nmagnetfelt\n       ! er rettet efter\" z-aksen, altså ud af papirets plan. Magnetfeltet er givet ved\nB(t) = a(1 → e−t/τ ) + b ẑ, hvor a = 5,0 T og b = →2,0 T er konstanter, og hvor tids-\nkonstanten er τ = 60 s. Udelukkende ikke-negative tider, t ≥ 0, betragtes.\n\n                                            y\n\n\n\n                                       r        B(t)\n                                                         x\nBestem retningen og størrelsen af den elektromotoriske kraft, E(t), der induceres i\n     spolen til tiden t. Angiv svaret symbolsk.",
+    "confirmed": true,
+    "variables": {
+      "time": "t",
+      "B_normal": "B*(1-exp(-t/tau))+B_offset",
+      "area": "pi*a^2",
+      "N": "N",
+      "R": "R",
+      "time_bounds": [
+        "0",
+        "T"
+      ]
+    },
+    "units": {
+      "t": "s",
+      "B": "T",
+      "tau": "s",
+      "B_offset": "T",
+      "a": "m",
+      "N": "1",
+      "R": "ohm",
+      "T": "s"
+    },
+    "numbers": {
+      "B": "5.0 T",
+      "tau": "60 s",
+      "B_offset": "-2.0 T",
+      "a": "0.20 m",
+      "N": "12",
+      "R": "1.2 ohm",
+      "T": "55 s"
+    },
+    "positive": [
+      "B",
+      "tau",
+      "a",
+      "N",
+      "R",
+      "T"
+    ],
+    "assumptions": [
+      "uniform_normal_B",
+      "negligible_self_inductance"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "faraday_uniform",
+        "wanted": [
+          "EMF",
+          "W"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

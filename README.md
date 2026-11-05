@@ -1,16 +1,19 @@
-Denne branch er `em1-assisted-evening-2026-11-05`: et særskilt, assisteret
-DYN-backendforslag, **ikke** en ny valideret Windows-eksamensrelease.
-Se [kritisk vurdering og målinger](reports/assisted_evening/assessment.md),
-[assisteret JSON-kontrakt](docs/backend/ASSISTED_DYN.md) og
-[komplette request/response-eksempler](data/integration/assisted_v1).
-Der er desuden en [indlejrbar PySide6-DYN-komponent og integrationsvejledning](docs/desktop/ASSISTED_DYN_UPDATE.md).
-Den eksisterende desktop-ZIP er endnu ikke tilgængelig i dette workspace;
-komponenten er derfor ikke integreret i den apps kildekode. Native Windows
-skal fortsat afprøves på brugerens computer.
-Desktopappen bruger den fastlåste branch `desktop-integration-2026-11-05`, commit
-`22c78ffdc545736ddb81c042f83a94b71613b3eb`, i `/workspace/EM-solver`.
-Den foregående fysikudvikling ligger separat i `/workspace/EM-solver-physics`;
-se [dens udviklingsstatus](reports/physics_development/status.md).
+# EM1 Solver – samlet desktopintegration
+
+Den eksisterende uploadede PySide6-app ligger i [desktop_app](desktop_app).
+Start med [Windows-installation og eksamens-runbook](desktop_app/WINDOWS_INTEGRATED.md).
+Branchen `em1-assisted-evening-2026-11-05` indeholder otte DYN-modelkort og
+assisterede EV/BA-former over de eksisterende fysiksolvere. Den almindelige
+tekstbaserede backendvej, noter, PDF'er og de tre løsningsfaner er bevaret.
+
+[Samlet app-evaluering](reports/desktop_integrated/evaluation.json) indeholder
+35 historiske delopgaver kørt gennem det faktiske hovedvindue med eksplicitte,
+brugerbekræftede modeller. Dette er ikke autonom råtekstdækning eller en ny
+blindprøve. Native Windows skal testes på brugerens computer; Linux/offscreen
+og Windows-wheel-tilgængelighed er testgrundlaget her.
+
+Frosne releases, `main` og `desktop-integration-2026-11-05` er ikke ændret.
+De oprindelige Streamlit-instruktioner nedenfor er fortsat tilgængelige.
 
 # EM1 Solver – lokal eksamensapp
 
