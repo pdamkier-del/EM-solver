@@ -1,0 +1,52 @@
+{
+  "branch": "em1-assisted-evening-2026-11-05",
+  "base_commit": "1e118e089d290eea7b3ede47c2b06638d01aae56",
+  "integration_unchanged_commit": "22c78ffdc545736ddb81c042f83a94b71613b3eb",
+  "frozen_exam_commit": "2f839c9696c12e7431b39fe431b693b8190049d1",
+  "source_fingerprint": "41f4567c666872531cc5486b6687c2858483c1e34e99e08245748770e4888691",
+  "test_summary": {
+    "collected": 823,
+    "full_suite": true,
+    "exitstatus": 0,
+    "outcomes": {
+      "passed": 823
+    }
+  },
+  "ui_smoke": {
+    "network": "socket connections blocked",
+    "platform": "linux",
+    "cases": [
+      {
+        "case": "gauss",
+        "status": "result_rendered"
+      },
+      {
+        "case": "biot_savart",
+        "status": "result_rendered"
+      },
+      {
+        "case": "ampere",
+        "status": "result_rendered"
+      },
+      {
+        "case": "faraday",
+        "status": "result_rendered"
+      },
+      {
+        "case": "motional",
+        "status": "result_rendered"
+      },
+      {
+        "case": "material",
+        "status": "result_rendered"
+      },
+      {
+        "case": "rejection",
+        "status": "correct_refusal"
+      }
+    ],
+    "windows_batch_execution": "not available on Linux"
+  },
+  "native_windows_qt_tested": false,
+  "release_or_push": false
+}

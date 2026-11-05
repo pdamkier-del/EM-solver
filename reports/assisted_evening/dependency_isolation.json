@@ -1,0 +1,24 @@
+{
+  "statuses": [
+    "calculated_under_confirmed_model",
+    "calculated_under_confirmed_model",
+    "calculated_under_confirmed_model",
+    "calculated_under_confirmed_model",
+    "calculated_under_confirmed_model",
+    "calculated_under_confirmed_model",
+    "calculated_under_confirmed_model",
+    "needs_confirmation"
+  ],
+  "network": "blocked",
+  "isolated_no_site": true,
+  "frontend_imported": false,
+  "dependencies": {
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "Pint": "0.25.2",
+    "flexcache": "0.3",
+    "flexparser": "0.4",
+    "platformdirs": "4.14.4",
+    "typing_extensions": "4.16.0"
+  }
+}

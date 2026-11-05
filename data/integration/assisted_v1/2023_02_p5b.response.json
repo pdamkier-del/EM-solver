@@ -1,0 +1,376 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "faraday_flux",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Magnetisk flux og Faradays lov",
+        "reasoning": "Først integreres magnetfeltets normalprojektion over den orienterede flade. Derefter differentieres hele fluxen, også eventuelle tidsafhængige grænser eller arealer. Minusfortegnet er Lenz’ lov.",
+        "equations_latex": [
+          "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+          "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+        ],
+        "steps": [
+          {
+            "id": "step-8e6bada5a52b6cdeb632-0",
+            "text": "Den eksplicit givne flux pr. vinding",
+            "title": "Den eksplicit givne flux pr. vinding",
+            "latex": "C I \\cos{\\left(\\omega t \\right)}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-e529bef915c6fc61ab7b",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-9d0258e56d8d0da0a22c-0",
+            "text": "Differentier den samlede flux og indsæt minusfortegnet",
+            "title": "Differentier den samlede flux og indsæt minusfortegnet",
+            "latex": "C I \\omega \\sin{\\left(\\omega t \\right)}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-e529bef915c6fc61ab7b",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-7e0f6d7e1bc9cf205e74-0",
+            "text": "Ohms lov: I = EMF/R",
+            "title": "Ohms lov: I = EMF/R",
+            "latex": "\\frac{C I \\omega \\sin{\\left(\\omega t \\right)}}{R}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-e529bef915c6fc61ab7b",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-e8f4a95f257c2869bd09-0",
+            "text": "Joule-effekt: P = I²R",
+            "title": "Joule-effekt: P = I²R",
+            "latex": "\\frac{C^{2} I^{2} \\omega^{2} \\sin^{2}{\\left(\\omega t \\right)}}{R}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-e529bef915c6fc61ab7b",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "Phi": {
+            "expression": "C*I*cos(omega*t)",
+            "latex": "C I \\cos{\\left(\\omega t \\right)}",
+            "unit": "Wb"
+          },
+          "EMF": {
+            "expression": "C*I*omega*sin(omega*t)",
+            "latex": "C I \\omega \\sin{\\left(\\omega t \\right)}",
+            "unit": "V"
+          },
+          "I": {
+            "expression": "C*I*omega*sin(omega*t)/R",
+            "latex": "\\frac{C I \\omega \\sin{\\left(\\omega t \\right)}}{R}",
+            "unit": "A"
+          },
+          "P": {
+            "expression": "C**2*I**2*omega**2*sin(omega*t)**2/R",
+            "latex": "\\frac{C^{2} I^{2} \\omega^{2} \\sin^{2}{\\left(\\omega t \\right)}}{R}",
+            "unit": "W"
+          }
+        },
+        "numerical": {},
+        "checks": [
+          {
+            "id": "check-c75ed7ccd12f80c6640b",
+            "name": "Faradays/Lenz’ fortegnsrelation",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-36a8064acb2cb8b9e51d",
+            "name": "Effektbalance P = EMF I",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-b0402bdfd02384005379",
+            "name": "Dimension: Phi",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "Wb",
+            "step_ids": []
+          },
+          {
+            "id": "check-a9435c60e1a89b5fac43",
+            "name": "Dimension: EMF",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V",
+            "step_ids": []
+          },
+          {
+            "id": "check-02f04a3da58e5bca97ac",
+            "name": "Dimension: I",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-6bd35c1b468822c560f7",
+            "name": "Dimension: P",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "W",
+            "step_ids": []
+          },
+          {
+            "id": "check-1226f97a4d5760dc6646",
+            "name": "Inputdimension: time",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "s",
+            "step_ids": []
+          },
+          {
+            "id": "check-5cef0823f03bd8ccfc7c",
+            "name": "Inputdimension: flux",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "Wb",
+            "step_ids": []
+          },
+          {
+            "id": "check-3f790c9fd40650e7fa8d",
+            "name": "Inputdimension: N",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "1",
+            "step_ids": []
+          },
+          {
+            "id": "check-3ab5ec8bcda85a358601",
+            "name": "Inputdimension: R",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "ohm",
+            "step_ids": []
+          }
+        ],
+        "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb.",
+        "warnings": [
+          "Strøm fra EMF/R gælder kun under den eksplicitte antagelse om negligerbar selvinduktans. Retning kræver valgt fladenormal."
+        ],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-e529bef915c6fc61ab7b": {
+            "method_id": "faraday",
+            "method": "Magnetisk flux og Faradays lov",
+            "reasoning": "Først integreres magnetfeltets normalprojektion over den orienterede flade. Derefter differentieres hele fluxen, også eventuelle tidsafhængige grænser eller arealer. Minusfortegnet er Lenz’ lov.",
+            "equations": [
+              "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+              "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+            ],
+            "assumptions": [
+              "negligible_self_inductance"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "EMF",
+              "P"
+            ],
+            "results": {
+              "EMF": {
+                "expression": "C*I*omega*sin(omega*t)",
+                "latex": "C I \\omega \\sin{\\left(\\omega t \\right)}",
+                "unit": "V"
+              },
+              "P": {
+                "expression": "C**2*I**2*omega**2*sin(omega*t)**2/R",
+                "latex": "\\frac{C^{2} I^{2} \\omega^{2} \\sin^{2}{\\left(\\omega t \\right)}}{R}",
+                "unit": "W"
+              }
+            },
+            "numerical": {},
+            "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb."
+          },
+          "derivation": {
+            "equations_latex": [
+              "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+              "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+            ],
+            "step_ids": [
+              "step-8e6bada5a52b6cdeb632-0",
+              "step-9d0258e56d8d0da0a22c-0",
+              "step-7e0f6d7e1bc9cf205e74-0",
+              "step-e8f4a95f257c2869bd09-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-8e6bada5a52b6cdeb632-0",
+              "step-9d0258e56d8d0da0a22c-0",
+              "step-7e0f6d7e1bc9cf205e74-0",
+              "step-e8f4a95f257c2869bd09-0"
+            ],
+            "method_context_ids": [
+              "method-e529bef915c6fc61ab7b"
+            ],
+            "global_check_ids": [
+              "check-c75ed7ccd12f80c6640b",
+              "check-36a8064acb2cb8b9e51d",
+              "check-b0402bdfd02384005379",
+              "check-a9435c60e1a89b5fac43",
+              "check-02f04a3da58e5bca97ac",
+              "check-6bd35c1b468822c560f7",
+              "check-1226f97a4d5760dc6646",
+              "check-5cef0823f03bd8ccfc7c",
+              "check-3f790c9fd40650e7fa8d",
+              "check-3ab5ec8bcda85a358601"
+            ],
+            "warnings": [
+              "Strøm fra EMF/R gælder kun under den eksplicitte antagelse om negligerbar selvinduktans. Retning kræver valgt fladenormal."
+            ]
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Faradays/Lenz’ fortegnsrelation",
+          "Effektbalance P = EMF I",
+          "Inputdimension: time",
+          "Inputdimension: flux",
+          "Inputdimension: N",
+          "Inputdimension: R"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "En rektangulært strømløkke ligger tæt ved en meget lang, strømførende ledning. Løkken\nog ledningen ligger i samme plan, og to af løkkens sider med længden b er parallelle med\nledningen. De to andre sider har længden h, og løkkens nærmeste side ligger afstanden\na fra ledningen. I ledningen går strømmen I1 .\nSituationen er vist på figuren.\n                                            b\n\n                                                   h\n\n                              I1                   a\nBestem den elektromotoriske kraft, E(t), i løkken udtrykt ved C, ω og I0 . Ar-\n     gumentér for fortegnet (positiv eller negativ omløbsretning på figuren) af E(t) i\n     tidsrummet 0 < t < π/ω.\nLøkken har modstanden R, og der kan ses bort fra dens selvinduktans.",
+    "confirmed": true,
+    "variables": {
+      "time": "t",
+      "flux": "C*I*cos(omega*t)",
+      "R": "R",
+      "N": "1"
+    },
+    "units": {
+      "x": "m",
+      "y": "m",
+      "z": "m",
+      "r": "m",
+      "s": "m",
+      "a": "m",
+      "b": "m",
+      "d": "m",
+      "R": "ohm",
+      "L": "m",
+      "h": "m",
+      "q": "C",
+      "Q": "C",
+      "I": "A",
+      "J": "A/m^2",
+      "V": "V",
+      "B": "T",
+      "rho": "C/m^3",
+      "sigma": "C/m^2",
+      "t": "s",
+      "omega": "1/s",
+      "tau": "s",
+      "m": "kg",
+      "v": "m/s",
+      "epsilon_r": "1",
+      "theta": "1",
+      "phi": "1",
+      "N": "1",
+      "k": "1",
+      "epsilon_0": "F/m",
+      "mu_0": "H/m",
+      "C": "H"
+    },
+    "positive": [
+      "r",
+      "s",
+      "a",
+      "b",
+      "d",
+      "R",
+      "L",
+      "h",
+      "q",
+      "Q",
+      "I",
+      "J",
+      "V",
+      "B",
+      "rho",
+      "sigma",
+      "omega",
+      "tau",
+      "m",
+      "v",
+      "epsilon_r",
+      "N",
+      "k",
+      "epsilon_0",
+      "mu_0",
+      "C"
+    ],
+    "assumptions": [
+      "negligible_self_inductance"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "faraday_flux",
+        "wanted": [
+          "EMF",
+          "P"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

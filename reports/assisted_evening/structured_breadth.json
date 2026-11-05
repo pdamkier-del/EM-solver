@@ -1,0 +1,3755 @@
+{
+  "limitation": "Previously known expert-encoded historical paths. Groups overlap. Not raw-text autonomy, independent blind generalization or end-user desktop validation.",
+  "summary": {
+    "correct_autonomous": 0,
+    "correct_assisted": 153,
+    "partial": 0,
+    "reasoned_refusal": 1,
+    "incorrect": 0
+  },
+  "groups": {
+    "coulomb_superposition": {
+      "correct_autonomous": 0,
+      "correct_assisted": 26,
+      "partial": 0,
+      "reasoned_refusal": 0,
+      "incorrect": 0
+    },
+    "gauss_nonuniform": {
+      "correct_autonomous": 0,
+      "correct_assisted": 6,
+      "partial": 0,
+      "reasoned_refusal": 0,
+      "incorrect": 0
+    },
+    "potential_energy_multipoles": {
+      "correct_autonomous": 0,
+      "correct_assisted": 29,
+      "partial": 0,
+      "reasoned_refusal": 0,
+      "incorrect": 0
+    },
+    "laplace_poisson": {
+      "correct_autonomous": 0,
+      "correct_assisted": 3,
+      "partial": 0,
+      "reasoned_refusal": 0,
+      "incorrect": 0
+    },
+    "conductors_dielectrics_boundaries": {
+      "correct_autonomous": 0,
+      "correct_assisted": 24,
+      "partial": 0,
+      "reasoned_refusal": 0,
+      "incorrect": 0
+    },
+    "biot_savart_ampere": {
+      "correct_autonomous": 0,
+      "correct_assisted": 28,
+      "partial": 0,
+      "reasoned_refusal": 0,
+      "incorrect": 0
+    },
+    "magnetization_bound_currents": {
+      "correct_autonomous": 0,
+      "correct_assisted": 5,
+      "partial": 0,
+      "reasoned_refusal": 0,
+      "incorrect": 0
+    },
+    "induction_circuits": {
+      "correct_autonomous": 0,
+      "correct_assisted": 42,
+      "partial": 0,
+      "reasoned_refusal": 0,
+      "incorrect": 0
+    }
+  },
+  "records": [
+    {
+      "id": "2021-06:1a",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.Q_inner",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.Q_outer",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.V",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-06:1b",
+      "groups": [],
+      "outcome": "reasoned_refusal",
+      "first_failure": "historical_model_not_executable"
+    },
+    {
+      "id": "2021-06:1c",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.Q_inner",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.Q_outer",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.V",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-06:2a",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.U",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-06:3a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-06:3b",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.F_signed_attraction",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-06:4a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.diameter",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-06:5a",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.curl_E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.rho",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.Q",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-06:5b",
+      "groups": [],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.coefficient_unit",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-06:5c",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.curl_E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.rho",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.Q",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-06:6a",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.F_external",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.P_mechanical",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-06:6b",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.F_external",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.P_mechanical",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-06:6c",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.F_external",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.P_mechanical",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-06:6d",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.F_external",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.P_mechanical",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:1a",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.U_external",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:1b",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.U_external",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:2a",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.surfaces",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.surfaces",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.surfaces",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.surfaces",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:2b",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.C",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:2c",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "inner.sigma_free",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "inner.sigma_total",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "inner.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "gap1.sigma_free",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "gap1.sigma_total",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "gap1.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "gap2.sigma_free",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "gap2.sigma_total",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "gap2.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "outer.sigma_free",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "outer.sigma_total",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "outer.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:2d",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.C",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:3a",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.curl_E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:3b",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.laplacian_V",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:4a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:4b",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.J",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:5a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:6a",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E_vector",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:6b",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.J_displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.I_displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2021-11:6c",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "correction.E_correction_inside",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.solved_omega",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:1a",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:1b",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:1c",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.dipole",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.V_far",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:2a",
+      "groups": [
+        "gauss_nonuniform"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:2b",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "inner.sigma_free",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "outer.sigma_free",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:2c",
+      "groups": [
+        "gauss_nonuniform",
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.delta_V",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:3a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.magnitude",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:4a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:4b",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:5a",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.rho",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.curl_E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:5b",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.W_external",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:6a",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:7a",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "inner.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "outer.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "inner.laplacian_A",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.solved_C",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-02:7b",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "inner.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "outer.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "inner.laplacian_A",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.solved_C",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:1a",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.solution_branches",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:1b",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.solved_x",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:1c",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.W_external",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:2a",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.rho",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.Q",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:2b",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.rho",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.Q",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:3a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "field.B",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:3b",
+      "groups": [
+        "biot_savart_ampere",
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "inductance.L",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "inductance.U",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:3c",
+      "groups": [
+        "biot_savart_ampere",
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.solved_t",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.maintain_voltage",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:3d",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.P",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:4a",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.circulation_current",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.magnetic_dipole",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:4b",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.magnetic_dipole",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:5a",
+      "groups": [
+        "magnetization_bound_currents"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.J_bound",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.K_bound",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:5b",
+      "groups": [
+        "magnetization_bound_currents"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "inside.H",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "inside.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "outside.H",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "outside.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2022-11:6a",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:1a",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:1b",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:1c",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.U",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:2a",
+      "groups": [
+        "gauss_nonuniform"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.Q_enc",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:2b",
+      "groups": [
+        "gauss_nonuniform"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.Q_enc",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:2c",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.P",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:3a",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E_far",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:4a",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.J",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:4b",
+      "groups": [
+        "potential_energy_multipoles",
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.I_enc",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:5a",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "mutual.M",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "mutual.M",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:5b",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.EMF",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.P",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:5c",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.EMF",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.P",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:5d",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "inverse.solved_I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.I_amplitude",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-02:6a",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.J_displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.I_displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:1a",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "line.solved_Q_unknown",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "line.U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "line.at_solution_U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "line.at_solution_F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "line.equilibrium_stability",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "square.solved_Q_unknown",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "square.U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "square.at_solution_U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "square.at_solution_F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "square.equilibrium_stability",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:1b",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "line.solved_Q_unknown",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "line.U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "line.at_solution_U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "line.at_solution_F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "line.equilibrium_stability",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "square.solved_Q_unknown",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "square.U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "square.at_solution_U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "square.at_solution_F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "square.equilibrium_stability",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:1c",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "line.solved_Q_unknown",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "line.U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "line.at_solution_U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "line.at_solution_F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "line.equilibrium_stability",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "square.solved_Q_unknown",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "square.U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "square.at_solution_U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "square.at_solution_F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "square.equilibrium_stability",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:2a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "fields.B_between",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "fields.B_above",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "fields.B_below",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:2b",
+      "groups": [
+        "biot_savart_ampere",
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.L",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:3a",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.rho",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.Q",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.dB_dt",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:3b",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.rho",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.Q",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.dB_dt",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:4a",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.D_0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.D_1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.sigma_free_0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.sigma_free_1",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:4b",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.D_0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.D_1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.sigma_free_0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.sigma_free_1",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:4c",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.D_0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.D_1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.sigma_free_0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.sigma_free_1",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:5a",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.EMF",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.P",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:5b",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.EMF",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.P",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:5c",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.v_infinity",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2023-11:5d",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.v_infinity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:1a",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:1b",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:1c",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.V",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:1d",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "one.V",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "five.V",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "arc.V",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:2a",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "face0_m.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face0_m.rho_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face0_p.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face0_p.rho_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face1_m.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face1_m.rho_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face1_p.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face1_p.rho_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face2_m.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face2_m.rho_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face2_p.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face2_p.rho_bound",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:2b",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "face0_m.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face0_m.rho_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face0_p.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face0_p.rho_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face1_m.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face1_m.rho_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face1_p.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face1_p.rho_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face2_m.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face2_m.rho_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face2_p.sigma_bound",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "face2_p.rho_bound",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:3a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.magnitude",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W_external",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:3b",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.magnitude",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W_external",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:4a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.I_enc",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:4b",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.I_enc",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:5a",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "geometry.solved_ell",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "induction.EMF",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "induction.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "induction.W",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "reaction.F_external",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:5b",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "geometry.solved_ell",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "induction.EMF",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "induction.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "induction.W",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "reaction.F_external",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:5c",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "geometry.solved_ell",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "induction.EMF",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "induction.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "induction.W",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "reaction.F_external",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2024-02:5d",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "geometry.solved_ell",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "induction.EMF",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "induction.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "induction.W",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "reaction.F_external",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:1a",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:1b",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:2a",
+      "groups": [
+        "gauss_nonuniform"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.Q_enc",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:2b",
+      "groups": [
+        "gauss_nonuniform"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.Q_enc",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:3a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.limit_B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:3b",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.limit_B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:4a",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "resistor.R",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "resistor.J",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:4b",
+      "groups": [
+        "conductors_dielectrics_boundaries",
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "resistor.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "resistor.rho",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "left.sigma_free",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "right.sigma_free",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:5a",
+      "groups": [
+        "potential_energy_multipoles",
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "M_AB.M",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "M_AC.M",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "current_B.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "current_C.I",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:5b",
+      "groups": [
+        "potential_energy_multipoles",
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "M_AB.M",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "M_AC.M",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "current_B.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "current_C.I",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:5c",
+      "groups": [
+        "potential_energy_multipoles",
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "M_AB.M",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "M_AC.M",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "current_B.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "current_C.I",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:6a",
+      "groups": [
+        "magnetization_bound_currents"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "whole.H_0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "whole.B",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.H_gap_over_H_iron",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.B_without_iron",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.enhancement",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:6b",
+      "groups": [
+        "magnetization_bound_currents"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "whole.H_0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "whole.B",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.H_gap_over_H_iron",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.B_without_iron",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.enhancement",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2024-11:6c",
+      "groups": [
+        "magnetization_bound_currents"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "whole.H_0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "whole.B",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.H_gap_over_H_iron",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.B_without_iron",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.enhancement",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:1a",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.delta_V",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:1b",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.rho",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:2a",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.surfaces",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.surfaces",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.surfaces",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:2b",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.surfaces",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.surfaces",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.surfaces",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:2c",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.U",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.surfaces",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.surfaces",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.surfaces",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:3a",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.V",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:3b",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.V",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:4a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.magnitude",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:5a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:5b",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:5c",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:6a",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.EMF",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:6b",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.EMF",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-01:6c",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.solved_A",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:1a",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.U",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:1b",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.F",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:2a",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.rho",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.Q",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:2b",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.rho",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.Q",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:2c",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.rho",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.Q",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:3a",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.solved_q_unknown",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.at_solution_V",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:3b",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.solved_q_unknown",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.at_solution_V",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:4a",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:4b",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:4c",
+      "groups": [
+        "biot_savart_ampere"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:5a",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.acceleration_initial",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.v_infinity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.v",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.battery_energy",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:5b",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.acceleration_initial",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.v_infinity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.v",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.battery_energy",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:5c",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.acceleration_initial",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.v_infinity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.v",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.battery_energy",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2025-11:5d",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.acceleration_initial",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.v_infinity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.v",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.battery_energy",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:1a",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "solve.U",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:1b",
+      "groups": [
+        "coulomb_superposition"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "arc.E",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:1c",
+      "groups": [
+        "coulomb_superposition",
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "arc.dipole",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "points.dipole",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:2a",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.solved_A",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:2b",
+      "groups": [
+        "conductors_dielectrics_boundaries"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.V",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.U",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:2c",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.decay_time",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.I_initial",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:2d",
+      "groups": [
+        "biot_savart_ampere",
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.F_signed_attraction",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:3a",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.Phi",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:3b",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.Phi",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:3c",
+      "groups": [
+        "induction_circuits"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.Phi",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.W",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.I",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:4a",
+      "groups": [
+        "potential_energy_multipoles"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        },
+        {
+          "name": "cylindrical.B",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:5a",
+      "groups": [
+        "laplace_poisson"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.V_inside",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.V_outside",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E_outside",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:5b",
+      "groups": [
+        "laplace_poisson"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.V_inside",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.V_outside",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E_outside",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    },
+    {
+      "id": "2026-01:5c",
+      "groups": [
+        "laplace_poisson"
+      ],
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "name": "solve.V_inside",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.V_outside",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "name": "solve.E_outside",
+          "passed": true,
+          "residual": "Matrix([[0], [0], [0]])"
+        }
+      ]
+    }
+  ]
+}

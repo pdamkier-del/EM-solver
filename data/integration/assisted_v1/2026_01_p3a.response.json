@@ -1,0 +1,459 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "faraday_integral",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Magnetisk flux og Faradays lov",
+        "reasoning": "Først integreres magnetfeltets normalprojektion over den orienterede flade. Derefter differentieres hele fluxen, også eventuelle tidsafhængige grænser eller arealer. Minusfortegnet er Lenz’ lov.",
+        "equations_latex": [
+          "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+          "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+        ],
+        "steps": [
+          {
+            "id": "step-e686aa2d36db004f86ac-0",
+            "text": "Indsæt normalprojektion og arealelement i fladeintegralet",
+            "title": "Indsæt normalprojektion og arealelement i fladeintegralet",
+            "latex": "\\int\\limits_{0}^{2 \\pi}\\int\\limits_{0}^{S} k s^{2} \\sin^{2}{\\left(\\phi \\right)} \\cos{\\left(\\frac{t}{T} \\right)}\\, ds\\, d\\phi",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-e529bef915c6fc61ab7b",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-cfffe5768dd5c62e96de-0",
+            "text": "Evaluer fladeintegralet",
+            "title": "Evaluer fladeintegralet",
+            "latex": "\\frac{\\pi S^{3} k \\cos{\\left(\\frac{t}{T} \\right)}}{3}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-e529bef915c6fc61ab7b",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-67f3a44a9fa5019a8e3f-0",
+            "text": "Differentier den samlede flux og indsæt minusfortegnet",
+            "title": "Differentier den samlede flux og indsæt minusfortegnet",
+            "latex": "\\frac{\\pi S^{3} k \\sin{\\left(\\frac{t}{T} \\right)}}{3 T}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-e529bef915c6fc61ab7b",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-fdb1b0e9f29c400f703c-0",
+            "text": "Ohms lov: I = EMF/R",
+            "title": "Ohms lov: I = EMF/R",
+            "latex": "\\frac{\\pi S^{3} k \\sin{\\left(\\frac{t}{T} \\right)}}{3 R T}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-e529bef915c6fc61ab7b",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-f24867285a2341f9d358-0",
+            "text": "Joule-effekt: P = I²R",
+            "title": "Joule-effekt: P = I²R",
+            "latex": "\\frac{\\pi^{2} S^{6} k^{2} \\sin^{2}{\\left(\\frac{t}{T} \\right)}}{9 R T^{2}}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-e529bef915c6fc61ab7b",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-74b8c7022c437d5ef00a-0",
+            "text": "Varmeenergien før tidsintegration",
+            "title": "Varmeenergien før tidsintegration",
+            "latex": "\\int\\limits_{0}^{2 \\pi T} \\frac{\\pi^{2} S^{6} k^{2} \\sin^{2}{\\left(\\frac{t}{T} \\right)}}{9 R T^{2}}\\, dt",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-e529bef915c6fc61ab7b",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-b4876973c2f1edd9aa93-0",
+            "text": "Udfør tidsintegrationen",
+            "title": "Udfør tidsintegrationen",
+            "latex": "\\frac{\\pi^{3} S^{6} k^{2}}{9 R T}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Magnetisk flux og Faradays lov",
+            "method_context_id": "method-e529bef915c6fc61ab7b",
+            "intermediate_latex": [],
+            "assumptions": [
+              "negligible_self_inductance"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "Phi": {
+            "expression": "pi*S**3*k*cos(t/T)/3",
+            "latex": "\\frac{\\pi S^{3} k \\cos{\\left(\\frac{t}{T} \\right)}}{3}",
+            "unit": "Wb"
+          },
+          "EMF": {
+            "expression": "pi*S**3*k*sin(t/T)/(3*T)",
+            "latex": "\\frac{\\pi S^{3} k \\sin{\\left(\\frac{t}{T} \\right)}}{3 T}",
+            "unit": "V"
+          },
+          "I": {
+            "expression": "pi*S**3*k*sin(t/T)/(3*R*T)",
+            "latex": "\\frac{\\pi S^{3} k \\sin{\\left(\\frac{t}{T} \\right)}}{3 R T}",
+            "unit": "A"
+          },
+          "P": {
+            "expression": "pi**2*S**6*k**2*sin(t/T)**2/(9*R*T**2)",
+            "latex": "\\frac{\\pi^{2} S^{6} k^{2} \\sin^{2}{\\left(\\frac{t}{T} \\right)}}{9 R T^{2}}",
+            "unit": "W"
+          },
+          "W": {
+            "expression": "pi**3*S**6*k**2/(9*R*T)",
+            "latex": "\\frac{\\pi^{3} S^{6} k^{2}}{9 R T}",
+            "unit": "J"
+          }
+        },
+        "numerical": {},
+        "checks": [
+          {
+            "id": "check-c75ed7ccd12f80c6640b",
+            "name": "Faradays/Lenz’ fortegnsrelation",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-36a8064acb2cb8b9e51d",
+            "name": "Effektbalance P = EMF I",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-b0402bdfd02384005379",
+            "name": "Dimension: Phi",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "Wb",
+            "step_ids": []
+          },
+          {
+            "id": "check-a9435c60e1a89b5fac43",
+            "name": "Dimension: EMF",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V",
+            "step_ids": []
+          },
+          {
+            "id": "check-02f04a3da58e5bca97ac",
+            "name": "Dimension: I",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-6bd35c1b468822c560f7",
+            "name": "Dimension: P",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "W",
+            "step_ids": []
+          },
+          {
+            "id": "check-5376164a8631ef9eb987",
+            "name": "Dimension: W",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "J",
+            "step_ids": []
+          },
+          {
+            "id": "check-51c2e4431d8a70bde17e",
+            "name": "Inputdimension: time",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "s",
+            "step_ids": []
+          },
+          {
+            "id": "check-3f790c9fd40650e7fa8d",
+            "name": "Inputdimension: N",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "1",
+            "step_ids": []
+          },
+          {
+            "id": "check-3ab5ec8bcda85a358601",
+            "name": "Inputdimension: R",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "ohm",
+            "step_ids": []
+          }
+        ],
+        "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb.",
+        "warnings": [
+          "Strøm fra EMF/R gælder kun under den eksplicitte antagelse om negligerbar selvinduktans. Retning kræver valgt fladenormal."
+        ],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-e529bef915c6fc61ab7b": {
+            "method_id": "faraday",
+            "method": "Magnetisk flux og Faradays lov",
+            "reasoning": "Først integreres magnetfeltets normalprojektion over den orienterede flade. Derefter differentieres hele fluxen, også eventuelle tidsafhængige grænser eller arealer. Minusfortegnet er Lenz’ lov.",
+            "equations": [
+              "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+              "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+            ],
+            "assumptions": [
+              "negligible_self_inductance"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "Phi",
+              "I",
+              "W"
+            ],
+            "results": {
+              "Phi": {
+                "expression": "pi*S**3*k*cos(t/T)/3",
+                "latex": "\\frac{\\pi S^{3} k \\cos{\\left(\\frac{t}{T} \\right)}}{3}",
+                "unit": "Wb"
+              },
+              "I": {
+                "expression": "pi*S**3*k*sin(t/T)/(3*R*T)",
+                "latex": "\\frac{\\pi S^{3} k \\sin{\\left(\\frac{t}{T} \\right)}}{3 R T}",
+                "unit": "A"
+              },
+              "W": {
+                "expression": "pi**3*S**6*k**2/(9*R*T)",
+                "latex": "\\frac{\\pi^{3} S^{6} k^{2}}{9 R T}",
+                "unit": "J"
+              }
+            },
+            "numerical": {},
+            "direction": "Positiv EMF og strøm følger den angivne orienterede integrationsvej/normal via højrehåndsreglen. Negativt fortegn betyder modsat omløb."
+          },
+          "derivation": {
+            "equations_latex": [
+              "\\Phi_B=\\int_S\\mathbf B\\cdot d\\mathbf a",
+              "\\mathcal E=-N\\frac{d\\Phi_B}{dt}"
+            ],
+            "step_ids": [
+              "step-e686aa2d36db004f86ac-0",
+              "step-cfffe5768dd5c62e96de-0",
+              "step-67f3a44a9fa5019a8e3f-0",
+              "step-fdb1b0e9f29c400f703c-0",
+              "step-f24867285a2341f9d358-0",
+              "step-74b8c7022c437d5ef00a-0",
+              "step-b4876973c2f1edd9aa93-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-e686aa2d36db004f86ac-0",
+              "step-cfffe5768dd5c62e96de-0",
+              "step-67f3a44a9fa5019a8e3f-0",
+              "step-fdb1b0e9f29c400f703c-0",
+              "step-f24867285a2341f9d358-0",
+              "step-74b8c7022c437d5ef00a-0",
+              "step-b4876973c2f1edd9aa93-0"
+            ],
+            "method_context_ids": [
+              "method-e529bef915c6fc61ab7b"
+            ],
+            "global_check_ids": [
+              "check-c75ed7ccd12f80c6640b",
+              "check-36a8064acb2cb8b9e51d",
+              "check-b0402bdfd02384005379",
+              "check-a9435c60e1a89b5fac43",
+              "check-02f04a3da58e5bca97ac",
+              "check-6bd35c1b468822c560f7",
+              "check-5376164a8631ef9eb987",
+              "check-51c2e4431d8a70bde17e",
+              "check-3f790c9fd40650e7fa8d",
+              "check-3ab5ec8bcda85a358601"
+            ],
+            "warnings": [
+              "Strøm fra EMF/R gælder kun under den eksplicitte antagelse om negligerbar selvinduktans. Retning kræver valgt fladenormal."
+            ]
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Faradays/Lenz’ fortegnsrelation",
+          "Effektbalance P = EMF I",
+          "Inputdimension: time",
+          "Inputdimension: N",
+          "Inputdimension: R"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "En cirkulær løkke med radius S ligger i xy-planet af et koordinatsystem med centrum i\norigo. I området er der et ikke-homogent, tidsafhængigt magnetfelt, som i cylinderkoordi-\nnater tager formen B(s, φ, t) = ks sin2 (φ) cos(t/T ) ẑ, hvor k og T er positive konstanter.\nLøkken har den elektriske modstand R. Der kan ses bort fra løkkens selvinduktans.\nBestem den magnetiske flux, Φ0 , gennem løkken til tiden t = 0.",
+    "confirmed": true,
+    "variables": {
+      "time": "t",
+      "flux_integrand": "k*s^2*sin(phi)^2*cos(t/T)",
+      "bounds": [
+        [
+          "s",
+          "0",
+          "S"
+        ],
+        [
+          "phi",
+          "0",
+          "2*pi"
+        ]
+      ],
+      "R": "R",
+      "time_bounds": [
+        "0",
+        "2*pi*T"
+      ],
+      "N": "1"
+    },
+    "units": {
+      "x": "m",
+      "y": "m",
+      "z": "m",
+      "r": "m",
+      "s": "m",
+      "a": "m",
+      "b": "m",
+      "d": "m",
+      "R": "ohm",
+      "L": "m",
+      "h": "m",
+      "q": "C",
+      "Q": "C",
+      "I": "A",
+      "J": "A/m^2",
+      "V": "V",
+      "B": "T",
+      "rho": "C/m^3",
+      "sigma": "C/m^2",
+      "t": "s",
+      "omega": "1/s",
+      "tau": "s",
+      "m": "kg",
+      "v": "m/s",
+      "epsilon_r": "1",
+      "theta": "1",
+      "phi": "1",
+      "N": "1",
+      "k": "T/m",
+      "epsilon_0": "F/m",
+      "mu_0": "H/m",
+      "S": "m",
+      "T": "s"
+    },
+    "positive": [
+      "r",
+      "s",
+      "a",
+      "b",
+      "d",
+      "R",
+      "L",
+      "h",
+      "q",
+      "Q",
+      "I",
+      "J",
+      "V",
+      "B",
+      "rho",
+      "sigma",
+      "omega",
+      "tau",
+      "m",
+      "v",
+      "epsilon_r",
+      "N",
+      "k",
+      "epsilon_0",
+      "mu_0",
+      "S",
+      "T"
+    ],
+    "assumptions": [
+      "negligible_self_inductance"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "faraday_integral",
+        "wanted": [
+          "Phi",
+          "I",
+          "W"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

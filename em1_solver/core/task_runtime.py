@@ -14,6 +14,9 @@ def _worker(output,parsed,evaluate):
     block_network()
     try:
         from .new_problem import execute
+        if parsed.data.get('assisted_model_card'):
+            from ..assisted_backend import validate_card
+            validate_card(parsed)
         if 'composition' in parsed.data:
             from .composition import execute_plan
             answer=execute_plan(parsed,evaluate)

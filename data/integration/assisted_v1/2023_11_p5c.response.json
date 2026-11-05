@@ -1,0 +1,413 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "feedback",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Kredsløbsligning og Newtons anden lov",
+        "reasoning": "Bevægelses-EMF modvirker den påtrykte spænding. Strømmen bestemmer den mekaniske kraft, så kredsløb og bevægelse løses samlet.",
+        "equations_latex": [
+          "I=(V-kv)/R",
+          "m\\dot v=F_{drive}+kI",
+          "\\tau=mR/k^2"
+        ],
+        "steps": [
+          {
+            "id": "step-5499a49710622f6b55e1-0",
+            "text": "Sammenkæd Ohms lov og Newtons anden lov",
+            "title": "Sammenkæd Ohms lov og Newtons anden lov",
+            "latex": "m \\frac{d}{d t} v{\\left(t \\right)} = - \\frac{A^{2} B^{2} k^{2} v{\\left(t \\right)}}{R} + g m",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Kredsløbsligning og Newtons anden lov",
+            "method_context_id": "method-65d5b6bb913d50ab79db",
+            "intermediate_latex": [],
+            "assumptions": [
+              "constant_coefficients",
+              "negligible_self_inductance",
+              "no_friction"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-a2c023a3e2261beb45ad-0",
+            "text": "Løs den lineære differentialligning med begyndelsesbetingelsen",
+            "title": "Løs den lineære differentialligning med begyndelsesbetingelsen",
+            "latex": "v{\\left(t \\right)} = \\frac{R g m}{A^{2} B^{2} k^{2}} - \\frac{R g m e^{- \\frac{A^{2} B^{2} k^{2} t}{R m}}}{A^{2} B^{2} k^{2}}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Kredsløbsligning og Newtons anden lov",
+            "method_context_id": "method-65d5b6bb913d50ab79db",
+            "intermediate_latex": [],
+            "assumptions": [
+              "constant_coefficients",
+              "negligible_self_inductance",
+              "no_friction"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "v": {
+            "expression": "R*g*m/(A**2*B**2*k**2) - R*g*m*exp(-A**2*B**2*k**2*t/(R*m))/(A**2*B**2*k**2)",
+            "latex": "\\frac{R g m}{A^{2} B^{2} k^{2}} - \\frac{R g m e^{- \\frac{A^{2} B^{2} k^{2} t}{R m}}}{A^{2} B^{2} k^{2}}",
+            "unit": "m/s"
+          },
+          "I": {
+            "expression": "-g*m/(A*B*k) + g*m*exp(-A**2*B**2*k**2*t/(R*m))/(A*B*k)",
+            "latex": "- \\frac{g m}{A B k} + \\frac{g m e^{- \\frac{A^{2} B^{2} k^{2} t}{R m}}}{A B k}",
+            "unit": "A"
+          },
+          "tau": {
+            "expression": "R*m/(A**2*B**2*k**2)",
+            "latex": "\\frac{R m}{A^{2} B^{2} k^{2}}",
+            "unit": "s"
+          },
+          "v_infinity": {
+            "expression": "R*g*m/(A**2*B**2*k**2)",
+            "latex": "\\frac{R g m}{A^{2} B^{2} k^{2}}",
+            "unit": "m/s"
+          },
+          "acceleration_initial": {
+            "expression": "g",
+            "latex": "g",
+            "unit": "m/s^2"
+          },
+          "P": {
+            "expression": "R*g**2*m**2*(1 - exp(A**2*B**2*k**2*t/(R*m)))**2*exp(-2*A**2*B**2*k**2*t/(R*m))/(A**2*B**2*k**2)",
+            "latex": "\\frac{R g^{2} m^{2} \\left(1 - e^{\\frac{A^{2} B^{2} k^{2} t}{R m}}\\right)^{2} e^{- \\frac{2 A^{2} B^{2} k^{2} t}{R m}}}{A^{2} B^{2} k^{2}}",
+            "unit": "W"
+          }
+        },
+        "numerical": {},
+        "checks": [
+          {
+            "id": "check-5a9614a768775023aca7",
+            "name": "Differentialligning",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-9021e17dc64cb52c8ca9",
+            "name": "Begyndelseshastighed",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-6f5aa9ad004d4c4513fe",
+            "name": "Effektbalance",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-5ce840c4418b51da0834",
+            "name": "Dimension: v",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m/s",
+            "step_ids": []
+          },
+          {
+            "id": "check-02f04a3da58e5bca97ac",
+            "name": "Dimension: I",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-c867842205d5d7ce542a",
+            "name": "Dimension: tau",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "s",
+            "step_ids": []
+          },
+          {
+            "id": "check-f43fa0f0df0bc2a62ef5",
+            "name": "Dimension: v_infinity",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m/s",
+            "step_ids": []
+          },
+          {
+            "id": "check-f03177dffe004e56e050",
+            "name": "Dimension: acceleration_initial",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m/s^2",
+            "step_ids": []
+          },
+          {
+            "id": "check-01afbda9e76b9e755649",
+            "name": "Dimension: P",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "W",
+            "step_ids": []
+          },
+          {
+            "id": "check-f9d3bdf64b8c4f8c1e5f",
+            "name": "Inputdimension: mass",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "kg",
+            "step_ids": []
+          },
+          {
+            "id": "check-46501789f395e5d62165",
+            "name": "Inputdimension: R",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "ohm",
+            "step_ids": []
+          },
+          {
+            "id": "check-118aeea0bcef0a2723f2",
+            "name": "Inputdimension: coupling",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T*m",
+            "step_ids": []
+          },
+          {
+            "id": "check-2dfc6b66c4c3c3babefc",
+            "name": "Inputdimension: voltage",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V",
+            "step_ids": []
+          },
+          {
+            "id": "check-05525457012c81415f3a",
+            "name": "Inputdimension: drive_force",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "N",
+            "step_ids": []
+          },
+          {
+            "id": "check-2459e9331e9896a74d75",
+            "name": "Inputdimension: time",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "s",
+            "step_ids": []
+          },
+          {
+            "id": "check-48f7102a115a260a6b77",
+            "name": "Inputdimension: initial_velocity",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m/s",
+            "step_ids": []
+          }
+        ],
+        "direction": "Den valgte positive bevægelsesretning skal give EMF=k v og magnetisk kraft=k I; angiv denne orientering i problemet.",
+        "warnings": [],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-65d5b6bb913d50ab79db": {
+            "method_id": "feedback",
+            "method": "Kredsløbsligning og Newtons anden lov",
+            "reasoning": "Bevægelses-EMF modvirker den påtrykte spænding. Strømmen bestemmer den mekaniske kraft, så kredsløb og bevægelse løses samlet.",
+            "equations": [
+              "I=(V-kv)/R",
+              "m\\dot v=F_{drive}+kI",
+              "\\tau=mR/k^2"
+            ],
+            "assumptions": [
+              "constant_coefficients",
+              "negligible_self_inductance",
+              "no_friction"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "v_infinity"
+            ],
+            "results": {
+              "v_infinity": {
+                "expression": "R*g*m/(A**2*B**2*k**2)",
+                "latex": "\\frac{R g m}{A^{2} B^{2} k^{2}}",
+                "unit": "m/s"
+              }
+            },
+            "numerical": {},
+            "direction": "Den valgte positive bevægelsesretning skal give EMF=k v og magnetisk kraft=k I; angiv denne orientering i problemet."
+          },
+          "derivation": {
+            "equations_latex": [
+              "I=(V-kv)/R",
+              "m\\dot v=F_{drive}+kI",
+              "\\tau=mR/k^2"
+            ],
+            "step_ids": [
+              "step-5499a49710622f6b55e1-0",
+              "step-a2c023a3e2261beb45ad-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-5499a49710622f6b55e1-0",
+              "step-a2c023a3e2261beb45ad-0"
+            ],
+            "method_context_ids": [
+              "method-65d5b6bb913d50ab79db"
+            ],
+            "global_check_ids": [
+              "check-5a9614a768775023aca7",
+              "check-9021e17dc64cb52c8ca9",
+              "check-6f5aa9ad004d4c4513fe",
+              "check-5ce840c4418b51da0834",
+              "check-02f04a3da58e5bca97ac",
+              "check-c867842205d5d7ce542a",
+              "check-f43fa0f0df0bc2a62ef5",
+              "check-f03177dffe004e56e050",
+              "check-01afbda9e76b9e755649",
+              "check-f9d3bdf64b8c4f8c1e5f",
+              "check-46501789f395e5d62165",
+              "check-118aeea0bcef0a2723f2",
+              "check-2dfc6b66c4c3c3babefc",
+              "check-05525457012c81415f3a",
+              "check-2459e9331e9896a74d75",
+              "check-48f7102a115a260a6b77"
+            ],
+            "warnings": []
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Differentialligning",
+          "Begyndelseshastighed",
+          "Effektbalance",
+          "Inputdimension: mass",
+          "Inputdimension: R",
+          "Inputdimension: coupling",
+          "Inputdimension: voltage",
+          "Inputdimension: drive_force",
+          "Inputdimension: time",
+          "Inputdimension: initial_velocity"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "En ring lavet af et ledende materiale falder i tyngdefeltet med farten v i et område\naf rummet, hvor der er et magnetfelt. Magnetfeltets lodrette komponent har formen\nBz = B0 (1 − κz), hvor B0 og κ er positive konstanter, og z-aksen er opadrettet. Ringen\nser altså et magnetfelt, hvis lodrette komponent gennem ringen vokser under faldet, som\nantydet på figuren. Under bevægelsen er ringens plan hele tiden vandret. Ringen har\nmasse m, udspænder et areal A, og dens elektriske modstand er R. Tyndeaccelerationen\nbetegnes g, og der ses bort fra luftmodstand.\nBestem størrelsen af den konstante hastighed v∞ .",
+    "confirmed": true,
+    "variables": {
+      "mass": "m",
+      "R": "R",
+      "coupling": "A*B*k",
+      "voltage": "0",
+      "drive_force": "m*g",
+      "time": "t",
+      "initial_velocity": "0"
+    },
+    "units": {
+      "x": "m",
+      "y": "m",
+      "z": "m",
+      "r": "m",
+      "s": "m",
+      "a": "m",
+      "b": "m",
+      "d": "m",
+      "R": "ohm",
+      "L": "m",
+      "h": "m",
+      "q": "C",
+      "Q": "C",
+      "I": "A",
+      "J": "A/m^2",
+      "V": "V",
+      "B": "T",
+      "rho": "C/m^3",
+      "sigma": "C/m^2",
+      "t": "s",
+      "omega": "1/s",
+      "tau": "s",
+      "m": "kg",
+      "v": "m/s",
+      "epsilon_r": "1",
+      "theta": "1",
+      "phi": "1",
+      "N": "1",
+      "k": "1/m",
+      "epsilon_0": "F/m",
+      "mu_0": "H/m",
+      "A": "m^2",
+      "g": "m/s^2"
+    },
+    "positive": [
+      "r",
+      "s",
+      "a",
+      "b",
+      "d",
+      "R",
+      "L",
+      "h",
+      "q",
+      "Q",
+      "I",
+      "J",
+      "V",
+      "B",
+      "rho",
+      "sigma",
+      "omega",
+      "tau",
+      "m",
+      "v",
+      "epsilon_r",
+      "N",
+      "k",
+      "epsilon_0",
+      "mu_0",
+      "A",
+      "g"
+    ],
+    "assumptions": [
+      "constant_coefficients",
+      "negligible_self_inductance",
+      "no_friction"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "feedback",
+        "wanted": [
+          "v_infinity"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

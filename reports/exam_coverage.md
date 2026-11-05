@@ -23,14 +23,14 @@ Stable: ampere, ampere_maxwell, capacitance, conductors, coulomb_integral, farad
 
 | Kategori | Antal |
 |---|---:|
-| total | 799 |
+| total | 823 |
 | physics_core_and_historical | 470 |
 | historical_end_to_end | 153 |
 | variations | 149 |
 | dimensions | 18 |
 | failures | 0 |
 
-Outcomes: {'passed': 799}. Kategorier overlapper; fysik er en overkategori. Historiske end-to-end er kun opskriftstests, ikke de gamle isolerede regressionsfunktioner.
+Outcomes: {'passed': 823}. Kategorier overlapper; fysik er en overkategori. Historiske end-to-end er kun opskriftstests, ikke de gamle isolerede regressionsfunktioner.
 
 ## Dækning pr. eksamen
 

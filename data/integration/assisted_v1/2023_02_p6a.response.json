@@ -1,0 +1,340 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "displacement_disk",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Ampère–Maxwells lov",
+        "reasoning": "Det tidsafhængige elektriske felt giver en forskydningsstrøm. Den cirkulære symmetri gør det magnetiske felt konstant langs en cirkulær Ampère-kurve.",
+        "equations_latex": [
+          "J_d=\\epsilon_0\\partial_tE",
+          "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0\\epsilon_0\\frac{d\\Phi_E}{dt}"
+        ],
+        "steps": [
+          {
+            "id": "step-7a6f58ba49ac8edef873-0",
+            "text": "Differentier E med hensyn til tid",
+            "title": "Differentier E med hensyn til tid",
+            "latex": "V \\epsilon_{0} \\omega \\cos{\\left(\\omega t \\right)}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Ampère–Maxwells lov",
+            "method_context_id": "method-402c1e74d4e8a8e8980a",
+            "intermediate_latex": [],
+            "assumptions": [
+              "circular_symmetry",
+              "negligible_edge_effects",
+              "uniform_axial_E",
+              "vacuum_gap"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-498123b66fd6b54b7a8c-0",
+            "text": "Integrer J_d over den omsluttede cirkelflade",
+            "title": "Integrer J_d over den omsluttede cirkelflade",
+            "latex": "\\begin{cases} \\pi V \\epsilon_{0} \\omega s^{2} \\cos{\\left(\\omega t \\right)} & \\text{for}\\: R \\geq s \\\\\\pi R^{2} V \\epsilon_{0} \\omega \\cos{\\left(\\omega t \\right)} & \\text{otherwise} \\end{cases}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Ampère–Maxwells lov",
+            "method_context_id": "method-402c1e74d4e8a8e8980a",
+            "intermediate_latex": [],
+            "assumptions": [
+              "circular_symmetry",
+              "negligible_edge_effects",
+              "uniform_axial_E",
+              "vacuum_gap"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-05a183e7c6889d04b10f-0",
+            "text": "Brug B 2πs = μ₀ I_d",
+            "title": "Brug B 2πs = μ₀ I_d",
+            "latex": "\\begin{cases} \\frac{V \\epsilon_{0} \\mu_{0} \\omega s \\cos{\\left(\\omega t \\right)}}{2} & \\text{for}\\: R \\geq s \\\\\\frac{R^{2} V \\epsilon_{0} \\mu_{0} \\omega \\cos{\\left(\\omega t \\right)}}{2 s} & \\text{otherwise} \\end{cases}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Ampère–Maxwells lov",
+            "method_context_id": "method-402c1e74d4e8a8e8980a",
+            "intermediate_latex": [],
+            "assumptions": [
+              "circular_symmetry",
+              "negligible_edge_effects",
+              "uniform_axial_E",
+              "vacuum_gap"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "J_displacement": {
+            "expression": "V*epsilon_0*omega*cos(omega*t)",
+            "latex": "V \\epsilon_{0} \\omega \\cos{\\left(\\omega t \\right)}",
+            "unit": "A/m^2"
+          },
+          "I_displacement": {
+            "expression": "Piecewise((pi*V*epsilon_0*omega*s**2*cos(omega*t), R >= s), (pi*R**2*V*epsilon_0*omega*cos(omega*t), True))",
+            "latex": "\\begin{cases} \\pi V \\epsilon_{0} \\omega s^{2} \\cos{\\left(\\omega t \\right)} & \\text{for}\\: R \\geq s \\\\\\pi R^{2} V \\epsilon_{0} \\omega \\cos{\\left(\\omega t \\right)} & \\text{otherwise} \\end{cases}",
+            "unit": "A"
+          },
+          "B": {
+            "expression": "Piecewise((V*epsilon_0*mu_0*omega*s*cos(omega*t)/2, R >= s), (R**2*V*epsilon_0*mu_0*omega*cos(omega*t)/(2*s), True))",
+            "latex": "\\begin{cases} \\frac{V \\epsilon_{0} \\mu_{0} \\omega s \\cos{\\left(\\omega t \\right)}}{2} & \\text{for}\\: R \\geq s \\\\\\frac{R^{2} V \\epsilon_{0} \\mu_{0} \\omega \\cos{\\left(\\omega t \\right)}}{2 s} & \\text{otherwise} \\end{cases}",
+            "unit": "T"
+          }
+        },
+        "numerical": {},
+        "checks": [
+          {
+            "id": "check-173d4e88dcfc72b69d7a",
+            "name": "Dimension: J_displacement",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A/m^2",
+            "step_ids": []
+          },
+          {
+            "id": "check-3d3a6de3799a90fdaab0",
+            "name": "Dimension: I_displacement",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-a8c196006b2c7622bc66",
+            "name": "Dimension: B",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "T",
+            "step_ids": []
+          },
+          {
+            "id": "check-99e722a6e15e66bd250b",
+            "name": "Inputdimension: E",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "V/m",
+            "step_ids": []
+          },
+          {
+            "id": "check-d2f326c4ea2692476a43",
+            "name": "Inputdimension: time",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "s",
+            "step_ids": []
+          },
+          {
+            "id": "check-771b53efc0de9f11d86c",
+            "name": "Inputdimension: coordinate",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          },
+          {
+            "id": "check-5f0ffd7f6fa038280257",
+            "name": "Inputdimension: plate_radius",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "m",
+            "step_ids": []
+          }
+        ],
+        "direction": "Positiv dE_z/dt giver positiv phi-retning for B. Korrektionen er langs z.",
+        "warnings": [],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-402c1e74d4e8a8e8980a": {
+            "method_id": "ampere_maxwell",
+            "method": "Ampère–Maxwells lov",
+            "reasoning": "Det tidsafhængige elektriske felt giver en forskydningsstrøm. Den cirkulære symmetri gør det magnetiske felt konstant langs en cirkulær Ampère-kurve.",
+            "equations": [
+              "J_d=\\epsilon_0\\partial_tE",
+              "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0\\epsilon_0\\frac{d\\Phi_E}{dt}"
+            ],
+            "assumptions": [
+              "circular_symmetry",
+              "negligible_edge_effects",
+              "uniform_axial_E",
+              "vacuum_gap"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "J_displacement",
+              "I_displacement",
+              "B"
+            ],
+            "results": {
+              "J_displacement": {
+                "expression": "V*epsilon_0*omega*cos(omega*t)",
+                "latex": "V \\epsilon_{0} \\omega \\cos{\\left(\\omega t \\right)}",
+                "unit": "A/m^2"
+              },
+              "I_displacement": {
+                "expression": "Piecewise((pi*V*epsilon_0*omega*s**2*cos(omega*t), R >= s), (pi*R**2*V*epsilon_0*omega*cos(omega*t), True))",
+                "latex": "\\begin{cases} \\pi V \\epsilon_{0} \\omega s^{2} \\cos{\\left(\\omega t \\right)} & \\text{for}\\: R \\geq s \\\\\\pi R^{2} V \\epsilon_{0} \\omega \\cos{\\left(\\omega t \\right)} & \\text{otherwise} \\end{cases}",
+                "unit": "A"
+              },
+              "B": {
+                "expression": "Piecewise((V*epsilon_0*mu_0*omega*s*cos(omega*t)/2, R >= s), (R**2*V*epsilon_0*mu_0*omega*cos(omega*t)/(2*s), True))",
+                "latex": "\\begin{cases} \\frac{V \\epsilon_{0} \\mu_{0} \\omega s \\cos{\\left(\\omega t \\right)}}{2} & \\text{for}\\: R \\geq s \\\\\\frac{R^{2} V \\epsilon_{0} \\mu_{0} \\omega \\cos{\\left(\\omega t \\right)}}{2 s} & \\text{otherwise} \\end{cases}",
+                "unit": "T"
+              }
+            },
+            "numerical": {},
+            "direction": "Positiv dE_z/dt giver positiv phi-retning for B. Korrektionen er langs z."
+          },
+          "derivation": {
+            "equations_latex": [
+              "J_d=\\epsilon_0\\partial_tE",
+              "\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0\\epsilon_0\\frac{d\\Phi_E}{dt}"
+            ],
+            "step_ids": [
+              "step-7a6f58ba49ac8edef873-0",
+              "step-498123b66fd6b54b7a8c-0",
+              "step-05a183e7c6889d04b10f-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-7a6f58ba49ac8edef873-0",
+              "step-498123b66fd6b54b7a8c-0",
+              "step-05a183e7c6889d04b10f-0"
+            ],
+            "method_context_ids": [
+              "method-402c1e74d4e8a8e8980a"
+            ],
+            "global_check_ids": [
+              "check-173d4e88dcfc72b69d7a",
+              "check-3d3a6de3799a90fdaab0",
+              "check-a8c196006b2c7622bc66",
+              "check-99e722a6e15e66bd250b",
+              "check-d2f326c4ea2692476a43",
+              "check-771b53efc0de9f11d86c",
+              "check-5f0ffd7f6fa038280257"
+            ],
+            "warnings": []
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "Inputdimension: E",
+          "Inputdimension: time",
+          "Inputdimension: coordinate",
+          "Inputdimension: plate_radius"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "Mellem to cirkulære koncentriske kondensatorplader er der et uniformt, tidsafhængigt\nelektrisk felt E(t) = E0 sin(ωt) ẑ, hvor E0 er amplituden, ω er vinkelfrekvensen, og hvor\nz-aksen er orienteret langs systemets symmetriakse. Afstanden a mellem kondensator-\npladerne er langt mindre end deres radius R (a ≪ R), således at randeffekter kan\nignoreres. Figuren viser systemet. Den røde linje mellem kondensatorpladerne afgrænser\nen plan, cirkulær flade, S, som er parallel med pladerne og centreret på symmetriaksen.\nRadius af S er s, hvor s ≤ R.\n\n                                           z\n\n\n                      a                        S            E = E0 sin(ωt)\n\n\n\n                                                     R\nBestem den totale forskydningsstrøm (displacement current), Id (t, s), gennem fla-\n     den S, som funktion t og s. Bestem derpå retning og størrelse af det inducerede\n     magnetfelt B = B(t, s) mellem kondensatorpladerne.",
+    "confirmed": true,
+    "variables": {
+      "E": "V*sin(omega*t)",
+      "time": "t",
+      "coordinate": "s",
+      "plate_radius": "R"
+    },
+    "units": {
+      "x": "m",
+      "y": "m",
+      "z": "m",
+      "r": "m",
+      "s": "m",
+      "a": "m",
+      "b": "m",
+      "d": "m",
+      "R": "m",
+      "L": "m",
+      "h": "m",
+      "q": "C",
+      "Q": "C",
+      "I": "A",
+      "J": "A/m^2",
+      "V": "V/m",
+      "B": "T",
+      "rho": "C/m^3",
+      "sigma": "C/m^2",
+      "t": "s",
+      "omega": "1/s",
+      "tau": "s",
+      "m": "kg",
+      "v": "m/s",
+      "epsilon_r": "1",
+      "theta": "1",
+      "phi": "1",
+      "N": "1",
+      "k": "1",
+      "epsilon_0": "F/m",
+      "mu_0": "H/m"
+    },
+    "positive": [
+      "r",
+      "s",
+      "a",
+      "b",
+      "d",
+      "R",
+      "L",
+      "h",
+      "q",
+      "Q",
+      "I",
+      "J",
+      "V",
+      "B",
+      "rho",
+      "sigma",
+      "omega",
+      "tau",
+      "m",
+      "v",
+      "epsilon_r",
+      "N",
+      "k",
+      "epsilon_0",
+      "mu_0"
+    ],
+    "assumptions": [
+      "circular_symmetry",
+      "negligible_edge_effects",
+      "uniform_axial_E",
+      "vacuum_gap"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "displacement_disk",
+        "wanted": [
+          "J_displacement",
+          "I_displacement",
+          "B"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

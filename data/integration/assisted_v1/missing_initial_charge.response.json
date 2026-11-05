@@ -1,0 +1,19 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "needs_confirmation",
+  "questions": [
+    {
+      "subproblem": "a",
+      "field": "Q0",
+      "message": "Angiv Q0 fra opgaven; ingen eksempelværdi indsættes."
+    },
+    {
+      "field": "confirmed",
+      "message": "Bekræft at de indtastede data, model, betingelser og retninger svarer til opgaven."
+    }
+  ],
+  "errors": [],
+  "subproblems": [],
+  "interpretation_status": "unconfirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning."
+}

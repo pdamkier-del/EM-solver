@@ -1,0 +1,91 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "I almindelig handel kan man købe en kraftig kapacitor med en kapacitans på C = 91 mF.\nRent fysisk er der tale om en større komponent med dimensioner omtrent som en øldåse.\nDet vides ikke præcis hvordan kapacitoren er opbygget, men lad os her som illustration\nantage, at der er tale om en pladekapacitor (som så på en eller anden måde må være\nrullet sammen inde i dåsen). Lad os yderligere antage, at de to plader er adskildt af\net meget tyndt lag, med tykkelse δ = 0,100 µm, af aluminiumsoxid, der virker som et\ndielektrikum med dielektricitetskonstant $r = 9,6.\nOpskriv en differentialligning for ladningen, Q(t), på kapaci-\n                                                                          C\n     toren. Bestem et symbolsk udtryk for strømmen som funktion                   −Q0\n     af tiden, I(t). Bestem den numeriske værdi af strømmen, I0 ,\n     til tiden t = 0. Bestem ligeledes tiden T (symbolsk og nume-\n     risk), hvor strømmen er faldet til 1% af startværdien.\nI praksis består kredsen af kapacitor og kontakt, som beskrevet ovenfor, samt af to\nlange, tynde, parallelle stænger. Disse komponenter er forbundne via fleksible ledninger,\nsom angivet med rødt på illustrationen nedenfor. Stængerne med længde l = 83 cm og\nindbyrdes afstand d = 5,2 cm ligger på et bord. Kredsens samlede modstand har samme\nværdi, R, som i situationen ovenfor.\n\n\n\n\n                   K\n                       +Q0         d\n               C\n                       −Q0\n                                                l\n\n\nI det følgende kan der ses bort fra magnetiske effekter produceret af de fleksible ledninger,\nligesom der kan ses bort fra randeffekter ved enden af de parallelle stænger. Stængerne\nantages endvidere at bevare deres placering under afladningen af kapacitoren.",
+  "confirmed": true,
+  "variables": {
+    "time": "t",
+    "R": "R",
+    "C": "C",
+    "Q0": "Q0",
+    "fraction": "1/100"
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "ohm",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "C": "F",
+    "Q0": "C"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0",
+    "C",
+    "Q0"
+  ],
+  "assumptions": [
+    "constant_coefficients"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "RC_discharge",
+      "wanted": [
+        "I",
+        "decay_time",
+        "I_initial"
+      ],
+      "orientation_confirmed": true
+    }
+  ]
+}

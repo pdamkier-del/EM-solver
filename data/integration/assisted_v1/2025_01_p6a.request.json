@@ -1,0 +1,95 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "En cirkulær spole med N = 12 vindinger og radius r = 0,20 m ligger i xy-planet af et\nkoordinatsystem som illustreret på figuren. Spolen har ringe udstrækning i z-retningen.\nDe to ender af ledningen, der danner spolen, er forbundne med hinanden, således at\nder dannes et kredsløb. Kredsens modstand er R = 1,2 Ω. Et tidsafhængigt, homogent\nmagnetfelt\n       ! er rettet efter\" z-aksen, altså ud af papirets plan. Magnetfeltet er givet ved\nB(t) = a(1 → e−t/τ ) + b ẑ, hvor a = 5,0 T og b = →2,0 T er konstanter, og hvor tids-\nkonstanten er τ = 60 s. Udelukkende ikke-negative tider, t ≥ 0, betragtes.\n\n                                            y\n\n\n\n                                       r        B(t)\n                                                         x\nBestem retningen og størrelsen af den elektromotoriske kraft, E(t), der induceres i\n     spolen til tiden t. Angiv svaret symbolsk.",
+  "confirmed": true,
+  "variables": {
+    "time": "t",
+    "B_normal": "B*(1-exp(-t/tau))+B_offset",
+    "area": "pi*a^2",
+    "N": "N",
+    "R": "R",
+    "time_bounds": [
+      "0",
+      "T"
+    ]
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "ohm",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m",
+    "B_offset": "T",
+    "T": "s"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0",
+    "B_offset",
+    "T"
+  ],
+  "assumptions": [
+    "negligible_self_inductance",
+    "uniform_normal_B"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "faraday_uniform",
+      "wanted": [
+        "EMF",
+        "W"
+      ],
+      "orientation_confirmed": true
+    }
+  ]
+}

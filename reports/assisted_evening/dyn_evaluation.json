@@ -1,0 +1,152 @@
+{
+  "benchmark": "Known historical typed-model replay; human/model assistance supplied in request fixtures, not raw-text autonomy.",
+  "outbound_network": "blocked in evaluator and spawned solvers",
+  "summary": {
+    "correct_autonomous": 0,
+    "correct_assisted": 7,
+    "partial": 0,
+    "reasoned_refusal": 1,
+    "incorrect": 0
+  },
+  "records": [
+    {
+      "case": "2021_06_p6a",
+      "status": "calculated_under_confirmed_model",
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "result": "I",
+          "passed": true
+        },
+        {
+          "result": "F_external",
+          "passed": true
+        },
+        {
+          "result": "P_mechanical",
+          "passed": true
+        },
+        {
+          "result": "W",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "case": "2023_02_p5b",
+      "status": "calculated_under_confirmed_model",
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "result": "EMF",
+          "passed": true
+        },
+        {
+          "result": "P",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "case": "2023_02_p6a",
+      "status": "calculated_under_confirmed_model",
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "result": "J_displacement",
+          "passed": true
+        },
+        {
+          "result": "I_displacement",
+          "passed": true
+        },
+        {
+          "result": "B",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "case": "2023_11_p5c",
+      "status": "calculated_under_confirmed_model",
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "result": "v_infinity",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "case": "2025_01_p6a",
+      "status": "calculated_under_confirmed_model",
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "result": "EMF",
+          "passed": true
+        },
+        {
+          "result": "W",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "case": "2026_01_p2c",
+      "status": "calculated_under_confirmed_model",
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "result": "I",
+          "passed": true
+        },
+        {
+          "result": "decay_time",
+          "passed": true
+        },
+        {
+          "result": "I_initial",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "case": "2026_01_p3a",
+      "status": "calculated_under_confirmed_model",
+      "outcome": "correct_assisted",
+      "first_failure": null,
+      "checks": [
+        {
+          "result": "Phi",
+          "passed": true
+        },
+        {
+          "result": "I",
+          "passed": true
+        },
+        {
+          "result": "W",
+          "passed": true
+        },
+        {
+          "result": "I",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "case": "missing_initial_charge",
+      "status": "needs_confirmation",
+      "outcome": "reasoned_refusal",
+      "first_failure": "missing_confirmed_model_data",
+      "checks": []
+    }
+  ]
+}

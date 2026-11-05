@@ -1,0 +1,89 @@
+{
+  "schema_version": "assisted-1.0",
+  "text": "Mellem to cirkulære koncentriske kondensatorplader er der et uniformt, tidsafhængigt\nelektrisk felt E(t) = E0 sin(ωt) ẑ, hvor E0 er amplituden, ω er vinkelfrekvensen, og hvor\nz-aksen er orienteret langs systemets symmetriakse. Afstanden a mellem kondensator-\npladerne er langt mindre end deres radius R (a ≪ R), således at randeffekter kan\nignoreres. Figuren viser systemet. Den røde linje mellem kondensatorpladerne afgrænser\nen plan, cirkulær flade, S, som er parallel med pladerne og centreret på symmetriaksen.\nRadius af S er s, hvor s ≤ R.\n\n                                           z\n\n\n                      a                        S            E = E0 sin(ωt)\n\n\n\n                                                     R\nBestem den totale forskydningsstrøm (displacement current), Id (t, s), gennem fla-\n     den S, som funktion t og s. Bestem derpå retning og størrelse af det inducerede\n     magnetfelt B = B(t, s) mellem kondensatorpladerne.",
+  "confirmed": true,
+  "variables": {
+    "E": "V*sin(omega*t)",
+    "time": "t",
+    "coordinate": "s",
+    "plate_radius": "R"
+  },
+  "units": {
+    "x": "m",
+    "y": "m",
+    "z": "m",
+    "r": "m",
+    "s": "m",
+    "a": "m",
+    "b": "m",
+    "d": "m",
+    "R": "m",
+    "L": "m",
+    "h": "m",
+    "q": "C",
+    "Q": "C",
+    "I": "A",
+    "J": "A/m^2",
+    "V": "V/m",
+    "B": "T",
+    "rho": "C/m^3",
+    "sigma": "C/m^2",
+    "t": "s",
+    "omega": "1/s",
+    "tau": "s",
+    "m": "kg",
+    "v": "m/s",
+    "epsilon_r": "1",
+    "theta": "1",
+    "phi": "1",
+    "N": "1",
+    "k": "1",
+    "epsilon_0": "F/m",
+    "mu_0": "H/m"
+  },
+  "positive": [
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "R",
+    "L",
+    "h",
+    "q",
+    "Q",
+    "I",
+    "J",
+    "V",
+    "B",
+    "rho",
+    "sigma",
+    "omega",
+    "tau",
+    "m",
+    "v",
+    "epsilon_r",
+    "N",
+    "k",
+    "epsilon_0",
+    "mu_0"
+  ],
+  "assumptions": [
+    "circular_symmetry",
+    "negligible_edge_effects",
+    "uniform_axial_E",
+    "vacuum_gap"
+  ],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "displacement_disk",
+      "wanted": [
+        "J_displacement",
+        "I_displacement",
+        "B"
+      ],
+      "orientation_confirmed": true
+    }
+  ]
+}
