@@ -52,6 +52,8 @@ def validate_card(parsed):
     if problem.domain in ('EV','BA'):
         from .core.assisted import validate
         preflight=copy.deepcopy(parsed)
+        if problem.family=='magnetic_material' and model in ('magnetization_currents','magnetized_sphere'):
+            return # New boundary kernels validate their own geometry; legacy material form assumes an infinite cylinder.
         if problem.family=='field_calculus':
             # The old manual form's availability list omits Q/laplacian_V,
             # which this existing kernel does compute. Check the same full
@@ -94,6 +96,13 @@ def plan(text):
     """Suggest modelling cards, never physical data or an autonomous answer."""
     if not isinstance(text,str) or len(text)>16000:raise ValueError('Opgaveteksten skal være højst 16000 tegn.')
     patterns={
+        'image_plane':r'jordet.*plan|plan.*jordet',
+        'image_sphere_grounded':r'jordet.*kugle|kugle.*jordet',
+        'image_sphere_isolated':r'neutral.*lederkugle|isoleret.*lederkugle',
+        'magnetization_currents':r'magnetisering|bundne strøm',
+        'magnetized_sphere':r'magnetiseret.*kugle|kugle.*magnetiser',
+        'potential_field':r'potential.*V\(|V\(x',
+        'ampere_wire':r'uendelig.*ledning|ledning.*uendelig',
         'feedback':r'friktion|masse|terminalhastighed|stangens hastighed',
         'motional_curve':r'bevægelig|metalstang|roterende|skinner|bevægelsesinduktion',
         'RC_discharge':r'aflad|RC[- ]|initial.*ladning',
@@ -113,8 +122,13 @@ def plan(text):
     for model,pattern in patterns.items():
         match=re.search(pattern,text,re.I)
         if match:candidates.append(dict(model=model,evidence=match.group(),status='suggestion_requires_confirmation'))
+    from .core.local_interpretation import suggest
+    extracted=suggest(text)
+    for candidate in candidates:
+        candidate['required_inputs']=list(MODELS[candidate['model']]['required'])
+        candidate['assumptions_to_confirm']=list(MODELS[candidate['model']]['assumptions'])
     return dict(schema_version=VERSION,status='needs_confirmation',interpretation_status='unconfirmed',
-        candidates=candidates,models=catalog()['models'],
+        extraction=extracted,candidates=candidates,models=catalog()['models'],
         subproblem_markers=list(dict.fromkeys(re.findall(r'(?:^|\n)\s*([a-h])\)',text))),
         variable_units=dict(VARIABLE_UNITS),
         shared_data_instruction='Indtast fælles givne data én gang; vælg model og søgte størrelser for hvert delspørgsmål. Ingen delspørgsmålsresultater overføres automatisk.',
@@ -150,7 +164,7 @@ def respond(request, *, solve=False):
         ids=set();prepared=[]
         declared=set()
         for part in parts:
-            if not isinstance(part,dict) or set(part)-{'id','model','variables','wanted','assumptions','orientation_confirmed'}:raise ValueError('Ugyldigt delspørgsmål.')
+            if not isinstance(part,dict) or set(part)-{'id','model','variables','wanted','assumptions','orientation_confirmed','operations'}:raise ValueError('Ugyldigt delspørgsmål.')
             id=part.get('id');model=part.get('model')
             if not isinstance(id,str) or not id or id in ids:raise ValueError('Delspørgsmål skal have unikke ikke-tomme id.')
             ids.add(id)
@@ -180,7 +194,10 @@ def respond(request, *, solve=False):
             if model=='sphere_regions' and 'V' in wanted and 'V_infinity_zero' not in conditions:
                 out['questions'].append(dict(subproblem=id,field='assumptions',value='V_infinity_zero',message='Bekræft referencepotentialet V(infinity)=0 før potentialintegrationen.'))
             if not wanted:out['questions'].append(dict(subproblem=id,field='wanted',message='Hvilke resultater søges?'))
-            prepared.append((id,model,variables|spec.get('fixed',{}),conditions,wanted))
+            operations=copy.deepcopy(part.get('operations',[]))
+            from .core.postprocessing import validate_operations
+            validate_operations(operations)
+            prepared.append((id,model,variables|spec.get('fixed',{}),conditions,wanted,operations))
         if not out['questions'] and set(shared)-declared:
             raise ValueError('Fælles variable bruges ikke af nogen valgt model: '+', '.join(sorted(set(shared)-declared)))
         if request.get('confirmed') is not True:out['questions'].append(dict(field='confirmed',message='Bekræft at de indtastede data, model, betingelser og retninger svarer til opgaven.'))
@@ -189,17 +206,34 @@ def respond(request, *, solve=False):
         out['confirmed_model']=copy.deepcopy(request)
         out['status']='ready'
         if not solve:return out
-        for id,model,variables,conditions,wanted in prepared:
+        for id,model,variables,conditions,wanted,operations in prepared:
             record=dict(id=id,model=model,status='not_solved',solution=None,errors=[])
             try:
                 spec=MODELS[model];variables=copy.deepcopy(variables);regions=variables.pop('regions',[])
+                if model in ('magnetic_wires','magnetic_cylinders'):
+                    rows=variables.pop('wires' if model=='magnetic_wires' else 'cylinders')
+                    variables['sources']=[dict(kind='wire',I=row['I'],center=[row['x'],row['y'],'0']) if model=='magnetic_wires' else dict(kind='cylinder',J=row['J'],radius=row['radius'],center=[row['x'],row['y'],'0']) for row in rows]
+                if model in ('RL_step','RL_driven'):
+                    if 'initial_slope' in wanted:operations.append(dict(kind='differentiate',result='I',variable=variables['time'],at='0',id='initial_slope'))
+                    if 'extremum_times' in wanted:
+                        operations.extend([dict(kind='differentiate',result='I',variable=variables['time'],id='current_derivative'),dict(kind='solve',result='current_derivative',variable=variables['time'],value='0',domain='nonnegative',id='extremum_times')])
+                    if 'zero_time' in wanted:operations.append(dict(kind='solve',result='I',variable=variables['time'],value='0',domain='nonnegative',id='zero_time'))
+                validate_operations(operations)
+                operation_ids=[op['id'] for op in operations]
+                final_wanted=list(dict.fromkeys(wanted+operation_ids))
+                seed=[key for key in wanted if key not in operation_ids]
+                if operations:
+                    seed=list(dict.fromkeys(seed+[op['result'] for op in operations if op['result'] not in operation_ids]))
                 if not isinstance(regions,list):raise ValueError('Regioner skal være en liste.')
                 if 'regions' in spec['required']:
                     expected=set(spec['tables']['regions'])
                     if not regions or any(not isinstance(r,dict) or set(r)!=expected for r in regions):raise ValueError('Angiv alle regioners grænser, tæthed og relevante materialedata eksplicit.')
                 parsed=Parsed(request.get('text',''),spec.get('geometry',spec['orientation']),
-                    dict(assisted_model_card=model,solver_spec=dict(domain=spec.get('domain','DYN'),family=spec['family'],variables=variables,regions=regions,wanted=wanted)),
+                    dict(assisted_model_card=model,solver_spec=dict(domain=spec.get('domain','DYN'),family=spec['family'],variables=variables,regions=regions,wanted=seed)),
                     wanted,dict(numbers),dict(units),list(positive),conditions)
+                if operations:
+                    parsed.data.update(operations=operations,requested_wanted=final_wanted)
+                    parsed.wanted=list(seed)
                 if model in ('sphere_regions','cylinder_regions','plane_regions','ampere_regions'):
                     sheets=variables.get('surface_charges') or variables.get('surface_currents')
                     if sheets and set(wanted)&{'V','Q','I'}:raise ValueError('Denne sammensatte potential-/totalkæde understøtter endnu ikke ekstra fladekilder.')
@@ -211,12 +245,13 @@ def respond(request, *, solve=False):
                 failed=[c.name for c in answer.checks if c.passed is False]
                 if failed:raise ValueError('Fejlede kontroller: '+', '.join(failed))
                 solution=serialize(answer)
-                missing_results=set(wanted)-set(solution['results'])
-                if missing_results:raise ValueError('Modellen bestemmer ikke: '+', '.join(sorted(missing_results)))
+                missing_results=set(final_wanted)-set(solution['results'])
+                if missing_results and not operations:raise ValueError('Modellen bestemmer ikke: '+', '.join(sorted(missing_results)))
                 dimensions=[c for c in answer.checks if c.name.startswith('Dimension:')]
                 import sympy as sp
                 formal=any(v.has(sp.Integral) for v in answer.symbolic_result.values() if isinstance(v,(sp.Basic,sp.MatrixBase)))
-                unresolved=formal or not dimensions or any(c.passed is not True for c in answer.checks)
+                unresolved=bool(missing_results) or formal or not dimensions or any(c.passed is not True for c in answer.checks)
+                if missing_results:solution['warnings'].append('Ikke bestemt: '+', '.join(sorted(missing_results)))
                 record.update(status='partial' if unresolved else 'calculated_under_confirmed_model',solution=solution,
                     verification=dict(interpretation='user_confirmed_not_machine_verified',
                         dimensions='passed' if dimensions and all(c.passed is True for c in dimensions) else 'incomplete',

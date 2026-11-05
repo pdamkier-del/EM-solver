@@ -9,7 +9,7 @@ Ingen LLM, webserver eller API-nøgle.
 1. Bevar din gamle app. Udpak hele den nye ZIP i en ny mappe.
 2. Installér Python **3.12 x64** med `py`-launcher, hvis det mangler.
 3. Dobbeltklik `INSTALL_WINDOWS.bat` én gang online. Et separat miljø oprettes
-   i `%LOCALAPPDATA%\EM1\desktop-integrated-20261105`; dit gamle miljø ændres ikke.
+   i `%LOCALAPPDATA%\EM1\desktop-development-20261105`; dit gamle miljø ændres ikke.
 4. Dobbeltklik `START_WINDOWS.bat`. Startfilen downloader og installerer intet.
    Fejl skrives i `EM1_START_LOG.txt`.
 
@@ -79,3 +79,50 @@ integralet som delvis løsning. Det skal ikke læses som et færdigt feltresulta
 Appen løser ikke automatisk hele hovedopgaver, figurer, generelle
 Poisson-/Laplace-randværdiproblemer eller vilkårlige kredsløbsnetværk.
 Ingen model må vælges alene fordi den giver et ønsket facitsvar.
+
+## Denne udviklingspakke
+
+Installér i en ny mappe; miljøet hedder `desktop-development-20261105` og
+ændrer ikke den tidligere fungerende integrationsinstallation. Dette er en
+udviklingsversion, ikke en erstatning for den frosne eksamensrelease.
+
+Nye assisterede funktioner: billedladninger for jordet plan og jordet/ladet
+isoleret kugle; magnetiseringens bundne strømme og uniform magnetiseret kugle;
+punktladnings- og magnetisk superposition; drevne RC/RL-kredse med generel V(t).
+RL kan søge `initial_slope`, `zero_time`, `extremum_times`. Sidstnævnte er
+stationære tider, klassificeret med andenafledte-test, ikke globale ekstrema.
+
+“Analysér opgave” viser eksplicitte tal og mulige kort. “Overfør eksplicitte
+tal” kopierer kun sikre skalare roller med passende enheder til det valgte
+kort. Det bekræfter ingen antagelser, retninger eller positive symboler.
+Gentagne modstridende tildelinger overføres ikke. Vælg stadig model selv,
+kontrollér data og udfyld de manglende felter før bekræftelse.
+
+### Sammensæt beregninger
+
+I den valgfrie efterbehandlingstabel vælges Type, nyt ID, eksisterende
+resultatnavn og variabel. Tomme rækker ignoreres. Højst otte operationer:
+
+- `differentiate`: afledt; “Ved” kan angive fx 0.
+- `evaluate`: “Mål/punkt” er evalueringspunkt.
+- `limit`: “Mål/punkt” er grænse, fx `oo`.
+- `solve`: løs resultat=mål for variablen; domæne `real` eller `nonnegative`.
+- `integrate`: angiv nedre/øvre grænse.
+- `transform`: angiv en udtrykkelig fysisk formel i “Mål/punkt” og svarenhed.
+- `linear_ode`: a·dy/dt+b·y=resultat, y(0) givet; angiv a, b,
+  begyndelsesværdi og svarenhed. Koefficienterne er tidsuafhængige.
+
+Eksempel: Faraday-flux med t, Phi=`-alpha*t`, N=1. Efterfølgende
+`linear_ode`, nyt ID=`coil_current`, resultat=`EMF`, variabel=`t`,
+a=`L`, b=`R`, begyndelsesværdi=`0`, enhed=`A`.
+Dernæst `transform`, ID=`joule_power`, resultat=`coil_current`, variabel=`t`,
+formel=`coil_current**2*R`, enhed=`W`.
+Til sidst `integrate`, ID=`heat`, resultat=`joule_power`, variabel=`t`,
+nedre=`0`, øvre=`T`. Angiv alle symbolers enheder og relevante tal.
+Fysisk relevans af dine formler bekræftes af dig; enhedskontrol alene er
+ikke bevis for modelvalget. Ved tidsgrænse eller uafsluttet integral kan
+svaret være delvist. Flere/ukendte rødder må ikke læses som en entydig tid.
+
+PDF'er, noter og den almindelige backendvej er bevaret. Den indbyggede
+formelsamling er fortsat filen mærket `GAMMEL_2026-10-30`; kontrollér mod
+kursets aktuelle formelsamling.

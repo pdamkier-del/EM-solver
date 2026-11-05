@@ -87,7 +87,9 @@ def magnetic_superposition(p):
         center=vector(source['center']);d=sp.Matrix([point[0]-center[0],point[1]-center[1],0]);r2=sp.simplify(d.dot(d))
         cross=sp.Matrix([0,0,1]).cross(d)
         if source['kind']=='wire':
-            if r2.equals(0):raise InputError('Feltpunkt på en idealiseret tynd leder.')
+            from ..core.units import si
+            numeric={k:sp.Float(str(si(v,p.numerical_units[k]).magnitude)) for k,v in p.numerical_values.items()}
+            if r2.equals(0) or sp.simplify(r2.subs(numeric)).equals(0):raise InputError('Feltpunkt på en idealiseret tynd leder.')
             term=MU0*source['I']*cross/(2*sp.pi*r2)
         elif source['kind']=='cylinder':
             radius=source['radius'];positive(radius,'Cylinderradius')
@@ -185,6 +187,9 @@ def wire_force(p):
 
 def magnetic_material(p):
     kind,=p.require('kind')
+    if kind in ('bound_currents','uniform_sphere'):
+        from .boundary_models import bound_currents,magnetized_sphere
+        return bound_currents(p) if kind=='bound_currents' else magnetized_sphere(p)
     result=solution(p,'Magnetisering og H-felt',
         'Ampères lov for H anvender kun frie strømme. B=μ₀(H+M), mens rotation af M og dens tangentiale spring bestemmer de bundne strømme.',
         [r'\mathbf B=\mu_0(\mathbf H+\mathbf M)',r'\mathbf J_b=\nabla\times\mathbf M',r'\mathbf K_b=\mathbf M\times\hat{\mathbf n}'])

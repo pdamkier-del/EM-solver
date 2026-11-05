@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableExtensions
 cd /d "%~dp0"
-set "EM1_ENV=%LOCALAPPDATA%\EM1\desktop-integrated-20261105"
+set "EM1_ENV=%LOCALAPPDATA%\EM1\desktop-development-20261105"
 set "EM1_PY=%EM1_ENV%\Scripts\python.exe"
 py -3.12 -c "import struct; assert struct.calcsize('P') == 8" >nul 2>&1
 if errorlevel 1 (

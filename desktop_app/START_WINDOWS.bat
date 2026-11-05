@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableExtensions
 cd /d "%~dp0"
-set "EM1_PY=%LOCALAPPDATA%\EM1\desktop-integrated-20261105\Scripts\python.exe"
+set "EM1_PY=%LOCALAPPDATA%\EM1\desktop-development-20261105\Scripts\python.exe"
 if not exist "%EM1_PY%" (
  echo Run INSTALL_WINDOWS.bat once before the exam.
  pause

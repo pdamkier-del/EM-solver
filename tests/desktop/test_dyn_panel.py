@@ -36,13 +36,18 @@ def fill(panel,request):
         if key in panel.tables:
             table=panel.tables[key];table.setRowCount(len(value))
             for row,item in enumerate(value):
-                cells=list(item.values()) if isinstance(item,dict) else item
+                cells=[item[0],*item[1]] if key=='charges' else list(item.values()) if isinstance(item,dict) else item
                 for col,cell in enumerate(cells):table.setItem(row,col,QTableWidgetItem(str(cell)))
             continue
         if isinstance(value,list):
             def form(x):return '['+','.join(form(v) for v in x)+']' if isinstance(x,list) else str(x)
             value=form(value)
         panel.fields[key].setText(str(value))
+    operations=request['subproblems'][0].get('operations',[])
+    panel.operations.setRowCount(len(operations))
+    keys=('kind','id','result','variable','value','at','domain','unit','lower','upper','coefficient','resistance','initial')
+    for row,op in enumerate(operations):
+        for col,key in enumerate(keys):panel.operations.setItem(row,col,QTableWidgetItem(op.get(key,'')))
     panel._scan_symbols()
     for row in range(panel.symbols.rowCount()):
         symbol=panel.symbols.item(row,0).text()

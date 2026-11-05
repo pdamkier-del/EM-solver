@@ -21,6 +21,9 @@ def _worker(output,parsed,evaluate):
             from .composition import execute_plan
             answer=execute_plan(parsed,evaluate)
         else:answer=execute(parsed,evaluate_integrals=evaluate)
+        if parsed.data.get('operations'):
+            from .postprocessing import apply
+            answer=apply(parsed,answer)
         output.put(('ok',answer))
     except Exception as exc:output.put(('error',str(exc)))
 

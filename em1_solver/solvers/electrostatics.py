@@ -456,6 +456,9 @@ def polarization(p):
 
 
 def images(p):
+    if p.variables.get('kind') in ('grounded_plane','grounded_sphere','isolated_sphere'):
+        from .boundary_models import image_boundary
+        return image_boundary(p)
     charges,point,planes=p.require('charges','point','planes')
     if planes not in ([1],[0],[0,1]):raise InputError('Spejling understøtter jordet x=0, y=0 eller det vinkelrette hjørne x=y=0.')
     p.assume('grounded_infinite_planes')

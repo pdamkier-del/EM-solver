@@ -38,3 +38,32 @@ UNITS={'V':'V','A':'T*m','field':'V divideret med koordinatenheden, inklusive ku
     'gap_permittivities':'F/m (liste)','outside_permittivity':'F/m','coordinates':'koordinatnavne (liste)',
     'system':'cartesian / cylindrical / spherical','start':'enhed som koordinaten','end':'enhed som koordinaten',
     'surface_charges':'liste [radius, signeret overfladeladning]','surface_currents':'liste [radius, signeret overfladestrøm]'}
+
+# Boundary geometry and material definitions use the same registered kernels.
+charge_table={'charge':'C','x':'m','y':'m','z':'m'}
+for key,kind,required,assumptions,orientation in [
+ ('image_plane','grounded_plane',['normal','offset'],['grounded_infinite_plane','vacuum_medium','electrostatic'],
+  'Planet er normal dot r=offset. Normalen er enhedsvektor ind i det fysiske halvrum. Alle virkelige ladninger og feltpunktet ligger i dette halvrum.'),
+ ('image_sphere_grounded','grounded_sphere',['center','radius'],['grounded_sphere','vacuum_medium','electrostatic','no_other_external_sources'],
+  'Jordet kugle med angivet centrum og radius; alle virkelige ladninger og feltpunktet er udenfor. V=0 på kuglen og i det uendelige.'),
+ ('image_sphere_isolated','isolated_sphere',['center','radius','sphere_charge'],['isolated_conducting_sphere','vacuum_medium','electrostatic','no_other_external_sources'],
+  'Isoleret sfærisk leder med eksplicit nettoladning (0 for neutral), ikke jordet. Kilder og feltpunkt er udenfor; V(infinity)=0.')]:
+    MODELS[key]=dict(domain='EV',family='images',required=['charges']+required,optional=['point']+(['surface_point'] if kind=='grounded_plane' else []),fixed={'kind':kind},
+        assumptions=assumptions,orientation=orientation,tables={'charges':charge_table})
+MODELS['magnetization_currents']=dict(domain='BA',family='magnetic_material',required=['M','coordinates','system','normal'],optional=['surface_coordinate','surface_value','H'],fixed={'kind':'bound_currents'},
+    assumptions=['magnetostatic'],orientation='M og normal har komponenter i samme ortonormale basis. Normalen peger ud af materialet. J_b er bulkstrømmen; K_b gælder den valgte flade. H/B beregnes kun hvis H er givet.')
+MODELS['magnetized_sphere']=dict(domain='BA',family='magnetic_material',required=['M','radius','center'],optional=['point','normal'],fixed={'kind':'uniform_sphere'},
+    assumptions=['uniform_magnetization','spherical_body','no_free_current','no_applied_field','vacuum_exterior'],
+    orientation='Foreskrevet konstant M i kartesisk basis i kuglen. K_bound vises på overfladen; uden angivet normal bruges theta_surface og phi_surface. B(point) er regionalt inde/ude.')
+MODELS['point_superposition']=dict(domain='EV',family='point_charges',required=['charges'],optional=['point','test_charge'],
+    assumptions=['electrostatic','vacuum_medium','distinct_point_sources'],orientation='Kartesiske positioner og signerede ladninger. F er kraft på en separat testladning i feltpunktet, ikke et selvfelt.',tables={'charges':charge_table})
+MODELS['magnetic_wires']=dict(domain='BA',family='magnetic_superposition',required=['wires','point'],optional=[],
+    assumptions=['parallel_infinite_sources','magnetostatic','nonmagnetic_medium'],orientation='Parallelle uendelige ledere langs z ved de givne (x,y). Strøm er signeret langs +z; felterne summeres vektorielt.',tables={'wires':{'I':'A','x':'m','y':'m'}})
+MODELS['magnetic_cylinders']=dict(domain='BA',family='magnetic_superposition',required=['cylinders','point'],optional=[],
+    assumptions=['parallel_infinite_sources','magnetostatic','nonmagnetic_medium'],orientation='Uendelige parallelle cylindre med uniform signeret J_z pr. cylinder; negativt J kan repræsentere et hulrum ved superposition.',tables={'cylinders':{'J':'A/m^2','radius':'m','x':'m','y':'m'}})
+MODELS['RL_driven']=dict(domain='DYN',family='rc_transient',required=['time','R','L','voltage','I0'],optional=[],fixed={'kind':'RL_general'},
+    assumptions=['constant_coefficients'],orientation='L*dI/dt+R*I=V(t), I(0)=I0. R og L er konstante; den eksplicit givne spænding må afhænge af tiden.')
+MODELS['RC_driven']=dict(domain='DYN',family='rc_transient',required=['time','R','C','voltage','Q0'],optional=[],fixed={'kind':'RC_general'},
+    assumptions=['constant_coefficients'],orientation='R*dQ/dt+Q/C=V(t), Q(0)=Q0. I=dQ/dt er positiv opladningsstrøm; dette er modsat I i det gamle RC-afladningskort.')
+UNITS.update({'normal':'1 (enhedsvektor)','offset':'m','center':'m (vektor)','radius':'m','sphere_charge':'C','surface_point':'m (vektor)',
+    'M':'A/m (vektor)','H':'A/m (vektor)','surface_coordinate':'koordinatnavn','surface_value':'samme enhed som overfladekoordinaten'})

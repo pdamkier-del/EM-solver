@@ -207,18 +207,31 @@ def rc_transient(p):
     result=solution(p,'Lineær kredsløbsdifferentialligning',
         'Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.',
         [r'R\dot Q+Q/C=0',r'L\dot I+RI=V'])
-    if kind=='RC':
+    if kind in ('RC','RC_general'):
         c,q0=p.require('C','Q0');positive(c,'Kapacitans');q=sp.Function('Q')(t)
-        ode=sp.Eq(r*sp.diff(q,t)+q/c,0);solved=sp.dsolve(ode,ics={q.subs(t,0):q0})
+        voltage=p.variables.get('voltage',0) if kind=='RC' else p.require('voltage')[0]
+        if any(sp.sympify(value).has(t) for value in (r,c,q0)):raise InputError('RC kræver konstante R, C og en konstant begyndelsesladning.')
+        ode=sp.Eq(r*sp.diff(q,t)+q/c,voltage);solved=sp.dsolve(ode,ics={q.subs(t,0):q0})
         current=-sp.diff(solved.rhs,t);tau=r*c
         result.symbolic_result={'Q':solved.rhs,'I':sp.simplify(current),'I_charge':sp.simplify(-current),'tau':tau,'I_initial':q0/tau,'U_initial':q0*q0/(2*c)}
-        result.check('RC-ligning',r*sp.diff(solved.rhs,t)+solved.rhs/c)
+        result.check('RC-ligning',r*sp.diff(solved.rhs,t)+solved.rhs/c-voltage)
         result.direction='I er positiv i afladningsretningen: I=-dQ/dt. Formelsamlingens ladeorienterede strøm er I_charge=dQ/dt=-I.'
-    elif kind=='RL':
+        if kind=='RC_general':
+            result.symbolic_result['I_discharge']=result.symbolic_result['I'];result.units['I_discharge']='A'
+            result.symbolic_result['I']=result.symbolic_result['I_charge']
+            result.symbolic_result['I_initial']=sp.simplify(result.symbolic_result['I'].subs(t,0))
+            result.check('RC-begyndelsesbetingelse',solved.rhs.subs(t,0)-q0)
+            result.direction='Dette generelle RC-kort bruger positiv opladningsstrøm I=dQ/dt. I_discharge=-I er den modsatte orientering.'
+            result.equations=[r'R\dot Q+Q/C=V(t)',r'I=\dot Q']
+            result.add('Generelt drevet RC: vælg den eksplicitte opladningsorientering',result.symbolic_result['I'])
+    elif kind in ('RL','RL_general'):
         l,v,i0=p.require('L','voltage','I0');positive(l,'Induktans');i=sp.Function('I')(t)
-        if any(sp.sympify(value).has(t) for value in (l,v,r,i0)):raise InputError('RL-standardforløbet kræver tidsuafhængige koefficienter og spænding.')
+        if any(sp.sympify(value).has(t) for value in (l,r,i0)) or kind=='RL' and sp.sympify(v).has(t):raise InputError('RL kræver konstante koefficienter; standardkortet kræver også konstant spænding.')
         ode=sp.Eq(l*sp.diff(i,t)+r*i,v);solved=sp.dsolve(ode,ics={i.subs(t,0):i0});tau=l/r
         result.symbolic_result={'I':sp.simplify(solved.rhs),'tau':tau,'I_initial':i0,'I_infinity':v/r}
+        if sp.sympify(v).has(t):
+            result.symbolic_result.pop('I_infinity')
+            result.warnings.append('En generel tidsafhængig spænding har ikke nødvendigvis en konstant slutstrøm. Brug en eksplicit grænseoperation, hvis grænsen findes.')
         target=p.variables.get('target_values',{}).get('I')
         if target is not None:
             ratio=sp.simplify((v/r-target)/(v/r-i0)).subs(p.numerical_values)

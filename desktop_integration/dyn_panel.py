@@ -73,6 +73,27 @@ CONDITIONS.update({'spherical_symmetry':'Kuglesymmetri','infinite_cylindrical_sy
     'spherical_outer_surface':'Lederens ydre flade er sfærisk','vacuum_exterior':'Vakuum udenfor lederen','vacuum_medium':'Vakuum i det betragtede område',
     'infinite_straight_wire':'Uendelig ret ledning','magnetostatic':'Stationære magnetiske kilder/felter','nonmagnetic_medium':'Permeabilitet mu_0 (ikke-magnetisk medium)'})
 
+LABELS.update({'image_plane':'EV – billedladninger, jordet plan','image_sphere_grounded':'EV – billedladninger, jordet kugle',
+'image_sphere_isolated':'EV – billedladninger, isoleret kugle','magnetization_currents':'BA – magnetisering og bundne strømme',
+'magnetized_sphere':'BA – homogent magnetiseret kugle','point_superposition':'EV – punktladningers superposition',
+'magnetic_wires':'BA – parallelle strømme, superposition','magnetic_cylinders':'BA – cylindre og hulrum, superposition',
+'RL_driven':'DYN – RL med givet V(t)','RC_driven':'DYN – RC med givet V(t)'})
+FIELDS.update({'normal':'Udadrettet enhedsnormal [nx,ny,nz]','offset':'Planets normalafstand','center':'Centrum [x,y,z]',
+'radius':'Radius','sphere_charge':'Lederkuglens nettoladning','surface_point':'Punkt på lederplanet [x,y,z]',
+'M':'Magnetisering [M1,M2,M3]','H':'Givet H [H1,H2,H3]','surface_coordinate':'Overfladekoordinat','surface_value':'Koordinatværdi på overfladen'})
+WANTED.update({'image_plane':'V, E (kræver point), F (én ladning), forces, Q_induced, sigma_induced (kræver surface_point)',
+'image_sphere_grounded':'V, E (kræver point), F (én ladning), forces, Q_induced',
+'image_sphere_isolated':'V, E (kræver point), F (én ladning), forces, Q_conductor, V_sphere',
+'magnetization_currents':'J_bound, K_bound, B (kræver H)','magnetized_sphere':'B_inside, H_inside, J_bound, K_bound, dipole, B (kræver point)',
+'point_superposition':'E, V, F (kræver point og test_charge)','magnetic_wires':'B','magnetic_cylinders':'B',
+'RL_driven':'I, tau, I_initial, initial_slope, zero_time','RC_driven':'Q, I (opladningsretning), tau, I_initial'})
+WANTED['RL_step']+=', initial_slope, zero_time, extremum_times'
+CONDITIONS.update({'grounded_infinite_plane':'Uendeligt jordet lederplan','grounded_sphere':'Jordet sfærisk leder',
+'isolated_conducting_sphere':'Isoleret sfærisk leder med angivet nettoladning','no_other_external_sources':'Ingen andre eksterne kilder',
+'uniform_magnetization':'Magnetiseringen er ensartet i hele materialet','spherical_body':'Materialet udfylder en kugle',
+'no_free_current':'Ingen frie strømme','no_applied_field':'Intet påtrykt magnetfelt',
+'distinct_point_sources':'Punktladningerne ligger på forskellige positioner','parallel_infinite_sources':'Alle kilder er parallelle og uendelige langs z'})
+
 
 def expression_input(text):
     """Lists of mathematical expressions without eval or requiring JSON quotes."""
@@ -105,6 +126,8 @@ class DynPanel(QWidget):
         edit.addWidget(QLabel('Indsæt opgaveteksten'))
         self.text=QPlainTextEdit();self.text.setMaximumHeight(160);edit.addWidget(self.text)
         self.analyze=QPushButton('Analysér opgave');edit.addWidget(self.analyze)
+        self.transfer=QPushButton('Overfør eksplicitte tal til den valgte model (skal bekræftes)');edit.addWidget(self.transfer)
+        self.transfer.clicked.connect(self._transfer_suggestions)
         self.suggestions=QLabel('Forslag er ikke bekræftede fysiske oplysninger.');self.suggestions.setWordWrap(True);edit.addWidget(self.suggestions)
         self.model=QComboBox()
         for key in allowed_models or self.cards['models']:self.model.addItem(LABELS[key],key)
@@ -116,7 +139,13 @@ class DynPanel(QWidget):
         row=QHBoxLayout();self.add_symbol=QPushButton('Tilføj symbol');row.addWidget(self.add_symbol)
         self.scan=QPushButton('Find symboler i mine udtryk');row.addWidget(self.scan);edit.addLayout(row)
         self.wanted=QLineEdit();self.wanted.setPlaceholderText('Søgte størrelser, adskilt med komma');edit.addWidget(self.wanted)
-        self.wanted_help=QLabel();edit.addWidget(self.wanted_help)
+        self.wanted_help=QLabel();self.wanted_help.setWordWrap(True);edit.addWidget(self.wanted_help)
+        edit.addWidget(QLabel('Valgfri efterbehandling: differentiate / evaluate / limit / solve / integrate / transform / linear_ode (a·dy/dt+b·y=resultat). Angiv resultatnavn, variabel og mål/punkt; solve kan kræve domænebetingelser.'))
+        self.operations=QTableWidget(0,13);self.operations.setHorizontalHeaderLabels(['Type','Nyt ID','Resultat','Variabel','Mål/punkt','Ved (afledt)','Domæne','Enhed','Nedre','Øvre','Koefficient a','Koefficient b','Begyndelsesværdi'])
+        self.operations.setMaximumHeight(140);edit.addWidget(self.operations)
+        add_operation=QPushButton('Tilføj efterbehandling');edit.addWidget(add_operation)
+        add_operation.clicked.connect(lambda:self.operations.insertRow(self.operations.rowCount()))
+        self.operations.itemChanged.connect(self._invalidate)
         self.conditions_box=QWidget();self.condition_layout=QVBoxLayout(self.conditions_box);edit.addWidget(self.conditions_box)
         self.orientation=QCheckBox();self.orientation.setText('Jeg bekræfter ovenstående orientering og modelbetingelser');edit.addWidget(self.orientation)
         self.confirm=QCheckBox('Jeg bekræfter at model, givne data, enheder og søgte størrelser svarer til opgaven');edit.addWidget(self.confirm)
@@ -156,7 +185,7 @@ class DynPanel(QWidget):
 
     def _build_form(self,*args):
         self._loading=True;self._clear_layout(self.form);self._clear_layout(self.condition_layout)
-        self.fields={};self.tables={};self.conditions={};self.symbols.setRowCount(0)
+        self.fields={};self.tables={};self.conditions={};self.symbols.setRowCount(0);self.operations.setRowCount(0)
         self.card=self.cards['models'][self.model.currentData()]
         for key in self.card['required']+self.card['optional']:
             if key in self.card.get('tables',{}):
@@ -166,13 +195,13 @@ class DynPanel(QWidget):
                 table.setHorizontalHeaderLabels([labels.get(c,c)+' ['+self.card['tables'][key][c]+']' for c in columns])
                 table.setMaximumHeight(170);table.itemChanged.connect(self._invalidate)
                 group=QWidget();box=QVBoxLayout(group);box.setContentsMargins(0,0,0,0);box.addWidget(table)
-                button=QPushButton('Tilføj region' if key=='regions' else 'Tilføj leder')
+                button=QPushButton('Tilføj kilde / region')
                 def add_row(checked=False,table=table):
                     row=table.rowCount();table.insertRow(row)
                     for col in range(table.columnCount()):table.setItem(row,col,QTableWidgetItem(''))
                     self._invalidate()
                 button.clicked.connect(add_row);box.addWidget(button)
-                self.form.addRow('Regioner' if key=='regions' else 'Koncentriske ledere',group)
+                self.form.addRow({'regions':'Regioner','shells':'Koncentriske ledere','charges':'Punktladninger','wires':'Ledninger','cylinders':'Cylindre'}[key],group)
                 continue
             field=QLineEdit();self.fields[key]=field
             unit=self.cards['variable_units'].get(key,'')
@@ -197,8 +226,30 @@ class DynPanel(QWidget):
         try:
             suggestions=plan(self.text.toPlainText())
             names=[LABELS[c['model']] for c in suggestions['candidates']]
+            self._proposal=suggestions
+            givens='; '.join(x['evidence']+(' [KONFLIKT]' if x['status']=='conflict_do_not_transfer' else '') for x in suggestions['extraction']['givens'])
             self.suggestions.setText('Mulige modeller (skal vælges/bekræftes): '+', '.join(names) if names else 'Ingen sikker modelgenkendelse. Vælg selv en DYN-model; der er ikke udledt givne data.')
+            self.suggestions.setText(self.suggestions.text()+'\nEksplicitte data: '+(givens or 'ingen sikre tildelinger')+'\n'+suggestions['extraction']['note']+'\nKrævede felter for den valgte model: '+', '.join(self.card['required']))
         except ValueError as exc:self.status.setText(str(exc))
+
+    def _transfer_suggestions(self):
+        from em1_solver.core.units import si
+        proposal=plan(self.text.toPlainText())['extraction'];numeric={}
+        # Transfer only scalar roles whose physical units are known and match.
+        for value in proposal['givens']:
+            key=value['name'];role=self.cards['variable_units'].get(key,'')
+            if value['status']=='conflict_do_not_transfer' or key not in self.fields or not role:continue
+            try:si(value['quantity'],role)
+            except ValueError:continue
+            if self.fields[key].text().strip() not in ('',key):continue
+            self.fields[key].setText(key);numeric[key]=(role,value['quantity'])
+        self._scan_symbols()
+        for row in range(self.symbols.rowCount()):
+            name=self.symbols.item(row,0).text()
+            if name in numeric:
+                unit,number=numeric[name];self.symbols.setItem(row,1,QTableWidgetItem(unit));self.symbols.setItem(row,2,QTableWidgetItem(number))
+        self._invalidate()
+        self.status.setText('Overført: '+(', '.join(numeric) or 'ingen sikre skalare roller')+'. Udfyld resten og bekræft selv antagelser og retning.')
 
     def _add_symbol(self,name='',unit=''):
         row=self.symbols.rowCount();self.symbols.insertRow(row)
@@ -223,6 +274,13 @@ class DynPanel(QWidget):
                     for name in re.findall(r'\b[A-Za-z_]\w*\b',raw):
                         if name in known or name in reserved:continue
                         self._add_symbol(name,role if raw==name else '');known.add(name)
+        for row in range(self.operations.rowCount()):
+            for col in (3,4,5,8,9,10,11,12):
+                item=self.operations.item(row,col)
+                for name in re.findall(r'\b[A-Za-z_]\w*\b',item.text() if item else ''):
+                    result_ids={self.operations.item(r,1).text() for r in range(self.operations.rowCount()) if self.operations.item(r,1)}
+                    if name not in known and name not in reserved and name not in result_ids:
+                        self._add_symbol(name,'');known.add(name)
         self._invalidate()
 
     def request(self):
@@ -242,11 +300,18 @@ class DynPanel(QWidget):
             for row in range(table.rowCount()):
                 cells=[table.item(row,col).text().strip() if table.item(row,col) else '' for col in range(table.columnCount())]
                 if not all(cells):raise ValueError('Udfyld alle felter i region-/ledertabellen.')
-                rows.append(dict(zip(self.card['tables'][key],cells)) if key=='regions' else cells)
+                rows.append([cells[0],cells[1:]] if key=='charges' else dict(zip(self.card['tables'][key],cells)) if key in ('regions','wires','cylinders') else cells)
             variables[key]=rows
-        return dict(schema_version=VERSION,text=self.text.toPlainText(),confirmed=self.confirm.isChecked(),variables=variables,
+        request=dict(schema_version=VERSION,text=self.text.toPlainText(),confirmed=self.confirm.isChecked(),variables=variables,
             units=units,numbers=numbers,positive=positive,assumptions=[key for key,box in self.conditions.items() if box.isChecked()],
             subproblems=[dict(id='a',model=self.model.currentData(),wanted=[v.strip() for v in self.wanted.text().split(',') if v.strip()],orientation_confirmed=self.orientation.isChecked())])
+        operations=[]
+        for row in range(self.operations.rowCount()):
+            cells=[self.operations.item(row,col).text().strip() if self.operations.item(row,col) else '' for col in range(13)]
+            if not any(cells):continue
+            operations.append({k:v for k,v in zip(('kind','id','result','variable','value','at','domain','unit','lower','upper','coefficient','resistance','initial'),cells) if v})
+        if operations:request['subproblems'][0]['operations']=operations
+        return request
 
     def _solve(self):
         if self.busy:return
