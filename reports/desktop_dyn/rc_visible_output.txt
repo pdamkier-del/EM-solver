@@ -1,0 +1,47 @@
+Beregnet under din bekræftede model. Fortolkningen af opgaveteksten er ikke maskinverificeret.
+
+Model bekræftet af dig
+RC – afladning
+Kildekoblingen er afbrudt ved t=0. Q(0)=Q0; I er positiv afladningsstrøm og I_charge=dQ/dt.
+Givet
+{
+  "time": "t",
+  "R": "R",
+  "C": "C",
+  "Q0": "Q0",
+  "fraction": "1/100"
+}
+Søges
+I, decay_time, I_initial
+Metode
+Lineær kredsløbsdifferentialligning
+Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.
+Udregning
+Den lineære differentialligning
+R \frac{d}{d t} Q{\left(t \right)} + \frac{Q{\left(t \right)}}{C} = 0
+Løs med begyndelsesbetingelsen
+Q{\left(t \right)} = Q_{0} e^{- \frac{t}{C R}}
+Løs exp(-t/tau)=fraction
+\log{\left(100^{C R} \right)}
+Resultat
+I = Q0*exp(-t/(C*R))/(C*R) [A]
+I_initial = Q0/(C*R) [A]
+decay_time = log(100**(C*R)) [s]
+I_initial = 250.549450549451 [A]
+decay_time = 0.104767621731229 [s]
+I er positiv i afladningsretningen: I=-dQ/dt. Formelsamlingens ladeorienterede strøm er I_charge=dQ/dt=-I.
+Faktisk udførte beregningskontroller
+Bestået: RC-ligning
+Bestået: Dimension: Q
+Bestået: Dimension: I
+Bestået: Dimension: I_charge
+Bestået: Dimension: tau
+Bestået: Dimension: I_initial
+Bestået: Dimension: U_initial
+Bestået: Dimension: decay_time
+Bestået: Inputdimension: time
+Bestået: Inputdimension: R
+Bestået: Inputdimension: C
+Bestået: Inputdimension: Q0
+Bestået: Inputdimension: fraction
+Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed.

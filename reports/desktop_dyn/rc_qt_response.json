@@ -1,0 +1,390 @@
+{
+  "schema_version": "assisted-1.0",
+  "status": "calculated_under_confirmed_model",
+  "questions": [],
+  "errors": [],
+  "subproblems": [
+    {
+      "id": "a",
+      "model": "RC_discharge",
+      "status": "calculated_under_confirmed_model",
+      "solution": {
+        "method": "Lineær kredsløbsdifferentialligning",
+        "reasoning": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+        "equations_latex": [
+          "R\\dot Q+Q/C=0",
+          "L\\dot I+RI=V"
+        ],
+        "steps": [
+          {
+            "id": "step-1fb88607a881283323e6-0",
+            "text": "Den lineære differentialligning",
+            "title": "Den lineære differentialligning",
+            "latex": "R \\frac{d}{d t} Q{\\left(t \\right)} + \\frac{Q{\\left(t \\right)}}{C} = 0",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Lineær kredsløbsdifferentialligning",
+            "method_context_id": "method-6477c011bebda04cbe6f",
+            "intermediate_latex": [],
+            "assumptions": [
+              "constant_coefficients"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-8a958e9d31497845a2a7-0",
+            "text": "Løs med begyndelsesbetingelsen",
+            "title": "Løs med begyndelsesbetingelsen",
+            "latex": "Q{\\left(t \\right)} = Q_{0} e^{- \\frac{t}{C R}}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Lineær kredsløbsdifferentialligning",
+            "method_context_id": "method-6477c011bebda04cbe6f",
+            "intermediate_latex": [],
+            "assumptions": [
+              "constant_coefficients"
+            ],
+            "validity": [],
+            "check_ids": []
+          },
+          {
+            "id": "step-8d1632d01c4dec06e493-0",
+            "text": "Løs exp(-t/tau)=fraction",
+            "title": "Løs exp(-t/tau)=fraction",
+            "latex": "\\log{\\left(100^{C R} \\right)}",
+            "physical_reasoning": null,
+            "reasoning_scope": "method",
+            "law": "Lineær kredsløbsdifferentialligning",
+            "method_context_id": "method-6477c011bebda04cbe6f",
+            "intermediate_latex": [],
+            "assumptions": [
+              "constant_coefficients"
+            ],
+            "validity": [],
+            "check_ids": []
+          }
+        ],
+        "results": {
+          "Q": {
+            "expression": "Q0*exp(-t/(C*R))",
+            "latex": "Q_{0} e^{- \\frac{t}{C R}}",
+            "unit": "C"
+          },
+          "I": {
+            "expression": "Q0*exp(-t/(C*R))/(C*R)",
+            "latex": "\\frac{Q_{0} e^{- \\frac{t}{C R}}}{C R}",
+            "unit": "A"
+          },
+          "I_charge": {
+            "expression": "-Q0*exp(-t/(C*R))/(C*R)",
+            "latex": "- \\frac{Q_{0} e^{- \\frac{t}{C R}}}{C R}",
+            "unit": "A"
+          },
+          "tau": {
+            "expression": "C*R",
+            "latex": "C R",
+            "unit": "s"
+          },
+          "I_initial": {
+            "expression": "Q0/(C*R)",
+            "latex": "\\frac{Q_{0}}{C R}",
+            "unit": "A"
+          },
+          "U_initial": {
+            "expression": "Q0**2/(2*C)",
+            "latex": "\\frac{Q_{0}^{2}}{2 C}",
+            "unit": "J"
+          },
+          "decay_time": {
+            "expression": "log(100**(C*R))",
+            "latex": "\\log{\\left(100^{C R} \\right)}",
+            "unit": "s"
+          }
+        },
+        "numerical": {
+          "tau": {
+            "value": "0.0227500000000000",
+            "latex": "0.02275",
+            "unit": "s"
+          },
+          "I_initial": {
+            "value": "250.549450549451",
+            "latex": "250.549450549451",
+            "unit": "A"
+          },
+          "U_initial": {
+            "value": "178.516483516484",
+            "latex": "178.516483516484",
+            "unit": "J"
+          },
+          "decay_time": {
+            "value": "0.104767621731229",
+            "latex": "0.104767621731229",
+            "unit": "s"
+          }
+        },
+        "checks": [
+          {
+            "id": "check-7984e51449b3d48fd829",
+            "name": "RC-ligning",
+            "passed": true,
+            "residual_latex": "0",
+            "detail": "",
+            "step_ids": []
+          },
+          {
+            "id": "check-adaecc9f0469b589474a",
+            "name": "Dimension: Q",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-a7261485a3cef37cf69b",
+            "name": "Dimension: I",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-72a714c7ac4384a49d3d",
+            "name": "Dimension: I_charge",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-87855fd11dac9f71e39a",
+            "name": "Dimension: tau",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "s",
+            "step_ids": []
+          },
+          {
+            "id": "check-37a831b026ba6920c2db",
+            "name": "Dimension: I_initial",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "A",
+            "step_ids": []
+          },
+          {
+            "id": "check-ac6b7c9df6af6feb06bd",
+            "name": "Dimension: U_initial",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "J",
+            "step_ids": []
+          },
+          {
+            "id": "check-5043e3a98356f8ac2514",
+            "name": "Dimension: decay_time",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "s",
+            "step_ids": []
+          },
+          {
+            "id": "check-b6abb3e5901dfbeb8e9b",
+            "name": "Inputdimension: time",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "s",
+            "step_ids": []
+          },
+          {
+            "id": "check-3ab5ec8bcda85a358601",
+            "name": "Inputdimension: R",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "ohm",
+            "step_ids": []
+          },
+          {
+            "id": "check-984fe5fc9aee5b661f47",
+            "name": "Inputdimension: C",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "F",
+            "step_ids": []
+          },
+          {
+            "id": "check-9a218e123c404e259605",
+            "name": "Inputdimension: Q0",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "C",
+            "step_ids": []
+          },
+          {
+            "id": "check-2df0901155c2cacd9bf1",
+            "name": "Inputdimension: fraction",
+            "passed": true,
+            "residual_latex": null,
+            "detail": "1",
+            "step_ids": []
+          }
+        ],
+        "direction": "I er positiv i afladningsretningen: I=-dQ/dt. Formelsamlingens ladeorienterede strøm er I_charge=dQ/dt=-I.",
+        "warnings": [],
+        "presentation_version": "1.0",
+        "latex_profile": "EM1-Math-1",
+        "method_contexts": {
+          "method-6477c011bebda04cbe6f": {
+            "method_id": "rc_transient",
+            "method": "Lineær kredsløbsdifferentialligning",
+            "reasoning": "Kirchhoffs spændingslov sammenholdes med kondensator- eller induktorligningen. Begyndelsesbetingelsen bestemmer integrationskonstanten.",
+            "equations": [
+              "R\\dot Q+Q/C=0",
+              "L\\dot I+RI=V"
+            ],
+            "assumptions": [
+              "constant_coefficients"
+            ]
+          }
+        },
+        "views": {
+          "result": {
+            "wanted": [
+              "I",
+              "decay_time",
+              "I_initial"
+            ],
+            "results": {
+              "I": {
+                "expression": "Q0*exp(-t/(C*R))/(C*R)",
+                "latex": "\\frac{Q_{0} e^{- \\frac{t}{C R}}}{C R}",
+                "unit": "A"
+              },
+              "I_initial": {
+                "expression": "Q0/(C*R)",
+                "latex": "\\frac{Q_{0}}{C R}",
+                "unit": "A"
+              },
+              "decay_time": {
+                "expression": "log(100**(C*R))",
+                "latex": "\\log{\\left(100^{C R} \\right)}",
+                "unit": "s"
+              }
+            },
+            "numerical": {
+              "I_initial": {
+                "value": "250.549450549451",
+                "latex": "250.549450549451",
+                "unit": "A"
+              },
+              "decay_time": {
+                "value": "0.104767621731229",
+                "latex": "0.104767621731229",
+                "unit": "s"
+              }
+            },
+            "direction": "I er positiv i afladningsretningen: I=-dQ/dt. Formelsamlingens ladeorienterede strøm er I_charge=dQ/dt=-I."
+          },
+          "derivation": {
+            "equations_latex": [
+              "R\\dot Q+Q/C=0",
+              "L\\dot I+RI=V"
+            ],
+            "step_ids": [
+              "step-1fb88607a881283323e6-0",
+              "step-8a958e9d31497845a2a7-0",
+              "step-8d1632d01c4dec06e493-0"
+            ]
+          },
+          "explanation": {
+            "step_ids": [
+              "step-1fb88607a881283323e6-0",
+              "step-8a958e9d31497845a2a7-0",
+              "step-8d1632d01c4dec06e493-0"
+            ],
+            "method_context_ids": [
+              "method-6477c011bebda04cbe6f"
+            ],
+            "global_check_ids": [
+              "check-7984e51449b3d48fd829",
+              "check-adaecc9f0469b589474a",
+              "check-a7261485a3cef37cf69b",
+              "check-72a714c7ac4384a49d3d",
+              "check-87855fd11dac9f71e39a",
+              "check-37a831b026ba6920c2db",
+              "check-ac6b7c9df6af6feb06bd",
+              "check-5043e3a98356f8ac2514",
+              "check-b6abb3e5901dfbeb8e9b",
+              "check-3ab5ec8bcda85a358601",
+              "check-984fe5fc9aee5b661f47",
+              "check-9a218e123c404e259605",
+              "check-2df0901155c2cacd9bf1"
+            ],
+            "warnings": []
+          }
+        }
+      },
+      "errors": [],
+      "verification": {
+        "interpretation": "user_confirmed_not_machine_verified",
+        "dimensions": "passed",
+        "physical_checks": [
+          "RC-ligning",
+          "Inputdimension: time",
+          "Inputdimension: R",
+          "Inputdimension: C",
+          "Inputdimension: Q0",
+          "Inputdimension: fraction"
+        ],
+        "completeness": "requested_results_present",
+        "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+      }
+    }
+  ],
+  "interpretation_status": "user_confirmed",
+  "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+  "confirmed_model": {
+    "schema_version": "assisted-1.0",
+    "text": "I almindelig handel kan man købe en kraftig kapacitor med en kapacitans på C = 91 mF.\nRent fysisk er der tale om en større komponent med dimensioner omtrent som en øldåse.\nDet vides ikke præcis hvordan kapacitoren er opbygget, men lad os her som illustration\nantage, at der er tale om en pladekapacitor (som så på en eller anden måde må være\nrullet sammen inde i dåsen). Lad os yderligere antage, at de to plader er adskildt af\net meget tyndt lag, med tykkelse δ = 0,100 µm, af aluminiumsoxid, der virker som et\ndielektrikum med dielektricitetskonstant $r = 9,6.\nOpskriv en differentialligning for ladningen, Q(t), på kapaci-\n                                                                          C\n     toren. Bestem et symbolsk udtryk for strømmen som funktion                   −Q0\n     af tiden, I(t). Bestem den numeriske værdi af strømmen, I0 ,\n     til tiden t = 0. Bestem ligeledes tiden T (symbolsk og nume-\n     risk), hvor strømmen er faldet til 1% af startværdien.\nI praksis består kredsen af kapacitor og kontakt, som beskrevet ovenfor, samt af to\nlange, tynde, parallelle stænger. Disse komponenter er forbundne via fleksible ledninger,\nsom angivet med rødt på illustrationen nedenfor. Stængerne med længde l = 83 cm og\nindbyrdes afstand d = 5,2 cm ligger på et bord. Kredsens samlede modstand har samme\nværdi, R, som i situationen ovenfor.\n\n\n\n\n                   K\n                       +Q0         d\n               C\n                       −Q0\n                                                l\n\n\nI det følgende kan der ses bort fra magnetiske effekter produceret af de fleksible ledninger,\nligesom der kan ses bort fra randeffekter ved enden af de parallelle stænger. Stængerne\nantages endvidere at bevare deres placering under afladningen af kapacitoren.",
+    "confirmed": true,
+    "variables": {
+      "time": "t",
+      "R": "R",
+      "C": "C",
+      "Q0": "Q0",
+      "fraction": "1/100"
+    },
+    "units": {
+      "t": "s",
+      "R": "ohm",
+      "C": "F",
+      "Q0": "C"
+    },
+    "numbers": {
+      "R": "0.25 ohm",
+      "C": "91 mF",
+      "Q0": "5.7 C"
+    },
+    "positive": [
+      "R",
+      "C",
+      "Q0"
+    ],
+    "assumptions": [
+      "constant_coefficients"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "RC_discharge",
+        "wanted": [
+          "I",
+          "decay_time",
+          "I_initial"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  }
+}

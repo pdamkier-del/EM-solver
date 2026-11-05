@@ -1,0 +1,151 @@
+{
+  "status": "embeddable_component_tested_existing_frontend_integration_blocked",
+  "original_backend_commit": "cc06f5ab620d3469ddef4c714d77e659e1e80c25",
+  "branch": "em1-assisted-evening-2026-11-05",
+  "source_fingerprint": "ef908ebb458329936d1ea0181995e87452df23ec1b914098deb9fff0898628da",
+  "full_suite": {
+    "collected": 834,
+    "outcomes": {
+      "passed": 834
+    },
+    "exitstatus": 0
+  },
+  "qt_tests": [
+    {
+      "test": "tests/desktop/test_dyn_panel.py::test_01_complete_historical_rc_from_input_to_numeric_output",
+      "outcome": "passed",
+      "expected_failure": false,
+      "historical": null,
+      "recipe": null,
+      "variation": null,
+      "dimensions": false
+    },
+    {
+      "test": "tests/desktop/test_dyn_panel.py::test_02_other_historical_model_cards_through_qt[2025_01_p6a]",
+      "outcome": "passed",
+      "expected_failure": false,
+      "historical": null,
+      "recipe": null,
+      "variation": null,
+      "dimensions": false
+    },
+    {
+      "test": "tests/desktop/test_dyn_panel.py::test_02_other_historical_model_cards_through_qt[2021_06_p6a]",
+      "outcome": "passed",
+      "expected_failure": false,
+      "historical": null,
+      "recipe": null,
+      "variation": null,
+      "dimensions": false
+    },
+    {
+      "test": "tests/desktop/test_dyn_panel.py::test_02_other_historical_model_cards_through_qt[2023_02_p6a]",
+      "outcome": "passed",
+      "expected_failure": false,
+      "historical": null,
+      "recipe": null,
+      "variation": null,
+      "dimensions": false
+    },
+    {
+      "test": "tests/desktop/test_dyn_panel.py::test_02_other_historical_model_cards_through_qt[2023_11_p5c]",
+      "outcome": "passed",
+      "expected_failure": false,
+      "historical": null,
+      "recipe": null,
+      "variation": null,
+      "dimensions": false
+    },
+    {
+      "test": "tests/desktop/test_dyn_panel.py::test_02_other_historical_model_cards_through_qt[2026_01_p3a]",
+      "outcome": "passed",
+      "expected_failure": false,
+      "historical": null,
+      "recipe": null,
+      "variation": null,
+      "dimensions": false
+    },
+    {
+      "test": "tests/desktop/test_dyn_panel.py::test_02_other_historical_model_cards_through_qt[2023_02_p5b]",
+      "outcome": "passed",
+      "expected_failure": false,
+      "historical": null,
+      "recipe": null,
+      "variation": null,
+      "dimensions": false
+    },
+    {
+      "test": "tests/desktop/test_dyn_panel.py::test_03_missing_charge_abstains_and_never_shows_a_result",
+      "outcome": "passed",
+      "expected_failure": false,
+      "historical": null,
+      "recipe": null,
+      "variation": null,
+      "dimensions": false
+    },
+    {
+      "test": "tests/desktop/test_dyn_panel.py::test_04_eighth_card_rl_has_explicit_nonzero_initial_current",
+      "outcome": "passed",
+      "expected_failure": false,
+      "historical": null,
+      "recipe": null,
+      "variation": null,
+      "dimensions": false
+    },
+    {
+      "test": "tests/desktop/test_dyn_panel.py::test_05_failed_backend_start_is_visible",
+      "outcome": "passed",
+      "expected_failure": false,
+      "historical": null,
+      "recipe": null,
+      "variation": null,
+      "dimensions": false
+    },
+    {
+      "test": "tests/desktop/test_dyn_panel.py::test_06_revoking_user_confirmation_clears_displayed_answer",
+      "outcome": "passed",
+      "expected_failure": false,
+      "historical": null,
+      "recipe": null,
+      "variation": null,
+      "dimensions": false
+    }
+  ],
+  "full_certify_pipeline_exitstatus": 0,
+  "backend_only_isolation": {
+    "statuses": [
+      "calculated_under_confirmed_model",
+      "calculated_under_confirmed_model",
+      "calculated_under_confirmed_model",
+      "calculated_under_confirmed_model",
+      "calculated_under_confirmed_model",
+      "calculated_under_confirmed_model",
+      "calculated_under_confirmed_model",
+      "needs_confirmation"
+    ],
+    "network": "blocked",
+    "isolated_no_site": true,
+    "frontend_imported": false,
+    "dependencies": {
+      "sympy": "1.14.0",
+      "mpmath": "1.3.0",
+      "Pint": "0.25.2",
+      "flexcache": "0.3",
+      "flexparser": "0.4",
+      "platformdirs": "4.14.4",
+      "typing_extensions": "4.16.0"
+    }
+  },
+  "platform": "Linux Qt 6.8.3 offscreen",
+  "native_windows_tested": false,
+  "existing_frontend_integrated": false,
+  "missing_frontend_archive": "EM1-Solver-Desktop-v1.0.4-Kontrol-2026-11-05.zip",
+  "provided_sandbox_path_available": false,
+  "original_backend_api_changed": false,
+  "new_physics_modules": false,
+  "hashes": {
+    "desktop_integration/dyn_panel.py": "419b71ad9625a088544e92bd6505ecb3dd25f329d775e2ccf80fa3efa17381a0",
+    "tests/desktop/test_dyn_panel.py": "fc6866ed36ea135470c58b32c263db47aec7514324af9576f9b6e01b538cbe73",
+    "requirements-desktop-integration.txt": "bd85f7339f9e308e5ba7b8d8d225e3464bfdd997f648dba93163625a330c303c"
+  }
+}
