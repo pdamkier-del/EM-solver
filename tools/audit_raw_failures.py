@@ -15,6 +15,10 @@ def main():
         audit['figure_information']=dict(status='required_missing' if 'figure' in questions else 'unverified',evidence=questions.get('figure','Figure mention alone cannot establish sufficiency.'))
         for key,stage in [('geometry','geometry'),('units','variables_units'),('boundary_model','boundary_conditions'),('method','method')]:
             audit[stage]=dict(status='blocked' if key in questions else 'field_recognized_unverified' if fields.get(key,{}).get('status')=='GREEN' else 'unverified',evidence=questions.get(key,fields.get(key,{}).get('evidence',[])))
+        truth=r.get('fields',{})
+        if 'geometry' in truth:audit['geometry']=dict(status='verified' if truth['geometry'] else 'incorrect',evidence='Compared with existing manually annotated structural ground truth.')
+        audit['variables_units']['source_ground_truth']=truth.get('source','unverified')
+        audit['variables_units']['formula_ground_truth']=truth.get('source_formula','unverified')
         if r.get('ready'):audit['equation_setup']=dict(status='compiled',evidence='Typed model compiled without gold; does not establish text correctness.')
         if r['status']=='verified':
             audit['symbolic_operations']=dict(status='verified',evidence=r.get('verification',{}));audit['final_result']=dict(status='verified',evidence=r.get('verification',{}))

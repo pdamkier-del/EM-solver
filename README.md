@@ -1,5 +1,9 @@
 # EM1 Solver – lokal eksamensapp
 
+Nyeste backend-udvikling: [fejlanalyse og målinger](reports/autonomy/status.md)
+og [frontend-kontrakt 1.0](docs/backend/API.md). Den nye backend-branch
+ændrer ikke appens layout. Ældre parsermålinger nedenfor er bevaret som baseline.
+
 På Windows: udpak hele projektet, installér Python 3.12, dobbeltklik
 **install_windows.bat**, og start derefter med **START_EM1_SOLVER.bat**.
 Appen åbner i standardbrowseren på 127.0.0.1. Ingen terminalkommandoer

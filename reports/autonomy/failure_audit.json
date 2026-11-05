@@ -33,7 +33,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -82,7 +84,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -131,7 +135,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -182,7 +188,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -232,7 +240,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -283,7 +293,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -334,7 +346,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -383,7 +397,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -432,7 +448,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -482,7 +500,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -533,7 +553,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -585,7 +607,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -637,7 +661,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -689,7 +715,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -746,7 +774,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -796,7 +826,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -848,7 +880,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -898,7 +932,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -949,7 +985,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1000,7 +1038,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1048,7 +1088,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1099,7 +1141,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1151,7 +1195,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1202,7 +1248,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1253,7 +1301,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1303,7 +1353,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1354,7 +1406,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1405,7 +1459,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for E0, s som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for E0, s som navn:enhed; navn:enhed.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1451,16 +1507,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "punktladning"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1501,16 +1557,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "punktladning"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1551,16 +1607,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "punktladning"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1601,16 +1657,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "cylinderskal"
-          ]
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": false,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1651,16 +1707,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "cylinderskal"
-          ]
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": false,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -1702,14 +1758,14 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "cylinderskal"
-          ]
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Enhedskontrol: Ugyldigt matematisk udtryk."
+          "evidence": "Enhedskontrol: Ugyldigt matematisk udtryk.",
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1751,16 +1807,16 @@
           "evidence": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "Koordinat-/feltfunktion er givet"
-          ]
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": false,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1812,16 +1868,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "cylinder"
-          ]
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -1866,16 +1922,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "cylinder"
-          ]
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -1920,14 +1976,14 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "cirkelbue"
-          ]
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente."
+          "evidence": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente.",
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -1970,14 +2026,14 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "cirkelbue"
-          ]
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente."
+          "evidence": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente.",
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2020,16 +2076,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "ring"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2075,16 +2131,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "cylinder"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": false,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2128,16 +2184,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "cylinder"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": false,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2188,7 +2244,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2237,7 +2295,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2286,7 +2346,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2337,7 +2399,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2388,7 +2452,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2437,7 +2503,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for gennem, kA, løber, vindingerne som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for gennem, kA, løber, vindingerne som navn:enhed; navn:enhed.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2486,7 +2554,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for gennem, kA, løber, vindingerne som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for gennem, kA, løber, vindingerne som navn:enhed; navn:enhed.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2535,7 +2605,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for gennem, kA, løber, vindingerne som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for gennem, kA, løber, vindingerne som navn:enhed; navn:enhed.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2585,7 +2657,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for gennem, kA, løber, vindingerne som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for gennem, kA, løber, vindingerne som navn:enhed; navn:enhed.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2636,7 +2710,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2688,7 +2764,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2741,7 +2819,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -2793,7 +2873,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -2842,7 +2924,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for B0, e som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for B0, e som navn:enhed; navn:enhed.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2885,16 +2969,16 @@
           "evidence": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "punktladning"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2936,16 +3020,16 @@
           "evidence": "Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "punktladning"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -2987,16 +3071,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "punktladning"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3037,16 +3121,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "kugle"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": true
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -3089,16 +3173,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "kugle"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": true
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -3141,16 +3225,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "kugle"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": true
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -3193,16 +3277,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "punktladning"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3243,14 +3327,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "blocked",
-          "evidence": "Hvilken geometri skal feltet beregnes for?"
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": false,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3293,14 +3379,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "blocked",
-          "evidence": "Hvilken geometri skal feltet beregnes for?"
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": false,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3343,14 +3431,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "blocked",
-          "evidence": "Hvilken geometri skal feltet beregnes for?"
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": false,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3392,14 +3482,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "blocked",
-          "evidence": "Hvilken geometri skal feltet beregnes for?"
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": false,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3441,14 +3533,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "blocked",
-          "evidence": "Hvilken geometri skal feltet beregnes for?"
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": false,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3490,14 +3584,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "blocked",
-          "evidence": "Hvilken geometri skal feltet beregnes for?"
+          "status": "incorrect",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": false,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3540,14 +3636,14 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "kondensator"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for omega, t som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for omega, t som navn:enhed; navn:enhed.",
+          "source_ground_truth": true,
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3597,7 +3693,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3646,7 +3744,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3695,7 +3795,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3747,7 +3849,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3802,7 +3906,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3855,7 +3961,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente."
+          "evidence": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3905,7 +4013,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente."
+          "evidence": "Enhedskontrol: De angivne enheder er indbyrdes inkonsistente.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -3958,7 +4068,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -4010,7 +4122,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -4061,7 +4175,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -4113,7 +4229,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4163,7 +4281,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4213,7 +4333,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4264,7 +4386,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4315,7 +4439,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4364,7 +4490,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4416,7 +4544,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4465,7 +4595,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4513,7 +4645,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for A, x, y, z som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for A, x, y, z som navn:enhed; navn:enhed.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -4562,7 +4696,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for A, x, y, z som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for A, x, y, z som navn:enhed; navn:enhed.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -4612,7 +4748,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4660,7 +4798,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4709,7 +4849,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Enhedskontrol: Ugyldigt matematisk udtryk."
+          "evidence": "Enhedskontrol: Ugyldigt matematisk udtryk.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4758,7 +4900,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Enhedskontrol: Ugyldigt matematisk udtryk."
+          "evidence": "Enhedskontrol: Ugyldigt matematisk udtryk.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4809,7 +4953,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4860,7 +5006,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4910,7 +5058,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -4960,7 +5110,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -5010,7 +5162,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -5061,7 +5215,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -5112,7 +5268,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for alpha, s2 som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for alpha, s2 som navn:enhed; navn:enhed.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -5163,7 +5321,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for alpha, s2 som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for alpha, s2 som navn:enhed; navn:enhed.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -5214,7 +5374,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -5263,7 +5425,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -5313,7 +5477,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for V0, b, bd2, x som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for V0, b, bd2, x som navn:enhed; navn:enhed.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -5367,7 +5533,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for b, x som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for b, x som navn:enhed; navn:enhed.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -5421,7 +5589,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -5472,7 +5642,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -5523,7 +5695,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -5576,7 +5750,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -5628,7 +5804,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -5681,7 +5859,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -5734,7 +5914,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -5787,7 +5969,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -5840,7 +6024,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -5890,7 +6076,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -5941,7 +6129,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -5991,7 +6181,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -6043,7 +6235,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -6094,7 +6288,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -6145,7 +6341,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -6202,7 +6400,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -6261,7 +6461,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -6314,7 +6516,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -6365,7 +6569,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -6416,7 +6622,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -6466,7 +6674,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -6518,7 +6728,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -6560,16 +6772,16 @@
           "evidence": "Figure mention alone cannot establish sufficiency."
         },
         "geometry": {
-          "status": "field_recognized_unverified",
-          "evidence": [
-            "sfærisk område"
-          ]
+          "status": "verified",
+          "evidence": "Compared with existing manually annotated structural ground truth."
         },
         "variables_units": {
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": true,
+          "formula_ground_truth": true
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -6627,7 +6839,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -6677,7 +6891,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Enhedskontrol: Enhederne kan ikke opfylde de fysiske dimensionskrav."
+          "evidence": "Enhedskontrol: Enhederne kan ikke opfylde de fysiske dimensionskrav.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -6730,7 +6946,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -6781,7 +6999,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -6830,7 +7050,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Angiv enheder for B, x, y, z som navn:enhed; navn:enhed."
+          "evidence": "Angiv enheder for B, x, y, z som navn:enhed; navn:enhed.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -6883,7 +7105,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -6936,7 +7160,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -6990,7 +7216,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -7041,7 +7269,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -7093,7 +7323,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -7145,7 +7377,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -7194,7 +7428,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -7247,7 +7483,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -7298,7 +7536,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -7348,7 +7588,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -7398,7 +7640,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -7449,7 +7693,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -7499,7 +7745,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -7549,7 +7797,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -7599,7 +7849,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -7648,7 +7900,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -7701,7 +7955,9 @@
           "status": "field_recognized_unverified",
           "evidence": [
             "Angivne enheder og dimensionelle ligninger"
-          ]
+          ],
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "unverified",
@@ -7751,7 +8007,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Enhedskontrol: Ikke tilladt udtryk; brug kendte symboler og matematiske funktioner."
+          "evidence": "Enhedskontrol: Ikke tilladt udtryk; brug kendte symboler og matematiske funktioner.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -7802,7 +8060,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Enhedskontrol: Ikke tilladt udtryk; brug kendte symboler og matematiske funktioner."
+          "evidence": "Enhedskontrol: Ikke tilladt udtryk; brug kendte symboler og matematiske funktioner.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",
@@ -7853,7 +8113,9 @@
         },
         "variables_units": {
           "status": "blocked",
-          "evidence": "Enhedskontrol: Ikke tilladt udtryk; brug kendte symboler og matematiske funktioner."
+          "evidence": "Enhedskontrol: Ikke tilladt udtryk; brug kendte symboler og matematiske funktioner.",
+          "source_ground_truth": "unverified",
+          "formula_ground_truth": "unverified"
         },
         "boundary_conditions": {
           "status": "blocked",

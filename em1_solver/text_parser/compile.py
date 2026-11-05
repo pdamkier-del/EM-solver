@@ -90,7 +90,7 @@ def compile_interpretation(interp):
     p=Parsed(interp.original,GEOMETRIES.get(geometry,geometry),d,list(f['wanted']),copy.deepcopy(f['numbers']),units,positive,assumptions)
     if model=='gauss_radial' and set(f['wanted'])&{'Q','V'}:
         if geometry not in ('sphere','spherical_shell'):raise ValueError('Denne totale ladnings-/potentialvej kræver kuglesymmetri; angiv ellers integrationsgeometri manuelt.')
-        p.data['composition']=dict(seed_wanted=['E'],targets=f['wanted'])
+        p.data['composition']=dict(seed_wanted=['Q_enc'] if f['wanted']==['Q'] else ['E'],targets=f['wanted'],operation='volume_charge' if f['wanted']==['Q'] else 'radial_field_relations')
         if f.get('boundary_conditions',{}).get('V_infinity')=='0':p.assumptions.append('V_infinity_zero')
     if model=='ampere_radial' and 'I' in f['wanted']:p.data['composition']=dict(seed_wanted=['B'],targets=f['wanted'],current_scope=f['current_scope'])
     build(p) # Validate shape, SI dimensions and numerical positivity before declaring ready.

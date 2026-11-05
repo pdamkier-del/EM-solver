@@ -100,7 +100,8 @@ def execute_plan(parsed,evaluate=False):
     missing=set(targets)-set(answer.symbolic_result)
     if missing:raise InputError('Planen bestemmer ikke: '+', '.join(sorted(missing)))
     answer.stable=False # Component certificates do not certify a new composed plan.
-    answer.wanted=targets;answer.method+=' → '+', '.join(rules)
+    answer.wanted=targets;labels={'enclosed_charge_to_total':'samlet ladning','field_to_regional_potential':'stykvis potentialintegration','current_density_to_current':'integreret strøm'}
+    answer.method+=' → '+', '.join(labels[r] for r in rules)
     check_solution(answer,problem.symbol_units)
     if problem.numerical_values:numerical(answer,problem.numerical_values,problem.numerical_units)
     return answer
