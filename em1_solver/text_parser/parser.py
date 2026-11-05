@@ -13,6 +13,7 @@ from ..core.validation import EPS0,MU0
 SOURCE_UNITS={'rho':'C/m^3','sigma':'C/m^2','lambda':'C/m','J':'A/m^2','I':'A','V':'V','E':'V/m','A':'T*m','B':'T','P':'C/m^2','M':'A/m'}
 POSITIVES={'radius','length','inner_radius','outer_radius','resistance','capacitance','inductance','permittivity','permeability','area','mass','plate_distance'}
 ROLE_PATTERNS={
+ 'relative_permittivity':r'\brelativ(?:e)? (?:permittivitet|permitivitet|perminitivitet)\s+([A-Za-z_]\w*)',
  'radius':r'\b(?:radius|ydre radius)\s+([A-Za-z_]\w*)',
  'inner_radius':r'\bindre radius\s+([A-Za-z_]\w*)',
  'outer_radius':r'\bydre radius\s+([A-Za-z_]\w*)',
@@ -26,7 +27,7 @@ ROLE_PATTERNS={
  'capacitance':r'\b(?:kapacitans|kapacitansen|capacitance)\s+([A-Za-z_]\w*)',
  'inductance':r'\b(?:induktans|induktansen)\s+([A-Za-z_]\w*)',
 }
-ROLE_UNITS={'radius':'m','inner_radius':'m','outer_radius':'m','length':'m','resistance':'ohm','area':'m^2','permittivity':'F/m','permeability':'H/m','mass':'kg','plate_distance':'m','capacitance':'F','inductance':'H'}
+ROLE_UNITS={'relative_permittivity':'1','radius':'m','inner_radius':'m','outer_radius':'m','length':'m','resistance':'ohm','area':'m^2','permittivity':'F/m','permeability':'H/m','mass':'kg','plate_distance':'m','capacitance':'F','inductance':'H'}
 BAD_ROLE_WORDS={'r','på','i','og','med','som','af','for','til','fra','er','har','a','the','of','radius','konstant','uniform'}-{'r','a'}
 GEOMETRY_LABELS={'sphere':'Massiv kugle','spherical_shell':'Kugleskal','cylinder':'Cylinder','hollow_cylinder':'Hul cylinder','wire':'Ledning','line':'Linjeladning','ring':'Ring/loop','arc':'Bue','plane':'Plan','slab':'Slab','disk':'Skive','point_charges':'Punktladninger','capacitor':'Kondensator','solenoid':'Solenoide','toroid':'Toroid','sliding_rod':'Glidende stang','rotating_rod':'Roterende stang','field':'Givet felt/potentiale','dipole':'Magnetisk dipol','conductor':'Leder','parameterized_line':'Parameteriseret kurve','RC':'RC-kredsløb','RL':'RL-kredsløb'}
 
@@ -37,15 +38,22 @@ def analyze(original,corrections=None):
     def put(key,value=None,status='GREEN',evidence=(),message='',options=(),depends=(),required=True):
         out.fields[key]=ParsedField(value,status,list(evidence),message,list(options),required,list(depends));return value
     def question(key,message,options=(),status='YELLOW',depends=()):return put(key,None,status,message=message,options=options,depends=depends)
-    rows=extract.assignments(text);declared={r['name'] for r in rows}
+    rows=extract.assignments(text);references={}
+    for row in rows:
+        if row['name']=='V' and row['arguments'] in (['oo'],['infinity']) and row['raw']=='0':references['V_infinity']='0'
+    rows=[r for r in rows if not (r['name']=='V' and r['arguments'] in (['oo'],['infinity']))]
+    if re.search(r'potential(?:et)?(?: sættes| er)?(?: til)? nul i det uendelig|V\s*[-=]>?\s*0.{0,20}infinity',text,re.I):references['V_infinity']='0'
+    declared={r['name'] for r in rows}
     numbers,known_units,constants,conflicts=extract.numeric_values(rows)
     known_units.update({'epsilon_0':'F/m','mu_0':'H/m','eps0':'F/m','mu0':'H/m'})
-    f.update(numbers=numbers,units=known_units,constants=constants,roles={},positive=[],orders=[],aliases={},sources={},coordinate=None,qualifiers=extract.qualifiers(text))
+    f.update(boundary_conditions=references,numbers=numbers,units=known_units,constants=constants,roles={},positive=[],orders=[],aliases={},sources={},coordinate=None,qualifiers=extract.qualifiers(text))
     for key,pattern in ROLE_PATTERNS.items():
         for match in re.finditer(pattern,text,re.I):
             name=match[1]
             if name.lower() in BAD_ROLE_WORDS:continue
+            if re.match(r'\s*[*/+-]',text[match.end():]):continue # a compound radius is not its first symbol
             f['roles'].setdefault(key,name)
+    if f['roles'].get('permittivity')==f['roles'].get('relative_permittivity'):f['roles'].pop('permittivity',None)
     for key,value in corrections.items():
         if key in ROLE_UNITS:f['roles'][key]=value
     for role,name in f['roles'].items():
@@ -56,6 +64,7 @@ def analyze(original,corrections=None):
                     if si('1 '+old,ROLE_UNITS[role]).magnitude is None:pass
                 except ValueError:conflicts.append(name)
             f['units'][name]=ROLE_UNITS[role]
+            if ROLE_UNITS[role]=='1' and name in constants:f['numbers'][name]=constants[name]+' dimensionless'
             if role in POSITIVES:f['positive'].append(name)
     if '__' in text:question('notation','Programkode eller uunderstøttet identifikator i opgaven. Angiv et rent matematisk udtryk.',status='RED')
     if conflicts:question('symbol_meaning','Samme symbol har modstridende værdier eller fysiske roller: '+', '.join(sorted(set(conflicts))),status='RED')
@@ -92,6 +101,8 @@ def analyze(original,corrections=None):
         name=extract.SOURCE_ALIASES.get(row['name'])
         if name is None and re.fullmatch(r'[EBA][0-9]+',row['name']):name=row['name'][0]
         if name is None:continue
+        placeholder=re.fullmatch(re.escape(row['name'])+r'\(([rstxyz]|theta|phi)(?:\s*,\s*(?:[rstxyz]|theta|phi))*\)',row['raw'])
+        if placeholder:continue # naming the requested unknown is not an additional source
         if row['name'] in numbers:formula=row['name'];basis=None
         else:
             try:formula,basis=extract.vector_formula(row['raw'],row['arguments'],declared)
@@ -315,6 +326,11 @@ def analyze(original,corrections=None):
     if f.get('model')=='field_calculus':
         scope=re.search(r'(?<!\w)(0|[A-Za-z_]\w*)\s*<\s*([rsxyz])\s*<\s*([A-Za-z_]\w*)',text)
         if scope:f['scope']=scope.group();put('regions',scope.group(),evidence=[scope.group()])
+    if f.get('model')=='gauss_radial' and 'V' in wanted and references.get('V_infinity')!='0':question('potential_reference','Angiv potentialets referencebetingelse i teksten, fx V(infinity)=0.',status='RED')
+    if f.get('model')=='ampere_radial' and 'I' in wanted:
+        if re.search(r'samlede strøm|totale strøm|total current',query,re.I):f['current_scope']='total'
+        elif re.search(r'I\s*\('+re.escape(f.get('coordinate') or 's')+r'\)|omsluttet|indesluttet',query,re.I):f['current_scope']='enclosed'
+        else:question('current_scope','Søges total strøm eller omsluttet strøm som funktion af afstanden? Angiv det i teksten.',status='RED')
     if source in ('rho','J','I','V') and source in sources:
         sf=sources[source]
         if 't' in sf['args'] or re.search(r'\bt\b',str(sf['formula'])):question('time_model','Tidsafhængige kilder/potentialer kræver yderligere Maxwell-relationer. En statisk direkte metode vælges ikke automatisk.',status='RED')
@@ -331,6 +347,10 @@ def analyze(original,corrections=None):
     f['positive']=list(dict.fromkeys(f['positive']))
     # Declared dimensionless counts can be literal numbers or named symbols.
     if f.get('turns') and re.fullmatch(r'[A-Za-z_]\w*',f['turns']):f['units'][f['turns']]='1';f['positive'].append(f['turns'])
+    if f.get('model') in ('RC','RL','ampere_maxwell','volume_integral'):
+        # These profiles are recognized, but missing structure is exposed explicitly.
+        from .profiles import complete_profile
+        complete_profile(out,corrections,put,question)
     expressions=[]
     for name,sf in sources.items():
         if name not in SOURCE_UNITS:continue
@@ -347,13 +367,11 @@ def analyze(original,corrections=None):
         if missing:question('units','Angiv enheder for '+', '.join(missing)+' som navn:enhed; navn:enhed.',status='YELLOW')
         else:put('units',f['units'],evidence=['Angivne enheder og dimensionelle ligninger'])
     except (ValueError,KeyError,TypeError) as exc:question('units','Enhedskontrol: '+str(exc),status='RED',depends=['source_formula'])
-    if f.get('model') in ('RC','RL','ampere_maxwell','volume_integral'):
-        # These profiles are recognized, but missing structure is exposed explicitly.
-        from .profiles import complete_profile
-        complete_profile(out,corrections,put,question)
     if qualifiers['finite'] and qualifiers['infinite']:question('extent_conflict','Både endelig og uendelig nævnes. Knyt udstrækningen til den relevante kilde i manuel mode.',status='RED')
     if re.search(r'Legendre|Laplace|på (?:kugle)?skallen|på overfladen|randbeting|grænsebeting',text,re.I):question('boundary_model','Et randpotentiale er ikke et potentiale i hele rummet. Separation af variable eller andre randbetingelser skal vælges eksplicit i Avanceret / Manuel.',status='RED')
-    if re.search(r'dielektr|dieletr|permitiv|permittiv|perminitiv|permeabil|magnetisk material|jordet|hulrum|polariser|magnetiser|lederoverflade|ekstern|ydre felt|external field',lower):question('boundary_model','Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel.',status='RED')
+    charge_integral_only=source=='rho' and geometry in ('sphere','spherical_shell') and wanted==['Q'] and bool(re.search(r'(?:totale|samlede) frie ladning',query,re.I))
+    if charge_integral_only:put('method','Volumenintegral af fri ladning',evidence=['Givet fri volumentæthed og søgt samlet fri ladning'])
+    if not charge_integral_only and re.search(r'dielektr|dieletr|permitiv|permittiv|perminitiv|permeabil|magnetisk material|jordet|hulrum|polariser|magnetiser|lederoverflade|ekstern|ydre felt|external field',lower):question('boundary_model','Materialer, eksterne felter eller randbetingelser kræver en særskilt model. Brug Avanceret / Manuel.',status='RED')
     if source=='rho' and re.search(r'\bmetal\w*|\bledende\b|\bleder\b',lower):question('boundary_model','Volumenladningen og den ledende materialebeskrivelse kræver kontrol af overflade- og randbetingelser. Brug Avanceret / Manuel.',status='RED')
     if re.search(r'\b[a-d]\)\s',text):question('subproblem','Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.',status='RED')
     if re.search(r'angivet.{0,10}(?:på|i) figur|som vist|se figuren|retningen.{0,20}figuren',text,re.I):question('figure','Figuren bærer fysiske oplysninger, som ikke sikkert kan udledes af teksten. Beskriv dem i teksten eller brug Avanceret / Manuel.',status='RED')

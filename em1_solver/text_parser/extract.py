@@ -25,7 +25,7 @@ def rhs(text,start):
     # Vector expressions retain basis labels; scalar prose stops at the first direction.
     vector=bool(re.search(r'\b(?:[xyzrs]|phi|theta)hat\b',raw))
     if not vector:raw=re.split(STOP,raw,1,flags=re.I)[0].strip()
-    else:raw=re.split(r'\b(?:Find|Bestem|Beregn|Vis|Udled|Kan|for|hvor|idet|mellem|vinkelret|langs|med|og)\b',raw,1)[0].strip()
+    else:raw=re.split(r'\b(?:Find|Bestem|Beregn|Vis|Udled|Kan|for|hvor|idet|mellem|vinkelret|langs|med|og|er|is)\b',raw,1)[0].strip()
     return raw
 
 

@@ -6,7 +6,7 @@ GEOMETRIES={'sphere':'kugle','spherical_shell':'kugleskal','cylinder':'cylinder'
 
 def compile_interpretation(interp):
     f=interp.facts;model=f['model'];source=f['source'];geometry=f['geometry']
-    allowed={'field_calculus':{'E','rho','B','curl_E','div_B'},'gauss_radial':{'E','D','Q_enc'},'ampere_radial':{'B'},'coulomb_curve':{'E','V','Q'},'biot_curve':{'B'},'faraday':{'Phi','EMF','I','P','W'}}
+    allowed={'field_calculus':{'E','rho','B','curl_E','div_B'},'gauss_radial':{'E','D','Q_enc','Q','V'},'ampere_radial':{'B','I','I_enc'},'coulomb_curve':{'E','V','Q'},'biot_curve':{'B'},'ampere_maxwell':{'B','I_displacement','J_displacement'},'faraday':{'Phi','EMF','I','P','W'}}
     if set(f['wanted'])-allowed.get(model,set()):raise ValueError('Den valgte relation bestemmer ikke alle søgte størrelser. Brug Avanceret / Manuel til afhængige beregningstrin.')
     d={};assumptions=[];units=copy.deepcopy(f['units']);positive=list(f['positive'])
     if model=='field_calculus':
@@ -55,6 +55,9 @@ def compile_interpretation(interp):
         if len(args)==1:formula=re.sub(r'\b'+re.escape(args[0])+r'\b',u,formula)
         d['density' if source=='lambda' else 'I']=formula if source=='lambda' else sign+'('+formula+')'
         assumptions=['magnetostatic'] if source=='I' else ['electrostatic']
+    elif model=='ampere_maxwell':
+        d={'solver_spec':dict(domain='DYN',family='ampere_maxwell',variables=dict(E=f['axial_component'],time=f['time'],coordinate=f['coordinate'],plate_radius=f['roles']['radius']),wanted=f['wanted'])}
+        assumptions=['uniform_axial_E','circular_symmetry','negligible_edge_effects']
     elif model=='faraday':
         orientation=f['orientation'];normal=orientation['normal'];plane=orientation['plane'];axis=({'xy':'z','yz':'x','zx':'y'})[plane]
         if normal[1]!=axis:raise ValueError('Normalen er ikke vinkelret på løkkens plan.')
@@ -85,5 +88,10 @@ def compile_interpretation(interp):
         for row in d['regions']:row['density']=re.sub(r'\b'+re.escape(signed)+r'\b',radial,row['density'])
     d['orientation']=f['orientation']
     p=Parsed(interp.original,GEOMETRIES.get(geometry,geometry),d,list(f['wanted']),copy.deepcopy(f['numbers']),units,positive,assumptions)
+    if model=='gauss_radial' and set(f['wanted'])&{'Q','V'}:
+        if geometry not in ('sphere','spherical_shell'):raise ValueError('Denne totale ladnings-/potentialvej kræver kuglesymmetri; angiv ellers integrationsgeometri manuelt.')
+        p.data['composition']=dict(seed_wanted=['E'],targets=f['wanted'])
+        if f.get('boundary_conditions',{}).get('V_infinity')=='0':p.assumptions.append('V_infinity_zero')
+    if model=='ampere_radial' and 'I' in f['wanted']:p.data['composition']=dict(seed_wanted=['B'],targets=f['wanted'],current_scope=f['current_scope'])
     build(p) # Validate shape, SI dimensions and numerical positivity before declaring ready.
     return p

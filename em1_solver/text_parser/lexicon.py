@@ -17,7 +17,7 @@ QUALIFIERS={
  'concentric':r'koncentrisk|concentric','parallel':r'parallel','grounded':r'jordet|grounded',
  'uniform':r'\bhomogen\w*\b|\buniform\w*\b|\bkonstant\w*\b|jævnt fordelt',
  'nonuniform':r'ikke[- ]homogen|ikke[- ]uniform|non[- ]uniform'}
-WANTED=[('curl_E',r'rotationen|curl'),('C',r'kapacitans'),('L',r'selvinduktans'),('M',r'gensidig\w* induktans|mutual inductance'),
+WANTED=[('I_displacement',r'forskydningsstrøm|displacement current'),('curl_E',r'rotationen|curl'),('C',r'kapacitans'),('L',r'selvinduktans'),('M',r'gensidig\w* induktans|mutual inductance'),
  ('inductance',r'induktans'),('EMF',r'\bemf\b|elektromotorisk|induceret spænding'),('Phi',r'\bflux\b'),
  ('torque',r'drejningsmoment|kraftmoment|\bmomentet\b|\bmoment\b'),('F',r'\bkraft\w*\b'),('E',r'elektrisk\w* felt'),
  ('B',r'\bmagnetfelt\w*\b|magnetisk\w* felt'),('rho',r'ladningstæthed|ladningstætheden'),('Q',r'totale ladning|samlede ladning|\bladningen\b'),

@@ -14,7 +14,11 @@ def _worker(output,parsed,evaluate):
     block_network()
     try:
         from .new_problem import execute
-        output.put(('ok',execute(parsed,evaluate_integrals=evaluate)))
+        if 'composition' in parsed.data:
+            from .composition import execute_plan
+            answer=execute_plan(parsed,evaluate)
+        else:answer=execute(parsed,evaluate_integrals=evaluate)
+        output.put(('ok',answer))
     except Exception as exc:output.put(('error',str(exc)))
 
 
