@@ -1,0 +1,63 @@
+{
+  "full_suite": {
+    "collected": 869,
+    "outcomes": {
+      "passed": 869
+    },
+    "fingerprint": "290a97c60e0362bcc69a65b4badd4fd726fdd28fe69bd108e8c85931df145daa"
+  },
+  "full_certify_pipeline_exitstatus": 0,
+  "new_question_evaluation": {
+    "fully_correct": 17,
+    "partial": 0,
+    "wrong": 0,
+    "abstained": 3
+  },
+  "new_question_automatic": {
+    "full": 0,
+    "partial": 1,
+    "wrong": 0,
+    "abstained": 19
+  },
+  "native_windows_tested": false,
+  "platform": "Linux Qt offscreen",
+  "offline_dependencies": {
+    "statuses": [
+      "calculated_under_confirmed_model",
+      "calculated_under_confirmed_model",
+      "calculated_under_confirmed_model",
+      "calculated_under_confirmed_model",
+      "calculated_under_confirmed_model",
+      "calculated_under_confirmed_model",
+      "calculated_under_confirmed_model",
+      "needs_confirmation"
+    ],
+    "network": "blocked",
+    "isolated_no_site": true,
+    "frontend_imported": false,
+    "dependencies": {
+      "sympy": "1.14.0",
+      "mpmath": "1.3.0",
+      "Pint": "0.25.2",
+      "flexcache": "0.3",
+      "flexparser": "0.4",
+      "platformdirs": "4.14.4",
+      "typing_extensions": "4.16.0"
+    }
+  },
+  "sampled_gui_parent_and_children_rss_bytes": 881590272,
+  "frontend_hashes": {
+    "desktop_app/TEST_FYSIKMOTOR.py": "13445db9b6e8809c0fc160422f67fd8803e47cea9a30e8980529d066419adeff",
+    "desktop_app/app.py": "8bd5bb1807f28bac13b167fad9105e1e1a9671a6a08dbeb279797eceead29e91",
+    "desktop_app/backend_bridge.py": "8c605b704592baf059d96d7bd2c22f8e4d32ce106d30ac13ba5fdfc76b45bbd9",
+    "desktop_app/backend_paths.py": "b8708adbda3c594a534e2b2c2f1ba631d6ea38e34b0f684e2260c3636d92f4af",
+    "desktop_app/backend_runner.py": "b98718eba1f0e13cbd7d7ccd1e27a9a7f5eb932eac5d90624674b5e25e99c2d7",
+    "desktop_app/interpretation_aid.py": "91046f0cc92e11ee507448c1e2e2432a80487afc09effd478ff59b19836c2a85",
+    "desktop_app/modify_app.py": "7fcffb6227bddbd3291000137f6e92dbf6f3fb9c5479ccc17440ed7728ae4315",
+    "desktop_app/run_app.py": "dd86b869d573ae8a903a83b78f5973225b23bff67a88a1ea5723e5501d5015ce",
+    "desktop_app/test_backend_bridge.py": "8ae35be52b92fcf6198d4f6bf1c8f8faf020fd98a27ac3ff9d4c9a1ac59acfee",
+    "desktop_app/test_interpretation_aid.py": "207367c936053d6b30f06dee2cb4c6f3efb3cb0c6c0cee8b463328789bf32f89",
+    "desktop_app/test_runner_retry.py": "e0beb2c536597ae0196c8cf79d34427c09dfcbacab447a8e003d20a3c2d9847d"
+  },
+  "production_changes_during_20_question_evaluation": false
+}

@@ -1,0 +1,294 @@
+{
+  "EV1": {
+    "values": {
+      "F": [
+        -4.4382971813635425e-06,
+        0,
+        0
+      ],
+      "E": [
+        3945.153050100926,
+        0,
+        0
+      ]
+    },
+    "inputs_SI": {
+      "q": 4e-09,
+      "a": 0.09,
+      "d": 0.03
+    },
+    "independent_derivation": "Reflect q across x=d to -q at x=d-a. Exclude real self-field for force; field distances at d+2a are a and 3a."
+  },
+  "EV2": {
+    "values": {
+      "F": [
+        0,
+        0,
+        -3.783025626844626e-06
+      ],
+      "Q_induced": -1.090909090909091e-09
+    },
+    "inputs_SI": {
+      "q": 4e-09,
+      "a": 0.03,
+      "d": 0.11
+    },
+    "independent_derivation": "Sphere image q_im=-qa/d at a²/d; separation d-a²/d. Coulomb force q*q_im/separation²; grounded net image charge equals conductor charge."
+  },
+  "EV3": {
+    "values": {
+      "F": [
+        0,
+        0,
+        -8.022806964386527e-07
+      ],
+      "V_sphere": 67.40663844195876
+    },
+    "inputs_SI": {
+      "q": -2e-09,
+      "a": 0.05,
+      "d": 0.16,
+      "Qs": 1e-09
+    },
+    "independent_derivation": "Off-center image -qa/d cancels boundary variation. Central image Qs+qa/d fixes net charge; its boundary potential is k*qc/a."
+  },
+  "EV4": {
+    "values": {
+      "E": [
+        12942.074580856084,
+        -5752.033147047149,
+        0
+      ],
+      "V": -359.5020716904469
+    },
+    "inputs_SI": {
+      "q": 2e-09,
+      "a": 0.03,
+      "b": 0.04
+    },
+    "independent_derivation": "Vector sum k*q*(a,b,0)/D³ + k*(-2q)*(-a,b,0)/D³; scalar potentials add."
+  },
+  "EV5": {
+    "values": {
+      "E": 14.11761334216274,
+      "V": 2.562085384318423,
+      "Q": 1.5707963267948968e-11,
+      "test_force": 2.8235226684325482e-08,
+      "test_energy": 5.1241707686368465e-09
+    },
+    "inputs_SI": {
+      "a": 0.1,
+      "r": 0.03333333333333333,
+      "rho0": 1.5e-08,
+      "q": 2e-09
+    },
+    "independent_derivation": "Qenc=4pi*rho0*(r³/3-r⁴/(4a)). E=Qenc/(4pi eps r²); integrate inward from V(a)=rho0*a²/(12eps). Test force qE and test potential energy qV."
+  },
+  "EV6": {
+    "values": {
+      "E": [
+        -14.399999999999999,
+        0,
+        -4.8
+      ],
+      "rho": -6.375015225216e-09
+    },
+    "inputs_SI": {
+      "k": 3000,
+      "s": 0.04,
+      "phi": 0,
+      "z": 0.06
+    },
+    "independent_derivation": "Cylindrical gradient gives Es=-2ksz and Ez=-ks²; Laplacian (1/s)d(s*dV/ds)/ds+d²V/dz²=4kz, rho=-eps*laplacian."
+  },
+  "BA1": {
+    "values": {
+      "J_bound": [
+        2400,
+        0,
+        0
+      ],
+      "K_bound": [
+        0,
+        48.0,
+        0
+      ]
+    },
+    "inputs_SI": {
+      "k": 2400,
+      "b": 0.02,
+      "x": 0,
+      "y": 0.02,
+      "z": 0
+    },
+    "independent_derivation": "curl(0,0,ky)=(k,0,0); M×ex=(0,ky,0), evaluated at y=b. No H or B inferred."
+  },
+  "BA2": {
+    "values": {
+      "B_inside": [
+        0.0002932153144946667,
+        0.0005864306289893334,
+        0
+      ],
+      "B": [
+        -5.429913231382716e-06,
+        -1.0859826462765433e-05,
+        0
+      ],
+      "J_bound": [
+        0,
+        0,
+        0
+      ]
+    },
+    "inputs_SI": {
+      "m": 350,
+      "a": 0.06
+    },
+    "independent_derivation": "Demagnetizing H=-M/3, Binside=2mu*M/3. Moment=4pi*a³*M/3; at z=3a and M perpendicular to z, B=-mu*M/81."
+  },
+  "BA3": {
+    "values": {
+      "B": 2.638937830452e-06,
+      "I": 0.2111150263212341
+    },
+    "inputs_SI": {
+      "J0": 700,
+      "a": 0.008,
+      "s": 0.016
+    },
+    "independent_derivation": "I=integral_0^a 2pi*s*J0*(1+s²/a²)ds=3pi*J0*a²/2. Outside B=mu*I/(2pi*s)."
+  },
+  "BA4": {
+    "values": {
+      "B": [
+        0,
+        1.920000001045201e-05,
+        0
+      ]
+    },
+    "inputs_SI": {
+      "I": 3,
+      "a": 0.04,
+      "b": 0.03
+    },
+    "independent_derivation": "At (0,b), x components of opposite z currents cancel; y components add to mu*I*a/[pi(a²+b²)]."
+  },
+  "BA5": {
+    "values": {
+      "B": [
+        0,
+        0,
+        5.385587409085713e-06
+      ]
+    },
+    "inputs_SI": {
+      "I": 2.4,
+      "a": 0.07
+    },
+    "independent_derivation": "A circular arc subtending pi/2 produces mu*I*angle/(4pi*a), oriented +z by dl×r. Return wire excluded in question."
+  },
+  "DYN1": {
+    "values": {
+      "initial_slope": -93.33333333333333,
+      "zero_time": 0.0025235417746590967
+    },
+    "inputs_SI": {
+      "R": 8,
+      "L": 0.06,
+      "voltage": -4,
+      "I0": 0.2
+    },
+    "independent_derivation": "Solve L Iprime+R I=V: I=V/R+(I0-V/R)exp(-t/tau). Initial slope from KVL; zero from exponential ratio, positive and finite."
+  },
+  "DYN2": {
+    "values": {
+      "extremum_times": 0.02,
+      "I": 0.5020428603339671
+    },
+    "inputs_SI": {
+      "R": 6,
+      "L": 0.12,
+      "v0": 9,
+      "t": 0.03
+    },
+    "independent_derivation": "Integrating factor exp(t/tau) gives I=(v0/L)t exp(-t/tau). Derivative vanishes at tau; second derivative there is -v0*R*exp(-1)/L²<0, a local maximum."
+  },
+  "DYN3": {
+    "values": {
+      "Q": 0.0004541341132946451,
+      "I": 0.008646647167633872,
+      "I_initial": 0
+    },
+    "inputs_SI": {
+      "R": 20,
+      "C": 0.002,
+      "beta": 5,
+      "t": 0.08
+    },
+    "independent_derivation": "Integrating factor for Qprime+Q/(RC)=beta*t/R gives Q=beta*C*(t-tau+tau exp(-t/tau)); differentiate for positive charging current."
+  },
+  "DYN4": {
+    "values": {
+      "EMF": -0.0008,
+      "I": -0.0002666666666666667
+    },
+    "inputs_SI": {
+      "N": 5,
+      "B0": 0.12,
+      "A0": 0.0008,
+      "T": 0.6,
+      "R": 3,
+      "t": 0.3
+    },
+    "independent_derivation": "B(t)*A(t)=B0*A0*(1+t/T); both time dependences are included before differentiation. emf=-N*B0*A0/T, I=emf/R, negative: clockwise viewed from +z."
+  },
+  "DYN5": {
+    "values": {
+      "EMF": 0.4,
+      "coil_current": 0.08646647167633874,
+      "joule_power": 0.029905802896620357,
+      "heat": 0.0015230254940577167
+    },
+    "inputs_SI": {
+      "alpha": 0.4,
+      "R": 4,
+      "L": 0.2,
+      "T": 0.1,
+      "t": 0.1
+    },
+    "independent_derivation": "emf=alpha. Current from integrating-factor RL solution. Joule power=R*I²; integrate (alpha²/R)(1-2e^-t/tau+e^-2t/tau) from 0 to T."
+  },
+  "DYN6": {
+    "values": {
+      "EMF": 0.027000000000000003
+    },
+    "inputs_SI": {
+      "a": 0.15,
+      "omega": 12,
+      "B0": 0.2
+    },
+    "independent_derivation": "v=(0,omega*u,0), B=(0,0,B0), v×B=(omega*u*B0,0,0); integral from 0 to a is positive B0*omega*a²/2, tip positive."
+  },
+  "EV7": {
+    "values": {},
+    "inputs_SI": {},
+    "independent_derivation": "Well-posed exterior Laplace/Poisson boundary problem with zero potential on six finite faces, decay at infinity and a point-charge singularity. The planar-image solution does not satisfy all cube faces; a separately validated numerical boundary solver is required. No value invented."
+  },
+  "BA6": {
+    "values": {},
+    "inputs_SI": {},
+    "independent_derivation": "Ampere fixes average H=NI/ell, but without a material relation and hysteresis state B is not unique. At the same H, distinct remanent states can give different B."
+  },
+  "DYN7": {
+    "values": {},
+    "inputs_SI": {
+      "R": 2,
+      "L": 1,
+      "C": 0.01,
+      "Q0": 1,
+      "I0": 0
+    },
+    "independent_derivation": "KVL gives Qsecond+2Qprime+100Q=0. Roots -1 +/- i*sqrt(99). Q(t)=exp(-t)*(cos(sqrt(99)*t)+sin(sqrt(99)*t)/sqrt(99)) C, Icharge=dQ/dt=-100*exp(-t)*sin(sqrt(99)*t)/sqrt(99) A. Q(0)=1, I(0)=0; no matching model card was forced onto it."
+  }
+}

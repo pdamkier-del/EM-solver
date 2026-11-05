@@ -1,0 +1,889 @@
+{
+  "id": "BA2",
+  "domain": "BA",
+  "model": "magnetized_sphere",
+  "automatic_response": {
+    "schema_version": "1.0",
+    "status": "not_solved",
+    "interpretation": {
+      "model": {
+        "objects": [
+          {
+            "id": "body",
+            "geometry": "sphere",
+            "extent": null,
+            "parameters": {},
+            "position": null,
+            "material": "unspecified"
+          }
+        ],
+        "sources": [
+          {
+            "id": "source_M",
+            "kind": "M",
+            "formula": "(m,2*m,0)",
+            "arguments": [],
+            "basis": null,
+            "evidence": "M=(m,2m,0)"
+          }
+        ],
+        "relationships": [
+          {
+            "subject": "source_M",
+            "relation": "has_support",
+            "object": "body",
+            "regions": "model dependent"
+          }
+        ],
+        "coordinates": [],
+        "orientation": {},
+        "boundary_conditions": {},
+        "initial_conditions": {},
+        "assumptions": [],
+        "wanted": [
+          "B"
+        ],
+        "units": {
+          "a": "meter",
+          "m": "ampere / meter",
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m"
+        },
+        "values": {
+          "a": "6 cm",
+          "m": "350 A/m"
+        },
+        "methods": [
+          {
+            "name": null,
+            "status": "RED"
+          }
+        ],
+        "dependencies": {}
+      },
+      "fields": {
+        "geometry": {
+          "value": "sphere",
+          "status": "GREEN",
+          "evidence": [
+            "kugle"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "wanted": {
+          "value": [
+            "B"
+          ],
+          "status": "GREEN",
+          "evidence": [
+            " indre B og ydre B i (0,0,3a)."
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source": {
+          "value": "M",
+          "status": "GREEN",
+          "evidence": [
+            "M=(m,2m,0)"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source_formula": {
+          "value": "(m,2*m,0)",
+          "status": "GREEN",
+          "evidence": [
+            "M=(m,2m,0)"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "orientation": {
+          "value": {},
+          "status": "GREEN",
+          "evidence": [],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "regions": {
+          "value": "model dependent",
+          "status": "GREEN",
+          "evidence": [
+            "Ikke en radial volumen-/strømtæthed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "domain": {
+          "value": "BA",
+          "status": "GREEN",
+          "evidence": [
+            "Kildetype og søgt fysisk relation"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "method": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+          "options": [],
+          "required": true,
+          "depends_on": [
+            "geometry",
+            "source_formula"
+          ]
+        },
+        "units": {
+          "value": {
+            "a": "meter",
+            "m": "ampere / meter",
+            "epsilon_0": "F/m",
+            "mu_0": "H/m",
+            "eps0": "F/m",
+            "mu0": "H/m"
+          },
+          "status": "GREEN",
+          "evidence": [
+            "Angivne enheder og dimensionelle ligninger"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "material": {
+          "value": "unspecified",
+          "status": "GREEN",
+          "evidence": [
+            "Materialeord i teksten"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "symmetry": {
+          "value": "not established",
+          "status": "GREEN",
+          "evidence": [
+            "Geometri, udstrækning og funktionens afhængighed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        }
+      },
+      "ready": false
+    },
+    "solution": null,
+    "missing": [
+      {
+        "field": "method",
+        "status": "RED",
+        "message": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+        "options": []
+      }
+    ],
+    "errors": [],
+    "desktop_user_corrections": {}
+  },
+  "automatic_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Kan ikke løses med de givne oplysninger",
+    "prompt": "En kugle i vakuum, a=6 cm og centrum i origo, har uniform foreskrevet M=(m,2m,0), m=350 A/m. Ingen frie strømme eller påtrykte felter. Bestem indre B og ydre B i (0,0,3a).",
+    "status": "unsolved",
+    "result": {},
+    "steps": [],
+    "interpretation": {
+      "method": "Ikke afgjort",
+      "geometry": "Se opgavefortolkningen"
+    },
+    "warnings": [
+      "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel."
+    ],
+    "backend_status": "not_solved",
+    "backend_schema": "1.0",
+    "audit": "# Kontrol og gyldighed\n\nBackend rapporterede 0 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\nIngen individuelle kontroller er rapporteret i svaret.\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "automatic_seconds": 0.899,
+  "submitted_request": {
+    "schema_version": "assisted-1.0",
+    "text": "En kugle i vakuum, a=6 cm og centrum i origo, har uniform foreskrevet M=(m,2m,0), m=350 A/m. Ingen frie strømme eller påtrykte felter. Bestem indre B og ydre B i (0,0,3a).",
+    "confirmed": true,
+    "variables": {
+      "M": [
+        "m",
+        "2*m",
+        "0"
+      ],
+      "radius": "a",
+      "center": [
+        "0",
+        "0",
+        "0"
+      ],
+      "point": [
+        "0",
+        "0",
+        "3*a"
+      ],
+      "normal": [
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    "units": {
+      "m": "A/m",
+      "a": "m"
+    },
+    "numbers": {
+      "m": "350 A/m",
+      "a": "6 cm"
+    },
+    "positive": [
+      "a"
+    ],
+    "assumptions": [
+      "uniform_magnetization",
+      "spherical_body",
+      "no_free_current",
+      "no_applied_field",
+      "vacuum_exterior"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "magnetized_sphere",
+        "wanted": [
+          "B_inside",
+          "B",
+          "J_bound"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  },
+  "extra_result_unit_rows": [],
+  "assistance_actions": {
+    "prompt": 1,
+    "open_model": 1,
+    "model_selection": 1,
+    "scalar_fields": 5,
+    "table_cells": 0,
+    "scan_symbols": 1,
+    "unit_entries": 2,
+    "numeric_entries": 2,
+    "positive_flags": 1,
+    "wanted": 1,
+    "assumption_checks": 5,
+    "orientation": 1,
+    "confirmation": 1,
+    "solve": 1,
+    "operation_cells": 0
+  },
+  "assistance_action_count": 23,
+  "assisted_response": {
+    "schema_version": "assisted-1.0",
+    "status": "calculated_under_confirmed_model",
+    "questions": [],
+    "errors": [],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "magnetized_sphere",
+        "status": "calculated_under_confirmed_model",
+        "solution": {
+          "method": "Magnetiseret kugle fra randbetingelser og entydighed",
+          "reasoning": "Uniform magnetisering har nul volumen-curl. Symmetrien tillader konstant indre H og et ydre dipolfelt. Kontinuitet af normal B og tangentiel H uden fri overfladestrøm bestemmer koefficienterne.",
+          "equations_latex": [
+            "\\mathbf J_b=\\nabla\\times\\mathbf M=0",
+            "\\mathbf K_b=\\mathbf M\\times\\hat{\\mathbf n}",
+            "B_{n,in}=B_{n,out}",
+            "H_{t,in}=H_{t,out}"
+          ],
+          "steps": [
+            {
+              "id": "step-7479152b314b9e0b1315-0",
+              "text": "Randbetingelser for normal B og tangentiel H",
+              "title": "Randbetingelser for normal B og tangentiel H",
+              "latex": "\\left( H_{factor} + 1 = \\frac{moment_{factor}}{2 \\pi a^{3}}, \\  H_{factor} = - \\frac{moment_{factor}}{4 \\pi a^{3}}\\right)",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Magnetiseret kugle fra randbetingelser og entydighed",
+              "method_context_id": "method-9fe2a44ed7ed2eb68124",
+              "intermediate_latex": [],
+              "assumptions": [
+                "uniform_magnetization",
+                "spherical_body",
+                "no_free_current",
+                "no_applied_field",
+                "vacuum_exterior"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-731771d8a51efd229c0a-0",
+              "text": "Løs randligningerne og indsæt i H og B",
+              "title": "Løs randligningerne og indsæt i H og B",
+              "latex": "\\left( - \\frac{m}{3}, \\  - \\frac{2 m}{3}, \\  0, \\  \\frac{2 m \\mu_{0}}{3}, \\  \\frac{4 m \\mu_{0}}{3}, \\  0\\right)",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Magnetiseret kugle fra randbetingelser og entydighed",
+              "method_context_id": "method-9fe2a44ed7ed2eb68124",
+              "intermediate_latex": [],
+              "assumptions": [
+                "uniform_magnetization",
+                "spherical_body",
+                "no_free_current",
+                "no_applied_field",
+                "vacuum_exterior"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-10aa2d7ccc04c86a4b36-0",
+              "text": "Beregn det ydre dipolmoment fra samme randløsning",
+              "title": "Beregn det ydre dipolmoment fra samme randløsning",
+              "latex": "\\left[\\begin{matrix}\\frac{4 \\pi a^{3} m}{3}\\\\\\frac{8 \\pi a^{3} m}{3}\\\\0\\end{matrix}\\right]",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Magnetiseret kugle fra randbetingelser og entydighed",
+              "method_context_id": "method-9fe2a44ed7ed2eb68124",
+              "intermediate_latex": [],
+              "assumptions": [
+                "uniform_magnetization",
+                "spherical_body",
+                "no_free_current",
+                "no_applied_field",
+                "vacuum_exterior"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-d2ba3f9e9d24ec40c8af-0",
+              "text": "Overfladestrøm på den sfæriske flade",
+              "title": "Overfladestrøm på den sfæriske flade",
+              "latex": "\\left[\\begin{matrix}2 m\\\\- m\\\\0\\end{matrix}\\right]",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Magnetiseret kugle fra randbetingelser og entydighed",
+              "method_context_id": "method-9fe2a44ed7ed2eb68124",
+              "intermediate_latex": [],
+              "assumptions": [
+                "uniform_magnetization",
+                "spherical_body",
+                "no_free_current",
+                "no_applied_field",
+                "vacuum_exterior"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-9646dc3be56d8d25af44-0",
+              "text": "Evaluér den regionale indre/ydre løsning i det givne punkt",
+              "title": "Evaluér den regionale indre/ydre løsning i det givne punkt",
+              "latex": "\\left[\\begin{matrix}- \\frac{m \\mu_{0}}{81}\\\\- \\frac{2 m \\mu_{0}}{81}\\\\0\\end{matrix}\\right]",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Magnetiseret kugle fra randbetingelser og entydighed",
+              "method_context_id": "method-9fe2a44ed7ed2eb68124",
+              "intermediate_latex": [],
+              "assumptions": [
+                "uniform_magnetization",
+                "spherical_body",
+                "no_free_current",
+                "no_applied_field",
+                "vacuum_exterior"
+              ],
+              "validity": [],
+              "check_ids": []
+            }
+          ],
+          "results": {
+            "B_inside": {
+              "expression": "Matrix([[2*m*mu_0/3], [4*m*mu_0/3], [0]])",
+              "latex": "\\left[\\begin{matrix}\\frac{2 m \\mu_{0}}{3}\\\\\\frac{4 m \\mu_{0}}{3}\\\\0\\end{matrix}\\right]",
+              "unit": "T"
+            },
+            "H_inside": {
+              "expression": "Matrix([[-m/3], [-2*m/3], [0]])",
+              "latex": "\\left[\\begin{matrix}- \\frac{m}{3}\\\\- \\frac{2 m}{3}\\\\0\\end{matrix}\\right]",
+              "unit": "A/m"
+            },
+            "J_bound": {
+              "expression": "Matrix([[0], [0], [0]])",
+              "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+              "unit": "A/m^2"
+            },
+            "K_bound": {
+              "expression": "Matrix([[2*m], [-m], [0]])",
+              "latex": "\\left[\\begin{matrix}2 m\\\\- m\\\\0\\end{matrix}\\right]",
+              "unit": "A/m"
+            },
+            "dipole": {
+              "expression": "Matrix([[4*pi*a**3*m/3], [8*pi*a**3*m/3], [0]])",
+              "latex": "\\left[\\begin{matrix}\\frac{4 \\pi a^{3} m}{3}\\\\\\frac{8 \\pi a^{3} m}{3}\\\\0\\end{matrix}\\right]",
+              "unit": "A*m^2"
+            },
+            "B": {
+              "expression": "Matrix([[-m*mu_0/81], [-2*m*mu_0/81], [0]])",
+              "latex": "\\left[\\begin{matrix}- \\frac{m \\mu_{0}}{81}\\\\- \\frac{2 m \\mu_{0}}{81}\\\\0\\end{matrix}\\right]",
+              "unit": "T"
+            }
+          },
+          "numerical": {
+            "B_inside": {
+              "value": "Matrix([[0.000293215314494667], [0.000586430628989333], [0]])",
+              "latex": "\\left[\\begin{matrix}0.000293215314494667\\\\0.000586430628989333\\\\0\\end{matrix}\\right]",
+              "unit": "T"
+            },
+            "H_inside": {
+              "value": "Matrix([[-116.666666666667], [-233.333333333333], [0]])",
+              "latex": "\\left[\\begin{matrix}-116.666666666667\\\\-233.333333333333\\\\0\\end{matrix}\\right]",
+              "unit": "A/m"
+            },
+            "J_bound": {
+              "value": "Matrix([[0], [0], [0]])",
+              "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+              "unit": "A/m^2"
+            },
+            "K_bound": {
+              "value": "Matrix([[700.000000000000], [-350.000000000000], [0]])",
+              "latex": "\\left[\\begin{matrix}700.0\\\\-350.0\\\\0\\end{matrix}\\right]",
+              "unit": "A/m"
+            },
+            "dipole": {
+              "value": "Matrix([[0.316672539481851], [0.633345078963702], [0]])",
+              "latex": "\\left[\\begin{matrix}0.316672539481851\\\\0.633345078963702\\\\0\\end{matrix}\\right]",
+              "unit": "A*m^2"
+            },
+            "B": {
+              "value": "Matrix([[-5.42991323138272e-6], [-1.08598264627654e-5], [0]])",
+              "latex": "\\left[\\begin{matrix}-5.42991323138272 \\cdot 10^{-6}\\\\-1.08598264627654 \\cdot 10^{-5}\\\\0\\end{matrix}\\right]",
+              "unit": "T"
+            }
+          },
+          "checks": [
+            {
+              "id": "check-7271c2f0dfaa7e34ea0d",
+              "name": "Normal B-kontinuitet",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-f19160059cc654bfdafd",
+              "name": "Tangentiel H-kontinuitet",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-034ca551326f491885bf",
+              "name": "K_bound dot n = 0",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-00f90177f27b3722bba9",
+              "name": "Dimension: B_inside",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "T",
+              "step_ids": []
+            },
+            {
+              "id": "check-c2afd1046426d33217ff",
+              "name": "Dimension: H_inside",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A/m",
+              "step_ids": []
+            },
+            {
+              "id": "check-f558346f38e45cc87a87",
+              "name": "Dimension: J_bound",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A/m^2",
+              "step_ids": []
+            },
+            {
+              "id": "check-ef34d14db2a35ed41e89",
+              "name": "Dimension: K_bound",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A/m",
+              "step_ids": []
+            },
+            {
+              "id": "check-1f95cbd041e45c35e09f",
+              "name": "Dimension: dipole",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A*m^2",
+              "step_ids": []
+            },
+            {
+              "id": "check-f62877ccb86f251e4c49",
+              "name": "Dimension: B",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "T",
+              "step_ids": []
+            },
+            {
+              "id": "check-5eb3a9647102e990b234",
+              "name": "Inputdimension: M",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "A/m",
+              "step_ids": []
+            },
+            {
+              "id": "check-e67363aefbd483d730da",
+              "name": "Inputdimension: normal",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "1",
+              "step_ids": []
+            },
+            {
+              "id": "check-9ef597aff7a2285747cd",
+              "name": "Inputdimension: center",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m",
+              "step_ids": []
+            },
+            {
+              "id": "check-e8e714da42fd7748d4c3",
+              "name": "Inputdimension: radius",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m",
+              "step_ids": []
+            },
+            {
+              "id": "check-6bb4fcd4c5ebc8ad50ac",
+              "name": "Inputdimension: point",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m",
+              "step_ids": []
+            }
+          ],
+          "direction": "Kartesiske komponenter. Indre B er parallel med M; ydre B er dipolfeltet. Punktværdien præcis på en strømførende grænse er ensidig.",
+          "warnings": [
+            "Kun uniform foreskrevet M i en sfære, ingen frie strømme eller påtrykte ydre felter. Vinkelparametrene theta_surface og phi_surface beskriver normalretningen, hvis normal ikke angives."
+          ],
+          "presentation_version": "1.0",
+          "latex_profile": "EM1-Math-1",
+          "method_contexts": {
+            "method-9fe2a44ed7ed2eb68124": {
+              "method_id": "magnetic_material",
+              "method": "Magnetiseret kugle fra randbetingelser og entydighed",
+              "reasoning": "Uniform magnetisering har nul volumen-curl. Symmetrien tillader konstant indre H og et ydre dipolfelt. Kontinuitet af normal B og tangentiel H uden fri overfladestrøm bestemmer koefficienterne.",
+              "equations": [
+                "\\mathbf J_b=\\nabla\\times\\mathbf M=0",
+                "\\mathbf K_b=\\mathbf M\\times\\hat{\\mathbf n}",
+                "B_{n,in}=B_{n,out}",
+                "H_{t,in}=H_{t,out}"
+              ],
+              "assumptions": [
+                "uniform_magnetization",
+                "spherical_body",
+                "no_free_current",
+                "no_applied_field",
+                "vacuum_exterior"
+              ]
+            }
+          },
+          "views": {
+            "result": {
+              "wanted": [
+                "B_inside",
+                "B",
+                "J_bound"
+              ],
+              "results": {
+                "B_inside": {
+                  "expression": "Matrix([[2*m*mu_0/3], [4*m*mu_0/3], [0]])",
+                  "latex": "\\left[\\begin{matrix}\\frac{2 m \\mu_{0}}{3}\\\\\\frac{4 m \\mu_{0}}{3}\\\\0\\end{matrix}\\right]",
+                  "unit": "T"
+                },
+                "J_bound": {
+                  "expression": "Matrix([[0], [0], [0]])",
+                  "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+                  "unit": "A/m^2"
+                },
+                "B": {
+                  "expression": "Matrix([[-m*mu_0/81], [-2*m*mu_0/81], [0]])",
+                  "latex": "\\left[\\begin{matrix}- \\frac{m \\mu_{0}}{81}\\\\- \\frac{2 m \\mu_{0}}{81}\\\\0\\end{matrix}\\right]",
+                  "unit": "T"
+                }
+              },
+              "numerical": {
+                "B_inside": {
+                  "value": "Matrix([[0.000293215314494667], [0.000586430628989333], [0]])",
+                  "latex": "\\left[\\begin{matrix}0.000293215314494667\\\\0.000586430628989333\\\\0\\end{matrix}\\right]",
+                  "unit": "T"
+                },
+                "J_bound": {
+                  "value": "Matrix([[0], [0], [0]])",
+                  "latex": "\\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]",
+                  "unit": "A/m^2"
+                },
+                "B": {
+                  "value": "Matrix([[-5.42991323138272e-6], [-1.08598264627654e-5], [0]])",
+                  "latex": "\\left[\\begin{matrix}-5.42991323138272 \\cdot 10^{-6}\\\\-1.08598264627654 \\cdot 10^{-5}\\\\0\\end{matrix}\\right]",
+                  "unit": "T"
+                }
+              },
+              "direction": "Kartesiske komponenter. Indre B er parallel med M; ydre B er dipolfeltet. Punktværdien præcis på en strømførende grænse er ensidig."
+            },
+            "derivation": {
+              "equations_latex": [
+                "\\mathbf J_b=\\nabla\\times\\mathbf M=0",
+                "\\mathbf K_b=\\mathbf M\\times\\hat{\\mathbf n}",
+                "B_{n,in}=B_{n,out}",
+                "H_{t,in}=H_{t,out}"
+              ],
+              "step_ids": [
+                "step-7479152b314b9e0b1315-0",
+                "step-731771d8a51efd229c0a-0",
+                "step-10aa2d7ccc04c86a4b36-0",
+                "step-d2ba3f9e9d24ec40c8af-0",
+                "step-9646dc3be56d8d25af44-0"
+              ]
+            },
+            "explanation": {
+              "step_ids": [
+                "step-7479152b314b9e0b1315-0",
+                "step-731771d8a51efd229c0a-0",
+                "step-10aa2d7ccc04c86a4b36-0",
+                "step-d2ba3f9e9d24ec40c8af-0",
+                "step-9646dc3be56d8d25af44-0"
+              ],
+              "method_context_ids": [
+                "method-9fe2a44ed7ed2eb68124"
+              ],
+              "global_check_ids": [
+                "check-7271c2f0dfaa7e34ea0d",
+                "check-f19160059cc654bfdafd",
+                "check-034ca551326f491885bf",
+                "check-00f90177f27b3722bba9",
+                "check-c2afd1046426d33217ff",
+                "check-f558346f38e45cc87a87",
+                "check-ef34d14db2a35ed41e89",
+                "check-1f95cbd041e45c35e09f",
+                "check-f62877ccb86f251e4c49",
+                "check-5eb3a9647102e990b234",
+                "check-e67363aefbd483d730da",
+                "check-9ef597aff7a2285747cd",
+                "check-e8e714da42fd7748d4c3",
+                "check-6bb4fcd4c5ebc8ad50ac"
+              ],
+              "warnings": [
+                "Kun uniform foreskrevet M i en sfære, ingen frie strømme eller påtrykte ydre felter. Vinkelparametrene theta_surface og phi_surface beskriver normalretningen, hvis normal ikke angives."
+              ]
+            }
+          }
+        },
+        "errors": [],
+        "verification": {
+          "interpretation": "user_confirmed_not_machine_verified",
+          "dimensions": "passed",
+          "physical_checks": [
+            "Normal B-kontinuitet",
+            "Tangentiel H-kontinuitet",
+            "K_bound dot n = 0",
+            "Inputdimension: M",
+            "Inputdimension: normal",
+            "Inputdimension: center",
+            "Inputdimension: radius",
+            "Inputdimension: point"
+          ],
+          "completeness": "requested_results_present",
+          "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+        }
+      }
+    ],
+    "interpretation_status": "user_confirmed",
+    "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+    "confirmed_model": {
+      "schema_version": "assisted-1.0",
+      "text": "En kugle i vakuum, a=6 cm og centrum i origo, har uniform foreskrevet M=(m,2m,0), m=350 A/m. Ingen frie strømme eller påtrykte felter. Bestem indre B og ydre B i (0,0,3a).",
+      "confirmed": true,
+      "variables": {
+        "M": [
+          "m",
+          "2*m",
+          "0"
+        ],
+        "radius": "a",
+        "center": [
+          "0",
+          "0",
+          "0"
+        ],
+        "point": [
+          "0",
+          "0",
+          "3*a"
+        ],
+        "normal": [
+          "0",
+          "0",
+          "1"
+        ]
+      },
+      "units": {
+        "m": "A/m",
+        "a": "m"
+      },
+      "numbers": {
+        "m": "350 A/m",
+        "a": "6 cm"
+      },
+      "positive": [
+        "a"
+      ],
+      "assumptions": [
+        "uniform_magnetization",
+        "spherical_body",
+        "no_free_current",
+        "no_applied_field",
+        "vacuum_exterior"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "magnetized_sphere",
+          "wanted": [
+            "B_inside",
+            "B",
+            "J_bound"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    }
+  },
+  "assisted_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Beregnet under brugerbekræftet model",
+    "prompt": "En kugle i vakuum, a=6 cm og centrum i origo, har uniform foreskrevet M=(m,2m,0), m=350 A/m. Ingen frie strømme eller påtrykte felter. Bestem indre B og ydre B i (0,0,3a).",
+    "status": "assumptions",
+    "result": {
+      "symbolic_latex": "B_inside = \\left[\\begin{matrix}\\frac{2 m \\mu_{0}}{3}\\\\\\frac{4 m \\mu_{0}}{3}\\\\0\\end{matrix}\\right]",
+      "extra_latex": [
+        "B = \\left[\\begin{matrix}- \\frac{m \\mu_{0}}{81}\\\\- \\frac{2 m \\mu_{0}}{81}\\\\0\\end{matrix}\\right]",
+        "J_bound = \\left[\\begin{matrix}0\\\\0\\\\0\\end{matrix}\\right]"
+      ],
+      "numeric_text": "B: Matrix([[-5.42991323138272e-6], [-1.08598264627654e-5], [0]]); B_inside: Matrix([[0.000293215314494667], [0.000586430628989333], [0]]); J_bound: Matrix([[0], [0], [0]])",
+      "units": "B_inside: T; B: T; J_bound: A/m^2"
+    },
+    "steps": [
+      {
+        "title": "Grundligning 1",
+        "latex": "\\mathbf J_b=\\nabla\\times\\mathbf M=0",
+        "reason": "Uniform magnetisering har nul volumen-curl. Symmetrien tillader konstant indre H og et ydre dipolfelt. Kontinuitet af normal B og tangentiel H uden fri overfladestrøm bestemmer koefficienterne."
+      },
+      {
+        "title": "Grundligning 2",
+        "latex": "\\mathbf K_b=\\mathbf M\\times\\hat{\\mathbf n}",
+        "reason": ""
+      },
+      {
+        "title": "Grundligning 3",
+        "latex": "B_{n,in}=B_{n,out}",
+        "reason": ""
+      },
+      {
+        "title": "Grundligning 4",
+        "latex": "H_{t,in}=H_{t,out}",
+        "reason": ""
+      },
+      {
+        "id": "step-7479152b314b9e0b1315-0",
+        "title": "Randbetingelser for normal B og tangentiel H",
+        "reason": "Anvendt lov: Magnetiseret kugle fra randbetingelser og entydighed. Uniform magnetisering har nul volumen-curl. Symmetrien tillader konstant indre H og et ydre dipolfelt. Kontinuitet af normal B og tangentiel H uden fri overfladestrøm bestemmer koefficienterne.",
+        "latex": "\\[\\left( H_{factor} + 1 = \\frac{moment_{factor}}{2 \\pi a^{3}}, \\  H_{factor} = - \\frac{moment_{factor}}{4 \\pi a^{3}}\\right)\\]",
+        "check": ""
+      },
+      {
+        "id": "step-731771d8a51efd229c0a-0",
+        "title": "Løs randligningerne og indsæt i H og B",
+        "reason": "Anvendt lov: Magnetiseret kugle fra randbetingelser og entydighed. Uniform magnetisering har nul volumen-curl. Symmetrien tillader konstant indre H og et ydre dipolfelt. Kontinuitet af normal B og tangentiel H uden fri overfladestrøm bestemmer koefficienterne.",
+        "latex": "\\[\\left( - \\frac{m}{3}, \\  - \\frac{2 m}{3}, \\  0, \\  \\frac{2 m \\mu_{0}}{3}, \\  \\frac{4 m \\mu_{0}}{3}, \\  0\\right)\\]",
+        "check": ""
+      },
+      {
+        "id": "step-10aa2d7ccc04c86a4b36-0",
+        "title": "Beregn det ydre dipolmoment fra samme randløsning",
+        "reason": "Anvendt lov: Magnetiseret kugle fra randbetingelser og entydighed. Uniform magnetisering har nul volumen-curl. Symmetrien tillader konstant indre H og et ydre dipolfelt. Kontinuitet af normal B og tangentiel H uden fri overfladestrøm bestemmer koefficienterne.",
+        "latex": "\\[\\left[\\begin{matrix}\\frac{4 \\pi a^{3} m}{3}\\\\\\frac{8 \\pi a^{3} m}{3}\\\\0\\end{matrix}\\right]\\]",
+        "check": ""
+      },
+      {
+        "id": "step-d2ba3f9e9d24ec40c8af-0",
+        "title": "Overfladestrøm på den sfæriske flade",
+        "reason": "Anvendt lov: Magnetiseret kugle fra randbetingelser og entydighed. Uniform magnetisering har nul volumen-curl. Symmetrien tillader konstant indre H og et ydre dipolfelt. Kontinuitet af normal B og tangentiel H uden fri overfladestrøm bestemmer koefficienterne.",
+        "latex": "\\[\\left[\\begin{matrix}2 m\\\\- m\\\\0\\end{matrix}\\right]\\]",
+        "check": ""
+      },
+      {
+        "id": "step-9646dc3be56d8d25af44-0",
+        "title": "Evaluér den regionale indre/ydre løsning i det givne punkt",
+        "reason": "Anvendt lov: Magnetiseret kugle fra randbetingelser og entydighed. Uniform magnetisering har nul volumen-curl. Symmetrien tillader konstant indre H og et ydre dipolfelt. Kontinuitet af normal B og tangentiel H uden fri overfladestrøm bestemmer koefficienterne.",
+        "latex": "\\[\\left[\\begin{matrix}- \\frac{m \\mu_{0}}{81}\\\\- \\frac{2 m \\mu_{0}}{81}\\\\0\\end{matrix}\\right]\\]",
+        "check": ""
+      }
+    ],
+    "interpretation": {
+      "method": "Magnetiseret kugle fra randbetingelser og entydighed",
+      "geometry": "magnetized_sphere"
+    },
+    "warnings": [
+      "Kun uniform foreskrevet M i en sfære, ingen frie strømme eller påtrykte ydre felter. Vinkelparametrene theta_surface og phi_surface beskriver normalretningen, hvis normal ikke angives.",
+      "Retning: Kartesiske komponenter. Indre B er parallel med M; ydre B er dipolfeltet. Punktværdien præcis på en strømførende grænse er ensidig.",
+      "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+    ],
+    "backend_status": "calculated_under_confirmed_model",
+    "backend_schema": "assisted-1.0",
+    "audit": "# Brugerbekræftede oplysninger\n\nM = ['m', '2*m', '0']\n\ncenter = ['0', '0', '0']\n\nnormal = ['0', '0', '1']\n\npoint = ['0', '0', '3*a']\n\nradius = a\n\na = 6 cm\n\nm = 350 A/m\n\nEnhed for a: m\n\nEnhed for m: A/m\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 14 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- Normal B-kontinuitet\n\n- Tangentiel H-kontinuitet\n\n- K_bound dot n = 0\n\n- Dimension: B_inside — T\n\n- Dimension: H_inside — A/m\n\n- Dimension: J_bound — A/m^2\n\n- Dimension: K_bound — A/m\n\n- Dimension: dipole — A*m^2\n\n- Dimension: B — T\n\n- Inputdimension: M — A/m\n\n- Inputdimension: normal — 1\n\n- Inputdimension: center — m\n\n- Inputdimension: radius — m\n\n- Inputdimension: point — m\n\n## Forudsætninger og gyldighed\n\n- uniform_magnetization\n\n- spherical_body\n\n- no_free_current\n\n- no_applied_field\n\n- vacuum_exterior\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "assisted_seconds": 1.992,
+  "math_display_errors": []
+}

@@ -1,0 +1,659 @@
+{
+  "id": "BA5",
+  "domain": "BA",
+  "model": "biot_savart_curve",
+  "automatic_response": {
+    "schema_version": "1.0",
+    "status": "not_solved",
+    "interpretation": {
+      "model": {
+        "objects": [
+          {
+            "id": "body",
+            "geometry": null,
+            "extent": null,
+            "parameters": {
+              "radius": "a"
+            },
+            "position": null,
+            "material": "unspecified"
+          }
+        ],
+        "sources": [
+          {
+            "id": "source_I",
+            "kind": "I",
+            "formula": "I",
+            "arguments": [],
+            "basis": null,
+            "evidence": "I=2.4 A"
+          }
+        ],
+        "relationships": [
+          {
+            "subject": "source_I",
+            "relation": "has_support",
+            "object": "body",
+            "regions": "model dependent"
+          }
+        ],
+        "coordinates": [],
+        "orientation": {
+          "plane": "xy"
+        },
+        "boundary_conditions": {},
+        "initial_conditions": {},
+        "assumptions": [],
+        "wanted": [
+          "B"
+        ],
+        "units": {
+          "a": "m",
+          "I": "ampere",
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m"
+        },
+        "values": {
+          "a": "7 cm",
+          "I": "2.4 A"
+        },
+        "methods": [
+          {
+            "name": null,
+            "status": "RED"
+          }
+        ],
+        "dependencies": {}
+      },
+      "fields": {
+        "geometry": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Hvilken geometri skal feltet beregnes for?",
+          "options": [
+            "sphere",
+            "spherical_shell",
+            "cylinder",
+            "hollow_cylinder",
+            "wire",
+            "line",
+            "ring",
+            "arc",
+            "plane",
+            "slab",
+            "disk",
+            "point_charges",
+            "capacitor",
+            "solenoid",
+            "toroid",
+            "sliding_rod",
+            "rotating_rod",
+            "field",
+            "dipole",
+            "conductor",
+            "parameterized_line",
+            "RC",
+            "RL"
+          ],
+          "required": true,
+          "depends_on": []
+        },
+        "wanted": {
+          "value": [
+            "B"
+          ],
+          "status": "GREEN",
+          "evidence": [
+            " dens bidrag til B i centrum i vakuum; returledningens bidrag er ikke medtaget."
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source": {
+          "value": "I",
+          "status": "GREEN",
+          "evidence": [
+            "I=2.4 A"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source_formula": {
+          "value": "I",
+          "status": "GREEN",
+          "evidence": [
+            "I=2.4 A"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "orientation": {
+          "value": {
+            "plane": "xy"
+          },
+          "status": "GREEN",
+          "evidence": [
+            "xy-plan"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "regions": {
+          "value": "model dependent",
+          "status": "GREEN",
+          "evidence": [
+            "Ikke en radial volumen-/strømtæthed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "domain": {
+          "value": "BA",
+          "status": "GREEN",
+          "evidence": [
+            "Kildetype og søgt fysisk relation"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "method": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+          "options": [],
+          "required": true,
+          "depends_on": [
+            "geometry",
+            "source_formula"
+          ]
+        },
+        "units": {
+          "value": {
+            "a": "m",
+            "I": "ampere",
+            "epsilon_0": "F/m",
+            "mu_0": "H/m",
+            "eps0": "F/m",
+            "mu0": "H/m"
+          },
+          "status": "GREEN",
+          "evidence": [
+            "Angivne enheder og dimensionelle ligninger"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "material": {
+          "value": "unspecified",
+          "status": "GREEN",
+          "evidence": [
+            "Materialeord i teksten"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "symmetry": {
+          "value": "not established",
+          "status": "GREEN",
+          "evidence": [
+            "Geometri, udstrækning og funktionens afhængighed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        }
+      },
+      "ready": false
+    },
+    "solution": null,
+    "missing": [
+      {
+        "field": "geometry",
+        "status": "RED",
+        "message": "Hvilken geometri skal feltet beregnes for?",
+        "options": [
+          "sphere",
+          "spherical_shell",
+          "cylinder",
+          "hollow_cylinder",
+          "wire",
+          "line",
+          "ring",
+          "arc",
+          "plane",
+          "slab",
+          "disk",
+          "point_charges",
+          "capacitor",
+          "solenoid",
+          "toroid",
+          "sliding_rod",
+          "rotating_rod",
+          "field",
+          "dipole",
+          "conductor",
+          "parameterized_line",
+          "RC",
+          "RL"
+        ]
+      }
+    ],
+    "errors": [],
+    "desktop_user_corrections": {}
+  },
+  "automatic_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Kan ikke løses med de givne oplysninger",
+    "prompt": "En tynd kvartcirkel i xy-plan har radius a=7 cm og strøm I=2.4 A langs stigende u fra 0 til pi/2. Kildekurven er (a*cos(u),a*sin(u),0). Bestem dens bidrag til B i centrum i vakuum; returledningens bidrag er ikke medtaget.",
+    "status": "unsolved",
+    "result": {},
+    "steps": [],
+    "interpretation": {
+      "method": "Ikke afgjort",
+      "geometry": "Se opgavefortolkningen"
+    },
+    "warnings": [
+      "Hvilken geometri skal feltet beregnes for?"
+    ],
+    "backend_status": "not_solved",
+    "backend_schema": "1.0",
+    "audit": "# Kontrol og gyldighed\n\nBackend rapporterede 0 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\nIngen individuelle kontroller er rapporteret i svaret.\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "automatic_seconds": 0.824,
+  "submitted_request": {
+    "schema_version": "assisted-1.0",
+    "text": "En tynd kvartcirkel i xy-plan har radius a=7 cm og strøm I=2.4 A langs stigende u fra 0 til pi/2. Kildekurven er (a*cos(u),a*sin(u),0). Bestem dens bidrag til B i centrum i vakuum; returledningens bidrag er ikke medtaget.",
+    "confirmed": true,
+    "variables": {
+      "source": [
+        "a*cos(u)",
+        "a*sin(u)",
+        "0"
+      ],
+      "parameter": "u",
+      "bounds": [
+        "0",
+        "pi/2"
+      ],
+      "I": "I",
+      "point": [
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "units": {
+      "a": "m",
+      "u": "1",
+      "I": "A"
+    },
+    "numbers": {
+      "a": "7 cm",
+      "I": "2.4 A"
+    },
+    "positive": [
+      "a"
+    ],
+    "assumptions": [
+      "magnetostatic",
+      "nonmagnetic_medium"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "biot_savart_curve",
+        "wanted": [
+          "B"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  },
+  "extra_result_unit_rows": [],
+  "assistance_actions": {
+    "prompt": 1,
+    "open_model": 1,
+    "model_selection": 1,
+    "scalar_fields": 5,
+    "table_cells": 0,
+    "scan_symbols": 1,
+    "unit_entries": 3,
+    "numeric_entries": 2,
+    "positive_flags": 1,
+    "wanted": 1,
+    "assumption_checks": 2,
+    "orientation": 1,
+    "confirmation": 1,
+    "solve": 1,
+    "operation_cells": 0
+  },
+  "assistance_action_count": 21,
+  "assisted_response": {
+    "schema_version": "assisted-1.0",
+    "status": "calculated_under_confirmed_model",
+    "questions": [],
+    "errors": [],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "biot_savart_curve",
+        "status": "calculated_under_confirmed_model",
+        "solution": {
+          "method": "Biot–Savart langs parameteriseret linje",
+          "reasoning": "Kildens tangent bestemmer linjeelementet. Ingen Gauss- eller Ampère-symmetri er forudsat.",
+          "equations_latex": [
+            "d\\mathbf l^\\prime=\\frac{d\\mathbf r^\\prime}{du}du",
+            "\\mathbf B=\\frac{\\mu_0 I}{4\\pi}\\int\\frac{d\\mathbf l^\\prime\\times(\\mathbf r-\\mathbf r^\\prime)}{|\\mathbf r-\\mathbf r^\\prime|^3}"
+          ],
+          "steps": [
+            {
+              "id": "step-b9b6adc6d1c53379c94f-0",
+              "text": "Differentier kildekurven",
+              "title": "Differentier kildekurven",
+              "latex": "\\left[\\begin{matrix}- a \\sin{\\left(u \\right)}\\\\a \\cos{\\left(u \\right)}\\\\0\\end{matrix}\\right]",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Biot–Savart langs parameteriseret linje",
+              "method_context_id": "method-519a01a29ff0b654db64",
+              "intermediate_latex": [],
+              "assumptions": [
+                "magnetostatic",
+                "nonmagnetic_medium"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-933fcb3f8374666bf111-0",
+              "text": "Linjeelementets længdefaktor",
+              "title": "Linjeelementets længdefaktor",
+              "latex": "\\sqrt{a^{2} \\sin^{2}{\\left(u \\right)} + a^{2} \\cos^{2}{\\left(u \\right)}}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Biot–Savart langs parameteriseret linje",
+              "method_context_id": "method-519a01a29ff0b654db64",
+              "intermediate_latex": [],
+              "assumptions": [
+                "magnetostatic",
+                "nonmagnetic_medium"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-1aeef355d5d09bfc1725-0",
+              "text": "Opsæt B",
+              "title": "Opsæt B",
+              "latex": "\\int\\limits_{0}^{\\frac{\\pi}{2}} \\frac{I \\mu_{0}}{4 \\pi a}\\, du",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Biot–Savart langs parameteriseret linje",
+              "method_context_id": "method-519a01a29ff0b654db64",
+              "intermediate_latex": [],
+              "assumptions": [
+                "magnetostatic",
+                "nonmagnetic_medium"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-9599a0af1a527954b391-0",
+              "text": "Opsæt B",
+              "title": "Opsæt B",
+              "latex": "\\int\\limits_{0}^{\\frac{\\pi}{2}} 0\\, du",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Biot–Savart langs parameteriseret linje",
+              "method_context_id": "method-519a01a29ff0b654db64",
+              "intermediate_latex": [],
+              "assumptions": [
+                "magnetostatic",
+                "nonmagnetic_medium"
+              ],
+              "validity": [],
+              "check_ids": []
+            }
+          ],
+          "results": {
+            "B": {
+              "expression": "Matrix([[0], [0], [I*mu_0/(8*a)]])",
+              "latex": "\\left[\\begin{matrix}0\\\\0\\\\\\frac{I \\mu_{0}}{8 a}\\end{matrix}\\right]",
+              "unit": "T"
+            }
+          },
+          "numerical": {
+            "B": {
+              "value": "Matrix([[0], [0], [5.38558740908571e-6]])",
+              "latex": "\\left[\\begin{matrix}0\\\\0\\\\5.38558740908571 \\cdot 10^{-6}\\end{matrix}\\right]",
+              "unit": "T"
+            }
+          },
+          "checks": [
+            {
+              "id": "check-eadcbac5a3ee88310656",
+              "name": "Dimension: B",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "T",
+              "step_ids": []
+            }
+          ],
+          "direction": "Kartesisk basis. Strømretningen følger voksende parameter; ladningsfortegn følger tætheden.",
+          "warnings": [],
+          "presentation_version": "1.0",
+          "latex_profile": "EM1-Math-1",
+          "method_contexts": {
+            "method-519a01a29ff0b654db64": {
+              "method_id": "biot_savart",
+              "method": "Biot–Savart langs parameteriseret linje",
+              "reasoning": "Kildens tangent bestemmer linjeelementet. Ingen Gauss- eller Ampère-symmetri er forudsat.",
+              "equations": [
+                "d\\mathbf l^\\prime=\\frac{d\\mathbf r^\\prime}{du}du",
+                "\\mathbf B=\\frac{\\mu_0 I}{4\\pi}\\int\\frac{d\\mathbf l^\\prime\\times(\\mathbf r-\\mathbf r^\\prime)}{|\\mathbf r-\\mathbf r^\\prime|^3}"
+              ],
+              "assumptions": [
+                "magnetostatic",
+                "nonmagnetic_medium"
+              ]
+            }
+          },
+          "views": {
+            "result": {
+              "wanted": [
+                "B"
+              ],
+              "results": {
+                "B": {
+                  "expression": "Matrix([[0], [0], [I*mu_0/(8*a)]])",
+                  "latex": "\\left[\\begin{matrix}0\\\\0\\\\\\frac{I \\mu_{0}}{8 a}\\end{matrix}\\right]",
+                  "unit": "T"
+                }
+              },
+              "numerical": {
+                "B": {
+                  "value": "Matrix([[0], [0], [5.38558740908571e-6]])",
+                  "latex": "\\left[\\begin{matrix}0\\\\0\\\\5.38558740908571 \\cdot 10^{-6}\\end{matrix}\\right]",
+                  "unit": "T"
+                }
+              },
+              "direction": "Kartesisk basis. Strømretningen følger voksende parameter; ladningsfortegn følger tætheden."
+            },
+            "derivation": {
+              "equations_latex": [
+                "d\\mathbf l^\\prime=\\frac{d\\mathbf r^\\prime}{du}du",
+                "\\mathbf B=\\frac{\\mu_0 I}{4\\pi}\\int\\frac{d\\mathbf l^\\prime\\times(\\mathbf r-\\mathbf r^\\prime)}{|\\mathbf r-\\mathbf r^\\prime|^3}"
+              ],
+              "step_ids": [
+                "step-b9b6adc6d1c53379c94f-0",
+                "step-933fcb3f8374666bf111-0",
+                "step-1aeef355d5d09bfc1725-0",
+                "step-9599a0af1a527954b391-0"
+              ]
+            },
+            "explanation": {
+              "step_ids": [
+                "step-b9b6adc6d1c53379c94f-0",
+                "step-933fcb3f8374666bf111-0",
+                "step-1aeef355d5d09bfc1725-0",
+                "step-9599a0af1a527954b391-0"
+              ],
+              "method_context_ids": [
+                "method-519a01a29ff0b654db64"
+              ],
+              "global_check_ids": [
+                "check-eadcbac5a3ee88310656"
+              ],
+              "warnings": []
+            }
+          }
+        },
+        "errors": [],
+        "verification": {
+          "interpretation": "user_confirmed_not_machine_verified",
+          "dimensions": "passed",
+          "physical_checks": [],
+          "completeness": "requested_results_present",
+          "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+        }
+      }
+    ],
+    "interpretation_status": "user_confirmed",
+    "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+    "confirmed_model": {
+      "schema_version": "assisted-1.0",
+      "text": "En tynd kvartcirkel i xy-plan har radius a=7 cm og strøm I=2.4 A langs stigende u fra 0 til pi/2. Kildekurven er (a*cos(u),a*sin(u),0). Bestem dens bidrag til B i centrum i vakuum; returledningens bidrag er ikke medtaget.",
+      "confirmed": true,
+      "variables": {
+        "source": [
+          "a*cos(u)",
+          "a*sin(u)",
+          "0"
+        ],
+        "parameter": "u",
+        "bounds": [
+          "0",
+          "pi/2"
+        ],
+        "I": "I",
+        "point": [
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "units": {
+        "a": "m",
+        "u": "1",
+        "I": "A"
+      },
+      "numbers": {
+        "a": "7 cm",
+        "I": "2.4 A"
+      },
+      "positive": [
+        "a"
+      ],
+      "assumptions": [
+        "magnetostatic",
+        "nonmagnetic_medium"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "biot_savart_curve",
+          "wanted": [
+            "B"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    }
+  },
+  "assisted_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Beregnet under brugerbekræftet model",
+    "prompt": "En tynd kvartcirkel i xy-plan har radius a=7 cm og strøm I=2.4 A langs stigende u fra 0 til pi/2. Kildekurven er (a*cos(u),a*sin(u),0). Bestem dens bidrag til B i centrum i vakuum; returledningens bidrag er ikke medtaget.",
+    "status": "assumptions",
+    "result": {
+      "symbolic_latex": "B = \\left[\\begin{matrix}0\\\\0\\\\\\frac{I \\mu_{0}}{8 a}\\end{matrix}\\right]",
+      "extra_latex": [],
+      "numeric_text": "B: Matrix([[0], [0], [5.38558740908571e-6]])",
+      "units": "B: T"
+    },
+    "steps": [
+      {
+        "title": "Grundligning 1",
+        "latex": "d\\mathbf l^\\prime=\\frac{d\\mathbf r^\\prime}{du}du",
+        "reason": "Kildens tangent bestemmer linjeelementet. Ingen Gauss- eller Ampère-symmetri er forudsat."
+      },
+      {
+        "title": "Grundligning 2",
+        "latex": "\\mathbf B=\\frac{\\mu_0 I}{4\\pi}\\int\\frac{d\\mathbf l^\\prime\\times(\\mathbf r-\\mathbf r^\\prime)}{|\\mathbf r-\\mathbf r^\\prime|^3}",
+        "reason": ""
+      },
+      {
+        "id": "step-b9b6adc6d1c53379c94f-0",
+        "title": "Differentier kildekurven",
+        "reason": "Anvendt lov: Biot–Savart langs parameteriseret linje. Kildens tangent bestemmer linjeelementet. Ingen Gauss- eller Ampère-symmetri er forudsat.",
+        "latex": "\\[\\left[\\begin{matrix}- a \\sin{\\left(u \\right)}\\\\a \\cos{\\left(u \\right)}\\\\0\\end{matrix}\\right]\\]",
+        "check": ""
+      },
+      {
+        "id": "step-933fcb3f8374666bf111-0",
+        "title": "Linjeelementets længdefaktor",
+        "reason": "Anvendt lov: Biot–Savart langs parameteriseret linje. Kildens tangent bestemmer linjeelementet. Ingen Gauss- eller Ampère-symmetri er forudsat.",
+        "latex": "\\[\\sqrt{a^{2} \\sin^{2}{\\left(u \\right)} + a^{2} \\cos^{2}{\\left(u \\right)}}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-1aeef355d5d09bfc1725-0",
+        "title": "Opsæt B",
+        "reason": "Anvendt lov: Biot–Savart langs parameteriseret linje. Kildens tangent bestemmer linjeelementet. Ingen Gauss- eller Ampère-symmetri er forudsat.",
+        "latex": "\\[\\int\\limits_{0}^{\\frac{\\pi}{2}} \\frac{I \\mu_{0}}{4 \\pi a}\\, du\\]",
+        "check": ""
+      },
+      {
+        "id": "step-9599a0af1a527954b391-0",
+        "title": "Opsæt B",
+        "reason": "Anvendt lov: Biot–Savart langs parameteriseret linje. Kildens tangent bestemmer linjeelementet. Ingen Gauss- eller Ampère-symmetri er forudsat.",
+        "latex": "\\[\\int\\limits_{0}^{\\frac{\\pi}{2}} 0\\, du\\]",
+        "check": ""
+      }
+    ],
+    "interpretation": {
+      "method": "Biot–Savart langs parameteriseret linje",
+      "geometry": "biot_savart_curve"
+    },
+    "warnings": [
+      "Retning: Kartesisk basis. Strømretningen følger voksende parameter; ladningsfortegn følger tætheden.",
+      "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+    ],
+    "backend_status": "calculated_under_confirmed_model",
+    "backend_schema": "assisted-1.0",
+    "audit": "# Brugerbekræftede oplysninger\n\nI = I\n\nbounds = ['0', 'pi/2']\n\nparameter = u\n\npoint = ['0', '0', '0']\n\nsource = ['a*cos(u)', 'a*sin(u)', '0']\n\nI = 2.4 A\n\na = 7 cm\n\nEnhed for I: A\n\nEnhed for a: m\n\nEnhed for u: 1\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 1 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- Dimension: B — T\n\n## Forudsætninger og gyldighed\n\n- magnetostatic\n\n- nonmagnetic_medium\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "assisted_seconds": 3.589,
+  "math_display_errors": []
+}

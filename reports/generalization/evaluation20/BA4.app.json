@@ -1,0 +1,664 @@
+{
+  "id": "BA4",
+  "domain": "BA",
+  "model": "magnetic_wires",
+  "automatic_response": {
+    "schema_version": "1.0",
+    "status": "not_solved",
+    "interpretation": {
+      "model": {
+        "objects": [
+          {
+            "id": "body",
+            "geometry": null,
+            "extent": "infinite",
+            "parameters": {},
+            "position": null,
+            "material": "unspecified"
+          }
+        ],
+        "sources": [
+          {
+            "id": "source_I",
+            "kind": "I",
+            "formula": "I",
+            "arguments": [],
+            "basis": null,
+            "evidence": "I=3 A"
+          }
+        ],
+        "relationships": [
+          {
+            "subject": "source_I",
+            "relation": "has_support",
+            "object": "body",
+            "regions": "model dependent"
+          }
+        ],
+        "coordinates": [],
+        "orientation": {},
+        "boundary_conditions": {},
+        "initial_conditions": {},
+        "assumptions": [],
+        "wanted": [
+          "B"
+        ],
+        "units": {
+          "a": "meter",
+          "I": "ampere",
+          "b": "meter",
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m"
+        },
+        "values": {
+          "a": "4 cm",
+          "I": "3 A",
+          "b": "3 cm"
+        },
+        "methods": [
+          {
+            "name": null,
+            "status": "RED"
+          }
+        ],
+        "dependencies": {}
+      },
+      "fields": {
+        "geometry": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Hvilken geometri skal feltet beregnes for?",
+          "options": [
+            "sphere",
+            "spherical_shell",
+            "cylinder",
+            "hollow_cylinder",
+            "wire",
+            "line",
+            "ring",
+            "arc",
+            "plane",
+            "slab",
+            "disk",
+            "point_charges",
+            "capacitor",
+            "solenoid",
+            "toroid",
+            "sliding_rod",
+            "rotating_rod",
+            "field",
+            "dipole",
+            "conductor",
+            "parameterized_line",
+            "RC",
+            "RL"
+          ],
+          "required": true,
+          "depends_on": []
+        },
+        "wanted": {
+          "value": [
+            "B"
+          ],
+          "status": "GREEN",
+          "evidence": [
+            " B i (0,b,0), b=3 cm, i vakuum."
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source": {
+          "value": "I",
+          "status": "GREEN",
+          "evidence": [
+            "I=3 A"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source_formula": {
+          "value": "I",
+          "status": "GREEN",
+          "evidence": [
+            "I=3 A"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "orientation": {
+          "value": {},
+          "status": "GREEN",
+          "evidence": [],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "regions": {
+          "value": "model dependent",
+          "status": "GREEN",
+          "evidence": [
+            "Ikke en radial volumen-/strømtæthed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "domain": {
+          "value": "BA",
+          "status": "GREEN",
+          "evidence": [
+            "Kildetype og søgt fysisk relation"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "method": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Denne kombination er ikke sikkert dækket af automatisk metodevalg. Brug Avanceret / Manuel.",
+          "options": [],
+          "required": true,
+          "depends_on": [
+            "geometry",
+            "source_formula"
+          ]
+        },
+        "units": {
+          "value": {
+            "a": "meter",
+            "I": "ampere",
+            "b": "meter",
+            "epsilon_0": "F/m",
+            "mu_0": "H/m",
+            "eps0": "F/m",
+            "mu0": "H/m"
+          },
+          "status": "GREEN",
+          "evidence": [
+            "Angivne enheder og dimensionelle ligninger"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "material": {
+          "value": "unspecified",
+          "status": "GREEN",
+          "evidence": [
+            "Materialeord i teksten"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "symmetry": {
+          "value": "not established",
+          "status": "GREEN",
+          "evidence": [
+            "Geometri, udstrækning og funktionens afhængighed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        }
+      },
+      "ready": false
+    },
+    "solution": null,
+    "missing": [
+      {
+        "field": "geometry",
+        "status": "RED",
+        "message": "Hvilken geometri skal feltet beregnes for?",
+        "options": [
+          "sphere",
+          "spherical_shell",
+          "cylinder",
+          "hollow_cylinder",
+          "wire",
+          "line",
+          "ring",
+          "arc",
+          "plane",
+          "slab",
+          "disk",
+          "point_charges",
+          "capacitor",
+          "solenoid",
+          "toroid",
+          "sliding_rod",
+          "rotating_rod",
+          "field",
+          "dipole",
+          "conductor",
+          "parameterized_line",
+          "RC",
+          "RL"
+        ]
+      }
+    ],
+    "errors": [],
+    "desktop_user_corrections": {}
+  },
+  "automatic_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Kan ikke løses med de givne oplysninger",
+    "prompt": "To uendelige z-ledninger ligger i (-a,0) og (a,0) med signerede strømme +I og -I. a=4 cm,I=3 A. Find B i (0,b,0), b=3 cm, i vakuum.",
+    "status": "unsolved",
+    "result": {},
+    "steps": [],
+    "interpretation": {
+      "method": "Ikke afgjort",
+      "geometry": "Se opgavefortolkningen"
+    },
+    "warnings": [
+      "Hvilken geometri skal feltet beregnes for?"
+    ],
+    "backend_status": "not_solved",
+    "backend_schema": "1.0",
+    "audit": "# Kontrol og gyldighed\n\nBackend rapporterede 0 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\nIngen individuelle kontroller er rapporteret i svaret.\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "automatic_seconds": 1.025,
+  "submitted_request": {
+    "schema_version": "assisted-1.0",
+    "text": "To uendelige z-ledninger ligger i (-a,0) og (a,0) med signerede strømme +I og -I. a=4 cm,I=3 A. Find B i (0,b,0), b=3 cm, i vakuum.",
+    "confirmed": true,
+    "variables": {
+      "point": [
+        "0",
+        "b",
+        "0"
+      ],
+      "wires": [
+        {
+          "I": "I",
+          "x": "-a",
+          "y": "0"
+        },
+        {
+          "I": "-I",
+          "x": "a",
+          "y": "0"
+        }
+      ]
+    },
+    "units": {
+      "b": "m",
+      "I": "A",
+      "a": "m"
+    },
+    "numbers": {
+      "b": "3 cm",
+      "I": "3 A",
+      "a": "4 cm"
+    },
+    "positive": [
+      "b",
+      "a"
+    ],
+    "assumptions": [
+      "parallel_infinite_sources",
+      "magnetostatic",
+      "nonmagnetic_medium"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "magnetic_wires",
+        "wanted": [
+          "B"
+        ],
+        "orientation_confirmed": true
+      }
+    ]
+  },
+  "extra_result_unit_rows": [],
+  "assistance_actions": {
+    "prompt": 1,
+    "open_model": 1,
+    "model_selection": 1,
+    "scalar_fields": 1,
+    "table_cells": 6,
+    "scan_symbols": 1,
+    "unit_entries": 3,
+    "numeric_entries": 3,
+    "positive_flags": 2,
+    "wanted": 1,
+    "assumption_checks": 3,
+    "orientation": 1,
+    "confirmation": 1,
+    "solve": 1,
+    "operation_cells": 0
+  },
+  "assistance_action_count": 26,
+  "assisted_response": {
+    "schema_version": "assisted-1.0",
+    "status": "calculated_under_confirmed_model",
+    "questions": [],
+    "errors": [],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "magnetic_wires",
+        "status": "calculated_under_confirmed_model",
+        "solution": {
+          "method": "Ampère og magnetisk superposition",
+          "reasoning": "Parallelle uendelige kilder behandles enkeltvis. Et hulrum repræsenteres ved en cylinder med modsat strømtæthed; felterne summeres vektorielt.",
+          "equations_latex": [
+            "\\mathbf B_{wire}=\\frac{\\mu_0 I}{2\\pi s^2}\\hat{\\mathbf z}\\times\\mathbf s",
+            "\\mathbf B_{solid}=\\frac{\\mu_0J}{2}\\hat{\\mathbf z}\\times\\mathbf s\\quad(s<R)"
+          ],
+          "steps": [
+            {
+              "id": "step-616108f6707dcc5387ee-0",
+              "text": "Bidrag fra en kilde (negativ J fjerner materiale)",
+              "title": "Bidrag fra en kilde (negativ J fjerner materiale)",
+              "latex": "\\left[\\begin{matrix}- \\frac{I b \\mu_{0}}{2 \\pi \\left(a^{2} + b^{2}\\right)}\\\\\\frac{I a \\mu_{0}}{2 \\pi \\left(a^{2} + b^{2}\\right)}\\\\0\\end{matrix}\\right]",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Ampère og magnetisk superposition",
+              "method_context_id": "method-63b1ba40f2bcc20ba5bb",
+              "intermediate_latex": [],
+              "assumptions": [
+                "parallel_infinite_sources",
+                "magnetostatic",
+                "nonmagnetic_medium"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-a23dd0dd832c77e1f358-0",
+              "text": "Bidrag fra en kilde (negativ J fjerner materiale)",
+              "title": "Bidrag fra en kilde (negativ J fjerner materiale)",
+              "latex": "\\left[\\begin{matrix}\\frac{I b \\mu_{0}}{2 \\pi \\left(a^{2} + b^{2}\\right)}\\\\\\frac{I a \\mu_{0}}{2 \\pi \\left(a^{2} + b^{2}\\right)}\\\\0\\end{matrix}\\right]",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Ampère og magnetisk superposition",
+              "method_context_id": "method-63b1ba40f2bcc20ba5bb",
+              "intermediate_latex": [],
+              "assumptions": [
+                "parallel_infinite_sources",
+                "magnetostatic",
+                "nonmagnetic_medium"
+              ],
+              "validity": [],
+              "check_ids": []
+            }
+          ],
+          "results": {
+            "B": {
+              "expression": "Matrix([[0], [I*a*mu_0/(pi*(a**2 + b**2))], [0]])",
+              "latex": "\\left[\\begin{matrix}0\\\\\\frac{I a \\mu_{0}}{\\pi \\left(a^{2} + b^{2}\\right)}\\\\0\\end{matrix}\\right]",
+              "unit": "T"
+            }
+          },
+          "numerical": {
+            "B": {
+              "value": "Matrix([[0], [1.92000000104520e-5], [0]])",
+              "latex": "\\left[\\begin{matrix}0\\\\1.9200000010452 \\cdot 10^{-5}\\\\0\\end{matrix}\\right]",
+              "unit": "T"
+            }
+          },
+          "checks": [
+            {
+              "id": "check-eadcbac5a3ee88310656",
+              "name": "Dimension: B",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "T",
+              "step_ids": []
+            },
+            {
+              "id": "check-d7bbeaf8d41713dfe0f9",
+              "name": "Inputdimension: point",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m",
+              "step_ids": []
+            },
+            {
+              "id": "check-190f04c660578791046a",
+              "name": "Inputdimension: source_center",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m",
+              "step_ids": []
+            },
+            {
+              "id": "check-31ca71f5ba5bd27933a8",
+              "name": "Inputdimension: source_I",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "ampere",
+              "step_ids": []
+            },
+            {
+              "id": "check-07653d181f700bf02721",
+              "name": "Inputdimension: source_center",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m",
+              "step_ids": []
+            },
+            {
+              "id": "check-9615a87bf29928537668",
+              "name": "Inputdimension: source_I",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "ampere",
+              "step_ids": []
+            }
+          ],
+          "direction": "Kartesiske komponenter, strøm langs positiv eller negativ z.",
+          "warnings": [],
+          "presentation_version": "1.0",
+          "latex_profile": "EM1-Math-1",
+          "method_contexts": {
+            "method-63b1ba40f2bcc20ba5bb": {
+              "method_id": "magnetic_superposition",
+              "method": "Ampère og magnetisk superposition",
+              "reasoning": "Parallelle uendelige kilder behandles enkeltvis. Et hulrum repræsenteres ved en cylinder med modsat strømtæthed; felterne summeres vektorielt.",
+              "equations": [
+                "\\mathbf B_{wire}=\\frac{\\mu_0 I}{2\\pi s^2}\\hat{\\mathbf z}\\times\\mathbf s",
+                "\\mathbf B_{solid}=\\frac{\\mu_0J}{2}\\hat{\\mathbf z}\\times\\mathbf s\\quad(s<R)"
+              ],
+              "assumptions": [
+                "parallel_infinite_sources",
+                "magnetostatic",
+                "nonmagnetic_medium"
+              ]
+            }
+          },
+          "views": {
+            "result": {
+              "wanted": [
+                "B"
+              ],
+              "results": {
+                "B": {
+                  "expression": "Matrix([[0], [I*a*mu_0/(pi*(a**2 + b**2))], [0]])",
+                  "latex": "\\left[\\begin{matrix}0\\\\\\frac{I a \\mu_{0}}{\\pi \\left(a^{2} + b^{2}\\right)}\\\\0\\end{matrix}\\right]",
+                  "unit": "T"
+                }
+              },
+              "numerical": {
+                "B": {
+                  "value": "Matrix([[0], [1.92000000104520e-5], [0]])",
+                  "latex": "\\left[\\begin{matrix}0\\\\1.9200000010452 \\cdot 10^{-5}\\\\0\\end{matrix}\\right]",
+                  "unit": "T"
+                }
+              },
+              "direction": "Kartesiske komponenter, strøm langs positiv eller negativ z."
+            },
+            "derivation": {
+              "equations_latex": [
+                "\\mathbf B_{wire}=\\frac{\\mu_0 I}{2\\pi s^2}\\hat{\\mathbf z}\\times\\mathbf s",
+                "\\mathbf B_{solid}=\\frac{\\mu_0J}{2}\\hat{\\mathbf z}\\times\\mathbf s\\quad(s<R)"
+              ],
+              "step_ids": [
+                "step-616108f6707dcc5387ee-0",
+                "step-a23dd0dd832c77e1f358-0"
+              ]
+            },
+            "explanation": {
+              "step_ids": [
+                "step-616108f6707dcc5387ee-0",
+                "step-a23dd0dd832c77e1f358-0"
+              ],
+              "method_context_ids": [
+                "method-63b1ba40f2bcc20ba5bb"
+              ],
+              "global_check_ids": [
+                "check-eadcbac5a3ee88310656",
+                "check-d7bbeaf8d41713dfe0f9",
+                "check-190f04c660578791046a",
+                "check-31ca71f5ba5bd27933a8",
+                "check-07653d181f700bf02721",
+                "check-9615a87bf29928537668"
+              ],
+              "warnings": []
+            }
+          }
+        },
+        "errors": [],
+        "verification": {
+          "interpretation": "user_confirmed_not_machine_verified",
+          "dimensions": "passed",
+          "physical_checks": [
+            "Inputdimension: point",
+            "Inputdimension: source_center",
+            "Inputdimension: source_I",
+            "Inputdimension: source_center",
+            "Inputdimension: source_I"
+          ],
+          "completeness": "requested_results_present",
+          "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+        }
+      }
+    ],
+    "interpretation_status": "user_confirmed",
+    "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+    "confirmed_model": {
+      "schema_version": "assisted-1.0",
+      "text": "To uendelige z-ledninger ligger i (-a,0) og (a,0) med signerede strømme +I og -I. a=4 cm,I=3 A. Find B i (0,b,0), b=3 cm, i vakuum.",
+      "confirmed": true,
+      "variables": {
+        "point": [
+          "0",
+          "b",
+          "0"
+        ],
+        "wires": [
+          {
+            "I": "I",
+            "x": "-a",
+            "y": "0"
+          },
+          {
+            "I": "-I",
+            "x": "a",
+            "y": "0"
+          }
+        ]
+      },
+      "units": {
+        "b": "m",
+        "I": "A",
+        "a": "m"
+      },
+      "numbers": {
+        "b": "3 cm",
+        "I": "3 A",
+        "a": "4 cm"
+      },
+      "positive": [
+        "b",
+        "a"
+      ],
+      "assumptions": [
+        "parallel_infinite_sources",
+        "magnetostatic",
+        "nonmagnetic_medium"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "magnetic_wires",
+          "wanted": [
+            "B"
+          ],
+          "orientation_confirmed": true
+        }
+      ]
+    }
+  },
+  "assisted_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Beregnet under brugerbekræftet model",
+    "prompt": "To uendelige z-ledninger ligger i (-a,0) og (a,0) med signerede strømme +I og -I. a=4 cm,I=3 A. Find B i (0,b,0), b=3 cm, i vakuum.",
+    "status": "assumptions",
+    "result": {
+      "symbolic_latex": "B = \\left[\\begin{matrix}0\\\\\\frac{I a \\mu_{0}}{\\pi \\left(a^{2} + b^{2}\\right)}\\\\0\\end{matrix}\\right]",
+      "extra_latex": [],
+      "numeric_text": "B: Matrix([[0], [1.92000000104520e-5], [0]])",
+      "units": "B: T"
+    },
+    "steps": [
+      {
+        "title": "Grundligning 1",
+        "latex": "\\mathbf B_{wire}=\\frac{\\mu_0 I}{2\\pi s^2}\\hat{\\mathbf z}\\times\\mathbf s",
+        "reason": "Parallelle uendelige kilder behandles enkeltvis. Et hulrum repræsenteres ved en cylinder med modsat strømtæthed; felterne summeres vektorielt."
+      },
+      {
+        "title": "Grundligning 2",
+        "latex": "\\mathbf B_{solid}=\\frac{\\mu_0J}{2}\\hat{\\mathbf z}\\times\\mathbf s\\quad(s<R)",
+        "reason": ""
+      },
+      {
+        "id": "step-616108f6707dcc5387ee-0",
+        "title": "Bidrag fra en kilde (negativ J fjerner materiale)",
+        "reason": "Anvendt lov: Ampère og magnetisk superposition. Parallelle uendelige kilder behandles enkeltvis. Et hulrum repræsenteres ved en cylinder med modsat strømtæthed; felterne summeres vektorielt.",
+        "latex": "\\[\\left[\\begin{matrix}- \\frac{I b \\mu_{0}}{2 \\pi \\left(a^{2} + b^{2}\\right)}\\\\\\frac{I a \\mu_{0}}{2 \\pi \\left(a^{2} + b^{2}\\right)}\\\\0\\end{matrix}\\right]\\]",
+        "check": ""
+      },
+      {
+        "id": "step-a23dd0dd832c77e1f358-0",
+        "title": "Bidrag fra en kilde (negativ J fjerner materiale)",
+        "reason": "Anvendt lov: Ampère og magnetisk superposition. Parallelle uendelige kilder behandles enkeltvis. Et hulrum repræsenteres ved en cylinder med modsat strømtæthed; felterne summeres vektorielt.",
+        "latex": "\\[\\left[\\begin{matrix}\\frac{I b \\mu_{0}}{2 \\pi \\left(a^{2} + b^{2}\\right)}\\\\\\frac{I a \\mu_{0}}{2 \\pi \\left(a^{2} + b^{2}\\right)}\\\\0\\end{matrix}\\right]\\]",
+        "check": ""
+      }
+    ],
+    "interpretation": {
+      "method": "Ampère og magnetisk superposition",
+      "geometry": "magnetic_wires"
+    },
+    "warnings": [
+      "Retning: Kartesiske komponenter, strøm langs positiv eller negativ z.",
+      "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+    ],
+    "backend_status": "calculated_under_confirmed_model",
+    "backend_schema": "assisted-1.0",
+    "audit": "# Brugerbekræftede oplysninger\n\npoint = ['0', 'b', '0']\n\nwires = [{'I': 'I', 'x': '-a', 'y': '0'}, {'I': '-I', 'x': 'a', 'y': '0'}]\n\nI = 3 A\n\na = 4 cm\n\nb = 3 cm\n\nEnhed for I: A\n\nEnhed for a: m\n\nEnhed for b: m\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 6 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- Dimension: B — T\n\n- Inputdimension: point — m\n\n- Inputdimension: source_center — m\n\n- Inputdimension: source_I — ampere\n\n- Inputdimension: source_center — m\n\n- Inputdimension: source_I — ampere\n\n## Forudsætninger og gyldighed\n\n- parallel_infinite_sources\n\n- magnetostatic\n\n- nonmagnetic_medium\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "assisted_seconds": 1.824,
+  "math_display_errors": []
+}

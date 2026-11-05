@@ -1,0 +1,1314 @@
+{
+  "id": "EV5",
+  "domain": "EV",
+  "model": "sphere_regions",
+  "automatic_response": {
+    "schema_version": "1.0",
+    "status": "not_solved",
+    "interpretation": {
+      "model": {
+        "objects": [
+          {
+            "id": "body",
+            "geometry": "sphere",
+            "extent": null,
+            "parameters": {},
+            "position": null,
+            "material": "unspecified"
+          }
+        ],
+        "sources": [
+          {
+            "id": "source_rho",
+            "kind": "rho",
+            "formula": "rho0*(1-r/a)",
+            "arguments": [
+              "r"
+            ],
+            "basis": null,
+            "evidence": "rho(r)=rho0*(1-r/a)"
+          }
+        ],
+        "relationships": [
+          {
+            "subject": "source_rho",
+            "relation": "has_support",
+            "object": "body",
+            "regions": [
+              {
+                "lower": "0",
+                "upper": "a",
+                "density": "rho0*(1-r/a)"
+              },
+              {
+                "lower": "a",
+                "upper": "oo",
+                "density": "0"
+              }
+            ]
+          }
+        ],
+        "coordinates": [
+          "r"
+        ],
+        "orientation": {},
+        "boundary_conditions": {
+          "V_infinity": "0"
+        },
+        "initial_conditions": {},
+        "assumptions": [],
+        "wanted": [
+          "F",
+          "U",
+          "E",
+          "V",
+          "Q"
+        ],
+        "units": {
+          "a": "m",
+          "rho0": "ampere * second / meter ** 3",
+          "q": "ampere * second",
+          "epsilon_0": "F/m",
+          "mu_0": "H/m",
+          "eps0": "F/m",
+          "mu0": "H/m",
+          "r": "m"
+        },
+        "values": {
+          "a": "10 cm",
+          "rho0": "15 nC/m**3",
+          "q": "2 nC"
+        },
+        "methods": [
+          {
+            "name": "gauss_radial",
+            "status": "GREEN"
+          }
+        ],
+        "dependencies": {}
+      },
+      "fields": {
+        "geometry": {
+          "value": "sphere",
+          "status": "GREEN",
+          "evidence": [
+            "kugle"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "wanted": {
+          "value": [
+            "F",
+            "U",
+            "E",
+            "V",
+            "Q"
+          ],
+          "status": "GREEN",
+          "evidence": [
+            " E,V,total Q samt kraft og potentiel energi for en testladning q=2 nC ved r=a/3. V(infinity)=0, testladningen ændrer ikke kilden."
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source": {
+          "value": "rho",
+          "status": "GREEN",
+          "evidence": [
+            "rho(r)=rho0*(1-r/a)"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "source_formula": {
+          "value": "rho0*(1-r/a)",
+          "status": "GREEN",
+          "evidence": [
+            "rho(r)=rho0*(1-r/a)"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "orientation": {
+          "value": "radial",
+          "status": "GREEN",
+          "evidence": [
+            "Den erklærede symmetri"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "regions": {
+          "value": [
+            {
+              "lower": "0",
+              "upper": "a",
+              "density": "rho0*(1-r/a)"
+            },
+            {
+              "lower": "a",
+              "upper": "oo",
+              "density": "0"
+            }
+          ],
+          "status": "GREEN",
+          "evidence": [
+            "Kildens geometri og eksplicitte intervaller"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "domain": {
+          "value": "EV",
+          "status": "GREEN",
+          "evidence": [
+            "Kildetype og søgt fysisk relation"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "method": {
+          "value": "Gauss",
+          "status": "GREEN",
+          "evidence": [
+            "Radial tæthed og tilstrækkelig kildeudstrækning"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "units": {
+          "value": {
+            "a": "m",
+            "rho0": "ampere * second / meter ** 3",
+            "q": "ampere * second",
+            "epsilon_0": "F/m",
+            "mu_0": "H/m",
+            "eps0": "F/m",
+            "mu0": "H/m",
+            "r": "m"
+          },
+          "status": "GREEN",
+          "evidence": [
+            "Angivne enheder og dimensionelle ligninger"
+          ],
+          "message": "",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "subproblem": {
+          "value": null,
+          "status": "RED",
+          "evidence": [],
+          "message": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+          "options": [],
+          "required": true,
+          "depends_on": []
+        },
+        "material": {
+          "value": "unspecified",
+          "status": "GREEN",
+          "evidence": [
+            "Materialeord i teksten"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        },
+        "symmetry": {
+          "value": "gauss_radial",
+          "status": "GREEN",
+          "evidence": [
+            "Geometri, udstrækning og funktionens afhængighed"
+          ],
+          "message": "",
+          "options": [],
+          "required": false,
+          "depends_on": []
+        }
+      },
+      "ready": false
+    },
+    "solution": null,
+    "missing": [
+      {
+        "field": "subproblem",
+        "status": "RED",
+        "message": "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger.",
+        "options": []
+      }
+    ],
+    "errors": [],
+    "desktop_user_corrections": {}
+  },
+  "automatic_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Kan ikke løses med de givne oplysninger",
+    "prompt": "En kuglesymmetrisk volumenladning i vakuum har rho(r)=rho0*(1-r/a) for 0<r<a og nul udenfor. a=10 cm, rho0=15 nC/m^3. Find E,V,total Q samt kraft og potentiel energi for en testladning q=2 nC ved r=a/3. V(infinity)=0, testladningen ændrer ikke kilden.",
+    "status": "unsolved",
+    "result": {},
+    "steps": [],
+    "interpretation": {
+      "method": "Ikke afgjort",
+      "geometry": "Se opgavefortolkningen"
+    },
+    "warnings": [
+      "Indsæt én delopgave ad gangen med de nødvendige givne oplysninger."
+    ],
+    "backend_status": "not_solved",
+    "backend_schema": "1.0",
+    "audit": "# Kontrol og gyldighed\n\nBackend rapporterede 0 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\nIngen individuelle kontroller er rapporteret i svaret.\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "automatic_seconds": 0.732,
+  "submitted_request": {
+    "schema_version": "assisted-1.0",
+    "text": "En kuglesymmetrisk volumenladning i vakuum har rho(r)=rho0*(1-r/a) for 0<r<a og nul udenfor. a=10 cm, rho0=15 nC/m^3. Find E,V,total Q samt kraft og potentiel energi for en testladning q=2 nC ved r=a/3. V(infinity)=0, testladningen ændrer ikke kilden.",
+    "confirmed": true,
+    "variables": {
+      "coordinate": "r",
+      "regions": [
+        {
+          "lower": "0",
+          "upper": "a",
+          "density": "rho0*(1-r/a)",
+          "permittivity": "epsilon_0"
+        }
+      ]
+    },
+    "units": {
+      "r": "m",
+      "a": "m",
+      "rho0": "C/m^3",
+      "q": "C",
+      "E": "V/m",
+      "V": "V"
+    },
+    "numbers": {
+      "r": "0.03333333333333333 m",
+      "a": "10 cm",
+      "rho0": "15 nC/m^3",
+      "q": "2 nC"
+    },
+    "positive": [
+      "r",
+      "a"
+    ],
+    "assumptions": [
+      "spherical_symmetry",
+      "linear_isotropic_medium",
+      "vacuum_outside_regions",
+      "V_infinity_zero"
+    ],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "sphere_regions",
+        "wanted": [
+          "E",
+          "V",
+          "Q",
+          "test_force",
+          "test_energy"
+        ],
+        "orientation_confirmed": true,
+        "operations": [
+          {
+            "kind": "transform",
+            "id": "test_force",
+            "result": "E",
+            "variable": "r",
+            "value": "q*E",
+            "unit": "N"
+          },
+          {
+            "kind": "transform",
+            "id": "test_energy",
+            "result": "V",
+            "variable": "r",
+            "value": "q*V",
+            "unit": "J"
+          }
+        ]
+      }
+    ]
+  },
+  "extra_result_unit_rows": [
+    "E",
+    "V"
+  ],
+  "assistance_actions": {
+    "prompt": 1,
+    "open_model": 1,
+    "model_selection": 1,
+    "scalar_fields": 2,
+    "table_cells": 4,
+    "scan_symbols": 1,
+    "unit_entries": 6,
+    "numeric_entries": 4,
+    "positive_flags": 2,
+    "wanted": 1,
+    "assumption_checks": 4,
+    "orientation": 1,
+    "confirmation": 1,
+    "solve": 1,
+    "operation_cells": 12
+  },
+  "assistance_action_count": 42,
+  "assisted_response": {
+    "schema_version": "assisted-1.0",
+    "status": "calculated_under_confirmed_model",
+    "questions": [],
+    "errors": [],
+    "subproblems": [
+      {
+        "id": "a",
+        "model": "sphere_regions",
+        "status": "calculated_under_confirmed_model",
+        "solution": {
+          "method": "Gauss’ lov → samlet ladning, stykvis potentialintegration",
+          "reasoning": "Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+          "equations_latex": [
+            "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+            "\\mathbf D=\\epsilon\\mathbf E",
+            "V(r)=V(b)+\\int_r^b E_r(u)\\,du"
+          ],
+          "steps": [
+            {
+              "id": "step-37cdd7908a45fe607287-0",
+              "text": "Indesluttet bidrag fra området [0, a] før integration",
+              "title": "Indesluttet bidrag fra området [0, a] før integration",
+              "latex": "\\int\\limits_{0}^{r} 4 \\pi r^{2} \\rho_{0} \\left(1 - \\frac{r}{a}\\right)\\, dr",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Gauss’ lov",
+              "method_context_id": "method-19124d488dcf55947496",
+              "intermediate_latex": [],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions",
+                "V_infinity_zero"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-d5c33ba00fb491e1997a-0",
+              "text": "Efter symbolsk integration",
+              "title": "Efter symbolsk integration",
+              "latex": "\\frac{\\pi r^{3} \\rho_{0} \\left(4 a - 3 r\\right)}{3 a}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Gauss’ lov",
+              "method_context_id": "method-19124d488dcf55947496",
+              "intermediate_latex": [],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions",
+                "V_infinity_zero"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-2852545cd94f6498be99-0",
+              "text": "Indsæt den indesluttede ladning i Gauss’ lov",
+              "title": "Indsæt den indesluttede ladning i Gauss’ lov",
+              "latex": "\\begin{cases} \\frac{r \\rho_{0} \\left(4 a - 3 r\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} \\rho_{0}}{12 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Gauss’ lov",
+              "method_context_id": "method-19124d488dcf55947496",
+              "intermediate_latex": [],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions",
+                "V_infinity_zero"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-6f311aea0c624e939a80-0",
+              "text": "Kontrolpunkt i regionen (D)",
+              "title": "Kontrolpunkt i regionen (D)",
+              "latex": "\\frac{5 a \\rho_{0}}{48}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Gauss’ lov",
+              "method_context_id": "method-19124d488dcf55947496",
+              "intermediate_latex": [],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions",
+                "V_infinity_zero"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-a162c35a03795b5972a7-0",
+              "text": "Total ladning: evaluér den omsluttede ladning ved kildens yderkant",
+              "title": "Total ladning: evaluér den omsluttede ladning ved kildens yderkant",
+              "latex": "\\frac{\\pi a^{3} \\rho_{0}}{3}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Gauss’ lov",
+              "method_context_id": "method-19124d488dcf55947496",
+              "intermediate_latex": [],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions",
+                "V_infinity_zero"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-dd660f17a6ac8827b2d2-0",
+              "text": "Indsæt feltkomponenten langs integrationsvejen",
+              "title": "Indsæt feltkomponenten langs integrationsvejen",
+              "latex": "- \\int\\limits_{a}^{r} \\frac{r \\rho_{0} \\left(4 a - 3 r\\right)}{12 a \\epsilon_{0}}\\, dr",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Potentialforskel fra feltet",
+              "method_context_id": "method-f735106d0b8468b0140b",
+              "intermediate_latex": [],
+              "assumptions": [],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-9ac52a7aeb2f488454d9-0",
+              "text": "Evaluer integralet og grænserne",
+              "title": "Evaluer integralet og grænserne",
+              "latex": "- \\frac{\\rho_{0} \\left(a \\left(- a^{2} + 2 r^{2}\\right) - r^{3}\\right)}{12 a \\epsilon_{0}}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Potentialforskel fra feltet",
+              "method_context_id": "method-f735106d0b8468b0140b",
+              "intermediate_latex": [],
+              "assumptions": [],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-766038350272b81091ab-0",
+              "text": "Saml integralet og randværdien",
+              "title": "Saml integralet og randværdien",
+              "latex": "\\frac{\\rho_{0} \\left(2 a^{3} - 2 a r^{2} + r^{3}\\right)}{12 a \\epsilon_{0}}",
+              "physical_reasoning": "Integralet bestemmer potentialforskellen; den tilføjede randværdi sikrer kontinuitet til naboregionen.",
+              "reasoning_scope": "step",
+              "law": "Potentialforskel fra felt",
+              "method_context_id": "method-19124d488dcf55947496",
+              "intermediate_latex": [
+                "\\frac{a^{2} \\rho_{0}}{12 \\epsilon_{0}}",
+                "- \\frac{\\rho_{0} \\left(a \\left(- a^{2} + 2 r^{2}\\right) - r^{3}\\right)}{12 a \\epsilon_{0}}"
+              ],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions",
+                "V_infinity_zero"
+              ],
+              "validity": [
+                "0 < r < a"
+              ],
+              "check_ids": [
+                "check-8beb48487ea573a0e125",
+                "check-7044887cc0676b8edead"
+              ]
+            },
+            {
+              "id": "step-c5ff67ddb30a3d75c6c6-0",
+              "text": "Anvend den eksplicit bekræftede resultatforbindelse",
+              "title": "Anvend den eksplicit bekræftede resultatforbindelse",
+              "latex": "test_{force} = E q",
+              "physical_reasoning": "Enheder kontrolleres før de tidligere resultater indsættes. Sammenhængens fysiske relevans skal bekræftes af brugeren.",
+              "reasoning_scope": "step",
+              "law": "Brugerangivet fysisk sammenhæng",
+              "method_context_id": "method-93adf3a70095209648ee",
+              "intermediate_latex": [],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions",
+                "V_infinity_zero"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-6bb175a375b1ba79961e-0",
+              "text": "Indsæt de beregnede resultater",
+              "title": "Indsæt de beregnede resultater",
+              "latex": "\\begin{cases} \\frac{q r \\rho_{0} \\left(4 a - 3 r\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} q \\rho_{0}}{12 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Gauss’ lov → samlet ladning, stykvis potentialintegration",
+              "method_context_id": "method-93adf3a70095209648ee",
+              "intermediate_latex": [],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions",
+                "V_infinity_zero"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-e7f7c240c9cb308a8897-0",
+              "text": "Anvend den eksplicit bekræftede resultatforbindelse",
+              "title": "Anvend den eksplicit bekræftede resultatforbindelse",
+              "latex": "test_{energy} = V q",
+              "physical_reasoning": "Enheder kontrolleres før de tidligere resultater indsættes. Sammenhængens fysiske relevans skal bekræftes af brugeren.",
+              "reasoning_scope": "step",
+              "law": "Brugerangivet fysisk sammenhæng",
+              "method_context_id": "method-93adf3a70095209648ee",
+              "intermediate_latex": [],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions",
+                "V_infinity_zero"
+              ],
+              "validity": [],
+              "check_ids": []
+            },
+            {
+              "id": "step-e4f4d17a92bf7e183bf5-0",
+              "text": "Indsæt de beregnede resultater",
+              "title": "Indsæt de beregnede resultater",
+              "latex": "\\begin{cases} \\frac{q \\rho_{0} \\left(2 a^{3} - 2 a r^{2} + r^{3}\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} q \\rho_{0}}{12 \\epsilon_{0} r} & \\text{otherwise} \\end{cases}",
+              "physical_reasoning": null,
+              "reasoning_scope": "method",
+              "law": "Gauss’ lov → samlet ladning, stykvis potentialintegration",
+              "method_context_id": "method-93adf3a70095209648ee",
+              "intermediate_latex": [],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions",
+                "V_infinity_zero"
+              ],
+              "validity": [],
+              "check_ids": []
+            }
+          ],
+          "results": {
+            "Q_enc": {
+              "expression": "Piecewise((pi*r**3*rho0*(4*a - 3*r)/(3*a), a >= r), (pi*a**3*rho0/3, True))",
+              "latex": "\\begin{cases} \\frac{\\pi r^{3} \\rho_{0} \\left(4 a - 3 r\\right)}{3 a} & \\text{for}\\: a \\geq r \\\\\\frac{\\pi a^{3} \\rho_{0}}{3} & \\text{otherwise} \\end{cases}",
+              "unit": "C"
+            },
+            "D": {
+              "expression": "Piecewise((r*rho0*(4*a - 3*r)/(12*a), a >= r), (a**3*rho0/(12*r**2), True))",
+              "latex": "\\begin{cases} \\frac{r \\rho_{0} \\left(4 a - 3 r\\right)}{12 a} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} \\rho_{0}}{12 r^{2}} & \\text{otherwise} \\end{cases}",
+              "unit": "C/m^2"
+            },
+            "E": {
+              "expression": "Piecewise((r*rho0*(4*a - 3*r)/(12*a*epsilon_0), a >= r), (a**3*rho0/(12*epsilon_0*r**2), True))",
+              "latex": "\\begin{cases} \\frac{r \\rho_{0} \\left(4 a - 3 r\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} \\rho_{0}}{12 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+              "unit": "V/m"
+            },
+            "Q": {
+              "expression": "pi*a**3*rho0/3",
+              "latex": "\\frac{\\pi a^{3} \\rho_{0}}{3}",
+              "unit": "C"
+            },
+            "V": {
+              "expression": "Piecewise((rho0*(2*a**3 - 2*a*r**2 + r**3)/(12*a*epsilon_0), a >= r), (a**3*rho0/(12*epsilon_0*r), True))",
+              "latex": "\\begin{cases} \\frac{\\rho_{0} \\left(2 a^{3} - 2 a r^{2} + r^{3}\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} \\rho_{0}}{12 \\epsilon_{0} r} & \\text{otherwise} \\end{cases}",
+              "unit": "V"
+            },
+            "test_force": {
+              "expression": "Piecewise((q*r*rho0*(4*a - 3*r)/(12*a*epsilon_0), a >= r), (a**3*q*rho0/(12*epsilon_0*r**2), True))",
+              "latex": "\\begin{cases} \\frac{q r \\rho_{0} \\left(4 a - 3 r\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} q \\rho_{0}}{12 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+              "unit": "N"
+            },
+            "test_energy": {
+              "expression": "Piecewise((q*rho0*(2*a**3 - 2*a*r**2 + r**3)/(12*a*epsilon_0), a >= r), (a**3*q*rho0/(12*epsilon_0*r), True))",
+              "latex": "\\begin{cases} \\frac{q \\rho_{0} \\left(2 a^{3} - 2 a r^{2} + r^{3}\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} q \\rho_{0}}{12 \\epsilon_{0} r} & \\text{otherwise} \\end{cases}",
+              "unit": "J"
+            }
+          },
+          "numerical": {
+            "Q_enc": {
+              "value": "1.74532925199433e-12",
+              "latex": "1.74532925199433 \\cdot 10^{-12}",
+              "unit": "C"
+            },
+            "D": {
+              "value": "1.25000000000000e-10",
+              "latex": "1.25 \\cdot 10^{-10}",
+              "unit": "C/m^2"
+            },
+            "E": {
+              "value": "14.1176133421627",
+              "latex": "14.1176133421627",
+              "unit": "V/m"
+            },
+            "Q": {
+              "value": "1.57079632679490e-11",
+              "latex": "1.5707963267949 \\cdot 10^{-11}",
+              "unit": "C"
+            },
+            "V": {
+              "value": "2.56208538431842",
+              "latex": "2.56208538431842",
+              "unit": "V"
+            },
+            "test_force": {
+              "value": "2.82352266843255e-8",
+              "latex": "2.82352266843255 \\cdot 10^{-8}",
+              "unit": "N"
+            },
+            "test_energy": {
+              "value": "5.12417076863685e-9",
+              "latex": "5.12417076863685 \\cdot 10^{-9}",
+              "unit": "J"
+            }
+          },
+          "checks": [
+            {
+              "id": "check-b6d90b86b3053cbab2b3",
+              "name": "Dimension: Q_enc",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "C",
+              "step_ids": []
+            },
+            {
+              "id": "check-56c215bd12f5e7e9cc01",
+              "name": "Dimension: D",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "C/m^2",
+              "step_ids": []
+            },
+            {
+              "id": "check-ee9d9de5492cf7f727df",
+              "name": "Dimension: E",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "V/m",
+              "step_ids": []
+            },
+            {
+              "id": "check-d0cf8834af728ab532ef",
+              "name": "Inputdimension: coordinate",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m",
+              "step_ids": []
+            },
+            {
+              "id": "check-38f0ece4e1be9f63e39e",
+              "name": "Inputdimension: region_0_lower",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m",
+              "step_ids": []
+            },
+            {
+              "id": "check-8a4a54380ec528ff7422",
+              "name": "Inputdimension: region_0_upper",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "m",
+              "step_ids": []
+            },
+            {
+              "id": "check-99267a8f68677e310173",
+              "name": "Inputdimension: region_0_density",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "C/m^3",
+              "step_ids": []
+            },
+            {
+              "id": "check-3482485e9f303a751981",
+              "name": "Inputdimension: region_0_epsilon",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "F/m",
+              "step_ids": []
+            },
+            {
+              "id": "check-cd029f3261c233fdff84",
+              "name": "Gauss differentiallov i åben region",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-cad7ed98ad7d74c53ef6",
+              "name": "Normal D-kontinuitet uden fri fladeladning",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-8beb48487ea573a0e125",
+              "name": "Potentialets gradient i åben region",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": [
+                "step-766038350272b81091ab-0"
+              ]
+            },
+            {
+              "id": "check-7044887cc0676b8edead",
+              "name": "Potentialkontinuitet ved a",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": [
+                "step-766038350272b81091ab-0"
+              ]
+            },
+            {
+              "id": "check-81769658c34da57e4ee8",
+              "name": "Potentialets fjernreference",
+              "passed": true,
+              "residual_latex": "0",
+              "detail": "",
+              "step_ids": []
+            },
+            {
+              "id": "check-eb53097856d1b17cc417",
+              "name": "Dimension: Q_enc",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "C",
+              "step_ids": []
+            },
+            {
+              "id": "check-437306eeaffd04546c74",
+              "name": "Dimension: D",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "C/m^2",
+              "step_ids": []
+            },
+            {
+              "id": "check-51fdeb4b332d969a34d0",
+              "name": "Dimension: E",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "V/m",
+              "step_ids": []
+            },
+            {
+              "id": "check-198a4434f23c8f106e1e",
+              "name": "Dimension: Q",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "C",
+              "step_ids": []
+            },
+            {
+              "id": "check-6000f69718705b20e492",
+              "name": "Dimension: V",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "V",
+              "step_ids": []
+            },
+            {
+              "id": "check-3be8a1363292bc49d4f5",
+              "name": "Dimension: Q_enc",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "C",
+              "step_ids": []
+            },
+            {
+              "id": "check-85279c51533dedb4d882",
+              "name": "Dimension: D",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "C/m^2",
+              "step_ids": []
+            },
+            {
+              "id": "check-ed6b340e905772adbc98",
+              "name": "Dimension: E",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "V/m",
+              "step_ids": []
+            },
+            {
+              "id": "check-f06dffd74d6b1c246492",
+              "name": "Dimension: Q",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "C",
+              "step_ids": []
+            },
+            {
+              "id": "check-0a1c6c231178ae7fa152",
+              "name": "Dimension: V",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "V",
+              "step_ids": []
+            },
+            {
+              "id": "check-24b3409be495ffae655d",
+              "name": "Dimension: test_force",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "N",
+              "step_ids": []
+            },
+            {
+              "id": "check-011d854abe326cfa8c40",
+              "name": "Dimension: test_energy",
+              "passed": true,
+              "residual_latex": null,
+              "detail": "J",
+              "step_ids": []
+            }
+          ],
+          "direction": "Radialt i positiv koordinatretning; negativt resultat betyder modsat retning. For plan: modsat retning på den anden side.",
+          "warnings": [
+            "Q_enc er total ladning for kugle, ladning pr. længde for cylinder og halvrums-ladning pr. areal for spejlsymmetrisk plan. Ved grænseflader angives ensidige grænser separat; punktværdien er ikke fysisk entydig ved overfladeladning."
+          ],
+          "presentation_version": "1.0",
+          "latex_profile": "EM1-Math-1",
+          "method_contexts": {
+            "method-19124d488dcf55947496": {
+              "method_id": "gauss_radial",
+              "method": "Gauss’ lov",
+              "reasoning": "Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+              "equations": [
+                "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+                "\\mathbf D=\\epsilon\\mathbf E"
+              ],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions",
+                "V_infinity_zero"
+              ]
+            },
+            "method-f735106d0b8468b0140b": {
+              "method_id": "potential_from_field",
+              "method": "Potentialforskel fra feltet",
+              "reasoning": "Potentialforskellen findes som minus feltets linjeintegral langs den angivne kurve/retning.",
+              "equations": [
+                "V(b)-V(a)=-\\int_a^b\\mathbf E\\cdot d\\mathbf l"
+              ],
+              "assumptions": []
+            },
+            "method-93adf3a70095209648ee": {
+              "method_id": "gauss_radial",
+              "method": "Gauss’ lov → samlet ladning, stykvis potentialintegration",
+              "reasoning": "Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+              "equations": [
+                "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+                "\\mathbf D=\\epsilon\\mathbf E",
+                "V(r)=V(b)+\\int_r^b E_r(u)\\,du"
+              ],
+              "assumptions": [
+                "spherical_symmetry",
+                "linear_isotropic_medium",
+                "vacuum_outside_regions",
+                "V_infinity_zero"
+              ]
+            }
+          },
+          "views": {
+            "result": {
+              "wanted": [
+                "E",
+                "V",
+                "Q",
+                "test_force",
+                "test_energy"
+              ],
+              "results": {
+                "E": {
+                  "expression": "Piecewise((r*rho0*(4*a - 3*r)/(12*a*epsilon_0), a >= r), (a**3*rho0/(12*epsilon_0*r**2), True))",
+                  "latex": "\\begin{cases} \\frac{r \\rho_{0} \\left(4 a - 3 r\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} \\rho_{0}}{12 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+                  "unit": "V/m"
+                },
+                "Q": {
+                  "expression": "pi*a**3*rho0/3",
+                  "latex": "\\frac{\\pi a^{3} \\rho_{0}}{3}",
+                  "unit": "C"
+                },
+                "V": {
+                  "expression": "Piecewise((rho0*(2*a**3 - 2*a*r**2 + r**3)/(12*a*epsilon_0), a >= r), (a**3*rho0/(12*epsilon_0*r), True))",
+                  "latex": "\\begin{cases} \\frac{\\rho_{0} \\left(2 a^{3} - 2 a r^{2} + r^{3}\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} \\rho_{0}}{12 \\epsilon_{0} r} & \\text{otherwise} \\end{cases}",
+                  "unit": "V"
+                },
+                "test_force": {
+                  "expression": "Piecewise((q*r*rho0*(4*a - 3*r)/(12*a*epsilon_0), a >= r), (a**3*q*rho0/(12*epsilon_0*r**2), True))",
+                  "latex": "\\begin{cases} \\frac{q r \\rho_{0} \\left(4 a - 3 r\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} q \\rho_{0}}{12 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+                  "unit": "N"
+                },
+                "test_energy": {
+                  "expression": "Piecewise((q*rho0*(2*a**3 - 2*a*r**2 + r**3)/(12*a*epsilon_0), a >= r), (a**3*q*rho0/(12*epsilon_0*r), True))",
+                  "latex": "\\begin{cases} \\frac{q \\rho_{0} \\left(2 a^{3} - 2 a r^{2} + r^{3}\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} q \\rho_{0}}{12 \\epsilon_{0} r} & \\text{otherwise} \\end{cases}",
+                  "unit": "J"
+                }
+              },
+              "numerical": {
+                "E": {
+                  "value": "14.1176133421627",
+                  "latex": "14.1176133421627",
+                  "unit": "V/m"
+                },
+                "Q": {
+                  "value": "1.57079632679490e-11",
+                  "latex": "1.5707963267949 \\cdot 10^{-11}",
+                  "unit": "C"
+                },
+                "V": {
+                  "value": "2.56208538431842",
+                  "latex": "2.56208538431842",
+                  "unit": "V"
+                },
+                "test_force": {
+                  "value": "2.82352266843255e-8",
+                  "latex": "2.82352266843255 \\cdot 10^{-8}",
+                  "unit": "N"
+                },
+                "test_energy": {
+                  "value": "5.12417076863685e-9",
+                  "latex": "5.12417076863685 \\cdot 10^{-9}",
+                  "unit": "J"
+                }
+              },
+              "direction": "Radialt i positiv koordinatretning; negativt resultat betyder modsat retning. For plan: modsat retning på den anden side."
+            },
+            "derivation": {
+              "equations_latex": [
+                "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+                "\\mathbf D=\\epsilon\\mathbf E",
+                "V(r)=V(b)+\\int_r^b E_r(u)\\,du"
+              ],
+              "step_ids": [
+                "step-37cdd7908a45fe607287-0",
+                "step-d5c33ba00fb491e1997a-0",
+                "step-2852545cd94f6498be99-0",
+                "step-6f311aea0c624e939a80-0",
+                "step-a162c35a03795b5972a7-0",
+                "step-dd660f17a6ac8827b2d2-0",
+                "step-9ac52a7aeb2f488454d9-0",
+                "step-766038350272b81091ab-0",
+                "step-c5ff67ddb30a3d75c6c6-0",
+                "step-6bb175a375b1ba79961e-0",
+                "step-e7f7c240c9cb308a8897-0",
+                "step-e4f4d17a92bf7e183bf5-0"
+              ]
+            },
+            "explanation": {
+              "step_ids": [
+                "step-37cdd7908a45fe607287-0",
+                "step-d5c33ba00fb491e1997a-0",
+                "step-2852545cd94f6498be99-0",
+                "step-6f311aea0c624e939a80-0",
+                "step-a162c35a03795b5972a7-0",
+                "step-dd660f17a6ac8827b2d2-0",
+                "step-9ac52a7aeb2f488454d9-0",
+                "step-766038350272b81091ab-0",
+                "step-c5ff67ddb30a3d75c6c6-0",
+                "step-6bb175a375b1ba79961e-0",
+                "step-e7f7c240c9cb308a8897-0",
+                "step-e4f4d17a92bf7e183bf5-0"
+              ],
+              "method_context_ids": [
+                "method-19124d488dcf55947496",
+                "method-f735106d0b8468b0140b",
+                "method-93adf3a70095209648ee"
+              ],
+              "global_check_ids": [
+                "check-b6d90b86b3053cbab2b3",
+                "check-56c215bd12f5e7e9cc01",
+                "check-ee9d9de5492cf7f727df",
+                "check-d0cf8834af728ab532ef",
+                "check-38f0ece4e1be9f63e39e",
+                "check-8a4a54380ec528ff7422",
+                "check-99267a8f68677e310173",
+                "check-3482485e9f303a751981",
+                "check-cd029f3261c233fdff84",
+                "check-cad7ed98ad7d74c53ef6",
+                "check-81769658c34da57e4ee8",
+                "check-eb53097856d1b17cc417",
+                "check-437306eeaffd04546c74",
+                "check-51fdeb4b332d969a34d0",
+                "check-198a4434f23c8f106e1e",
+                "check-6000f69718705b20e492",
+                "check-3be8a1363292bc49d4f5",
+                "check-85279c51533dedb4d882",
+                "check-ed6b340e905772adbc98",
+                "check-f06dffd74d6b1c246492",
+                "check-0a1c6c231178ae7fa152",
+                "check-24b3409be495ffae655d",
+                "check-011d854abe326cfa8c40"
+              ],
+              "warnings": [
+                "Q_enc er total ladning for kugle, ladning pr. længde for cylinder og halvrums-ladning pr. areal for spejlsymmetrisk plan. Ved grænseflader angives ensidige grænser separat; punktværdien er ikke fysisk entydig ved overfladeladning."
+              ]
+            }
+          }
+        },
+        "errors": [],
+        "verification": {
+          "interpretation": "user_confirmed_not_machine_verified",
+          "dimensions": "passed",
+          "physical_checks": [
+            "Inputdimension: coordinate",
+            "Inputdimension: region_0_lower",
+            "Inputdimension: region_0_upper",
+            "Inputdimension: region_0_density",
+            "Inputdimension: region_0_epsilon",
+            "Gauss differentiallov i åben region",
+            "Normal D-kontinuitet uden fri fladeladning",
+            "Potentialets gradient i åben region",
+            "Potentialkontinuitet ved a",
+            "Potentialets fjernreference"
+          ],
+          "completeness": "requested_results_present",
+          "limitation": "Kontrollerne er solverens konkrete residualer; de beviser ikke hele modellens fysiske gyldighed."
+        }
+      }
+    ],
+    "interpretation_status": "user_confirmed",
+    "verification_scope": "Ingen automatisk verifikation af opgavetekstens fortolkning.",
+    "confirmed_model": {
+      "schema_version": "assisted-1.0",
+      "text": "En kuglesymmetrisk volumenladning i vakuum har rho(r)=rho0*(1-r/a) for 0<r<a og nul udenfor. a=10 cm, rho0=15 nC/m^3. Find E,V,total Q samt kraft og potentiel energi for en testladning q=2 nC ved r=a/3. V(infinity)=0, testladningen ændrer ikke kilden.",
+      "confirmed": true,
+      "variables": {
+        "coordinate": "r",
+        "regions": [
+          {
+            "lower": "0",
+            "upper": "a",
+            "density": "rho0*(1-r/a)",
+            "permittivity": "epsilon_0"
+          }
+        ]
+      },
+      "units": {
+        "r": "m",
+        "a": "m",
+        "rho0": "C/m^3",
+        "q": "C",
+        "E": "V/m",
+        "V": "V"
+      },
+      "numbers": {
+        "r": "0.03333333333333333 m",
+        "a": "10 cm",
+        "rho0": "15 nC/m^3",
+        "q": "2 nC"
+      },
+      "positive": [
+        "r",
+        "a"
+      ],
+      "assumptions": [
+        "spherical_symmetry",
+        "linear_isotropic_medium",
+        "vacuum_outside_regions",
+        "V_infinity_zero"
+      ],
+      "subproblems": [
+        {
+          "id": "a",
+          "model": "sphere_regions",
+          "wanted": [
+            "E",
+            "V",
+            "Q",
+            "test_force",
+            "test_energy"
+          ],
+          "orientation_confirmed": true,
+          "operations": [
+            {
+              "kind": "transform",
+              "id": "test_force",
+              "result": "E",
+              "variable": "r",
+              "value": "q*E",
+              "unit": "N"
+            },
+            {
+              "kind": "transform",
+              "id": "test_energy",
+              "result": "V",
+              "variable": "r",
+              "value": "q*V",
+              "unit": "J"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "assisted_view": {
+    "viewer_schema": "em1.desktop.solution.v1",
+    "title": "Beregnet under brugerbekræftet model",
+    "prompt": "En kuglesymmetrisk volumenladning i vakuum har rho(r)=rho0*(1-r/a) for 0<r<a og nul udenfor. a=10 cm, rho0=15 nC/m^3. Find E,V,total Q samt kraft og potentiel energi for en testladning q=2 nC ved r=a/3. V(infinity)=0, testladningen ændrer ikke kilden.",
+    "status": "assumptions",
+    "result": {
+      "symbolic_latex": "E = \\begin{cases} \\frac{r \\rho_{0} \\left(4 a - 3 r\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} \\rho_{0}}{12 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+      "extra_latex": [
+        "V = \\begin{cases} \\frac{\\rho_{0} \\left(2 a^{3} - 2 a r^{2} + r^{3}\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} \\rho_{0}}{12 \\epsilon_{0} r} & \\text{otherwise} \\end{cases}",
+        "Q = \\frac{\\pi a^{3} \\rho_{0}}{3}",
+        "test_force = \\begin{cases} \\frac{q r \\rho_{0} \\left(4 a - 3 r\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} q \\rho_{0}}{12 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}",
+        "test_energy = \\begin{cases} \\frac{q \\rho_{0} \\left(2 a^{3} - 2 a r^{2} + r^{3}\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} q \\rho_{0}}{12 \\epsilon_{0} r} & \\text{otherwise} \\end{cases}"
+      ],
+      "numeric_text": "E: 14.1176133421627; Q: 1.57079632679490e-11; V: 2.56208538431842; test_energy: 5.12417076863685e-9; test_force: 2.82352266843255e-8",
+      "units": "E: V/m; V: V; Q: C; test_force: N; test_energy: J"
+    },
+    "steps": [
+      {
+        "title": "Grundligning 1",
+        "latex": "\\oint\\mathbf D\\cdot d\\mathbf a=Q_{\\rm fri,enc}",
+        "reason": "Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen."
+      },
+      {
+        "title": "Grundligning 2",
+        "latex": "\\mathbf D=\\epsilon\\mathbf E",
+        "reason": ""
+      },
+      {
+        "title": "Grundligning 3",
+        "latex": "V(r)=V(b)+\\int_r^b E_r(u)\\,du",
+        "reason": ""
+      },
+      {
+        "id": "step-37cdd7908a45fe607287-0",
+        "title": "Indesluttet bidrag fra området [0, a] før integration",
+        "reason": "Anvendt lov: Gauss’ lov. Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+        "latex": "\\[\\int\\limits_{0}^{r} 4 \\pi r^{2} \\rho_{0} \\left(1 - \\frac{r}{a}\\right)\\, dr\\]",
+        "check": ""
+      },
+      {
+        "id": "step-d5c33ba00fb491e1997a-0",
+        "title": "Efter symbolsk integration",
+        "reason": "Anvendt lov: Gauss’ lov. Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+        "latex": "\\[\\frac{\\pi r^{3} \\rho_{0} \\left(4 a - 3 r\\right)}{3 a}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-2852545cd94f6498be99-0",
+        "title": "Indsæt den indesluttede ladning i Gauss’ lov",
+        "reason": "Anvendt lov: Gauss’ lov. Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+        "latex": "\\[\\begin{cases} \\frac{r \\rho_{0} \\left(4 a - 3 r\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} \\rho_{0}}{12 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-6f311aea0c624e939a80-0",
+        "title": "Kontrolpunkt i regionen (D)",
+        "reason": "Anvendt lov: Gauss’ lov. Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+        "latex": "\\[\\frac{5 a \\rho_{0}}{48}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-a162c35a03795b5972a7-0",
+        "title": "Total ladning: evaluér den omsluttede ladning ved kildens yderkant",
+        "reason": "Anvendt lov: Gauss’ lov. Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+        "latex": "\\[\\frac{\\pi a^{3} \\rho_{0}}{3}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-dd660f17a6ac8827b2d2-0",
+        "title": "Indsæt feltkomponenten langs integrationsvejen",
+        "reason": "Anvendt lov: Potentialforskel fra feltet. Potentialforskellen findes som minus feltets linjeintegral langs den angivne kurve/retning.",
+        "latex": "\\[- \\int\\limits_{a}^{r} \\frac{r \\rho_{0} \\left(4 a - 3 r\\right)}{12 a \\epsilon_{0}}\\, dr\\]",
+        "check": ""
+      },
+      {
+        "id": "step-9ac52a7aeb2f488454d9-0",
+        "title": "Evaluer integralet og grænserne",
+        "reason": "Anvendt lov: Potentialforskel fra feltet. Potentialforskellen findes som minus feltets linjeintegral langs den angivne kurve/retning.",
+        "latex": "\\[- \\frac{\\rho_{0} \\left(a \\left(- a^{2} + 2 r^{2}\\right) - r^{3}\\right)}{12 a \\epsilon_{0}}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-766038350272b81091ab-0",
+        "title": "Saml integralet og randværdien",
+        "reason": "Anvendt lov: Potentialforskel fra felt. Integralet bestemmer potentialforskellen; den tilføjede randværdi sikrer kontinuitet til naboregionen.",
+        "latex": "\\[\\frac{a^{2} \\rho_{0}}{12 \\epsilon_{0}}\\]\n\\[- \\frac{\\rho_{0} \\left(a \\left(- a^{2} + 2 r^{2}\\right) - r^{3}\\right)}{12 a \\epsilon_{0}}\\]\n\\[\\frac{\\rho_{0} \\left(2 a^{3} - 2 a r^{2} + r^{3}\\right)}{12 a \\epsilon_{0}}\\]",
+        "check": "Potentialets gradient i åben region: bestået; Potentialkontinuitet ved a: bestået"
+      },
+      {
+        "id": "step-c5ff67ddb30a3d75c6c6-0",
+        "title": "Anvend den eksplicit bekræftede resultatforbindelse",
+        "reason": "Anvendt lov: Brugerangivet fysisk sammenhæng. Enheder kontrolleres før de tidligere resultater indsættes. Sammenhængens fysiske relevans skal bekræftes af brugeren.",
+        "latex": "\\[test_{force} = E q\\]",
+        "check": ""
+      },
+      {
+        "id": "step-6bb175a375b1ba79961e-0",
+        "title": "Indsæt de beregnede resultater",
+        "reason": "Anvendt lov: Gauss’ lov → samlet ladning, stykvis potentialintegration. Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+        "latex": "\\[\\begin{cases} \\frac{q r \\rho_{0} \\left(4 a - 3 r\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} q \\rho_{0}}{12 \\epsilon_{0} r^{2}} & \\text{otherwise} \\end{cases}\\]",
+        "check": ""
+      },
+      {
+        "id": "step-e7f7c240c9cb308a8897-0",
+        "title": "Anvend den eksplicit bekræftede resultatforbindelse",
+        "reason": "Anvendt lov: Brugerangivet fysisk sammenhæng. Enheder kontrolleres før de tidligere resultater indsættes. Sammenhængens fysiske relevans skal bekræftes af brugeren.",
+        "latex": "\\[test_{energy} = V q\\]",
+        "check": ""
+      },
+      {
+        "id": "step-e4f4d17a92bf7e183bf5-0",
+        "title": "Indsæt de beregnede resultater",
+        "reason": "Anvendt lov: Gauss’ lov → samlet ladning, stykvis potentialintegration. Kuglesymmetri giver et radialt felt med samme styrke på hele kuglefladen.",
+        "latex": "\\[\\begin{cases} \\frac{q \\rho_{0} \\left(2 a^{3} - 2 a r^{2} + r^{3}\\right)}{12 a \\epsilon_{0}} & \\text{for}\\: a \\geq r \\\\\\frac{a^{3} q \\rho_{0}}{12 \\epsilon_{0} r} & \\text{otherwise} \\end{cases}\\]",
+        "check": ""
+      }
+    ],
+    "interpretation": {
+      "method": "Gauss’ lov → samlet ladning, stykvis potentialintegration",
+      "geometry": "sphere_regions"
+    },
+    "warnings": [
+      "Q_enc er total ladning for kugle, ladning pr. længde for cylinder og halvrums-ladning pr. areal for spejlsymmetrisk plan. Ved grænseflader angives ensidige grænser separat; punktværdien er ikke fysisk entydig ved overfladeladning.",
+      "Retning: Radialt i positiv koordinatretning; negativt resultat betyder modsat retning. For plan: modsat retning på den anden side.",
+      "Fysisk fortolkning er brugerbekræftet; kontroller gælder kun den valgte model."
+    ],
+    "backend_status": "calculated_under_confirmed_model",
+    "backend_schema": "assisted-1.0",
+    "audit": "# Brugerbekræftede oplysninger\n\ncoordinate = r\n\nregions = [{'density': 'rho0*(1-r/a)', 'lower': '0', 'permittivity': 'epsilon_0', 'upper': 'a'}]\n\na = 10 cm\n\nq = 2 nC\n\nr = 0.03333333333333333 m\n\nrho0 = 15 nC/m^3\n\nEnhed for E: V/m\n\nEnhed for V: V\n\nEnhed for a: m\n\nEnhed for q: C\n\nEnhed for r: m\n\nEnhed for rho0: C/m^3\n\n# Fortolkningens status\n\nModellen er bekræftet af brugeren. Programmet har ikke bevist, at modellen svarer til opgaveteksten.\n\n# Kontrol og gyldighed\n\nBackend rapporterede 25 beståede, 0 ikke-beståede og 0 uafklarede kontroller.\n\n## Beståede kontroller\n\n- Dimension: Q_enc — C\n\n- Dimension: D — C/m^2\n\n- Dimension: E — V/m\n\n- Inputdimension: coordinate — m\n\n- Inputdimension: region_0_lower — m\n\n- Inputdimension: region_0_upper — m\n\n- Inputdimension: region_0_density — C/m^3\n\n- Inputdimension: region_0_epsilon — F/m\n\n- Gauss differentiallov i åben region\n\n- Normal D-kontinuitet uden fri fladeladning\n\n- Potentialets gradient i åben region\n\n- Potentialkontinuitet ved a\n\n- Potentialets fjernreference\n\n- Dimension: Q_enc — C\n\n- Dimension: D — C/m^2\n\n- Dimension: E — V/m\n\n- Dimension: Q — C\n\n- Dimension: V — V\n\n- Dimension: Q_enc — C\n\n- Dimension: D — C/m^2\n\n- Dimension: E — V/m\n\n- Dimension: Q — C\n\n- Dimension: V — V\n\n- Dimension: test_force — N\n\n- Dimension: test_energy — J\n\n## Forudsætninger og gyldighed\n\n- spherical_symmetry\n\n- linear_isotropic_medium\n\n- vacuum_outside_regions\n\n- V_infinity_zero\n\n**Vigtigt:** En bestået kontrol viser kun den undersøgte egenskab. Hverken opgavefortolkning eller hele fysikken er hermed bevist."
+  },
+  "assisted_seconds": 2.934,
+  "math_display_errors": []
+}

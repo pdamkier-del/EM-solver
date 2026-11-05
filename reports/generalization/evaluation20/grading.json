@@ -1,0 +1,764 @@
+{
+  "total": 20,
+  "counts": {
+    "fully_correct": 17,
+    "partial": 0,
+    "wrong": 0,
+    "abstained": 3
+  },
+  "fully_correct_percent": 85.0,
+  "automatic_fully_correct": 0,
+  "automatic_partial": 1,
+  "automatic_wrong": 0,
+  "automatic_abstained": 19,
+  "assisted_fully_correct": 17,
+  "references_generated_after_execution": true,
+  "external_blind_test": false,
+  "cases": [
+    {
+      "id": "EV1",
+      "domain": "EV",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "image_plane",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 26,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "F",
+          "expected": [
+            -4.4382971813635425e-06,
+            0,
+            0
+          ],
+          "actual": [
+            -4.4382971813635425e-06,
+            0.0,
+            0.0
+          ],
+          "passed": true
+        },
+        {
+          "result": "E",
+          "expected": [
+            3945.153050100926,
+            0,
+            0
+          ],
+          "actual": [
+            3945.153050100926,
+            0.0,
+            0.0
+          ],
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "EV2",
+      "domain": "EV",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "image_sphere_grounded",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 27,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "F",
+          "expected": [
+            0,
+            0,
+            -3.783025626844626e-06
+          ],
+          "actual": [
+            0.0,
+            0.0,
+            -3.783025626844627e-06
+          ],
+          "passed": true
+        },
+        {
+          "result": "Q_induced",
+          "expected": -1.090909090909091e-09,
+          "actual": -1.0909090909090911e-09,
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "EV3",
+      "domain": "EV",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "image_sphere_isolated",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 30,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "F",
+          "expected": [
+            0,
+            0,
+            -8.022806964386527e-07
+          ],
+          "actual": [
+            0.0,
+            0.0,
+            -8.022806964386527e-07
+          ],
+          "passed": true
+        },
+        {
+          "result": "V_sphere",
+          "expected": 67.40663844195876,
+          "actual": 67.40663844195879,
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "EV4",
+      "domain": "EV",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "point_superposition",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 29,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "E",
+          "expected": [
+            12942.074580856084,
+            -5752.033147047149,
+            0
+          ],
+          "actual": [
+            12942.07458085609,
+            -5752.033147047151,
+            0.0
+          ],
+          "passed": true
+        },
+        {
+          "result": "V",
+          "expected": -359.5020716904469,
+          "actual": -359.5020716904469,
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "EV5",
+      "domain": "EV",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "sphere_regions",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 42,
+      "extra_result_unit_rows": [
+        "E",
+        "V"
+      ],
+      "checks": [
+        {
+          "result": "E",
+          "expected": 14.11761334216274,
+          "actual": 14.117613342162738,
+          "passed": true
+        },
+        {
+          "result": "V",
+          "expected": 2.562085384318423,
+          "actual": 2.5620853843184235,
+          "passed": true
+        },
+        {
+          "result": "Q",
+          "expected": 1.5707963267948968e-11,
+          "actual": 1.5707963267948968e-11,
+          "passed": true
+        },
+        {
+          "result": "test_force",
+          "expected": 2.8235226684325482e-08,
+          "actual": 2.8235226684325482e-08,
+          "passed": true
+        },
+        {
+          "result": "test_energy",
+          "expected": 5.1241707686368465e-09,
+          "actual": 5.124170768636847e-09,
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "EV6",
+      "domain": "EV",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "potential_field",
+      "automatic_grade": "partial",
+      "automatic_checks": [
+        {
+          "result": "E",
+          "passed": true,
+          "actual": [
+            -14.399999999999999,
+            0.0,
+            -4.8
+          ],
+          "expected": [
+            -14.399999999999999,
+            0,
+            -4.8
+          ]
+        },
+        {
+          "result": "rho",
+          "passed": true,
+          "actual": -6.375015225216e-09,
+          "expected": -6.375015225216e-09
+        }
+      ],
+      "assistance_action_count": 23,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "E",
+          "expected": [
+            -14.399999999999999,
+            0,
+            -4.8
+          ],
+          "actual": [
+            -14.399999999999999,
+            0.0,
+            -4.8
+          ],
+          "passed": true
+        },
+        {
+          "result": "rho",
+          "expected": -6.375015225216e-09,
+          "actual": -6.375015225216e-09,
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "EV7",
+      "domain": "EV",
+      "grade": "abstained",
+      "mode": "no_solution",
+      "model": null,
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 0,
+      "extra_result_unit_rows": [],
+      "checks": [],
+      "reason": "Intet kort løser en generel kubisk leders randværdiproblem."
+    },
+    {
+      "id": "BA1",
+      "domain": "BA",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "magnetization_currents",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 26,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "J_bound",
+          "expected": [
+            2400,
+            0,
+            0
+          ],
+          "actual": [
+            2400.0,
+            0.0,
+            0.0
+          ],
+          "passed": true
+        },
+        {
+          "result": "K_bound",
+          "expected": [
+            0,
+            48.0,
+            0
+          ],
+          "actual": [
+            0.0,
+            48.0,
+            0.0
+          ],
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "BA2",
+      "domain": "BA",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "magnetized_sphere",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 23,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "B_inside",
+          "expected": [
+            0.0002932153144946667,
+            0.0005864306289893334,
+            0
+          ],
+          "actual": [
+            0.00029321531449466663,
+            0.0005864306289893333,
+            0.0
+          ],
+          "passed": true
+        },
+        {
+          "result": "B",
+          "expected": [
+            -5.429913231382716e-06,
+            -1.0859826462765433e-05,
+            0
+          ],
+          "actual": [
+            -5.4299132313827154e-06,
+            -1.0859826462765431e-05,
+            0.0
+          ],
+          "passed": true
+        },
+        {
+          "result": "J_bound",
+          "expected": [
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "BA3",
+      "domain": "BA",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "ampere_regions",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 24,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "B",
+          "expected": 2.638937830452e-06,
+          "actual": 2.6389378304519997e-06,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "expected": 0.2111150263212341,
+          "actual": 0.21111502632123408,
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "BA4",
+      "domain": "BA",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "magnetic_wires",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 26,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "B",
+          "expected": [
+            0,
+            1.920000001045201e-05,
+            0
+          ],
+          "actual": [
+            0.0,
+            1.9200000010452013e-05,
+            0.0
+          ],
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "BA5",
+      "domain": "BA",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "biot_savart_curve",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 21,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "B",
+          "expected": [
+            0,
+            0,
+            5.385587409085713e-06
+          ],
+          "actual": [
+            0.0,
+            0.0,
+            5.385587409085713e-06
+          ],
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "BA6",
+      "domain": "BA",
+      "grade": "abstained",
+      "mode": "no_solution",
+      "model": null,
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 0,
+      "extra_result_unit_rows": [],
+      "checks": [],
+      "reason": "Ingen entydig B uden materialets hysteresegren og materialedata."
+    },
+    {
+      "id": "DYN1",
+      "domain": "DYN",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "RL_step",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 25,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "initial_slope",
+          "expected": -93.33333333333333,
+          "actual": -93.33333333333334,
+          "passed": true
+        },
+        {
+          "result": "zero_time",
+          "expected": 0.0025235417746590967,
+          "actual": 0.0025235417746590962,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "time": 0,
+          "expected": 0.19999999999999996,
+          "actual": 0.2,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "time": 0.013,
+          "expected": -0.3763138879703823,
+          "actual": -0.3763138879703823,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "time": 0.047,
+          "expected": -0.49867101742487574,
+          "actual": -0.4986710174248757,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "time": 0.11,
+          "expected": -0.49999970115524445,
+          "actual": -0.49999970115524456,
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "DYN2",
+      "domain": "DYN",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "RL_driven",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 25,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "extremum_times",
+          "expected": 0.02,
+          "actual": 0.019999999999999997,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "expected": 0.5020428603339671,
+          "actual": 0.5020428603339671,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "time": 0,
+          "expected": 0.0,
+          "actual": 0.0,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "time": 0.013,
+          "expected": 0.5089946323419906,
+          "actual": 0.5089946323419907,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "time": 0.047,
+          "expected": 0.33617629680981226,
+          "actual": 0.3361762968098125,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "time": 0.11,
+          "expected": 0.03371586436732852,
+          "actual": 0.033715864367328555,
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "DYN3",
+      "domain": "DYN",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "RC_driven",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 24,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "Q",
+          "expected": 0.0004541341132946451,
+          "actual": 0.0004541341132946452,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "expected": 0.008646647167633872,
+          "actual": 0.008646647167633872,
+          "passed": true
+        },
+        {
+          "result": "I_initial",
+          "expected": 0,
+          "actual": 0.0,
+          "passed": true
+        },
+        {
+          "result": "Q",
+          "time": 0,
+          "expected": 0.0,
+          "actual": 0.0,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "time": 0,
+          "expected": 0.0,
+          "actual": 0.0,
+          "passed": true
+        },
+        {
+          "result": "Q",
+          "time": 0.013,
+          "expected": 1.9010941456828884e-05,
+          "actual": 1.9010941456828887e-05,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "time": 0.013,
+          "expected": 0.0027747264635792778,
+          "actual": 0.002774726463579278,
+          "passed": true
+        },
+        {
+          "result": "Q",
+          "time": 0.047,
+          "expected": 0.00019352759187520795,
+          "actual": 0.00019352759187520795,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "time": 0.047,
+          "expected": 0.006911810203119801,
+          "actual": 0.006911810203119801,
+          "passed": true
+        },
+        {
+          "result": "Q",
+          "time": 0.11,
+          "expected": 0.000725571144482683,
+          "actual": 0.0007255711444826831,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "time": 0.11,
+          "expected": 0.009360721387932924,
+          "actual": 0.009360721387932924,
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "DYN4",
+      "domain": "DYN",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "faraday_uniform",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 33,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "EMF",
+          "expected": -0.0008,
+          "actual": -0.0008,
+          "passed": true
+        },
+        {
+          "result": "I",
+          "expected": -0.0002666666666666667,
+          "actual": -0.0002666666666666667,
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "DYN5",
+      "domain": "DYN",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "faraday_flux",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 46,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "EMF",
+          "expected": 0.4,
+          "actual": 0.4,
+          "passed": true
+        },
+        {
+          "result": "coil_current",
+          "expected": 0.08646647167633874,
+          "actual": 0.08646647167633874,
+          "passed": true
+        },
+        {
+          "result": "joule_power",
+          "expected": 0.029905802896620357,
+          "actual": 0.029905802896620357,
+          "passed": true
+        },
+        {
+          "result": "heat",
+          "expected": 0.0015230254940577167,
+          "actual": 0.0015230254940577165,
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "DYN6",
+      "domain": "DYN",
+      "grade": "fully_correct",
+      "mode": "assisted",
+      "model": "motional_curve",
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 27,
+      "extra_result_unit_rows": [],
+      "checks": [
+        {
+          "result": "EMF",
+          "expected": 0.027000000000000003,
+          "actual": 0.026999999999999996,
+          "passed": true
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "DYN7",
+      "domain": "DYN",
+      "grade": "abstained",
+      "mode": "no_solution",
+      "model": null,
+      "automatic_grade": "abstained",
+      "automatic_checks": [],
+      "assistance_action_count": 0,
+      "extra_result_unit_rows": [],
+      "checks": [],
+      "reason": "Intet kort for seriel RLC med to begyndelsesbetingelser."
+    }
+  ]
+}
